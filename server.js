@@ -424,7 +424,7 @@ async function generatePageHtml() {
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `
-        <div class="card" onclick="window.open('${affLink}', '_blank')">
+        <div class="card" onclick="location.href='${affLink}'">
           <img class="card-image" src="${p.imageUrl}" alt="${p.title}" loading="lazy">
           <div class="card-body">
             <span class="card-badge">${p.badge}</span>
@@ -437,7 +437,7 @@ async function generatePageHtml() {
             ${oldPriceHtml}
             <p class="price"><span class="price-sup">$</span>${formatPrice(p.price)}</p>
             <p class="installments">${p.installmentsText}</p>
-            <button class="btn" onclick="event.stopPropagation(); window.open('${affLink}', '_blank')">Comprar ahora</button>
+            <button class="btn" onclick="event.stopPropagation(); location.href='${affLink}'">Comprar ahora</button>
           </div>
         </div>`;
       });
@@ -457,7 +457,7 @@ async function generatePageHtml() {
           const oldPriceHtml = fp.oldPrice ? `<p class="old-price">$${formatPrice(fp.oldPrice)}</p>` : '';
           const ratingInfo = getDeterministicRating(cat.id + fp.title);
           cardsHtml += `
-        <div class="card" onclick="window.open('${affLink}', '_blank')">
+        <div class="card" onclick="location.href='${affLink}'">
           <img class="card-image" src="${fp.imageUrl}" alt="${fp.title}" loading="lazy">
           <div class="card-body">
             <span class="card-badge">${fp.badge || 'Destacado'}</span>
@@ -470,14 +470,14 @@ async function generatePageHtml() {
             ${oldPriceHtml}
             <p class="price"><span class="price-sup">$</span>${formatPrice(fp.price)}</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.open('${affLink}', '_blank')">Comprar ahora</button>
+            <button class="btn" onclick="event.stopPropagation(); location.href='${affLink}'">Comprar ahora</button>
           </div>
         </div>`;
         });
       } else {
         // Último recurso: card genérica
         cardsHtml = `
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('${catAffLink}', '_blank')">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="location.href='${catAffLink}'">
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">${cat.icon}</div>
             <h3 style="margin-bottom:8px;">${cat.name}</h3>
@@ -485,7 +485,7 @@ async function generatePageHtml() {
             <button class="btn">Ver productos</button>
           </div>
         </div>
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('${catAffLink}', '_blank')">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="location.href='${catAffLink}'">
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
             <h3 style="margin-bottom:8px;">Ofertas en ${cat.name}</h3>
@@ -493,7 +493,7 @@ async function generatePageHtml() {
             <button class="btn">Ver ofertas</button>
           </div>
         </div>
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('${catAffLink}', '_blank')">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="location.href='${catAffLink}'">
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">🚚</div>
             <h3 style="margin-bottom:8px;">Envíos en ${cat.name}</h3>
@@ -527,7 +527,7 @@ async function generatePageHtml() {
       }
       const oldPriceHtml = f.oldPrice ? `<p class="old-price">$${formatPrice(f.oldPrice)}</p>` : '';
       foodCardsHtml += `
-      <div class="card" onclick="window.open('${f.link}', '_blank')">
+      <div class="card" onclick="location.href='${f.link}'">
         <img class="card-image" src="${f.imageUrl}" alt="${f.product}" loading="lazy">
         <div class="card-body">
           <span class="card-badge" style="background:#e67e22;color:white;">${f.restaurant}</span>
@@ -540,7 +540,7 @@ async function generatePageHtml() {
           ${oldPriceHtml}
           <p class="price"><span class="price-sup">$</span>${formatPrice(f.price)}</p>
           <p class="installments" style="color:#e67e22;font-weight:bold;">${f.installments}</p>
-          <button class="btn" style="background:#e67e22;" onclick="event.stopPropagation(); window.open('${f.link}', '_blank')">Pedir ahora</button>
+          <button class="btn" style="background:#e67e22;" onclick="event.stopPropagation(); location.href='${f.link}'">Pedir ahora</button>
         </div>
       </div>`;
     });
@@ -678,7 +678,7 @@ app.get('/buscar/:query', async (req, res) => {
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `
-        <div class="card" onclick="window.open('${affLink}', '_blank')">
+        <div class="card" onclick="location.href='${affLink}'">
           <img class="card-image" src="${p.imageUrl}" alt="${p.title}" loading="lazy">
           <div class="card-body">
             <span class="card-badge">${p.badge}</span>
@@ -690,7 +690,7 @@ app.get('/buscar/:query', async (req, res) => {
             ${oldPriceHtml}
             <p class="price"><span class="price-sup">$</span>${formatPrice(p.price)}</p>
             <p class="installments">${p.installmentsText}</p>
-            <button class="btn" onclick="event.stopPropagation(); window.open('${affLink}', '_blank')">Comprar ahora</button>
+            <button class="btn" onclick="event.stopPropagation(); location.href='${affLink}'">Comprar ahora</button>
           </div>
         </div>`;
       });

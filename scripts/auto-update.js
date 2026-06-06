@@ -49,7 +49,7 @@ try {
       if (p.link && /MLA-?\d{7,12}/.test(p.link)) return; // ya tiene link real
       const mlaMatch = (p.imageUrl || '').match(/MLA[_-]?(\d{7,12})/);
       if (mlaMatch) {
-        p.link = 'https://www.mercadolibre.com.ar/MLA' + mlaMatch[1];
+        p.link = 'https://www.mercadolibre.com.ar/MLA-' + mlaMatch[1];
         fixed++;
       }
     });

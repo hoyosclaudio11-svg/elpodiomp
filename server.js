@@ -637,7 +637,7 @@ app.get('/admin', adminLimiter, (req, res) => {
       <p style="margin:4px 0 0 0;font-size:14px;">Definí <strong>MELI_CLIENT_ID</strong> en las variables de entorno.</p>
     </div>`;
   } else {
-    const authUrl = `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}`;
+    const authUrl = `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=read`;
     authSectionHtml = `<div style="background:#fff3e0;border-left:4px solid #ff9800;padding:16px;border-radius:4px;margin-bottom:24px;">
       <h3 style="color:#e65100;margin-top:0;">Acceso Requerido</h3>
       <p style="margin:4px 0 16px 0;font-size:14px;">Vinculá tu cuenta de Mercado Libre para activar los productos.</p>

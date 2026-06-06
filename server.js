@@ -321,6 +321,8 @@ async function generatePageHtml() {
     log(`[HTML] Categoría (${i + 1}/${config.categories.length}): ${cat.name}`);
 
     const products = await fetchTopProducts(accessToken, cat.query);
+    // Pequeña pausa para no saturar la API de Mercado Libre
+    await new Promise(r => setTimeout(r, 400));
 
     if (products.length > 0) {
       let cardsHtml = '';

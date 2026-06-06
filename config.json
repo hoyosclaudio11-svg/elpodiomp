@@ -1,0 +1,52 @@
+{
+  "categories": [
+    { "id": "zapatillas", "name": "Zapatillas del Momento", "icon": "👟", "query": "zapatillas" },
+    { "id": "mochilas", "name": "Mochilas Top", "icon": "🎒", "query": "mochilas" },
+    { "id": "celulares", "name": "Celulares Top", "icon": "📱", "query": "celulares" },
+    { "id": "smartwatches", "name": "Relojes Inteligentes", "icon": "⌚", "query": "smartwatch" },
+    { "id": "auriculares", "name": "Auriculares Inalámbricos", "icon": "🎧", "query": "auriculares bluetooth" },
+    { "id": "notebooks", "name": "Notebooks y Laptops", "icon": "💻", "query": "notebook" },
+    { "id": "consolas", "name": "Consolas de Videojuegos", "icon": "🎮", "query": "consola de videojuegos" },
+    { "id": "tablets", "name": "Tablets", "icon": "📟", "query": "tablet" },
+    { "id": "smart_tvs", "name": "Smart TVs", "icon": "📺", "query": "smart tv" },
+    { "id": "cafeteras", "name": "Cafeteras Eléctricas", "icon": "☕", "query": "cafetera" },
+    { "id": "licuadoras", "name": "Licuadoras y Batidoras", "icon": "🍹", "query": "licuadora" },
+    { "id": "termos", "name": "Termos y Mates", "icon": "🧉", "query": "termo de acero" },
+    { "id": "perfumes", "name": "Perfumes Importados", "icon": "✨", "query": "perfume importado" },
+    { "id": "colchones", "name": "Colchones y Sommiers", "icon": "🛏️", "query": "colchon y sommier" },
+    { "id": "sillones", "name": "Sillones y Sofás", "icon": "🛋️", "query": "sillon de living" },
+    { "id": "sillas_gamer", "name": "Sillas Gamer", "icon": "💺", "query": "silla gamer" },
+    { "id": "teclados", "name": "Teclados Mecánicos", "icon": "⌨️", "query": "teclado mecanico" },
+    { "id": "parlantes", "name": "Parlantes Bluetooth", "icon": "🔊", "query": "parlante bluetooth" },
+    { "id": "lentes", "name": "Lentes de Sol", "icon": "🕶️", "query": "lentes de sol" },
+    { "id": "bicicletas", "name": "Bicicletas Urbanas", "icon": "🚲", "query": "bicicleta urbana" }
+  ],
+  "affiliateLinks": {},
+  "categoryFallbacks": {
+    "zapatillas": "",
+    "mochilas": "",
+    "celulares": "",
+    "smartwatches": "",
+    "auriculares": "",
+    "notebooks": "",
+    "consolas": "",
+    "tablets": "",
+    "smart_tvs": "",
+    "cafeteras": "",
+    "licuadoras": "",
+    "termos": "",
+    "perfumes": "",
+    "colchones": "",
+    "sillones": "",
+    "sillas_gamer": "",
+    "teclados": "",
+    "parlantes": "",
+    "lentes": "",
+    "bicicletas": ""
+  },
+  "meliTokens": {
+    "access_token": "",
+    "refresh_token": "",
+    "expires_at": 0
+  }
+}

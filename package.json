@@ -1,0 +1,27 @@
+{
+  "name": "elpodiomp",
+  "version": "1.0.0",
+  "description": "El Podio MP - Integrador de Mercado Libre y Sección de Comidas con IA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "add-food": "node scripts/parse-food-ai.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.9",
+    "cheerio": "^1.2.0",
+    "compression": "^1.8.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^8.5.2",
+    "helmet": "^8.2.0"
+  }
+}

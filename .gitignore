@@ -1,0 +1,25 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno (contienen claves secretas)
+.env
+
+# Archivos de caché generados
+cache.html
+temp.html
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# PM2
+.pm2/
+dump.pm2

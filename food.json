@@ -1,0 +1,41 @@
+[
+  {
+    "id": "food_1",
+    "restaurant": "McDonald's",
+    "product": "Combo Big Mac Mediano",
+    "rating": 4.8,
+    "reviews": 1240,
+    "description": "La hamburguesa más famosa del mundo. Dos medallones de carne, salsa especial, lechuga, queso, pepinos y cebolla. Incluye papas fritas y gaseosa medianas.",
+    "price": 8900,
+    "oldPrice": 10500,
+    "installments": "Envío rápido por Delivery",
+    "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop",
+    "link": "https://pedidosya.com.ar"
+  },
+  {
+    "id": "food_2",
+    "restaurant": "Burger King",
+    "product": "Combo Stacker Triple",
+    "rating": 4.7,
+    "reviews": 894,
+    "description": "Tres medallones de carne vacuna a la parrilla, salsa stacker, cheddar fundido y panceta crujiente. Incluye papas fritas y gaseosa medianas.",
+    "price": 9800,
+    "oldPrice": 11200,
+    "installments": "Envío rápido por Delivery",
+    "imageUrl": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&h=600&fit=crop",
+    "link": "https://pedidosya.com.ar"
+  },
+  {
+    "id": "food_3",
+    "restaurant": "Kentucky",
+    "product": "Pizza Grande de Muzzarella",
+    "rating": 4.6,
+    "reviews": 612,
+    "description": "Pizza clásica al molde media masa al estilo porteño. Abundante muzzarella de primera calidad, salsa de tomate de la casa y aceitunas verdes.",
+    "price": 7500,
+    "oldPrice": 8800,
+    "installments": "Envío rápido por Delivery",
+    "imageUrl": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=600&fit=crop",
+    "link": "https://pedidosya.com.ar"
+  }
+]

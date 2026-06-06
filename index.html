@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>El Podio MP — Los mejores productos de Mercado Libre, elegidos para vos</title>
+  <meta name="description" content="Descubrí los 3 productos top de cada categoría en Mercado Libre: zapatillas, celulares, notebooks, auriculares, perfumes y más. Comprá al mejor precio con cuotas sin interés.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://elpodiomp.com.ar/">
+
+  <!-- Open Graph (Facebook, WhatsApp, Telegram) -->
+  <meta property="og:title" content="El Podio MP — Los mejores productos de Mercado Libre">
+  <meta property="og:description" content="Top 3 productos de cada categoría. Zapatillas, celulares, notebooks y más. Cuotas sin interés.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elpodiomp.com.ar/">
+  <meta property="og:image" content="https://elpodiomp.com.ar/og-image.png">
+  <meta property="og:site_name" content="El Podio MP">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="El Podio MP — Lo mejor de Mercado Libre">
+  <meta name="twitter:description" content="Top 3 productos por categoría. Precios, cuotas y envíos.">
+  <meta name="twitter:image" content="https://elpodiomp.com.ar/og-image.png">
+
+  <!-- Favicon (emoji como placeholder hasta tener un .ico) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "El Podio MP",
+    "url": "https://elpodiomp.com.ar/",
+    "description": "Los mejores productos de Mercado Libre, seleccionados para vos. Top 3 por categoría con los mejores precios y cuotas.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://elpodiomp.com.ar/buscar/{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    .header {
+      background: #FFE600;
+      padding: 16px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1a1a1a;
+      text-decoration: none;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .logo span { color: #3483FA; }
+
+    .search-bar {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 12px 16px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    .search-bar button {
+      background: #3483FA;
+      border: none;
+      padding: 0 20px;
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      transition: background 0.2s;
+    }
+
+    .search-bar button:hover { background: #2968c8; }
+
+    /* Sugerencias de búsqueda */
+    .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      display: none;
+      z-index: 200;
+      overflow: hidden;
+    }
+
+    .search-suggestions.active { display: block; }
+
+    .search-suggestions .suggestion-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.15s;
+    }
+
+    .search-suggestions .suggestion-item:hover { background: #f5f8ff; }
+
+    .search-suggestions .suggestion-item img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .search-suggestions .suggestion-item .sug-title {
+      font-size: 14px;
+      font-weight: 500;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .search-suggestions .suggestion-item .sug-price {
+      font-weight: 700;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+
+    .search-suggestions .suggestion-footer {
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 13px;
+      color: #3483FA;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .header-icons span { cursor: pointer; white-space: nowrap; }
+
+    .hero {
+      background: linear-gradient(135deg, #FFE600 0%, #ffcc00 100%);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #444;
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { margin: 48px 0; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-header .icon { font-size: 32px; }
+
+    .section-header .view-all {
+      color: #3483FA;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .section-header .view-all:hover { color: #2968c8; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      background: #f0f0f0;
+    }
+
+    .card-body { padding: 20px; }
+
+    .card-badge {
+      display: inline-block;
+      background: #FFE600;
+      color: #1a1a1a;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+
+    .card .description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card .price {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .card .price-sup { font-size: 16px; font-weight: 600; vertical-align: super; }
+
+    .card .old-price {
+      font-size: 14px;
+      color: #999;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+
+    .card .installments {
+      font-size: 14px;
+      color: #00a650;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .card .btn {
+      width: 100%;
+      padding: 12px;
+      background: #3483FA;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+
+    .card .btn:hover { background: #2968c8; }
+
+    .card .rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .card .stars {
+      color: #FFE600;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .card .reviews { font-size: 13px; color: #999; }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ddd, transparent);
+      margin: 8px 0 48px;
+    }
+
+    .footer {
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 48px 24px 32px;
+      margin-top: 64px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .footer h4 {
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer p, .footer a {
+      font-size: 14px;
+      color: #999;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer a:hover { color: #FFE600; }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #333;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Toast de notificación */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1a1a1a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .header-inner { flex-wrap: wrap; }
+      .search-bar { order: 3; max-width: 100%; flex-basis: 100%; }
+      .hero h1 { font-size: 30px; }
+      .footer-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .section-header h2 { font-size: 22px; }
+      .card-image { height: 220px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .header-icons span:not(.cart) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">Elpodiomp<span>.com.ar</span></a>
+      <div class="search-bar" id="searchBar">
+        <input type="text" id="searchInput" placeholder="Buscar productos..." autocomplete="off">
+        <button id="searchBtn">&#128269;</button>
+        <div class="search-suggestions" id="searchSuggestions"></div>
+      </div>
+      <div class="header-icons">
+        <span>&#128100; Mi cuenta</span>
+        <span class="cart">&#128722; Carrito</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Lo mejor de lo mejor</h1>
+    <p>Los 3 productos top de cada categoría, seleccionados para vos</p>
+  </section>
+
+  <main class="container">
+    <!-- CATEGORIES_AND_PRODUCTS -->
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h4>Elpodiomp.com.ar</h4>
+        <p>Los mejores productos seleccionados para vos. Calidad y precio en un solo lugar. Somos afiliados de Mercado Libre.</p>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Cómo comprar</a>
+        <a href="#">Envíos</a>
+        <a href="#">Devoluciones</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacidad">Política de Privacidad</a>
+        <a href="/terminos">Términos y Condiciones</a>
+        <a href="/admin">Panel Admin</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>info@elpodiomp.com.ar</p>
+        <p>0800-ELPODIOMP</p>
+        <p>Lun a Vie 9:00 - 18:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Elpodiomp.com.ar &mdash; Todos los derechos reservados. Este sitio es afiliado de Mercado Libre. Los precios pueden variar.
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ── Búsqueda con sugerencias ──
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchSuggestions = document.getElementById('searchSuggestions');
+    const toast = document.getElementById('toast');
+    let debounceTimer;
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function performSearch() {
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = '/buscar/' + encodeURIComponent(query);
+      }
+    }
+
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') performSearch();
+    });
+
+    // Sugerencias mientras tipea
+    searchInput.addEventListener('input', function() {
+      clearTimeout(debounceTimer);
+      const query = this.value.trim();
+      if (query.length < 2) {
+        searchSuggestions.classList.remove('active');
+        return;
+      }
+      debounceTimer = setTimeout(async () => {
+        try {
+          const res = await fetch('/api/buscar?q=' + encodeURIComponent(query));
+          const data = await res.json();
+          if (data.results && data.results.length > 0) {
+            let html = '';
+            data.results.forEach(r => {
+              html += `<div class="suggestion-item" onclick="window.open('${r.permalink}', '_blank')">
+                <img src="${r.imageUrl}" alt="${r.title}" loading="lazy">
+                <span class="sug-title">${r.title}</span>
+                <span class="sug-price">$${r.price.toLocaleString('es-AR')}</span>
+              </div>`;
+            });
+            html += `<div class="suggestion-footer" onclick="performSearch()">Ver todos los resultados →</div>`;
+            searchSuggestions.innerHTML = html;
+            searchSuggestions.classList.add('active');
+          } else {
+            searchSuggestions.innerHTML = '<div style="padding:12px 16px;color:#999;font-size:14px;">No se encontraron productos.</div>';
+            searchSuggestions.classList.add('active');
+          }
+        } catch (_) {
+          searchSuggestions.classList.remove('active');
+        }
+      }, 300);
+    });
+
+    // Cerrar sugerencias al hacer clic afuera
+    document.addEventListener('click', function(e) {
+      if (!document.getElementById('searchBar').contains(e.target)) {
+        searchSuggestions.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

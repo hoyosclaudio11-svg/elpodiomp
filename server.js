@@ -54,6 +54,7 @@ app.use(helmet({
       frameAncestors: ["'none'"],
       formAction: ["'self'"],
       upgradeInsecureRequests: [],
+      scriptSrcAttr: ["'unsafe-inline'"],
     }
   },
   crossOriginEmbedderPolicy: false,

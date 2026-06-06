@@ -6,6 +6,8 @@ node_modules/
 
 # Archivos de caché generados (NO ignorar cache.html, se deploya)
 temp.html
+server-out.txt
+server-err.txt
 
 # Logs
 *.log

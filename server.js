@@ -733,6 +733,33 @@ app.get('/admin/callback', async (req, res) => {
   }
 });
 
+// Diagnóstico (borrar después)
+app.get('/admin/debug', async (req, res) => {
+  const config = readConfig();
+  const hasOAuth = !!(config.meliTokens && config.meliTokens.access_token);
+  const hasEnvToken = !!process.env.MELI_ACCESS_TOKEN;
+  const token = await getValidAccessToken();
+  let apiTest = 'no probada';
+  if (token) {
+    try {
+      const resp = await axios.get('https://api.mercadolibre.com/sites/MLA/search', {
+        params: { q: 'zapatillas', limit: 2 },
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      apiTest = 'OK - ' + (resp.data.results || []).length + ' resultados';
+    } catch (e) {
+      apiTest = 'ERROR ' + (e.response?.status || '') + ': ' + (e.response?.data?.message || e.message);
+    }
+  }
+  res.json({
+    oauthEnConfig: hasOAuth,
+    tokenEnv: hasEnvToken,
+    tokenValido: !!token,
+    tokenPrefijo: token ? token.substring(0, 15) + '...' : 'ninguno',
+    apiTest: apiTest
+  });
+});
+
 app.get('/admin/clear-cache', (req, res) => {
   cachedHtml = '';
   lastFetchTime = 0;

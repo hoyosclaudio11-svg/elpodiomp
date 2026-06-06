@@ -92,7 +92,10 @@ async function scrapeCategory(browser, cat) {
         // Estrategia 4: reconstruir desde MLA ID en el HTML del card
         if (!link || !/MLA-?\d{7,12}/.test(link)) {
           const mlaMatch = el.innerHTML.match(/MLA[_-]?(\d{7,12})/);
-          if (mlaMatch) link = `https://articulo.mercadolibre.com.ar/MLA-${mlaMatch[1]}`;
+          if (mlaMatch) {
+            const s = (title || 'producto').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').substring(0, 80);
+            link = `https://articulo.mercadolibre.com.ar/MLA-${mlaMatch[1]}-${s}-_JM`;
+          }
         }
         // Fallback final
         if (!link) link = categoryUrl || '';

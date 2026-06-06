@@ -155,8 +155,90 @@ function formatPrice(price) {
 }
 
 // ─────────────────────────────────────
-// Mercado Libre API
+// Scraper de respaldo (cuando la API falla)
 // ─────────────────────────────────────
+const cheerio = require('cheerio');
+
+async function scrapeTopProducts(query) {
+  try {
+    const url = `https://listado.mercadolibre.com.ar/${encodeURIComponent(query)}`;
+    const response = await axios.get(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml',
+        'Accept-Language': 'es-AR,es;q=0.9'
+      },
+      timeout: 15000
+    });
+
+    const $ = cheerio.load(response.data);
+    const items = [];
+
+    // Probar varios selectores (Meli cambia el markup seguido)
+    const cardSelectors = ['.ui-search-layout__item', '.poly-card', '.ui-search-result__wrapper', '.andes-card'];
+    let cards = $();
+    for (const sel of cardSelectors) {
+      cards = $(sel);
+      if (cards.length > 0) break;
+    }
+
+    cards.slice(0, 3).each((i, el) => {
+      const $el = $(el);
+
+      // Título
+      let title = $el.find('h2').first().text().trim() ||
+                  $el.find('.ui-search-item__title').text().trim() ||
+                  $el.find('.poly-component__title').text().trim();
+      if (!title) return;
+
+      // Link
+      let link = $el.find('a').first().attr('href') || '';
+      if (link && link.startsWith('/')) link = 'https://mercadolibre.com.ar' + link;
+
+      // Imagen
+      let img = $el.find('img').first();
+      let imageUrl = img.attr('data-src') || img.attr('src') || '';
+
+      // Precio
+      let priceText = $el.find('.price-tag-fraction').first().text().trim() ||
+                      $el.find('.andes-money-amount__fraction').first().text().trim();
+      let price = parseInt(priceText.replace(/\D/g, '')) || 0;
+
+      // Precio anterior
+      let oldPriceText = $el.find('.price-tag-line-through').text().trim() ||
+                         $el.find('s .price-tag-fraction').first().text().trim();
+      let oldPrice = parseInt(oldPriceText.replace(/\D/g, '')) || null;
+
+      // Cuotas
+      let installmentsText = $el.find('.ui-search-installments').text().trim() ||
+                             $el.find('.poly-price__installments').text().trim() || 'Comprar en Mercado Libre';
+
+      // ID falso para rating
+      const fakeId = 'scrape_' + query + '_' + i;
+      const ratingInfo = getDeterministicRating(fakeId);
+
+      items.push({
+        id: fakeId,
+        title: title,
+        price: price || 50000, // precio mínimo si no se pudo extraer
+        oldPrice: oldPrice,
+        imageUrl: imageUrl,
+        badge: oldPrice ? Math.round(((oldPrice - price) / oldPrice) * 100) + '% OFF' : 'Destacado',
+        rating: ratingInfo.rating,
+        reviews: ratingInfo.reviews,
+        starsHtml: ratingInfo.starsHtml,
+        installmentsText: installmentsText,
+        permalink: link,
+        isInterestFree: installmentsText.includes('sin interés') ? 1 : 0
+      });
+    });
+
+    return items.filter(p => p.price > 100 && p.imageUrl);
+  } catch (err) {
+    log(`[Scraper] Error en "${query}": ` + err.message);
+    return [];
+  }
+}
 async function refreshAccessToken() {
   const config = readConfig();
   const refreshToken = config.meliTokens?.refresh_token;
@@ -325,9 +407,14 @@ async function generatePageHtml() {
     const cat = config.categories[i];
     log(`[HTML] Categoría (${i + 1}/${config.categories.length}): ${cat.name}`);
 
-    const products = await fetchTopProducts(accessToken, cat.query);
-    // Pequeña pausa para no saturar la API de Mercado Libre
-    await new Promise(r => setTimeout(r, 400));
+    let products = await fetchTopProducts(accessToken, cat.query);
+    if (products.length === 0) {
+      // Fallback: scraper si la API falla
+      log(`[HTML] API sin resultados para "${cat.query}", probando scraper...`);
+      products = await scrapeTopProducts(cat.query);
+    }
+    // Pequeña pausa para no saturar a Meli
+    await new Promise(r => setTimeout(r, 600));
 
     if (products.length > 0) {
       let cardsHtml = '';
@@ -515,7 +602,10 @@ app.get('/buscar/:query', async (req, res) => {
   }
 
   try {
-    const products = await fetchTopProducts(accessToken, query);
+    let products = await fetchTopProducts(accessToken, query);
+    if (products.length === 0) {
+      products = await scrapeTopProducts(query);
+    }
     const config = readConfig();
     let cardsHtml = '';
 
@@ -731,33 +821,6 @@ app.get('/admin/callback', async (req, res) => {
     log('[Meli] Error en callback OAuth: ' + (err.response?.data?.message || err.message));
     res.status(500).send(`Error de autenticación: ${err.message}`);
   }
-});
-
-// Diagnóstico (borrar después)
-app.get('/admin/debug', async (req, res) => {
-  const config = readConfig();
-  const hasOAuth = !!(config.meliTokens && config.meliTokens.access_token);
-  const hasEnvToken = !!process.env.MELI_ACCESS_TOKEN;
-  const token = await getValidAccessToken();
-  let apiTest = 'no probada';
-  if (token) {
-    try {
-      const resp = await axios.get('https://api.mercadolibre.com/sites/MLA/search', {
-        params: { q: 'zapatillas', limit: 2 },
-        headers: { 'Authorization': `Bearer ${token}` }
-      });
-      apiTest = 'OK - ' + (resp.data.results || []).length + ' resultados';
-    } catch (e) {
-      apiTest = 'ERROR ' + (e.response?.status || '') + ': ' + (e.response?.data?.message || e.message);
-    }
-  }
-  res.json({
-    oauthEnConfig: hasOAuth,
-    tokenEnv: hasEnvToken,
-    tokenValido: !!token,
-    tokenPrefijo: token ? token.substring(0, 15) + '...' : 'ninguno',
-    apiTest: apiTest
-  });
 });
 
 app.get('/admin/clear-cache', (req, res) => {

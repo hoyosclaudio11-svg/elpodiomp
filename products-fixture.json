@@ -1,33 +1,4 @@
 {
-  "tablets": [
-    {
-      "title": "Samsung Galaxy Tab A11 Color Gris Capacidad 64 GB Ram 4GB",
-      "price": 324999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_968337-MLA100567674726_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA100567674726"
-    },
-    {
-      "title": "Tablet Chuwi Hi10 Xpro 4gb 128gb 10,1 Android 12 Gris Cámara posterior 13mpx tarjeta SIM",
-      "price": 387502,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_715330-MLA79764656535_102024-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA79764656535"
-    },
-    {
-      "title": "Tablet Para Niños + Funda 32gb 2gb Wifi Bluetooth Full Hd Blanco",
-      "price": 166999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_652437-MLA107760046853_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA107760046853"
-    }
-  ],
   "zapatillas": [
     {
       "title": "Zapatillas Newstep 780 Hombre Estándar Deporte 34-45",
@@ -229,6 +200,35 @@
       "badge": "Destacado",
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
       "link": "https://www.mercadolibre.com.ar/MLA95836365587"
+    }
+  ],
+  "tablets": [
+    {
+      "title": "Samsung Galaxy Tab A11 Color Gris Capacidad 64 GB Ram 4GB",
+      "price": 324999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_968337-MLA100567674726_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA100567674726"
+    },
+    {
+      "title": "Tablet Chuwi Hi10 Xpro 4gb 128gb 10,1 Android 12 Gris Cámara posterior 13mpx tarjeta SIM",
+      "price": 387502,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_715330-MLA79764656535_102024-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA79764656535"
+    },
+    {
+      "title": "Tablet Para Niños + Funda 32gb 2gb Wifi Bluetooth Full Hd Blanco",
+      "price": 166999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_652437-MLA107760046853_022026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA107760046853"
     }
   ],
   "smart_tvs": [

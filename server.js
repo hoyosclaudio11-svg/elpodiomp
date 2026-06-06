@@ -19,6 +19,7 @@ const CONFIG_PATH = path.join(__dirname, 'config.json');
 const FOOD_PATH = path.join(__dirname, 'food.json');
 const TEMPLATE_PATH = path.join(__dirname, 'index.html');
 const CACHE_HTML_PATH = path.join(__dirname, 'cache.html');
+const FIXTURE_PATH = path.join(__dirname, 'products-fixture.json');
 const LOGS_DIR = path.join(__dirname, 'logs');
 
 // Crear directorio de logs si no existe
@@ -441,8 +442,41 @@ async function generatePageHtml() {
         </div>`;
       });
     } else {
-      // Sin productos: mostrar card genérica con link de afiliado
-      cardsHtml = `
+      // Sin productos de API: usar datos del fixture si existen
+      let fixtureProducts = [];
+      try {
+        if (fs.existsSync(FIXTURE_PATH)) {
+          const fixture = JSON.parse(fs.readFileSync(FIXTURE_PATH, 'utf8'));
+          if (fixture[cat.id]) fixtureProducts = fixture[cat.id];
+        }
+      } catch (_) {}
+
+      if (fixtureProducts.length > 0) {
+        fixtureProducts.forEach(fp => {
+          const affLink = catAffLink;
+          const oldPriceHtml = fp.oldPrice ? `<p class="old-price">$${formatPrice(fp.oldPrice)}</p>` : '';
+          const ratingInfo = getDeterministicRating(cat.id + fp.title);
+          cardsHtml += `
+        <div class="card" onclick="window.open('${affLink}', '_blank')">
+          <img class="card-image" src="${fp.imageUrl}" alt="${fp.title}" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">${fp.badge || 'Destacado'}</span>
+            <h3>${fp.title}</h3>
+            <div class="rating">
+              <span class="stars">${ratingInfo.starsHtml}</span>
+              <span class="reviews">(${ratingInfo.reviews})</span>
+            </div>
+            <p class="description">${fp.description}</p>
+            ${oldPriceHtml}
+            <p class="price"><span class="price-sup">$</span>${formatPrice(fp.price)}</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.open('${affLink}', '_blank')">Comprar ahora</button>
+          </div>
+        </div>`;
+        });
+      } else {
+        // Último recurso: card genérica
+        cardsHtml = `
         <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('${catAffLink}', '_blank')">
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">${cat.icon}</div>
@@ -467,6 +501,7 @@ async function generatePageHtml() {
             <button class="btn">Ver productos</button>
           </div>
         </div>`;
+      }
     }
 
     categoriesHtml += `

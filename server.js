@@ -409,20 +409,19 @@ async function generatePageHtml() {
 
     let products = await fetchTopProducts(accessToken, cat.query);
     if (products.length === 0) {
-      // Fallback: scraper si la API falla
       log(`[HTML] API sin resultados para "${cat.query}", probando scraper...`);
       products = await scrapeTopProducts(cat.query);
     }
-    // Pequeña pausa para no saturar a Meli
-    await new Promise(r => setTimeout(r, 600));
+    await new Promise(r => setTimeout(r, 100));
+
+    let cardsHtml = '';
+    const catAffLink = config.categoryFallbacks[cat.id] || `https://listado.mercadolibre.com.ar/${encodeURIComponent(cat.query)}`;
 
     if (products.length > 0) {
-      let cardsHtml = '';
       products.forEach(p => {
-        const affLink = config.affiliateLinks[p.id] || config.categoryFallbacks[cat.id] || p.permalink;
+        const affLink = config.affiliateLinks[p.id] || catAffLink || p.permalink;
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
-
         cardsHtml += `
         <div class="card" onclick="window.open('${affLink}', '_blank')">
           <img class="card-image" src="${p.imageUrl}" alt="${p.title}" loading="lazy">
@@ -441,17 +440,44 @@ async function generatePageHtml() {
           </div>
         </div>`;
       });
+    } else {
+      // Sin productos: mostrar card genérica con link de afiliado
+      cardsHtml = `
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('${catAffLink}', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">${cat.icon}</div>
+            <h3 style="margin-bottom:8px;">${cat.name}</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('${catAffLink}', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en ${cat.name}</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('${catAffLink}', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en ${cat.name}</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>`;
+    }
 
-      categoriesHtml += `
-      <section class="section">
-        <div class="section-header">
-          <h2><span class="icon">${cat.icon}</span> ${cat.name}</h2>
-          <a href="${config.categoryFallbacks[cat.id] || '#'}" target="_blank" class="view-all">Ver todas &rarr;</a>
+    categoriesHtml += `
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">${cat.icon}</span> ${cat.name}</h2>
+        <a href="${catAffLink}" target="_blank" class="view-all">Ver todas &rarr;</a>
         </div>
         <div class="grid">${cardsHtml}</div>
       </section>
       <div class="divider"></div>`;
-    }
   }
 
   // Sección de comidas
@@ -687,23 +713,36 @@ app.get('/api/buscar', async (req, res) => {
   }
 });
 
-// Ruta principal
+// Ruta principal — siempre sirve caché al instante, regenera en background
 app.get('/', async (req, res) => {
-  const now = Date.now();
-  if (!cachedHtml || (now - lastFetchTime > CACHE_DURATION)) {
-    try {
-      cachedHtml = await generatePageHtml();
-      lastFetchTime = now;
-    } catch (err) {
-      log('Error generando HTML: ' + err.message);
-      if (fs.existsSync(CACHE_HTML_PATH)) {
-        cachedHtml = fs.readFileSync(CACHE_HTML_PATH, 'utf8');
-      } else {
-        return res.status(500).send('<html><body><h1>Error</h1><p>No se pudo cargar la página. <a href="/">Reintentar.</a></p></body></html>');
-      }
+  // Servir caché inmediatamente si existe
+  if (cachedHtml) {
+    res.send(cachedHtml);
+    // Si está vencida, regenerar en background sin bloquear
+    if (Date.now() - lastFetchTime > CACHE_DURATION) {
+      generatePageHtml().then(html => {
+        cachedHtml = html;
+        lastFetchTime = Date.now();
+        log('[Cache] Regenerada en background.');
+      }).catch(err => log('[Cache] Error en regeneración: ' + err.message));
     }
+    return;
   }
-  res.send(cachedHtml);
+
+  // Si no hay caché, intentar regenerar (solo la primera vez)
+  try {
+    cachedHtml = await generatePageHtml();
+    lastFetchTime = Date.now();
+    res.send(cachedHtml);
+  } catch (err) {
+    log('Error generando HTML: ' + err.message);
+    res.status(503).send(`<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>En mantenimiento — ${DOMAIN}</title>
+<style>body{font-family:'Inter',sans-serif;text-align:center;padding:80px 24px;color:#333;background:#f5f5f5;}h1{font-size:48px;color:#FFE600;text-shadow:2px 2px 0 #1a1a1a;}</style>
+</head><body><h1>Volvemos pronto</h1><p>Estamos actualizando los productos. Recargá en unos segundos.</p></body></html>`);
+  }
 });
 
 // ─────────────────────────────────────

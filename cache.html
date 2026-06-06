@@ -1,0 +1,1273 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>El Podio MP — Los mejores productos de Mercado Libre, elegidos para vos</title>
+  <meta name="description" content="Descubrí los 3 productos top de cada categoría en Mercado Libre: zapatillas, celulares, notebooks, auriculares, perfumes y más. Comprá al mejor precio con cuotas sin interés.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://elpodiomp.com.ar/">
+
+  <!-- Open Graph (Facebook, WhatsApp, Telegram) -->
+  <meta property="og:title" content="El Podio MP — Los mejores productos de Mercado Libre">
+  <meta property="og:description" content="Top 3 productos de cada categoría. Zapatillas, celulares, notebooks y más. Cuotas sin interés.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elpodiomp.com.ar/">
+  <meta property="og:image" content="https://elpodiomp.com.ar/og-image.png">
+  <meta property="og:site_name" content="El Podio MP">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="El Podio MP — Lo mejor de Mercado Libre">
+  <meta name="twitter:description" content="Top 3 productos por categoría. Precios, cuotas y envíos.">
+  <meta name="twitter:image" content="https://elpodiomp.com.ar/og-image.png">
+
+  <!-- Favicon (emoji como placeholder hasta tener un .ico) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "El Podio MP",
+    "url": "https://elpodiomp.com.ar/",
+    "description": "Los mejores productos de Mercado Libre, seleccionados para vos. Top 3 por categoría con los mejores precios y cuotas.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://elpodiomp.com.ar/buscar/{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    .header {
+      background: #FFE600;
+      padding: 16px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1a1a1a;
+      text-decoration: none;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .logo span { color: #3483FA; }
+
+    .search-bar {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 12px 16px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    .search-bar button {
+      background: #3483FA;
+      border: none;
+      padding: 0 20px;
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      transition: background 0.2s;
+    }
+
+    .search-bar button:hover { background: #2968c8; }
+
+    /* Sugerencias de búsqueda */
+    .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      display: none;
+      z-index: 200;
+      overflow: hidden;
+    }
+
+    .search-suggestions.active { display: block; }
+
+    .search-suggestions .suggestion-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.15s;
+    }
+
+    .search-suggestions .suggestion-item:hover { background: #f5f8ff; }
+
+    .search-suggestions .suggestion-item img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .search-suggestions .suggestion-item .sug-title {
+      font-size: 14px;
+      font-weight: 500;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .search-suggestions .suggestion-item .sug-price {
+      font-weight: 700;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+
+    .search-suggestions .suggestion-footer {
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 13px;
+      color: #3483FA;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .header-icons span { cursor: pointer; white-space: nowrap; }
+
+    .hero {
+      background: linear-gradient(135deg, #FFE600 0%, #ffcc00 100%);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #444;
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { margin: 48px 0; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-header .icon { font-size: 32px; }
+
+    .section-header .view-all {
+      color: #3483FA;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .section-header .view-all:hover { color: #2968c8; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      background: #f0f0f0;
+    }
+
+    .card-body { padding: 20px; }
+
+    .card-badge {
+      display: inline-block;
+      background: #FFE600;
+      color: #1a1a1a;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+
+    .card .description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card .price {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .card .price-sup { font-size: 16px; font-weight: 600; vertical-align: super; }
+
+    .card .old-price {
+      font-size: 14px;
+      color: #999;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+
+    .card .installments {
+      font-size: 14px;
+      color: #00a650;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .card .btn {
+      width: 100%;
+      padding: 12px;
+      background: #3483FA;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+
+    .card .btn:hover { background: #2968c8; }
+
+    .card .rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .card .stars {
+      color: #FFE600;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .card .reviews { font-size: 13px; color: #999; }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ddd, transparent);
+      margin: 8px 0 48px;
+    }
+
+    .footer {
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 48px 24px 32px;
+      margin-top: 64px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .footer h4 {
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer p, .footer a {
+      font-size: 14px;
+      color: #999;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer a:hover { color: #FFE600; }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #333;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Toast de notificación */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1a1a1a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .header-inner { flex-wrap: wrap; }
+      .search-bar { order: 3; max-width: 100%; flex-basis: 100%; }
+      .hero h1 { font-size: 30px; }
+      .footer-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .section-header h2 { font-size: 22px; }
+      .card-image { height: 220px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .header-icons span:not(.cart) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">Elpodiomp<span>.com.ar</span></a>
+      <div class="search-bar" id="searchBar">
+        <input type="text" id="searchInput" placeholder="Buscar productos..." autocomplete="off">
+        <button id="searchBtn">&#128269;</button>
+        <div class="search-suggestions" id="searchSuggestions"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Lo mejor de lo mejor</h1>
+    <p>Los 3 productos top de cada categoría, seleccionados para vos</p>
+  </section>
+
+  <main class="container">
+    
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">👟</span> Zapatillas del Momento</h2>
+        <a href="https://listado.mercadolibre.com.ar/zapatillas" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/zapatillas', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">👟</div>
+            <h3 style="margin-bottom:8px;">Zapatillas del Momento</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/zapatillas', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Zapatillas del Momento</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/zapatillas', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Zapatillas del Momento</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🎒</span> Mochilas Top</h2>
+        <a href="https://listado.mercadolibre.com.ar/mochilas" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/mochilas', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🎒</div>
+            <h3 style="margin-bottom:8px;">Mochilas Top</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/mochilas', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Mochilas Top</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/mochilas', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Mochilas Top</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">📱</span> Celulares Top</h2>
+        <a href="https://listado.mercadolibre.com.ar/celulares" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/celulares', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">📱</div>
+            <h3 style="margin-bottom:8px;">Celulares Top</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/celulares', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Celulares Top</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/celulares', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Celulares Top</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">⌚</span> Relojes Inteligentes</h2>
+        <a href="https://listado.mercadolibre.com.ar/smartwatch" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/smartwatch', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">⌚</div>
+            <h3 style="margin-bottom:8px;">Relojes Inteligentes</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/smartwatch', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Relojes Inteligentes</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/smartwatch', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Relojes Inteligentes</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🎧</span> Auriculares Inalámbricos</h2>
+        <a href="https://listado.mercadolibre.com.ar/auriculares%20bluetooth" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/auriculares%20bluetooth', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🎧</div>
+            <h3 style="margin-bottom:8px;">Auriculares Inalámbricos</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/auriculares%20bluetooth', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Auriculares Inalámbricos</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/auriculares%20bluetooth', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Auriculares Inalámbricos</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">💻</span> Notebooks y Laptops</h2>
+        <a href="https://listado.mercadolibre.com.ar/notebook" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/notebook', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">💻</div>
+            <h3 style="margin-bottom:8px;">Notebooks y Laptops</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/notebook', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Notebooks y Laptops</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/notebook', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Notebooks y Laptops</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🎮</span> Consolas de Videojuegos</h2>
+        <a href="https://listado.mercadolibre.com.ar/consola%20de%20videojuegos" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/consola%20de%20videojuegos', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🎮</div>
+            <h3 style="margin-bottom:8px;">Consolas de Videojuegos</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/consola%20de%20videojuegos', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Consolas de Videojuegos</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/consola%20de%20videojuegos', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Consolas de Videojuegos</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">📟</span> Tablets</h2>
+        <a href="https://listado.mercadolibre.com.ar/tablet" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/tablet', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">📟</div>
+            <h3 style="margin-bottom:8px;">Tablets</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/tablet', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Tablets</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/tablet', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Tablets</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">📺</span> Smart TVs</h2>
+        <a href="https://listado.mercadolibre.com.ar/smart%20tv" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/smart%20tv', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">📺</div>
+            <h3 style="margin-bottom:8px;">Smart TVs</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/smart%20tv', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Smart TVs</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/smart%20tv', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Smart TVs</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">☕</span> Cafeteras Eléctricas</h2>
+        <a href="https://listado.mercadolibre.com.ar/cafetera" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/cafetera', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">☕</div>
+            <h3 style="margin-bottom:8px;">Cafeteras Eléctricas</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/cafetera', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Cafeteras Eléctricas</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/cafetera', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Cafeteras Eléctricas</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🍹</span> Licuadoras y Batidoras</h2>
+        <a href="https://listado.mercadolibre.com.ar/licuadora" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/licuadora', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🍹</div>
+            <h3 style="margin-bottom:8px;">Licuadoras y Batidoras</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/licuadora', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Licuadoras y Batidoras</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/licuadora', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Licuadoras y Batidoras</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🧉</span> Termos y Mates</h2>
+        <a href="https://listado.mercadolibre.com.ar/termo%20de%20acero" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/termo%20de%20acero', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🧉</div>
+            <h3 style="margin-bottom:8px;">Termos y Mates</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/termo%20de%20acero', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Termos y Mates</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/termo%20de%20acero', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Termos y Mates</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">✨</span> Perfumes Importados</h2>
+        <a href="https://listado.mercadolibre.com.ar/perfume%20importado" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/perfume%20importado', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">✨</div>
+            <h3 style="margin-bottom:8px;">Perfumes Importados</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/perfume%20importado', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Perfumes Importados</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/perfume%20importado', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Perfumes Importados</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🛏️</span> Colchones y Sommiers</h2>
+        <a href="https://listado.mercadolibre.com.ar/colchon%20y%20sommier" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/colchon%20y%20sommier', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🛏️</div>
+            <h3 style="margin-bottom:8px;">Colchones y Sommiers</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/colchon%20y%20sommier', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Colchones y Sommiers</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/colchon%20y%20sommier', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Colchones y Sommiers</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🛋️</span> Sillones y Sofás</h2>
+        <a href="https://listado.mercadolibre.com.ar/sillon%20de%20living" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/sillon%20de%20living', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🛋️</div>
+            <h3 style="margin-bottom:8px;">Sillones y Sofás</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/sillon%20de%20living', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Sillones y Sofás</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/sillon%20de%20living', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Sillones y Sofás</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">💺</span> Sillas Gamer</h2>
+        <a href="https://listado.mercadolibre.com.ar/silla%20gamer" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/silla%20gamer', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">💺</div>
+            <h3 style="margin-bottom:8px;">Sillas Gamer</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/silla%20gamer', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Sillas Gamer</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/silla%20gamer', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Sillas Gamer</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">⌨️</span> Teclados Mecánicos</h2>
+        <a href="https://listado.mercadolibre.com.ar/teclado%20mecanico" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/teclado%20mecanico', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">⌨️</div>
+            <h3 style="margin-bottom:8px;">Teclados Mecánicos</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/teclado%20mecanico', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Teclados Mecánicos</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/teclado%20mecanico', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Teclados Mecánicos</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🔊</span> Parlantes Bluetooth</h2>
+        <a href="https://listado.mercadolibre.com.ar/parlante%20bluetooth" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/parlante%20bluetooth', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🔊</div>
+            <h3 style="margin-bottom:8px;">Parlantes Bluetooth</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/parlante%20bluetooth', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Parlantes Bluetooth</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/parlante%20bluetooth', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Parlantes Bluetooth</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🕶️</span> Lentes de Sol</h2>
+        <a href="https://listado.mercadolibre.com.ar/lentes%20de%20sol" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/lentes%20de%20sol', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🕶️</div>
+            <h3 style="margin-bottom:8px;">Lentes de Sol</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/lentes%20de%20sol', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Lentes de Sol</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/lentes%20de%20sol', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Lentes de Sol</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🚲</span> Bicicletas Urbanas</h2>
+        <a href="https://listado.mercadolibre.com.ar/bicicleta%20urbana" target="_blank" class="view-all">Ver todas &rarr;</a>
+        </div>
+        <div class="grid">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/bicicleta%20urbana', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚲</div>
+            <h3 style="margin-bottom:8px;">Bicicletas Urbanas</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/bicicleta%20urbana', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
+            <h3 style="margin-bottom:8px;">Ofertas en Bicicletas Urbanas</h3>
+            <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
+            <button class="btn">Ver ofertas</button>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.open('https://listado.mercadolibre.com.ar/bicicleta%20urbana', '_blank')">
+          <div style="text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:12px;">🚚</div>
+            <h3 style="margin-bottom:8px;">Envíos en Bicicletas Urbanas</h3>
+            <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
+            <button class="btn">Ver productos</button>
+          </div>
+        </div></div>
+      </section>
+      <div class="divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🍔</span> Recomendados de Comida y Delivery</h2>
+        <a href="https://pedidosya.com.ar" target="_blank" class="view-all" style="color:#e67e22;">Ver locales &rarr;</a>
+      </div>
+      <div class="grid">
+      <div class="card" onclick="window.open('https://pedidosya.com.ar', '_blank')">
+        <img class="card-image" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop" alt="Combo Big Mac Mediano" loading="lazy">
+        <div class="card-body">
+          <span class="card-badge" style="background:#e67e22;color:white;">McDonald's</span>
+          <h3>Combo Big Mac Mediano</h3>
+          <div class="rating">
+            <span class="stars" style="color:#e67e22;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="reviews">(1240)</span>
+          </div>
+          <p class="description">La hamburguesa más famosa del mundo. Dos medallones de carne, salsa especial, lechuga, queso, pepinos y cebolla. Incluye papas fritas y gaseosa medianas.</p>
+          <p class="old-price">$10.500</p>
+          <p class="price"><span class="price-sup">$</span>8.900</p>
+          <p class="installments" style="color:#e67e22;font-weight:bold;">Envío rápido por Delivery</p>
+          <button class="btn" style="background:#e67e22;" onclick="event.stopPropagation(); window.open('https://pedidosya.com.ar', '_blank')">Pedir ahora</button>
+        </div>
+      </div>
+      <div class="card" onclick="window.open('https://pedidosya.com.ar', '_blank')">
+        <img class="card-image" src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&h=600&fit=crop" alt="Combo Stacker Triple" loading="lazy">
+        <div class="card-body">
+          <span class="card-badge" style="background:#e67e22;color:white;">Burger King</span>
+          <h3>Combo Stacker Triple</h3>
+          <div class="rating">
+            <span class="stars" style="color:#e67e22;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="reviews">(894)</span>
+          </div>
+          <p class="description">Tres medallones de carne vacuna a la parrilla, salsa stacker, cheddar fundido y panceta crujiente. Incluye papas fritas y gaseosa medianas.</p>
+          <p class="old-price">$11.200</p>
+          <p class="price"><span class="price-sup">$</span>9.800</p>
+          <p class="installments" style="color:#e67e22;font-weight:bold;">Envío rápido por Delivery</p>
+          <button class="btn" style="background:#e67e22;" onclick="event.stopPropagation(); window.open('https://pedidosya.com.ar', '_blank')">Pedir ahora</button>
+        </div>
+      </div>
+      <div class="card" onclick="window.open('https://pedidosya.com.ar', '_blank')">
+        <img class="card-image" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=600&fit=crop" alt="Pizza Grande de Muzzarella" loading="lazy">
+        <div class="card-body">
+          <span class="card-badge" style="background:#e67e22;color:white;">Kentucky</span>
+          <h3>Pizza Grande de Muzzarella</h3>
+          <div class="rating">
+            <span class="stars" style="color:#e67e22;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="reviews">(612)</span>
+          </div>
+          <p class="description">Pizza clásica al molde media masa al estilo porteño. Abundante muzzarella de primera calidad, salsa de tomate de la casa y aceitunas verdes.</p>
+          <p class="old-price">$8.800</p>
+          <p class="price"><span class="price-sup">$</span>7.500</p>
+          <p class="installments" style="color:#e67e22;font-weight:bold;">Envío rápido por Delivery</p>
+          <button class="btn" style="background:#e67e22;" onclick="event.stopPropagation(); window.open('https://pedidosya.com.ar', '_blank')">Pedir ahora</button>
+        </div>
+      </div></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h4>Elpodiomp.com.ar</h4>
+        <p>Los mejores productos seleccionados para vos. Calidad y precio en un solo lugar. Somos afiliados de Mercado Libre.</p>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Cómo comprar</a>
+        <a href="#">Envíos</a>
+        <a href="#">Devoluciones</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacidad">Política de Privacidad</a>
+        <a href="/terminos">Términos y Condiciones</a>
+        <a href="/admin">Panel Admin</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>info@elpodiomp.com.ar</p>
+        <p>0800-ELPODIOMP</p>
+        <p>Lun a Vie 9:00 - 18:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Elpodiomp.com.ar &mdash; Todos los derechos reservados. Este sitio es afiliado de Mercado Libre. Los precios pueden variar.
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ── Búsqueda con sugerencias ──
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchSuggestions = document.getElementById('searchSuggestions');
+    const toast = document.getElementById('toast');
+    let debounceTimer;
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function performSearch() {
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = '/buscar/' + encodeURIComponent(query);
+      }
+    }
+
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') performSearch();
+    });
+
+    // Sugerencias mientras tipea
+    searchInput.addEventListener('input', function() {
+      clearTimeout(debounceTimer);
+      const query = this.value.trim();
+      if (query.length < 2) {
+        searchSuggestions.classList.remove('active');
+        return;
+      }
+      debounceTimer = setTimeout(async () => {
+        try {
+          const res = await fetch('/api/buscar?q=' + encodeURIComponent(query));
+          const data = await res.json();
+          if (data.results && data.results.length > 0) {
+            let html = '';
+            data.results.forEach(r => {
+              html += `<div class="suggestion-item" onclick="window.open('${r.permalink}', '_blank')">
+                <img src="${r.imageUrl}" alt="${r.title}" loading="lazy">
+                <span class="sug-title">${r.title}</span>
+                <span class="sug-price">$${r.price.toLocaleString('es-AR')}</span>
+              </div>`;
+            });
+            html += `<div class="suggestion-footer" onclick="performSearch()">Ver todos los resultados →</div>`;
+            searchSuggestions.innerHTML = html;
+            searchSuggestions.classList.add('active');
+          } else {
+            searchSuggestions.innerHTML = '<div style="padding:12px 16px;color:#999;font-size:14px;">No se encontraron productos.</div>';
+            searchSuggestions.classList.add('active');
+          }
+        } catch (_) {
+          searchSuggestions.classList.remove('active');
+        }
+      }, 300);
+    });
+
+    // Cerrar sugerencias al hacer clic afuera
+    document.addEventListener('click', function(e) {
+      if (!document.getElementById('searchBar').contains(e.target)) {
+        searchSuggestions.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
+

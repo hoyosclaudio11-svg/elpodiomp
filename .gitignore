@@ -4,8 +4,7 @@ node_modules/
 # Variables de entorno (contienen claves secretas)
 .env
 
-# Archivos de caché generados
-cache.html
+# Archivos de caché generados (NO ignorar cache.html, se deploya)
 temp.html
 
 # Logs

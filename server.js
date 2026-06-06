@@ -81,8 +81,9 @@ const adminLimiter = rateLimit({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Servir archivos estáticos desde la raíz
+// Servir archivos estáticos desde la raíz (index: false para que no sirva index.html sin pasar por el generador)
 app.use(express.static(__dirname, {
+  index: false,
   maxAge: '1h',
   setHeaders: (res, filePath) => {
     if (filePath.endsWith('.html') || filePath.endsWith('.json')) {

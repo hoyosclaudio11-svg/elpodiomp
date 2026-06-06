@@ -15,6 +15,14 @@ const CACHE_PATH = path.join(__dirname, '..', 'cache.html');
 
 console.log('🚀 Iniciando servidor local para generar cache.html...\n');
 
+// Renombrar temporalmente el cache viejo para que el servidor
+// genere HTML fresco desde products-fixture.json (no desde cache.html)
+const CACHE_OLD = CACHE_PATH + '.old';
+if (fs.existsSync(CACHE_PATH)) {
+  fs.renameSync(CACHE_PATH, CACHE_OLD);
+  console.log('📦 Cache vieja respaldada temporalmente.');
+}
+
 // Arrancar el servidor como proceso hijo
 const server = spawn('node', [SERVER_PATH], {
   cwd: path.join(__dirname, '..'),
@@ -54,12 +62,19 @@ setTimeout(() => {
       }
 
       server.kill();
+      // Limpiar backup
+      if (fs.existsSync(CACHE_OLD)) fs.unlinkSync(CACHE_OLD);
       process.exit(0);
     });
   }).on('error', (err) => {
     console.error('❌ Error conectando al servidor:', err.message);
     console.log('\nLog del servidor:', output);
     server.kill();
+    // Restaurar cache vieja
+    if (fs.existsSync(CACHE_OLD)) {
+      fs.renameSync(CACHE_OLD, CACHE_PATH);
+      console.log('📦 Cache anterior restaurada.');
+    }
     process.exit(1);
   });
 }, 5000);

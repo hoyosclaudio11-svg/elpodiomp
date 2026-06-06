@@ -44,7 +44,7 @@ async function scrapeCategory(browser, cat) {
     }
 
     // Extraer productos
-    const products = await page.evaluate(() => {
+    const products = await page.evaluate((categoryUrl) => {
       const items = [];
       const selectors = ['.ui-search-layout__item', '.poly-card', '.andes-card', 'li.ui-search-layout__item'];
       let cards = [];
@@ -60,9 +60,42 @@ async function scrapeCategory(browser, cat) {
         const title = titleEl ? (titleEl.textContent.trim() || titleEl.getAttribute('title') || '') : '';
         if (!title || title.length < 5) continue;
 
-        const linkEl = el.querySelector('a[href*="/MLA-"]') || el.querySelector('a');
-        let link = linkEl ? linkEl.href : url;
-        link = link.split('?')[0].split('#')[0];
+        // Buscar el link real del producto (no el de tracking genérico)
+        let link = '';
+        // Estrategia 1: link directo al artículo
+        let linkEl = el.querySelector('a[href*="articulo.mercadolibre.com.ar"]')
+          || el.querySelector('a[href*="mercadolibre.com.ar"][href*="/MLA-"]');
+        // Estrategia 2: link de tracking (contiene url= con el destino real)
+        if (!linkEl) {
+          const allLinks = el.querySelectorAll('a');
+          for (const a of allLinks) {
+            const h = a.href || '';
+            if (h.includes('mclics') || h.includes('click1') || h.includes('click2')) {
+              linkEl = a; break;
+            }
+          }
+        }
+        // Estrategia 3: el primer link disponible
+        if (!linkEl) linkEl = el.querySelector('a');
+
+        if (linkEl && linkEl.href) {
+          let href = linkEl.href;
+          // Decodificar URL de tracking de ML
+          if ((href.includes('mclics') || href.includes('click')) && href.includes('url=')) {
+            try {
+              const urlParam = new URL(href).searchParams.get('url');
+              if (urlParam) href = decodeURIComponent(urlParam);
+            } catch (_) {}
+          }
+          link = href.split('?')[0].split('#')[0];
+        }
+        // Estrategia 4: reconstruir desde MLA ID en el HTML del card
+        if (!link || !/MLA-?\d{7,12}/.test(link)) {
+          const mlaMatch = el.innerHTML.match(/MLA[_-]?\d{7,12}/);
+          if (mlaMatch) link = `https://www.mercadolibre.com.ar/${mlaMatch[0]}`;
+        }
+        // Fallback final
+        if (!link) link = categoryUrl || '';
 
         const imgEl = el.querySelector('img');
         let imageUrl = '';
@@ -92,7 +125,7 @@ async function scrapeCategory(browser, cat) {
         if (items.length >= 3) break;
       }
       return items;
-    });
+    }, url);
 
     if (products.length > 0) {
       console.log(`   ✅ ${products.length} productos`);

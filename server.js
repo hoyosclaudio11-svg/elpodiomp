@@ -420,7 +420,7 @@ async function generatePageHtml() {
 
     if (products.length > 0) {
       products.forEach(p => {
-        const affLink = config.affiliateLinks[p.id] || catAffLink || p.permalink;
+        const affLink = config.affiliateLinks[p.id] || p.permalink || catAffLink;
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `
@@ -453,7 +453,7 @@ async function generatePageHtml() {
 
       if (fixtureProducts.length > 0) {
         fixtureProducts.forEach(fp => {
-          const affLink = catAffLink;
+          const affLink = fp.link || catAffLink;
           const oldPriceHtml = fp.oldPrice ? `<p class="old-price">$${formatPrice(fp.oldPrice)}</p>` : '';
           const ratingInfo = getDeterministicRating(cat.id + fp.title);
           cardsHtml += `

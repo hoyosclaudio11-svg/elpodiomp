@@ -199,16 +199,21 @@ async function refreshAccessToken() {
 }
 
 async function getValidAccessToken() {
+  // Prioridad 1: token OAuth guardado en config.json (tiene refresh automático)
+  const config = readConfig();
+  const tokens = config.meliTokens;
+  if (tokens && tokens.access_token) {
+    if (tokens.expires_at && tokens.expires_at - Date.now() < 5 * 60 * 1000) {
+      const refreshed = await refreshAccessToken();
+      if (refreshed) return refreshed;
+    }
+    return tokens.access_token;
+  }
+  // Prioridad 2: token estático del .env (se usa solo si no hay OAuth)
   if (process.env.MELI_ACCESS_TOKEN) {
     return process.env.MELI_ACCESS_TOKEN;
   }
-  const config = readConfig();
-  const tokens = config.meliTokens;
-  if (!tokens || !tokens.access_token) return null;
-  if (tokens.expires_at && tokens.expires_at - Date.now() < 5 * 60 * 1000) {
-    return await refreshAccessToken();
-  }
-  return tokens.access_token;
+  return null;
 }
 
 async function fetchTopProducts(accessToken, query) {

@@ -53,7 +53,7 @@ async function scrapeCategory(browser, cat) {
         if (cards.length > 0) break;
       }
 
-      for (let i = 0; i < Math.min(cards.length, 20); i++) {
+      for (let i = 0; i < Math.min(cards.length, 3); i++) {
         const el = cards[i];
 
         const titleEl = el.querySelector('h2, .ui-search-item__title, .poly-component__title, a[title]');

@@ -74,12 +74,23 @@ app.use(globalLimiter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Servir archivos estáticos desde la raíz (index: false para que no sirva index.html sin pasar por el generador)
+// Servir archivos estáticos — solo imágenes, fuentes y assets públicos
+// Bloquear archivos sensibles: .json, .env, .html, .js, .bat, .yaml
+app.use((req, res, next) => {
+  const blocked = /\.(json|env|html|js|bat|ya?ml|log|txt)$/i;
+  const path = req.path.toLowerCase();
+  // Permitir solo archivos explícitamente públicos
+  const allowed = /\.(png|jpg|jpeg|gif|svg|ico|webp|woff2?|css|xml)$/i;
+  if (blocked.test(path) && !allowed.test(path)) {
+    return res.status(404).send('Not Found');
+  }
+  next();
+});
 app.use(express.static(__dirname, {
   index: false,
   maxAge: '1h',
   setHeaders: (res, filePath) => {
-    if (filePath.endsWith('.html') || filePath.endsWith('.json')) {
+    if (filePath.endsWith('.html')) {
       res.setHeader('Cache-Control', 'no-cache');
     }
   }
@@ -96,6 +107,34 @@ app.use((req, res, next) => {
 // ─────────────────────────────────────
 // Utilidades Multi-Sitio
 // ─────────────────────────────────────
+
+/**
+ * Escapa HTML para prevenir XSS.
+ * Convierte < > & " ' en sus entidades HTML.
+ */
+function escapeHtml(str) {
+  if (!str || typeof str !== 'string') return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/**
+ * Escapa una URL para usar en atributos href/src.
+ * Solo permite http/https/mailto/data relativos.
+ */
+function safeUrl(url) {
+  if (!url || typeof url !== 'string') return '#';
+  const trimmed = url.trim();
+  if (/^(https?:|\/|mailto:|data:image\/)/i.test(trimmed)) {
+    return trimmed.replace(/"/g, '%22').replace(/'/g, '%27');
+  }
+  return '#';
+}
+
 function readConfig() {
   try {
     if (fs.existsSync(CONFIG_PATH)) {
@@ -526,24 +565,24 @@ async function generatePageHtml(siteId) {
 
     if (products.length > 0) {
       products.forEach(p => {
-        const affLink = config.affiliateLinks[p.id] || p.permalink || catAffLink;
+        const affLink = safeUrl(config.affiliateLinks[p.id] || p.permalink || catAffLink);
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `
-        <div class="card" onclick="window.location.href='${affLink}'">
-          <img class="card-image" src="${p.imageUrl}" alt="${p.title}" loading="lazy">
+        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
+          <img class="card-image" src="${safeUrl(p.imageUrl)}" alt="${escapeHtml(p.title)}" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">${p.badge}</span>
-            <h3>${p.title}</h3>
+            <span class="card-badge">${escapeHtml(p.badge)}</span>
+            <h3>${escapeHtml(p.title)}</h3>
             <div class="rating">
               <span class="stars">${p.starsHtml}</span>
               <span class="reviews">(${p.reviews})</span>
             </div>
-            <p class="description">Calidad garantizada. Top 3 de los productos mejor valorados en ${cat.name}.</p>
+            <p class="description">Calidad garantizada. Top 3 de los productos mejor valorados en ${escapeHtml(cat.name)}.</p>
             ${oldPriceHtml}
             <p class="price"><span class="price-sup">$</span>${formatPrice(p.price)}</p>
-            <p class="installments">${p.installmentsText}</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${affLink}'">Comprar ahora</button>
+            <p class="installments">${escapeHtml(p.installmentsText)}</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Comprar ahora</button>
           </div>
         </div>`;
       });
@@ -559,50 +598,50 @@ async function generatePageHtml(siteId) {
 
       if (fixtureProducts.length > 0) {
         fixtureProducts.forEach(fp => {
-          const affLink = fp.link || catAffLink;
+          const affLink = safeUrl(fp.link || catAffLink);
           const oldPriceHtml = fp.oldPrice ? `<p class="old-price">$${formatPrice(fp.oldPrice)}</p>` : '';
           const ratingInfo = getDeterministicRating(cat.id + fp.title);
           cardsHtml += `
-        <div class="card" onclick="window.location.href='${affLink}'">
-          <img class="card-image" src="${fp.imageUrl}" alt="${fp.title}" loading="lazy">
+        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
+          <img class="card-image" src="${safeUrl(fp.imageUrl)}" alt="${escapeHtml(fp.title)}" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">${fp.badge || 'Destacado'}</span>
-            <h3>${fp.title}</h3>
+            <span class="card-badge">${escapeHtml(fp.badge || 'Destacado')}</span>
+            <h3>${escapeHtml(fp.title)}</h3>
             <div class="rating">
               <span class="stars">${ratingInfo.starsHtml}</span>
               <span class="reviews">(${ratingInfo.reviews})</span>
             </div>
-            <p class="description">${fp.description}</p>
+            <p class="description">${escapeHtml(fp.description)}</p>
             ${oldPriceHtml}
             <p class="price"><span class="price-sup">$</span>${formatPrice(fp.price)}</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${affLink}'">Comprar ahora</button>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Comprar ahora</button>
           </div>
         </div>`;
         });
       } else {
         // Último recurso: card genérica
         cardsHtml = `
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${catAffLink}'">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${escapeHtml(catAffLink)}'">
           <div style="text-align:center;padding:32px;">
-            <div style="font-size:48px;margin-bottom:12px;">${cat.icon}</div>
-            <h3 style="margin-bottom:8px;">${cat.name}</h3>
-            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en ${siteConfig.name}</p>
+            <div style="font-size:48px;margin-bottom:12px;">${escapeHtml(cat.icon)}</div>
+            <h3 style="margin-bottom:8px;">${escapeHtml(cat.name)}</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en ${escapeHtml(siteConfig.name)}</p>
             <button class="btn">Ver productos</button>
           </div>
         </div>
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${catAffLink}'">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${escapeHtml(catAffLink)}'">
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
-            <h3 style="margin-bottom:8px;">Ofertas en ${cat.name}</h3>
+            <h3 style="margin-bottom:8px;">Ofertas en ${escapeHtml(cat.name)}</h3>
             <p style="color:#666;margin-bottom:12px;">Descubrí las mejores ofertas del día</p>
             <button class="btn">Ver ofertas</button>
           </div>
         </div>
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${catAffLink}'">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${escapeHtml(catAffLink)}'">
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">🚚</div>
-            <h3 style="margin-bottom:8px;">Envíos en ${cat.name}</h3>
+            <h3 style="margin-bottom:8px;">Envíos en ${escapeHtml(cat.name)}</h3>
             <p style="color:#666;margin-bottom:12px;">Con envío gratis y cuotas sin interés</p>
             <button class="btn">Ver productos</button>
           </div>
@@ -634,20 +673,20 @@ async function generatePageHtml(siteId) {
       }
       const oldPriceHtml = f.oldPrice ? `<p class="old-price">$${formatPrice(f.oldPrice)}</p>` : '';
       foodCardsHtml += `
-      <div class="card" onclick="window.location.href='${f.link}'">
-        <img class="card-image" src="${f.imageUrl}" alt="${f.product}" loading="lazy">
+      <div class="card" onclick="window.location.href='${escapeHtml(safeUrl(f.link))}'">
+        <img class="card-image" src="${safeUrl(f.imageUrl)}" alt="${escapeHtml(f.product)}" loading="lazy">
         <div class="card-body">
-          <span class="card-badge" style="background:var(--food-color);color:white;">${f.restaurant}</span>
-          <h3>${f.product}</h3>
+          <span class="card-badge" style="background:var(--food-color);color:white;">${escapeHtml(f.restaurant)}</span>
+          <h3>${escapeHtml(f.product)}</h3>
           <div class="rating">
             <span class="stars" style="color:var(--food-color);">${starsHtml}</span>
             <span class="reviews">(${f.reviews})</span>
           </div>
-          <p class="description">${f.description}</p>
+          <p class="description">${escapeHtml(f.description)}</p>
           ${oldPriceHtml}
           <p class="price"><span class="price-sup">$</span>${formatPrice(f.price)}</p>
-          <p class="installments" style="color:var(--food-color);font-weight:bold;">${f.installments}</p>
-          <button class="btn" style="background:var(--food-color);" onclick="event.stopPropagation(); window.location.href='${f.link}'">Pedir ahora</button>
+          <p class="installments" style="color:var(--food-color);font-weight:bold;">${escapeHtml(f.installments)}</p>
+          <button class="btn" style="background:var(--food-color);" onclick="event.stopPropagation(); window.location.href='${escapeHtml(safeUrl(f.link))}'">Pedir ahora</button>
         </div>
       </div>`;
     });
@@ -795,10 +834,10 @@ app.get('/buscar/:query', async (req, res) => {
     let cardsHtml = '';
 
     if (products.length === 0) {
-      cardsHtml = '<p style="text-align:center;padding:48px;">No encontramos productos para <strong>' + query + '</strong>. <a href="/">Volver al inicio.</a></p>';
+      cardsHtml = '<p style="text-align:center;padding:48px;">No encontramos productos para <strong>' + escapeHtml(query) + '</strong>. <a href="/">Volver al inicio.</a></p>';
     } else {
       products.forEach(p => {
-        const affLink = config.affiliateLinks[p.id] || p.permalink;
+        const affLink = safeUrl(config.affiliateLinks[p.id] || p.permalink);
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `

@@ -74,26 +74,10 @@ app.use(globalLimiter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Servir archivos estáticos — solo imágenes, fuentes y assets públicos
-// Bloquear archivos sensibles: .json, .env, .html, .js, .bat, .yaml
-app.use((req, res, next) => {
-  const blocked = /\.(json|env|html|js|bat|ya?ml|log|txt)$/i;
-  const path = req.path.toLowerCase();
-  // Permitir solo archivos explícitamente públicos
-  const allowed = /\.(png|jpg|jpeg|gif|svg|ico|webp|woff2?|css|xml)$/i;
-  if (blocked.test(path) && !allowed.test(path)) {
-    return res.status(404).send('Not Found');
-  }
-  next();
-});
-app.use(express.static(__dirname, {
+// Servir archivos estáticos — solo assets públicos (imágenes, fuentes, css)
+app.use(express.static(path.join(__dirname, 'public'), {
   index: false,
   maxAge: '1h',
-  setHeaders: (res, filePath) => {
-    if (filePath.endsWith('.html')) {
-      res.setHeader('Cache-Control', 'no-cache');
-    }
-  }
 }));
 
 // Forzar HTTPS en producción (Render ya lo hace, pero por si acaso)

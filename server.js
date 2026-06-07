@@ -71,15 +71,6 @@ const globalLimiter = rateLimit({
 });
 app.use(globalLimiter);
 
-// Rate limiting más estricto para admin
-const adminLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 20,
-  standardHeaders: true,
-  legacyHeaders: false,
-  message: 'Demasiados intentos al panel admin. Esperá 15 minutos.',
-});
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -717,7 +708,6 @@ app.get('/robots.txt', (req, res) => {
   res.type('text/plain');
   res.send(`User-agent: *
 Allow: /
-Disallow: /admin
 Sitemap: ${baseUrl}/sitemap.xml
 `);
 });
@@ -930,147 +920,6 @@ app.get('/', async (req, res) => {
   }
 });
 
-// ─────────────────────────────────────
-// Middleware de autenticación para admin
-// ─────────────────────────────────────
-function adminAuth(req, res, next) {
-  const password = process.env.ADMIN_PASSWORD;
-  if (!password || req.query.key === password) {
-    return next();
-  }
-  res.status(401).send(`<!DOCTYPE html>
-<html lang="es">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acceso Restringido</title>
-<style>body{font-family:'Inter',sans-serif;text-align:center;padding:80px 24px;color:#333;background:#f5f5f5;}h1{font-size:48px;color:#1a1a1a;}p{margin:16px 0;}</style>
-</head><body><h1>🔒 Acceso Restringido</h1><p>Necesitás una clave para entrar al panel de administración.</p></body></html>`);
-}
-
-// ─────────────────────────────────────
-// Panel admin (protegido con rate limit + contraseña)
-// ─────────────────────────────────────
-app.get('/admin', adminLimiter, adminAuth, (req, res) => {
-  const siteId = getSiteFromRequest(req);
-  const siteConfig = getSiteConfig(siteId);
-  const config = readConfig();
-  const host = req.headers['x-forwarded-host'] || req.get('host');
-  const redirectUri = `https://${host}/admin/callback`;
-  const clientId = process.env.MELI_CLIENT_ID;
-
-  let authSectionHtml = '';
-  if (config.meliTokens && config.meliTokens.access_token) {
-    authSectionHtml = `<div style="background:#e3f2fd;border-left:4px solid #1976d2;padding:16px;border-radius:4px;margin-bottom:24px;">
-      <h3 style="color:#0d47a1;margin-top:0;">✓ Conectado a Mercado Libre</h3>
-      <p style="margin:4px 0 0 0;font-size:14px;">El token está activo y se renovará automáticamente.</p>
-    </div>`;
-  } else if (!clientId) {
-    authSectionHtml = `<div style="background:#ffebee;border-left:4px solid #f44336;padding:16px;border-radius:4px;margin-bottom:24px;">
-      <h3 style="color:#c62828;margin-top:0;">✗ Falta configuración</h3>
-      <p style="margin:4px 0 0 0;font-size:14px;">Definí <strong>MELI_CLIENT_ID</strong> en las variables de entorno.</p>
-    </div>`;
-  } else {
-    const authUrl = `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=read`;
-    authSectionHtml = `<div style="background:#fff3e0;border-left:4px solid #ff9800;padding:16px;border-radius:4px;margin-bottom:24px;">
-      <h3 style="color:#e65100;margin-top:0;">Acceso Requerido</h3>
-      <p style="margin:4px 0 16px 0;font-size:14px;">Vinculá tu cuenta de Mercado Libre para activar los productos.</p>
-      <a href="${authUrl}" style="background:${siteConfig.theme.buttonBg};color:white;padding:10px 20px;border-radius:4px;text-decoration:none;font-weight:bold;display:inline-block;">Conectar con Mercado Libre</a>
-    </div>`;
-  }
-
-  let linksListHtml = '';
-  config.categories.forEach(cat => {
-    linksListHtml += `<div style="margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #eee;">
-      <label style="font-weight:bold;display:block;margin-bottom:4px;">${cat.icon} Link Afiliado - ${cat.name}:</label>
-      <input type="text" name="fallback_${cat.id}" value="${config.categoryFallbacks[cat.id] || ''}" placeholder="Pegá tu link de afiliado de ${cat.name}" style="width:100%;padding:8px;border:1px solid #ccc;border-radius:4px;">
-    </div>`;
-  });
-
-  res.send(`<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Panel Admin — ${siteConfig.domain}</title>
-  <style>
-    body { font-family: sans-serif; background: #f5f5f5; color: #333; margin: 0; padding: 24px; }
-    .container { max-width: 800px; margin: 0 auto; background: white; padding: 32px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    h1 { border-bottom: 2px solid ${siteConfig.theme.headerBg}; padding-bottom: 12px; margin-top: 0; }
-    .btn-submit { background: #00a650; color: white; border: none; padding: 12px 24px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 16px; }
-    .btn-submit:hover { background: #008f45; }
-    .btn-clear { background: #ff4444; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin-left: 12px; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Panel de Administración — ${siteConfig.domain}</h1>
-    ${authSectionHtml}
-    <form action="/admin/save" method="POST">
-      <h2>Enlaces de Afiliado por Categoría</h2>
-      <p style="color:#666;font-size:14px;margin-bottom:20px;">Estos links se usan como destino de los productos cuando no hay un link individual cargado. <strong>Son obligatorios para monetizar.</strong></p>
-      ${linksListHtml}
-      <button type="submit" class="btn-submit">Guardar Enlaces</button>
-      <a href="/admin/clear-cache" class="btn-clear" style="text-decoration:none;color:white;display:inline-block;margin-top:12px;">Limpiar Caché</a>
-    </form>
-    <p style="margin-top:24px;font-size:13px;color:#999;"><a href="/">&larr; Ir a la web</a></p>
-  </div>
-</body>
-</html>`);
-});
-
-app.post('/admin/save', adminLimiter, adminAuth, (req, res) => {
-  const config = readConfig();
-  Object.keys(req.body).forEach(key => {
-    if (key.startsWith('fallback_')) {
-      const catId = key.replace('fallback_', '');
-      config.categoryFallbacks[catId] = req.body[key];
-    }
-  });
-  saveConfig(config);
-  // Limpiar todas las cachés
-  cacheBySite = {};
-  lastFetchBySite = {};
-  res.send('<script>alert("Enlaces guardados. Todas las cachés se limpiaron."); window.location.href="/admin";</script>');
-});
-
-app.get('/admin/callback', async (req, res) => {
-  const code = req.query.code;
-  const host = req.headers['x-forwarded-host'] || req.get('host');
-  const redirectUri = `https://${host}/admin/callback`;
-  const clientId = process.env.MELI_CLIENT_ID;
-  const clientSecret = process.env.MELI_CLIENT_SECRET;
-
-  if (!code) return res.status(400).send('Error: Código de autorización ausente.');
-
-  try {
-    log('[Meli] Intercambiando código OAuth por tokens...');
-    const response = await axios.post('https://api.mercadolibre.com/oauth/token', null, {
-      params: { grant_type: 'authorization_code', client_id: clientId, client_secret: clientSecret, code, redirect_uri: redirectUri },
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' }
-    });
-    const tokens = response.data;
-    const config = readConfig();
-    config.meliTokens = {
-      access_token: tokens.access_token,
-      refresh_token: tokens.refresh_token,
-      expires_at: Date.now() + (tokens.expires_in * 1000)
-    };
-    saveConfig(config);
-    cacheBySite = {};
-    lastFetchBySite = {};
-    log('[Meli] Cuenta vinculada con éxito.');
-    res.send('<script>alert("¡Cuenta vinculada exitosamente!"); window.location.href="/admin";</script>');
-  } catch (err) {
-    log('[Meli] Error en callback OAuth: ' + (err.response?.data?.message || err.message));
-    res.status(500).send(`Error de autenticación: ${err.message}`);
-  }
-});
-
-app.get('/admin/clear-cache', (req, res) => {
-  cacheBySite = {};
-  lastFetchBySite = {};
-  res.send('<script>alert("Todas las cachés fueron limpiadas."); window.location.href="/admin";</script>');
-});
 
 // ─────────────────────────────────────
 // 404 — siempre al final

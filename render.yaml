@@ -6,6 +6,12 @@ services:
     plan: free
     buildCommand: npm install
     startCommand: node server.js
+    domains:
+      - elpodiomp.com.ar
+      - www.elpodiomp.com.ar
+      - tech.elpodiomp.com.ar
+      - food.elpodiomp.com.ar
+      - hogar.elpodiomp.com.ar
     envVars:
       - key: PORT
         value: "3000"

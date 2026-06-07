@@ -258,6 +258,38 @@
 
     .section-header .icon { font-size: 32px; }
 
+    .section-header .view-all:hover { color: var(--button-hover); }
+
+    .site-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      border-radius: 24px;
+      background: white;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      transition: all 0.2s;
+    }
+    .site-nav a:hover {
+      background: var(--accent-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
     .section-header .view-all {
       color: var(--accent-color);
       text-decoration: none;
@@ -519,6 +551,13 @@
     <h1>Lo mejor de lo mejor</h1>
     <p>Los 3 productos top de cada categoría, seleccionados para vos</p>
   </section>
+
+  <nav class="site-nav">
+    <a href="/">🏆 El Podio MP</a>
+    <a href="/?site=elpodiotech">💻 El Podio Tech</a>
+    <a href="/?site=elpodiofood">🍔 El Podio Food</a>
+    <a href="/?site=elpodiohogar">🏠 El Podio Hogar</a>
+  </nav>
 
   <main class="container">
     
@@ -1064,10 +1103,10 @@
     </div>
     <div class="footer-sites">
       <span>🔗 También visitá nuestros otros sitios:</span>
-      <a href="https://elpodiomp.com.ar">🏆 El Podio MP</a>
-      <a href="https://tech.elpodiomp.com.ar">💻 El Podio Tech</a>
-      <a href="https://food.elpodiomp.com.ar">🍔 El Podio Food</a>
-      <a href="https://hogar.elpodiomp.com.ar">🏠 El Podio Hogar</a>
+      <a href="/">🏆 El Podio MP</a>
+      <a href="/?site=elpodiotech">💻 El Podio Tech</a>
+      <a href="/?site=elpodiofood">🍔 El Podio Food</a>
+      <a href="/?site=elpodiohogar">🏠 El Podio Hogar</a>
     </div>
     <div class="footer-bottom">
       &copy; 2026 hogar.elpodiomp.com.ar &mdash; Todos los derechos reservados. Este sitio es afiliado de Mercado Libre. Los precios pueden variar.

@@ -213,7 +213,7 @@ async function scrapeTopProducts(query) {
 
       // Cuotas
       let installmentsText = $el.find('.ui-search-installments').text().trim() ||
-                             $el.find('.poly-price__installments').text().trim() || 'Comprar en Mercado Libre';
+                             $el.find('.poly-price__installments').text().trim() || 'Ver en El Podio MP';
 
       // ID falso para rating
       const fakeId = 'scrape_' + query + '_' + i;
@@ -328,7 +328,7 @@ async function fetchTopProducts(accessToken, query) {
         imageUrl = imageUrl.replace('http://', 'https://');
       }
 
-      let installmentsText = 'Comprar en Mercado Libre';
+      let installmentsText = 'Ver en El Podio MP';
       if (item.installments) {
         if (isInterestFree) {
           installmentsText = `Hasta ${item.installments.quantity} cuotas sin interés`;
@@ -482,7 +482,7 @@ async function generatePageHtml() {
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">${cat.icon}</div>
             <h3 style="margin-bottom:8px;">${cat.name}</h3>
-            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en Mercado Libre</p>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en El Podio MP</p>
             <button class="btn">Ver productos</button>
           </div>
         </div>

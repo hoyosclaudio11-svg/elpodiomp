@@ -9,8 +9,6 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const DOMAIN = process.env.DOMAIN || 'elpodiomp.com.ar';
-const BASE_URL = process.env.BASE_URL || `https://${DOMAIN}`;
 
 // ─────────────────────────────────────
 // Rutas de archivos
@@ -18,9 +16,11 @@ const BASE_URL = process.env.BASE_URL || `https://${DOMAIN}`;
 const CONFIG_PATH = path.join(__dirname, 'config.json');
 const FOOD_PATH = path.join(__dirname, 'food.json');
 const TEMPLATE_PATH = path.join(__dirname, 'index.html');
-const CACHE_HTML_PATH = path.join(__dirname, 'cache.html');
 const FIXTURE_PATH = path.join(__dirname, 'products-fixture.json');
 const LOGS_DIR = path.join(__dirname, 'logs');
+
+// Site por defecto si no se detecta ninguno
+const DEFAULT_SITE = 'elpodiomp';
 
 // Crear directorio de logs si no existe
 if (!fs.existsSync(LOGS_DIR)) {
@@ -103,7 +103,7 @@ app.use((req, res, next) => {
 });
 
 // ─────────────────────────────────────
-// Utilidades
+// Utilidades Multi-Sitio
 // ─────────────────────────────────────
 function readConfig() {
   try {
@@ -113,7 +113,7 @@ function readConfig() {
   } catch (err) {
     log('Error al leer config.json: ' + err.message);
   }
-  return { categories: [], affiliateLinks: {}, categoryFallbacks: {}, meliTokens: {} };
+  return { sites: {}, categories: [], affiliateLinks: {}, categoryFallbacks: {}, meliTokens: {} };
 }
 
 function saveConfig(config) {
@@ -133,6 +133,120 @@ function readFood() {
     log('Error al leer food.json: ' + err.message);
   }
   return [];
+}
+
+/**
+ * Detecta el siteId a partir del request.
+ * 1. Query param ?site=xxx (para desarrollo local)
+ * 2. Subdominio: tech.elpodiomp.com.ar → elpodiotech
+ * 3. Hostname exacto: elpodiomp.com.ar → elpodiomp
+ * 4. Fallback: elpodiomp
+ */
+function getSiteFromRequest(req) {
+  // Permitir override por query param (útil para pruebas locales)
+  if (req.query.site) {
+    const config = readConfig();
+    if (config.sites[req.query.site]) {
+      return req.query.site;
+    }
+  }
+
+  const hostname = (req.headers['x-forwarded-host'] || req.get('host') || '').toLowerCase();
+
+  // Mapeo de subdominios conocidos
+  const subdomainMap = {
+    'tech': 'elpodiotech',
+    'food': 'elpodiofood',
+    'hogar': 'elpodiohogar',
+  };
+
+  // Detectar subdominio
+  for (const [sub, siteId] of Object.entries(subdomainMap)) {
+    if (hostname.startsWith(sub + '.')) {
+      return siteId;
+    }
+  }
+
+  // Si el hostname contiene "elpodiomp" sin subdominio, es el principal
+  if (hostname.includes('elpodiomp')) {
+    return 'elpodiomp';
+  }
+
+  // Fallback
+  return DEFAULT_SITE;
+}
+
+/**
+ * Obtiene la configuración completa de un sitio, con fallback al default.
+ */
+function getSiteConfig(siteId) {
+  const config = readConfig();
+  if (config.sites && config.sites[siteId]) {
+    return config.sites[siteId];
+  }
+  // Fallback al sitio default
+  if (config.sites && config.sites[DEFAULT_SITE]) {
+    return config.sites[DEFAULT_SITE];
+  }
+  // Hard fallback (nunca debería llegar acá)
+  return {
+    name: 'El Podio MP',
+    domain: 'elpodiomp.com.ar',
+    description: 'Los mejores productos al mejor precio.',
+    logoText: 'Elpodiomp',
+    logoDomain: '.com.ar',
+    logoEmoji: '🏆',
+    theme: {
+      headerBg: '#FFE600',
+      heroBg: 'linear-gradient(135deg, #FFE600 0%, #ffcc00 100%)',
+      heroTextColor: '#1a1a1a',
+      heroSubColor: '#444',
+      buttonBg: '#3483FA',
+      buttonHover: '#2968c8',
+      badgeBg: '#FFE600',
+      badgeColor: '#1a1a1a',
+      accentColor: '#3483FA',
+      starsColor: '#FFE600',
+      foodColor: '#e67e22',
+      installmentsColor: '#00a650',
+      footerBg: '#1a1a1a',
+      footerText: '#ccc',
+      footerHeading: '#ffffff',
+    }
+  };
+}
+
+function getCachePath(siteId) {
+  return path.join(__dirname, `cache_${siteId}.html`);
+}
+
+/**
+ * Reemplaza todos los tokens {{TOKEN}} en el template con los valores del sitio.
+ */
+function renderTemplate(template, siteConfig) {
+  const t = siteConfig.theme;
+  return template
+    .replace(/\{\{SITE_TITLE\}\}/g, siteConfig.name)
+    .replace(/\{\{SITE_DESCRIPTION\}\}/g, siteConfig.description)
+    .replace(/\{\{SITE_DOMAIN\}\}/g, siteConfig.domain)
+    .replace(/\{\{LOGO_TEXT\}\}/g, siteConfig.logoText)
+    .replace(/\{\{LOGO_DOMAIN\}\}/g, siteConfig.logoDomain)
+    .replace(/\{\{LOGO_EMOJI\}\}/g, siteConfig.logoEmoji)
+    .replace(/\{\{HEADER_BG\}\}/g, t.headerBg)
+    .replace(/\{\{HERO_BG\}\}/g, t.heroBg)
+    .replace(/\{\{HERO_TEXT_COLOR\}\}/g, t.heroTextColor)
+    .replace(/\{\{HERO_SUB_COLOR\}\}/g, t.heroSubColor)
+    .replace(/\{\{BUTTON_BG\}\}/g, t.buttonBg)
+    .replace(/\{\{BUTTON_HOVER\}\}/g, t.buttonHover)
+    .replace(/\{\{BADGE_BG\}\}/g, t.badgeBg)
+    .replace(/\{\{BADGE_COLOR\}\}/g, t.badgeColor)
+    .replace(/\{\{ACCENT_COLOR\}\}/g, t.accentColor)
+    .replace(/\{\{STARS_COLOR\}\}/g, t.starsColor)
+    .replace(/\{\{FOOD_COLOR\}\}/g, t.foodColor)
+    .replace(/\{\{INSTALLMENTS_COLOR\}\}/g, t.installmentsColor)
+    .replace(/\{\{FOOTER_BG\}\}/g, t.footerBg)
+    .replace(/\{\{FOOTER_TEXT\}\}/g, t.footerText)
+    .replace(/\{\{FOOTER_HEADING\}\}/g, t.footerHeading);
 }
 
 function getDeterministicRating(itemId) {
@@ -176,7 +290,6 @@ async function scrapeTopProducts(query) {
     const $ = cheerio.load(response.data);
     const items = [];
 
-    // Probar varios selectores (Meli cambia el markup seguido)
     const cardSelectors = ['.ui-search-layout__item', '.poly-card', '.ui-search-result__wrapper', '.andes-card'];
     let cards = $();
     for (const sel of cardSelectors) {
@@ -186,43 +299,35 @@ async function scrapeTopProducts(query) {
 
     cards.slice(0, 3).each((i, el) => {
       const $el = $(el);
-
-      // Título
       let title = $el.find('h2').first().text().trim() ||
                   $el.find('.ui-search-item__title').text().trim() ||
                   $el.find('.poly-component__title').text().trim();
       if (!title) return;
 
-      // Link
       let link = $el.find('a').first().attr('href') || '';
       if (link && link.startsWith('/')) link = 'https://mercadolibre.com.ar' + link;
 
-      // Imagen
       let img = $el.find('img').first();
       let imageUrl = img.attr('data-src') || img.attr('src') || '';
 
-      // Precio
       let priceText = $el.find('.price-tag-fraction').first().text().trim() ||
                       $el.find('.andes-money-amount__fraction').first().text().trim();
       let price = parseInt(priceText.replace(/\D/g, '')) || 0;
 
-      // Precio anterior
       let oldPriceText = $el.find('.price-tag-line-through').text().trim() ||
                          $el.find('s .price-tag-fraction').first().text().trim();
       let oldPrice = parseInt(oldPriceText.replace(/\D/g, '')) || null;
 
-      // Cuotas
       let installmentsText = $el.find('.ui-search-installments').text().trim() ||
                              $el.find('.poly-price__installments').text().trim() || 'Ver en El Podio MP';
 
-      // ID falso para rating
       const fakeId = 'scrape_' + query + '_' + i;
       const ratingInfo = getDeterministicRating(fakeId);
 
       items.push({
         id: fakeId,
         title: title,
-        price: price || 50000, // precio mínimo si no se pudo extraer
+        price: price || 50000,
         oldPrice: oldPrice,
         imageUrl: imageUrl,
         badge: oldPrice ? Math.round(((oldPrice - price) / oldPrice) * 100) + '% OFF' : 'Destacado',
@@ -241,6 +346,7 @@ async function scrapeTopProducts(query) {
     return [];
   }
 }
+
 async function refreshAccessToken() {
   const config = readConfig();
   const refreshToken = config.meliTokens?.refresh_token;
@@ -283,7 +389,6 @@ async function refreshAccessToken() {
 }
 
 async function getValidAccessToken() {
-  // Prioridad 1: token OAuth guardado en config.json (tiene refresh automático)
   const config = readConfig();
   const tokens = config.meliTokens;
   if (tokens && tokens.access_token) {
@@ -293,7 +398,6 @@ async function getValidAccessToken() {
     }
     return tokens.access_token;
   }
-  // Prioridad 2: token estático del .env (se usa solo si no hay OAuth)
   if (process.env.MELI_ACCESS_TOKEN) {
     return process.env.MELI_ACCESS_TOKEN;
   }
@@ -370,10 +474,11 @@ async function fetchTopProducts(accessToken, query) {
 }
 
 // ─────────────────────────────────────
-// Generador de HTML principal
+// Generador de HTML principal (por sitio)
 // ─────────────────────────────────────
-async function generatePageHtml() {
-  log('[HTML] Generando página...');
+async function generatePageHtml(siteId) {
+  const siteConfig = getSiteConfig(siteId);
+  log(`[HTML] Generando página para ${siteId}...`);
   const config = readConfig();
   const foods = readFood();
   let template = '';
@@ -389,13 +494,22 @@ async function generatePageHtml() {
     return '<html><body><h1>Error del servidor</h1><p>No se pudo cargar la plantilla.</p></body></html>';
   }
 
+  // Aplicar tokens del sitio al template base
+  template = renderTemplate(template, siteConfig);
+
+  // Filtrar categorías que pertenecen a este sitio
+  const siteCategories = config.categories.filter(cat =>
+    cat.sites && cat.sites.includes(siteId)
+  );
+
   const accessToken = await getValidAccessToken();
   let categoriesHtml = '';
 
   if (!accessToken) {
-    log('[HTML] Sin token de Mercado Libre. Usando caché o mostrando aviso.');
-    if (fs.existsSync(CACHE_HTML_PATH)) {
-      return fs.readFileSync(CACHE_HTML_PATH, 'utf8');
+    log(`[HTML] ${siteId}: Sin token de Mercado Libre. Usando caché o mostrando aviso.`);
+    const cachePath = getCachePath(siteId);
+    if (fs.existsSync(cachePath)) {
+      return fs.readFileSync(cachePath, 'utf8');
     }
     categoriesHtml = `
       <div style="text-align:center;padding:48px;background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin:48px 0;">
@@ -405,13 +519,13 @@ async function generatePageHtml() {
     return template.replace('<!-- CATEGORIES_AND_PRODUCTS -->', categoriesHtml);
   }
 
-  for (let i = 0; i < config.categories.length; i++) {
-    const cat = config.categories[i];
-    log(`[HTML] Categoría (${i + 1}/${config.categories.length}): ${cat.name}`);
+  for (let i = 0; i < siteCategories.length; i++) {
+    const cat = siteCategories[i];
+    log(`[HTML] ${siteId} - Categoría (${i + 1}/${siteCategories.length}): ${cat.name}`);
 
     let products = await fetchTopProducts(accessToken, cat.query);
     if (products.length === 0) {
-      log(`[HTML] API sin resultados para "${cat.query}", probando scraper...`);
+      log(`[HTML] ${siteId}: API sin resultados para "${cat.query}", probando scraper...`);
       products = await scrapeTopProducts(cat.query);
     }
     await new Promise(r => setTimeout(r, 100));
@@ -482,7 +596,7 @@ async function generatePageHtml() {
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">${cat.icon}</div>
             <h3 style="margin-bottom:8px;">${cat.name}</h3>
-            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en El Podio MP</p>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en ${siteConfig.name}</p>
             <button class="btn">Ver productos</button>
           </div>
         </div>
@@ -516,11 +630,12 @@ async function generatePageHtml() {
       <div class="divider"></div>`;
   }
 
-  // Sección de comidas
-  if (foods.length > 0) {
-    log('[HTML] Agregando sección Comidas y Delivery...');
+  // Sección de comidas (solo para sitios que corresponda)
+  const siteFoods = foods.filter(f => f.sites && f.sites.includes(siteId));
+  if (siteFoods.length > 0) {
+    log(`[HTML] ${siteId}: Agregando sección Comidas y Delivery...`);
     let foodCardsHtml = '';
-    foods.forEach(f => {
+    siteFoods.forEach(f => {
       const fullStars = Math.round(f.rating);
       let starsHtml = '';
       for (let i = 0; i < 5; i++) {
@@ -531,17 +646,17 @@ async function generatePageHtml() {
       <div class="card" onclick="window.location.href='${f.link}'">
         <img class="card-image" src="${f.imageUrl}" alt="${f.product}" loading="lazy">
         <div class="card-body">
-          <span class="card-badge" style="background:#e67e22;color:white;">${f.restaurant}</span>
+          <span class="card-badge" style="background:var(--food-color);color:white;">${f.restaurant}</span>
           <h3>${f.product}</h3>
           <div class="rating">
-            <span class="stars" style="color:#e67e22;">${starsHtml}</span>
+            <span class="stars" style="color:var(--food-color);">${starsHtml}</span>
             <span class="reviews">(${f.reviews})</span>
           </div>
           <p class="description">${f.description}</p>
           ${oldPriceHtml}
           <p class="price"><span class="price-sup">$</span>${formatPrice(f.price)}</p>
-          <p class="installments" style="color:#e67e22;font-weight:bold;">${f.installments}</p>
-          <button class="btn" style="background:#e67e22;" onclick="event.stopPropagation(); window.location.href='${f.link}'">Pedir ahora</button>
+          <p class="installments" style="color:var(--food-color);font-weight:bold;">${f.installments}</p>
+          <button class="btn" style="background:var(--food-color);" onclick="event.stopPropagation(); window.location.href='${f.link}'">Pedir ahora</button>
         </div>
       </div>`;
     });
@@ -549,7 +664,7 @@ async function generatePageHtml() {
     <section class="section">
       <div class="section-header">
         <h2><span class="icon">🍔</span> Recomendados de Comida y Delivery</h2>
-        <a href="https://pedidosya.com.ar" target="_blank" class="view-all" style="color:#e67e22;">Ver locales &rarr;</a>
+        <a href="https://pedidosya.com.ar" target="_blank" class="view-all" style="color:var(--food-color);">Ver locales &rarr;</a>
       </div>
       <div class="grid">${foodCardsHtml}</div>
     </section>`;
@@ -557,26 +672,34 @@ async function generatePageHtml() {
 
   const finalHtml = template.replace('<!-- CATEGORIES_AND_PRODUCTS -->', categoriesHtml);
 
+  // Guardar caché por sitio
   try {
-    fs.writeFileSync(CACHE_HTML_PATH, finalHtml, 'utf8');
+    const cachePath = getCachePath(siteId);
+    fs.writeFileSync(cachePath, finalHtml, 'utf8');
   } catch (_) {}
 
   return finalHtml;
 }
 
 // ─────────────────────────────────────
-// Sitemap dinámico
+// Sitemap dinámico (por sitio)
 // ─────────────────────────────────────
-function generateSitemap() {
+function generateSitemap(siteId) {
   const config = readConfig();
+  const siteConfig = getSiteConfig(siteId);
+  const baseUrl = `https://${siteConfig.domain}`;
+  const siteCategories = config.categories.filter(cat =>
+    cat.sites && cat.sites.includes(siteId)
+  );
+
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-  xml += `  <url><loc>${BASE_URL}/</loc><changefreq>hourly</changefreq><priority>1.0</priority></url>\n`;
-  xml += `  <url><loc>${BASE_URL}/privacidad</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>\n`;
-  xml += `  <url><loc>${BASE_URL}/terminos</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>\n`;
+  xml += `  <url><loc>${baseUrl}/</loc><changefreq>hourly</changefreq><priority>1.0</priority></url>\n`;
+  xml += `  <url><loc>${baseUrl}/privacidad</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>\n`;
+  xml += `  <url><loc>${baseUrl}/terminos</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>\n`;
   xml += '  <!-- Categorías -->\n';
-  config.categories.forEach(cat => {
-    xml += `  <url><loc>${BASE_URL}/buscar/${encodeURIComponent(cat.query)}</loc><changefreq>daily</changefreq><priority>0.8</priority></url>\n`;
+  siteCategories.forEach(cat => {
+    xml += `  <url><loc>${baseUrl}/buscar/${encodeURIComponent(cat.query)}</loc><changefreq>daily</changefreq><priority>0.8</priority></url>\n`;
   });
   xml += '</urlset>';
   return xml;
@@ -588,41 +711,47 @@ function generateSitemap() {
 
 // Robots.txt
 app.get('/robots.txt', (req, res) => {
+  const siteId = getSiteFromRequest(req);
+  const siteConfig = getSiteConfig(siteId);
+  const baseUrl = `https://${siteConfig.domain}`;
   res.type('text/plain');
   res.send(`User-agent: *
 Allow: /
 Disallow: /admin
-Sitemap: ${BASE_URL}/sitemap.xml
+Sitemap: ${baseUrl}/sitemap.xml
 `);
 });
 
 // Sitemap
 app.get('/sitemap.xml', (req, res) => {
+  const siteId = getSiteFromRequest(req);
   res.type('application/xml');
-  res.send(generateSitemap());
+  res.send(generateSitemap(siteId));
 });
 
 // Página de privacidad
 app.get('/privacidad', (req, res) => {
+  const siteId = getSiteFromRequest(req);
+  const siteConfig = getSiteConfig(siteId);
   res.send(`<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacidad — ${DOMAIN}</title>
+  <title>Política de Privacidad — ${siteConfig.domain}</title>
   <style>
     body { font-family: 'Inter', sans-serif; max-width: 800px; margin: 48px auto; padding: 0 24px; color: #333; line-height: 1.7; }
-    h1 { color: #1a1a1a; border-bottom: 3px solid #FFE600; padding-bottom: 12px; }
-    a { color: #3483FA; }
+    h1 { color: #1a1a1a; border-bottom: 3px solid ${siteConfig.theme.headerBg}; padding-bottom: 12px; }
+    a { color: ${siteConfig.theme.accentColor}; }
   </style>
 </head>
 <body>
   <h1>Política de Privacidad</h1>
   <p><strong>Última actualización:</strong> Junio 2026</p>
-  <p>En <strong>${DOMAIN}</strong> no recopilamos datos personales directamente. Actuamos como sitio afiliado de Mercado Libre: cuando hacés clic en un producto, sos redirigido a Mercado Libre, donde aplican sus propias políticas de privacidad.</p>
+  <p>En <strong>${siteConfig.domain}</strong> no recopilamos datos personales directamente. Actuamos como sitio afiliado de Mercado Libre: cuando hacés clic en un producto, sos redirigido a Mercado Libre, donde aplican sus propias políticas de privacidad.</p>
   <p>Podemos utilizar Google Analytics para medir visitas de forma anónima. No compartimos información con terceros.</p>
   <p><strong>Cookies:</strong> No usamos cookies propias. Mercado Libre puede establecer cookies al seguir un enlace de afiliado.</p>
-  <p>Consultas: <a href="mailto:info@${DOMAIN}">info@${DOMAIN}</a></p>
+  <p>Consultas: <a href="mailto:info@${siteConfig.domain}">info@${siteConfig.domain}</a></p>
   <p><a href="/">&larr; Volver al inicio</a></p>
 </body>
 </html>`);
@@ -630,25 +759,27 @@ app.get('/privacidad', (req, res) => {
 
 // Página de términos
 app.get('/terminos', (req, res) => {
+  const siteId = getSiteFromRequest(req);
+  const siteConfig = getSiteConfig(siteId);
   res.send(`<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Términos y Condiciones — ${DOMAIN}</title>
+  <title>Términos y Condiciones — ${siteConfig.domain}</title>
   <style>
     body { font-family: 'Inter', sans-serif; max-width: 800px; margin: 48px auto; padding: 0 24px; color: #333; line-height: 1.7; }
-    h1 { color: #1a1a1a; border-bottom: 3px solid #FFE600; padding-bottom: 12px; }
-    a { color: #3483FA; }
+    h1 { color: #1a1a1a; border-bottom: 3px solid ${siteConfig.theme.headerBg}; padding-bottom: 12px; }
+    a { color: ${siteConfig.theme.accentColor}; }
   </style>
 </head>
 <body>
   <h1>Términos y Condiciones</h1>
   <p><strong>Última actualización:</strong> Junio 2026</p>
-  <p><strong>${DOMAIN}</strong> es un sitio afiliado de Mercado Libre. No vendemos productos directamente: mostramos productos de Mercado Libre y recibimos una comisión por compras realizadas a través de nuestros enlaces, sin costo adicional para vos.</p>
+  <p><strong>${siteConfig.domain}</strong> es un sitio afiliado de Mercado Libre. No vendemos productos directamente: mostramos productos de Mercado Libre y recibimos una comisión por compras realizadas a través de nuestros enlaces, sin costo adicional para vos.</p>
   <p>Todas las compras se realizan en la plataforma de Mercado Libre y están sujetas a sus términos y condiciones. No gestionamos envíos, devoluciones ni garantías.</p>
   <p>Los precios mostrados son aproximados y pueden variar al ingresar a Mercado Libre.</p>
-  <p>Consultas: <a href="mailto:info@${DOMAIN}">info@${DOMAIN}</a></p>
+  <p>Consultas: <a href="mailto:info@${siteConfig.domain}">info@${siteConfig.domain}</a></p>
   <p><a href="/">&larr; Volver al inicio</a></p>
 </body>
 </html>`);
@@ -657,6 +788,8 @@ app.get('/terminos', (req, res) => {
 // Búsqueda funcional
 app.get('/buscar/:query', async (req, res) => {
   const query = req.params.query;
+  const siteId = getSiteFromRequest(req);
+  const siteConfig = getSiteConfig(siteId);
   const accessToken = await getValidAccessToken();
 
   if (!accessToken) {
@@ -697,8 +830,8 @@ app.get('/buscar/:query', async (req, res) => {
       });
     }
 
-    // Usar la plantilla HTML pero reemplazando contenido
     let template = fs.readFileSync(TEMPLATE_PATH, 'utf8');
+    template = renderTemplate(template, siteConfig);
     const resultHtml = template.replace('<!-- CATEGORIES_AND_PRODUCTS -->', `
       <section class="section">
         <div class="section-header">
@@ -749,44 +882,50 @@ app.get('/api/buscar', async (req, res) => {
   }
 });
 
-// Ruta principal — siempre sirve caché al instante, regenera en background
+// Ruta principal — sirve caché por sitio, regenera en background
 app.get('/', async (req, res) => {
-  // Siempre servir cache.html del disco si existe (tiene productos reales con imágenes)
-  if (fs.existsSync(CACHE_HTML_PATH)) {
+  const siteId = getSiteFromRequest(req);
+  const siteConfig = getSiteConfig(siteId);
+  const cachePath = getCachePath(siteId);
+
+  // Siempre servir cache_${siteId}.html del disco si existe
+  if (fs.existsSync(cachePath)) {
     try {
-      const html = fs.readFileSync(CACHE_HTML_PATH, 'utf8');
+      const html = fs.readFileSync(cachePath, 'utf8');
       res.send(html);
 
       // Regenerar en background SOLO si pasaron 6h (no bloquea la respuesta)
-      if (Date.now() - lastFetchTime > CACHE_DURATION) {
-        lastFetchTime = Date.now();
-        generatePageHtml().then(newHtml => {
-          cachedHtml = newHtml;
-          log('[Cache] Regenerada en background.');
-        }).catch(err => log('[Cache] Error en regeneración: ' + err.message));
+      const lastFetch = lastFetchBySite[siteId] || 0;
+      if (Date.now() - lastFetch > CACHE_DURATION) {
+        lastFetchBySite[siteId] = Date.now();
+        generatePageHtml(siteId).then(newHtml => {
+          cacheBySite[siteId] = newHtml;
+          log(`[Cache] ${siteId}: Regenerada en background.`);
+        }).catch(err => log(`[Cache] ${siteId}: Error en regeneración: ` + err.message));
       }
       return;
     } catch (_) {}
   }
 
-  // Si no hay cache.html en disco, usar la versión en memoria
-  if (cachedHtml) {
-    res.send(cachedHtml);
+  // Si no hay archivo en disco, usar la versión en memoria
+  if (cacheBySite[siteId]) {
+    res.send(cacheBySite[siteId]);
     return;
   }
 
   // Último recurso: regenerar dinámicamente
   try {
-    cachedHtml = await generatePageHtml();
-    lastFetchTime = Date.now();
-    res.send(cachedHtml);
+    const html = await generatePageHtml(siteId);
+    cacheBySite[siteId] = html;
+    lastFetchBySite[siteId] = Date.now();
+    res.send(html);
   } catch (err) {
-    log('Error generando HTML: ' + err.message);
+    log(`Error generando HTML para ${siteId}: ` + err.message);
     res.status(503).send(`<!DOCTYPE html>
 <html lang="es">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>En mantenimiento — ${DOMAIN}</title>
-<style>body{font-family:'Inter',sans-serif;text-align:center;padding:80px 24px;color:#333;background:#f5f5f5;}h1{font-size:48px;color:#FFE600;text-shadow:2px 2px 0 #1a1a1a;}</style>
+<title>En mantenimiento — ${siteConfig.domain}</title>
+<style>body{font-family:'Inter',sans-serif;text-align:center;padding:80px 24px;color:#333;background:#f5f5f5;}h1{font-size:48px;color:${siteConfig.theme.headerBg};text-shadow:2px 2px 0 #1a1a1a;}</style>
 </head><body><h1>Volvemos pronto</h1><p>Estamos actualizando los productos. Recargá en unos segundos.</p></body></html>`);
   }
 });
@@ -795,6 +934,8 @@ app.get('/', async (req, res) => {
 // Panel admin (protegido con rate limit)
 // ─────────────────────────────────────
 app.get('/admin', adminLimiter, (req, res) => {
+  const siteId = getSiteFromRequest(req);
+  const siteConfig = getSiteConfig(siteId);
   const config = readConfig();
   const host = req.headers['x-forwarded-host'] || req.get('host');
   const redirectUri = `https://${host}/admin/callback`;
@@ -816,7 +957,7 @@ app.get('/admin', adminLimiter, (req, res) => {
     authSectionHtml = `<div style="background:#fff3e0;border-left:4px solid #ff9800;padding:16px;border-radius:4px;margin-bottom:24px;">
       <h3 style="color:#e65100;margin-top:0;">Acceso Requerido</h3>
       <p style="margin:4px 0 16px 0;font-size:14px;">Vinculá tu cuenta de Mercado Libre para activar los productos.</p>
-      <a href="${authUrl}" style="background:#3483fa;color:white;padding:10px 20px;border-radius:4px;text-decoration:none;font-weight:bold;display:inline-block;">Conectar con Mercado Libre</a>
+      <a href="${authUrl}" style="background:${siteConfig.theme.buttonBg};color:white;padding:10px 20px;border-radius:4px;text-decoration:none;font-weight:bold;display:inline-block;">Conectar con Mercado Libre</a>
     </div>`;
   }
 
@@ -834,11 +975,11 @@ app.get('/admin', adminLimiter, (req, res) => {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Panel Admin — ${DOMAIN}</title>
+  <title>Panel Admin — ${siteConfig.domain}</title>
   <style>
     body { font-family: sans-serif; background: #f5f5f5; color: #333; margin: 0; padding: 24px; }
     .container { max-width: 800px; margin: 0 auto; background: white; padding: 32px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    h1 { border-bottom: 2px solid #FFE600; padding-bottom: 12px; margin-top: 0; }
+    h1 { border-bottom: 2px solid ${siteConfig.theme.headerBg}; padding-bottom: 12px; margin-top: 0; }
     .btn-submit { background: #00a650; color: white; border: none; padding: 12px 24px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 16px; }
     .btn-submit:hover { background: #008f45; }
     .btn-clear { background: #ff4444; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin-left: 12px; }
@@ -846,7 +987,7 @@ app.get('/admin', adminLimiter, (req, res) => {
 </head>
 <body>
   <div class="container">
-    <h1>Panel de Administración — ${DOMAIN}</h1>
+    <h1>Panel de Administración — ${siteConfig.domain}</h1>
     ${authSectionHtml}
     <form action="/admin/save" method="POST">
       <h2>Enlaces de Afiliado por Categoría</h2>
@@ -870,9 +1011,10 @@ app.post('/admin/save', adminLimiter, (req, res) => {
     }
   });
   saveConfig(config);
-  cachedHtml = '';
-  lastFetchTime = 0;
-  res.send('<script>alert("Enlaces guardados. La caché se limpió."); window.location.href="/admin";</script>');
+  // Limpiar todas las cachés
+  cacheBySite = {};
+  lastFetchBySite = {};
+  res.send('<script>alert("Enlaces guardados. Todas las cachés se limpiaron."); window.location.href="/admin";</script>');
 });
 
 app.get('/admin/callback', async (req, res) => {
@@ -898,8 +1040,8 @@ app.get('/admin/callback', async (req, res) => {
       expires_at: Date.now() + (tokens.expires_in * 1000)
     };
     saveConfig(config);
-    cachedHtml = '';
-    lastFetchTime = 0;
+    cacheBySite = {};
+    lastFetchBySite = {};
     log('[Meli] Cuenta vinculada con éxito.');
     res.send('<script>alert("¡Cuenta vinculada exitosamente!"); window.location.href="/admin";</script>');
   } catch (err) {
@@ -909,26 +1051,28 @@ app.get('/admin/callback', async (req, res) => {
 });
 
 app.get('/admin/clear-cache', (req, res) => {
-  cachedHtml = '';
-  lastFetchTime = 0;
-  res.send('<script>alert("Caché limpiada."); window.location.href="/admin";</script>');
+  cacheBySite = {};
+  lastFetchBySite = {};
+  res.send('<script>alert("Todas las cachés fueron limpiadas."); window.location.href="/admin";</script>');
 });
 
 // ─────────────────────────────────────
 // 404 — siempre al final
 // ─────────────────────────────────────
 app.use((req, res) => {
+  const siteId = getSiteFromRequest(req);
+  const siteConfig = getSiteConfig(siteId);
   res.status(404).send(`<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página no encontrada — ${DOMAIN}</title>
+  <title>Página no encontrada — ${siteConfig.domain}</title>
   <style>
     body { font-family: 'Inter', sans-serif; text-align: center; padding: 80px 24px; color: #333; background: #f5f5f5; }
-    h1 { font-size: 72px; color: #FFE600; margin: 0; text-shadow: 2px 2px 0 #1a1a1a; }
+    h1 { font-size: 72px; color: ${siteConfig.theme.headerBg}; margin: 0; text-shadow: 2px 2px 0 #1a1a1a; }
     p { margin: 16px 0; font-size: 18px; }
-    a { color: #3483FA; text-decoration: none; font-weight: 600; }
+    a { color: ${siteConfig.theme.accentColor}; text-decoration: none; font-weight: 600; }
     a:hover { text-decoration: underline; }
   </style>
 </head>
@@ -941,28 +1085,43 @@ app.use((req, res) => {
 });
 
 // ─────────────────────────────────────
-// Variables de caché
+// Variables de caché por sitio
 // ─────────────────────────────────────
-let cachedHtml = '';
-let lastFetchTime = 0;
+let cacheBySite = {};
+let lastFetchBySite = {};
 const CACHE_DURATION = 6 * 60 * 60 * 1000; // 6 horas
 
-// Al iniciar, cargar caché del disco
-if (fs.existsSync(CACHE_HTML_PATH)) {
-  try {
-    cachedHtml = fs.readFileSync(CACHE_HTML_PATH, 'utf8');
-    lastFetchTime = fs.statSync(CACHE_HTML_PATH).mtimeMs;
-    log(`[Cache] Cargada del disco (${cachedHtml.length} bytes).`);
-  } catch (_) {}
-}
+// Al iniciar, cargar todas las cachés existentes del disco
+(function loadAllCaches() {
+  const config = readConfig();
+  const siteIds = config.sites ? Object.keys(config.sites) : [DEFAULT_SITE];
+  siteIds.forEach(siteId => {
+    const cachePath = getCachePath(siteId);
+    if (fs.existsSync(cachePath)) {
+      try {
+        cacheBySite[siteId] = fs.readFileSync(cachePath, 'utf8');
+        lastFetchBySite[siteId] = fs.statSync(cachePath).mtimeMs;
+        log(`[Cache] ${siteId}: Cargada del disco (${cacheBySite[siteId].length} bytes).`);
+      } catch (_) {}
+    }
+  });
+  if (Object.keys(cacheBySite).length === 0) {
+    log('[Cache] No se encontraron cachés preexistentes.');
+  }
+})();
 
 // ─────────────────────────────────────
 // Iniciar servidor
 // ─────────────────────────────────────
 app.listen(PORT, () => {
+  const config = readConfig();
+  const siteIds = config.sites ? Object.keys(config.sites) : [DEFAULT_SITE];
   log('═'.repeat(50));
-  log(`🚀 ${DOMAIN} listo en puerto ${PORT}`);
-  log(`   Web: ${BASE_URL}`);
-  log(`   Admin: ${BASE_URL}/admin`);
+  log(`🚀 Servidor multi-sitio listo en puerto ${PORT}`);
+  siteIds.forEach(siteId => {
+    const siteConfig = getSiteConfig(siteId);
+    log(`   ${siteId}: https://${siteConfig.domain}`);
+  });
+  log(`   Admin: http://localhost:${PORT}/admin`);
   log('═'.repeat(50));
 });

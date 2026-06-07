@@ -1,4 +1,207 @@
 {
+  "celulares": [
+    {
+      "title": "Motorola Moto G15 4 + 128 Gb Gris",
+      "price": 299999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_948903-MLA99936142999_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99936142999-motorola-moto-g15-4-128-gb-gris-_JM"
+    },
+    {
+      "title": "Motorola Moto G15 256gb Sunrise Orange",
+      "price": 349999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_677627-MLA99509381758_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99509381758-motorola-moto-g15-256gb-sunrise-orange-_JM"
+    },
+    {
+      "title": "Moto G56 256gb + 8gb Ram Azul marino Motorola",
+      "price": 599999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_676225-MLA99503683810_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99503683810-moto-g56-256gb-8gb-ram-azul-marino-motorola-_JM"
+    }
+  ],
+  "notebooks": [
+    {
+      "title": "Hp Rosa Intel N150 128gb Ufs 4gb Ram Pantalla 14 Hd Intel Uhd Graphics Incluye Windows Instalado Laptop Pink Dq6015 Con Regalo",
+      "price": 1071303,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_789405-MLA109848169626_042026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-109848169626-hp-rosa-intel-n150-128gb-ufs-4gb-ram-pantalla-14-hd-intel-uhd-graphics-incluye-w-_JM"
+    },
+    {
+      "title": "Notebook HP 15-fd0331la Intel Core 3 8GB RAM 512GB SSD 15,6\" FHD Windows 11 Home",
+      "price": 1899999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_899224-MLA108576942549_032026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-108576942549-notebook-hp-15-fd0331la-intel-core-3-8gb-ram-512gb-ssd-15-6-fhd-windows-11-home-_JM"
+    },
+    {
+      "title": "Notebook Gfast N-537R con AMD Ryzen 5, 16GB RAM y 240GB SSD de 15.6\"",
+      "price": 1374495,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_737204-MLA111081884103_042026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-111081884103-notebook-gfast-n-537r-con-amd-ryzen-5-16gb-ram-y-240gb-ssd-de-15-6-_JM"
+    }
+  ],
+  "consolas": [
+    {
+      "title": "Cargador Dual Dobe PS4 Slim Pro Base de Carga para Joysticks",
+      "price": 37999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_944041-MLA99483219320_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99483219320-cargador-dual-dobe-ps4-slim-pro-base-de-carga-para-joysticks-_JM"
+    },
+    {
+      "title": "Volante Gaming Dynacom Negro PS4 PS3 Xbox Switch PC USB DY-001128",
+      "price": 180799,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_740291-MLU71621697949_092023-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-1791754120-volante-gaming-dynacom-negro-ps4-ps3-xbox-switch-pc-usb-dy-001128-_JM"
+    },
+    {
+      "title": "Cargador Base Vertical Controles Joystick P.S.4 + Cable Usb",
+      "price": 14999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_875099-MLA99612234350_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99612234350-cargador-base-vertical-controles-joystick-p-s-4-cable-usb-_JM"
+    }
+  ],
+  "tablets": [
+    {
+      "title": "Samsung Galaxy Tab A11 Color Gris Capacidad 64 GB Ram 4GB",
+      "price": 324999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_968337-MLA100567674726_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-100567674726-samsung-galaxy-tab-a11-color-gris-capacidad-64-gb-ram-4gb-_JM"
+    },
+    {
+      "title": "Tablet Xiaomi Redmi Pad 2 11 8gb Ram 256gb Memoria Pantalla 2k 90hz Hyperos 2 Color Gris Oscuro",
+      "price": 649999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_970651-MLA99454443408_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99454443408-tablet-xiaomi-redmi-pad-2-11-8gb-ram-256gb-memoria-pantalla-2k-90hz-hyperos-2-co-_JM"
+    },
+    {
+      "title": "Tablet Lenovo Tab 10.1\" 4gb+128gb Zaeh0074ar Tb311fu Color Gris + Folio case",
+      "price": 558595,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_652938-MLA112257726207_052026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-112257726207-tablet-lenovo-tab-10-1-4gb-128gb-zaeh0074ar-tb311fu-color-gris-folio-case-_JM"
+    }
+  ],
+  "licuadoras": [
+    {
+      "title": "Licuadora Moulinex Powermix Negra 8 Velocidades 2 Litros Negro",
+      "price": 78399,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_885454-MLA100016698107_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-100016698107-licuadora-moulinex-powermix-negra-8-velocidades-2-litros-negro-_JM"
+    },
+    {
+      "title": "Licuadora De Vaso Proline 1.5 Litros 450 Watts",
+      "price": 72599,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_896020-MLA99367790242_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99367790242-licuadora-de-vaso-proline-1-5-litros-450-watts-_JM"
+    },
+    {
+      "title": "Licuadora Comercial Cecotec 1500w Vidrio Cuchillas Titanio Negro",
+      "price": 139999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_865057-MLA104118498981_012026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-104118498981-licuadora-comercial-cecotec-1500w-vidrio-cuchillas-titanio-negro-_JM"
+    }
+  ],
+  "sillas_gamer": [
+    {
+      "title": "Silla Gamer Patagonia Home GC-030 Ergonomica Reclinable Negro/Azul",
+      "price": 299999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_901693-MLA83074133584_032025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-83074133584-silla-gamer-patagonia-home-gc-030-ergonomica-reclinable-negro-azul-_JM"
+    },
+    {
+      "title": "Silla Gamer Ergonómica The Game House TGH-395 con Respaldo Reclinable y Altura Ajustable, Gris",
+      "price": 303478,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_974941-MLA111569807428_062026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-111569807428-silla-gamer-ergon-mica-the-game-house-tgh-395-con-respaldo-reclinable-y-altura-a-_JM"
+    },
+    {
+      "title": "Silla Gamer Mtl Ergonomica Color Negro Con Luces Masajeadora Material del tapizado Cuero sintético",
+      "price": 314271,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_648968-MLA99524522462_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99524522462-silla-gamer-mtl-ergonomica-color-negro-con-luces-masajeadora-material-del-tapiza-_JM"
+    }
+  ],
+  "bicicletas": [
+    {
+      "title": "Bicicleta De Paseo Vintage Playera  Rodado 29 Musetta",
+      "price": 349999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_778606-MLA97013520618_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-97013520618-bicicleta-de-paseo-vintage-playera-rodado-29-musetta-_JM"
+    },
+    {
+      "title": "Bicicleta paseo plegable Fire Bird Urbana Curve Plegable R20 color negro/rojo",
+      "price": 550000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_928702-MLA99994308249_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99994308249-bicicleta-paseo-plegable-fire-bird-urbana-curve-plegable-r20-color-negro-rojo-_JM"
+    },
+    {
+      "title": "Bicicleta urbana plegable Tern Link A7 R20 7 velocidades gris aluminio",
+      "price": 1276762,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_733436-MLA99484766398_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99484766398-bicicleta-urbana-plegable-tern-link-a7-r20-7-velocidades-gris-aluminio-_JM"
+    }
+  ],
   "zapatillas": [
     {
       "title": "Zapatillas Newstep 780 Hombre Estándar Deporte 34-45",
@@ -55,35 +258,6 @@
       "badge": "Destacado",
       "description": "Producto disponible online.",
       "link": "https://articulo.mercadolibre.com.ar/MLA-85706408643-mochila-wison-porta-notebook-cierre-candado-antirrobo-cerradura-ejecutiva-apta-p-_JM"
-    }
-  ],
-  "celulares": [
-    {
-      "title": "Motorola Moto G15 4 + 128 Gb Naranja",
-      "price": 299999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_776491-MLA99974410931_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99974410931-motorola-moto-g15-4-128-gb-naranja-_JM"
-    },
-    {
-      "title": "Celular Tcl 605 (8+256) Black Rv con NFC",
-      "price": 316790,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_707690-MLA108034617826_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-108034617826-celular-tcl-605-8-256-black-rv-con-nfc-_JM"
-    },
-    {
-      "title": "Celular Tcl 50 Pro Nxtpaper 5g Android Color Space Gray",
-      "price": 549999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_887042-MLA99963017661_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99963017661-celular-tcl-50-pro-nxtpaper-5g-android-color-space-gray-_JM"
     }
   ],
   "smartwatches": [
@@ -144,93 +318,6 @@
       "link": "https://articulo.mercadolibre.com.ar/MLA-101176076629-auriculares-inalambricos-in-ear-carrello-t11-bluetooth-cancelacion-ruido-negro-_JM"
     }
   ],
-  "notebooks": [
-    {
-      "title": "Notebook Philco N14P4020 14.1 Pulgadas Intel Celeron 4gb 128gb Ssd Windows 11",
-      "price": 455699,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_910728-MLA99986778023_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99986778023-notebook-philco-n14p4020-14-1-pulgadas-intel-celeron-4gb-128gb-ssd-windows-11-_JM"
-    },
-    {
-      "title": "Notebook HP 15-fc0287la AMD Ryzen 7 8GB RAM 512GB SSD 15,6\" FHD Windows 11",
-      "price": 2279999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_825957-MLA107343343293_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-107343343293-notebook-hp-15-fc0287la-amd-ryzen-7-8gb-ram-512gb-ssd-15-6-fhd-windows-11-_JM"
-    },
-    {
-      "title": "Notebook Hp 15-fc0235la AMD Ryzen 3 7320u 8gb RAM 512gb SSD Windows 11 Home",
-      "price": 1244439,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_901750-MLA99573117992_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99573117992-notebook-hp-15-fc0235la-amd-ryzen-3-7320u-8gb-ram-512gb-ssd-windows-11-home-_JM"
-    }
-  ],
-  "consolas": [
-    {
-      "title": "Cargador Dual Dobe PS4 Slim Pro Base de Carga para Joysticks",
-      "price": 37999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_944041-MLA99483219320_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99483219320-cargador-dual-dobe-ps4-slim-pro-base-de-carga-para-joysticks-_JM"
-    },
-    {
-      "title": "Volante Gaming Dynacom Negro PS4 PS3 Xbox Switch PC USB DY-001128",
-      "price": 199999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_740291-MLU71621697949_092023-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://click1.mercadolibre.com.ar/mclics/clicks/external/MLA/count"
-    },
-    {
-      "title": "Base De Apoyo + Carga + Cooler + 3 Usb + Rgb Para Sony Ps5 Blanco",
-      "price": 99999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_998055-MLA95836365587_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-95836365587-base-de-apoyo-carga-cooler-3-usb-rgb-para-sony-ps5-blanco-_JM"
-    }
-  ],
-  "tablets": [
-    {
-      "title": "Samsung Galaxy Tab A11 Color Gris Capacidad 64 GB Ram 4GB",
-      "price": 324999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_968337-MLA100567674726_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-100567674726-samsung-galaxy-tab-a11-color-gris-capacidad-64-gb-ram-4gb-_JM"
-    },
-    {
-      "title": "Tablet Chuwi Hi10 Xpro 4gb 128gb 10,1 Android 12 Gris Cámara posterior 13mpx tarjeta SIM",
-      "price": 387502,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_715330-MLA79764656535_102024-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-79764656535-tablet-chuwi-hi10-xpro-4gb-128gb-10-1-android-12-gris-camara-posterior-13mpx-tar-_JM"
-    },
-    {
-      "title": "Tablet Para Niños + Funda 32gb 2gb Wifi Bluetooth Full Hd Blanco",
-      "price": 166999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_652437-MLA107760046853_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-107760046853-tablet-para-ninos-funda-32gb-2gb-wifi-bluetooth-full-hd-blanco-_JM"
-    }
-  ],
   "smart_tvs": [
     {
       "title": "Smart Tv 91MT4310 Hd Android 43 Pulgadas Motorola",
@@ -287,35 +374,6 @@
       "badge": "Destacado",
       "description": "Producto disponible online.",
       "link": "https://articulo.mercadolibre.com.ar/MLA-109749412131-cafetera-de-filtro-electrica-suono-12-tazas-1200ml-antigoteo-color-negro-_JM"
-    }
-  ],
-  "licuadoras": [
-    {
-      "title": "Licuadora De Vaso Proline 1.5 Litros 450 Watts",
-      "price": 72599,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_896020-MLA99367790242_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99367790242-licuadora-de-vaso-proline-1-5-litros-450-watts-_JM"
-    },
-    {
-      "title": "Licuadora Comercial Cecotec 1500w Vidrio Cuchillas Titanio Negro",
-      "price": 139999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_865057-MLA104118498981_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-104118498981-licuadora-comercial-cecotec-1500w-vidrio-cuchillas-titanio-negro-_JM"
-    },
-    {
-      "title": "Licuadora Profesional 2 Lts Novohome Apto Uso Comercial Pica Hielo Jugo Fruta Color Rojo",
-      "price": 160090,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_889440-MLA105795559266_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-105795559266-licuadora-profesional-2-lts-novohome-apto-uso-comercial-pica-hielo-jugo-fruta-co-_JM"
     }
   ],
   "termos": [
@@ -434,35 +492,6 @@
       "link": "https://articulo.mercadolibre.com.ar/MLA-110119698375-juego-de-living-jardin-exterior-sillon-2-sillas-mesa-_JM"
     }
   ],
-  "sillas_gamer": [
-    {
-      "title": "Silla Gamer Ergonomica Patagonia Home Negro Rojo Respaldo Reclinable GC-030",
-      "price": 299999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_960217-MLA82079483251_012025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-82079483251-silla-gamer-ergonomica-patagonia-home-negro-rojo-respaldo-reclinable-gc-030-_JM"
-    },
-    {
-      "title": "Silla Gamer Mtl Ergonomica Color Negro Con Luces Masajeadora Material del tapizado Cuero sintético",
-      "price": 314271,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_648968-MLA99524522462_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99524522462-silla-gamer-mtl-ergonomica-color-negro-con-luces-masajeadora-material-del-tapiza-_JM"
-    },
-    {
-      "title": "Silla Gamer The Game House TGH01R Ergonómica de Cuero Sintético Roja",
-      "price": 297479,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_788404-MLA108913222164_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-108913222164-silla-gamer-the-game-house-tgh01r-ergonomica-de-cuero-sintetico-roja-_JM"
-    }
-  ],
   "teclados": [
     {
       "title": "Teclado Gamer Machenike K500b-b87 Rgb Qwerty Switch Red Switch Red - Gris Y Blanco Inglés Internacional",
@@ -548,35 +577,6 @@
       "badge": "Destacado",
       "description": "Producto disponible online.",
       "link": "https://articulo.mercadolibre.com.ar/MLA-109942070842-ray-ban-justin-classic-rb4165-lentes-de-sol-_JM"
-    }
-  ],
-  "bicicletas": [
-    {
-      "title": "Bicicleta paseo plegable Fire Bird Urbana Curve Plegable R20 color negro/rojo",
-      "price": 550000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_928702-MLA99994308249_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99994308249-bicicleta-paseo-plegable-fire-bird-urbana-curve-plegable-r20-color-negro-rojo-_JM"
-    },
-    {
-      "title": "Bicicleta Urbana Raleigh Classic Lady R28 Aluminio 3V Negro",
-      "price": 620056,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_844725-MLA99494583738_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99494583738-bicicleta-urbana-raleigh-classic-lady-r28-aluminio-3v-negro-_JM"
-    },
-    {
-      "title": "Bicicleta Hombre Raleigh Classic 700 Nexus Paseo Urbana Fas Color Negro",
-      "price": 620056,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_736825-MLA82659209416_032025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-82659209416-bicicleta-hombre-raleigh-classic-700-nexus-paseo-urbana-fas-color-negro-_JM"
     }
   ]
 }

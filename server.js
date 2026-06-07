@@ -931,9 +931,25 @@ app.get('/', async (req, res) => {
 });
 
 // ─────────────────────────────────────
-// Panel admin (protegido con rate limit)
+// Middleware de autenticación para admin
 // ─────────────────────────────────────
-app.get('/admin', adminLimiter, (req, res) => {
+function adminAuth(req, res, next) {
+  const password = process.env.ADMIN_PASSWORD;
+  if (!password || req.query.key === password) {
+    return next();
+  }
+  res.status(401).send(`<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acceso Restringido</title>
+<style>body{font-family:'Inter',sans-serif;text-align:center;padding:80px 24px;color:#333;background:#f5f5f5;}h1{font-size:48px;color:#1a1a1a;}p{margin:16px 0;}</style>
+</head><body><h1>🔒 Acceso Restringido</h1><p>Necesitás una clave para entrar al panel de administración.</p></body></html>`);
+}
+
+// ─────────────────────────────────────
+// Panel admin (protegido con rate limit + contraseña)
+// ─────────────────────────────────────
+app.get('/admin', adminLimiter, adminAuth, (req, res) => {
   const siteId = getSiteFromRequest(req);
   const siteConfig = getSiteConfig(siteId);
   const config = readConfig();
@@ -1002,7 +1018,7 @@ app.get('/admin', adminLimiter, (req, res) => {
 </html>`);
 });
 
-app.post('/admin/save', adminLimiter, (req, res) => {
+app.post('/admin/save', adminLimiter, adminAuth, (req, res) => {
   const config = readConfig();
   Object.keys(req.body).forEach(key => {
     if (key.startsWith('fallback_')) {

@@ -1,184 +1,524 @@
 {
-  "zapatillas": [
+  "zapatillas_urbano": [
     {
-      "title": "Zapatillas Kappa Authentic Kai 4 Blanco Y Azul Unisex",
-      "price": 78699,
+      "title": "Zapatillas Hombre Cuero Zapato Urbano Sneaker Cordones",
+      "price": 198900,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_876811-MLA107393615628_032026-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_677198-MLA111299708664_052026-E.webp",
       "badge": "Destacado",
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-107393615628-zapatillas-kappa-authentic-kai-4-blanco-y-azul-unisex-_JM"
+      "link": "https://articulo.mercadolibre.com.ar/MLA-111299708664-zapatillas-hombre-cuero-zapato-urbano-sneaker-cordones-_JM"
     },
     {
-      "title": "Zapatillas Originales Casual Dobleb | Chunky/urbanas/anchas",
-      "price": 117999,
+      "title": "Zapatillas De Dama Con Plataforma Moda Sneakers Moda Art2600",
+      "price": 65000,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_705902-MLA92805827206_092025-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_747740-MLA69173567122_052023-E.webp",
       "badge": "Destacado",
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-92805827206-zapatillas-originales-casual-dobleb-chunky-urbanas-anchas-_JM"
+      "link": "https://articulo.mercadolibre.com.ar/MLA-69173567122-zapatillas-de-dama-con-plataforma-moda-sneakers-moda-art2600-_JM"
     },
     {
-      "title": "Zapatillas Kappa Kombat Unisex",
-      "price": 76599,
+      "title": "Zapatillas Urbanas Mujer Moda Plataforma Liviana Plateada",
+      "price": 56948,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_603248-MLA91283726711_082025-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_809964-MLA96645782845_102025-E.webp",
       "badge": "Destacado",
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-91283726711-zapatillas-kappa-kombat-unisex-_JM"
-    },
+      "link": "https://articulo.mercadolibre.com.ar/MLA-96645782845-zapatillas-urbanas-mujer-moda-plataforma-liviana-plateada-_JM"
+    }
+  ],
+  "botines": [
     {
-      "title": "Pancha Slip-in - Gowell (mujer)",
-      "price": 45500,
+      "title": "Botines Topper San Ciro V Tf Hombre Negro",
+      "price": 71600,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_885802-MLA97903310336_112025-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_649829-MLA88128780917_072025-E.webp",
       "badge": "Destacado",
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-97903310336-pancha-slip-in-gowell-mujer-_JM"
+      "link": "https://articulo.mercadolibre.com.ar/MLA-88128780917-botines-topper-san-ciro-v-tf-hombre-negro-_JM"
     },
     {
-      "title": "Zapatillas Pounce Lite Adp Puma Sport 78 Tienda Oficial",
-      "price": 85000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_924855-MLA82746512618_032025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-2029403422-zapatillas-pounce-lite-adp-puma-sport-78-tienda-oficial-_JM"
-    },
-    {
-      "title": "Zapatillas Originales Casual Dobleb | Chunky/urbanas/anchas",
-      "price": 117999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_705902-MLA92805827206_092025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-92805827206-zapatillas-originales-casual-dobleb-chunky-urbanas-anchas-_JM"
-    },
-    {
-      "title": "Zapatillas Tie Break Iii Topper Team Sport Tienda Oficial",
-      "price": 84900,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_627572-MLA80356429461_102024-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-1458263439-zapatillas-tie-break-iii-topper-team-sport-tienda-oficial-_JM"
-    },
-    {
-      "title": "Zapatillas Pounce Lite Puma Puma Tienda Oficial",
-      "price": 90000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_790390-MLA83704408441_042025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-2050616498-zapatillas-pounce-lite-puma-puma-tienda-oficial-_JM"
-    },
-    {
-      "title": "Zapatillas Puma Sin Género Bmw Mms Rbd Break Low",
-      "price": 129999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_885049-MLA109087237178_042026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-109087237178-zapatillas-puma-sin-g-nero-bmw-mms-rbd-break-low-_JM"
-    },
-    {
-      "title": "Zapatillas Rod Ii Topper Topper Tienda Oficial",
-      "price": 48999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_904544-MLA54271393607_032023-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-1361955819-zapatillas-rod-ii-topper-topper-tienda-oficial-_JM"
-    },
-    {
-      "title": "Zapatillas Rod Ii Topper Team Sport Tienda Oficial",
-      "price": 78900,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_628245-MLA54271393655_032023-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-1361942843-zapatillas-rod-ii-topper-team-sport-tienda-oficial-_JM"
-    },
-    {
-      "title": "Zapatillas Pounce Lite Adp Puma Sport 78 Tienda Oficial",
-      "price": 84999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_629877-MLA82939726590_032025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-2034964516-zapatillas-pounce-lite-adp-puma-sport-78-tienda-oficial-_JM"
-    },
-    {
-      "title": "Zapatilla Halo De Mesh Mujer 47 Street",
-      "price": 119999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_726111-MLA107517051159_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-107517051159-zapatilla-halo-de-mesh-mujer-47-street-_JM"
-    },
-    {
-      "title": "Zapatilla City Outdoor Journey Mujer Montagne",
-      "price": 114900,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_724333-MLA109636076981_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-109636076981-zapatilla-city-outdoor-journey-mujer-montagne-_JM"
-    },
-    {
-      "title": "Zapatilla Fallen Heritage Black/white - Cupsole",
-      "price": 125000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_931713-MLA91009414571_082025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-91009414571-zapatilla-fallen-heritage-black-white-cupsole-_JM"
-    },
-    {
-      "title": "Zapatillas Hombre Puma Skyrocket Lite 312731-01 Por On Sport",
-      "price": 99999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_922971-MLA89510891968_082025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-89510891968-zapatillas-hombre-puma-skyrocket-lite-312731-01-por-on-sport-_JM"
-    },
-    {
-      "title": "Zapatillas Puma Palermo Moda Unisex Para Adultos",
+      "title": "Botines Hombre Puma Borussia C Tt 104656-01 Por On Sports",
       "price": 139999,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_769644-MLA109808132728_042026-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_605767-MLA89505117762_082025-E.webp",
       "badge": "Destacado",
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-109808132728-zapatillas-puma-palermo-moda-unisex-para-adultos-_JM"
+      "link": "https://articulo.mercadolibre.com.ar/MLA-89505117762-botines-hombre-puma-borussia-c-tt-104656-01-por-on-sports-_JM"
     },
     {
-      "title": "Zapatillas Gamuza Knul Low Skate Urbana Unisex",
-      "price": 47744,
+      "title": "Botines Nike Tiempo Legend 10 Club Pasto Natural Dv4344-800",
+      "price": 119999,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_784596-MLA108859948096_032026-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_669627-MLA83151066223_032025-E.webp",
       "badge": "Destacado",
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-2718270452-zapatillas-gamuza-knul-low-skate-urbana-unisex-_JM"
+      "link": "https://articulo.mercadolibre.com.ar/MLA-83151066223-botines-nike-tiempo-legend-10-club-pasto-natural-dv4344-800-_JM"
+    }
+  ],
+  "ojotas": [
+    {
+      "title": "Sandalia Ojota Pj7611 Petite Jolie",
+      "price": 52500,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_705061-MLA95707783951_102025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-95707783951-sandalia-ojota-pj7611-petite-jolie-_JM"
     },
     {
-      "title": "Zapatillas Nike Revolution 8 Para Mujer Hj8485-001",
-      "price": 129999,
+      "title": "Sandalia Para Hombre Cuero Y Gamuza Premium Negro Bonao Bond",
+      "price": 83664,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_795422-MLA86884461106_072025-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_814409-MLA105330920533_012026-E.webp",
       "badge": "Destacado",
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-2155452050-zapatillas-nike-revolution-8-para-mujer-hj8485-001-_JM"
+      "link": "https://articulo.mercadolibre.com.ar/MLA-105330920533-sandalia-para-hombre-cuero-y-gamuza-premium-negro-bonao-bond-_JM"
     },
     {
-      "title": "Zapatillas Topper Tie Break III Amortiguación Para Hombre",
-      "price": 84900,
+      "title": "Sandalia Ojota Hombre Original Playa Chinela Goma Donkey 404",
+      "price": 25690,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_684221-MLA99558342942_122025-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_788563-MLA86834592896_072025-E.webp",
       "badge": "Destacado",
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/zapatillas-topper-tie-break-iii-amortiguacion-para-hombre/p/MLA18652382"
+      "link": "https://articulo.mercadolibre.com.ar/MLA-86834592896-sandalia-ojota-hombre-original-playa-chinela-goma-donkey-404-_JM"
+    }
+  ],
+  "notebooks_ultra": [
+    {
+      "title": "Netbook Disco Solido 128gb-ram4gb-hdmi-bluetooth 14",
+      "price": 328679,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_676699-MLA99374422589_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99374422589-netbook-disco-solido-128gb-ram4gb-hdmi-bluetooth-14-_JM"
+    },
+    {
+      "title": "Apple Macbook Neo 13 Citrus 256gb Potente Y Liviana",
+      "price": 2450000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_702227-MLA109163471453_032026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-109163471453-apple-macbook-neo-13-citrus-256gb-potente-y-liviana-_JM"
+    },
+    {
+      "title": "Notebook 14 Full Hd Intel Pentium 4gb 64gb Liviana Verde Osc",
+      "price": 2162998,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_958099-MLA111364131338_052026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-111364131338-notebook-14-full-hd-intel-pentium-4gb-64gb-liviana-verde-osc-_JM"
+    }
+  ],
+  "tablets": [
+    {
+      "title": "Samsung Galaxy Tab A11 Color Gris Capacidad 64 GB Ram 4GB",
+      "price": 324999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_968337-MLA100567674726_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-100567674726-samsung-galaxy-tab-a11-color-gris-capacidad-64-gb-ram-4gb-_JM"
+    },
+    {
+      "title": "Tablet Xiaomi Redmi Pad 2 11 8gb Ram 256gb Memoria Pantalla 2k 90hz Hyperos 2 Color Gris Oscuro",
+      "price": 649999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_970651-MLA99454443408_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99454443408-tablet-xiaomi-redmi-pad-2-11-8gb-ram-256gb-memoria-pantalla-2k-90hz-hyperos-2-co-_JM"
+    },
+    {
+      "title": "Tablet Lenovo Tab 10.1\" 4gb+128gb Zaeh0074ar Tb311fu Color Gris + Folio case",
+      "price": 558595,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_652938-MLA112257726207_052026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-112257726207-tablet-lenovo-tab-10-1-4gb-128gb-zaeh0074ar-tb311fu-color-gris-folio-case-_JM"
+    }
+  ],
+  "smart_tv_chica": [
+    {
+      "title": "Soporte TV Tele Articulado Pared Nictom 20 A 65 Pulgadas Reforzado Doble Brazo - Apto Samsung LG Noblex 32 43 50 55",
+      "price": 59999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_975939-MLA96120837653_102025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-96120837653-soporte-tv-tele-articulado-pared-nictom-20-a-65-pulgadas-reforzado-doble-brazo-a-_JM"
+    },
+    {
+      "title": "Soporte Tv Led Smart Fijo 60 55 50 49 43 42 40 32 Pulgadas - Morshop MOR01TV - Negro",
+      "price": 30000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_988997-MLA96137592875_102025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-96137592875-soporte-tv-led-smart-fijo-60-55-50-49-43-42-40-32-pulgadas-morshop-mor01tv-negro-_JM"
+    },
+    {
+      "title": "Soporte Tv BAE SOP78-466 Pulgadas Doble Brazo 50 60 65 70 75 80 Fuerte Color Negro",
+      "price": 69859,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_910618-MLA96098382825_102025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-96098382825-soporte-tv-bae-sop78-466-pulgadas-doble-brazo-50-60-65-70-75-80-fuerte-color-neg-_JM"
+    }
+  ],
+  "smart_tv_grande": [
+    {
+      "title": "Soporte Tv BAE SOP78-466 Pulgadas Doble Brazo 50 60 65 70 75 80 Fuerte Color Negro",
+      "price": 69859,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_910618-MLA96098382825_102025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-96098382825-soporte-tv-bae-sop78-466-pulgadas-doble-brazo-50-60-65-70-75-80-fuerte-color-neg-_JM"
+    },
+    {
+      "title": "Soporte Tv Led Smart Brazo Articulado Movil 60 55 50 43 32 Color Negro",
+      "price": 58950,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_868834-MLA111536520425_052026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-111536520425-soporte-tv-led-smart-brazo-articulado-movil-60-55-50-43-32-color-negro-_JM"
+    },
+    {
+      "title": "Soporte Led Tv Lcd Smart Tech MF700DL Articulado Doble Brazo Reforzado 32 40 42 43 46 47 49 50 52 55 60 65 75 Pulgadas Color Negro",
+      "price": 79999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_875617-MLA108920902900_032026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/soporte-led-tv-lcd-smart-tech-mf700dl-articulado-doble-brazo-reforzado-32-40-42-43-46-47-49-50-52-55-60-65-75-pulgadas-color-negro/p/MLA18464160"
+    }
+  ],
+  "parlantes_bt": [
+    {
+      "title": "Parlante Portátil 2 En 1 Stromberg Twin 2 Bluetooth Fm Ipx5 Celeste Inalambrico",
+      "price": 99540,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_775645-MLA110425078091_042026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-110425078091-parlante-port-til-2-en-1-stromberg-twin-2-bluetooth-fm-ipx5-celeste-inalambrico-_JM"
+    },
+    {
+      "title": "Parlante Portatil Bluetooth Lidimi Potente Extrabass Led 30w Negro",
+      "price": 124605,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_699940-MLA110864643200_052026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-110864643200-parlante-portatil-bluetooth-lidimi-potente-extrabass-led-30w-negro-_JM"
+    },
+    {
+      "title": "Parlante Suono 2 Woofers 6.5'' Luces Led Tws Rgb Bt Blanco",
+      "price": 195224,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_976635-MLA99027318884_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99027318884-parlante-suono-2-woofers-6-5-luces-led-tws-rgb-bt-blanco-_JM"
+    }
+  ],
+  "parlantes_home": [
+    {
+      "title": "Barra De Sonido Yamaha Sr-c20a 100w. Bluetooth",
+      "price": 862925,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_873535-MLA78092857775_072024-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-78092857775-barra-de-sonido-yamaha-sr-c20a-100w-bluetooth-_JM"
+    },
+    {
+      "title": "Parlantes Equipo Musica Bluetooth Columnas 60w Fm Noga Rings",
+      "price": 299999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_907499-MLA31036667545_062019-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/parlantes-equipo-musica-bluetooth-columnas-60w-fm-noga-rings/p/MLA20018596"
+    },
+    {
+      "title": "Barra Parlante Yamaha Sr-c20ab Con Bluetooth Cuo Color Negro",
+      "price": 713157,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_788490-MLA96434069994_102025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/barra-parlante-yamaha-sr-c20ab-con-bluetooth-cuo-color-negro/p/MLA19149949"
+    }
+  ],
+  "monitores": [
+    {
+      "title": "Monitor Led 24 Viewsonic Va240-h 100hz 1ms Full Hd Hdmi Color Negro",
+      "price": 175999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_612276-MLA91374728761_082025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-91374728761-monitor-led-24-viewsonic-va240-h-100hz-1ms-full-hd-hdmi-color-negro-_JM"
+    },
+    {
+      "title": "Monitor gamer curvo Xiaomi Gaming G34WQi LCD negro",
+      "price": 909999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_689871-MLA99407869728_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99407869728-monitor-gamer-curvo-xiaomi-gaming-g34wqi-lcd-negro-_JM"
+    },
+    {
+      "title": "Monitor Gamer Level Up 27 1440p Altura Regulable Y Giro 90°",
+      "price": 656476,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_801163-MLA85409086484_062025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-85409086484-monitor-gamer-level-up-27-1440p-altura-regulable-y-giro-90-_JM"
+    }
+  ],
+  "mouse_gamer": [
+    {
+      "title": "Mouse Gamer Havit Ms1038 Rgb 8000 Dpi Ergonómico 7 Botones Negro",
+      "price": 24999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_925429-MLA100082869739_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-100082869739-mouse-gamer-havit-ms1038-rgb-8000-dpi-ergon-mico-7-botones-negro-_JM"
+    },
+    {
+      "title": "Mouse Gamer Inalambrico Gravastar Mercury M1 Pro Rgb Dpi 26k",
+      "price": 140889,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_831805-MLA109555847810_042026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-109555847810-mouse-gamer-inalambrico-gravastar-mercury-m1-pro-rgb-dpi-26k-_JM"
+    },
+    {
+      "title": "Mouse Gamer Semi Vertical Carrello M900 Inalámbrico Ergonómico Rgb 2400 Dpi Bluetooth Negro",
+      "price": 46999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_959850-MLA106831702868_022026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-106831702868-mouse-gamer-semi-vertical-carrello-m900-inal-mbrico-ergon-mico-rgb-2400-dpi-blue-_JM"
+    }
+  ],
+  "cafeteras_expreso": [
+    {
+      "title": "Cafetera Expresso Digital Suono Automática Acero Inox con Accesorios 1.5 L Color Plateado",
+      "price": 209039,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_961498-MLA107633861922_032026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-107633861922-cafetera-expresso-digital-suono-autom-tica-acero-inox-con-accesorios-1-5-l-color-_JM"
+    },
+    {
+      "title": "Cafetera Espresso Con Espumador Cuk By Gadnic 20 Bares 1,5l Espumador 1050W Tanque Removible Acero Inoxidable",
+      "price": 220049,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_986431-MLA101078011431_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-101078011431-cafetera-espresso-con-espumador-cuk-by-gadnic-20-bares-1-5l-espumador-1050w-tanq-_JM"
+    },
+    {
+      "title": "Cafetera De Filtro Eléctrica Suono 12 Tazas 1200ml Antigoteo Color Negro",
+      "price": 58999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_806573-MLA109749412131_032026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-109749412131-cafetera-de-filtro-el-ctrica-suono-12-tazas-1200ml-antigoteo-color-negro-_JM"
+    }
+  ],
+  "cafeteras_capsulas": [
+    {
+      "title": "Cafetera Moulinex Dolce Gusto Piccolo Xs Pv1a0558",
+      "price": 272490,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_994334-MLA100010184303_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-100010184303-cafetera-moulinex-dolce-gusto-piccolo-xs-pv1a0558-_JM"
+    },
+    {
+      "title": "Cafetera Multicápsula Ditron 4 En 1 Acero 20 Bar 700ml Compatible Nespresso Dolce Gusto",
+      "price": 388482,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_668155-MLA99529750280_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99529750280-cafetera-multic-psula-ditron-4-en-1-acero-20-bar-700ml-compatible-nespresso-dolc-_JM"
+    },
+    {
+      "title": "Cafetera Expreso Ranser Magnus con Molinillo Integrado para Café Molido y Cápsulas Dolce Gusto o Nespresso",
+      "price": 599999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_683614-MLA111341969449_052026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-111341969449-cafetera-expreso-ranser-magnus-con-molinillo-integrado-para-caf-molido-y-c-psula-_JM"
+    }
+  ],
+  "tostadoras": [
+    {
+      "title": "Sandwichera Baza 3 en 1, con Placas Removibles y Antiadherentes, para 2 Sándwiches",
+      "price": 69990,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_978273-MLA102190797507_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-102190797507-sandwichera-baza-3-en-1-con-placas-removibles-y-antiadherentes-para-2-s-ndwiches-_JM"
+    },
+    {
+      "title": "Sandwichera Tostadora Electrica Daewoo Antiadherente Color Negro",
+      "price": 50610,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_745620-MLA99869247515_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99869247515-sandwichera-tostadora-electrica-daewoo-antiadherente-color-negro-_JM"
+    },
+    {
+      "title": "Sandwichera Eléctrica Novohome Tostadora Grill Acero Inoxidable Facil Limpieza",
+      "price": 32590,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_716840-MLA106722292506_022026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-106722292506-sandwichera-el-ctrica-novohome-tostadora-grill-acero-inoxidable-facil-limpieza-_JM"
+    }
+  ],
+  "termos": [
+    {
+      "title": "Termo Acero Inox Pico Cebador Matero Coleman 700ml - Color Sage",
+      "price": 75999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_823969-MLA99455645370_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99455645370-termo-acero-inox-pico-cebador-matero-coleman-700ml-color-sage-_JM"
+    },
+    {
+      "title": "Termo 1l Y Mate Térmico Doble Pared 160ml Acero Inoxidable",
+      "price": 45999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_706340-MLA111345142497_052026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-111345142497-termo-1l-y-mate-t-rmico-doble-pared-160ml-acero-inoxidable-_JM"
+    },
+    {
+      "title": "Termo Mate Estampado System | 1 Lt Acero Inoxidable Floreado",
+      "price": 64740,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_798690-MLA110892586745_042026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-110892586745-termo-mate-estampado-system-1-lt-acero-inoxidable-floreado-_JM"
+    }
+  ],
+  "sillones_3c": [
+    {
+      "title": "Sillón Esquinero Lino Living Premium Resistente",
+      "price": 1098369,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_680067-MLA93265675507_092025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-93265675507-sill-n-esquinero-lino-living-premium-resistente-_JM"
+    },
+    {
+      "title": "Sillón Italiano Premium 3 Cuerpos Pana Con Patas De Madera",
+      "price": 475000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_660786-MLA111253677568_052026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-111253677568-sill-n-italiano-premium-3-cuerpos-pana-con-patas-de-madera-_JM"
+    },
+    {
+      "title": "Sillon Esquinero Venecia 3 Cuerpos Chenille Antidesgarro",
+      "price": 349999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_741833-MLA110082877035_042026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-110082877035-sillon-esquinero-venecia-3-cuerpos-chenille-antidesgarro-_JM"
+    }
+  ],
+  "lentes_sol": [
+    {
+      "title": "Ray-ban Rb3548 Hexagonal Lentes De Sol Original Varios Color",
+      "price": 298342,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_656968-MLA108194495247_032026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-108194495247-ray-ban-rb3548-hexagonal-lentes-de-sol-original-varios-color-_JM"
+    },
+    {
+      "title": "Lentes de Sol Ray-Ban Bill RB2198 Cuadrados, con Armazón de Acetato Negro y Lente Verde Oscuro",
+      "price": 120000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_978263-MLA97356791143_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-97356791143-lentes-de-sol-ray-ban-bill-rb2198-cuadrados-con-armaz-n-de-acetato-negro-y-lente-_JM"
+    },
+    {
+      "title": "Lentes De Sol Vaghoz Quick Unisex Deportivo Polarizado Uv400 Negro G Negro Único",
+      "price": 86999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_671483-MLA108023697221_032026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-108023697221-lentes-de-sol-vaghoz-quick-unisex-deportivo-polarizado-uv400-negro-g-negro-nico-_JM"
+    }
+  ],
+  "mochilas": [
+    {
+      "title": "Mochila Samsonite Bravo 2026 Laptop Negro 27l Urbana Diseño De La Tela Liso",
+      "price": 199990,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_809653-MLA111751166575_052026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto disponible online.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-111751166575-mochila-samsonite-bravo-2026-laptop-negro-27l-urbana-diseno-de-la-tela-liso-_JM"
+    },
+    {
+      "title": "Mochila Viagem Feminina Masculina Impermeable Y Duradero",
+      "price": 68888,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_932204-MLA109067515705_032026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto disponible online.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-109067515705-mochila-viagem-feminina-masculina-impermeable-y-duradero-_JM"
+    },
+    {
+      "title": "Mochila Wison Porta Notebook Cierre Candado Antirrobo Cerradura Ejecutiva Apta Para Oficina Trabajo Universidad Urbana Color Negro 65.an007",
+      "price": 31999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_614419-MLA85706408643_062025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto disponible online.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-85706408643-mochila-wison-porta-notebook-cierre-candado-antirrobo-cerradura-ejecutiva-apta-p-_JM"
     }
   ],
   "smartwatches": [
@@ -363,1388 +703,6 @@
       "link": "https://www.mercadolibre.com.ar/smartwatch-cuadrado-sumergible-rosa-nictom-malla-metal-reloj-inteligente-dos-mallas/p/MLA27822889"
     }
   ],
-  "termos": [
-    {
-      "title": "Termo Waterdog Ombu Doble Pared De Acero Inoxidable 1 Litro Negro",
-      "price": 57500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_690490-MLA99589433418_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99589433418-termo-waterdog-ombu-doble-pared-de-acero-inoxidable-1-litro-negro-_JM"
-    },
-    {
-      "title": "Termo Acero Inox Pico Cebador Matero Coleman 700ml - Color Sage",
-      "price": 75999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_823969-MLA99455645370_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99455645370-termo-acero-inox-pico-cebador-matero-coleman-700ml-color-sage-_JM"
-    },
-    {
-      "title": "Termo Ozz 1l Doble Pared Con Pico Cebador Y 360°",
-      "price": 29999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_894035-MLA106124145228_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-106124145228-termo-ozz-1l-doble-pared-con-pico-cebador-y-360-_JM"
-    },
-    {
-      "title": "Termo Acero Inoxidable Waterdog 1 L C/ Manija Pico Cebador Color Gris",
-      "price": 57500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_654473-MLA99448427198_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99448427198-termo-acero-inoxidable-waterdog-1-l-c-manija-pico-cebador-color-gris-_JM"
-    },
-    {
-      "title": "Termo Waterdog Ombu Doble Pared De Acero Inoxidable 1 Litro Negro",
-      "price": 57500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_690490-MLA99589433418_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/termo-waterdog-ombu-doble-pared-de-acero-inoxidable-1-litro-negro/p/MLA19856080"
-    },
-    {
-      "title": "Termo 1 L Media Manija Pico Matero Acero inoxidable Doble Capa Color acero Calor/frio",
-      "price": 23500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_986523-MLA111817791857_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/termo-1-l-media-manija-pico-matero-acero-inoxidable-doble-capa-color-acero-calorfrio/p/MLA26903450"
-    },
-    {
-      "title": "Termo Inteligente Acero Inoxidable Con Display Black",
-      "price": 14808,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_846246-CBT111594404432_062026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/termo-inteligente-de-acero-inoxidable-bolsillo-black/p/MLA2057210731"
-    },
-    {
-      "title": "Termo Acero Inoxidable South Port By Gadnic 1,2 Litros Manija Blanco",
-      "price": 72949,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_750957-MLA104003494111_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/termo-acero-inoxidable-south-port-by-gadnic-12-litros-manija-blanco/p/MLA63952872"
-    },
-    {
-      "title": "Termo Lumilagro Luminox Negro De Acero Inoxidable 1 L",
-      "price": 70000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_711960-MLA105356759167_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/termo-lumilagro-luminox-negro-de-acero-inoxidable-1-l/p/MLA19772281"
-    },
-    {
-      "title": "Termo Acero Inoxidable Philco T1000 1 Litro Con Pico Cebador Doble Pared",
-      "price": 64129,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_631041-MLA110079025647_042026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/termo-acero-inoxidable-philco-t1000-1-litro-con-pico-cebador-doble-pared/p/MLA38763566"
-    },
-    {
-      "title": "Termo Termolar Revolution Negro 1 Lts",
-      "price": 79999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_683150-MLA99962580597_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/termo-termolar-revolution-negro-1-lts/p/MLA26901728"
-    },
-    {
-      "title": "Termo Stanley Original Mate System Classic 1.2 L",
-      "price": 182000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_974853-MLA99989463757_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/termo-stanley-original-mate-system-classic-12-l/p/MLA19761025"
-    },
-    {
-      "title": "Termo Stanley Clásico 1.4 Lts Asa Plegable Acero Inoxidable",
-      "price": 156000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_710129-MLA83475755295_042025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-83475755295-termo-stanley-cl-sico-1-4-lts-asa-plegable-acero-inoxidable-_JM"
-    },
-    {
-      "title": "Aquatal Termo Everest 1L Negro",
-      "price": 44990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_870136-MLA74158432655_012024-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-74158432655-aquatal-termo-everest-1l-negro-_JM"
-    },
-    {
-      "title": "Termo Journey Trip 1 Litro De Acero Inoxidable",
-      "price": 34500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_719388-MLA106039679064_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-106039679064-termo-journey-trip-1-litro-de-acero-inoxidable-_JM"
-    },
-    {
-      "title": "Termo 1l Y Mate Térmico Doble Pared 160ml Acero Inoxidable",
-      "price": 45999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_706340-MLA111345142497_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-111345142497-termo-1l-y-mate-t-rmico-doble-pared-160ml-acero-inoxidable-_JM"
-    },
-    {
-      "title": "Vaso Térmico De Acero Inoxidable Para Café Y Bebidas",
-      "price": 13500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_682282-CBT110833928113_042026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-1762774791-vaso-t-rmico-de-acero-inoxidable-para-caf-y-bebidas-_JM"
-    },
-    {
-      "title": "Termo Hudson 1 litro acero inoxidable doble pared",
-      "price": 74309,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_657220-MLA105005865833_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/termo-hudson-1-litro-acero-inoxidable-doble-pared/p/MLA64364466"
-    },
-    {
-      "title": "Termo Matero Contigo Thermalock 1200 ml de Acero Inoxidable 360",
-      "price": 90000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_624705-MLA99594184582_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/termo-matero-contigo-thermalock-1200-ml-de-acero-inoxidable-360/p/MLA15506626"
-    },
-    {
-      "title": "Termo Coleman Acero Inoxidable Matero 1,2lts. Black Sand Negro",
-      "price": 80000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_675267-MLU72746088652_112023-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/termo-coleman-acero-inoxidable-matero-12lts-black-sand-negro/p/MLA15761152"
-    }
-  ],
-  "perfumes": [
-    {
-      "title": "Sauva-g/ei 100 Ml Perfume Extracto Importado N148",
-      "price": 54560,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_694760-MLA106360959939_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-106360959939-sauva-g-ei-100-ml-perfume-extracto-importado-n148-_JM"
-    },
-    {
-      "title": "Perfume Versace Eros Flame Edp 200 Ml Para Hombre",
-      "price": 421000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_800970-MLU75888175947_042024-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-1117405036-perfume-versace-eros-flame-edp-200-ml-para-hombre-_JM"
-    },
-    {
-      "title": "Scanda/ei Perfume Mujer 100ml Extracto Importado N149",
-      "price": 52000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_694760-MLA106360959939_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-106360959939-scanda-ei-perfume-mujer-100ml-extracto-importado-n149-_JM"
-    },
-    {
-      "title": "Phanto/ei Perfume Hombre 100 Ml Extracto Importado N130",
-      "price": 55000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_694760-MLA106360959939_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-106360959939-phanto-ei-perfume-hombre-100-ml-extracto-importado-n130-_JM"
-    },
-    {
-      "title": "Ralph Lauren Blue Mujer EDT 125 mL",
-      "price": 285000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_892202-MLA52223903116_102022-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/ralph-lauren-blue-mujer-edt-125-ml/p/MLA18934138"
-    },
-    {
-      "title": "Perfume Calvin Klein CK One 200 Ml EDT Unisex",
-      "price": 105999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_785342-MLA44749689446_012021-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/perfume-calvin-klein-ck-one-200-ml-edt-unisex/p/MLA6093745"
-    },
-    {
-      "title": "Flash De Jimmy Choo, Aerosol Edp Para Mujer, 99 Ml",
-      "price": 91359,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_605166-CBT82582258113_022025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/perfume-jimmy-choo-flash-eau-de-parfum-100ml-for-women/p/MLA2057537913"
-    },
-    {
-      "title": "Jean Paul Gaultier Le Parfum Intense 125ml Hombre Edp",
-      "price": 213999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_962972-MLA70702912227_072023-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/jean-paul-gaultier-le-parfum-intense-125ml-hombre-edp/p/MLA19457568"
-    },
-    {
-      "title": "Perfume Hombre King Of Seduction Absolute Edt 100ml Banderas",
-      "price": 45612,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_855844-MLA79832614472_102024-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/perfume-hombre-king-of-seduction-absolute-edt-100ml-banderas/p/MLA42135256"
-    },
-    {
-      "title": "Banderas King of Seduction Absolute 100ml para hombre",
-      "price": 42607,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_748501-MLA47574177150_092021-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/banderas-king-of-seduction-absolute-100ml-para-hombre/p/MLA6331685"
-    },
-    {
-      "title": "Perfume Paula Cahen D'Anvers Paula Mujer Cítrico Floral 100 mL",
-      "price": 40900,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_689880-MLA96058466580_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/perfume-paula-cahen-danvers-paula-mujer-citrico-floral-100-ml/p/MLA6200913"
-    },
-    {
-      "title": "Perfume Al Haramain Amber Oud Gold 100ml Edp",
-      "price": 110000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_751433-MLA84112698518_052025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/perfume-al-haramain-amber-oud-gold-100ml-edp/p/MLA24559439"
-    },
-    {
-      "title": "Perfume DKNY Be Delicious Eau de Parfum 100ml Mujer Floral Frutal",
-      "price": 181000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_891497-MLA46431152860_062021-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-46431152860-perfume-dkny-be-delicious-eau-de-parfum-100ml-mujer-floral-frutal-_JM"
-    },
-    {
-      "title": "Perfume Issey Miyake A Drop Fraîche Eau de Parfum Cítrico 30ml Spray",
-      "price": 169000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_908801-MLU69155003264_042023-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-1538628476-perfume-issey-miyake-a-drop-fra-che-eau-de-parfum-c-trico-30ml-spray-_JM"
-    },
-    {
-      "title": "Riifs Majestic Rose 100 ml",
-      "price": 83990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_670973-MLU69204264546_052023-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-2833395658-riifs-majestic-rose-100-ml-_JM"
-    },
-    {
-      "title": "Perfume Carolina Herrera Good Girl Tradicional EDP Eau De Parfum Femenino Para Mujer EDP 30ml para mujer",
-      "price": 185000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_792789-MLA49695604542_042022-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-49695604542-perfume-carolina-herrera-good-girl-tradicional-edp-eau-de-parfum-femenino-para-m-_JM"
-    },
-    {
-      "title": "FRAGANCIA DAVIDOFF COOL WATER MAN EDT 125 ML",
-      "price": 171517,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_850469-MLU74245731777_012024-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/fragancia-davidoff-cool-water-man-edt-125-ml/p/MLA6072176"
-    },
-    {
-      "title": "Eilish 100 Ml Billie Eilish",
-      "price": 148130,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_694495-MLA83704948088_042025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/perfume-billie-eilish-eilish-edp-100ml-for-women/p/MLA2064827716"
-    },
-    {
-      "title": "Perfume Elizabeth Arden Red Door EDT 100 ml para mujer",
-      "price": 99999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_958064-MLA74651551650_022024-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/perfume-elizabeth-arden-red-door-edt-100ml-para-mujer/p/MLA3821451"
-    },
-    {
-      "title": "París, 80 Ml, Yves Saint Laurent",
-      "price": 173853,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_647155-MLA83704940328_042025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/perfume-yves-saint-laurent-paris-eau-de-toilette-75ml-for-wo/p/MLA2078402525"
-    }
-  ],
-  "colchones": [
-    {
-      "title": "Colchón Sommier Simmons Backcare Hotel Bilt 2 Plazas 190x140 Color Negro/Blanco",
-      "price": 3041706,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_953890-MLA95696478774_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-95696478774-colch-n-sommier-simmons-backcare-hotel-bilt-2-plazas-190x140-color-negro-blanco-_JM"
-    },
-    {
-      "title": "Sommier Y Colchón Sueño Dorado Dubái Súper King 200x200cm",
-      "price": 3806600,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_811379-MLA95705684164_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-95705684164-sommier-y-colch-n-sue-o-dorado-dub-i-s-per-king-200x200cm-_JM"
-    },
-    {
-      "title": "Sommier Y Colchón Sueño dorado rembrandt King espuma 200x200 Cm",
-      "price": 3204900,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_621885-MLA96114614959_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-96114614959-sommier-y-colch-n-sue-o-dorado-rembrandt-king-espuma-200x200-cm-_JM"
-    },
-    {
-      "title": "Sommier Y Colchón Sueño Dorado Denver Queen 160 X 200 Cm",
-      "price": 2584900,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_928404-MLA99523450354_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99523450354-sommier-y-colch-n-sue-o-dorado-denver-queen-160-x-200-cm-_JM"
-    },
-    {
-      "title": "Sommier 2 Plazas Y Colchón Multiflex Confort Espuma Media Densidad 130x190cm Color Blanco",
-      "price": 951940,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_695222-MLA108648875369_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/sommier-2-plazas-y-colchon-multiflex-confort-espuma-media-densidad-130x190cm-color-blanco/p/MLA66560428"
-    },
-    {
-      "title": "Colchón Sommier Simmons Backcare Hotel Bilt 2 Plazas 190x140 Color Negro/Blanco",
-      "price": 3041706,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_953890-MLA95696478774_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/colchon-sommier-simmons-backcare-hotel-bilt-2-plazas-190x140-color-negroblanco/p/MLA18533622"
-    },
-    {
-      "title": "Colchón y Sommier Simmons Hotel Bilt King Size 200x200",
-      "price": 4431519,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_715863-MLA95706972296_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/colchon-y-sommier-simmons-hotel-bilt-king-size-200x200/p/MLA22919080"
-    },
-    {
-      "title": "Colchón y Sommier Simmons Hotel Bilt Queen Size 200x160",
-      "price": 3752599,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_823447-MLA96137100121_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/colchon-y-sommier-simmons-hotel-bilt-queen-size-200x160/p/MLA23214643"
-    },
-    {
-      "title": "Sommier Y Colchón Sueño Dorado Monza 2 Plazas Resortes 140x190 Cm",
-      "price": 1864200,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_932938-MLA103304501387_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/sommier-y-colchon-sueno-dorado-monza-2-plazas-resortes-140x190-cm/p/MLA63743079"
-    },
-    {
-      "title": "Sommier Y Colchón 1 Plaza Multiflex Sol Combo Con Almohada 80x190cm Diseño Blanco y Gris",
-      "price": 484110,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_981268-MLA110462187314_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/sommier-y-colchon-1-plaza-multiflex-sol-combo-con-almohada-80x190cm-diseno-blanco-y-gris/p/MLA35345998"
-    },
-    {
-      "title": "Sommier Y Colchón Sueño Dorado Monza King Resortes 180x200 Cm",
-      "price": 2909100,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_966629-MLA102791228026_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/sommier-y-colchon-sueno-dorado-monza-king-resortes-180x200-cm/p/MLA63743081"
-    },
-    {
-      "title": "Sommier y colchon 2 Plazas Elite Everest 190x140 Euro pillow Color Gris",
-      "price": 1015502,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_695138-MLA111407603154_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/sommier-y-colchon-2-plazas-elite-everest-190x140-euro-pillow-color-gris/p/MLA48702369"
-    },
-    {
-      "title": "Sommier Y Colchón Queen 160cm X 200cm Freestyle La Espumería Gris Oscuro",
-      "price": 1875827,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_719899-MLA107391691211_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-107391691211-sommier-y-colch-n-queen-160cm-x-200cm-freestyle-la-espumer-a-gris-oscuro-_JM"
-    },
-    {
-      "title": "Colchón y Sommier La Cardeuse Lc 1000 King 200x200",
-      "price": 6701364,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_839625-MLA100185462693_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-100185462693-colch-n-y-sommier-la-cardeuse-lc-1000-king-200x200-_JM"
-    },
-    {
-      "title": "Sommier 2 Plazas Y Colchón Multiflex Confort Espuma Media Densidad 130x190cm Color Blanco",
-      "price": 951940,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_695222-MLA108648875369_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-108648875369-sommier-2-plazas-y-colch-n-multiflex-confort-espuma-media-densidad-130x190cm-col-_JM"
-    },
-    {
-      "title": "Sommier y colchon 2 Plazas Elite Everest 190x140 Euro pillow Color Gris",
-      "price": 1015502,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_695138-MLA111407603154_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-111407603154-sommier-y-colchon-2-plazas-elite-everest-190x140-euro-pillow-color-gris-_JM"
-    },
-    {
-      "title": "Sommier Y Colchón King (200x200) Sealy Linen Somun Gris",
-      "price": 2142855,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_949752-MLA100003017394_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/sommier-y-colchon-king-200x200-sealy-linen-somun-gris/p/MLA62880043"
-    },
-    {
-      "title": "Sommier y colchon 2 plazas espuma Elite Constantino 190x130cm somier color gris oscuro",
-      "price": 429999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_793806-MLA96786834488_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/sommier-y-colchon-2-plazas-espuma-elite-constantino-190x130cm-somier-color-gris-oscuro/p/MLA19600728"
-    },
-    {
-      "title": "Sommier Y Colchón Sueño Dorado Monza Súper King Resortes 200x200 Cm",
-      "price": 2768500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_982160-MLA103304491479_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/sommier-y-colchon-sueno-dorado-monza-super-king-resortes-200x200-cm/p/MLA63743082"
-    },
-    {
-      "title": "Sommier Colchon 1 1/2 Plaza Y Media Espuma Alta Densidad Color Beige",
-      "price": 514486,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_854729-MLA96310585020_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/sommier-colchon-1-12-plaza-y-media-espuma-alta-densidad-color-beige/p/MLA21076645"
-    }
-  ],
-  "teclados": [
-    {
-      "title": "Teclado Gamer Machenike K500b-b87 Rgb Qwerty Switch Red Switch Red - Gris Y Blanco Inglés Internacional",
-      "price": 43299,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_923618-MLA96077456111_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-96077456111-teclado-gamer-machenike-k500b-b87-rgb-qwerty-switch-red-switch-red-gris-y-blanco-_JM"
-    },
-    {
-      "title": "Teclado Gamer Mecánico Aula F75 Cableado Usb Negro Sw Red Retroiluminado Idioma Inglés",
-      "price": 62349,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_822557-MLA99437186434_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99437186434-teclado-gamer-mec-nico-aula-f75-cableado-usb-negro-sw-red-retroiluminado-idioma--_JM"
-    },
-    {
-      "title": "Teclado Gamer Mecanico Rgb Con Cable Machenike K500-b94 Gris Oscuro Inglés Internacional",
-      "price": 60299,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_797894-MLA100061222129_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-100061222129-teclado-gamer-mecanico-rgb-con-cable-machenike-k500-b94-gris-oscuro-ingl-s-inter-_JM"
-    },
-    {
-      "title": "Teclado Mecanico Inalambrico Mercury K1 Rgb Gravastar",
-      "price": 176990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_672784-MLA106606488664_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-106606488664-teclado-mecanico-inalambrico-mercury-k1-rgb-gravastar-_JM"
-    },
-    {
-      "title": "Teclado Redragon Kumara QWERTY Outemu Red español latinoamérica color negro con luz RGB",
-      "price": 79200,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_808321-MLA99441614728_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/teclado-redragon-kumara-qwerty-outemu-red-espanol-latinoamerica-color-negro-con-luz-rgb/p/MLA19472215"
-    },
-    {
-      "title": "Teclado Mecánico Inalámbrico Aula F75 Pro RGB Impresión Lateral Inglés US (75%) Color Gris",
-      "price": 138086,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_646241-MLA82105229115_012025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/teclado-mecanico-inalambrico-aula-f75-pro-rgb-impresion-lateral-ingles-us-75-color-gris/p/MLA45693600"
-    },
-    {
-      "title": "Teclado Gaming Una Mano Con Reposa Muñecas Rgb Ergonómico L",
-      "price": 51721,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_750980-MLA101824046210_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/yostyle-teclado-gaming-pequeno-para-una-mano-ergonomica/p/MLA2063272570"
-    },
-    {
-      "title": "Teclado Gamer Mecánico Aula F75 Cableado Usb Negro Sw Red Retroiluminado Idioma Inglés",
-      "price": 62349,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_822557-MLA99437186434_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/teclado-gamer-mecanico-aula-f75-cableado-usb-negro-sw-red-retroiluminado-idioma-ingles/p/MLA57380272"
-    },
-    {
-      "title": "Teclado Gamer Machenike K500b-b87 Rgb Qwerty Switch Red Switch Red - Gris Y Blanco Inglés Internacional",
-      "price": 43299,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_923618-MLA96077456111_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/teclado-gamer-machenike-k500b-b87-rgb-qwerty-switch-red-switch-red-gris-y-blanco-ingles-internacional/p/MLA43010073"
-    },
-    {
-      "title": "Teclado Redragon Kumara QWERTY Outemu Red español España color negro con luz rainbow",
-      "price": 64999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_669172-MLA99515297516_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/teclado-redragon-kumara-qwerty-outemu-red-espanol-espana-color-negro-con-luz-rainbow/p/MLA19518470"
-    },
-    {
-      "title": "Teclado Gamer Mecánico Aula F75 Cableado Usb Blanco Sw Red Blanco Inglés Internacional",
-      "price": 62349,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_809831-MLA99472720552_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/teclado-gamer-mecanico-aula-f75-cableado-usb-blanco-sw-red-blanco-ingles-internacional/p/MLA58573558"
-    },
-    {
-      "title": "Teclado Gamer Mecanico Rgb Con Cable Machenike K500-b94 Gris Oscuro Inglés Internacional",
-      "price": 70499,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_797894-MLA100061222129_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/teclado-gamer-mecanico-rgb-con-cable-machenike-k500-b94-gris-oscuro-ingles-internacional/p/MLA62710185"
-    },
-    {
-      "title": "Teclado Gamer Havit Kb10l Pro Mecánico Tkl Compacto Luz Roja",
-      "price": 59999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_839280-MLA109808436161_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-109808436161-teclado-gamer-havit-kb10l-pro-mec-nico-tkl-compacto-luz-roja-_JM"
-    },
-    {
-      "title": "Teclado Gravastar Mercury  K1 75% Wireless Mechanical Gaming",
-      "price": 185990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_624166-MLA111140834805_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-111140834805-teclado-gravastar-mercury-k1-75-wireless-mechanical-gaming-_JM"
-    },
-    {
-      "title": "Teclado Gamer Tkl T-dagger Arena Lite T-tgk321 W-l Rainbow Blanco",
-      "price": 32999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_879587-MLA96171276145_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-96171276145-teclado-gamer-tkl-t-dagger-arena-lite-t-tgk321-w-l-rainbow-blanco-_JM"
-    },
-    {
-      "title": "Teclado Mecánico T-Dagger Bora RGB Blanco Anti-Ghosting USB Switch Azul",
-      "price": 59999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_731313-MLA99994123211_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99994123211-teclado-mec-nico-t-dagger-bora-rgb-blanco-anti-ghosting-usb-switch-azul-_JM"
-    },
-    {
-      "title": "Teclado Mecánico Redragon Kumara Rainbow K552-kr-sp Teclado Negro Idioma Español Latinoamérica",
-      "price": 59107,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_906052-MLA99545426148_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/teclado-mecanico-redragon-kumara-rainbow-k552-kr-sp-teclado-negro-idioma-espanol-latinoamerica/p/MLA34802431"
-    },
-    {
-      "title": "Teclado Mecánico Womier Sk80 75% Rgb, Montaje Gasket, Negro Negro Inglés Internacional",
-      "price": 146345,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_647869-CBT111456799641_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/womier-s-k80-75-keyboard-with-color-multimedia-display-m/p/MLA2024402854"
-    },
-    {
-      "title": "Teclado Bluetooth Inalámbrico Color Negro Idioma Español Español Latinoamérica",
-      "price": 15999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_680583-MLA99357301564_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/teclado-bluetooth-inalambrico-color-negro-idioma-espanol-espanol-latinoamerica/p/MLA51910435"
-    },
-    {
-      "title": "Razer Huntsman V3 Pro Tkl Teclado Esports Switches Analog.",
-      "price": 361744,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_943133-CBT83899071101_042025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/gaming-keyboard-razer-huntsman-v3-pro-analog-optical-black/p/MLA2062320804"
-    }
-  ],
-  "lentes": [
-    {
-      "title": "Anteojos De Sol Ray Ban Chris 4187 Clásico Color 622/8G Talle 54 Único Existente",
-      "price": 111977,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_965306-MLA99379858244_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99379858244-anteojos-de-sol-ray-ban-chris-4187-cl-sico-color-622-8g-talle-54-nico-existente-_JM"
-    },
-    {
-      "title": "Lentes De Sol Ray-ban Rb2180 Highstreet",
-      "price": 300000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_630580-MLA111116715309_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-111116715309-lentes-de-sol-ray-ban-rb2180-highstreet-_JM"
-    },
-    {
-      "title": "Ray-ban Justin Rb4165 Polarizado Negro Original Italy Uv400",
-      "price": 249000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_652532-MLA106407106335_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-106407106335-ray-ban-justin-rb4165-polarizado-negro-original-italy-uv400-_JM"
-    },
-    {
-      "title": "Ray-ban Rb4171 Erika Classic",
-      "price": 299400,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_755059-MLA107950671348_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-107950671348-ray-ban-rb4171-erika-classic-_JM"
-    },
-    {
-      "title": "Anteojos De Sol UV400 Clásicos Mujer Hombre Rimland Moonshine",
-      "price": 49723,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_943390-MLA106687962148_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/anteojos-de-sol-uv400-clasicos-mujer-hombre-rimland-moonshine/p/MLA19146876"
-    },
-    {
-      "title": "Anteojos de sol polarizados Rusty Terdey armazón negro brillo y lente gris oscuro",
-      "price": 86000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_823802-MLA100078863667_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/anteojos-de-sol-polarizados-rusty-terdey-armazon-negro-brillo-y-lente-gris-oscuro/p/MLA21260860"
-    },
-    {
-      "title": "Anteojos De Sol Polarizados Clásicos Para Hombre Y Mujer",
-      "price": 25322,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_795222-CBT103070258079_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-2783170240-anteojos-de-sol-polarizados-cl-sicos-para-hombre-y-mujer-_JM"
-    },
-    {
-      "title": "Gafas De Sol Con Polarización Circular  Lentes Ajustables",
-      "price": 75815,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_781231-MLA101700645790_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-101700645790-gafas-de-sol-con-polarizaci-n-circular-lentes-ajustables-_JM"
-    },
-    {
-      "title": "Ray-ban Wayfarer Rb2140 Negro Original Made In Italy Uv400",
-      "price": 224397,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_874310-MLA106268913531_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-106268913531-ray-ban-wayfarer-rb2140-negro-original-made-in-italy-uv400-_JM"
-    },
-    {
-      "title": "Anteojos de sol Infinit Sol Exclamation talle Mediano negro mate y lente gris",
-      "price": 199900,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_766444-MLU74136900960_012024-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/anteojos-de-sol-infinit-sol-exclamation-talle-mediano-negro-mate-y-lente-gris/p/MLA17328348"
-    },
-    {
-      "title": "Lentes Blue Blockers + Antireflex Filtro Luz Azul Descanso",
-      "price": 85000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_601476-MLA106961659168_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-106961659168-lentes-blue-blockers-antireflex-filtro-luz-azul-descanso-_JM"
-    },
-    {
-      "title": "Anteojos de sol Rusty And Now? armazón negro mate y lente azul",
-      "price": 88643,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_815416-MLA100048440653_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/anteojos-de-sol-rusty-and-now-armazon-negro-mate-y-lente-azul/p/MLA18574573"
-    },
-    {
-      "title": "Ray-ban Justin Classic Rb4165 Lentes De Sol",
-      "price": 319360,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_789223-MLA109942070842_042026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-109942070842-ray-ban-justin-classic-rb4165-lentes-de-sol-_JM"
-    },
-    {
-      "title": "Ray-ban Rb3548 Hexagonal Lentes De Sol Original Varios Color",
-      "price": 298342,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_656968-MLA108194495247_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-108194495247-ray-ban-rb3548-hexagonal-lentes-de-sol-original-varios-color-_JM"
-    },
-    {
-      "title": "Ray-ban Rb4441d Lentes De Sol Original",
-      "price": 288330,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_726290-MLA106756037958_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-106756037958-ray-ban-rb4441d-lentes-de-sol-original-_JM"
-    },
-    {
-      "title": "Lentes De Sol Vaghoz Quick Unisex Deportivo Polarizado Uv400 Negro G Negro Único",
-      "price": 86999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_671483-MLA108023697221_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-108023697221-lentes-de-sol-vaghoz-quick-unisex-deportivo-polarizado-uv400-negro-g-negro-nico-_JM"
-    },
-    {
-      "title": "Anteojos de sol polarizados Rusty modelo Blozon con lente color mblue/r. blue, material G-Flex y protección UV.",
-      "price": 103372,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_733891-MLA95677460360_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/anteojos-de-sol-polarizados-rusty-modelo-blozon-con-lente-color-mbluer-blue-material-g-flex-y-proteccion-uv/p/MLA21283820"
-    },
-    {
-      "title": "Anteojos De Sol Cuadrados Para Mujer Océano Verde Rosa Claro Dorado",
-      "price": 15670,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_877032-CBT110376754566_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/square-womens-sunglasses-ocean-green-light-golden/p/MLA2082826385"
-    },
-    {
-      "title": "Anteojo Sol Rusty Dulins Negro",
-      "price": 76500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_915257-MLA88064934650_072025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/anteojo-sol-rusty-dulins-negro/p/MLA22309290"
-    },
-    {
-      "title": "Anteojos De Sol Vulk Harry Mblk S10 Negro Mate",
-      "price": 80153,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_707703-MLA95664945288_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/anteojos-de-sol-vulk-harry-mblk-s10-negro-mate/p/MLA18620681"
-    }
-  ],
-  "bicicletas": [
-    {
-      "title": "Bicicleta paseo plegable Fire Bird Urbana Curve Plegable R20 color negro/rojo",
-      "price": 550000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_928702-MLA99994308249_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99994308249-bicicleta-paseo-plegable-fire-bird-urbana-curve-plegable-r20-color-negro-rojo-_JM"
-    },
-    {
-      "title": "Bicicleta urbana plegable Tern Link A7 R20 7 velocidades gris aluminio",
-      "price": 1276762,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_733436-MLA99484766398_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99484766398-bicicleta-urbana-plegable-tern-link-a7-r20-7-velocidades-gris-aluminio-_JM"
-    },
-    {
-      "title": "Bicicleta Urbana Raleigh Classic Lady R28 Aluminio 3V Negro",
-      "price": 620056,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_844725-MLA99494583738_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99494583738-bicicleta-urbana-raleigh-classic-lady-r28-aluminio-3v-negro-_JM"
-    },
-    {
-      "title": "Bicicleta Hombre Raleigh Classic 700 Nexus Paseo Urbana Fas Color Negro",
-      "price": 620056,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_736825-MLA82659209416_032025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-82659209416-bicicleta-hombre-raleigh-classic-700-nexus-paseo-urbana-fas-color-negro-_JM"
-    },
-    {
-      "title": "Bicicleta Fire Bird Urbana Curve Plegable R20 Acero 6 Velocidades",
-      "price": 371621,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_934094-MLA112746626631_062026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-fire-bird-urbana-curve-plegable-r20-acero-6-velocidades/p/MLA26682305"
-    },
-    {
-      "title": "Bicicleta Fire Bird Curve Plegable 6 Velocidades Color Negro Con Azul",
-      "price": 517999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_601096-MLA110861676478_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-fire-bird-curve-plegable-6-velocidades-color-negro-con-azul/p/MLA69921012"
-    },
-    {
-      "title": "Bicicleta Urbana Rodado 29 Fiat500 Paseo 21 Vel Shimano Negro M",
-      "price": 507023,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_805832-MLA109971313269_042026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-urbana-rodado-29-fiat500-paseo-21-vel-shimano-negro-m/p/MLA67525402"
-    },
-    {
-      "title": "Bicicleta Urbana Raleigh Classic Lady R28 Aluminio 3V Negro",
-      "price": 620056,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_844725-MLA99494583738_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-urbana-raleigh-classic-lady-r28-aluminio-3v-negro/p/MLA17919968"
-    },
-    {
-      "title": "Bicicleta Plegable Raleigh Curve Rodado 20 - 6v Negro/rojo 20",
-      "price": 599900,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_944135-MLA107461287593_022026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-plegable-raleigh-curve-rodado-20-6v-negrorojo-20/p/MLA65842922"
-    },
-    {
-      "title": "Bicicleta paseo plegable Fire Bird Urbana Curve Plegable R20 color negro/rojo",
-      "price": 550000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_928702-MLA99994308249_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-paseo-plegable-fire-bird-urbana-curve-plegable-r20-color-negrorojo/p/MLA26682307"
-    },
-    {
-      "title": "Bicicleta Hombre Raleigh Classic 700 Nexus Paseo Urbana Fas Color Negro",
-      "price": 620056,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_736825-MLA82659209416_032025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-hombre-raleigh-classic-700-nexus-paseo-urbana-fas-color-negro/p/MLA46956823"
-    },
-    {
-      "title": "Bici Jamis Citizen 2 Alum Urbana 24 Vel Shimano Hombre Color Gris Tamaño Del Cuadro 21",
-      "price": 1379000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_748130-MLA99488945832_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bici-jamis-citizen-2-alum-urbana-24-vel-shimano-hombre-color-gris-tamano-del-cuadro-21/p/MLA46045249"
-    },
-    {
-      "title": "Bici Plegable Fire Bird  Freno A Disco Rodado 20",
-      "price": 379999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_742463-MLA108184367153_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-108184367153-bici-plegable-fire-bird-freno-a-disco-rodado-20-_JM"
-    },
-    {
-      "title": "Bicicleta Dama Urbana Paseo Rodado 29 Fiat 500 7 Velocidades",
-      "price": 699000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_747216-MLA100963436762_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-100963436762-bicicleta-dama-urbana-paseo-rodado-29-fiat-500-7-velocidades-_JM"
-    },
-    {
-      "title": "Bicicleta Urbana Raleigh Venture 3.0 Rodado 26 Manubrio Recto 21 Velocidades",
-      "price": 729174,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_711177-MLA74780205431_022024-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-74780205431-bicicleta-urbana-raleigh-venture-3-0-rodado-26-manubrio-recto-21-velocidades-_JM"
-    },
-    {
-      "title": "Bicicleta Mtb Urbana Olmo Straat S-10 8v Plan Fas Motos",
-      "price": 760800,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_911173-MLA104015826427_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-104015826427-bicicleta-mtb-urbana-olmo-straat-s-10-8v-plan-fas-motos-_JM"
-    },
-    {
-      "title": "Bicicleta Urbana Raleigh Venture 3.0 R27.5 21v V-brake Color Blanco Tamaño del cuadro 16",
-      "price": 650000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_734975-MLA100171763297_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-urbana-raleigh-venture-30-r275-21v-v-brake-color-blanco-tamano-del-cuadro-16/p/MLA18951633"
-    },
-    {
-      "title": "Bicicleta urbana Raleigh Venture 3.0 R27.5 21v V-brake Color Blanco Tamaño del cuadro 18",
-      "price": 729174,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_826315-MLA99012243076_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-urbana-raleigh-venture-30-r275-21v-v-brake-color-blanco-tamano-del-cuadro-18/p/MLA18951634"
-    },
-    {
-      "title": "Bicicleta Plegable Raleigh R20 6v Freno Disco Ste. Color Gris/naranja",
-      "price": 647362,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_838945-MLA99937554093_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-plegable-raleigh-r20-6v-freno-disco-ste-color-grisnaranja/p/MLA35509505"
-    },
-    {
-      "title": "Bicicleta Plegable Belmondo 7+ Rodado 24 7 Velocidades Urbana Verde mate",
-      "price": 1300000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_698409-MLA100007872953_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-plegable-belmondo-7-rodado-24-7-velocidades-urbana-verde-mate/p/MLA28122523"
-    }
-  ],
-  "mochilas": [
-    {
-      "title": "Mochila Samsonite Bravo 2026 Laptop Negro 27l Urbana Diseño De La Tela Liso",
-      "price": 199990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_809653-MLA111751166575_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-111751166575-mochila-samsonite-bravo-2026-laptop-negro-27l-urbana-diseno-de-la-tela-liso-_JM"
-    },
-    {
-      "title": "Mochila Viagem Feminina Masculina Impermeable Y Duradero",
-      "price": 68888,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_932204-MLA109067515705_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-109067515705-mochila-viagem-feminina-masculina-impermeable-y-duradero-_JM"
-    },
-    {
-      "title": "Mochila Wison Porta Notebook Cierre Candado Antirrobo Cerradura Ejecutiva Apta Para Oficina Trabajo Universidad Urbana Color Negro 65.an007",
-      "price": 31999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_614419-MLA85706408643_062025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-85706408643-mochila-wison-porta-notebook-cierre-candado-antirrobo-cerradura-ejecutiva-apta-p-_JM"
-    }
-  ],
-  "celulares": [
-    {
-      "title": "Motorola Moto G15 4 + 128 Gb Gris",
-      "price": 299999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_948903-MLA99936142999_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99936142999-motorola-moto-g15-4-128-gb-gris-_JM"
-    },
-    {
-      "title": "Motorola Moto G15 256gb Sunrise Orange",
-      "price": 349999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_677627-MLA99509381758_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99509381758-motorola-moto-g15-256gb-sunrise-orange-_JM"
-    },
-    {
-      "title": "Moto G56 256gb + 8gb Ram Azul marino Motorola",
-      "price": 599999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_676225-MLA99503683810_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99503683810-moto-g56-256gb-8gb-ram-azul-marino-motorola-_JM"
-    }
-  ],
-  "auriculares": [
-    {
-      "title": "Auriculares Inalámbricos Xiaomi Redmi Buds 6 Play Negro",
-      "price": 42999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_802305-MLA95679505222_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-95679505222-auriculares-inalambricos-xiaomi-redmi-buds-6-play-negro-_JM"
-    },
-    {
-      "title": "Auriculares In-Ear Carrello C07 Bluetooth 5.4 de Baja Latencia, Micrófonos con Cancelación de Ruido ENC para Llamadas Claras y Resistencia al Agua IPX5",
-      "price": 47999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_674466-MLA100679961128_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-100679961128-auriculares-in-ear-carrello-c07-bluetooth-5-4-de-baja-latencia-microfonos-con-ca-_JM"
-    },
-    {
-      "title": "Auriculares Inalámbricos In-Ear Carrello T11 Bluetooth Cancelación Ruido Negro",
-      "price": 43999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_793076-MLA101176076629_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-101176076629-auriculares-inalambricos-in-ear-carrello-t11-bluetooth-cancelacion-ruido-negro-_JM"
-    }
-  ],
-  "notebooks": [
-    {
-      "title": "Hp Rosa Intel N150 128gb Ufs 4gb Ram Pantalla 14 Hd Intel Uhd Graphics Incluye Windows Instalado Laptop Pink Dq6015 Con Regalo",
-      "price": 1071303,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_789405-MLA109848169626_042026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-109848169626-hp-rosa-intel-n150-128gb-ufs-4gb-ram-pantalla-14-hd-intel-uhd-graphics-incluye-w-_JM"
-    },
-    {
-      "title": "Notebook HP 15-fd0331la Intel Core 3 8GB RAM 512GB SSD 15,6\" FHD Windows 11 Home",
-      "price": 1899999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_899224-MLA108576942549_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-108576942549-notebook-hp-15-fd0331la-intel-core-3-8gb-ram-512gb-ssd-15-6-fhd-windows-11-home-_JM"
-    },
-    {
-      "title": "Notebook Gfast N-537R con AMD Ryzen 5, 16GB RAM y 240GB SSD de 15.6\"",
-      "price": 1374495,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_737204-MLA111081884103_042026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-111081884103-notebook-gfast-n-537r-con-amd-ryzen-5-16gb-ram-y-240gb-ssd-de-15-6-_JM"
-    }
-  ],
-  "consolas": [
-    {
-      "title": "Cargador Dual Dobe PS4 Slim Pro Base de Carga para Joysticks",
-      "price": 37999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_944041-MLA99483219320_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99483219320-cargador-dual-dobe-ps4-slim-pro-base-de-carga-para-joysticks-_JM"
-    },
-    {
-      "title": "Volante Gaming Dynacom Negro PS4 PS3 Xbox Switch PC USB DY-001128",
-      "price": 180799,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_740291-MLU71621697949_092023-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-1791754120-volante-gaming-dynacom-negro-ps4-ps3-xbox-switch-pc-usb-dy-001128-_JM"
-    },
-    {
-      "title": "Cargador Base Vertical Controles Joystick P.S.4 + Cable Usb",
-      "price": 14999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_875099-MLA99612234350_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99612234350-cargador-base-vertical-controles-joystick-p-s-4-cable-usb-_JM"
-    }
-  ],
-  "tablets": [
-    {
-      "title": "Samsung Galaxy Tab A11 Color Gris Capacidad 64 GB Ram 4GB",
-      "price": 324999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_968337-MLA100567674726_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-100567674726-samsung-galaxy-tab-a11-color-gris-capacidad-64-gb-ram-4gb-_JM"
-    },
-    {
-      "title": "Tablet Xiaomi Redmi Pad 2 11 8gb Ram 256gb Memoria Pantalla 2k 90hz Hyperos 2 Color Gris Oscuro",
-      "price": 649999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_970651-MLA99454443408_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99454443408-tablet-xiaomi-redmi-pad-2-11-8gb-ram-256gb-memoria-pantalla-2k-90hz-hyperos-2-co-_JM"
-    },
-    {
-      "title": "Tablet Lenovo Tab 10.1\" 4gb+128gb Zaeh0074ar Tb311fu Color Gris + Folio case",
-      "price": 558595,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_652938-MLA112257726207_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-112257726207-tablet-lenovo-tab-10-1-4gb-128gb-zaeh0074ar-tb311fu-color-gris-folio-case-_JM"
-    }
-  ],
-  "smart_tvs": [
-    {
-      "title": "Smart Tv 91MT4310 Hd Android 43 Pulgadas Motorola",
-      "price": 480869,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_815241-MLA104614497936_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-104614497936-smart-tv-91mt4310-hd-android-43-pulgadas-motorola-_JM"
-    },
-    {
-      "title": "Smart Tv Noblex Dq55x9580 55 Pulgadas 4k Black Series",
-      "price": 879989,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_922378-MLA92779462751_092025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-92779462751-smart-tv-noblex-dq55x9580-55-pulgadas-4k-black-series-_JM"
-    },
-    {
-      "title": "Smart Tv Bgh 50 Qled 4k Google Tv B5026us7g",
-      "price": 734568,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_869561-MLA98521132022_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-98521132022-smart-tv-bgh-50-qled-4k-google-tv-b5026us7g-_JM"
-    }
-  ],
-  "cafeteras": [
-    {
-      "title": "Cafetera Expresso Digital Suono Automática Acero Inox con Accesorios 1.5 L Color Plateado",
-      "price": 209039,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_961498-MLA107633861922_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-107633861922-cafetera-expresso-digital-suono-automatica-acero-inox-con-accesorios-1-5-l-color-_JM"
-    },
-    {
-      "title": "Cafetera Espresso Con Espumador Cuk By Gadnic 20 Bares 1,5l Espumador 1050W Tanque Removible Acero Inoxidable",
-      "price": 220049,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_986431-MLA101078011431_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-101078011431-cafetera-espresso-con-espumador-cuk-by-gadnic-20-bares-1-5l-espumador-1050w-tanq-_JM"
-    },
-    {
-      "title": "Cafetera De Filtro Eléctrica Suono 12 Tazas 1200ml Antigoteo Color Negro",
-      "price": 58999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_806573-MLA109749412131_032026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-109749412131-cafetera-de-filtro-electrica-suono-12-tazas-1200ml-antigoteo-color-negro-_JM"
-    }
-  ],
-  "licuadoras": [
-    {
-      "title": "Licuadora Moulinex Powermix Negra 8 Velocidades 2 Litros Negro",
-      "price": 78399,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_885454-MLA100016698107_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-100016698107-licuadora-moulinex-powermix-negra-8-velocidades-2-litros-negro-_JM"
-    },
-    {
-      "title": "Licuadora De Vaso Proline 1.5 Litros 450 Watts",
-      "price": 72599,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_896020-MLA99367790242_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99367790242-licuadora-de-vaso-proline-1-5-litros-450-watts-_JM"
-    },
-    {
-      "title": "Licuadora Comercial Cecotec 1500w Vidrio Cuchillas Titanio Negro",
-      "price": 139999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_865057-MLA104118498981_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-104118498981-licuadora-comercial-cecotec-1500w-vidrio-cuchillas-titanio-negro-_JM"
-    }
-  ],
-  "sillones": [
-    {
-      "title": "Juego De Living Jardin Exterior Maya 2 Sillones + Mesa",
-      "price": 2528999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_690788-MLA112752559985_062026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-112752559985-juego-de-living-jardin-exterior-maya-2-sillones-mesa-_JM"
-    },
-    {
-      "title": "Juego Living Jardín 4 Piezas Ratán Sintético Mesa + 3 Sillón",
-      "price": 319900,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_989618-MLA104230173764_012026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-104230173764-juego-living-jardin-4-piezas-ratan-sintetico-mesa-3-sillon-_JM"
-    },
-    {
-      "title": "Juego De Living Jardin Exterior Sillon + 2 Sillas + Mesa",
-      "price": 589900,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_880929-MLA110119698375_042026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-110119698375-juego-de-living-jardin-exterior-sillon-2-sillas-mesa-_JM"
-    }
-  ],
   "sillas_gamer": [
     {
       "title": "Silla Gamer Patagonia Home GC-030 Ergonomica Reclinable Negro/Azul",
@@ -1774,33 +732,33 @@
       "link": "https://articulo.mercadolibre.com.ar/MLA-99524522462-silla-gamer-mtl-ergonomica-color-negro-con-luces-masajeadora-material-del-tapiza-_JM"
     }
   ],
-  "parlantes": [
+  "licuadoras": [
     {
-      "title": "Parlante Suono 2 Woofers 6.5'' Luces Led Tws Rgb Bt Blanco",
-      "price": 195224,
+      "title": "Licuadora Moulinex Powermix Negra 8 Velocidades 2 Litros Negro",
+      "price": 78399,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_976635-MLA99027318884_112025-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_885454-MLA100016698107_122025-E.webp",
       "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99027318884-parlante-suono-2-woofers-6-5-luces-led-tws-rgb-bt-blanco-_JM"
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-100016698107-licuadora-moulinex-powermix-negra-8-velocidades-2-litros-negro-_JM"
     },
     {
-      "title": "Parlante Karaoke Bluetooth Pampa + Microfono+ Control Remoto Color Negro",
-      "price": 88657,
+      "title": "Licuadora De Vaso Proline 1.5 Litros 450 Watts",
+      "price": 72599,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_625958-MLA95532325970_102025-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_896020-MLA99367790242_112025-E.webp",
       "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-95532325970-parlante-karaoke-bluetooth-pampa-microfono-control-remoto-color-negro-_JM"
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99367790242-licuadora-de-vaso-proline-1-5-litros-450-watts-_JM"
     },
     {
-      "title": "Parlante Bluetooth Ditron Cuadrado 10w Con Micrófono",
-      "price": 102618,
+      "title": "Licuadora Comercial Cecotec 1500w Vidrio Cuchillas Titanio Negro",
+      "price": 139999,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_680806-MLA109091841950_042026-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_865057-MLA104118498981_012026-E.webp",
       "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-109091841950-parlante-bluetooth-ditron-cuadrado-10w-con-microfono-_JM"
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-104118498981-licuadora-comercial-cecotec-1500w-vidrio-cuchillas-titanio-negro-_JM"
     }
   ]
 }

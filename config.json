@@ -102,7 +102,7 @@
     }
   },
   "categories": [
-    { "id": "zapatillas", "name": "Zapatillas del Momento", "icon": "👟", "query": "zapatillas", "sites": ["elpodiomp", "elpodiotech", "elpodiohogar"] },
+    { "id": "zapatillas", "name": "Zapatillas del Momento", "icon": "👟", "query": "zapatillas", "sites": ["elpodiomp"] },
     { "id": "mochilas", "name": "Mochilas Top", "icon": "🎒", "query": "mochilas", "sites": ["elpodiomp"] },
     { "id": "celulares", "name": "Celulares Top", "icon": "📱", "query": "celulares", "sites": ["elpodiomp", "elpodiotech"] },
     { "id": "smartwatches", "name": "Relojes Inteligentes", "icon": "⌚", "query": "smartwatch", "sites": ["elpodiotech"] },

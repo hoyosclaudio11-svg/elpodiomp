@@ -53,7 +53,7 @@ async function scrapeCategory(browser, cat) {
         if (cards.length > 0) break;
       }
 
-      for (let i = 0; i < Math.min(cards.length, 3); i++) {
+      for (let i = 0; i < Math.min(cards.length, 20); i++) {
         const el = cards[i];
 
         const titleEl = el.querySelector('h2, .ui-search-item__title, .poly-component__title, a[title]');
@@ -125,7 +125,7 @@ async function scrapeCategory(browser, cat) {
         }
 
         items.push({ title, price: price || 99999, oldPrice, imageUrl, badge, link });
-        if (items.length >= 3) break;
+        if (items.length >= 20) break;
       }
       return items;
     }, url);

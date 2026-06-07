@@ -115,7 +115,7 @@ function generateSiteCache(siteId, template, fixture, config, foods) {
     let cardsHtml = '';
 
     if (products.length > 0) {
-      products.slice(0, 3).forEach(fp => {
+      products.slice(0, 20).forEach(fp => {
         const affLink = fp.link || catAffLink;
         const oldPriceHtml = fp.oldPrice && fp.oldPrice > fp.price
           ? `<p class="old-price">$${formatPrice(fp.oldPrice)}</p>` : '';

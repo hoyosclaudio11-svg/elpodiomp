@@ -311,7 +311,7 @@ async function scrapeTopProducts(query) {
       if (cards.length > 0) break;
     }
 
-    cards.slice(0, 3).each((i, el) => {
+    cards.slice(0, 20).each((i, el) => {
       const $el = $(el);
       let title = $el.find('h2').first().text().trim() ||
                   $el.find('.ui-search-item__title').text().trim() ||
@@ -421,7 +421,7 @@ async function getValidAccessToken() {
 async function fetchTopProducts(accessToken, query) {
   try {
     const response = await axios.get('https://api.mercadolibre.com/sites/MLA/search', {
-      params: { q: query, limit: 20 },
+      params: { q: query, limit: 50 },
       headers: {
         'Authorization': `Bearer ${accessToken}`,
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
@@ -480,7 +480,7 @@ async function fetchTopProducts(accessToken, query) {
     });
 
     processedProducts.sort((a, b) => b.isInterestFree - a.isInterestFree);
-    return processedProducts.slice(0, 3);
+    return processedProducts.slice(0, 20);
   } catch (err) {
     log(`Error buscando "${query}": ` + (err.response?.data?.message || err.message));
     return [];

@@ -1,4 +1,62 @@
 {
+  "celulares": [
+    {
+      "title": "Motorola Moto G15 4 + 128 Gb Naranja",
+      "price": 299999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_776491-MLA99974410931_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99974410931-motorola-moto-g15-4-128-gb-naranja-_JM"
+    },
+    {
+      "title": "Celular Tcl 605 (8+256) Black Rv con NFC",
+      "price": 316790,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_707690-MLA108034617826_032026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-108034617826-celular-tcl-605-8-256-black-rv-con-nfc-_JM"
+    },
+    {
+      "title": "Celular Tcl 50 Pro Nxtpaper 5g Android Color Space Gray",
+      "price": 549999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_887042-MLA99963017661_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99963017661-celular-tcl-50-pro-nxtpaper-5g-android-color-space-gray-_JM"
+    }
+  ],
+  "notebooks": [
+    {
+      "title": "Notebook Philco N14P4020 14.1 Pulgadas Intel Celeron 4gb 128gb Ssd Windows 11",
+      "price": 455699,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_910728-MLA99986778023_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99986778023-notebook-philco-n14p4020-14-1-pulgadas-intel-celeron-4gb-128gb-ssd-windows-11-_JM"
+    },
+    {
+      "title": "Notebook HP 15-fc0287la AMD Ryzen 7 8GB RAM 512GB SSD 15,6\" FHD Windows 11",
+      "price": 2279999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_825957-MLA107343343293_022026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-107343343293-notebook-hp-15-fc0287la-amd-ryzen-7-8gb-ram-512gb-ssd-15-6-fhd-windows-11-_JM"
+    },
+    {
+      "title": "Notebook Hp 15-fc0235la AMD Ryzen 3 7320u 8gb RAM 512gb SSD Windows 11 Home",
+      "price": 1244439,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_901750-MLA99573117992_122025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99573117992-notebook-hp-15-fc0235la-amd-ryzen-3-7320u-8gb-ram-512gb-ssd-windows-11-home-_JM"
+    }
+  ],
   "zapatillas": [
     {
       "title": "Zapatillas Newstep 780 Hombre Estándar Deporte 34-45",
@@ -57,35 +115,6 @@
       "link": "https://articulo.mercadolibre.com.ar/MLA-85706408643-mochila-wison-porta-notebook-cierre-candado-antirrobo-cerradura-ejecutiva-apta-p-_JM"
     }
   ],
-  "celulares": [
-    {
-      "title": "Celular Motorola Moto G15 128gb 8gb Ram Dual Sim Potent",
-      "price": 349999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_879184-MLA90557082581_082025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-90557082581-celular-motorola-moto-g15-128gb-8gb-ram-dual-sim-potent-_JM"
-    },
-    {
-      "title": "Celular Samsung Galaxy A16 128gb Gris + Cámara Seguridad ...",
-      "price": 469999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_683345-MLA112537151225_052026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-112537151225-celular-samsung-galaxy-a16-128gb-gris-camara-seguridad-_JM"
-    },
-    {
-      "title": "NokiaBasic106 (2018) Dual SIM 4 MB gris oscuro4 MB RAM",
-      "price": 35499,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_697305-MLA100029155769_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-100029155769-nokiabasic106-2018-dual-sim-4-mb-gris-oscuro4-mb-ram-_JM"
-    }
-  ],
   "smartwatches": [
     {
       "title": "Reloj Inteligente Smartwatch Qx17 Gps Integrado Malla Extra",
@@ -142,35 +171,6 @@
       "badge": "Destacado",
       "description": "Producto disponible online.",
       "link": "https://articulo.mercadolibre.com.ar/MLA-101176076629-auriculares-inalambricos-in-ear-carrello-t11-bluetooth-cancelacion-ruido-negro-_JM"
-    }
-  ],
-  "notebooks": [
-    {
-      "title": "Notebook Hp 14-em0002 Amd Athlon 7120u | 4gb Ram Ddr4 | 128gb Ssd | Pantalla 14 Hd Graficos Integrados Color Moonlight Blue",
-      "price": 649999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_629152-MLA110669882443_042026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-110669882443-notebook-hp-14-em0002-amd-athlon-7120u-4gb-ram-ddr4-128gb-ssd-pantalla-14-hd-gra-_JM"
-    },
-    {
-      "title": "Hp Rosa Intel N150 128gb Ufs 4gb Ram Pantalla 14 Hd Intel Uhd Graphics Incluye Windows Instalado Laptop Pink Dq6015 Con Regalo",
-      "price": 1071303,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_789405-MLA109848169626_042026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-109848169626-hp-rosa-intel-n150-128gb-ufs-4gb-ram-pantalla-14-hd-intel-uhd-graphics-incluye-w-_JM"
-    },
-    {
-      "title": "Notebook Asus VivoBook 14 X1404VA de 14\" Full HD con Intel Core i3 y 8 GB de RAM",
-      "price": 819999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_671182-MLA99899388239_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto disponible online.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99899388239-notebook-asus-vivobook-14-x1404va-de-14-full-hd-con-intel-core-i3-y-8-gb-de-ram-_JM"
     }
   ],
   "consolas": [

@@ -166,7 +166,7 @@ async function main() {
 
   for (let i = 0; i < categories.length; i++) {
     await scrapeCategory(browser, categories[i]);
-    if (i < categories.length - 1) await new Promise(r => setTimeout(r, 2000));
+    if (i < categories.length - 1) await new Promise(r => setTimeout(r, 5000));
   }
 
   await browser.close();

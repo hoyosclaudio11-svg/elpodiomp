@@ -751,21 +751,31 @@ app.get('/api/buscar', async (req, res) => {
 
 // Ruta principal — siempre sirve caché al instante, regenera en background
 app.get('/', async (req, res) => {
-  // Servir caché inmediatamente si existe
+  // Siempre servir cache.html del disco si existe (tiene productos reales con imágenes)
+  if (fs.existsSync(CACHE_HTML_PATH)) {
+    try {
+      const html = fs.readFileSync(CACHE_HTML_PATH, 'utf8');
+      res.send(html);
+
+      // Regenerar en background SOLO si pasaron 6h (no bloquea la respuesta)
+      if (Date.now() - lastFetchTime > CACHE_DURATION) {
+        lastFetchTime = Date.now();
+        generatePageHtml().then(newHtml => {
+          cachedHtml = newHtml;
+          log('[Cache] Regenerada en background.');
+        }).catch(err => log('[Cache] Error en regeneración: ' + err.message));
+      }
+      return;
+    } catch (_) {}
+  }
+
+  // Si no hay cache.html en disco, usar la versión en memoria
   if (cachedHtml) {
     res.send(cachedHtml);
-    // Si está vencida, regenerar en background sin bloquear
-    if (Date.now() - lastFetchTime > CACHE_DURATION) {
-      generatePageHtml().then(html => {
-        cachedHtml = html;
-        lastFetchTime = Date.now();
-        log('[Cache] Regenerada en background.');
-      }).catch(err => log('[Cache] Error en regeneración: ' + err.message));
-    }
     return;
   }
 
-  // Si no hay caché, intentar regenerar (solo la primera vez)
+  // Último recurso: regenerar dinámicamente
   try {
     cachedHtml = await generatePageHtml();
     lastFetchTime = Date.now();

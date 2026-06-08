@@ -1,11 +1,13 @@
 /**
- * Genera cache_*.html desde los datos del fixture (offline, sin API de Meli).
- * Usa las imágenes y links reales de products-fixture.json.
- * Genera un archivo por cada sitio definido en config.json.
+ * Genera cache_*.html intentando primero la API de Mercado Libre.
+ * Si la API tiene token válido, llena todas las categorías con productos reales.
+ * Si falla, usa products-fixture.json como respaldo.
  * Ejecutar: node scripts/generate-cache.js
  */
 const fs = require('fs');
 const path = require('path');
+const axios = require('axios');
+require('dotenv').config({ override: true });
 
 const TEMPLATE_PATH = path.join(__dirname, '..', 'index.html');
 const FIXTURE_PATH = path.join(__dirname, '..', 'products-fixture.json');
@@ -20,9 +22,10 @@ function formatPrice(n) {
 }
 
 function getDeterministicRating(seed) {
+  let str = String(seed);
   let hash = 0;
-  for (let i = 0; i < seed.length; i++) {
-    hash = ((hash << 5) - hash) + seed.charCodeAt(i);
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash) + str.charCodeAt(i);
     hash |= 0;
   }
   const rating = 4.0 + (Math.abs(hash) % 15) / 10;
@@ -34,29 +37,18 @@ function getDeterministicRating(seed) {
   return { rating: Math.round(rating * 10) / 10, reviews, starsHtml };
 }
 
-// Helper para leer JSON sin problemas de BOM
 function readJson(filePath) {
   let raw = fs.readFileSync(filePath, 'utf8');
   if (raw.charCodeAt(0) === 0xFEFF) raw = raw.slice(1);
   return JSON.parse(raw);
 }
 
-/**
- * Obtiene la configuración de un sitio, con fallback al default.
- */
 function getSiteConfig(config, siteId) {
-  if (config.sites && config.sites[siteId]) {
-    return config.sites[siteId];
-  }
-  if (config.sites && config.sites[DEFAULT_SITE]) {
-    return config.sites[DEFAULT_SITE];
-  }
+  if (config.sites && config.sites[siteId]) return config.sites[siteId];
+  if (config.sites && config.sites[DEFAULT_SITE]) return config.sites[DEFAULT_SITE];
   return null;
 }
 
-/**
- * Reemplaza todos los tokens {{TOKEN}} en el template con los valores del sitio.
- */
 function renderTemplate(template, siteConfig) {
   const t = siteConfig.theme;
   return template
@@ -83,20 +75,80 @@ function renderTemplate(template, siteConfig) {
     .replace(/\{\{FOOTER_HEADING\}\}/g, t.footerHeading);
 }
 
-/**
- * Genera el HTML para un sitio específico.
- */
-function generateSiteCache(siteId, template, fixture, config, foods) {
+function escapeHtml(str) {
+  if (!str || typeof str !== 'string') return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function safeUrl(url) {
+  if (!url || typeof url !== 'string') return '#';
+  const trimmed = url.trim();
+  if (/^(https?:|\/|mailto:|data:image\/)/i.test(trimmed)) return trimmed.replace(/"/g, '%22').replace(/'/g, '%27');
+  return '#';
+}
+
+// ── API de Mercado Libre ─────────────────────────
+async function fetchFromApi(query) {
+  const token = process.env.MELI_ACCESS_TOKEN;
+  if (!token) return null;
+
+  try {
+    const res = await axios.get('https://api.mercadolibre.com/sites/MLA/search', {
+      params: { q: query, limit: 20 },
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'User-Agent': 'Mozilla/5.0',
+        'Accept': 'application/json'
+      },
+      timeout: 10000
+    });
+
+    const products = (res.data.results || []).filter(p => p.id && p.title && p.price);
+    if (products.length === 0) return null;
+
+    return products.slice(0, 3).map(item => {
+      const isInterestFree = item.installments && item.installments.rate === 0;
+      const originalPrice = item.original_price;
+      const discount = originalPrice && originalPrice > item.price
+        ? Math.round(((originalPrice - item.price) / originalPrice) * 100) : 0;
+
+      let imageUrl = (item.thumbnail || '').replace('-I.jpg', '-O.jpg').replace('http://', 'https://');
+      let badge = discount > 0 ? `${discount}% OFF`
+        : (item.shipping?.free_shipping) ? 'Envío Gratis' : 'Destacado';
+
+      const ratingInfo = getDeterministicRating(item.id);
+      const installmentsText = item.installments && item.installments.quantity
+        ? `Hasta ${item.installments.quantity} cuotas sin interés`
+        : (item.shipping?.free_shipping ? 'Envío gratis a todo el país' : 'Ver en El Podio MP');
+
+      return {
+        title: item.title,
+        price: item.price,
+        oldPrice: originalPrice,
+        imageUrl,
+        badge,
+        rating: ratingInfo.rating,
+        reviews: ratingInfo.reviews,
+        starsHtml: ratingInfo.starsHtml,
+        installmentsText,
+        link: item.permalink
+      };
+    });
+  } catch (err) {
+    return null;
+  }
+}
+
+// ── Generar HTML para un sitio ───────────────────
+function generateSiteCache(siteId, template, fixture, config, foods, apiProducts) {
   const siteConfig = getSiteConfig(config, siteId);
   if (!siteConfig) {
-    console.log(`⚠️  Sitio "${siteId}" no encontrado en config.json. Saltando.`);
+    console.log(`⚠️  Sitio "${siteId}" no encontrado. Saltando.`);
     return null;
   }
 
-  // Aplicar tokens del sitio
   let siteTemplate = renderTemplate(template, siteConfig);
 
-  // Filtrar categorías que pertenecen a este sitio
   const siteCategories = config.categories.filter(cat =>
     cat.sites && cat.sites.includes(siteId)
   );
@@ -107,48 +159,86 @@ function generateSiteCache(siteId, template, fixture, config, foods) {
   let totalCards = 0;
 
   for (const cat of siteCategories) {
-    const products = fixture[cat.id] || [];
     const catAffLink = config.categoryFallbacks && config.categoryFallbacks[cat.id]
       ? config.categoryFallbacks[cat.id]
-      : `https://listado.mercadolibre.com.ar/${encodeURIComponent(cat.query || cat.name)}`;
+      : `https://listado.mercadolibre.com.ar/${encodeURIComponent(cat.query)}`;
 
     let cardsHtml = '';
 
-    if (products.length > 0) {
-      products.slice(0, 3).forEach(fp => {
-        const affLink = fp.link || catAffLink;
-        const oldPriceHtml = fp.oldPrice && fp.oldPrice > fp.price
-          ? `<p class="old-price">$${formatPrice(fp.oldPrice)}</p>` : '';
-        const ratingInfo = getDeterministicRating(cat.id + (fp.title || ''));
-
+    // 1. Intentar datos de la API (recién obtenidos)
+    if (apiProducts[cat.id] && apiProducts[cat.id].length > 0) {
+      apiProducts[cat.id].forEach(p => {
+        const affLink = safeUrl(p.link || catAffLink);
+        const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
+          ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `
-        <div class="card" onclick="window.location.href='${affLink}'">
-          <img class="card-image" src="${fp.imageUrl}" alt="${fp.title}" loading="lazy">
+        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
+          <img class="card-image" src="${safeUrl(p.imageUrl)}" alt="${escapeHtml(p.title)}" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">${fp.badge || 'Destacado'}</span>
-            <h3>${fp.title}</h3>
+            <span class="card-badge">${escapeHtml(p.badge)}</span>
+            <h3>${escapeHtml(p.title)}</h3>
             <div class="rating">
-              <span class="stars">${ratingInfo.starsHtml}</span>
-              <span class="reviews">(${ratingInfo.reviews})</span>
+              <span class="stars">${p.starsHtml}</span>
+              <span class="reviews">(${p.reviews})</span>
             </div>
-            <p class="description">${fp.description || `Calidad garantizada. Top 3 de los productos mejor valorados en ${cat.name}.`}</p>
+            <p class="description">Calidad garantizada. Top 3 de los productos mejor valorados en ${escapeHtml(cat.name)}.</p>
             ${oldPriceHtml}
-            <p class="price"><span class="price-sup">$</span>${formatPrice(fp.price)}</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${affLink}'">Comprar ahora</button>
+            <p class="price"><span class="price-sup">$</span>${formatPrice(p.price)}</p>
+            <p class="installments">${escapeHtml(p.installmentsText)}</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Comprar ahora</button>
           </div>
         </div>`;
         totalCards++;
       });
+      // Guardar en fixture para uso futuro
+      if (!fixture[cat.id]) fixture[cat.id] = [];
+      fixture[cat.id] = apiProducts[cat.id].map(p => ({
+        title: p.title, price: p.price, oldPrice: p.oldPrice,
+        imageUrl: p.imageUrl, badge: p.badge,
+        description: `Calidad garantizada. Top 3 en ${cat.name}.`,
+        link: p.link
+      }));
     }
 
+    // 2. Si no hay API, usar fixture del disco
+    if (!cardsHtml) {
+      const products = fixture[cat.id] || [];
+      if (products.length > 0) {
+        products.slice(0, 3).forEach(fp => {
+          const affLink = safeUrl(fp.link || catAffLink);
+          const oldPriceHtml = fp.oldPrice && fp.oldPrice > fp.price
+            ? `<p class="old-price">$${formatPrice(fp.oldPrice)}</p>` : '';
+          const ratingInfo = getDeterministicRating(cat.id + (fp.title || ''));
+          cardsHtml += `
+        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
+          <img class="card-image" src="${safeUrl(fp.imageUrl)}" alt="${escapeHtml(fp.title)}" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">${escapeHtml(fp.badge || 'Destacado')}</span>
+            <h3>${escapeHtml(fp.title)}</h3>
+            <div class="rating">
+              <span class="stars">${ratingInfo.starsHtml}</span>
+              <span class="reviews">(${ratingInfo.reviews})</span>
+            </div>
+            <p class="description">${escapeHtml(fp.description || '')}</p>
+            ${oldPriceHtml}
+            <p class="price"><span class="price-sup">$</span>${formatPrice(fp.price)}</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Comprar ahora</button>
+          </div>
+        </div>`;
+          totalCards++;
+        });
+      }
+    }
+
+    // 3. Último recurso: card genérica con link a ML
     if (!cardsHtml) {
       cardsHtml = `
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${catAffLink}'">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${escapeHtml(catAffLink)}'">
           <div style="text-align:center;padding:32px;">
-            <div style="font-size:48px;margin-bottom:12px;">${cat.icon || '📦'}</div>
-            <h3 style="margin-bottom:8px;">${cat.name}</h3>
-            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en ${siteConfig.name}</p>
+            <div style="font-size:48px;margin-bottom:12px;">${escapeHtml(cat.icon || '📦')}</div>
+            <h3 style="margin-bottom:8px;">${escapeHtml(cat.name)}</h3>
+            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en ${escapeHtml(siteConfig.name)}</p>
             <button class="btn">Ver productos</button>
           </div>
         </div>`;
@@ -157,99 +247,105 @@ function generateSiteCache(siteId, template, fixture, config, foods) {
     categoriesHtml += `
     <section class="section">
       <div class="section-header">
-        <h2><span class="icon">${cat.icon || '📦'}</span> ${cat.name}</h2>
+        <h2><span class="icon">${escapeHtml(cat.icon || '📦')}</span> ${escapeHtml(cat.name)}</h2>
         <a href="${catAffLink}" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
-      <div class="grid">
-        ${cardsHtml}
-      </div>
+      <div class="grid">${cardsHtml}</div>
     </section>`;
   }
 
-  // ── Sección de comida (solo para sitios que corresponda) ──
+  // ── Sección de comida ──
   const siteFoods = foods.filter(f => f.sites && f.sites.includes(siteId));
   if (siteFoods.length > 0) {
     let foodCards = '';
     siteFoods.forEach(f => {
-      const affLink = f.link || 'https://listado.mercadolibre.com.ar/_OrderId_Alimentos_Bebidas_';
+      const affLink = safeUrl(f.link);
       foodCards += `
-        <div class="card" onclick="window.location.href='${affLink}'">
-          <img class="card-image" src="${f.imageUrl}" alt="${f.product || f.name}" loading="lazy">
+        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
+          <img class="card-image" src="${safeUrl(f.imageUrl)}" alt="${escapeHtml(f.product)}" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">${f.badge || 'Recomendado'}</span>
-            <h3>${f.product || f.name}</h3>
-            <p class="description">${f.description || ''}</p>
+            <span class="card-badge">${escapeHtml(f.badge || 'Recomendado')}</span>
+            <h3>${escapeHtml(f.product)}</h3>
+            <p class="description">${escapeHtml(f.description || '')}</p>
             <p class="price"><span class="price-sup">$</span>${formatPrice(f.price)}</p>
-            <p class="installments">${f.installments}</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${affLink}'">Pedir ahora</button>
+            <p class="installments">${escapeHtml(f.installments)}</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Pedir ahora</button>
           </div>
         </div>`;
         totalCards++;
     });
-
-    if (foodCards) {
-      categoriesHtml += `
+    categoriesHtml += `
     <section class="section">
       <div class="section-header">
         <h2><span class="icon">🍔</span> Comida del Momento</h2>
         <a href="https://listado.mercadolibre.com.ar/_OrderId_Alimentos_Bebidas_" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
-      <div class="grid">
-        ${foodCards}
-      </div>
+      <div class="grid">${foodCards}</div>
     </section>`;
-    }
   }
 
-  // ── Armar HTML final ────────────────────────────
   const html = siteTemplate.replace('<!-- CATEGORIES_AND_PRODUCTS -->', categoriesHtml);
-
-  // ── Guardar ─────────────────────────────────────
   const cachePath = path.join(__dirname, '..', `cache_${siteId}.html`);
   fs.writeFileSync(cachePath, html, 'utf8');
-  console.log(`   ✅ cache_${siteId}.html: ${siteCategories.length} categorías, ${totalCards} productos (${Buffer.byteLength(html, 'utf8')} bytes)`);
+  console.log(`   ✅ ${siteCategories.length} categorías, ${totalCards} productos (${Buffer.byteLength(html, 'utf8')} bytes)`);
 
   return { categories: siteCategories.length, products: totalCards };
 }
 
 // ── MAIN ──────────────────────────────────────────
-console.log('📦 Generando cachés multi-sitio desde fixture...\n');
+async function main() {
+  console.log('🔍 Buscando productos en Mercado Libre API...\n');
 
-// Cargar template
-let template;
-try {
-  template = fs.readFileSync(TEMPLATE_PATH, 'utf8');
-} catch (e) {
-  console.error('❌ No se encontró index.html');
-  process.exit(1);
-}
+  let template, fixture, config, foods;
+  try { template = fs.readFileSync(TEMPLATE_PATH, 'utf8'); }
+  catch (e) { console.error('❌ No se encontró index.html'); process.exit(1); }
+  try {
+    fixture = readJson(FIXTURE_PATH);
+    config = readJson(CONFIG_PATH);
+    foods = readJson(FOOD_PATH);
+  } catch (e) { console.error('❌ Error al cargar datos:', e.message); process.exit(1); }
 
-// Cargar datos
-let fixture, config, foods;
-try {
-  fixture = readJson(FIXTURE_PATH);
-  config = readJson(CONFIG_PATH);
-  foods = readJson(FOOD_PATH);
-} catch (e) {
-  console.error('❌ Error al cargar datos:', e.message);
-  process.exit(1);
-}
+  // ── Intentar la API para TODAS las categorías ──
+  const apiProducts = {};
+  const allCategories = config.categories;
 
-// Obtener sitios configurados
-const siteIds = config.sites ? Object.keys(config.sites) : [DEFAULT_SITE];
-console.log(`🌐 ${siteIds.length} sitios configurados: ${siteIds.join(', ')}\n`);
-
-let grandTotalCats = 0;
-let grandTotalCards = 0;
-
-for (const siteId of siteIds) {
-  const result = generateSiteCache(siteId, template, fixture, config, foods);
-  if (result) {
-    grandTotalCats += result.categories;
-    grandTotalCards += result.products;
+  for (let i = 0; i < allCategories.length; i++) {
+    const cat = allCategories[i];
+    console.log(`   ${i + 1}/${allCategories.length} ${cat.icon} ${cat.name}...`);
+    const products = await fetchFromApi(cat.query);
+    if (products) {
+      apiProducts[cat.id] = products;
+      console.log(`      ✅ ${products.length} productos`);
+    } else {
+      console.log(`      ⚠️  sin resultados (se usará fixture o card genérica)`);
+    }
+    if (i < allCategories.length - 1) await new Promise(r => setTimeout(r, 500));
   }
+
+  // Guardar fixture actualizado
+  Object.keys(apiProducts).forEach(catId => {
+    if (!fixture[catId]) fixture[catId] = [];
+    fixture[catId] = apiProducts[catId].map(p => ({
+      title: p.title, price: p.price, oldPrice: p.oldPrice, imageUrl: p.imageUrl,
+      badge: p.badge, description: `Calidad garantizada. Top 3 en productos similares.`, link: p.link
+    }));
+  });
+  fs.writeFileSync(FIXTURE_PATH, JSON.stringify(fixture, null, 2), 'utf8');
+  console.log(`\n💾 Fixture actualizado con ${Object.keys(fixture).length} categorías.`);
+
+  // ── Generar cachés por sitio ──
+  console.log('\n📦 Generando cachés...');
+  const siteIds = config.sites ? Object.keys(config.sites) : [DEFAULT_SITE];
+  let grandTotalCats = 0, grandTotalCards = 0;
+
+  for (const siteId of siteIds) {
+    const result = generateSiteCache(siteId, template, fixture, config, foods, apiProducts);
+    if (result) { grandTotalCats += result.categories; grandTotalCards += result.products; }
+  }
+
+  console.log('\n═══════════════════════════════════════');
+  console.log(`✅ ${siteIds.length} sitios, ${grandTotalCats} categorías, ${grandTotalCards} productos.`);
+  console.log('═══════════════════════════════════════');
 }
 
-console.log('\n═══════════════════════════════════════');
-console.log(`✅ Cachés generadas: ${siteIds.length} sitios, ${grandTotalCats} categorías, ${grandTotalCards} productos.`);
-console.log('═══════════════════════════════════════\n');
+main().catch(err => { console.error('❌', err.message); process.exit(1); });

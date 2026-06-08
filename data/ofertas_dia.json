@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-06-07",
-  "hora_publicacion": "23:59 ART",
-  "dia_semana": "Domingo",
+  "fecha": "2026-06-08",
+  "hora_publicacion": "00:06 ART",
+  "dia_semana": "Lunes",
   "total_ofertas": 3,
   "categorias": [
     "Hamburguesas"
@@ -17,10 +17,25 @@
       "descuento": null,
       "fuente": "McDonald's",
       "envio": "Delivery disponible",
-      "razon": "Precio imbatible para una hamburguesa clásica con delivery incluido.",
+      "razon": "Precio imbatible para una hamburguesa clásica con delivery incluido, ideal para el bolsillo.",
       "link": "https://www.mcdonalds.com.ar/",
       "imagen": "",
       "puntaje": 9
+    },
+    {
+      "categoria": "Hamburguesas",
+      "emoji": "🍔",
+      "titulo": "Combo Nuggets 10 + Papas + Gaseosa",
+      "precio": 8500,
+      "precio_formateado": "$8.500",
+      "precio_original": 9500,
+      "descuento": 10,
+      "fuente": "Mostaza",
+      "envio": "Delivery disponible",
+      "razon": "Descuento real del 10% y combo completo con nuggets, papas y gaseosa a buen precio.",
+      "link": "https://www.pedidosya.com.ar/restaurantes/mostaza",
+      "imagen": "",
+      "puntaje": 8
     },
     {
       "categoria": "Hamburguesas",
@@ -32,23 +47,8 @@
       "descuento": null,
       "fuente": "Burger King",
       "envio": "Delivery disponible",
-      "razon": "Whopper de calidad por $8,500, mejor relación precio-valor que el Big Mac.",
+      "razon": "Whopper de Burger King a precio competitivo sin subir a $9,000, buena relación calidad-cantidad.",
       "link": "https://www.burgerking.com.ar/",
-      "imagen": "",
-      "puntaje": 8
-    },
-    {
-      "categoria": "Hamburguesas",
-      "emoji": "🍔",
-      "titulo": "Combo Veggie Green",
-      "precio": 7800,
-      "precio_formateado": "$7.800",
-      "precio_original": 8700,
-      "descuento": 10,
-      "fuente": "Dean & Dennys",
-      "envio": "Delivery disponible",
-      "razon": "Única opción veggie con descuento real del 10% y buena variedad.",
-      "link": "https://deananddennys.com/",
       "imagen": "",
       "puntaje": 7
     }

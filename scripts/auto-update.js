@@ -78,7 +78,7 @@ async function main() {
       log(`   Archivos modificados: ${changedFiles.length}`);
       changedFiles.forEach(f => console.log(`     - ${f}`));
 
-      execSync('git add cache_*.html products-fixture.json', { cwd: ROOT });
+      execSync('git add cache_*.html products-fixture.json contador.json', { cwd: ROOT });
       const commitMsg = `auto-update: productos actualizados (${new Date().toISOString().split('T')[0]})`;
       execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT });
       log('   ✅ Commit realizado.');

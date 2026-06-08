@@ -71,7 +71,7 @@ async function main() {
       log(`   Archivos modificados: ${changedFiles.length}`);
       changedFiles.forEach(f => console.log(`     - ${f}`));
 
-      execSync('git add cache_*.html bakery-offers.json', { cwd: ROOT });
+      execSync('git add cache_*.html bakery-offers.json contador.json', { cwd: ROOT });
       const today = new Date().toLocaleDateString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' });
       const commitMsg = `auto-update: ofertas de panadería actualizadas (${today})`;
       execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT });

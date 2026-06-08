@@ -18,6 +18,7 @@ const FOOD_PATH = path.join(__dirname, 'food.json');
 const OFERTAS_DIA_PATH = path.join(__dirname, 'data', 'ofertas_dia.json');
 const TEMPLATE_PATH = path.join(__dirname, 'index.html');
 const FIXTURE_PATH = path.join(__dirname, 'products-fixture.json');
+const CONTADOR_PATH = path.join(__dirname, 'contador.json');
 const LOGS_DIR = path.join(__dirname, 'logs');
 
 // Site por defecto si no se detecta ninguno
@@ -160,6 +161,45 @@ function readOfertasDia() {
   }
   return null;
 }
+
+// ── Contador de Visitas ─────────────────
+let contadorData = { visitas: 0, ultima_actualizacion: new Date().toISOString() };
+
+function loadContador() {
+  try {
+    if (fs.existsSync(CONTADOR_PATH)) {
+      contadorData = JSON.parse(fs.readFileSync(CONTADOR_PATH, 'utf8'));
+      log(`[Contador] Cargado: ${contadorData.visitas} visitas totales.`);
+    } else {
+      log('[Contador] No existe contador.json. Iniciando en 0.');
+    }
+  } catch (err) {
+    log('[Contador] Error al cargar: ' + err.message);
+  }
+  if (typeof contadorData.visitas !== 'number') contadorData.visitas = 0;
+}
+
+function saveContador() {
+  try {
+    contadorData.ultima_actualizacion = new Date().toISOString();
+    fs.writeFileSync(CONTADOR_PATH, JSON.stringify(contadorData, null, 2), 'utf8');
+  } catch (err) {
+    log('[Contador] Error al guardar: ' + err.message);
+  }
+}
+
+// Rate limiting en memoria: IP -> timestamp (se limpia cada hora)
+const visitorIps = new Map();
+const VISITOR_COOLDOWN = 60 * 60 * 1000; // 1 hora entre visitas de la misma IP
+
+function limpiarIpsExpiradas() {
+  const ahora = Date.now();
+  for (const [ip, ts] of visitorIps) {
+    if (ahora - ts > VISITOR_COOLDOWN) visitorIps.delete(ip);
+  }
+}
+// Limpiar IPs expiradas cada 30 minutos
+setInterval(limpiarIpsExpiradas, 30 * 60 * 1000);
 
 /**
  * Detecta el siteId a partir del request.
@@ -957,7 +997,8 @@ app.get('/', async (req, res) => {
   // Siempre servir cache_${siteId}.html del disco si existe
   if (fs.existsSync(cachePath)) {
     try {
-      const html = fs.readFileSync(cachePath, 'utf8');
+      let html = fs.readFileSync(cachePath, 'utf8');
+      html = injectCounterCode(html);
       res.send(html);
 
       // Regenerar en background SOLO si pasaron 6h (no bloquea la respuesta)
@@ -975,15 +1016,18 @@ app.get('/', async (req, res) => {
 
   // Si no hay archivo en disco, usar la versión en memoria
   if (cacheBySite[siteId]) {
-    res.send(cacheBySite[siteId]);
+    let html = cacheBySite[siteId];
+    html = injectCounterCode(html);
+    res.send(html);
     return;
   }
 
   // Último recurso: regenerar dinámicamente
   try {
-    const html = await generatePageHtml(siteId);
+    let html = await generatePageHtml(siteId);
     cacheBySite[siteId] = html;
     lastFetchBySite[siteId] = Date.now();
+    html = injectCounterCode(html);
     res.send(html);
   } catch (err) {
     log(`Error generando HTML para ${siteId}: ` + err.message);
@@ -996,6 +1040,31 @@ app.get('/', async (req, res) => {
   }
 });
 
+
+// API: contador de visitas (GET = leer, POST = incrementar)
+app.get('/api/visitas', (req, res) => {
+  res.json({ visitas: contadorData.visitas });
+});
+
+app.post('/api/visitas', (req, res) => {
+  const ip = req.headers['x-forwarded-for'] || req.ip || 'desconocida';
+  const clientIp = ip.split(',')[0].trim();
+
+  // Verificar rate limiting por IP
+  limpiarIpsExpiradas();
+  if (visitorIps.has(clientIp)) {
+    return res.json({ ok: false, motivo: 'rate_limited', visitas: contadorData.visitas });
+  }
+
+  // Incrementar contador
+  visitorIps.set(clientIp, Date.now());
+  contadorData.visitas = (contadorData.visitas || 0) + 1;
+  saveContador();
+
+  log(`[Contador] +1 visita de ${clientIp} → Total: ${contadorData.visitas}`);
+
+  res.json({ ok: true, visitas: contadorData.visitas });
+});
 
 // ─────────────────────────────────────
 // 404 — siempre al final
@@ -1050,6 +1119,41 @@ const CACHE_DURATION = 6 * 60 * 60 * 1000; // 6 horas
     log('[Cache] No se encontraron cachés preexistentes.');
   }
 })();
+
+// Cargar contador de visitas al iniciar
+loadContador();
+
+/**
+ * Inyecta el código del contador de visitas en HTML cacheado que no lo tenga.
+ * Asegura que el contador aparezca incluso en cachés generadas antes de esta feature.
+ */
+function injectCounterCode(html) {
+  if (html.includes('visit-counter')) return html; // ya tiene el contador
+
+  const counterDiv = `<div class="visit-counter" id="visitCounter" style="margin-bottom:12px;font-size:14px;color:#888;text-align:center;">👀 <span id="visitCount">...</span> visitas</div>`;
+
+  const counterScript = `<script>
+(function() {
+  var VISIT_KEY='elpodiomp_visit_'+new Date().toISOString().split('T')[0];
+  var el=document.getElementById('visitCount');
+  function mostrar(){fetch('/api/visitas').then(function(r){return r.json()}).then(function(d){if(el)el.textContent=d.visitas.toLocaleString('es-AR')}).catch(function(){if(el)el.textContent='...'})}
+  function registrar(){
+    if(localStorage.getItem(VISIT_KEY)){mostrar();return}
+    fetch('/api/visitas',{method:'POST'}).then(function(r){return r.json()}).then(function(d){
+      if(d.ok){localStorage.setItem(VISIT_KEY,'1');if(el)el.textContent=d.visitas.toLocaleString('es-AR')}
+      else{if(el)el.textContent=d.visitas.toLocaleString('es-AR')}
+    }).catch(function(){mostrar()})
+  }
+  registrar();
+})();
+</script>`;
+
+  // Insertar el div contador justo antes del cierre </footer>
+  let result = html.replace('</footer>', counterDiv + '\n</footer>');
+  // Insertar el script antes del cierre </body>
+  result = result.replace('</body>', counterScript + '\n</body>');
+  return result;
+}
 
 // ─────────────────────────────────────
 // Iniciar servidor

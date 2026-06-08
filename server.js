@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 3000;
 // ─────────────────────────────────────
 const CONFIG_PATH = path.join(__dirname, 'config.json');
 const FOOD_PATH = path.join(__dirname, 'food.json');
+const OFERTAS_DIA_PATH = path.join(__dirname, 'data', 'ofertas_dia.json');
 const TEMPLATE_PATH = path.join(__dirname, 'index.html');
 const FIXTURE_PATH = path.join(__dirname, 'products-fixture.json');
 const LOGS_DIR = path.join(__dirname, 'logs');
@@ -147,6 +148,17 @@ function readFood() {
     log('Error al leer food.json: ' + err.message);
   }
   return [];
+}
+
+function readOfertasDia() {
+  try {
+    if (fs.existsSync(OFERTAS_DIA_PATH)) {
+      return JSON.parse(fs.readFileSync(OFERTAS_DIA_PATH, 'utf8'));
+    }
+  } catch (err) {
+    log('Error al leer ofertas_dia.json: ' + err.message);
+  }
+  return null;
 }
 
 /**
@@ -683,6 +695,47 @@ async function generatePageHtml(siteId) {
       <div class="grid">${foodCardsHtml}</div>
     </section>`;
   }
+
+  // Sección Oferta del Día — HERO al inicio (solo para elpodiomp)
+  const ofertasDia = readOfertasDia();
+  let ofertasHeroHtml = '';
+  if (ofertasDia && ofertasDia.ofertas && ofertasDia.ofertas.length > 0 && siteId === 'elpodiomp') {
+    log(`[HTML] ${siteId}: Agregando HERO Oferta del Día (${ofertasDia.total_ofertas} ofertas)...`);
+    let ofertasCardsHtml = '';
+    ofertasDia.ofertas.forEach(o => {
+      const oldPriceHtml = o.descuento ? `<p class="old-price">$${formatPrice(o.precio_original)}</p>` : '';
+      const descuentoBadge = o.descuento ? `<span class="card-badge" style="background:#ef4444;color:white;">-${o.descuento}%</span>` : '';
+      const imageHtml = o.imagen
+        ? `<img class="card-image" src="${safeUrl(o.imagen)}" alt="${escapeHtml(o.titulo)}" loading="lazy">`
+        : `<div class="card-image-placeholder" style="background:var(--food-color);display:flex;align-items:center;justify-content:center;font-size:48px;">${escapeHtml(o.emoji)}</div>`;
+      ofertasCardsHtml += `
+      <div class="card" ${o.link ? `onclick="window.location.href='${escapeHtml(safeUrl(o.link))}'"` : ''}>
+        ${imageHtml}
+        <div class="card-body">
+          ${descuentoBadge}
+          <span class="card-badge" style="background:var(--food-color);color:white;">${escapeHtml(o.fuente)}</span>
+          <h3>${escapeHtml(o.emoji)} ${escapeHtml(o.titulo)}</h3>
+          <p class="description">${escapeHtml(o.razon || o.envio || '')}</p>
+          ${oldPriceHtml}
+          <p class="price"><span class="price-sup">$</span>${formatPrice(o.precio)}</p>
+          <p class="installments" style="color:var(--food-color);font-weight:bold;">${escapeHtml(o.envio || 'Delivery disponible')}</p>
+        </div>
+      </div>`;
+    });
+    ofertasHeroHtml = `
+    <section style="background:linear-gradient(135deg, #ff6b35 0%, #f97316 50%, #ea580c 100%);border-radius:16px;padding:32px 24px;margin:16px 0 32px 0;color:white;box-shadow:0 8px 32px rgba(249,115,22,0.3);">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:8px;">
+        <h2 style="color:white;margin:0;font-size:28px;">🍔 Oferta del Día</h2>
+        <span style="background:rgba(255,255,255,0.2);padding:6px 16px;border-radius:20px;font-size:14px;font-weight:bold;">${escapeHtml(ofertasDia.dia_semana)} ${escapeHtml(ofertasDia.fecha)}</span>
+      </div>
+      <p style="color:rgba(255,255,255,0.9);margin:0 0 24px 0;font-size:16px;">Las mejores hamburguesas de hoy — elegí la tuya y pedí ya 🛵</p>
+      <div class="grid">${ofertasCardsHtml}</div>
+      <p style="text-align:center;margin-top:20px;font-size:12px;color:rgba(255,255,255,0.7);">* Precios actualizados hoy. Disponibilidad según zona de delivery.</p>
+    </section>`;
+  }
+
+  // Prepend ofertas hero al contenido de categorías
+  categoriesHtml = ofertasHeroHtml + categoriesHtml;
 
   const finalHtml = template.replace('<!-- CATEGORIES_AND_PRODUCTS -->', categoriesHtml);
 

@@ -16,6 +16,18 @@ const FOOD_PATH = path.join(__dirname, '..', 'food.json');
 
 const DEFAULT_SITE = 'elpodiomp';
 
+// ── Proxy helper ─────────────────────────────────
+function parseProxyUrl(proxyUrl) {
+  try {
+    const u = new URL(proxyUrl);
+    return {
+      server: `${u.protocol}//${u.hostname}:${u.port}`,
+      username: u.username || null,
+      password: u.password || null
+    };
+  } catch { return null; }
+}
+
 // ── Helpers ─────────────────────────────────────
 function formatPrice(n) {
   return Math.round(n).toLocaleString('es-AR');
@@ -88,20 +100,38 @@ function safeUrl(url) {
 }
 
 // ── API de Mercado Libre ─────────────────────────
-async function fetchFromApi(query) {
+async function fetchFromApi(query, proxyConfig) {
   const token = process.env.MELI_ACCESS_TOKEN;
   if (!token) return null;
 
+  const axiosOpts = {
+    params: { q: query, limit: 20 },
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'User-Agent': 'Mozilla/5.0',
+      'Accept': 'application/json'
+    },
+    timeout: 10000
+  };
+
+  // Proxy para axios si está configurado
+  if (proxyConfig) {
+    const p = new URL(proxyConfig.server.replace(/^socks5/, 'http')); // axios no soporta socks5 nativamente
+    axiosOpts.proxy = {
+      protocol: p.protocol.replace(':', ''),
+      host: p.hostname,
+      port: parseInt(p.port) || 8080
+    };
+    if (proxyConfig.username && proxyConfig.password) {
+      axiosOpts.proxy.auth = {
+        username: proxyConfig.username,
+        password: proxyConfig.password
+      };
+    }
+  }
+
   try {
-    const res = await axios.get('https://api.mercadolibre.com/sites/MLA/search', {
-      params: { q: query, limit: 20 },
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'User-Agent': 'Mozilla/5.0',
-        'Accept': 'application/json'
-      },
-      timeout: 10000
-    });
+    const res = await axios.get('https://api.mercadolibre.com/sites/MLA/search', axiosOpts);
 
     const products = (res.data.results || []).filter(p => p.id && p.title && p.price);
     if (products.length === 0) return null;
@@ -305,6 +335,12 @@ async function main() {
     foods = readJson(FOOD_PATH);
   } catch (e) { console.error('❌ Error al cargar datos:', e.message); process.exit(1); }
 
+  // ── Configurar proxy desde .env ──
+  const proxyConfig = parseProxyUrl(process.env.PROXY_URL);
+  if (proxyConfig) {
+    console.log(`🌐 Usando proxy para API: ${proxyConfig.server}\n`);
+  }
+
   // ── Intentar la API para TODAS las categorías ──
   const apiProducts = {};
   const allCategories = config.categories;
@@ -312,7 +348,7 @@ async function main() {
   for (let i = 0; i < allCategories.length; i++) {
     const cat = allCategories[i];
     console.log(`   ${i + 1}/${allCategories.length} ${cat.icon} ${cat.name}...`);
-    const products = await fetchFromApi(cat.query);
+    const products = await fetchFromApi(cat.query, proxyConfig);
     if (products) {
       apiProducts[cat.id] = products;
       console.log(`      ✅ ${products.length} productos`);

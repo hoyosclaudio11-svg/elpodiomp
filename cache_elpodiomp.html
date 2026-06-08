@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>El Podio MP — Los mejores precios, en un solo lugar</title>
+  <meta name="description" content="Los mejores productos al mejor precio. Tecnología, moda, deportes y hogar.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://elpodiomp.com.ar/">
+
+  <!-- Open Graph (Facebook, WhatsApp, Telegram) -->
+  <meta property="og:title" content="El Podio MP — Los mejores precios, en un solo lugar">
+  <meta property="og:description" content="Los mejores productos al mejor precio. Tecnología, moda, deportes y hogar.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elpodiomp.com.ar/">
+  <meta property="og:image" content="https://elpodiomp.com.ar/og-image.png">
+  <meta property="og:site_name" content="El Podio MP">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="El Podio MP — Los mejores precios">
+  <meta name="twitter:description" content="Los mejores productos al mejor precio. Tecnología, moda, deportes y hogar.">
+  <meta name="twitter:image" content="https://elpodiomp.com.ar/og-image.png">
+
+  <!-- Favicon (emoji como placeholder hasta tener un .ico) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "El Podio MP",
+    "url": "https://elpodiomp.com.ar/",
+    "description": "Los mejores productos al mejor precio. Tecnología, moda, deportes y hogar.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://elpodiomp.com.ar/buscar/{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --header-bg: #FFE600;
+      --hero-bg: linear-gradient(135deg, #FFE600 0%, #ffcc00 100%);
+      --hero-text-color: #1a1a1a;
+      --hero-sub-color: #444;
+      --button-bg: #3483FA;
+      --button-hover: #2968c8;
+      --badge-bg: #FFE600;
+      --badge-color: #1a1a1a;
+      --accent-color: #3483FA;
+      --stars-color: #FFE600;
+      --food-color: #e67e22;
+      --installments-color: #00a650;
+      --footer-bg: #1a1a1a;
+      --footer-text: #ccc;
+      --footer-heading: #ffffff;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    .header {
+      background: var(--header-bg);
+      padding: 16px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: inherit;
+      text-decoration: none;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .logo span { color: var(--accent-color); }
+
+    .search-bar {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 12px 16px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    .search-bar button {
+      background: var(--button-bg);
+      border: none;
+      padding: 0 20px;
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      transition: background 0.2s;
+    }
+
+    .search-bar button:hover { background: var(--button-hover); }
+
+    /* Sugerencias de búsqueda */
+    .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      display: none;
+      z-index: 200;
+      overflow: hidden;
+    }
+
+    .search-suggestions.active { display: block; }
+
+    .search-suggestions .suggestion-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.15s;
+    }
+
+    .search-suggestions .suggestion-item:hover { background: #f5f8ff; }
+
+    .search-suggestions .suggestion-item img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .search-suggestions .suggestion-item .sug-title {
+      font-size: 14px;
+      font-weight: 500;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .search-suggestions .suggestion-item .sug-price {
+      font-weight: 700;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+
+    .search-suggestions .suggestion-footer {
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--accent-color);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .header-icons span { cursor: pointer; white-space: nowrap; }
+
+    .hero {
+      background: var(--hero-bg);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--hero-text-color);
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--hero-sub-color);
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { margin: 48px 0; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-header .icon { font-size: 32px; }
+
+    .section-header .view-all:hover { color: var(--button-hover); }
+
+    .site-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      border-radius: 24px;
+      background: white;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      transition: all 0.2s;
+    }
+    .site-nav a:hover {
+      background: var(--accent-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .section-header .view-all {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .section-header .view-all:hover { color: var(--button-hover); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      background: #f0f0f0;
+    }
+
+    .card-body { padding: 20px; }
+
+    .card-badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-color);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+
+    .card .description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card .price {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .card .price-sup { font-size: 16px; font-weight: 600; vertical-align: super; }
+
+    .card .old-price {
+      font-size: 14px;
+      color: #999;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+
+    .card .installments {
+      font-size: 14px;
+      color: var(--installments-color);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .card .btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--button-bg);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+
+    .card .btn:hover { background: var(--button-hover); }
+
+    .card .rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .card .stars {
+      color: var(--stars-color);
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .card .reviews { font-size: 13px; color: #999; }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ddd, transparent);
+      margin: 8px 0 48px;
+    }
+
+    .footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 48px 24px 32px;
+      margin-top: 64px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .footer h4 {
+      color: var(--footer-heading);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer p, .footer a {
+      font-size: 14px;
+      color: var(--footer-text);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer a:hover { color: var(--header-bg); }
+
+    .footer-sites {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #333;
+      text-align: center;
+    }
+
+    .footer-sites span {
+      font-size: 13px;
+      color: #888;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .footer-sites a {
+      display: inline-block;
+      padding: 6px 16px;
+      margin: 4px 8px;
+      border: 1px solid #444;
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--footer-text);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .footer-sites a:hover {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+      color: white;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #333;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Toast de notificación */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1a1a1a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .header-inner { flex-wrap: wrap; }
+      .search-bar { order: 3; max-width: 100%; flex-basis: 100%; }
+      .hero h1 { font-size: 30px; }
+      .footer-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .section-header h2 { font-size: 22px; }
+      .card-image { height: 220px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .header-icons span:not(.cart) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">Elpodiomp<span>.com.ar</span></a>
+      <div class="search-bar" id="searchBar">
+        <input type="text" id="searchInput" placeholder="Buscar productos..." autocomplete="off">
+        <button id="searchBtn">&#128269;</button>
+        <div class="search-suggestions" id="searchSuggestions"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Lo mejor de lo mejor</h1>
+    <p>Los 3 productos top de cada categoría, seleccionados para vos</p>
+  </section>
+
+  <nav class="site-nav">
+    <a href="/">🏆 El Podio MP</a>
+    <a href="/?site=elpodiotech">💻 El Podio Tech</a>
+    <a href="/?site=elpodiofood">🍔 El Podio Food</a>
+    <a href="/?site=elpodiohogar">🏠 El Podio Hogar</a>
+  </nav>
+
+  <main class="container">
+    
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🏃</span> Zapatillas de Running</h2>
+        <a href="https://listado.mercadolibre.com.ar/zapatillas%20deportivas%20running" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-110989718175-puma-zapatillas-softride-symmetry-fuzion-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_750404-MLA110989718175_042026-E.webp" alt="Puma Zapatillas Softride Symmetry Fuzion" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Puma Zapatillas Softride Symmetry Fuzion</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(220)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>120.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-110989718175-puma-zapatillas-softride-symmetry-fuzion-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-50304445901-zapatillas-deportivas-sergio-tacchini-tenis-padel-art-0128-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_629993-MLA50304445901_062022-E.webp" alt="Zapatillas Deportivas Sergio Tacchini Tenis Padel Art 0128" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Zapatillas Deportivas Sergio Tacchini Tenis Padel Art 0128</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(224)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>99.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-50304445901-zapatillas-deportivas-sergio-tacchini-tenis-padel-art-0128-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-83228871013-zapatillas-pounce-lite-adp-puma-puma-tienda-oficial-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_749457-MLA83228871013_032025-E.webp" alt="Zapatillas Pounce Lite Adp Puma Puma Tienda Oficial" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Zapatillas Pounce Lite Adp Puma Puma Tienda Oficial</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(415)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>84.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-83228871013-zapatillas-pounce-lite-adp-puma-puma-tienda-oficial-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">👟</span> Zapatillas Urbanas</h2>
+        <a href="https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20moda" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-111415906589-zapatillas-urbanas-vans-hylane-hombre-moda-streetwear-skate-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_771329-MLA111415906589_052026-E.webp" alt="Zapatillas Urbanas Vans Hylane Hombre Moda Streetwear Skate" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Zapatillas Urbanas Vans Hylane Hombre Moda Streetwear Skate</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(317)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>98.623</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-111415906589-zapatillas-urbanas-vans-hylane-hombre-moda-streetwear-skate-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-111115521023-zapatillas-mujer-plataformas-zapatos-sneakers-urbanas-moda-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_814876-MLA111115521023_052026-E.webp" alt="Zapatillas Mujer Plataformas Zapatos Sneakers Urbanas Moda" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Zapatillas Mujer Plataformas Zapatos Sneakers Urbanas Moda</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(400)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>41.899</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-111115521023-zapatillas-mujer-plataformas-zapatos-sneakers-urbanas-moda-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-71859697623-zapatilla-mujer-sneaker-urbana-plataforma-35-41-moda-arona-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_920987-MLA71859697623_092023-E.webp" alt="Zapatilla Mujer Sneaker Urbana Plataforma 35-41 Moda - Arona" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Zapatilla Mujer Sneaker Urbana Plataforma 35-41 Moda - Arona</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(146)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>45.900</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-71859697623-zapatilla-mujer-sneaker-urbana-plataforma-35-41-moda-arona-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">👦</span> Zapatillas para Niños</h2>
+        <a href="https://listado.mercadolibre.com.ar/zapatillas%20nino%20infantiles" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-111285004579-zapatilla-atomik-infantil-urbana-moda-japan-zona-deportiva-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_788646-MLA111285004579_052026-E.webp" alt="Zapatilla Atomik Infantil Urbana Moda Japan Zona Deportiva" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Zapatilla Atomik Infantil Urbana Moda Japan Zona Deportiva</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(246)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>50.500</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-111285004579-zapatilla-atomik-infantil-urbana-moda-japan-zona-deportiva-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-92195160312-zapato-de-vestir-n-utico-ni-o-infantil-zapatillas-bautismo-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_853396-MLA92195160312_092025-E.webp" alt="Zapato De Vestir Náutico Niño Infantil Zapatillas Bautismo" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Zapato De Vestir Náutico Niño Infantil Zapatillas Bautismo</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(285)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>48.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-92195160312-zapato-de-vestir-n-utico-ni-o-infantil-zapatillas-bautismo-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-110404349344-zapatilla-topper-colegial-urbana-quarter-cs-infantil-zdd-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_755334-MLA110404349344_052026-E.webp" alt="Zapatilla Topper Colegial Urbana Quarter Cs Infantil Zdd" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Zapatilla Topper Colegial Urbana Quarter Cs Infantil Zdd</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(376)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>58.900</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-110404349344-zapatilla-topper-colegial-urbana-quarter-cs-infantil-zdd-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">⚽</span> Botines de Fútbol</h2>
+        <a href="https://listado.mercadolibre.com.ar/botines%20futbol" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-83151066223-botines-nike-tiempo-legend-10-club-pasto-natural-dv4344-800-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_669627-MLA83151066223_032025-E.webp" alt="Botines Nike Tiempo Legend 10 Club Pasto Natural Dv4344-800" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Botines Nike Tiempo Legend 10 Club Pasto Natural Dv4344-800</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(305)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>119.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-83151066223-botines-nike-tiempo-legend-10-club-pasto-natural-dv4344-800-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-110692024952-topper-botines-san-ciro-v-tf-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_664024-MLA110692024952_052026-E.webp" alt="Topper Botines San Ciro V Tf" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Topper Botines San Ciro V Tf</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(447)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>71.600</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-110692024952-topper-botines-san-ciro-v-tf-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-112251905053-botines-papi-f-tbol-hombre-econ-micos-calidad-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_799633-MLA112251905053_052026-E.webp" alt="Botines Papi Fútbol Hombre Económicos Calidad" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Botines Papi Fútbol Hombre Económicos Calidad</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(355)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>47.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-112251905053-botines-papi-f-tbol-hombre-econ-micos-calidad-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🩴</span> Ojotas y Sandalias</h2>
+        <a href="https://listado.mercadolibre.com.ar/ojotas%20sandalias" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-104004747032-ojotas-armani-para-hombre-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_832288-MLA104004747032_012026-E.webp" alt="Ojotas Armani Para Hombre" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Ojotas Armani Para Hombre</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(231)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>79.708</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-104004747032-ojotas-armani-para-hombre-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-86834592896-sandalia-ojota-hombre-original-playa-chinela-goma-donkey-404-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_788563-MLA86834592896_072025-E.webp" alt="Sandalia Ojota Hombre Original Playa Chinela Goma Donkey 404" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Sandalia Ojota Hombre Original Playa Chinela Goma Donkey 404</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(149)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>25.690</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-86834592896-sandalia-ojota-hombre-original-playa-chinela-goma-donkey-404-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-99497821645-sandalia-piccadilly-espol-n-negro-textura-mujer-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_666535-MLA99497821645_112025-E.webp" alt="Sandalia Piccadilly Espolón Negro Textura Mujer" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Sandalia Piccadilly Espolón Negro Textura Mujer</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(448)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>56.979</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-99497821645-sandalia-piccadilly-espol-n-negro-textura-mujer-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🎒</span> Mochilas Escolares</h2>
+        <a href="https://listado.mercadolibre.com.ar/mochilas%20escolares" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-111234660203-mochila-san-lorenzo-f-tbol-licencia-oficial-soy-de-boedosl11-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_721003-MLA111234660203_052026-E.webp" alt="Mochila San Lorenzo Fútbol Licencia Oficial Soy De Boedosl11" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Mochila San Lorenzo Fútbol Licencia Oficial Soy De Boedosl11</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(124)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>34.859</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-111234660203-mochila-san-lorenzo-f-tbol-licencia-oficial-soy-de-boedosl11-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-107259961784-mochila-escolar-infantil-24l-waggs-multibolsillo-impermeable-azul-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_732896-MLA107259961784_032026-E.webp" alt="Mochila Escolar Infantil 24l Waggs Multibolsillo Impermeable Azul" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Mochila Escolar Infantil 24l Waggs Multibolsillo Impermeable Azul</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(192)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>32.990</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-107259961784-mochila-escolar-infantil-24l-waggs-multibolsillo-impermeable-azul-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-111267374733-mochila-universitaria-reforzada-urbana-escolar-grande-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_763639-MLA111267374733_052026-E.webp" alt="Mochila Universitaria Reforzada Urbana Escolar Grande" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Mochila Universitaria Reforzada Urbana Escolar Grande</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(240)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>39.990</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-111267374733-mochila-universitaria-reforzada-urbana-escolar-grande-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🧳</span> Mochilas de Viaje</h2>
+        <a href="https://listado.mercadolibre.com.ar/mochila%20viaje%20carry%20on" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-106141872740-mochila-viral-viaje-reemplaza-carry-on-impermeable-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_830815-MLA106141872740_022026-E.webp" alt="Mochila Viral Viaje Reemplaza Carry On Impermeable" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Mochila Viral Viaje Reemplaza Carry On Impermeable</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(174)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>83.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-106141872740-mochila-viral-viaje-reemplaza-carry-on-impermeable-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-112272977713-mochila-viaje-carry-on-avion-porta-notebook-waggs-negro-lisa-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_730132-MLA112272977713_052026-E.webp" alt="Mochila Viaje Carry On Avion Porta Notebook Waggs Negro Lisa" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Mochila Viaje Carry On Avion Porta Notebook Waggs Negro Lisa</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(301)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>96.758</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-112272977713-mochila-viaje-carry-on-avion-porta-notebook-waggs-negro-lisa-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-99479743580-mochila-viaje-carry-on-24l-monobag-outdoor-modelo-mg-color-beige-lisa-24-l-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_747701-MLA99479743580_112025-E.webp" alt="Mochila Viaje Carry On 24l Monobag Outdoor Modelo MG Color Beige Lisa 24 L" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Mochila Viaje Carry On 24l Monobag Outdoor Modelo MG Color Beige Lisa 24 L</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(455)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>91.116</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-99479743580-mochila-viaje-carry-on-24l-monobag-outdoor-modelo-mg-color-beige-lisa-24-l-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">📱</span> Celulares Gama Alta</h2>
+        <a href="https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://www.mercadolibre.com.ar/pelicula-proteco-de-vidro-3d-para-samsung-galaxy-s20-fe/p/MLA2044438178'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_930345-MLA82957142560_032025-E.webp" alt="Glass Vidrio Templado Para Samsung S20 Fe Full Cubre 100%" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Glass Vidrio Templado Para Samsung S20 Fe Full Cubre 100%</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(152)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>5.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.mercadolibre.com.ar/pelicula-proteco-de-vidro-3d-para-samsung-galaxy-s20-fe/p/MLA2044438178'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://www.mercadolibre.com.ar/film-hidroglass-para-samsung-galaxy-s21-fe/p/MLA57360092'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_622862-MLA96867641043_102025-E.webp" alt="Film Hidroglass Para Samsung Galaxy S21 Fe" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Film Hidroglass Para Samsung Galaxy S21 Fe</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(134)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>4.500</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.mercadolibre.com.ar/film-hidroglass-para-samsung-galaxy-s21-fe/p/MLA57360092'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-1787483949-funda-tipo-billetera-para-samsung-galaxy-s25-serie-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_786075-CBT110614635424_052026-E.webp" alt="Funda Tipo Billetera Para Samsung Galaxy S25 Serie" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Funda Tipo Billetera Para Samsung Galaxy S25 Serie</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(301)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>18.395</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-1787483949-funda-tipo-billetera-para-samsung-galaxy-s25-serie-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">📲</span> Celulares Gama Media</h2>
+        <a href="https://listado.mercadolibre.com.ar/samsung%20galaxy%20a%20motorola%20g" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-110461426814-cargador-adaptador-35w-usb-tipo-c-carga-super-rapida-power-delivery-240v-compati-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_775134-MLA110461426814_052026-E.webp" alt="Cargador Adaptador 35w Usb Tipo C Carga Super Rapida Power Delivery 240v Compatible iPhone Samsung Xiaomi Motorola Galaxy Tablet iPad Switch Hogar Oficina Viaje Premium Compacto Switch Liviano" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Cargador Adaptador 35w Usb Tipo C Carga Super Rapida Power Delivery 240v Compatible iPhone Samsung Xiaomi Motorola Galaxy Tablet iPad Switch Hogar Oficina Viaje Premium Compacto Switch Liviano</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(406)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>6.506</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-110461426814-cargador-adaptador-35w-usb-tipo-c-carga-super-rapida-power-delivery-240v-compati-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-102150902132-swanscout-713f-estaci-n-de-carga-inal-mbrica-3-en-1-para-tel-fonos-plegables-com-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_939339-MLA102150902132_122025-E.webp" alt="SwanScout 713F Estación de Carga Inalámbrica 3 en 1 para Teléfonos Plegables, compatible con Samsung Z Flip 7/7 FE/6/5/4/3, Motorola Razr 60/50/40 y Galaxy Watch 8 Classic/8/Ultra/7/FE/6/5/4" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>SwanScout 713F Estación de Carga Inalámbrica 3 en 1 para Teléfonos Plegables, compatible con Samsung Z Flip 7/7 FE/6/5/4/3, Motorola Razr 60/50/40 y Galaxy Watch 8 Classic/8/Ultra/7/FE/6/5/4</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(338)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>28.339</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-102150902132-swanscout-713f-estaci-n-de-carga-inal-mbrica-3-en-1-para-tel-fonos-plegables-com-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-79936388506-reloj-inteligente-d20-para-mujer-reloj-inteligente-para-hombre-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_693427-MLA79936388506_102024-E.webp" alt="Reloj inteligente D20 para mujer Reloj inteligente para hombre" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Reloj inteligente D20 para mujer Reloj inteligente para hombre</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(305)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>38.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-79936388506-reloj-inteligente-d20-para-mujer-reloj-inteligente-para-hombre-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🎧</span> Auriculares In-Ear</h2>
+        <a href="https://listado.mercadolibre.com.ar/auriculares%20bluetooth" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-92050706835-moto-buds-loop-ice-melt-swarovsky-by-bose-ice-melt-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_953533-MLA92050706835_092025-E.webp" alt="Moto Buds Loop Ice Melt Swarovsky By Bose Ice Melt" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Moto Buds Loop Ice Melt Swarovsky By Bose Ice Melt</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(452)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>311.856</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-92050706835-moto-buds-loop-ice-melt-swarovsky-by-bose-ice-melt-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-109794403430-auriculares-bluetooth-sonido-hd-traducci-ai-encejercicio-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_984974-MLA109794403430_042026-E.webp" alt="Auriculares Bluetooth  Sonido Hd Traducció Ai Encejercicio" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Auriculares Bluetooth  Sonido Hd Traducció Ai Encejercicio</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(269)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>139.541</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-109794403430-auriculares-bluetooth-sonido-hd-traducci-ai-encejercicio-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-100679961128-auriculares-in-ear-carrello-c07-bluetooth-5-4-de-baja-latencia-micr-fonos-con-ca-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_674466-MLA100679961128_122025-E.webp" alt="Auriculares In-Ear Carrello C07 Bluetooth 5.4 de Baja Latencia, Micrófonos con Cancelación de Ruido ENC para Llamadas Claras y Resistencia al Agua IPX5" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Auriculares In-Ear Carrello C07 Bluetooth 5.4 de Baja Latencia, Micrófonos con Cancelación de Ruido ENC para Llamadas Claras y Resistencia al Agua IPX5</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(377)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>47.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-100679961128-auriculares-in-ear-carrello-c07-bluetooth-5-4-de-baja-latencia-micr-fonos-con-ca-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🎮</span> Notebooks Gamer</h2>
+        <a href="https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://www.mercadolibre.com.ar/cargador-notebook-asus-msi-gamer-195v-118a-230w-color-negro/p/MLA45296636'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_750788-MLA81507220976_012025-E.webp" alt="Cargador Notebook Asus Msi Gamer 19.5v 11.8a 230w Color Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Cargador Notebook Asus Msi Gamer 19.5v 11.8a 230w Color Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(331)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>169.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.mercadolibre.com.ar/cargador-notebook-asus-msi-gamer-195v-118a-230w-color-negro/p/MLA45296636'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://www.mercadolibre.com.ar/msi-gaming-laptop-cooling-pad-w-turbo-fan-6-rgb-modes/p/MLA2065926263'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_928420-CBT110281851489_042026-E.webp" alt="Base De Enfriamiento Alienware Ventilador Turbo Para M17" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Base De Enfriamiento Alienware Ventilador Turbo Para M17</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(406)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>238.751</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.mercadolibre.com.ar/msi-gaming-laptop-cooling-pad-w-turbo-fan-6-rgb-modes/p/MLA2065926263'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-69245236509-pantalla-notebook-compatible-lm156lf2f01-nv156fhm-nx3-144hz-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_614694-MLA69245236509_052023-E.webp" alt="Pantalla Notebook Compatible Lm156lf2f01 Nv156fhm-nx3 144hz" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Pantalla Notebook Compatible Lm156lf2f01 Nv156fhm-nx3 144hz</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(370)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>150.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-69245236509-pantalla-notebook-compatible-lm156lf2f01-nv156fhm-nx3-144hz-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">💼</span> Notebooks Oficina</h2>
+        <a href="https://listado.mercadolibre.com.ar/notebook%20dell%20lenovo%20hp" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-94173863348-funda-para-notebook-cdtek-de-cordura-con-bolsillo-para-15-6-negro-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_974775-MLA94173863348_102025-E.webp" alt="Funda para Notebook CDTek de Cordura con Bolsillo para 15.6&quot; Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Funda para Notebook CDTek de Cordura con Bolsillo para 15.6&quot; Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(239)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>35.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-94173863348-funda-para-notebook-cdtek-de-cordura-con-bolsillo-para-15-6-negro-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-108747617042-cargador-2power-conector-usb-c-65w-para-lenovo-dell-asus-hp-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_951005-MLA108747617042_032026-E.webp" alt="Cargador 2power conector Usb-c 65w para Lenovo Dell Asus Hp" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Cargador 2power conector Usb-c 65w para Lenovo Dell Asus Hp</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(212)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>49.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-108747617042-cargador-2power-conector-usb-c-65w-para-lenovo-dell-asus-hp-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-94171381696-funda-hp-asus-dell-lenovo-asus-neoprene-15-6-negra-cdtek-negro-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_706830-MLA94171381696_102025-E.webp" alt="Funda Hp Asus Dell Lenovo Asus Neoprene 15.6 Negra Cdtek Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Funda Hp Asus Dell Lenovo Asus Neoprene 15.6 Negra Cdtek Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(340)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>22.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-94171381696-funda-hp-asus-dell-lenovo-asus-neoprene-15-6-negra-cdtek-negro-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🧉</span> Termos y Mates</h2>
+        <a href="https://listado.mercadolibre.com.ar/termo%20mate" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-100066465965-termo-1-3-lt-mate-236-ml-discovery-acero-inoxidable-24hs-color-verde-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_760976-MLA100066465965_122025-E.webp" alt="Termo 1.3 Lt + Mate 236 Ml Discovery Acero Inoxidable 24hs Color Verde" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Termo 1.3 Lt + Mate 236 Ml Discovery Acero Inoxidable 24hs Color Verde</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(300)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>81.900</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-100066465965-termo-1-3-lt-mate-236-ml-discovery-acero-inoxidable-24hs-color-verde-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-99455645370-termo-acero-inox-pico-cebador-matero-coleman-700ml-color-sage-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_823969-MLA99455645370_112025-E.webp" alt="Termo Acero Inox Pico Cebador Matero Coleman 700ml - Color Sage" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Termo Acero Inox Pico Cebador Matero Coleman 700ml - Color Sage</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(299)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>75.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-99455645370-termo-acero-inox-pico-cebador-matero-coleman-700ml-color-sage-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-106443242846-termo-lumilagro-pampa-negro-1l-mate-b-latas-fdn-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_677793-MLA106443242846_022026-E.webp" alt="Termo Lumilagro Pampa Negro 1l + Mate + B + Latas - Fdn" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Termo Lumilagro Pampa Negro 1l + Mate + B + Latas - Fdn</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(352)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>84.200</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-106443242846-termo-lumilagro-pampa-negro-1l-mate-b-latas-fdn-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🧴</span> Perfumes para Hombre</h2>
+        <a href="https://listado.mercadolibre.com.ar/perfume%20hombre" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-109667889284-perfume-hombre-bottled-striking-lavender-200ml-hugo-boss-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_913017-MLA109667889284_042026-E.webp" alt="Perfume Hombre Bottled Striking Lavender 200ml Hugo Boss" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Perfume Hombre Bottled Striking Lavender 200ml Hugo Boss</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(215)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>352.440</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-109667889284-perfume-hombre-bottled-striking-lavender-200ml-hugo-boss-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-47620519703-perfume-chanel-bleu-de-chanel-parfum-150ml-amaderado-arom-tico-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_869150-MLA47620519703_092021-E.webp" alt="Perfume Chanel Bleu de Chanel Parfum 150ml Amaderado Aromático" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Perfume Chanel Bleu de Chanel Parfum 150ml Amaderado Aromático</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(485)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>453.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-47620519703-perfume-chanel-bleu-de-chanel-parfum-150ml-amaderado-arom-tico-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-3360705868-perfume-yves-saint-laurent-y-ysl-men-edt-100ml-hombre-amaderado-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_653356-MLU74830789074_032024-E.webp" alt="Perfume Yves Saint Laurent Y Ysl Men EDT 100ml Hombre Amaderado" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Perfume Yves Saint Laurent Y Ysl Men EDT 100ml Hombre Amaderado</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(303)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>300.569</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-3360705868-perfume-yves-saint-laurent-y-ysl-men-edt-100ml-hombre-amaderado-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🌸</span> Perfumes para Mujer</h2>
+        <a href="https://listado.mercadolibre.com.ar/perfume%20mujer" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-1795267449-perfume-michael-kors-sexy-amber-para-mujer-100-ml-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_611693-MLU74721085934_032024-E.webp" alt="Perfume Michael Kors Sexy Amber para Mujer 100 ml" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Perfume Michael Kors Sexy Amber para Mujer 100 ml</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(184)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>93.521</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-1795267449-perfume-michael-kors-sexy-amber-para-mujer-100-ml-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-3060206790-perfume-mujer-dolce-gabbana-devotion-edp-100-ml-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_693871-MLU73903301685_012024-E.webp" alt="Perfume Mujer Dolce &amp; Gabbana Devotion Edp 100 Ml" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Perfume Mujer Dolce &amp; Gabbana Devotion Edp 100 Ml</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(294)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>183.073</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-3060206790-perfume-mujer-dolce-gabbana-devotion-edp-100-ml-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-110228535237-perfume-eau-de-toilette-halloween-cl-sico-para-mujer-200-ml-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_602939-MLA110228535237_042026-E.webp" alt="Perfume Eau de Toilette Halloween Clásico para Mujer, 200 ml" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Perfume Eau de Toilette Halloween Clásico para Mujer, 200 ml</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(130)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>140.302</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-110228535237-perfume-eau-de-toilette-halloween-cl-sico-para-mujer-200-ml-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🕶️</span> Lentes de Sol</h2>
+        <a href="https://listado.mercadolibre.com.ar/lentes%20sol" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-110904260340-lentes-de-pesca-okuma-polarizado-marr-n-filtro-uv-deportivo-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_984609-MLA110904260340_052026-E.webp" alt="Lentes De Pesca Okuma Polarizado Marrón Filtro Uv Deportivo" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Lentes De Pesca Okuma Polarizado Marrón Filtro Uv Deportivo</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(450)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>118.779</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-110904260340-lentes-de-pesca-okuma-polarizado-marr-n-filtro-uv-deportivo-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-108194495247-ray-ban-rb3548-hexagonal-lentes-de-sol-original-varios-color-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_656968-MLA108194495247_032026-E.webp" alt="Ray-ban Rb3548 Hexagonal Lentes De Sol Original Varios Color" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Ray-ban Rb3548 Hexagonal Lentes De Sol Original Varios Color</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(323)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>298.342</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-108194495247-ray-ban-rb3548-hexagonal-lentes-de-sol-original-varios-color-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-82922417099-anteojos-de-sol-lentes-sol-rimland-lips-negro-dise-o-ocean-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_854768-MLA82922417099_032025-E.webp" alt="Anteojos De Sol Lentes Sol Rimland Lips Negro Diseño Ocean" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Anteojos De Sol Lentes Sol Rimland Lips Negro Diseño Ocean</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(330)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>79.696</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-82922417099-anteojos-de-sol-lentes-sol-rimland-lips-negro-dise-o-ocean-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🚵</span> Bicicletas Mountain Bike</h2>
+        <a href="https://listado.mercadolibre.com.ar/bicicleta%20mountain" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-112410814581-bicicleta-mtb-rod29-mint-balto-21v-talle-m-l-frenos-disco-azul-negro-21-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_613484-MLA112410814581_052026-E.webp" alt="Bicicleta Mtb Rod29 Mint Balto 21v Talle M/l Frenos Disco Azul/negro 21" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Bicicleta Mtb Rod29 Mint Balto 21v Talle M/l Frenos Disco Azul/negro 21</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(219)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>335.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-112410814581-bicicleta-mtb-rod29-mint-balto-21v-talle-m-l-frenos-disco-azul-negro-21-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-97512042774-bicicleta-alpina-mtb-2-0-r-29-21v-freno-disco-full-shimano-color-negro-rosa-2-0--_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_674053-MLA97512042774_112025-E.webp" alt="Bicicleta Alpina Mtb 2.0 R 29 21v Freno Disco Full Shimano Color Negro Rosa 2.0 Lady Std2 Tamaño Del Cuadro M" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Bicicleta Alpina Mtb 2.0 R 29 21v Freno Disco Full Shimano Color Negro Rosa 2.0 Lady Std2 Tamaño Del Cuadro M</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(388)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>400.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-97512042774-bicicleta-alpina-mtb-2-0-r-29-21v-freno-disco-full-shimano-color-negro-rosa-2-0--_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-99972971445-bicicleta-mtb-overtech-q6-r29-aluminio-21v-freno-a-disco-12x-color-negro-rojo-bl-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_739098-MLA99972971445_112025-E.webp" alt="Bicicleta Mtb Overtech Q6 R29 Aluminio 21v Freno A Disco 12x Color Negro/Rojo/Blanco Tamaño del cuadro M" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Bicicleta Mtb Overtech Q6 R29 Aluminio 21v Freno A Disco 12x Color Negro/Rojo/Blanco Tamaño del cuadro M</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(243)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>599.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-99972971445-bicicleta-mtb-overtech-q6-r29-aluminio-21v-freno-a-disco-12x-color-negro-rojo-bl-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🚲</span> Bicicletas Urbanas</h2>
+        <a href="https://listado.mercadolibre.com.ar/bicicleta%20playera" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-99933677861-bicicleta-urbana-rodado-26-topmega-rambler-acero-blanca-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_978929-MLA99933677861_112025-E.webp" alt="Bicicleta Urbana Rodado 26 Topmega Rambler Acero Blanca" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Bicicleta Urbana Rodado 26 Topmega Rambler Acero Blanca</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(376)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>489.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-99933677861-bicicleta-urbana-rodado-26-topmega-rambler-acero-blanca-_JM'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://www.mercadolibre.com.ar/bicicleta-playera-ziambikes-r29-negro-llantas-doble-pared-acero/p/MLA26682449'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_793362-MLA99988019445_112025-E.webp" alt="Bicicleta Playera Ziambikes R29 Negro Llantas Doble Pared Acero" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Bicicleta Playera Ziambikes R29 Negro Llantas Doble Pared Acero</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(349)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>314.990</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.mercadolibre.com.ar/bicicleta-playera-ziambikes-r29-negro-llantas-doble-pared-acero/p/MLA26682449'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://articulo.mercadolibre.com.ar/MLA-111656958176-bicicleta-playera-r26-kelinbike-acero-frenos-v-brake-_JM'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_863936-MLA111656958176_062026-E.webp" alt="Bicicleta Playera R26 Kelinbike Acero Frenos V-brake" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Bicicleta Playera R26 Kelinbike Acero Frenos V-brake</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(166)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>310.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-111656958176-bicicleta-playera-r26-kelinbike-acero-frenos-v-brake-_JM'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h4>elpodiomp.com.ar</h4>
+        <p>Los mejores productos al mejor precio. Tecnología, moda, deportes y hogar.</p>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Cómo comprar</a>
+        <a href="#">Envíos</a>
+        <a href="#">Devoluciones</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacidad">Política de Privacidad</a>
+        <a href="/terminos">Términos y Condiciones</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>info@elpodiomp.com.ar</p>
+        <p>0800-ELPODIOMP</p>
+        <p>Lun a Vie 9:00 - 18:00</p>
+      </div>
+    </div>
+    <div class="footer-sites">
+      <span>🔗 También visitá nuestros otros sitios:</span>
+      <a href="/">🏆 El Podio MP</a>
+      <a href="/?site=elpodiotech">💻 El Podio Tech</a>
+      <a href="/?site=elpodiofood">🍔 El Podio Food</a>
+      <a href="/?site=elpodiohogar">🏠 El Podio Hogar</a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 elpodiomp.com.ar &mdash; Todos los derechos reservados. Este sitio es afiliado de Mercado Libre. Los precios pueden variar.
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ── Búsqueda con sugerencias ──
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchSuggestions = document.getElementById('searchSuggestions');
+    const toast = document.getElementById('toast');
+    let debounceTimer;
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function performSearch() {
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = '/buscar/' + encodeURIComponent(query);
+      }
+    }
+
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') performSearch();
+    });
+
+    // Sugerencias mientras tipea
+    searchInput.addEventListener('input', function() {
+      clearTimeout(debounceTimer);
+      const query = this.value.trim();
+      if (query.length < 2) {
+        searchSuggestions.classList.remove('active');
+        return;
+      }
+      debounceTimer = setTimeout(async () => {
+        try {
+          const res = await fetch('/api/buscar?q=' + encodeURIComponent(query));
+          const data = await res.json();
+          if (data.results && data.results.length > 0) {
+            let html = '';
+            data.results.forEach(r => {
+              html += `<div class="suggestion-item" onclick="window.location.href='${r.permalink}'">
+                <img src="${r.imageUrl}" alt="${r.title}" loading="lazy">
+                <span class="sug-title">${r.title}</span>
+                <span class="sug-price">$${r.price.toLocaleString('es-AR')}</span>
+              </div>`;
+            });
+            html += `<div class="suggestion-footer" onclick="performSearch()">Ver todos los resultados →</div>`;
+            searchSuggestions.innerHTML = html;
+            searchSuggestions.classList.add('active');
+          } else {
+            searchSuggestions.innerHTML = '<div style="padding:12px 16px;color:#999;font-size:14px;">No se encontraron productos.</div>';
+            searchSuggestions.classList.add('active');
+          }
+        } catch (_) {
+          searchSuggestions.classList.remove('active');
+        }
+      }, 300);
+    });
+
+    // Cerrar sugerencias al hacer clic afuera
+    document.addEventListener('click', function(e) {
+      if (!document.getElementById('searchBar').contains(e.target)) {
+        searchSuggestions.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

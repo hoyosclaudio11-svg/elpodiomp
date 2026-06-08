@@ -10,20 +10,41 @@ const fs = require('fs');
 const path = require('path');
 
 puppeteer.use(StealthPlugin());
+require('dotenv').config({ override: true });
 
 const FIXTURE_PATH = path.join(__dirname, '..', 'products-fixture.json');
 const CONFIG_PATH = path.join(__dirname, '..', 'config.json');
+
+// ── Proxy helper ─────────────────────────────────
+function parseProxyUrl(proxyUrl) {
+  try {
+    const u = new URL(proxyUrl);
+    return {
+      server: `${u.protocol}//${u.hostname}:${u.port}`,
+      username: u.username || null,
+      password: u.password || null
+    };
+  } catch { return null; }
+}
 
 const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
 const categories = config.categories;
 const result = {};
 
-async function scrapeCategory(browser, cat) {
+async function scrapeCategory(browser, cat, proxyConfig) {
   const url = `https://listado.mercadolibre.com.ar/${encodeURIComponent(cat.query)}`;
   console.log(`🔍 ${cat.icon} ${cat.name}...`);
 
   const page = await browser.newPage();
   await page.setViewport({ width: 1366, height: 768 });
+
+  // Autenticación de proxy si aplica
+  if (proxyConfig && proxyConfig.username && proxyConfig.password) {
+    await page.authenticate({
+      username: proxyConfig.username,
+      password: proxyConfig.password
+    });
+  }
 
   try {
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 25000 });
@@ -39,7 +60,6 @@ async function scrapeCategory(browser, cat) {
       } else {
         console.log(`   ⚠️  No se encontraron productos (${bodyText.substring(0, 60)}...)`);
       }
-      await page.close();
       return;
     }
 
@@ -154,18 +174,26 @@ async function scrapeCategory(browser, cat) {
 async function main() {
   console.log('🛒 Extrayendo productos reales de Mercado Libre...\n');
 
+  // ── Configurar proxy desde .env ──
+  const proxyConfig = parseProxyUrl(process.env.PROXY_URL);
+  const launchArgs = [
+    '--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage',
+    '--disable-blink-features=AutomationControlled',
+    '--disable-features=IsolateOrigins,site-per-process',
+    '--window-size=1366,768'
+  ];
+  if (proxyConfig) {
+    console.log(`🌐 Usando proxy: ${proxyConfig.server}`);
+    launchArgs.push(`--proxy-server=${proxyConfig.server}`);
+  }
+
   const browser = await puppeteer.launch({
     headless: 'new',
-    args: [
-      '--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage',
-      '--disable-blink-features=AutomationControlled',
-      '--disable-features=IsolateOrigins,site-per-process',
-      '--window-size=1366,768'
-    ]
+    args: launchArgs
   });
 
   for (let i = 0; i < categories.length; i++) {
-    await scrapeCategory(browser, categories[i]);
+    await scrapeCategory(browser, categories[i], proxyConfig);
     if (i < categories.length - 1) await new Promise(r => setTimeout(r, 5000));
   }
 

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Genera cache_*.html intentando primero la API de Mercado Libre.
  * Si la API tiene token válido, llena todas las categorías con productos reales.
  * Si falla, usa products-fixture.json como respaldo.
@@ -13,6 +13,7 @@ const TEMPLATE_PATH = path.join(__dirname, '..', 'index.html');
 const FIXTURE_PATH = path.join(__dirname, '..', 'products-fixture.json');
 const CONFIG_PATH = path.join(__dirname, '..', 'config.json');
 const FOOD_PATH = path.join(__dirname, '..', 'food.json');
+const BAKERY_PATH = path.join(__dirname, '..', 'bakery-offers.json');
 
 const DEFAULT_SITE = 'elpodiomp';
 
@@ -170,7 +171,7 @@ async function fetchFromApi(query, proxyConfig) {
 }
 
 // ── Generar HTML para un sitio ───────────────────
-function generateSiteCache(siteId, template, fixture, config, foods, apiProducts) {
+function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffers, apiProducts) {
   const siteConfig = getSiteConfig(config, siteId);
   if (!siteConfig) {
     console.log(`⚠️  Sitio "${siteId}" no encontrado. Saltando.`);
@@ -314,6 +315,42 @@ function generateSiteCache(siteId, template, fixture, config, foods, apiProducts
     </section>`;
   }
 
+  // -- Seccion de panaderia (solo elpodiofood) --
+  if (siteId === 'elpodiofood' && bakeryOffers && bakeryOffers.length > 0) {
+    let bakeryCards = '';
+    bakeryOffers.forEach(b => {
+      const affLink = safeUrl(b.link);
+      const oldPriceHtml = b.oldPrice && b.oldPrice > b.price
+        ? `<p class="old-price">$${formatPrice(b.oldPrice)}</p>` : '';
+      const estimadoHtml = b.precio_estimado
+        ? `<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado — puede variar según zona">⚠️ aprox.</span>` : '';
+      bakeryCards += `
+        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
+          <img class="card-image" src="${safeUrl(b.imageUrl)}" alt="${escapeHtml(b.product)}" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">${escapeHtml(b.badge || 'Destacado')}</span>
+            <h3>${escapeHtml(b.product)}</h3>
+            <p class="description">${escapeHtml(b.description || '')}</p>
+            <p style="font-size:13px;color:#666;margin:4px 0;">📍 ${escapeHtml(b.bakery)} — ${escapeHtml(b.location)}</p>
+            ${oldPriceHtml}
+            <p class="price"><span class="price-sup">$</span>${formatPrice(b.price)}${estimadoHtml}</p>
+            <p class="installments">${escapeHtml(b.installments)}</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Ver oferta</button>
+          </div>
+        </div>`;
+        totalCards++;
+    });
+    categoriesHtml += `
+    <section class="section" style="background:#fff8f0;border-radius:16px;padding:24px;margin-bottom:32px;">
+      <div class="section-header">
+        <h2><span class="icon">🥐</span> Ofertas de Panadería — ¡Para la Merienda!</h2>
+        <a href="https://pedidosya.com.ar" target="_blank" class="view-all">Ver más &rarr;</a>
+      </div>
+      <p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">📅 Actualizado hoy a las 16:00 — Las 3 mejores ofertas con envío a todo CABA</p>
+      <div class="grid">${bakeryCards}</div>
+    </section>`;
+  }
+
   const html = siteTemplate.replace('<!-- CATEGORIES_AND_PRODUCTS -->', categoriesHtml);
   const cachePath = path.join(__dirname, '..', `cache_${siteId}.html`);
   fs.writeFileSync(cachePath, html, 'utf8');
@@ -333,6 +370,8 @@ async function main() {
     fixture = readJson(FIXTURE_PATH);
     config = readJson(CONFIG_PATH);
     foods = readJson(FOOD_PATH);
+    var bakeryOffers = [];
+    try { if (fs.existsSync(BAKERY_PATH)) bakeryOffers = readJson(BAKERY_PATH); } catch (_) {}
   } catch (e) { console.error('❌ Error al cargar datos:', e.message); process.exit(1); }
 
   // ── Configurar proxy desde .env ──
@@ -375,7 +414,7 @@ async function main() {
   let grandTotalCats = 0, grandTotalCards = 0;
 
   for (const siteId of siteIds) {
-    const result = generateSiteCache(siteId, template, fixture, config, foods, apiProducts);
+    const result = generateSiteCache(siteId, template, fixture, config, foods, bakeryOffers, apiProducts);
     if (result) { grandTotalCats += result.categories; grandTotalCards += result.products; }
   }
 

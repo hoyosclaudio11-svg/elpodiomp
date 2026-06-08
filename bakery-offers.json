@@ -1,0 +1,59 @@
+[
+  {
+    "id": "bakery_1",
+    "bakery": "Las Medialunas del Abuelo",
+    "product": "Docena de Medialunas de Manteca",
+    "price": 4500,
+    "oldPrice": 5800,
+    "description": "Las mejores medialunas artesanales con envío a todo CABA. ¡Pedí por Rappi o PedidosYa y disfrutá en casa!",
+    "location": "Balvanera, CABA",
+    "installments": "Envío a todo CABA | Delivery en 45 min",
+    "imageUrl": "https://images.rappi.com.ar/restaurants_logo/logo-1759434526432.png?e=webp&d=10x10&q=10",
+    "link": "https://www.rappi.com.ar/restaurantes/249748-las-medialunas-del-abuelo",
+    "badge": "Mejor Precio",
+    "precio_estimado": false,
+    "rating": 4.1,
+    "reviews": 276,
+    "sites": [
+      "elpodiofood"
+    ]
+  },
+  {
+    "id": "bakery_2",
+    "bakery": "La Exposicion",
+    "product": "Docena de Facturas Surtidas",
+    "price": 3500,
+    "oldPrice": 4500,
+    "description": "Facturas artesanales de manteca con envío a todo CABA. ¡Elegí dulces, saladas o rellenas!",
+    "location": "CABA",
+    "installments": "Envío a todo CABA | Delivery en 45 min",
+    "imageUrl": "https://laexposicion.com.ar/wp-content/uploads/2022/11/Docena-de-facturas.jpg",
+    "link": "https://laexposicion.com.ar/producto/docena-de-facturas/",
+    "badge": "Mejor Precio",
+    "precio_estimado": false,
+    "rating": 5.2,
+    "reviews": 227,
+    "sites": [
+      "elpodiofood"
+    ]
+  },
+  {
+    "id": "bakery_3",
+    "bakery": "Lapanaderi bakery",
+    "product": "Medialuna de fermentación natural (unidad 120g)",
+    "price": 3200,
+    "oldPrice": 4000,
+    "description": "Medialunas artesanales de fermentación natural con envío a todo CABA. ¡Frescura y sabor únicos!",
+    "location": "CABA",
+    "installments": "Envío a todo CABA | Delivery en 45 min",
+    "imageUrl": "http://dcdn-us.mitiendanube.com/stores/004/900/034/themes/common/logo-796554512-1763399610-a29812a410f0340f0ab29d9ed6c583501763399610.png?0",
+    "link": "https://www.lapanaderi.com.ar/laminados/medialunas",
+    "badge": "Mejor Precio",
+    "precio_estimado": false,
+    "rating": 4.5,
+    "reviews": 490,
+    "sites": [
+      "elpodiofood"
+    ]
+  }
+]

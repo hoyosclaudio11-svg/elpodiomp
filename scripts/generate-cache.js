@@ -188,6 +188,64 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
 
   let categoriesHtml = '';
   let totalCards = 0;
+  // -- Seccion Express de panaderia (solo elpodiofood, al inicio) --
+  if (siteId === 'elpodiofood' && bakeryOffers && bakeryOffers.length > 0) {
+    let bakeryCards = '';
+    bakeryOffers.forEach(b => {
+      const affLink = safeUrl(b.link);
+      const oldPriceHtml = b.oldPrice && b.oldPrice > b.price
+        ? `<p class="old-price">$${formatPrice(b.oldPrice)}</p>` : '';
+      const estimadoHtml = b.precio_estimado
+        ? `<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado — puede variar segun zona">⚠️ aprox.</span>` : '';
+      bakeryCards += `
+        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
+          <img class="card-image" src="${safeUrl(b.imageUrl)}" alt="${escapeHtml(b.product)}" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">${escapeHtml(b.badge || 'Destacado')}</span>
+            <h3>${escapeHtml(b.product)}</h3>
+            <p class="description">${escapeHtml(b.description || '')}</p>
+            <p style="font-size:13px;color:#666;margin:4px 0;">📍 ${escapeHtml(b.bakery)} — ${escapeHtml(b.location)}</p>
+            ${oldPriceHtml}
+            <p class="price"><span class="price-sup">$</span>${formatPrice(b.price)}${estimadoHtml}</p>
+            <p class="installments">${escapeHtml(b.installments)}</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Ver oferta</button>
+          </div>
+        </div>`;
+        totalCards++;
+    });
+    categoriesHtml = `
+    <section id="bakery-express" class="section" style="background:linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);border:2px solid #f97316;border-radius:16px;padding:24px;margin-bottom:32px;animation: pulse-border 2s ease-in-out infinite;">
+      <style>
+        @keyframes pulse-border { 0%,100% { border-color:#f97316; } 50% { border-color:#ffb380; } }
+        #bakery-express { transition: opacity 0.5s ease, max-height 0.5s ease; overflow:hidden; }
+        #bakery-express.hidden { opacity:0; max-height:0; padding:0; margin:0; border:0; }
+      </style>
+      <div class="section-header">
+        <h2><span class="icon">🥐</span> Seccion Express — Para la Merienda! ⚡</h2>
+        <span style="background:#f97316;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">⏰ Hasta las 19:30</span>
+      </div>
+      <p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">📅 Actualizado hoy a las 16:00 — Las 3 mejores ofertas con envio a todo CABA</p>
+      <div class="grid">${bakeryCards}</div>
+    </section>
+    <script>
+    (function(){
+      var section = document.getElementById('bakery-express');
+      if (!section) return;
+      function checkTime() {
+        var now = new Date();
+        var hour = now.getHours();
+        var min = now.getMinutes();
+        // Ocultar despues de las 19:30
+        if (hour > 19 || (hour === 19 && min >= 30)) {
+          section.classList.add('hidden');
+        }
+      }
+      checkTime();
+      setInterval(checkTime, 60000); // Revisar cada minuto
+    })();
+    </script>
+    ` + categoriesHtml;
+  }
 
   for (const cat of siteCategories) {
     const catAffLink = config.categoryFallbacks && config.categoryFallbacks[cat.id]
@@ -315,41 +373,7 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
     </section>`;
   }
 
-  // -- Seccion de panaderia (solo elpodiofood) --
-  if (siteId === 'elpodiofood' && bakeryOffers && bakeryOffers.length > 0) {
-    let bakeryCards = '';
-    bakeryOffers.forEach(b => {
-      const affLink = safeUrl(b.link);
-      const oldPriceHtml = b.oldPrice && b.oldPrice > b.price
-        ? `<p class="old-price">$${formatPrice(b.oldPrice)}</p>` : '';
-      const estimadoHtml = b.precio_estimado
-        ? `<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado — puede variar según zona">⚠️ aprox.</span>` : '';
-      bakeryCards += `
-        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
-          <img class="card-image" src="${safeUrl(b.imageUrl)}" alt="${escapeHtml(b.product)}" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">${escapeHtml(b.badge || 'Destacado')}</span>
-            <h3>${escapeHtml(b.product)}</h3>
-            <p class="description">${escapeHtml(b.description || '')}</p>
-            <p style="font-size:13px;color:#666;margin:4px 0;">📍 ${escapeHtml(b.bakery)} — ${escapeHtml(b.location)}</p>
-            ${oldPriceHtml}
-            <p class="price"><span class="price-sup">$</span>${formatPrice(b.price)}${estimadoHtml}</p>
-            <p class="installments">${escapeHtml(b.installments)}</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Ver oferta</button>
-          </div>
-        </div>`;
-        totalCards++;
-    });
-    categoriesHtml += `
-    <section class="section" style="background:#fff8f0;border-radius:16px;padding:24px;margin-bottom:32px;">
-      <div class="section-header">
-        <h2><span class="icon">🥐</span> Ofertas de Panadería — ¡Para la Merienda!</h2>
-        <a href="https://pedidosya.com.ar" target="_blank" class="view-all">Ver más &rarr;</a>
-      </div>
-      <p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">📅 Actualizado hoy a las 16:00 — Las 3 mejores ofertas con envío a todo CABA</p>
-      <div class="grid">${bakeryCards}</div>
-    </section>`;
-  }
+
 
   const html = siteTemplate.replace('<!-- CATEGORIES_AND_PRODUCTS -->', categoriesHtml);
   const cachePath = path.join(__dirname, '..', `cache_${siteId}.html`);

@@ -1,6 +1,6 @@
 {
   "fecha": "2026-06-08",
-  "hora_publicacion": "00:06 ART",
+  "hora_publicacion": "00:12 ART",
   "dia_semana": "Lunes",
   "total_ofertas": 3,
   "categorias": [
@@ -10,32 +10,17 @@
     {
       "categoria": "Hamburguesas",
       "emoji": "🍔",
-      "titulo": "Combo Doble Cheeseburger",
-      "precio": 7500,
-      "precio_formateado": "$7.500",
-      "precio_original": null,
-      "descuento": null,
-      "fuente": "McDonald's",
+      "titulo": "Combo Chicken Crispy",
+      "precio": 7800,
+      "precio_formateado": "$7.800",
+      "precio_original": 9000,
+      "descuento": 13,
+      "fuente": "Dean & Dennys",
       "envio": "Delivery disponible",
-      "razon": "Precio imbatible para una hamburguesa clásica con delivery incluido, ideal para el bolsillo.",
-      "link": "https://www.mcdonalds.com.ar/",
+      "razon": "Mejor relación precio-valor con descuento real del 13% y calidad premium de Dean & Dennys.",
+      "link": "https://deananddennys.com/",
       "imagen": "",
       "puntaje": 9
-    },
-    {
-      "categoria": "Hamburguesas",
-      "emoji": "🍔",
-      "titulo": "Combo Nuggets 10 + Papas + Gaseosa",
-      "precio": 8500,
-      "precio_formateado": "$8.500",
-      "precio_original": 9500,
-      "descuento": 10,
-      "fuente": "Mostaza",
-      "envio": "Delivery disponible",
-      "razon": "Descuento real del 10% y combo completo con nuggets, papas y gaseosa a buen precio.",
-      "link": "https://www.pedidosya.com.ar/restaurantes/mostaza",
-      "imagen": "",
-      "puntaje": 8
     },
     {
       "categoria": "Hamburguesas",
@@ -47,8 +32,23 @@
       "descuento": null,
       "fuente": "Burger King",
       "envio": "Delivery disponible",
-      "razon": "Whopper de Burger King a precio competitivo sin subir a $9,000, buena relación calidad-cantidad.",
+      "razon": "Clásico Whopper a precio competitivo de $8,500, excelente variedad frente a otras cadenas.",
       "link": "https://www.burgerking.com.ar/",
+      "imagen": "",
+      "puntaje": 8
+    },
+    {
+      "categoria": "Hamburguesas",
+      "emoji": "🍔",
+      "titulo": "Combo Nuggets 10 + Papas + Gaseosa",
+      "precio": 9500,
+      "precio_formateado": "$9.500",
+      "precio_original": null,
+      "descuento": null,
+      "fuente": "Mostaza",
+      "envio": "Delivery disponible",
+      "razon": "Combo completo de nuggets con papas y gaseosa a $9,500, buena opción variada de Mostaza.",
+      "link": "https://www.pedidosya.com.ar/restaurantes/mostaza",
       "imagen": "",
       "puntaje": 7
     }

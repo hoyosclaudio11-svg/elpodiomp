@@ -1,4 +1,91 @@
 {
+  "notebooks_gaming": [
+    {
+      "title": "Cargador Notebook Asus Msi Gamer 19.5v 11.8a 230w Color Negro",
+      "price": 169999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_750788-MLA81507220976_012025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/cargador-notebook-asus-msi-gamer-195v-118a-230w-color-negro/p/MLA45296636"
+    },
+    {
+      "title": "Base De Enfriamiento Alienware Ventilador Turbo Para M17",
+      "price": 239210,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_928420-CBT110281851489_042026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/msi-gaming-laptop-cooling-pad-w-turbo-fan-6-rgb-modes/p/MLA2065926263"
+    },
+    {
+      "title": "Pantalla Notebook Compatible Lm156lf2f01 Nv156fhm-nx3 144hz",
+      "price": 150000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_614694-MLA69245236509_052023-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-69245236509-pantalla-notebook-compatible-lm156lf2f01-nv156fhm-nx3-144hz-_JM"
+    }
+  ],
+  "teclados_mecanicos": [
+    {
+      "title": "Teclado Redragon Yama QWERTY Outemu Purple español latinoamérica color negro con luz RGB",
+      "price": 141857,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_670290-MLA99904918497_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99904918497-teclado-redragon-yama-qwerty-outemu-purple-espa-ol-latinoam-rica-color-negro-con-_JM"
+    },
+    {
+      "title": "Teclado Mecánico Gamer E-yooso Z94 Rgb 84%",
+      "price": 48588,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_603595-MLA94608376634_102025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-94608376634-teclado-mec-nico-gamer-e-yooso-z94-rgb-84-_JM"
+    },
+    {
+      "title": "Teclado Mecanico Gamer Dareu Ek75 Cableado Rainbow Backlight Gris Y Negro Inglés Us",
+      "price": 60889,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_610151-MLA110564594599_042026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-110564594599-teclado-mecanico-gamer-dareu-ek75-cableado-rainbow-backlight-gris-y-negro-ingl-s-_JM"
+    }
+  ],
+  "licuadoras": [
+    {
+      "title": "Licuadora Industrial 2200w Pica Hielo Visioneer 3l 2 En 1 Negro",
+      "price": 98962,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_862453-MLA111132383497_052026-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-111132383497-licuadora-industrial-2200w-pica-hielo-visioneer-3l-2-en-1-negro-_JM"
+    },
+    {
+      "title": "Licuadora De Vaso Proline 1.5 Litros 450 Watts",
+      "price": 72599,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_896020-MLA99367790242_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99367790242-licuadora-de-vaso-proline-1-5-litros-450-watts-_JM"
+    },
+    {
+      "title": "Licuadora Kanji Jarra De Vidrio 2 En 1 Picadora 1.5lts 600w Color Blanco",
+      "price": 74199,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_901961-MLA99954043375_112025-E.webp",
+      "badge": "Destacado",
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-99954043375-licuadora-kanji-jarra-de-vidrio-2-en-1-picadora-1-5lts-600w-color-blanco-_JM"
+    }
+  ],
   "zapatillas_running": [
     {
       "title": "Puma Zapatillas Softride Symmetry Fuzion",
@@ -347,35 +434,6 @@
       "link": "https://articulo.mercadolibre.com.ar/MLA-96147311401-auriculares-behringer-hpm1000-bk-color-negro-_JM"
     }
   ],
-  "notebooks_gaming": [
-    {
-      "title": "Cargador Notebook Asus Msi Gamer 19.5v 11.8a 230w Color Negro",
-      "price": 169999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_750788-MLA81507220976_012025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/cargador-notebook-asus-msi-gamer-195v-118a-230w-color-negro/p/MLA45296636"
-    },
-    {
-      "title": "Base De Enfriamiento Alienware Ventilador Turbo Para M17",
-      "price": 238751,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_928420-CBT110281851489_042026-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/msi-gaming-laptop-cooling-pad-w-turbo-fan-6-rgb-modes/p/MLA2065926263"
-    },
-    {
-      "title": "Pantalla Notebook Compatible Lm156lf2f01 Nv156fhm-nx3 144hz",
-      "price": 150000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_614694-MLA69245236509_052023-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-69245236509-pantalla-notebook-compatible-lm156lf2f01-nv156fhm-nx3-144hz-_JM"
-    }
-  ],
   "notebooks_office": [
     {
       "title": "Notebook Hp Elitebook Apu A10 8gb Ssd 128gb Económicas (Reacondicionado)",
@@ -608,35 +666,6 @@
       "link": "https://articulo.mercadolibre.com.ar/MLA-96098382825-soporte-tv-bae-sop78-466-pulgadas-doble-brazo-50-60-65-70-75-80-fuerte-color-neg-_JM"
     }
   ],
-  "teclados_mecanicos": [
-    {
-      "title": "Teclado Gamer Machenike K500b-b87 Rgb Qwerty Switch Red Switch Red - Gris Y Blanco Inglés Internacional",
-      "price": 43299,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_923618-MLA96077456111_102025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-96077456111-teclado-gamer-machenike-k500b-b87-rgb-qwerty-switch-red-switch-red-gris-y-blanco-_JM"
-    },
-    {
-      "title": "Teclado Wireless Redragon Eisa Pro K686wb Blanco Azul Rgb Ñ Blanco/azul Español Latinoamérica",
-      "price": 109999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_753484-MLA99939107025_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99939107025-teclado-wireless-redragon-eisa-pro-k686wb-blanco-azul-rgb-blanco-azul-espa-ol-la-_JM"
-    },
-    {
-      "title": "Teclado Mecánico Redragon Kumara Rainbow K552-kr-sp Teclado Negro Idioma Español Latinoamérica",
-      "price": 59107,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_906052-MLA99545426148_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99545426148-teclado-mec-nico-redragon-kumara-rainbow-k552-kr-sp-teclado-negro-idioma-espa-ol-_JM"
-    }
-  ],
   "teclados_office": [
     {
       "title": "Kit de teclado y mouse inalámbrico Logitech MK270 Español de color negro",
@@ -867,35 +896,6 @@
       "badge": "Destacado",
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
       "link": "https://articulo.mercadolibre.com.ar/MLA-111341969449-cafetera-expreso-ranser-magnus-con-molinillo-integrado-para-caf-molido-y-c-psula-_JM"
-    }
-  ],
-  "licuadoras": [
-    {
-      "title": "Licuadora Moulinex Powermix Negra 8 Velocidades 2 Litros Negro",
-      "price": 78399,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_885454-MLA100016698107_122025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-100016698107-licuadora-moulinex-powermix-negra-8-velocidades-2-litros-negro-_JM"
-    },
-    {
-      "title": "Licuadora De Vaso Proline 1.5 Litros 450 Watts",
-      "price": 72599,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_896020-MLA99367790242_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99367790242-licuadora-de-vaso-proline-1-5-litros-450-watts-_JM"
-    },
-    {
-      "title": "Licuadora Oster BLSTKAP Pica Hielo Acople Metálico 1.25l Negra 550W Color Negro",
-      "price": 99224,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_732151-MLA99485575150_112025-E.webp",
-      "badge": "Destacado",
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-99485575150-licuadora-oster-blstkap-pica-hielo-acople-met-lico-1-25l-negra-550w-color-negro-_JM"
     }
   ],
   "batidoras": [

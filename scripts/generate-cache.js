@@ -188,64 +188,75 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
 
   let categoriesHtml = '';
   let totalCards = 0;
-  // -- Seccion Express de panaderia (solo elpodiofood, al inicio) --
+  // ============================================================
+  // SECCION EXPRESS BAKERY (al inicio, visible 16:00-19:30)
+  // ============================================================
   if (siteId === 'elpodiofood' && bakeryOffers && bakeryOffers.length > 0) {
     let bakeryCards = '';
     bakeryOffers.forEach(b => {
-      const affLink = safeUrl(b.link);
-      const oldPriceHtml = b.oldPrice && b.oldPrice > b.price
-        ? `<p class="old-price">$${formatPrice(b.oldPrice)}</p>` : '';
-      const estimadoHtml = b.precio_estimado
-        ? `<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado — puede variar segun zona">⚠️ aprox.</span>` : '';
-      bakeryCards += `
-        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
-          <img class="card-image" src="${safeUrl(b.imageUrl)}" alt="${escapeHtml(b.product)}" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">${escapeHtml(b.badge || 'Destacado')}</span>
-            <h3>${escapeHtml(b.product)}</h3>
-            <p class="description">${escapeHtml(b.description || '')}</p>
-            <p style="font-size:13px;color:#666;margin:4px 0;">📍 ${escapeHtml(b.bakery)} — ${escapeHtml(b.location)}</p>
-            ${oldPriceHtml}
-            <p class="price"><span class="price-sup">$</span>${formatPrice(b.price)}${estimadoHtml}</p>
-            <p class="installments">${escapeHtml(b.installments)}</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Ver oferta</button>
-          </div>
-        </div>`;
+      var affLink = safeUrl(b.link);
+      var oldPriceHtml = (b.oldPrice && b.oldPrice > b.price) ? '<p class="old-price">$' + formatPrice(b.oldPrice) + '</p>' : '';
+      var estimadoHtml = b.precio_estimado ? '<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar segun zona">&#9888;&#65039; aprox.</span>' : '';
+      bakeryCards += '<div class="card" onclick="window.location.href=\'' + escapeHtml(affLink) + '\'">' +
+        '<img class="card-image" src="' + safeUrl(b.imageUrl) + '" alt="' + escapeHtml(b.product) + '" loading="lazy">' +
+        '<div class="card-body">' +
+        '<span class="card-badge">' + escapeHtml(b.badge || 'Destacado') + '</span>' +
+        '<h3>' + escapeHtml(b.product) + '</h3>' +
+        '<p class="description">' + escapeHtml(b.description || '') + '</p>' +
+        '<p style="font-size:13px;color:#666;margin:4px 0;">&#128205; ' + escapeHtml(b.bakery) + ' - ' + escapeHtml(b.location) + '</p>' +
+        oldPriceHtml +
+        '<p class="price"><span class="price-sup">$</span>' + formatPrice(b.price) + estimadoHtml + '</p>' +
+        '<p class="installments">' + escapeHtml(b.installments) + '</p>' +
+        '<button class="btn" onclick="event.stopPropagation(); window.location.href=\'' + escapeHtml(affLink) + '\'">Ver oferta</button>' +
+        '</div></div>';
         totalCards++;
     });
-    categoriesHtml = `
-    <section id="bakery-express" class="section" style="background:linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);border:2px solid #f97316;border-radius:16px;padding:24px;margin-bottom:32px;animation: pulse-border 2s ease-in-out infinite;">
-      <style>
-        @keyframes pulse-border { 0%,100% { border-color:#f97316; } 50% { border-color:#ffb380; } }
-        #bakery-express { transition: opacity 0.5s ease, max-height 0.5s ease; overflow:hidden; }
-        #bakery-express.hidden { opacity:0; max-height:0; padding:0; margin:0; border:0; }
-      </style>
-      <div class="section-header">
-        <h2><span class="icon">🥐</span> Seccion Express — Para la Merienda! ⚡</h2>
-        <span style="background:#f97316;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">⏰ Hasta las 19:30</span>
-      </div>
-      <p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">📅 Actualizado hoy a las 16:00 — Las 3 mejores ofertas con envio a todo CABA</p>
-      <div class="grid">${bakeryCards}</div>
-    </section>
-    <script>
-    (function(){
-      var section = document.getElementById('bakery-express');
-      if (!section) return;
-      function checkTime() {
-        var now = new Date();
-        var hour = now.getHours();
-        var min = now.getMinutes();
-        // Ocultar despues de las 19:30
-        if (hour > 19 || (hour === 19 && min >= 30)) {
-          section.classList.add('hidden');
-        }
-      }
-      checkTime();
-      setInterval(checkTime, 60000); // Revisar cada minuto
-    })();
-    </script>
-    ` + categoriesHtml;
+    categoriesHtml = '<section id="bakery-express" class="section" style="background:linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);border:2px solid #f97316;border-radius:16px;padding:24px;margin-bottom:32px;animation:pulse-border 2s ease-in-out infinite;">' +
+      '<style>@keyframes pulse-border{0%,100%{border-color:#f97316}50%{border-color:#ffb380}}#bakery-express,#cena-express{transition:opacity .5s,max-height .5s;overflow:hidden}#bakery-express.hidden,#cena-express.hidden{opacity:0;max-height:0;padding:0;margin:0;border:0}#cena-express .section-header h2{color:#fff}#cena-express .view-all{color:#e67e22}#cena-express p{color:#ccc}#cena-express .installments{color:#f97316!important}#cena-express .description{color:#aaa!important}</style>' +
+      '<div class="section-header"><h2><span class="icon">&#129370;</span> Seccion Express - Para la Merienda! &#9889;</h2>' +
+      '<span style="background:#f97316;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">&#9200; Hasta las 19:30</span></div>' +
+      '<p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">&#128204; Actualizado hoy a las 16:00 - Las 3 mejores ofertas con envio a todo CABA</p>' +
+      '<div class="grid">' + bakeryCards + '</div></section>' +
+      categoriesHtml;
   }
+
+  // ============================================================
+  // SECCION EXPRESS CENA (al inicio, visible 19:30 en adelante)
+  // ============================================================
+  if (siteId === 'elpodiofood' && foods && foods.length > 0) {
+    let cenaCards = '';
+    foods.forEach(f => {
+      var affLink = safeUrl(f.link);
+      var oldPriceHtml = (f.oldPrice && f.oldPrice > f.price) ? '<p class="old-price">$' + formatPrice(f.oldPrice) + '</p>' : '';
+      cenaCards += '<div class="card" onclick="window.location.href=\'' + escapeHtml(affLink) + '\'">' +
+        '<img class="card-image" src="' + safeUrl(f.imageUrl) + '" alt="' + escapeHtml(f.product) + '" loading="lazy">' +
+        '<div class="card-body">' +
+        '<span class="card-badge">' + escapeHtml(f.badge || 'Recomendado') + '</span>' +
+        '<h3>' + escapeHtml(f.product) + '</h3>' +
+        '<p class="description">' + escapeHtml(f.description || '') + '</p>' +
+        '<p style="font-size:13px;color:#666;margin:4px 0;">&#127860; ' + escapeHtml(f.restaurant || 'Delivery') + '</p>' +
+        oldPriceHtml +
+        '<p class="price"><span class="price-sup">$</span>' + formatPrice(f.price) + '</p>' +
+        '<p class="installments">' + escapeHtml(f.installments) + '</p>' +
+        '<button class="btn" onclick="event.stopPropagation(); window.location.href=\'' + escapeHtml(affLink) + '\'">Pedir ahora</button>' +
+        '</div></div>';
+        totalCards++;
+    });
+    categoriesHtml += '<section id="cena-express" class="section hidden" style="background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);border:2px solid #e67e22;border-radius:16px;padding:24px;margin-bottom:32px;">' +
+      '<div class="section-header"><h2><span class="icon">&#127828;</span> Cena Express - Pedia tu Cena! &#127769;</h2>' +
+      '<span style="background:#e67e22;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">&#127769; Desde las 19:30</span></div>' +
+      '<p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">&#128204; Las mejores opciones para cenar con delivery en CABA</p>' +
+      '<div class="grid">' + cenaCards + '</div></section>';
+  }
+
+  // ============================================================
+  // TIMER JS - Toggle entre bakery (dia) y cena (noche)
+  // ============================================================
+  if (siteId === 'elpodiofood') {
+    categoriesHtml += '<script>(function(){var b=document.getElementById("bakery-express");var c=document.getElementById("cena-express");function t(){if(!b||!c)return;var n=new Date();var h=n.getHours()+n.getTimezoneOffset()/60+3;var m=n.getMinutes();var noche=(h>19||(h===19&&m>=30));if(noche){b.classList.add("hidden");c.classList.remove("hidden")}else{b.classList.remove("hidden");c.classList.add("hidden")}}t();setInterval(t,60000)})();</script>';
+  }
+
+
 
   for (const cat of siteCategories) {
     const catAffLink = config.categoryFallbacks && config.categoryFallbacks[cat.id]
@@ -340,36 +351,6 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
         <a href="${catAffLink}" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">${cardsHtml}</div>
-    </section>`;
-  }
-
-  // ── Sección de comida ──
-  const siteFoods = foods.filter(f => f.sites && f.sites.includes(siteId));
-  if (siteFoods.length > 0) {
-    let foodCards = '';
-    siteFoods.forEach(f => {
-      const affLink = safeUrl(f.link);
-      foodCards += `
-        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
-          <img class="card-image" src="${safeUrl(f.imageUrl)}" alt="${escapeHtml(f.product)}" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">${escapeHtml(f.badge || 'Recomendado')}</span>
-            <h3>${escapeHtml(f.product)}</h3>
-            <p class="description">${escapeHtml(f.description || '')}</p>
-            <p class="price"><span class="price-sup">$</span>${formatPrice(f.price)}</p>
-            <p class="installments">${escapeHtml(f.installments)}</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Pedir ahora</button>
-          </div>
-        </div>`;
-        totalCards++;
-    });
-    categoriesHtml += `
-    <section class="section">
-      <div class="section-header">
-        <h2><span class="icon">🍔</span> Comida del Momento</h2>
-        <a href="https://listado.mercadolibre.com.ar/_OrderId_Alimentos_Bebidas_" target="_blank" class="view-all">Ver todos &rarr;</a>
-      </div>
-      <div class="grid">${foodCards}</div>
     </section>`;
   }
 

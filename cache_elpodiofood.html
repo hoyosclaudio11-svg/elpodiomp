@@ -560,77 +560,7 @@
   </nav>
 
   <main class="container">
-    
-    <section id="bakery-express" class="section" style="background:linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);border:2px solid #f97316;border-radius:16px;padding:24px;margin-bottom:32px;animation: pulse-border 2s ease-in-out infinite;">
-      <style>
-        @keyframes pulse-border { 0%,100% { border-color:#f97316; } 50% { border-color:#ffb380; } }
-        #bakery-express { transition: opacity 0.5s ease, max-height 0.5s ease; overflow:hidden; }
-        #bakery-express.hidden { opacity:0; max-height:0; padding:0; margin:0; border:0; }
-      </style>
-      <div class="section-header">
-        <h2><span class="icon">🥐</span> Seccion Express — Para la Merienda! ⚡</h2>
-        <span style="background:#f97316;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">⏰ Hasta las 19:30</span>
-      </div>
-      <p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">📅 Actualizado hoy a las 16:00 — Las 3 mejores ofertas con envio a todo CABA</p>
-      <div class="grid">
-        <div class="card" onclick="window.location.href='https://www.rappi.com.ar/restaurantes/249748-las-medialunas-del-abuelo'">
-          <img class="card-image" src="https://images.rappi.com.ar/restaurants_logo/logo-1759434526432.png?e=webp&d=10x10&q=10" alt="Docena de Medialunas de Manteca" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Mejor Precio</span>
-            <h3>Docena de Medialunas de Manteca</h3>
-            <p class="description">Las mejores medialunas artesanales con envío a todo CABA. ¡Pedí por Rappi o PedidosYa y disfrutá en casa!</p>
-            <p style="font-size:13px;color:#666;margin:4px 0;">📍 Las Medialunas del Abuelo — Balvanera, CABA</p>
-            <p class="old-price">$5.800</p>
-            <p class="price"><span class="price-sup">$</span>4.500</p>
-            <p class="installments">Envío a todo CABA | Delivery en 45 min</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.rappi.com.ar/restaurantes/249748-las-medialunas-del-abuelo'">Ver oferta</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://laexposicion.com.ar/producto/docena-de-facturas/'">
-          <img class="card-image" src="https://laexposicion.com.ar/wp-content/uploads/2022/11/Docena-de-facturas.jpg" alt="Docena de Facturas Surtidas" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Mejor Precio</span>
-            <h3>Docena de Facturas Surtidas</h3>
-            <p class="description">Facturas artesanales de manteca con envío a todo CABA. ¡Elegí dulces, saladas o rellenas!</p>
-            <p style="font-size:13px;color:#666;margin:4px 0;">📍 La Exposicion — CABA</p>
-            <p class="old-price">$4.500</p>
-            <p class="price"><span class="price-sup">$</span>3.500</p>
-            <p class="installments">Envío a todo CABA | Delivery en 45 min</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://laexposicion.com.ar/producto/docena-de-facturas/'">Ver oferta</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://www.lapanaderi.com.ar/laminados/medialunas'">
-          <img class="card-image" src="http://dcdn-us.mitiendanube.com/stores/004/900/034/themes/common/logo-796554512-1763399610-a29812a410f0340f0ab29d9ed6c583501763399610.png?0" alt="Medialuna de fermentación natural (unidad 120g)" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Mejor Precio</span>
-            <h3>Medialuna de fermentación natural (unidad 120g)</h3>
-            <p class="description">Medialunas artesanales de fermentación natural con envío a todo CABA. ¡Frescura y sabor únicos!</p>
-            <p style="font-size:13px;color:#666;margin:4px 0;">📍 Lapanaderi bakery — CABA</p>
-            <p class="old-price">$4.000</p>
-            <p class="price"><span class="price-sup">$</span>3.200</p>
-            <p class="installments">Envío a todo CABA | Delivery en 45 min</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.lapanaderi.com.ar/laminados/medialunas'">Ver oferta</button>
-          </div>
-        </div></div>
-    </section>
-    <script>
-    (function(){
-      var section = document.getElementById('bakery-express');
-      if (!section) return;
-      function checkTime() {
-        var now = new Date();
-        var hour = now.getHours();
-        var min = now.getMinutes();
-        // Ocultar despues de las 19:30
-        if (hour > 19 || (hour === 19 && min >= 30)) {
-          section.classList.add('hidden');
-        }
-      }
-      checkTime();
-      setInterval(checkTime, 60000); // Revisar cada minuto
-    })();
-    </script>
-    
+    <section id="bakery-express" class="section" style="background:linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);border:2px solid #f97316;border-radius:16px;padding:24px;margin-bottom:32px;animation:pulse-border 2s ease-in-out infinite;"><style>@keyframes pulse-border{0%,100%{border-color:#f97316}50%{border-color:#ffb380}}#bakery-express,#cena-express{transition:opacity .5s,max-height .5s;overflow:hidden}#bakery-express.hidden,#cena-express.hidden{opacity:0;max-height:0;padding:0;margin:0;border:0}#cena-express .section-header h2{color:#fff}#cena-express .view-all{color:#e67e22}#cena-express p{color:#ccc}#cena-express .installments{color:#f97316!important}#cena-express .description{color:#aaa!important}</style><div class="section-header"><h2><span class="icon">&#129370;</span> Seccion Express - Para la Merienda! &#9889;</h2><span style="background:#f97316;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">&#9200; Hasta las 19:30</span></div><p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">&#128204; Actualizado hoy a las 16:00 - Las 3 mejores ofertas con envio a todo CABA</p><div class="grid"><div class="card" onclick="window.location.href='https://www.rappi.com.ar/restaurantes/249748-las-medialunas-del-abuelo'"><img class="card-image" src="https://images.rappi.com.ar/restaurants_logo/logo-1759434526432.png?e=webp&d=10x10&q=10" alt="Docena de Medialunas de Manteca" loading="lazy"><div class="card-body"><span class="card-badge">Mejor Precio</span><h3>Docena de Medialunas de Manteca</h3><p class="description">Las mejores medialunas artesanales con envío a todo CABA. ¡Pedí por Rappi o PedidosYa y disfrutá en casa!</p><p style="font-size:13px;color:#666;margin:4px 0;">&#128205; Las Medialunas del Abuelo - Balvanera, CABA</p><p class="old-price">$5.800</p><p class="price"><span class="price-sup">$</span>4.500</p><p class="installments">Envío a todo CABA | Delivery en 45 min</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.rappi.com.ar/restaurantes/249748-las-medialunas-del-abuelo'">Ver oferta</button></div></div><div class="card" onclick="window.location.href='https://laexposicion.com.ar/producto/docena-de-facturas/'"><img class="card-image" src="https://laexposicion.com.ar/wp-content/uploads/2022/11/Docena-de-facturas.jpg" alt="Docena de Facturas Surtidas" loading="lazy"><div class="card-body"><span class="card-badge">Mejor Precio</span><h3>Docena de Facturas Surtidas</h3><p class="description">Facturas artesanales de manteca con envío a todo CABA. ¡Elegí dulces, saladas o rellenas!</p><p style="font-size:13px;color:#666;margin:4px 0;">&#128205; La Exposicion - CABA</p><p class="old-price">$4.500</p><p class="price"><span class="price-sup">$</span>3.500</p><p class="installments">Envío a todo CABA | Delivery en 45 min</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://laexposicion.com.ar/producto/docena-de-facturas/'">Ver oferta</button></div></div><div class="card" onclick="window.location.href='https://www.lapanaderi.com.ar/laminados/medialunas'"><img class="card-image" src="http://dcdn-us.mitiendanube.com/stores/004/900/034/themes/common/logo-796554512-1763399610-a29812a410f0340f0ab29d9ed6c583501763399610.png?0" alt="Medialuna de fermentación natural (unidad 120g)" loading="lazy"><div class="card-body"><span class="card-badge">Mejor Precio</span><h3>Medialuna de fermentación natural (unidad 120g)</h3><p class="description">Medialunas artesanales de fermentación natural con envío a todo CABA. ¡Frescura y sabor únicos!</p><p style="font-size:13px;color:#666;margin:4px 0;">&#128205; Lapanaderi bakery - CABA</p><p class="old-price">$4.000</p><p class="price"><span class="price-sup">$</span>3.200</p><p class="installments">Envío a todo CABA | Delivery en 45 min</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.lapanaderi.com.ar/laminados/medialunas'">Ver oferta</button></div></div></div></section><section id="cena-express" class="section hidden" style="background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);border:2px solid #e67e22;border-radius:16px;padding:24px;margin-bottom:32px;"><div class="section-header"><h2><span class="icon">&#127828;</span> Cena Express - Pedia tu Cena! &#127769;</h2><span style="background:#e67e22;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">&#127769; Desde las 19:30</span></div><p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">&#128204; Las mejores opciones para cenar con delivery en CABA</p><div class="grid"><div class="card" onclick="window.location.href='https://pedidosya.com.ar'"><img class="card-image" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop" alt="Combo Big Mac Mediano" loading="lazy"><div class="card-body"><span class="card-badge">Recomendado</span><h3>Combo Big Mac Mediano</h3><p class="description">La hamburguesa más famosa del mundo. Dos medallones de carne, salsa especial, lechuga, queso, pepinos y cebolla. Incluye papas fritas y gaseosa medianas.</p><p style="font-size:13px;color:#666;margin:4px 0;">&#127860; McDonald&#39;s</p><p class="old-price">$10.500</p><p class="price"><span class="price-sup">$</span>8.900</p><p class="installments">Envío rápido por Delivery</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button></div></div><div class="card" onclick="window.location.href='https://pedidosya.com.ar'"><img class="card-image" src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&h=600&fit=crop" alt="Combo Stacker Triple" loading="lazy"><div class="card-body"><span class="card-badge">Recomendado</span><h3>Combo Stacker Triple</h3><p class="description">Tres medallones de carne vacuna a la parrilla, salsa stacker, cheddar fundido y panceta crujiente. Incluye papas fritas y gaseosa medianas.</p><p style="font-size:13px;color:#666;margin:4px 0;">&#127860; Burger King</p><p class="old-price">$11.200</p><p class="price"><span class="price-sup">$</span>9.800</p><p class="installments">Envío rápido por Delivery</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button></div></div><div class="card" onclick="window.location.href='https://pedidosya.com.ar'"><img class="card-image" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=600&fit=crop" alt="Pizza Grande de Muzzarella" loading="lazy"><div class="card-body"><span class="card-badge">Recomendado</span><h3>Pizza Grande de Muzzarella</h3><p class="description">Pizza clásica al molde media masa al estilo porteño. Abundante muzzarella de primera calidad, salsa de tomate de la casa y aceitunas verdes.</p><p style="font-size:13px;color:#666;margin:4px 0;">&#127860; Kentucky</p><p class="old-price">$8.800</p><p class="price"><span class="price-sup">$</span>7.500</p><p class="installments">Envío rápido por Delivery</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button></div></div></div></section><script>(function(){var b=document.getElementById("bakery-express");var c=document.getElementById("cena-express");function t(){if(!b||!c)return;var n=new Date();var h=n.getHours()+n.getTimezoneOffset()/60+3;var m=n.getMinutes();var noche=(h>19||(h===19&&m>=30));if(noche){b.classList.add("hidden");c.classList.remove("hidden")}else{b.classList.remove("hidden");c.classList.add("hidden")}}t();setInterval(t,60000)})();</script>
     <section class="section">
       <div class="section-header">
         <h2><span class="icon">☕</span> Cafeteras Expresso</h2>
@@ -903,46 +833,6 @@
             <p class="price"><span class="price-sup">$</span>32.590</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://articulo.mercadolibre.com.ar/MLA-106722292506-sandwichera-el-ctrica-novohome-tostadora-grill-acero-inoxidable-facil-limpieza-_JM'">Comprar ahora</button>
-          </div>
-        </div></div>
-    </section>
-    <section class="section">
-      <div class="section-header">
-        <h2><span class="icon">🍔</span> Comida del Momento</h2>
-        <a href="https://listado.mercadolibre.com.ar/_OrderId_Alimentos_Bebidas_" target="_blank" class="view-all">Ver todos &rarr;</a>
-      </div>
-      <div class="grid">
-        <div class="card" onclick="window.location.href='https://pedidosya.com.ar'">
-          <img class="card-image" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop" alt="Combo Big Mac Mediano" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Recomendado</span>
-            <h3>Combo Big Mac Mediano</h3>
-            <p class="description">La hamburguesa más famosa del mundo. Dos medallones de carne, salsa especial, lechuga, queso, pepinos y cebolla. Incluye papas fritas y gaseosa medianas.</p>
-            <p class="price"><span class="price-sup">$</span>8.900</p>
-            <p class="installments">Envío rápido por Delivery</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://pedidosya.com.ar'">
-          <img class="card-image" src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&h=600&fit=crop" alt="Combo Stacker Triple" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Recomendado</span>
-            <h3>Combo Stacker Triple</h3>
-            <p class="description">Tres medallones de carne vacuna a la parrilla, salsa stacker, cheddar fundido y panceta crujiente. Incluye papas fritas y gaseosa medianas.</p>
-            <p class="price"><span class="price-sup">$</span>9.800</p>
-            <p class="installments">Envío rápido por Delivery</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://pedidosya.com.ar'">
-          <img class="card-image" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=600&fit=crop" alt="Pizza Grande de Muzzarella" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Recomendado</span>
-            <h3>Pizza Grande de Muzzarella</h3>
-            <p class="description">Pizza clásica al molde media masa al estilo porteño. Abundante muzzarella de primera calidad, salsa de tomate de la casa y aceitunas verdes.</p>
-            <p class="price"><span class="price-sup">$</span>7.500</p>
-            <p class="installments">Envío rápido por Delivery</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button>
           </div>
         </div></div>
     </section>

@@ -290,8 +290,11 @@ function getCachePath(siteId) {
  * Reemplaza todos los tokens {{TOKEN}} en el template con los valores del sitio.
  */
 function renderTemplate(template, siteConfig) {
+  const config = readConfig();
   const t = siteConfig.theme;
+  const ga4Id = config.ga4MeasurementId || '';
   return template
+    .replace(/\{\{GA4_MEASUREMENT_ID\}\}/g, ga4Id)
     .replace(/\{\{SITE_TITLE\}\}/g, siteConfig.name)
     .replace(/\{\{SITE_DESCRIPTION\}\}/g, siteConfig.description)
     .replace(/\{\{SITE_DOMAIN\}\}/g, siteConfig.domain)

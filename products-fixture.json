@@ -1274,5 +1274,295 @@
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
       "link": "https://articulo.mercadolibre.com.ar/MLA-109638340469-bicicleta-playera-rodado-29-bassano-_JM"
     }
+  ],
+  "zapatos_mujer": [
+    {
+      "title": "Zapatos de Vestir Taco Medio Charleston Mujer",
+      "price": 45999,
+      "oldPrice": 65999,
+      "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c16dd2?w=600&h=600&fit=crop",
+      "badge": "30% OFF",
+      "description": "Zapatos de vestir con taco medio. Ideales para oficina y eventos. Disponibles en negro y nude.",
+      "link": "https://listado.mercadolibre.com.ar/zapatos-mujer-tacos-sandalias"
+    },
+    {
+      "title": "Sandalias Plataforma Verano Mujer Cuero Ecológico",
+      "price": 32999,
+      "oldPrice": 49999,
+      "imageUrl": "https://images.unsplash.com/photo-1573100925118-870b8efc799d?w=600&h=600&fit=crop",
+      "badge": "35% OFF",
+      "description": "Sandalias de plataforma con plantilla acolchada. Perfectas para el verano. Varios colores.",
+      "link": "https://listado.mercadolibre.com.ar/zapatos-mujer-tacos-sandalias"
+    },
+    {
+      "title": "Botas Caña Alta Mujer Con Cordones Trendy",
+      "price": 58999,
+      "oldPrice": 79999,
+      "imageUrl": "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=600&h=600&fit=crop",
+      "badge": "25% OFF",
+      "description": "Botas caña alta con cordones. Suela antideslizante. Estilo militar chic para invierno.",
+      "link": "https://listado.mercadolibre.com.ar/zapatos-mujer-tacos-sandalias"
+    }
+  ],
+  "zapatillas_mujer": [
+    {
+      "title": "Nike Air Max 270 Mujer React",
+      "price": 129999,
+      "oldPrice": 169999,
+      "imageUrl": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop",
+      "badge": "25% OFF",
+      "description": "Zapatillas urbanas con amortiguación Air Max. Suela de goma con patrón waffle. Look moderno.",
+      "link": "https://listado.mercadolibre.com.ar/zapatillas-urbanas-mujer"
+    },
+    {
+      "title": "Adidas Grand Court Base Mujer Blancas",
+      "price": 89999,
+      "oldPrice": 119999,
+      "imageUrl": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&h=600&fit=crop",
+      "badge": "Envío Gratis",
+      "description": "Zapatillas clásicas con las 3 tiras. Cuero sintético premium y suela de goma vulcanizada.",
+      "link": "https://listado.mercadolibre.com.ar/zapatillas-urbanas-mujer"
+    },
+    {
+      "title": "Puma Cali Dream Mujer Casual",
+      "price": 79999,
+      "oldPrice": 99999,
+      "imageUrl": "https://images.unsplash.com/photo-1579338559194-a162d19bf842?w=600&h=600&fit=crop",
+      "badge": "20% OFF",
+      "description": "Zapatillas urbanas con diseño retro californiano. Suela plataforma y plantilla SoftFoam+.",
+      "link": "https://listado.mercadolibre.com.ar/zapatillas-urbanas-mujer"
+    }
+  ],
+  "pantalones_mujer": [
+    {
+      "title": "Levi's 721 High Rise Skinny Jeans Mujer",
+      "price": 65999,
+      "oldPrice": 89999,
+      "imageUrl": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&h=600&fit=crop",
+      "badge": "25% OFF",
+      "description": "Jeans chupín tiro alto con elastano. Costuras reforzadas y diseño que estiliza la figura.",
+      "link": "https://listado.mercadolibre.com.ar/jeans-mujer-pantalones"
+    },
+    {
+      "title": "Pantalón Cargo Mujer Tiro Alto Bolsillos",
+      "price": 38999,
+      "oldPrice": 52999,
+      "imageUrl": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&h=600&fit=crop",
+      "badge": "Tendencia",
+      "description": "Pantalón cargo tiro alto con bolsillos laterales. Gabardina liviana. Estilo urbano.",
+      "link": "https://listado.mercadolibre.com.ar/jeans-mujer-pantalones"
+    },
+    {
+      "title": "Palazzo Mujer Satinado Cintura Alta Elegante",
+      "price": 34999,
+      "oldPrice": null,
+      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=600&fit=crop",
+      "badge": "Nuevo",
+      "description": "Pantalón palazzo satinado de cintura alta. Caída fluida y look sofisticado para vestir.",
+      "link": "https://listado.mercadolibre.com.ar/jeans-mujer-pantalones"
+    }
+  ],
+  "remeras_mujer": [
+    {
+      "title": "Top Cropped Básico Algodón Mujer Pack x3",
+      "price": 24999,
+      "oldPrice": null,
+      "imageUrl": "https://images.unsplash.com/photo-1434389677669-e08b4cda1a20?w=600&h=600&fit=crop",
+      "badge": "Pack x3",
+      "description": "Pack de 3 tops cropped de algodón peinado. Corte ajustado. Disponible en 8 colores.",
+      "link": "https://listado.mercadolibre.com.ar/remeras-tops-mujer-moda"
+    },
+    {
+      "title": "Blusa Satenizada Mujer Manga Larga Lazada",
+      "price": 28999,
+      "oldPrice": 42999,
+      "imageUrl": "https://images.unsplash.com/photo-1551048632-24e444b48a3e?w=600&h=600&fit=crop",
+      "badge": "30% OFF",
+      "description": "Blusa satinada con manga larga y lazo al cuello. Ideal para oficina y reuniones.",
+      "link": "https://listado.mercadolibre.com.ar/remeras-tops-mujer-moda"
+    },
+    {
+      "title": "Remerón Oversize Algodón Mujer Estampado",
+      "price": 22999,
+      "oldPrice": null,
+      "imageUrl": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=600&fit=crop",
+      "badge": "Tendencia",
+      "description": "Remerón oversize 100% algodón con estampado moderno. Look relajado y cool.",
+      "link": "https://listado.mercadolibre.com.ar/remeras-tops-mujer-moda"
+    }
+  ],
+  "vestidos": [
+    {
+      "title": "Vestido Midi Estampado Manga Larga Fiesta",
+      "price": 45999,
+      "oldPrice": 67999,
+      "imageUrl": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&h=600&fit=crop",
+      "badge": "30% OFF",
+      "description": "Vestido midi estampado con corte evasé. Mangas largas y cintura ajustada. Caída fluida.",
+      "link": "https://listado.mercadolibre.com.ar/vestidos-mujer-fiesta-casual"
+    },
+    {
+      "title": "Vestido Largo Boho Playero Mujer Verano",
+      "price": 28999,
+      "oldPrice": 39999,
+      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=600&fit=crop",
+      "badge": "Envío Gratis",
+      "description": "Vestido largo estilo boho. Escote en V, mangas acampanadas. Perfecto para verano y playa.",
+      "link": "https://listado.mercadolibre.com.ar/vestidos-mujer-fiesta-casual"
+    },
+    {
+      "title": "Vestido Cóctel Tubo Negro Elegante Mujer",
+      "price": 39999,
+      "oldPrice": 54999,
+      "imageUrl": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=600&h=600&fit=crop",
+      "badge": "Premium",
+      "description": "Vestido tubo negro para cóctel. Corte entallado con abertura lateral. Tejido elastizado de calidad.",
+      "link": "https://listado.mercadolibre.com.ar/vestidos-mujer-fiesta-casual"
+    }
+  ],
+  "camperas_mujer": [
+    {
+      "title": "Campera de Cuero Ecológico Mujer Talle Real",
+      "price": 69999,
+      "oldPrice": 99999,
+      "imageUrl": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=600&fit=crop",
+      "badge": "30% OFF",
+      "description": "Campera de cuero ecológico. Diseño moto con recortes y cierres. Forro interior de poliéster.",
+      "link": "https://listado.mercadolibre.com.ar/camperas-abrigos-mujer"
+    },
+    {
+      "title": "Tapado Largo Lana Mujer Invierno Elegante",
+      "price": 89999,
+      "oldPrice": 139999,
+      "imageUrl": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600&h=600&fit=crop",
+      "badge": "35% OFF",
+      "description": "Tapado largo de lana sintética premium. Solapas con cuello smoking. Cinturón regulable.",
+      "link": "https://listado.mercadolibre.com.ar/camperas-abrigos-mujer"
+    },
+    {
+      "title": "Buzo Canguro Oversize Algodón Frisado Mujer",
+      "price": 35999,
+      "oldPrice": null,
+      "imageUrl": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&h=600&fit=crop",
+      "badge": "Más vendido",
+      "description": "Buzo canguro oversize de algodón frisado. Capucha con cordón ajustable y bolsillo frontal.",
+      "link": "https://listado.mercadolibre.com.ar/camperas-abrigos-mujer"
+    }
+  ],
+  "carteras": [
+    {
+      "title": "Cartera Bolso Shopper Cuero Ecológico Mujer",
+      "price": 42999,
+      "oldPrice": 59999,
+      "imageUrl": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&h=600&fit=crop",
+      "badge": "25% OFF",
+      "description": "Bolso shopper de cuero ecológico con múltiples compartimentos. Ideal para todos los días.",
+      "link": "https://listado.mercadolibre.com.ar/carteras-bolsos-mujer-moda"
+    },
+    {
+      "title": "Mochila Mujer Cuero Sintético Antirrobo USB",
+      "price": 38999,
+      "oldPrice": null,
+      "imageUrl": "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&h=600&fit=crop",
+      "badge": "Nuevo",
+      "description": "Mochila antirrobo con puerto USB y candado TSA. Cuero sintético impermeable. Look moderno.",
+      "link": "https://listado.mercadolibre.com.ar/carteras-bolsos-mujer-moda"
+    },
+    {
+      "title": "Riñonera Mujer Marrón Cuero Moda Urbana",
+      "price": 19999,
+      "oldPrice": 29999,
+      "imageUrl": "https://images.unsplash.com/photo-1576020799627-0e1445e05b0d?w=600&h=600&fit=crop",
+      "badge": "30% OFF",
+      "description": "Riñonera de cuero con correa ajustable. Uso cruzado o en cintura. Bolsillos internos.",
+      "link": "https://listado.mercadolibre.com.ar/carteras-bolsos-mujer-moda"
+    }
+  ],
+  "lenceria": [
+    {
+      "title": "Conjunto de Lencería Encaje Mujer Talle Real",
+      "price": 21999,
+      "oldPrice": 34999,
+      "imageUrl": "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?w=600&h=600&fit=crop",
+      "badge": "35% OFF",
+      "description": "Conjunto de lencería de encaje suave. Corpiño con aro y bombacha colaless. Varios colores.",
+      "link": "https://listado.mercadolibre.com.ar/lenceria-conjuntos-mujer"
+    },
+    {
+      "title": "Body Mujer Encaje Transparente Talle Real",
+      "price": 16999,
+      "oldPrice": null,
+      "imageUrl": "https://images.unsplash.com/photo-1570976447643-263b579083e9?w=600&h=600&fit=crop",
+      "badge": "Tendencia",
+      "description": "Body de encaje transparente con tiras ajustables. Cierre a presión en entrepierna. Sexy y cómodo.",
+      "link": "https://listado.mercadolibre.com.ar/lenceria-conjuntos-mujer"
+    },
+    {
+      "title": "Corset Mujer Cintura Alta Con Broches Ajustables",
+      "price": 25999,
+      "oldPrice": 39999,
+      "imageUrl": "https://images.unsplash.com/photo-1593204075265-6a90e3b188b9?w=600&h=600&fit=crop",
+      "badge": "Premium",
+      "description": "Corset de cintura alta con broches delanteros. Varillas flexibles. Modela la silueta al instante.",
+      "link": "https://listado.mercadolibre.com.ar/lenceria-conjuntos-mujer"
+    }
+  ],
+  "conjuntos_deportivos": [
+    {
+      "title": "Conjunto Deportivo Mujer Calza + Top + Chaqueta",
+      "price": 45999,
+      "oldPrice": 69999,
+      "imageUrl": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=600&fit=crop",
+      "badge": "35% OFF",
+      "description": "Conjunto 3 piezas: calza, top deportivo y chaqueta. Tejido dry-fit. Ideal para gym y running.",
+      "link": "https://listado.mercadolibre.com.ar/conjunto-deportivo-mujer"
+    },
+    {
+      "title": "Calza Deportiva Mujer Tiro Alto Push Up",
+      "price": 21999,
+      "oldPrice": 32999,
+      "imageUrl": "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&h=600&fit=crop",
+      "badge": "30% OFF",
+      "description": "Calza deportiva tiro alto con efecto push up. Bolsillo lateral oculto. Costuras flatlock.",
+      "link": "https://listado.mercadolibre.com.ar/conjunto-deportivo-mujer"
+    },
+    {
+      "title": "Top Deportivo Mujer Soporte Alto Impacto",
+      "price": 18999,
+      "oldPrice": null,
+      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop",
+      "badge": "Nuevo",
+      "description": "Top deportivo con soporte de alto impacto. Espalda cruzada. Tejido transpirable antibacterial.",
+      "link": "https://listado.mercadolibre.com.ar/conjunto-deportivo-mujer"
+    }
+  ],
+  "accesorios_mujer": [
+    {
+      "title": "Set Bijouterie Mujer Collar + Aros + Pulsera",
+      "price": 15999,
+      "oldPrice": 25999,
+      "imageUrl": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&h=600&fit=crop",
+      "badge": "40% OFF",
+      "description": "Set de bijouterie 3 piezas: collar colgante, aros tipo gota y pulsera ajustable. Baño de oro 18k.",
+      "link": "https://listado.mercadolibre.com.ar/accesorios-bijouterie-mujer"
+    },
+    {
+      "title": "Reloj Mujer Minimalista Malla Metálica",
+      "price": 25999,
+      "oldPrice": 41999,
+      "imageUrl": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&h=600&fit=crop",
+      "badge": "40% OFF",
+      "description": "Reloj minimalista con malla metálica ajustable. Resistente al agua 30m. Caja de 36mm.",
+      "link": "https://listado.mercadolibre.com.ar/accesorios-bijouterie-mujer"
+    },
+    {
+      "title": "Bufanda Pashmina Mujer Cachemira Sintética",
+      "price": 12999,
+      "oldPrice": null,
+      "imageUrl": "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=600&h=600&fit=crop",
+      "badge": "Envío Gratis",
+      "description": "Bufanda tipo pashmina de cachemira sintética. Suave al tacto. 180cm x 70cm. 20 colores.",
+      "link": "https://listado.mercadolibre.com.ar/accesorios-bijouterie-mujer"
+    }
   ]
 }

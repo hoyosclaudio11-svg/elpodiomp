@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{GA4_MEASUREMENT_ID}}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{GA4_MEASUREMENT_ID}}');
+  </script>
+
+  <!-- SEO -->
+  <title>El Podio Moda — Los mejores precios, en un solo lugar</title>
+  <meta name="description" content="Moda femenina al mejor precio. Vestidos, zapatos, carteras, lencería y más de marcas reconocidas.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moda.elpodiomp.com.ar/">
+
+  <!-- Open Graph (Facebook, WhatsApp, Telegram) -->
+  <meta property="og:title" content="El Podio Moda — Los mejores precios, en un solo lugar">
+  <meta property="og:description" content="Moda femenina al mejor precio. Vestidos, zapatos, carteras, lencería y más de marcas reconocidas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moda.elpodiomp.com.ar/">
+  <meta property="og:image" content="https://moda.elpodiomp.com.ar/og-image.png">
+  <meta property="og:site_name" content="El Podio Moda">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="El Podio Moda — Los mejores precios">
+  <meta name="twitter:description" content="Moda femenina al mejor precio. Vestidos, zapatos, carteras, lencería y más de marcas reconocidas.">
+  <meta name="twitter:image" content="https://moda.elpodiomp.com.ar/og-image.png">
+
+  <!-- Favicon (emoji como placeholder hasta tener un .ico) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👗</text></svg>">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "El Podio Moda",
+    "url": "https://moda.elpodiomp.com.ar/",
+    "description": "Moda femenina al mejor precio. Vestidos, zapatos, carteras, lencería y más de marcas reconocidas.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://moda.elpodiomp.com.ar/buscar/{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --header-bg: #ec4899;
+      --hero-bg: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+      --hero-text-color: #ffffff;
+      --hero-sub-color: #fbcfe8;
+      --button-bg: #db2777;
+      --button-hover: #be185d;
+      --badge-bg: #f9a8d4;
+      --badge-color: #831843;
+      --accent-color: #ec4899;
+      --stars-color: #fbbf24;
+      --food-color: #ec4899;
+      --installments-color: #22c55e;
+      --footer-bg: #1a1a2e;
+      --footer-text: #ecccd4;
+      --footer-heading: #f9a8d4;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    .header {
+      background: var(--header-bg);
+      padding: 16px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: inherit;
+      text-decoration: none;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .logo span { color: var(--accent-color); }
+
+    .search-bar {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 12px 16px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    .search-bar button {
+      background: var(--button-bg);
+      border: none;
+      padding: 0 20px;
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      transition: background 0.2s;
+    }
+
+    .search-bar button:hover { background: var(--button-hover); }
+
+    /* Sugerencias de búsqueda */
+    .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      display: none;
+      z-index: 200;
+      overflow: hidden;
+    }
+
+    .search-suggestions.active { display: block; }
+
+    .search-suggestions .suggestion-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.15s;
+    }
+
+    .search-suggestions .suggestion-item:hover { background: #f5f8ff; }
+
+    .search-suggestions .suggestion-item img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .search-suggestions .suggestion-item .sug-title {
+      font-size: 14px;
+      font-weight: 500;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .search-suggestions .suggestion-item .sug-price {
+      font-weight: 700;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+
+    .search-suggestions .suggestion-footer {
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--accent-color);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .header-icons span { cursor: pointer; white-space: nowrap; }
+
+    .hero {
+      background: var(--hero-bg);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--hero-text-color);
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--hero-sub-color);
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { margin: 48px 0; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-header .icon { font-size: 32px; }
+
+    .section-header .view-all:hover { color: var(--button-hover); }
+
+    .site-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      border-radius: 24px;
+      background: white;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      transition: all 0.2s;
+    }
+    .site-nav a:hover {
+      background: var(--accent-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .section-header .view-all {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .section-header .view-all:hover { color: var(--button-hover); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      background: #f0f0f0;
+    }
+
+    .card-body { padding: 20px; }
+
+    .card-badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-color);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+
+    .card .description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card .price {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .card .price-sup { font-size: 16px; font-weight: 600; vertical-align: super; }
+
+    .card .old-price {
+      font-size: 14px;
+      color: #999;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+
+    .card .installments {
+      font-size: 14px;
+      color: var(--installments-color);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .card .btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--button-bg);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+
+    .card .btn:hover { background: var(--button-hover); }
+
+    .card .rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .card .stars {
+      color: var(--stars-color);
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .card .reviews { font-size: 13px; color: #999; }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ddd, transparent);
+      margin: 8px 0 48px;
+    }
+
+    .footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 48px 24px 32px;
+      margin-top: 64px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .footer h4 {
+      color: var(--footer-heading);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer p, .footer a {
+      font-size: 14px;
+      color: var(--footer-text);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer a:hover { color: var(--header-bg); }
+
+    .footer-sites {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #333;
+      text-align: center;
+    }
+
+    .footer-sites span {
+      font-size: 13px;
+      color: #888;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .footer-sites a {
+      display: inline-block;
+      padding: 6px 16px;
+      margin: 4px 8px;
+      border: 1px solid #444;
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--footer-text);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .footer-sites a:hover {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+      color: white;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #333;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Toast de notificación */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1a1a1a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .header-inner { flex-wrap: wrap; }
+      .search-bar { order: 3; max-width: 100%; flex-basis: 100%; }
+      .hero h1 { font-size: 30px; }
+      .footer-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .section-header h2 { font-size: 22px; }
+      .card-image { height: 220px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .header-icons span:not(.cart) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">Elpodio<span>Moda</span></a>
+      <div class="search-bar" id="searchBar">
+        <input type="text" id="searchInput" placeholder="Buscar productos..." autocomplete="off">
+        <button id="searchBtn">&#128269;</button>
+        <div class="search-suggestions" id="searchSuggestions"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Lo mejor de lo mejor</h1>
+    <p>Los 3 productos top de cada categoría, seleccionados para vos</p>
+  </section>
+
+  <nav class="site-nav">
+    <a href="/">🏆 El Podio MP</a>
+    <a href="/?site=elpodiomoda">👗 El Podio Moda</a>
+    <a href="/?site=elpodiotech">💻 El Podio Tech</a>
+    <a href="/?site=elpodiofood">🍔 El Podio Food</a>
+    <a href="/?site=elpodiohogar">🏠 El Podio Hogar</a>
+  </nav>
+
+  <main class="container">
+    
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">👠</span> Zapatos de Mujer</h2>
+        <a href="https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatos-mujer-tacos-sandalias'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1543163521-1bf539c16dd2?w=600&h=600&fit=crop" alt="Zapatos de Vestir Taco Medio Charleston Mujer" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">30% OFF</span>
+            <h3>Zapatos de Vestir Taco Medio Charleston Mujer</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(131)</span>
+            </div>
+            <p class="description">Zapatos de vestir con taco medio. Ideales para oficina y eventos. Disponibles en negro y nude.</p>
+            <p class="old-price">$65.999</p>
+            <p class="price"><span class="price-sup">$</span>45.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatos-mujer-tacos-sandalias'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatos-mujer-tacos-sandalias'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1573100925118-870b8efc799d?w=600&h=600&fit=crop" alt="Sandalias Plataforma Verano Mujer Cuero Ecológico" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">35% OFF</span>
+            <h3>Sandalias Plataforma Verano Mujer Cuero Ecológico</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(139)</span>
+            </div>
+            <p class="description">Sandalias de plataforma con plantilla acolchada. Perfectas para el verano. Varios colores.</p>
+            <p class="old-price">$49.999</p>
+            <p class="price"><span class="price-sup">$</span>32.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatos-mujer-tacos-sandalias'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatos-mujer-tacos-sandalias'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=600&h=600&fit=crop" alt="Botas Caña Alta Mujer Con Cordones Trendy" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">25% OFF</span>
+            <h3>Botas Caña Alta Mujer Con Cordones Trendy</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(157)</span>
+            </div>
+            <p class="description">Botas caña alta con cordones. Suela antideslizante. Estilo militar chic para invierno.</p>
+            <p class="old-price">$79.999</p>
+            <p class="price"><span class="price-sup">$</span>58.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatos-mujer-tacos-sandalias'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">👟</span> Zapatillas Urbanas Mujer</h2>
+        <a href="https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas-urbanas-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop" alt="Nike Air Max 270 Mujer React" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">25% OFF</span>
+            <h3>Nike Air Max 270 Mujer React</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(487)</span>
+            </div>
+            <p class="description">Zapatillas urbanas con amortiguación Air Max. Suela de goma con patrón waffle. Look moderno.</p>
+            <p class="old-price">$169.999</p>
+            <p class="price"><span class="price-sup">$</span>129.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas-urbanas-mujer'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas-urbanas-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&h=600&fit=crop" alt="Adidas Grand Court Base Mujer Blancas" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Envío Gratis</span>
+            <h3>Adidas Grand Court Base Mujer Blancas</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(216)</span>
+            </div>
+            <p class="description">Zapatillas clásicas con las 3 tiras. Cuero sintético premium y suela de goma vulcanizada.</p>
+            <p class="old-price">$119.999</p>
+            <p class="price"><span class="price-sup">$</span>89.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas-urbanas-mujer'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas-urbanas-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1579338559194-a162d19bf842?w=600&h=600&fit=crop" alt="Puma Cali Dream Mujer Casual" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">20% OFF</span>
+            <h3>Puma Cali Dream Mujer Casual</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(418)</span>
+            </div>
+            <p class="description">Zapatillas urbanas con diseño retro californiano. Suela plataforma y plantilla SoftFoam+.</p>
+            <p class="old-price">$99.999</p>
+            <p class="price"><span class="price-sup">$</span>79.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas-urbanas-mujer'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">👖</span> Pantalones y Jeans</h2>
+        <a href="https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/jeans-mujer-pantalones'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&h=600&fit=crop" alt="Levi&#39;s 721 High Rise Skinny Jeans Mujer" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">25% OFF</span>
+            <h3>Levi&#39;s 721 High Rise Skinny Jeans Mujer</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(278)</span>
+            </div>
+            <p class="description">Jeans chupín tiro alto con elastano. Costuras reforzadas y diseño que estiliza la figura.</p>
+            <p class="old-price">$89.999</p>
+            <p class="price"><span class="price-sup">$</span>65.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/jeans-mujer-pantalones'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/jeans-mujer-pantalones'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&h=600&fit=crop" alt="Pantalón Cargo Mujer Tiro Alto Bolsillos" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Tendencia</span>
+            <h3>Pantalón Cargo Mujer Tiro Alto Bolsillos</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(284)</span>
+            </div>
+            <p class="description">Pantalón cargo tiro alto con bolsillos laterales. Gabardina liviana. Estilo urbano.</p>
+            <p class="old-price">$52.999</p>
+            <p class="price"><span class="price-sup">$</span>38.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/jeans-mujer-pantalones'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/jeans-mujer-pantalones'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=600&fit=crop" alt="Palazzo Mujer Satinado Cintura Alta Elegante" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Nuevo</span>
+            <h3>Palazzo Mujer Satinado Cintura Alta Elegante</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(139)</span>
+            </div>
+            <p class="description">Pantalón palazzo satinado de cintura alta. Caída fluida y look sofisticado para vestir.</p>
+            
+            <p class="price"><span class="price-sup">$</span>34.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/jeans-mujer-pantalones'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">👚</span> Remeras y Tops</h2>
+        <a href="https://listado.mercadolibre.com.ar/remeras%20tops%20mujer%20moda" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/remeras-tops-mujer-moda'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1434389677669-e08b4cda1a20?w=600&h=600&fit=crop" alt="Top Cropped Básico Algodón Mujer Pack x3" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Pack x3</span>
+            <h3>Top Cropped Básico Algodón Mujer Pack x3</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(187)</span>
+            </div>
+            <p class="description">Pack de 3 tops cropped de algodón peinado. Corte ajustado. Disponible en 8 colores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>24.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/remeras-tops-mujer-moda'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/remeras-tops-mujer-moda'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1551048632-24e444b48a3e?w=600&h=600&fit=crop" alt="Blusa Satenizada Mujer Manga Larga Lazada" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">30% OFF</span>
+            <h3>Blusa Satenizada Mujer Manga Larga Lazada</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(381)</span>
+            </div>
+            <p class="description">Blusa satinada con manga larga y lazo al cuello. Ideal para oficina y reuniones.</p>
+            <p class="old-price">$42.999</p>
+            <p class="price"><span class="price-sup">$</span>28.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/remeras-tops-mujer-moda'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/remeras-tops-mujer-moda'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=600&fit=crop" alt="Remerón Oversize Algodón Mujer Estampado" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Tendencia</span>
+            <h3>Remerón Oversize Algodón Mujer Estampado</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(449)</span>
+            </div>
+            <p class="description">Remerón oversize 100% algodón con estampado moderno. Look relajado y cool.</p>
+            
+            <p class="price"><span class="price-sup">$</span>22.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/remeras-tops-mujer-moda'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">👗</span> Vestidos</h2>
+        <a href="https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/vestidos-mujer-fiesta-casual'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&h=600&fit=crop" alt="Vestido Midi Estampado Manga Larga Fiesta" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">30% OFF</span>
+            <h3>Vestido Midi Estampado Manga Larga Fiesta</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(395)</span>
+            </div>
+            <p class="description">Vestido midi estampado con corte evasé. Mangas largas y cintura ajustada. Caída fluida.</p>
+            <p class="old-price">$67.999</p>
+            <p class="price"><span class="price-sup">$</span>45.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/vestidos-mujer-fiesta-casual'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/vestidos-mujer-fiesta-casual'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=600&fit=crop" alt="Vestido Largo Boho Playero Mujer Verano" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Envío Gratis</span>
+            <h3>Vestido Largo Boho Playero Mujer Verano</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(196)</span>
+            </div>
+            <p class="description">Vestido largo estilo boho. Escote en V, mangas acampanadas. Perfecto para verano y playa.</p>
+            <p class="old-price">$39.999</p>
+            <p class="price"><span class="price-sup">$</span>28.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/vestidos-mujer-fiesta-casual'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/vestidos-mujer-fiesta-casual'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=600&h=600&fit=crop" alt="Vestido Cóctel Tubo Negro Elegante Mujer" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Premium</span>
+            <h3>Vestido Cóctel Tubo Negro Elegante Mujer</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(370)</span>
+            </div>
+            <p class="description">Vestido tubo negro para cóctel. Corte entallado con abertura lateral. Tejido elastizado de calidad.</p>
+            <p class="old-price">$54.999</p>
+            <p class="price"><span class="price-sup">$</span>39.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/vestidos-mujer-fiesta-casual'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🧥</span> Camperas y Abrigos</h2>
+        <a href="https://listado.mercadolibre.com.ar/camperas%20abrigos%20mujer" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/camperas-abrigos-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=600&fit=crop" alt="Campera de Cuero Ecológico Mujer Talle Real" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">30% OFF</span>
+            <h3>Campera de Cuero Ecológico Mujer Talle Real</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(407)</span>
+            </div>
+            <p class="description">Campera de cuero ecológico. Diseño moto con recortes y cierres. Forro interior de poliéster.</p>
+            <p class="old-price">$99.999</p>
+            <p class="price"><span class="price-sup">$</span>69.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/camperas-abrigos-mujer'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/camperas-abrigos-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600&h=600&fit=crop" alt="Tapado Largo Lana Mujer Invierno Elegante" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">35% OFF</span>
+            <h3>Tapado Largo Lana Mujer Invierno Elegante</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(242)</span>
+            </div>
+            <p class="description">Tapado largo de lana sintética premium. Solapas con cuello smoking. Cinturón regulable.</p>
+            <p class="old-price">$139.999</p>
+            <p class="price"><span class="price-sup">$</span>89.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/camperas-abrigos-mujer'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/camperas-abrigos-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&h=600&fit=crop" alt="Buzo Canguro Oversize Algodón Frisado Mujer" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Más vendido</span>
+            <h3>Buzo Canguro Oversize Algodón Frisado Mujer</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(375)</span>
+            </div>
+            <p class="description">Buzo canguro oversize de algodón frisado. Capucha con cordón ajustable y bolsillo frontal.</p>
+            
+            <p class="price"><span class="price-sup">$</span>35.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/camperas-abrigos-mujer'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">👜</span> Carteras y Bolsos</h2>
+        <a href="https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/carteras-bolsos-mujer-moda'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&h=600&fit=crop" alt="Cartera Bolso Shopper Cuero Ecológico Mujer" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">25% OFF</span>
+            <h3>Cartera Bolso Shopper Cuero Ecológico Mujer</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(368)</span>
+            </div>
+            <p class="description">Bolso shopper de cuero ecológico con múltiples compartimentos. Ideal para todos los días.</p>
+            <p class="old-price">$59.999</p>
+            <p class="price"><span class="price-sup">$</span>42.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/carteras-bolsos-mujer-moda'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/carteras-bolsos-mujer-moda'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&h=600&fit=crop" alt="Mochila Mujer Cuero Sintético Antirrobo USB" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Nuevo</span>
+            <h3>Mochila Mujer Cuero Sintético Antirrobo USB</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(175)</span>
+            </div>
+            <p class="description">Mochila antirrobo con puerto USB y candado TSA. Cuero sintético impermeable. Look moderno.</p>
+            
+            <p class="price"><span class="price-sup">$</span>38.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/carteras-bolsos-mujer-moda'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/carteras-bolsos-mujer-moda'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1576020799627-0e1445e05b0d?w=600&h=600&fit=crop" alt="Riñonera Mujer Marrón Cuero Moda Urbana" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">30% OFF</span>
+            <h3>Riñonera Mujer Marrón Cuero Moda Urbana</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(242)</span>
+            </div>
+            <p class="description">Riñonera de cuero con correa ajustable. Uso cruzado o en cintura. Bolsillos internos.</p>
+            <p class="old-price">$29.999</p>
+            <p class="price"><span class="price-sup">$</span>19.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/carteras-bolsos-mujer-moda'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">👙</span> Lencería y Conjuntos</h2>
+        <a href="https://listado.mercadolibre.com.ar/lenceria%20conjuntos%20mujer" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/lenceria-conjuntos-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?w=600&h=600&fit=crop" alt="Conjunto de Lencería Encaje Mujer Talle Real" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">35% OFF</span>
+            <h3>Conjunto de Lencería Encaje Mujer Talle Real</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(310)</span>
+            </div>
+            <p class="description">Conjunto de lencería de encaje suave. Corpiño con aro y bombacha colaless. Varios colores.</p>
+            <p class="old-price">$34.999</p>
+            <p class="price"><span class="price-sup">$</span>21.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/lenceria-conjuntos-mujer'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/lenceria-conjuntos-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1570976447643-263b579083e9?w=600&h=600&fit=crop" alt="Body Mujer Encaje Transparente Talle Real" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Tendencia</span>
+            <h3>Body Mujer Encaje Transparente Talle Real</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(413)</span>
+            </div>
+            <p class="description">Body de encaje transparente con tiras ajustables. Cierre a presión en entrepierna. Sexy y cómodo.</p>
+            
+            <p class="price"><span class="price-sup">$</span>16.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/lenceria-conjuntos-mujer'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/lenceria-conjuntos-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1593204075265-6a90e3b188b9?w=600&h=600&fit=crop" alt="Corset Mujer Cintura Alta Con Broches Ajustables" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Premium</span>
+            <h3>Corset Mujer Cintura Alta Con Broches Ajustables</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(430)</span>
+            </div>
+            <p class="description">Corset de cintura alta con broches delanteros. Varillas flexibles. Modela la silueta al instante.</p>
+            <p class="old-price">$39.999</p>
+            <p class="price"><span class="price-sup">$</span>25.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/lenceria-conjuntos-mujer'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🏃</span> Conjuntos Deportivos</h2>
+        <a href="https://listado.mercadolibre.com.ar/conjunto%20deportivo%20mujer" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/conjunto-deportivo-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=600&fit=crop" alt="Conjunto Deportivo Mujer Calza + Top + Chaqueta" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">35% OFF</span>
+            <h3>Conjunto Deportivo Mujer Calza + Top + Chaqueta</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(184)</span>
+            </div>
+            <p class="description">Conjunto 3 piezas: calza, top deportivo y chaqueta. Tejido dry-fit. Ideal para gym y running.</p>
+            <p class="old-price">$69.999</p>
+            <p class="price"><span class="price-sup">$</span>45.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/conjunto-deportivo-mujer'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/conjunto-deportivo-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&h=600&fit=crop" alt="Calza Deportiva Mujer Tiro Alto Push Up" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">30% OFF</span>
+            <h3>Calza Deportiva Mujer Tiro Alto Push Up</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(292)</span>
+            </div>
+            <p class="description">Calza deportiva tiro alto con efecto push up. Bolsillo lateral oculto. Costuras flatlock.</p>
+            <p class="old-price">$32.999</p>
+            <p class="price"><span class="price-sup">$</span>21.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/conjunto-deportivo-mujer'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/conjunto-deportivo-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop" alt="Top Deportivo Mujer Soporte Alto Impacto" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Nuevo</span>
+            <h3>Top Deportivo Mujer Soporte Alto Impacto</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(454)</span>
+            </div>
+            <p class="description">Top deportivo con soporte de alto impacto. Espalda cruzada. Tejido transpirable antibacterial.</p>
+            
+            <p class="price"><span class="price-sup">$</span>18.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/conjunto-deportivo-mujer'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">💍</span> Accesorios de Moda</h2>
+        <a href="https://listado.mercadolibre.com.ar/accesorios%20bijouterie%20mujer" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/accesorios-bijouterie-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&h=600&fit=crop" alt="Set Bijouterie Mujer Collar + Aros + Pulsera" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">40% OFF</span>
+            <h3>Set Bijouterie Mujer Collar + Aros + Pulsera</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(456)</span>
+            </div>
+            <p class="description">Set de bijouterie 3 piezas: collar colgante, aros tipo gota y pulsera ajustable. Baño de oro 18k.</p>
+            <p class="old-price">$25.999</p>
+            <p class="price"><span class="price-sup">$</span>15.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/accesorios-bijouterie-mujer'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/accesorios-bijouterie-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&h=600&fit=crop" alt="Reloj Mujer Minimalista Malla Metálica" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">40% OFF</span>
+            <h3>Reloj Mujer Minimalista Malla Metálica</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(279)</span>
+            </div>
+            <p class="description">Reloj minimalista con malla metálica ajustable. Resistente al agua 30m. Caja de 36mm.</p>
+            <p class="old-price">$41.999</p>
+            <p class="price"><span class="price-sup">$</span>25.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/accesorios-bijouterie-mujer'">Comprar ahora</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/accesorios-bijouterie-mujer'">
+          <img class="card-image" src="https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=600&h=600&fit=crop" alt="Bufanda Pashmina Mujer Cachemira Sintética" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Envío Gratis</span>
+            <h3>Bufanda Pashmina Mujer Cachemira Sintética</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(197)</span>
+            </div>
+            <p class="description">Bufanda tipo pashmina de cachemira sintética. Suave al tacto. 180cm x 70cm. 20 colores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>12.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/accesorios-bijouterie-mujer'">Comprar ahora</button>
+          </div>
+        </div></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h4>moda.elpodiomp.com.ar</h4>
+        <p>Moda femenina al mejor precio. Vestidos, zapatos, carteras, lencería y más de marcas reconocidas.</p>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Cómo comprar</a>
+        <a href="#">Envíos</a>
+        <a href="#">Devoluciones</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacidad">Política de Privacidad</a>
+        <a href="/terminos">Términos y Condiciones</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>info@moda.elpodiomp.com.ar</p>
+        <p>0800-ELPODIOMP</p>
+        <p>Lun a Vie 9:00 - 18:00</p>
+      </div>
+    </div>
+    <div class="footer-sites">
+      <span>🔗 También visitá nuestros otros sitios:</span>
+      <a href="/">🏆 El Podio MP</a>
+      <a href="/?site=elpodiotech">💻 El Podio Tech</a>
+      <a href="/?site=elpodiofood">🍔 El Podio Food</a>
+      <a href="/?site=elpodiohogar">🏠 El Podio Hogar</a>
+    </div>
+    <div class="footer-bottom">
+      <div class="visit-counter" id="visitCounter" style="margin-bottom:12px;font-size:14px;color:#888;">
+        👀 <span id="visitCount">...</span> visitas
+      </div>
+      &copy; 2026 moda.elpodiomp.com.ar &mdash; Todos los derechos reservados. Este sitio es afiliado de Mercado Libre. Los precios pueden variar.
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ── Búsqueda con sugerencias ──
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchSuggestions = document.getElementById('searchSuggestions');
+    const toast = document.getElementById('toast');
+    let debounceTimer;
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function performSearch() {
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = '/buscar/' + encodeURIComponent(query);
+      }
+    }
+
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') performSearch();
+    });
+
+    // Sugerencias mientras tipea
+    searchInput.addEventListener('input', function() {
+      clearTimeout(debounceTimer);
+      const query = this.value.trim();
+      if (query.length < 2) {
+        searchSuggestions.classList.remove('active');
+        return;
+      }
+      debounceTimer = setTimeout(async () => {
+        try {
+          const res = await fetch('/api/buscar?q=' + encodeURIComponent(query));
+          const data = await res.json();
+          if (data.results && data.results.length > 0) {
+            let html = '';
+            data.results.forEach(r => {
+              html += `<div class="suggestion-item" onclick="window.location.href='${r.permalink}'">
+                <img src="${r.imageUrl}" alt="${r.title}" loading="lazy">
+                <span class="sug-title">${r.title}</span>
+                <span class="sug-price">$${r.price.toLocaleString('es-AR')}</span>
+              </div>`;
+            });
+            html += `<div class="suggestion-footer" onclick="performSearch()">Ver todos los resultados →</div>`;
+            searchSuggestions.innerHTML = html;
+            searchSuggestions.classList.add('active');
+          } else {
+            searchSuggestions.innerHTML = '<div style="padding:12px 16px;color:#999;font-size:14px;">No se encontraron productos.</div>';
+            searchSuggestions.classList.add('active');
+          }
+        } catch (_) {
+          searchSuggestions.classList.remove('active');
+        }
+      }, 300);
+    });
+
+    // Cerrar sugerencias al hacer clic afuera
+    document.addEventListener('click', function(e) {
+      if (!document.getElementById('searchBar').contains(e.target)) {
+        searchSuggestions.classList.remove('active');
+      }
+    });
+
+    // ── Contador de Visitas ──
+    (function() {
+      const VISIT_KEY = 'elpodiomp_visit_' + new Date().toISOString().split('T')[0]; // clave por día
+      const visitCountEl = document.getElementById('visitCount');
+
+      // Mostrar el contador actual
+      async function mostrarContador() {
+        try {
+          const res = await fetch('/api/visitas');
+          if (res.ok) {
+            const data = await res.json();
+            visitCountEl.textContent = data.visitas.toLocaleString('es-AR');
+          }
+        } catch (_) {
+          visitCountEl.textContent = '...';
+        }
+      }
+
+      // Registrar visita (solo 1 vez por día por navegador)
+      async function registrarVisita() {
+        if (localStorage.getItem(VISIT_KEY)) {
+          // Ya registró hoy, solo mostrar
+          mostrarContador();
+          return;
+        }
+        try {
+          const res = await fetch('/api/visitas', { method: 'POST' });
+          if (res.ok) {
+            const data = await res.json();
+            if (data.ok) {
+              localStorage.setItem(VISIT_KEY, '1');
+              visitCountEl.textContent = data.visitas.toLocaleString('es-AR');
+              // Limpiar claves viejas de días anteriores
+              limpiarClavesViejas();
+            } else {
+              // Rate limited, mostrar el número igual
+              visitCountEl.textContent = data.visitas.toLocaleString('es-AR');
+            }
+          }
+        } catch (_) {
+          // Si falla el POST, al menos intentar mostrar el GET
+          mostrarContador();
+        }
+      }
+
+      // Eliminar claves de visitas de días pasados
+      function limpiarClavesViejas() {
+        const hoy = new Date().toISOString().split('T')[0];
+        Object.keys(localStorage).forEach(key => {
+          if (key.startsWith('elpodiomp_visit_') && key !== VISIT_KEY) {
+            localStorage.removeItem(key);
+          }
+        });
+      }
+
+      // Iniciar
+      registrarVisita();
+    })();
+  </script>
+</body>
+</html>

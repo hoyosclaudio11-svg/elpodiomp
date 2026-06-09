@@ -100,6 +100,31 @@
         "footerText": "#6ee7b7",
         "footerHeading": "#d1fae5"
       }
+    },
+    "elpodiomoda": {
+      "name": "El Podio Moda",
+      "domain": "moda.elpodiomp.com.ar",
+      "description": "Moda femenina al mejor precio. Vestidos, zapatos, carteras, lencería y más de marcas reconocidas.",
+      "logoText": "Elpodio",
+      "logoDomain": "Moda",
+      "logoEmoji": "👗",
+      "theme": {
+        "headerBg": "#ec4899",
+        "heroBg": "linear-gradient(135deg, #ec4899 0%, #be185d 100%)",
+        "heroTextColor": "#ffffff",
+        "heroSubColor": "#fbcfe8",
+        "buttonBg": "#db2777",
+        "buttonHover": "#be185d",
+        "badgeBg": "#f9a8d4",
+        "badgeColor": "#831843",
+        "accentColor": "#ec4899",
+        "starsColor": "#fbbf24",
+        "foodColor": "#ec4899",
+        "installmentsColor": "#22c55e",
+        "footerBg": "#1a1a2e",
+        "footerText": "#ecccd4",
+        "footerHeading": "#f9a8d4"
+      }
     }
   },
   "categories": [
@@ -146,7 +171,17 @@
     { "id": "lamparas", "name": "Lámparas y Veladores", "icon": "💡", "query": "lampara velador", "sites": ["elpodiohogar"] },
     { "id": "lentes_sol", "name": "Lentes de Sol", "icon": "🕶️", "query": "lentes sol", "sites": ["elpodiomp"] },
     { "id": "bicicletas_mtb", "name": "Bicicletas Mountain Bike", "icon": "🚵", "query": "bicicleta mountain", "sites": ["elpodiomp"] },
-    { "id": "bicicletas_urbana", "name": "Bicicletas Urbanas", "icon": "🚲", "query": "bicicleta playera", "sites": ["elpodiomp"] }
+    { "id": "bicicletas_urbana", "name": "Bicicletas Urbanas", "icon": "🚲", "query": "bicicleta playera", "sites": ["elpodiomp"] },
+    { "id": "zapatos_mujer", "name": "Zapatos de Mujer", "icon": "👠", "query": "zapatos mujer tacos sandalias", "sites": ["elpodiomoda"] },
+    { "id": "zapatillas_mujer", "name": "Zapatillas Urbanas Mujer", "icon": "👟", "query": "zapatillas urbanas mujer", "sites": ["elpodiomoda"] },
+    { "id": "pantalones_mujer", "name": "Pantalones y Jeans", "icon": "👖", "query": "jeans mujer pantalones", "sites": ["elpodiomoda"] },
+    { "id": "remeras_mujer", "name": "Remeras y Tops", "icon": "👚", "query": "remeras tops mujer moda", "sites": ["elpodiomoda"] },
+    { "id": "vestidos", "name": "Vestidos", "icon": "👗", "query": "vestidos mujer fiesta casual", "sites": ["elpodiomoda"] },
+    { "id": "camperas_mujer", "name": "Camperas y Abrigos", "icon": "🧥", "query": "camperas abrigos mujer", "sites": ["elpodiomoda"] },
+    { "id": "carteras", "name": "Carteras y Bolsos", "icon": "👜", "query": "carteras bolsos mujer moda", "sites": ["elpodiomoda"] },
+    { "id": "lenceria", "name": "Lencería y Conjuntos", "icon": "👙", "query": "lenceria conjuntos mujer", "sites": ["elpodiomoda"] },
+    { "id": "conjuntos_deportivos", "name": "Conjuntos Deportivos", "icon": "🏃", "query": "conjunto deportivo mujer", "sites": ["elpodiomoda"] },
+    { "id": "accesorios_mujer", "name": "Accesorios de Moda", "icon": "💍", "query": "accesorios bijouterie mujer", "sites": ["elpodiomoda"] }
   ],
   "affiliateLinks": {},
   "categoryFallbacks": {
@@ -193,7 +228,17 @@
     "lamparas": "",
     "lentes_sol": "",
     "bicicletas_mtb": "",
-    "bicicletas_urbana": ""
+    "bicicletas_urbana": "",
+    "zapatos_mujer": "",
+    "zapatillas_mujer": "",
+    "pantalones_mujer": "",
+    "remeras_mujer": "",
+    "vestidos": "",
+    "camperas_mujer": "",
+    "carteras": "",
+    "lenceria": "",
+    "conjuntos_deportivos": "",
+    "accesorios_mujer": ""
   },
   "meliTokens": {
     "access_token": "",

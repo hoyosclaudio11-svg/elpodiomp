@@ -224,6 +224,7 @@ function getSiteFromRequest(req) {
     'tech': 'elpodiotech',
     'food': 'elpodiofood',
     'hogar': 'elpodiohogar',
+    'moda': 'elpodiomoda',
   };
 
   // Detectar subdominio

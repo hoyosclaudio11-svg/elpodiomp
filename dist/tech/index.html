@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{GA4_MEASUREMENT_ID}}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{GA4_MEASUREMENT_ID}}');
+  </script>
+
+  <!-- SEO -->
+  <title>El Podio Tech — Los mejores precios, en un solo lugar</title>
+  <meta name="description" content="Tecnología y gadgets al mejor precio. Celulares, notebooks, consolas y más.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tech.elpodiomp.com.ar/">
+
+  <!-- Open Graph (Facebook, WhatsApp, Telegram) -->
+  <meta property="og:title" content="El Podio Tech — Los mejores precios, en un solo lugar">
+  <meta property="og:description" content="Tecnología y gadgets al mejor precio. Celulares, notebooks, consolas y más.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tech.elpodiomp.com.ar/">
+  <meta property="og:image" content="https://tech.elpodiomp.com.ar/og-image.png">
+  <meta property="og:site_name" content="El Podio Tech">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="El Podio Tech — Los mejores precios">
+  <meta name="twitter:description" content="Tecnología y gadgets al mejor precio. Celulares, notebooks, consolas y más.">
+  <meta name="twitter:image" content="https://tech.elpodiomp.com.ar/og-image.png">
+
+  <!-- Favicon (emoji como placeholder hasta tener un .ico) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "El Podio Tech",
+    "url": "https://tech.elpodiomp.com.ar/",
+    "description": "Tecnología y gadgets al mejor precio. Celulares, notebooks, consolas y más.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tech.elpodiomp.com.ar/buscar/{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --header-bg: #1e293b;
+      --hero-bg: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      --hero-text-color: #f1f5f9;
+      --hero-sub-color: #94a3b8;
+      --button-bg: #38bdf8;
+      --button-hover: #0ea5e9;
+      --badge-bg: #38bdf8;
+      --badge-color: #0f172a;
+      --accent-color: #38bdf8;
+      --stars-color: #facc15;
+      --food-color: #38bdf8;
+      --installments-color: #10b981;
+      --footer-bg: #0f172a;
+      --footer-text: #94a3b8;
+      --footer-heading: #e2e8f0;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    .header {
+      background: var(--header-bg);
+      padding: 16px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: inherit;
+      text-decoration: none;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .logo span { color: var(--accent-color); }
+
+    .search-bar {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 12px 16px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    .search-bar button {
+      background: var(--button-bg);
+      border: none;
+      padding: 0 20px;
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      transition: background 0.2s;
+    }
+
+    .search-bar button:hover { background: var(--button-hover); }
+
+    /* Sugerencias de búsqueda */
+    .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      display: none;
+      z-index: 200;
+      overflow: hidden;
+    }
+
+    .search-suggestions.active { display: block; }
+
+    .search-suggestions .suggestion-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.15s;
+    }
+
+    .search-suggestions .suggestion-item:hover { background: #f5f8ff; }
+
+    .search-suggestions .suggestion-item img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .search-suggestions .suggestion-item .sug-title {
+      font-size: 14px;
+      font-weight: 500;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .search-suggestions .suggestion-item .sug-price {
+      font-weight: 700;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+
+    .search-suggestions .suggestion-footer {
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--accent-color);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .header-icons span { cursor: pointer; white-space: nowrap; }
+
+    .hero {
+      background: var(--hero-bg);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--hero-text-color);
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--hero-sub-color);
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { margin: 48px 0; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-header .icon { font-size: 32px; }
+
+    .section-header .view-all:hover { color: var(--button-hover); }
+
+    .site-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      border-radius: 24px;
+      background: white;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      transition: all 0.2s;
+    }
+    .site-nav a:hover {
+      background: var(--accent-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .section-header .view-all {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .section-header .view-all:hover { color: var(--button-hover); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      background: #f0f0f0;
+    }
+
+    .card-body { padding: 20px; }
+
+    .card-badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-color);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+
+    .card .description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card .price {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .card .price-sup { font-size: 16px; font-weight: 600; vertical-align: super; }
+
+    .card .old-price {
+      font-size: 14px;
+      color: #999;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+
+    .card .installments {
+      font-size: 14px;
+      color: var(--installments-color);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .card .btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--button-bg);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+
+    .card .btn:hover { background: var(--button-hover); }
+
+    .card .rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .card .stars {
+      color: var(--stars-color);
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .card .reviews { font-size: 13px; color: #999; }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ddd, transparent);
+      margin: 8px 0 48px;
+    }
+
+    .footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 48px 24px 32px;
+      margin-top: 64px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .footer h4 {
+      color: var(--footer-heading);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer p, .footer a {
+      font-size: 14px;
+      color: var(--footer-text);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer a:hover { color: var(--header-bg); }
+
+    .footer-sites {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #333;
+      text-align: center;
+    }
+
+    .footer-sites span {
+      font-size: 13px;
+      color: #888;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .footer-sites a {
+      display: inline-block;
+      padding: 6px 16px;
+      margin: 4px 8px;
+      border: 1px solid #444;
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--footer-text);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .footer-sites a:hover {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+      color: white;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #333;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Toast de notificación */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1a1a1a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .header-inner { flex-wrap: wrap; }
+      .search-bar { order: 3; max-width: 100%; flex-basis: 100%; }
+      .hero h1 { font-size: 30px; }
+      .footer-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .section-header h2 { font-size: 22px; }
+      .card-image { height: 220px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .header-icons span:not(.cart) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">Elpodio<span>Tech</span></a>
+      <div class="search-bar" id="searchBar">
+        <input type="text" id="searchInput" placeholder="Buscar productos..." autocomplete="off">
+        <button id="searchBtn">&#128269;</button>
+        <div class="search-suggestions" id="searchSuggestions"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Lo mejor de lo mejor</h1>
+    <p>Los 3 productos top de cada categoría, seleccionados para vos</p>
+  </section>
+
+  <nav class="site-nav">
+    <a href="/">🏆 El Podio MP</a>
+    <a href="/moda/">👗 El Podio Moda</a>
+    <a href="/tech/">💻 El Podio Tech</a>
+    <a href="/food/">🍔 El Podio Food</a>
+    <a href="/hogar/">🏠 El Podio Hogar</a>
+  </nav>
+
+  <main class="container">
+    
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">📱</span> Celulares Gama Alta</h2>
+        <a href="https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_925629-MLA31003080256_062019-E.webp" alt="Samsung Galaxy S8 Dual SIM 64 GB oro arce 4 GB RAM - Bueno (Reacondicionado)" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Samsung Galaxy S8 Dual SIM 64 GB oro arce 4 GB RAM - Bueno (Reacondicionado)</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(197)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>212.500</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_786781-CBT84688048624_052025-E.webp" alt="Samsung Galaxy S21 Fe 256 Gb 5g Screen 120 Hz Camara Pro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Samsung Galaxy S21 Fe 256 Gb 5g Screen 120 Hz Camara Pro</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(215)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.443.204</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_703537-MLA40972983268_032020-E.webp" alt="Samsung GalaxyJ1 Ace 4G 8 GB negro1 GB RAM" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Samsung GalaxyJ1 Ace 4G 8 GB negro1 GB RAM</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(428)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>190.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">📲</span> Celulares Gama Media</h2>
+        <a href="https://listado.mercadolibre.com.ar/samsung%20galaxy%20a%20motorola%20g" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/samsung%20galaxy%20a%20motorola%20g'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_772826-MLA96083939487_102025-E.webp" alt="Celular Samsung Galaxy A06 64/4gb Cámara 50+2/8mp 6.7 Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Celular Samsung Galaxy A06 64/4gb Cámara 50+2/8mp 6.7 Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(467)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>218.510</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/samsung%20galaxy%20a%20motorola%20g'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/samsung%20galaxy%20a%20motorola%20g'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_892399-MLA100013382327_122025-E.webp" alt="Samsung GalaxyA03 Core 32 GB blue2 GB RAM" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Samsung GalaxyA03 Core 32 GB blue2 GB RAM</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(439)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>220.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/samsung%20galaxy%20a%20motorola%20g'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/samsung%20galaxy%20a%20motorola%20g'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_775134-MLA110461426814_052026-E.webp" alt="Cargador Adaptador 35w Usb Tipo C Carga Super Rapida Power Delivery 240v Compatible iPhone Samsung Xiaomi Motorola Galaxy Tablet iPad Switch Hogar Oficina Viaje Premium Compacto Switch Liviano" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Cargador Adaptador 35w Usb Tipo C Carga Super Rapida Power Delivery 240v Compatible iPhone Samsung Xiaomi Motorola Galaxy Tablet iPad Switch Hogar Oficina Viaje Premium Compacto Switch Liviano</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(406)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>6.506</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/samsung%20galaxy%20a%20motorola%20g'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">⌚</span> Relojes Inteligentes</h2>
+        <a href="https://listado.mercadolibre.com.ar/smartwatch" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/smartwatch'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_803837-MLA109468566115_032026-E.webp" alt="Smartwatch Noise Endeavour Pro Pantalla 1.5 Amoled Gps Dual-band Titanio Militar 5atm Brújula Altímetro Llamadas Bluetooth Batería 10 Días Deporte Ritmo Cardiaco Spo2 Garmin Carbon Black" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Smartwatch Noise Endeavour Pro Pantalla 1.5 Amoled Gps Dual-band Titanio Militar 5atm Brújula Altímetro Llamadas Bluetooth Batería 10 Días Deporte Ritmo Cardiaco Spo2 Garmin Carbon Black</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(190)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>254.910</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/smartwatch'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/smartwatch'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_835490-MLA97105209949_112025-E.webp" alt="Reloj Pulsera Sos 4g Gps Adultos Teléfono Llamadas Alerta" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Reloj Pulsera Sos 4g Gps Adultos Teléfono Llamadas Alerta</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(172)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>179.237</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/smartwatch'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/smartwatch'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_875334-MLA109054388586_032026-E.webp" alt="Reloj Inteligente Smartwatch Qx17 Gps Integrado Malla Extra" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Reloj Inteligente Smartwatch Qx17 Gps Integrado Malla Extra</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(469)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>119.900</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/smartwatch'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🎧</span> Auriculares In-Ear</h2>
+        <a href="https://listado.mercadolibre.com.ar/auriculares%20bluetooth" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_856224-MLA91725632452_092025-E.webp" alt="Auriculares Inalámbricos Deportivos TRYMISS S65 Auriculares Bluetooth Manos Libres Con Micrófono Para Gym Auriculares Inalambricos Cancelacion Ruido Auriculares Tws In-ear Bluetooth" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Auriculares Inalámbricos Deportivos TRYMISS S65 Auriculares Bluetooth Manos Libres Con Micrófono Para Gym Auriculares Inalambricos Cancelacion Ruido Auriculares Tws In-ear Bluetooth</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(267)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>60.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_802305-MLA95679505222_102025-E.webp" alt="Auriculares Inalámbricos Xiaomi Redmi Buds 6 Play Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Auriculares Inalámbricos Xiaomi Redmi Buds 6 Play Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(127)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>42.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_947517-MLA83135353793_032025-E.webp" alt="Auriculares Inalámbricos Anker Soundcore Space OneCancelación de Ruido over Ear, Certificación Hi-Res LDAC, 55 Horas de Calidad de Sonido sin Pérdida, Soporte de Carga Rápida, Bluetooth 5.3" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Auriculares Inalámbricos Anker Soundcore Space OneCancelación de Ruido over Ear, Certificación Hi-Res LDAC, 55 Horas de Calidad de Sonido sin Pérdida, Soporte de Carga Rápida, Bluetooth 5.3</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(466)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>395.481</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🎙️</span> Auriculares Over-Ear</h2>
+        <a href="https://listado.mercadolibre.com.ar/auriculares%20vincha" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/auriculares%20vincha'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_893298-MLA100046842917_122025-E.webp" alt="Auricular Vincha Sennheiser Hd 407 Negro Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Auricular Vincha Sennheiser Hd 407 Negro Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(299)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>79.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/auriculares%20vincha'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/auriculares%20vincha'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_995933-MLA110168742448_042026-E.webp" alt="Auriculares Aiwa Bluetooth Inalámbricos Vincha On Ear" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Auriculares Aiwa Bluetooth Inalámbricos Vincha On Ear</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(491)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>121.499</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/auriculares%20vincha'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/auriculares%20vincha'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_960468-MLA99992399693_112025-E.webp" alt="Auriculares Behringer HPS3000 negro y plateado" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Auriculares Behringer HPS3000 negro y plateado</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(433)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>43.490</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/auriculares%20vincha'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🎮</span> Notebooks Gamer</h2>
+        <a href="https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_750788-MLA81507220976_012025-E.webp" alt="Cargador Notebook Asus Msi Gamer 19.5v 11.8a 230w Color Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Cargador Notebook Asus Msi Gamer 19.5v 11.8a 230w Color Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(331)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>169.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_928420-CBT110281851489_042026-E.webp" alt="Base De Enfriamiento Alienware Ventilador Turbo Para M17" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Base De Enfriamiento Alienware Ventilador Turbo Para M17</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(406)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>239.596</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_614694-MLA69245236509_052023-E.webp" alt="Pantalla Notebook Compatible Lm156lf2f01 Nv156fhm-nx3 144hz" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Pantalla Notebook Compatible Lm156lf2f01 Nv156fhm-nx3 144hz</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(370)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>150.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">💼</span> Notebooks Oficina</h2>
+        <a href="https://listado.mercadolibre.com.ar/notebook%20dell%20lenovo%20hp" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20dell%20lenovo%20hp'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_784142-MLA97246507989_112025-E.webp" alt="Notebook Hp Elitebook Apu A10 8gb Ssd 128gb Económicas (Reacondicionado)" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Notebook Hp Elitebook Apu A10 8gb Ssd 128gb Económicas (Reacondicionado)</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(287)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>420.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20dell%20lenovo%20hp'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20dell%20lenovo%20hp'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_975304-MLA82144751264_022025-E.webp" alt="Notebook Hp I5 6ta Gen 8gb Ram 128gb Ssd Full Hd Windows 10 (Reacondicionado)" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Notebook Hp I5 6ta Gen 8gb Ram 128gb Ssd Full Hd Windows 10 (Reacondicionado)</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(302)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>500.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20dell%20lenovo%20hp'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20dell%20lenovo%20hp'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_974775-MLA94173863348_102025-E.webp" alt="Funda para Notebook CDTek de Cordura con Bolsillo para 15.6&quot; Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Funda para Notebook CDTek de Cordura con Bolsillo para 15.6&quot; Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(239)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>35.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20dell%20lenovo%20hp'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">💻</span> Notebooks Ultrabook</h2>
+        <a href="https://listado.mercadolibre.com.ar/notebook%20ultrabook%20liviana" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20ultrabook%20liviana'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_787691-MLA110321226695_042026-E.webp" alt="HP Azul Pentium N200 128GB Ufs 4GB Ram Pantalla 15.6 HD Intel UHD Graphics Incluye Windows 11 Instalado Laptop Blue Fd0082 Con Regalo" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>HP Azul Pentium N200 128GB Ufs 4GB Ram Pantalla 15.6 HD Intel UHD Graphics Incluye Windows 11 Instalado Laptop Blue Fd0082 Con Regalo</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(222)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.416.927</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20ultrabook%20liviana'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20ultrabook%20liviana'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_789405-MLA109848169626_042026-E.webp" alt="Hp Rosa Intel N150 128gb Ufs 4gb Ram Pantalla 14 Hd Intel Uhd Graphics Incluye Windows Instalado Laptop Pink Dq6015 Con Regalo" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Hp Rosa Intel N150 128gb Ufs 4gb Ram Pantalla 14 Hd Intel Uhd Graphics Incluye Windows Instalado Laptop Pink Dq6015 Con Regalo</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(183)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.075.096</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20ultrabook%20liviana'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20ultrabook%20liviana'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_841087-MLA110301516360_052026-E.webp" alt="HP Core I3 N305 8 GB de RAM Ddr4 256 GB Ssd Pantalla 15.6 HD 1366 X 768 Intel Uhd Laptop 15-fd0027 Con Regalo" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>HP Core I3 N305 8 GB de RAM Ddr4 256 GB Ssd Pantalla 15.6 HD 1366 X 768 Intel Uhd Laptop 15-fd0027 Con Regalo</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(347)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.582.838</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20ultrabook%20liviana'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🎮</span> PlayStation</h2>
+        <a href="https://listado.mercadolibre.com.ar/playstation%205" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/playstation%205'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_779870-MLA100487361876_122025-E.webp" alt="Consola Playstation Ps5 Slim Disco 1tb Fortnite Bundle Blanco" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Consola Playstation Ps5 Slim Disco 1tb Fortnite Bundle Blanco</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(497)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.549.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/playstation%205'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/playstation%205'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_741911-MLA100666912616_122025-E.webp" alt="Sony Playstation 5 consola Slim Digital + Juego Astro Bot Y Gt7" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Sony Playstation 5 consola Slim Digital + Juego Astro Bot Y Gt7</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(494)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.999.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/playstation%205'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/playstation%205'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_892350-MLA99979858751_112025-E.webp" alt="Sony PlayStation 5 Pro CFI-7020 2TB Digital color blanco 2024" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Sony PlayStation 5 Pro CFI-7020 2TB Digital color blanco 2024</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(273)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>2.099.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/playstation%205'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🎯</span> Xbox</h2>
+        <a href="https://listado.mercadolibre.com.ar/xbox%20series" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/xbox%20series'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_934481-MLA99443130554_112025-E.webp" alt="Consola Xbox Series X Edición Digital 1tb Ssd Robot White Blanco" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Consola Xbox Series X Edición Digital 1tb Ssd Robot White Blanco</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(461)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.599.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/xbox%20series'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/xbox%20series'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_651459-MLA99508334610_112025-E.webp" alt="Microsoft Xbox Series S 512GB Kit extra controller color blanco 2020" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Microsoft Xbox Series S 512GB Kit extra controller color blanco 2020</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(194)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.179.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/xbox%20series'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/xbox%20series'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_809285-MLA96417564024_102025-E.webp" alt="Microsoft Xbox Series X 1tb Ssd 120 Hz 4k Color Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Microsoft Xbox Series X 1tb Ssd 120 Hz 4k Color Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(489)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.211.362</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/xbox%20series'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🕹️</span> Nintendo Switch</h2>
+        <a href="https://listado.mercadolibre.com.ar/nintendo%20switch%20oled" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/nintendo%20switch%20oled'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_662139-MLA99549526998_122025-E.webp" alt="Nintendo Switch Oled Blanco" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Nintendo Switch Oled Blanco</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(350)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>736.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/nintendo%20switch%20oled'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/nintendo%20switch%20oled'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_668708-MLA99982363835_112025-E.webp" alt="Nintendo Switch Oled Azul/Rojo Neón" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Nintendo Switch Oled Azul/Rojo Neón</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(276)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>787.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/nintendo%20switch%20oled'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/nintendo%20switch%20oled'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_877254-MLA99926991867_112025-E.webp" alt="Consola Nintendo Switch OLED Splatoon 3 de 64 GB" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Consola Nintendo Switch OLED Splatoon 3 de 64 GB</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(237)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>926.279</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/nintendo%20switch%20oled'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">📟</span> Tablets</h2>
+        <a href="https://listado.mercadolibre.com.ar/tablet" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/tablet'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_968337-MLA100567674726_122025-E.webp" alt="Samsung Galaxy Tab A11 Color Gris Capacidad 64 GB Ram 4GB" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Samsung Galaxy Tab A11 Color Gris Capacidad 64 GB Ram 4GB</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(221)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>324.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/tablet'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/tablet'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_747056-MLA103366911966_012026-E.webp" alt="Tablet Lenovo Idea Tab 8gb 128gb Android 15 Con Teclado + Lápiz, Color Polar Blue" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Tablet Lenovo Idea Tab 8gb 128gb Android 15 Con Teclado + Lápiz, Color Polar Blue</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(312)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>865.295</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/tablet'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/tablet'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_604967-MLA99448433412_112025-E.webp" alt="Tablet A9 Carrello 4gb Ram 128gb 10.1 Pantalla Android Wifi Bluetooth - Color Gris" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Tablet A9 Carrello 4gb Ram 128gb 10.1 Pantalla Android Wifi Bluetooth - Color Gris</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(456)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>394.251</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/tablet'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">📺</span> Smart TV 32&quot; a 50&quot;</h2>
+        <a href="https://listado.mercadolibre.com.ar/smart%20tv%2032%2043%2050" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2032%2043%2050'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_918872-MLA110696415976_052026-E.webp" alt="Soporte Tv Led Lcd Smart 65 60 55 50 43 42 40 32 Pulgadas Color Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Soporte Tv Led Lcd Smart 65 60 55 50 43 42 40 32 Pulgadas Color Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(297)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>45.996</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2032%2043%2050'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2032%2043%2050'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_988997-MLA96137592875_102025-E.webp" alt="Soporte Tv Led Smart Fijo 60 55 50 49 43 42 40 32 Pulgadas - Morshop MOR01TV - Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Soporte Tv Led Smart Fijo 60 55 50 49 43 42 40 32 Pulgadas - Morshop MOR01TV - Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(304)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>30.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2032%2043%2050'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2032%2043%2050'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_634538-MLA99588501018_122025-E.webp" alt="Soporte Fijo TV Shirka LED LCD OLED 32-75 Pulgadas VESA 400x400 Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Soporte Fijo TV Shirka LED LCD OLED 32-75 Pulgadas VESA 400x400 Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(228)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>19.919</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2032%2043%2050'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🖥️</span> Smart TV 55&quot; o más</h2>
+        <a href="https://listado.mercadolibre.com.ar/smart%20tv%2055%2065%2075" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2055%2065%2075'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_865972-MLA111273654757_052026-E.webp" alt="Televisor LG NanoCell AI 75 Pulgadas Smart 4K - 75NANO80ASA" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Televisor LG NanoCell AI 75 Pulgadas Smart 4K - 75NANO80ASA</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(365)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>2.859.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2055%2065%2075'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2055%2065%2075'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_612461-MLA108423339161_032026-E.webp" alt="Televisor Samsung Smart Tv 65 4k Uhd Crystal" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Televisor Samsung Smart Tv 65 4k Uhd Crystal</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(169)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.731.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2055%2065%2075'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2055%2065%2075'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_897552-MLA95478921245_102025-E.webp" alt="Smart Tv Philips 75   75pud8100 Hdr10+ 4k Ambilight Titan" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Smart Tv Philips 75   75pud8100 Hdr10+ 4k Ambilight Titan</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(434)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.979.671</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/smart%20tv%2055%2065%2075'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">⌨️</span> Teclados Mecánicos Gamer</h2>
+        <a href="https://listado.mercadolibre.com.ar/teclado%20mecanico" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/teclado%20mecanico'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_935748-MLA99988857455_112025-E.webp" alt="Teclado Gamer Redragon K619 Horus Cableado Usb Switch Rojo Color del teclado Negro Idioma Español Latinoamérica" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Teclado Gamer Redragon K619 Horus Cableado Usb Switch Rojo Color del teclado Negro Idioma Español Latinoamérica</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(129)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>92.401</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/teclado%20mecanico'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/teclado%20mecanico'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_906052-MLA99545426148_122025-E.webp" alt="Teclado Mecánico Redragon Kumara Rainbow K552-kr-sp Teclado Negro Idioma Español Latinoamérica" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Teclado Mecánico Redragon Kumara Rainbow K552-kr-sp Teclado Negro Idioma Español Latinoamérica</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(291)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>57.820</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/teclado%20mecanico'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/teclado%20mecanico'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_822557-MLA99437186434_112025-E.webp" alt="Teclado Gamer Mecánico Aula F75 Cableado Usb Negro Sw Red Retroiluminado Idioma Inglés" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Teclado Gamer Mecánico Aula F75 Cableado Usb Negro Sw Red Retroiluminado Idioma Inglés</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(222)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>62.349</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/teclado%20mecanico'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🔤</span> Teclados Oficina</h2>
+        <a href="https://listado.mercadolibre.com.ar/teclado%20inalambrico" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/teclado%20inalambrico'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_890933-MLA48377678687_112021-E.webp" alt="Kit de teclado y mouse inalámbrico Logitech MK270 Español de color negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Kit de teclado y mouse inalámbrico Logitech MK270 Español de color negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(284)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>39.400</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/teclado%20inalambrico'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/teclado%20inalambrico'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_988258-MLA76175946961_052024-E.webp" alt="Kit Mini Teclado Bluetooth &amp; Mouse Inalámbrico" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Kit Mini Teclado Bluetooth &amp; Mouse Inalámbrico</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(249)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>31.500</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/teclado%20inalambrico'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/teclado%20inalambrico'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_695990-MLA99887310035_112025-E.webp" alt="Teclado + Mouse Inalambricos Ergonómicos Pkey Mouse Negro Teclado Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Teclado + Mouse Inalambricos Ergonómicos Pkey Mouse Negro Teclado Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(269)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>24.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/teclado%20inalambrico'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🔊</span> Parlantes Portátiles</h2>
+        <a href="https://listado.mercadolibre.com.ar/parlante%20bluetooth%20portatil" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/parlante%20bluetooth%20portatil'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_705985-MLA111870547066_062026-E.webp" alt="Parlante Portátil 2 En 1 Stromberg Twin 2 Bluetooth Fm Ipx5 Celeste Inalambrico" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Parlante Portátil 2 En 1 Stromberg Twin 2 Bluetooth Fm Ipx5 Celeste Inalambrico</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(211)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>99.540</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/parlante%20bluetooth%20portatil'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/parlante%20bluetooth%20portatil'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_828163-MLA109468937725_032026-E.webp" alt="Parlante 15 Pulgadas Bluetooth 2 Micrófonos Led Rgb Manija Control Remoto Inalámbrico Portátil Batería Recargable Usb Aux Tf Karaoke Fiesta Potente Graves Show Luces Ruedas Transporte" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Parlante 15 Pulgadas Bluetooth 2 Micrófonos Led Rgb Manija Control Remoto Inalámbrico Portátil Batería Recargable Usb Aux Tf Karaoke Fiesta Potente Graves Show Luces Ruedas Transporte</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(267)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>230.720</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/parlante%20bluetooth%20portatil'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/parlante%20bluetooth%20portatil'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_976635-MLA99027318884_112025-E.webp" alt="Parlante Suono 2 Woofers 6.5&#39;&#39; Luces Led Tws Rgb Bt Blanco" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Parlante Suono 2 Woofers 6.5&#39;&#39; Luces Led Tws Rgb Bt Blanco</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(245)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>195.224</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/parlante%20bluetooth%20portatil'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🔉</span> Parlantes Home Theater</h2>
+        <a href="https://listado.mercadolibre.com.ar/parlante%20torre%20home%20theater" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/parlante%20torre%20home%20theater'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_873535-MLA78092857775_072024-E.webp" alt="Barra De Sonido Yamaha Sr-c20a 100w. Bluetooth" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Barra De Sonido Yamaha Sr-c20a 100w. Bluetooth</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(130)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>862.925</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/parlante%20torre%20home%20theater'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/parlante%20torre%20home%20theater'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_829869-MLA79483529147_092024-E.webp" alt="Parlante Bluetooth Ngs-b1910 Silver/black - Azul - Rojo" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Parlante Bluetooth Ngs-b1910 Silver/black - Azul - Rojo</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(266)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>49.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/parlante%20torre%20home%20theater'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/parlante%20torre%20home%20theater'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_788490-MLA96434069994_102025-E.webp" alt="Barra Parlante Yamaha Sr-c20ab Con Bluetooth Cuo Color Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Barra Parlante Yamaha Sr-c20ab Con Bluetooth Cuo Color Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(365)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>713.157</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/parlante%20torre%20home%20theater'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">💺</span> Sillas Gamer</h2>
+        <a href="https://listado.mercadolibre.com.ar/silla%20gamer" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/silla%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_960217-MLA82079483251_012025-E.webp" alt="Silla Gamer Ergonomica Patagonia Home Negro Rojo Respaldo Reclinable GC-030" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Silla Gamer Ergonomica Patagonia Home Negro Rojo Respaldo Reclinable GC-030</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(177)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>299.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/silla%20gamer'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/silla%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_993100-MLA109813987342_042026-E.webp" alt="Silla Gamer Novohome Ergonómica Giratoria Reclinable Con Apoya Pies Color Gris" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Silla Gamer Novohome Ergonómica Giratoria Reclinable Con Apoya Pies Color Gris</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(455)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>210.990</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/silla%20gamer'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/silla%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_894451-MLA112990611403_062026-E.webp" alt="Silla Gamer Ergonomica Sillon Pc Escritorio Estudio Oficina Respaldo Reclinable Altura Ajustable Asiento Alta Densidad Color Gris Tapizado Cuero Sintético Reforzada The Game House 120kg Giratoria" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Silla Gamer Ergonomica Sillon Pc Escritorio Estudio Oficina Respaldo Reclinable Altura Ajustable Asiento Alta Densidad Color Gris Tapizado Cuero Sintético Reforzada The Game House 120kg Giratoria</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(331)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>303.478</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/silla%20gamer'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🖥️</span> Monitores Gamer</h2>
+        <a href="https://listado.mercadolibre.com.ar/monitor%20gamer" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/monitor%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_822015-MLA106414551997_022026-E.webp" alt="Monitor Led 24 Oasis 60hz Full Hd 1920x1080 Hdmi/vga Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Monitor Led 24 Oasis 60hz Full Hd 1920x1080 Hdmi/vga Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(440)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>300.000</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/monitor%20gamer'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/monitor%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_966923-MLA99885971529_112025-E.webp" alt="Monitor Gamer Msi Mag 255f E20 25 Pulgadas Full Hd 200hz Color Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Monitor Gamer Msi Mag 255f E20 25 Pulgadas Full Hd 200hz Color Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(150)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>289.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/monitor%20gamer'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/monitor%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_603666-MLA80569122964_112024-E.webp" alt="Monitor GAMER Viewsonic 22&quot; Va220-h Fhd Ips 100hz 1ms Vga Hdmi VA" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Monitor GAMER Viewsonic 22&quot; Va220-h Fhd Ips 100hz 1ms Vga Hdmi VA</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(418)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>158.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/monitor%20gamer'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">🖱️</span> Mouse Gamer</h2>
+        <a href="https://listado.mercadolibre.com.ar/mouse%20gamer" target="_blank" class="view-all">Ver todos &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/mouse%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_904341-MLA99970738803_112025-E.webp" alt="Ratón Gaming Aimzone AZ602 Con Cable DPI 6400 USB LED Ambidextro Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Ratón Gaming Aimzone AZ602 Con Cable DPI 6400 USB LED Ambidextro Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(250)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>57.399</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/mouse%20gamer'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/mouse%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_818480-MLA95658875558_102025-E.webp" alt="Ratón Razer Essential DeathAdder Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Ratón Razer Essential DeathAdder Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(331)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>50.706</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/mouse%20gamer'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/mouse%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_959850-MLA106831702868_022026-E.webp" alt="Mouse Gamer Semi Vertical Carrello M900 Inalámbrico Ergonómico Rgb 2400 Dpi Bluetooth Negro" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Mouse Gamer Semi Vertical Carrello M900 Inalámbrico Ergonómico Rgb 2400 Dpi Bluetooth Negro</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(219)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>46.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/mouse%20gamer'">Ver en Mercado Libre</button>
+          </div>
+        </div></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h4>tech.elpodiomp.com.ar</h4>
+        <p>Tecnología y gadgets al mejor precio. Celulares, notebooks, consolas y más.</p>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Cómo comprar</a>
+        <a href="#">Envíos</a>
+        <a href="#">Devoluciones</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/privacidad">Política de Privacidad</a>
+        <a href="/terminos">Términos y Condiciones</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>info@tech.elpodiomp.com.ar</p>
+        <p>0800-ELPODIOMP</p>
+        <p>Lun a Vie 9:00 - 18:00</p>
+      </div>
+    </div>
+    <div class="footer-sites">
+      <span>🔗 También visitá nuestros otros sitios:</span>
+      <a href="/">🏆 El Podio MP</a>
+      <a href="/tech/">💻 El Podio Tech</a>
+      <a href="/food/">🍔 El Podio Food</a>
+      <a href="/hogar/">🏠 El Podio Hogar</a>
+    </div>
+    <div class="footer-bottom">
+      <div class="visit-counter" id="visitCounter" style="margin-bottom:12px;font-size:14px;color:#888;">
+        👀 <span id="visitCount">...</span> visitas
+      </div>
+      &copy; 2026 tech.elpodiomp.com.ar &mdash; Todos los derechos reservados. Este sitio es afiliado de Mercado Libre. Los precios pueden variar.
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  
+<script>
+  // ── Búsqueda: redirige a Mercado Libre ──
+  (function() {
+    var input = document.getElementById('searchInput');
+    var btn = document.getElementById('searchBtn');
+    if (!input || !btn) return;
+    function buscar() {
+      var q = input.value.trim();
+      if (q) window.location.href = 'https://listado.mercadolibre.com.ar/' + encodeURIComponent(q);
+    }
+    btn.addEventListener('click', buscar);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') buscar(); });
+  })();
+</script>
+</body>
+</html>

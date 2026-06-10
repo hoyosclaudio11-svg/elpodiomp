@@ -1,0 +1,6 @@
+# Redirigir query params legacy a paths
+/  /  200
+
+# Sitemap y robots
+/sitemap.xml  /sitemap.xml  200
+/robots.txt   /robots.txt   200

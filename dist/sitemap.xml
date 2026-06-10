@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://elpodiomp.com.ar</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://elpodiomp.com.ar/tech/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://elpodiomp.com.ar/food/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://elpodiomp.com.ar/hogar/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://elpodiomp.com.ar/moda/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://elpodiomp.com.ar/privacidad</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://elpodiomp.com.ar/terminos</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+</urlset>

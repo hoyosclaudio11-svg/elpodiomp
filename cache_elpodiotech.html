@@ -85,7 +85,10 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f5f5f5;
+      background-color: #f5f5f7;
+      background-image: url('/public/bg-pattern.png');
+      background-repeat: repeat;
+      background-size: 240px;
       color: #1a1a1a;
       line-height: 1.5;
     }
@@ -109,6 +112,12 @@
       gap: 32px;
     }
 
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .logo {
       font-size: 28px;
       font-weight: 800;
@@ -119,6 +128,23 @@
     }
 
     .logo span { color: var(--accent-color); }
+
+    .mundialista-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #FFE600;
+      color: #1a1a1a;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1.5px solid #1a1a1a;
+      box-shadow: 2px 2px 0px #1a1a1a;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
     .search-bar {
       flex: 1;
@@ -547,7 +573,10 @@
 <body>
   <header class="header">
     <div class="header-inner">
-      <a href="/" class="logo">Elpodio<span>Tech</span></a>
+      <div class="logo-container">
+        <a href="/" class="logo">Elpodio<span>Tech</span></a>
+        <span class="mundialista-badge">⚽ MUNDIALISTA</span>
+      </div>
       <div class="search-bar" id="searchBar">
         <input type="text" id="searchInput" placeholder="Buscar productos..." autocomplete="off">
         <button id="searchBtn">&#128269;</button>
@@ -574,10 +603,10 @@
     <section class="section">
       <div class="section-header">
         <h2><span class="icon">📱</span> Celulares Gama Alta</h2>
-        <a href="https://listado.mercadolibre.com.ar/samsung%20galaxy%20s24%20s23%20ultra%20iphone%2016%2015%20pro%20huawei%20pura%20p60%20mate%20xiaomi%2014%20motorola%20edge%2050%20razr%20google%20pixel%209%20oneplus" target="_blank" class="view-all">Ver todos &rarr;</a>
+        <a href="https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='https://listado.mercadolibre.com.ar/samsung%20galaxy%20s24%20s23%20ultra%20iphone%2016%2015%20pro%20huawei%20pura%20p60%20mate%20xiaomi%2014%20motorola%20edge%2050%20razr%20google%20pixel%209%20oneplus'">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s'">
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">📱</div>
             <h3 style="margin-bottom:8px;">Celulares Gama Alta</h3>

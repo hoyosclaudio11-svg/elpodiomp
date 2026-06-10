@@ -81,6 +81,9 @@ app.use(express.static(path.join(__dirname, 'public'), {
   index: false,
   maxAge: '1h',
 }));
+app.use('/public', express.static(path.join(__dirname, 'public'), {
+  maxAge: '1h',
+}));
 
 // Forzar HTTPS en producción (Render ya lo hace, pero por si acaso)
 app.use((req, res, next) => {

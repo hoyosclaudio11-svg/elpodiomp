@@ -41,20 +41,31 @@ async function run(cmd, label) {
 async function main() {
   log('🥐 ══════ PIPELINE PANADERÍA INICIADO ══════');
 
-  // ── Paso 1: Scraping de ofertas de panadería ──
+  // Paso 1: Scraping de ofertas de panadería
   const scrapeOk = await run(
     'node scripts/scrape-bakery-offers.js',
-    '1/3 Scraping ofertas de medialunas/facturas'
+    '1/4 Scraping ofertas de medialunas/facturas'
   );
 
   if (!scrapeOk) {
     log('⚠️  El scraping falló, pero continuamos con los datos existentes.');
   }
 
-  // ── Paso 2: Regenerar cachés ──
+  // Paso 1.5: Generar imágenes IA para las ofertas
+  const imagesOk = await run(
+    'node scripts/generate-bakery-images.js',
+    '2/4 Generando imágenes IA de panadería',
+    300000
+  );
+
+  if (!imagesOk) {
+    log('⚠️  La generación de imágenes falló. Se usarán las existentes.');
+  }
+
+  // Paso 2: Regenerar cachés
   const cacheOk = await run(
     'node scripts/generate-cache.js',
-    '2/3 Regenerando cache_*.html'
+    '3/4 Regenerando cache_*.html'
   );
 
   if (!cacheOk) {
@@ -62,8 +73,8 @@ async function main() {
     process.exit(1);
   }
 
-  // ── Paso 3: Commit y push si hay cambios ──
-  log('3/3 Verificando cambios para commit...');
+  // Paso 3: Commit y push si hay cambios
+  log('4/4 Verificando cambios para commit...');
   try {
     const status = execSync('git status --porcelain', { cwd: ROOT, encoding: 'utf8' });
     if (status.trim()) {
@@ -71,9 +82,9 @@ async function main() {
       log(`   Archivos modificados: ${changedFiles.length}`);
       changedFiles.forEach(f => console.log(`     - ${f}`));
 
-      execSync('git add cache_*.html bakery-offers.json contador.json', { cwd: ROOT });
+      execSync('git add cache_*.html bakery-offers.json bakery-image-cache.json bakery-history.json contador.json public/images/bakery/ express-offers.json', { cwd: ROOT });
       const today = new Date().toLocaleDateString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' });
-      const commitMsg = `auto-update: ofertas de panadería actualizadas (${today})`;
+      const commitMsg = `auto-update: ofertas de panadería e imagenes IA actualizadas (${today})`;
       execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT });
       log('   ✅ Commit realizado.');
 

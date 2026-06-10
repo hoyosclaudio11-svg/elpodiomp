@@ -24,17 +24,99 @@ puppeteer.use(StealthPlugin());
 require('dotenv').config({ override: true });
 
 const OUTPUT_PATH = path.join(__dirname, '..', 'bakery-offers.json');
+const HISTORY_PATH = path.join(__dirname, '..', 'bakery-history.json');
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
-// ── Queries para buscar ofertas de panadería en CABA ──
-const SEARCH_QUERIES = [
+// ── Historial de ofertas recientes (anti-repetición) ──
+function loadHistory() {
+  try {
+    if (fs.existsSync(HISTORY_PATH)) {
+      const raw = fs.readFileSync(HISTORY_PATH, 'utf8');
+      return JSON.parse(raw);
+    }
+  } catch (_) {}
+  return { recent: [], updated: null, maxAge: 7 };
+}
+
+function saveHistory(history) {
+  history.updated = new Date().toISOString().split('T')[0];
+  fs.writeFileSync(HISTORY_PATH, JSON.stringify(history, null, 2), 'utf8');
+}
+
+function cleanOldHistory(history) {
+  // Las entradas tienen formato "bakery|product|fecha"
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - (history.maxAge || 7));
+  const cutoffStr = cutoff.toISOString().split('T')[0];
+  history.recent = history.recent.filter(entry => {
+    const parts = entry.split('|');
+    const date = parts[2] || '';
+    return date >= cutoffStr;
+  });
+  return history;
+}
+
+function addToHistory(history, bakery, product) {
+  const today = new Date().toISOString().split('T')[0];
+  const entry = `${bakery}|${product}|${today}`;
+  // Evitar duplicados
+  history.recent = history.recent.filter(e => !e.startsWith(`${bakery}|${product}|`));
+  history.recent.push(entry);
+  // Mantener solo los últimos 30
+  if (history.recent.length > 30) {
+    history.recent = history.recent.slice(-30);
+  }
+  return history;
+}
+
+function getRecentAvoidList(history) {
+  return history.recent.map(entry => {
+    const parts = entry.split('|');
+    return `${parts[0]} — ${parts[1] || ''}`;
+  });
+}
+
+// ── Pool de queries para buscar ofertas de panadería en CABA ──
+// Se seleccionan 6 queries por día usando el día del mes como seed
+const QUERY_POOL = [
+  // Medialunas y facturas (clásicas)
   'docena de medialunas delivery CABA oferta',
   'facturas medialunas envio Capital Federal panaderia',
   'promo medialunas docena delivery zona norte sur CABA',
   'panaderia delivery CABA medialunas facturas precio',
   'docena facturas envio gratis Capital Federal',
   'medialunas manteca delivery capital federal oferta',
+  // Churros y pastelería
+  'churros rellenos docena delivery CABA',
+  'torta casera envio capital federal panaderia',
+  'sandwiches miga docena delivery CABA oferta',
+  'chipa caliente docena delivery capital',
+  'pasteleria artesanal envio CABA oferta',
+  // Variantes de medialunas
+  'medialunas grasa jamon queso delivery CABA',
+  'promo merienda delivery capital federal panaderia',
+  'tortas individuales porcion delivery CABA',
+  'combo desayuno merienda delivery capital federal',
+  'medialunas saladas jyq docena envio CABA',
+  'budin pan dulce artesanal delivery capital',
+  'alfajores artesanales docena delivery CABA',
 ];
+
+function getDailyQueries() {
+  // Usar el día del mes como seed para seleccionar 6 queries cada día
+  const dayOfMonth = new Date().getDate();
+  const shuffled = [...QUERY_POOL];
+  // Fisher-Yates shuffle con seed determinístico
+  let seed = dayOfMonth;
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    seed = (seed * 16807 + 0) % 2147483647;
+    const j = seed % (i + 1);
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  const selected = shuffled.slice(0, 6);
+  log(`   📋 Queries del día (seed=${dayOfMonth}): ${selected.map(q => q.substring(0, 30) + '...').join(', ')}`);
+  return selected;
+}
 
 // ── Helpers ──
 function log(msg) {
@@ -221,7 +303,7 @@ async function extractImageFromPage(browser, url) {
 }
 
 // ── Parser con DeepSeek API ──
-async function parseWithDeepSeek(allSnippets) {
+async function parseWithDeepSeek(allSnippets, avoidList) {
   const DEEPSEEK_KEY = process.env.DEEPSEEK_API_KEY;
   if (!DEEPSEEK_KEY) return null;
 
@@ -230,7 +312,11 @@ async function parseWithDeepSeek(allSnippets) {
     .join('\n\n')
     .substring(0, 8000); // No exceder contexto
 
-  const prompt = `Analizá estos resultados de búsqueda sobre ofertas de MEDIALUNAS y FACTURAS con DELIVERY en CABA (Capital Federal), Argentina.
+  const avoidText = avoidList && avoidList.length > 0
+    ? `\n\n🚫 PANADERÍAS/PRODUCTOS A EVITAR (ya fueron mostrados en días recientes):\n${avoidList.map(a => `  - ${a}`).join('\n')}\nBuscá alternativas DIFERENTES a estas. Priorizá panaderías NUEVAS y de barrios DISTINTOS.`
+    : '';
+
+  const prompt = `Analizá estos resultados de búsqueda sobre ofertas de PANADERÍA y PASTELERÍA con DELIVERY en CABA (Capital Federal), Argentina.
 
 Encontrá las 3 MEJORES OFERTAS que tengan ENVÍO A TODO CABA y devolvé SOLO este JSON (sin explicaciones):
 
@@ -250,12 +336,14 @@ Encontrá las 3 MEJORES OFERTAS que tengan ENVÍO A TODO CABA y devolvé SOLO es
 ]
 
 Reglas CRÍTICAS:
-- SOLO panaderías que hagan DELIVERY/ENVÍO a todo CABA o Capital Federal.
+- SOLO panaderías/confiterías que hagan DELIVERY/ENVÍO a todo CABA o Capital Federal.
 - Si la panadería no hace envíos, DESCARTALA.
 - Precios en PESOS ARGENTINOS. Extraé el número de "$4500", "$4.500", "ARS 4500".
-- SOLO productos de panadería: medialunas (docena) o facturas (kg/docena).
+- Productos de panadería/pastelería: medialunas (docena), facturas (kg/docena), churros, tortas, sandwiches de miga, chipá, budines, alfajores artesanales.
+- Las 3 ofertas DEBEN ser de al menos 2 panaderías DIFERENTES (idealmente 3).
+- Diversificá los BARRIOS: no todas en el mismo barrio de CABA.
 - Si no hay info de delivery, precio_estimado: true.
-- Si no hay 3 ofertas con delivery, devolvé las que tengan.
+- Si no hay 3 ofertas con delivery, devolvé las que tengan.${avoidText}
 
 Resultados:\n${textToAnalyze}`;
 
@@ -292,7 +380,7 @@ Resultados:\n${textToAnalyze}`;
 }
 
 // ── Parser con Gemini (fallback) ──
-async function parseWithGemini(allSnippets) {
+async function parseWithGemini(allSnippets, avoidList) {
   if (!GEMINI_API_KEY) return null;
 
   const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
@@ -302,7 +390,11 @@ async function parseWithGemini(allSnippets) {
     .join('\n\n')
     .substring(0, 8000);
 
-  const prompt = `Analizá estos resultados de búsqueda sobre ofertas de MEDIALUNAS y FACTURAS con DELIVERY EN CABA. Encontrá las 3 MEJORES OFERTAS que hagan envíos a Capital Federal. Devolvé SOLO este JSON (sin explicaciones): [{"bakery":"nombre","product":"desc","price":4500,"oldPrice":5800,"description":"1-2 lineas","location":"Barrio, CABA","installments":"Envío a todo CABA","link":"url","badge":"Mejor Precio","precio_estimado":false}]. SOLO panaderías con delivery a CABA. Precios en PESOS ARGENTINOS.\n\nResultados:\n${textToAnalyze}`;
+  const avoidText = avoidList && avoidList.length > 0
+    ? `EVITÁ estas panaderías/productos ya mostrados: ${avoidList.join('; ')}. `
+    : '';
+
+  const prompt = `Analizá estos resultados de búsqueda sobre ofertas de PANADERÍA Y PASTELERÍA con DELIVERY EN CABA. ${avoidText}Encontrá las 3 MEJORES OFERTAS que hagan envíos a Capital Federal. Devolvé SOLO este JSON (sin explicaciones): [{"bakery":"nombre","product":"desc","price":4500,"oldPrice":5800,"description":"1-2 lineas","location":"Barrio, CABA","installments":"Envío a todo CABA","link":"url","badge":"Destacado","precio_estimado":false}]. Productos: medialunas, facturas, churros, tortas, sandwiches de miga, chipá, budines, alfajores. SOLO panaderías con delivery a CABA. Las 3 ofertas de al menos 2 panaderías DIFERENTES. Diversificá barrios. Precios en PESOS ARGENTINOS.\n\nResultados:\n${textToAnalyze}`;
 
   try {
     const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
@@ -326,13 +418,13 @@ async function parseWithGemini(allSnippets) {
 }
 
 // ── Parser combinado: DeepSeek → Gemini → fallback ──
-async function parseWithAI(allSnippets) {
+async function parseWithAI(allSnippets, avoidList) {
   // 1. Intentar DeepSeek (más barato, sin quota issues)
-  const deepseekResult = await parseWithDeepSeek(allSnippets);
+  const deepseekResult = await parseWithDeepSeek(allSnippets, avoidList);
   if (deepseekResult) return deepseekResult;
 
   // 2. Intentar Gemini
-  const geminiResult = await parseWithGemini(allSnippets);
+  const geminiResult = await parseWithGemini(allSnippets, avoidList);
   if (geminiResult) return geminiResult;
 
   // 3. Fallback: no se pudo parsear con ninguna IA
@@ -367,26 +459,62 @@ function getUnsplashFallback(productType) {
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
-// ── Pipeline de imagen: scrapeada → Unsplash ──
+// ── Pipeline de imagen: caché IA → scrapeada → Unsplash ──
 async function resolveImages(browser, offers) {
-  for (const offer of offers) {
-    if (offer.imageUrl && offer.imageUrl.startsWith('http')) {
-      log(`   🖼️  ${offer.bakery}: ya tiene imagen.`);
-      continue;
-    }
+  // Intentar cargar el generador de imágenes IA
+  let generateBakeryImage = null;
+  let getCachedImage = null;
+  try {
+    const imgGen = require('./generate-bakery-images');
+    generateBakeryImage = imgGen.generateBakeryImage;
+    getCachedImage = imgGen.getCachedImage;
+    log('   🎨 Módulo de imágenes IA cargado.');
+  } catch (err) {
+    log(`   ⚠️  Módulo de imágenes IA no disponible: ${err.message}`);
+  }
 
-    // Intentar extraer imagen del link de la panadería
-    if (offer.link && offer.link.startsWith('http')) {
-      log(`   🔍 Buscando imagen en ${offer.bakery}...`);
-      const extracted = await extractImageFromPage(browser, offer.link);
-      if (extracted) {
-        offer.imageUrl = extracted;
-        log(`   ✅ Imagen encontrada para ${offer.bakery}`);
+  for (const offer of offers) {
+    const bakeryKey = `${offer.bakery}|${offer.product}`;
+
+    // 1. Intentar caché de imagen IA (si el módulo está disponible)
+    if (getCachedImage) {
+      const cachedUrl = getCachedImage(offer.bakery, offer.product);
+      if (cachedUrl) {
+        offer.imageUrl = cachedUrl;
+        log(`   💾 ${offer.bakery}: usando imagen cacheada`);
         continue;
       }
     }
 
-    // Fallback a Unsplash
+    // 2. Intentar extraer imagen real de la web de la panadería
+    if (offer.link && offer.link.startsWith('http')) {
+      log(`   🔍 Buscando imagen en ${offer.bakery}...`);
+      const extracted = await extractImageFromPage(browser, offer.link);
+      if (extracted) {
+        // Validar que la imagen no sea un logo miniatura
+        if (extracted.includes('?d=10x10') || extracted.includes('&d=10x10') ||
+            extracted.includes('?e=webp&d=10') || extracted.includes('logo') && extracted.includes('10x10')) {
+          log(`   ⚠️  ${offer.bakery}: imagen parece logo miniatura, descartando.`);
+        } else {
+          offer.imageUrl = extracted;
+          log(`   ✅ Imagen real encontrada para ${offer.bakery}`);
+          continue;
+        }
+      }
+    }
+
+    // 3. Generar con IA
+    if (generateBakeryImage) {
+      log(`   🎨 Generando imagen IA para ${offer.bakery}...`);
+      const generatedUrl = await generateBakeryImage(offer.bakery, offer.product);
+      if (generatedUrl) {
+        offer.imageUrl = generatedUrl;
+        log(`   ✅ Imagen IA generada para ${offer.bakery}`);
+        continue;
+      }
+    }
+
+    // 4. Fallback a Unsplash
     const fallback = getUnsplashFallback(offer.product || '');
     offer.imageUrl = fallback;
     log(`   📸 Imagen Unsplash asignada a ${offer.bakery}`);
@@ -417,7 +545,7 @@ function enrichOffers(offers) {
       hash = ((hash << 5) - hash) + seed.charCodeAt(j);
       hash |= 0;
     }
-    const rating = Math.round((4.0 + (Math.abs(hash) % 15) / 10) * 10) / 10;
+    const rating = Math.round((4.0 + (Math.abs(hash) % 11) / 10) * 10) / 10;
     const reviews = 80 + (Math.abs(hash) % 420);
 
     return {
@@ -508,8 +636,19 @@ async function main() {
     log('   Se usarán datos de ejemplo. Agregá una API key para scraping real.\n');
   }
 
+  // ── Cargar historial ──
+  let history = loadHistory();
+  history = cleanOldHistory(history);
+  const avoidList = getRecentAvoidList(history);
+  if (avoidList.length > 0) {
+    log(`📋 ${avoidList.length} ofertas en historial reciente (a evitar):`);
+    avoidList.forEach(a => log(`   🚫 ${a}`));
+  } else {
+    log('📋 Historial vacío — se aceptan todas las ofertas.');
+  }
+
   // ── Paso 1: Scraping con Puppeteer ──
-  log('── Paso 1/4: Buscando en Google Argentina ──');
+  log('\n── Paso 1/4: Buscando en buscadores ──');
   const browser = await puppeteer.launch({
     headless: 'new',
     args: [
@@ -520,8 +659,11 @@ async function main() {
     ]
   });
 
+  // Usar queries diarias rotativas
+  const dailyQueries = getDailyQueries();
+
   let allResults = [];
-  for (const query of SEARCH_QUERIES) {
+  for (const query of dailyQueries) {
     const results = await searchAllEngines(browser, query);
     allResults.push(...results);
     await sleep(1500); // Delay entre búsquedas
@@ -541,13 +683,19 @@ async function main() {
   log('\n── Paso 2/4: Analizando resultados con IA ──');
   let offers = null;
   if (allResults.length > 0) {
-    offers = await parseWithAI(allResults);
+    offers = await parseWithAI(allResults, avoidList);
   }
 
   // ── Paso 3: Enriquecer y resolver imágenes ──
   log('\n── Paso 3/4: Resolviendo imágenes ──');
   if (offers && offers.length > 0) {
     offers = enrichOffers(offers);
+    // Guardar en historial las nuevas ofertas encontradas
+    for (const offer of offers) {
+      history = addToHistory(history, offer.bakery, offer.product);
+    }
+    saveHistory(history);
+    log(`   📝 ${offers.length} ofertas agregadas al historial.`);
   } else {
     log('   ⚠️  No se pudieron extraer ofertas reales. Usando fallback.');
     offers = generateFallbackOffers();

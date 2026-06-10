@@ -874,7 +874,7 @@ app.get('/privacidad', (req, res) => {
   <p>En <strong>${siteConfig.domain}</strong> no recopilamos datos personales directamente. Actuamos como sitio afiliado de Mercado Libre: cuando hacés clic en un producto, sos redirigido a Mercado Libre, donde aplican sus propias políticas de privacidad.</p>
   <p>Podemos utilizar Google Analytics para medir visitas de forma anónima. No compartimos información con terceros.</p>
   <p><strong>Cookies:</strong> No usamos cookies propias. Mercado Libre puede establecer cookies al seguir un enlace de afiliado.</p>
-  <p>Consultas: <a href="mailto:info@${siteConfig.domain}">info@${siteConfig.domain}</a></p>
+  <p>Consultas: <a href="mailto:grupomontesdelnorte@gmail.com">grupomontesdelnorte@gmail.com</a></p>
   <p><a href="/">&larr; Volver al inicio</a></p>
 </body>
 </html>`);
@@ -902,7 +902,7 @@ app.get('/terminos', (req, res) => {
   <p><strong>${siteConfig.domain}</strong> es un sitio afiliado de Mercado Libre. No vendemos productos directamente: mostramos productos de Mercado Libre y recibimos una comisión por compras realizadas a través de nuestros enlaces, sin costo adicional para vos.</p>
   <p>Todas las compras se realizan en la plataforma de Mercado Libre y están sujetas a sus términos y condiciones. No gestionamos envíos, devoluciones ni garantías.</p>
   <p>Los precios mostrados son aproximados y pueden variar al ingresar a Mercado Libre.</p>
-  <p>Consultas: <a href="mailto:info@${siteConfig.domain}">info@${siteConfig.domain}</a></p>
+  <p>Consultas: <a href="mailto:grupomontesdelnorte@gmail.com">grupomontesdelnorte@gmail.com</a></p>
   <p><a href="/">&larr; Volver al inicio</a></p>
 </body>
 </html>`);

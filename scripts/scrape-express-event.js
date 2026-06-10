@@ -223,10 +223,21 @@ async function extractImageFromPage(browser, url) {
 
     const imageUrl = await page.evaluate(() => {
       const ogImage = document.querySelector('meta[property="og:image"]');
-      if (ogImage && ogImage.content) return ogImage.content;
+      if (ogImage && ogImage.content) {
+        const og = ogImage.content;
+        // Rechazar logos e imágenes genéricas de ML
+        if (!/logo|icon|avatar|favicon|homes-palpatine|frontend-assets/i.test(og)) return og;
+      }
 
       const imgs = [...document.querySelectorAll('img')]
-        .filter(img => img.naturalWidth > 300 || img.width > 300)
+        .filter(img => {
+          const src = (img.src || img.dataset?.src || '');
+          // Rechazar logos, iconos, avatares, imágenes chicas
+          if (/logo|icon|avatar|favicon|pixel|tracking|1x1|blank|placeholder/i.test(src)) return false;
+          const w = img.naturalWidth || img.width || 0;
+          const h = img.naturalHeight || img.height || 0;
+          return w > 300 && h > 300;
+        })
         .sort((a, b) => {
           const aSize = (a.naturalWidth || a.width || 0) * (a.naturalHeight || a.height || 0);
           const bSize = (b.naturalWidth || b.width || 0) * (b.naturalHeight || b.height || 0);
@@ -363,8 +374,26 @@ async function parseWithAI(allSnippets, event) {
 }
 
 // ── Imagen fallback de Unsplash ──
-function getUnsplashFallback(category) {
+function getUnsplashFallback(category, productName) {
+  const cat = (category || '').toLowerCase();
+  const prod = (productName || '').toLowerCase();
+
   const fallbacks = {
+    auriculares: [
+      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600&h=600&fit=crop',
+    ],
+    zapatillas: [
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop',
+    ],
+    perfume: [
+      'https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=600&h=600&fit=crop',
+    ],
     tecnologia: [
       'https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=600&h=600&fit=crop',
       'https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=600&h=600&fit=crop',
@@ -373,13 +402,29 @@ function getUnsplashFallback(category) {
       'https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=600&h=600&fit=crop',
       'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=600&h=600&fit=crop',
     ],
-    perfumeria: [
-      'https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=600&h=600&fit=crop',
+    reloj: [
+      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&h=600&fit=crop',
     ],
     indumentaria: [
       'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&h=600&fit=crop',
       'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&h=600&fit=crop',
+    ],
+    billetera: [
+      'https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=600&fit=crop',
+    ],
+    pesca: [
+      'https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=600&fit=crop',
+    ],
+    asado: [
+      'https://images.unsplash.com/photo-1558030006-450675393462?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=600&fit=crop',
+    ],
+    pulsera: [
+      'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&h=600&fit=crop',
     ],
     generica: [
       'https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=600&h=600&fit=crop',
@@ -387,38 +432,60 @@ function getUnsplashFallback(category) {
     ]
   };
 
-  const cat = (category || '').toLowerCase();
-  const key = cat.includes('tecnolog') ? 'tecnologia'
-    : cat.includes('herramienta') ? 'herramientas'
-    : cat.includes('perfume') || cat.includes('perfumer') ? 'perfumeria'
-    : cat.includes('indumentaria') || cat.includes('ropa') ? 'indumentaria'
-    : 'generica';
+  // Detectar categoría por palabras clave en el nombre del producto
+  if (prod.includes('auricular') || prod.includes('sony') || prod.includes('headphone')) return pickRandom(fallbacks.auriculares);
+  if (prod.includes('zapatilla') || prod.includes('nike') || prod.includes('adidas')) return pickRandom(fallbacks.zapatillas);
+  if (prod.includes('perfume') || prod.includes('fragancia') || prod.includes('colonia')) return pickRandom(fallbacks.perfume);
+  if (prod.includes('reloj') || prod.includes('smartwatch') || prod.includes('galaxy watch')) return pickRandom(fallbacks.reloj);
+  if (prod.includes('billetera') || prod.includes('cinturon') || prod.includes('cartera')) return pickRandom(fallbacks.billetera);
+  if (prod.includes('herramienta') || prod.includes('kit') || prod.includes('stanley')) return pickRandom(fallbacks.herramientas);
+  if (prod.includes('pesca') || prod.includes('caña')) return pickRandom(fallbacks.pesca);
+  if (prod.includes('asado') || prod.includes('parrilla') || prod.includes('tabla')) return pickRandom(fallbacks.asado);
+  if (prod.includes('pulsera') || prod.includes('anillo') || prod.includes('cadena') || prod.includes('joya')) return pickRandom(fallbacks.pulsera);
 
-  const pool = fallbacks[key];
-  return pool[Math.floor(Math.random() * pool.length)];
+  // Fallback por categoría
+  if (cat.includes('tecnolog') || cat.includes('tech')) return pickRandom(fallbacks.tecnologia);
+  if (cat.includes('herramienta')) return pickRandom(fallbacks.herramientas);
+  if (cat.includes('perfume') || cat.includes('perfumer')) return pickRandom(fallbacks.perfume);
+  if (cat.includes('indumentaria') || cat.includes('ropa') || cat.includes('moda')) return pickRandom(fallbacks.indumentaria);
+
+  return pickRandom(fallbacks.generica);
+}
+
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 // ── Resolver imágenes ──
 async function resolveImages(browser, offers) {
   for (const offer of offers) {
-    if (offer.imageUrl && offer.imageUrl.startsWith('http')) {
-      log(`   🖼️  ${offer.product}: ya tiene imagen.`);
+    // Verificar si ya tiene una imagen válida (no logo de ML)
+    if (offer.imageUrl && offer.imageUrl.startsWith('http')
+        && !/logo|icon|homes-palpatine|frontend-assets/i.test(offer.imageUrl)) {
+      log(`   🖼️  ${offer.product}: ya tiene imagen válida.`);
       continue;
+    }
+
+    if (offer.imageUrl && /logo|homes-palpatine|frontend-assets/i.test(offer.imageUrl)) {
+      log(`   ⚠️  ${offer.product}: tenía logo de ML, buscando imagen real...`);
     }
 
     if (offer.link && offer.link.startsWith('http')) {
       log(`   🔍 Buscando imagen para "${offer.product}"...`);
       const extracted = await extractImageFromPage(browser, offer.link);
-      if (extracted) {
+      if (extracted && !/logo|icon|homes-palpatine|frontend-assets/i.test(extracted)) {
         offer.imageUrl = extracted;
-        log(`   ✅ Imagen encontrada.`);
+        log(`   ✅ Imagen real encontrada.`);
         continue;
+      }
+      if (extracted) {
+        log(`   ⚠️  Imagen descartada (parece logo), usando Unsplash.`);
       }
     }
 
-    const fallback = getUnsplashFallback(offer.category || '');
+    const fallback = getUnsplashFallback(offer.category || '', offer.product || '');
     offer.imageUrl = fallback;
-    log(`   📸 Imagen Unsplash asignada.`);
+    log(`   📸 Imagen Unsplash asignada a "${offer.product}".`);
   }
   return offers;
 }

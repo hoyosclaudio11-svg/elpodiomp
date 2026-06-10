@@ -60,20 +60,21 @@
 
   <style>
     :root {
-      --header-bg: #FFE600;
-      --hero-bg: linear-gradient(135deg, #FFE600 0%, #ffcc00 100%);
+      /* ── Tema MUNDIALISTA Argentina 2026 ── */
+      --header-bg: #75AADB;
+      --hero-bg: linear-gradient(135deg, #75AADB 0%, #ffffff 50%, #75AADB 100%);
       --hero-text-color: #1a1a1a;
-      --hero-sub-color: #444;
-      --button-bg: #3483FA;
-      --button-hover: #2968c8;
-      --badge-bg: #FFE600;
+      --hero-sub-color: #333;
+      --button-bg: #4A90D9;
+      --button-hover: #357ABD;
+      --badge-bg: #F6B40E;
       --badge-color: #1a1a1a;
-      --accent-color: #3483FA;
-      --stars-color: #FFE600;
+      --accent-color: #4A90D9;
+      --stars-color: #F6B40E;
       --food-color: #e67e22;
       --installments-color: #00a650;
-      --footer-bg: #1a1a1a;
-      --footer-text: #ccc;
+      --footer-bg: #0a1628;
+      --footer-text: #aabbcc;
       --footer-heading: #ffffff;
     }
 
@@ -85,12 +86,19 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #f5f5f7;
-      background-image: url('/public/bg-pattern.png');
-      background-repeat: repeat;
-      background-size: 240px;
+      background-color: #f0f4f8;
+      background-image: url('/public/bg-pattern.png'), repeating-linear-gradient(
+        90deg,
+        rgba(117, 170, 219, 0.12) 0px,
+        rgba(117, 170, 219, 0.12) 30px,
+        rgba(255, 255, 255, 0.12) 30px,
+        rgba(255, 255, 255, 0.12) 60px
+      );
+      background-repeat: repeat, repeat;
+      background-size: 240px, 60px 100%;
       color: #1a1a1a;
       line-height: 1.5;
+      overflow-x: hidden;
     }
 
     .header {
@@ -100,6 +108,49 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      overflow: hidden;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #75AADB, #ffffff, #75AADB, #ffffff, #75AADB, #ffffff, #75AADB);
+      background-size: 200% 100%;
+      animation: argentina-wave 4s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes argentina-wave {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 200% 0%; }
+    }
+
+    /* ── Stickers flotantes ── */
+    .sticker {
+      position: fixed;
+      font-size: 32px;
+      opacity: 0.6;
+      z-index: 50;
+      pointer-events: none;
+      animation: float-sticker 6s ease-in-out infinite;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    @keyframes float-sticker {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-12px) rotate(3deg); }
+      75% { transform: translateY(-6px) rotate(-3deg); }
+    }
+
+    @media (max-width: 600px) {
+      .sticker {
+        font-size: 22px;
+        opacity: 0.4;
+      }
     }
 
     .header-inner {
@@ -115,7 +166,9 @@
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      min-width: 0;
+      flex-shrink: 1;
     }
 
     .logo {
@@ -125,6 +178,8 @@
       text-decoration: none;
       letter-spacing: -1px;
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .logo span { color: var(--accent-color); }
@@ -133,17 +188,22 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      background: #FFE600;
-      color: #1a1a1a;
+      background: #F6B40E;
+      color: #0a1628;
       font-size: 11px;
       font-weight: 800;
       padding: 4px 10px;
       border-radius: 20px;
-      border: 1.5px solid #1a1a1a;
-      box-shadow: 2px 2px 0px #1a1a1a;
+      border: 1.5px solid #0a1628;
+      box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
       letter-spacing: 0.5px;
       text-transform: uppercase;
       white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .mundialista-badge .badge-text {
+      display: inline;
     }
 
     .search-bar {
@@ -555,10 +615,12 @@
 
     @media (max-width: 900px) {
       .grid { grid-template-columns: repeat(2, 1fr); }
-      .header-inner { flex-wrap: wrap; }
+      .header-inner { flex-wrap: wrap; padding: 0 12px; gap: 8px; }
       .search-bar { order: 3; max-width: 100%; flex-basis: 100%; }
       .hero h1 { font-size: 30px; }
       .footer-inner { grid-template-columns: repeat(2, 1fr); }
+      .logo { font-size: 22px; }
+      .mundialista-badge { font-size: 10px; padding: 3px 8px; }
     }
 
     @media (max-width: 600px) {
@@ -567,15 +629,37 @@
       .card-image { height: 220px; }
       .footer-inner { grid-template-columns: 1fr; }
       .header-icons span:not(.cart) { display: none; }
+      .header-inner { padding: 0 8px; gap: 6px; }
+      .logo-container { gap: 6px; }
+      .logo { font-size: 18px; }
+      .mundialista-badge { font-size: 9px; padding: 2px 6px; gap: 2px; }
+      .hero h1 { font-size: 24px; }
+      .hero p { font-size: 15px; }
+    }
+
+    @media (max-width: 380px) {
+      .logo { font-size: 16px; }
+      .mundialista-badge { font-size: 8px; padding: 2px 5px; }
+      .mundialista-badge .badge-text { display: none; }
+      .hero h1 { font-size: 21px; }
+      .section-header h2 { font-size: 18px; }
     }
   </style>
 </head>
 <body>
+  <!-- Stickers flotantes Mundial 2026 -->
+  <span class="sticker" style="top:12%;left:4%;animation-delay:0s;">⚽</span>
+  <span class="sticker" style="top:30%;right:3%;animation-delay:1s;">🏟️</span>
+  <span class="sticker" style="top:48%;left:2%;animation-delay:2s;">⭐</span>
+  <span class="sticker" style="top:58%;right:4%;animation-delay:3s;">🏆</span>
+  <span class="sticker" style="top:72%;left:5%;animation-delay:4s;">⚽</span>
+  <span class="sticker" style="top:85%;right:2%;animation-delay:5s;">🥅</span>
+
   <header class="header">
     <div class="header-inner">
       <div class="logo-container">
         <a href="/" class="logo">Elpodiomp<span>.com.ar</span></a>
-        <span class="mundialista-badge">⚽ MUNDIALISTA</span>
+        <span class="mundialista-badge">⚽ <span class="badge-text">MUNDIALISTA</span></span>
       </div>
       <div class="search-bar" id="searchBar">
         <input type="text" id="searchInput" placeholder="Buscar productos..." autocomplete="off">

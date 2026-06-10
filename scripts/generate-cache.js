@@ -265,6 +265,65 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
     categoriesHtml += '<script>(function(){var b=document.getElementById("bakery-express");var c=document.getElementById("cena-express");function t(){if(!b||!c)return;var n=new Date();var h=n.getUTCHours()-3;if(h<0)h+=24;var m=n.getUTCMinutes();var mostrarBakery=(h>=16&&h<18);var mostrarCena=(h>19||(h===19&&m>=30));if(mostrarCena){b.classList.add("hidden");c.classList.remove("hidden")}else if(mostrarBakery){b.classList.remove("hidden");c.classList.add("hidden")}else{b.classList.add("hidden");c.classList.add("hidden")}}t();setInterval(t,60000)})();</script>';
   }
 
+  // ============================================================
+  // SECCION EVENTO EXPRESS (Día del Padre, Navidad, etc.)
+  // Solo aparece si hay un evento activo y productos scrapeados
+  // ============================================================
+  if (expressOffers && expressOffers.length > 0 && expressEvent
+      && expressEvent.sites && expressEvent.sites.includes(siteId)) {
+    const ev = expressEvent;
+    const daysLeft = ev.end_date ? Math.ceil((new Date(ev.end_date) - new Date()) / (1000 * 60 * 60 * 24)) : 0;
+    const urgencyText = daysLeft > 0
+      ? `⏰ Solo faltan ${daysLeft} días — ${ev.end_date.split('-').reverse().join('/')}`
+      : '⏰ Últimas horas — ¡No te lo pierdas!';
+    const eventColor = ev.theme_color || '#1e40af';
+    const eventBg = ev.theme_bg || 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)';
+    const borderColor = ev.border_color || '#3b82f6';
+    const pulseColor = ev.pulse_color || '#93c5fd';
+
+    let expressCards = '';
+    expressOffers.forEach(p => {
+      const salePrice = Math.round(p.price);
+      const listPrice = p.oldPrice && p.oldPrice > salePrice ? Math.round(p.oldPrice) : null;
+      var linkUrl = p.link && p.link.startsWith('http')
+        ? safeUrl(toNonAffiliateUrl(p.link))
+        : safeUrl('https://listado.mercadolibre.com.ar/' + encodeURIComponent((ev.searchTerms && ev.searchTerms[0]) || 'regalo'));
+      var oldPriceHtml = listPrice ? '<p class="old-price">$' + formatPrice(listPrice) + '</p>' : '';
+      var estimadoHtml = p.precio_estimado ? '<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span>' : '';
+      var ratingInfo = p.rating && p.starsHtml ? { starsHtml: p.starsHtml, reviews: p.reviews } : getDeterministicRating((p.product || '') + siteId);
+
+      expressCards += '<div class="card" onclick="window.location.href=\'' + escapeHtml(linkUrl) + '\'">' +
+        '<img class="card-image" src="' + safeUrl(p.imageUrl) + '" alt="' + escapeHtml(p.product) + '" loading="lazy">' +
+        '<div class="card-body">' +
+        '<span class="card-badge" style="background:' + escapeHtml(eventColor) + ';color:#fff;">' + escapeHtml(p.badge || ev.badge || 'Oferta') + '</span>' +
+        '<h3>' + escapeHtml(p.product) + '</h3>' +
+        '<div class="rating"><span class="stars">' + ratingInfo.starsHtml + '</span><span class="reviews">(' + ratingInfo.reviews + ')</span></div>' +
+        '<p class="description">' + escapeHtml(p.description || '') + '</p>' +
+        '<p style="font-size:12px;color:#888;margin:4px 0;">' + escapeHtml(p.category || '') + '</p>' +
+        oldPriceHtml +
+        '<p class="price"><span class="price-sup">$</span>' + formatPrice(salePrice) + estimadoHtml + '</p>' +
+        '<p class="installments">' + escapeHtml(p.installments || 'Hasta 12 cuotas sin interés') + '</p>' +
+        '<button class="btn" onclick="event.stopPropagation(); window.location.href=\'' + escapeHtml(linkUrl) + '\'" style="background:' + escapeHtml(eventColor) + ';">Ver en Mercado Libre</button>' +
+        '</div></div>';
+      totalCards++;
+    });
+
+    categoriesHtml +=
+      '<section id="evento-express" class="section" style="background:' + eventBg + ';border:2px solid ' + borderColor + ';border-radius:16px;padding:24px;margin-bottom:24px;animation:pulse-border-evento 2.5s ease-in-out infinite;">' +
+      '<style>@keyframes pulse-border-evento{0%,100%{border-color:' + borderColor + '}50%{border-color:' + pulseColor + '}}#evento-express{transition:opacity .5s;overflow:hidden}</style>' +
+      '<div class="section-header">' +
+      '<h2><span class="icon">' + escapeHtml(ev.icon || '🎯') + '</span> ' + escapeHtml(ev.name) + ' <span style="font-size:14px;color:' + eventColor + ';font-weight:600;">🔥</span></h2>' +
+      '<span style="background:' + eventColor + ';color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:bold;white-space:nowrap;">' + escapeHtml(ev.badge || '⏳ Ofertas por Tiempo Limitado') + '</span>' +
+      '</div>' +
+      '<p style="color:#555;font-size:14px;margin:-8px 0 4px 0;font-weight:500;">' + escapeHtml(ev.slogan || '') + '</p>' +
+      '<p style="color:' + eventColor + ';font-size:14px;margin:0 0 16px 0;font-weight:700;">' + urgencyText + '</p>' +
+      '<div class="grid">' + expressCards + '</div>' +
+      '<p style="text-align:center;margin-top:16px;font-size:13px;color:#888;">✨ Productos seleccionados especialmente para ' + escapeHtml(ev.name) + '. Precios actualizados hoy.</p>' +
+      '</section>' +
+      categoriesHtml;
+
+    console.log(`   🎯 Sección "${ev.name}" agregada con ${expressOffers.length} productos.`);
+  }
 
 
   for (const cat of siteCategories) {
@@ -277,7 +336,7 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
     // 1. Intentar datos de la API (recién obtenidos)
     if (apiProducts[cat.id] && apiProducts[cat.id].length > 0) {
       apiProducts[cat.id].forEach(p => {
-        const affLink = safeUrl(toNonAffiliateUrl(p.link || catAffLink));
+        const affLink = safeUrl(catAffLink);  // Redirigir a búsqueda de ML (nunca 404)
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `
@@ -294,7 +353,7 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
             ${oldPriceHtml}
             <p class="price"><span class="price-sup">$</span>${formatPrice(p.price)}</p>
             <p class="installments">${escapeHtml(p.installmentsText)}</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Comprar ahora</button>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Ver en Mercado Libre</button>
           </div>
         </div>`;
         totalCards++;
@@ -314,7 +373,7 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
       const products = fixture[cat.id] || [];
       if (products.length > 0) {
         products.slice(0, 3).forEach(fp => {
-          const affLink = safeUrl(toNonAffiliateUrl(fp.link || catAffLink));
+          const affLink = safeUrl(catAffLink);  // Redirigir a búsqueda de ML (nunca 404)
           const oldPriceHtml = fp.oldPrice && fp.oldPrice > fp.price
             ? `<p class="old-price">$${formatPrice(fp.oldPrice)}</p>` : '';
           const ratingInfo = getDeterministicRating(cat.id + (fp.title || ''));
@@ -332,7 +391,7 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
             ${oldPriceHtml}
             <p class="price"><span class="price-sup">$</span>${formatPrice(fp.price)}</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Comprar ahora</button>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Ver en Mercado Libre</button>
           </div>
         </div>`;
           totalCards++;
@@ -386,6 +445,34 @@ async function main() {
     foods = readJson(FOOD_PATH);
     var bakeryOffers = [];
     try { if (fs.existsSync(BAKERY_PATH)) bakeryOffers = readJson(BAKERY_PATH); } catch (_) {}
+    var expressOffers = [];
+    var expressEvent = null;
+    try {
+      if (fs.existsSync(EXPRESS_PATH)) expressOffers = readJson(EXPRESS_PATH);
+      if (fs.existsSync(EXPRESS_EVENTS_PATH)) {
+        const eventsConfig = readJson(EXPRESS_EVENTS_PATH);
+        const activeId = eventsConfig.active;
+        if (activeId && eventsConfig.events[activeId]) {
+          expressEvent = eventsConfig.events[activeId];
+          // Verificar fechas
+          const now = new Date().toISOString().split('T')[0];
+          if (expressEvent.start_date && expressEvent.start_date > now) {
+            console.log(`📅 Evento "${expressEvent.name}" comienza ${expressEvent.start_date}. Aún no activo.`);
+            expressEvent = null; expressOffers = [];
+          }
+          if (expressEvent && expressEvent.end_date && expressEvent.end_date < now) {
+            console.log(`📅 Evento "${expressEvent.name}" terminó ${expressEvent.end_date}. Expirado.`);
+            expressEvent = null; expressOffers = [];
+          }
+        }
+      }
+    } catch (_) {
+      expressOffers = [];
+      expressEvent = null;
+    }
+    if (expressOffers.length > 0 && expressEvent) {
+      console.log(`🎯 Evento express activo: "${expressEvent.name}" con ${expressOffers.length} productos.`);
+    }
   } catch (e) { console.error('❌ Error al cargar datos:', e.message); process.exit(1); }
 
   // ── Configurar proxy desde .env ──
@@ -428,7 +515,7 @@ async function main() {
   let grandTotalCats = 0, grandTotalCards = 0;
 
   for (const siteId of siteIds) {
-    const result = generateSiteCache(siteId, template, fixture, config, foods, bakeryOffers, apiProducts);
+    const result = generateSiteCache(siteId, template, fixture, config, foods, bakeryOffers, apiProducts, expressOffers, expressEvent);
     if (result) { grandTotalCats += result.categories; grandTotalCards += result.products; }
   }
 

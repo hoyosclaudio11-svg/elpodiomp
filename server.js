@@ -618,7 +618,7 @@ async function generatePageHtml(siteId) {
 
     if (products.length > 0) {
       products.forEach(p => {
-        const affLink = safeUrl(toNonAffiliateUrl(config.affiliateLinks[p.id] || p.permalink || catAffLink));
+        const affLink = safeUrl(catAffLink);  // Redirigir a búsqueda de ML (nunca 404)
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `
@@ -635,7 +635,7 @@ async function generatePageHtml(siteId) {
             ${oldPriceHtml}
             <p class="price"><span class="price-sup">$</span>${formatPrice(p.price)}</p>
             <p class="installments">${escapeHtml(p.installmentsText)}</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Comprar ahora</button>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Ver en Mercado Libre</button>
           </div>
         </div>`;
       });
@@ -651,7 +651,7 @@ async function generatePageHtml(siteId) {
 
       if (fixtureProducts.length > 0) {
         fixtureProducts.forEach(fp => {
-          const affLink = safeUrl(toNonAffiliateUrl(fp.link || catAffLink));
+          const affLink = safeUrl(catAffLink);  // Redirigir a búsqueda de ML (nunca 404)
           const oldPriceHtml = fp.oldPrice ? `<p class="old-price">$${formatPrice(fp.oldPrice)}</p>` : '';
           const ratingInfo = getDeterministicRating(cat.id + fp.title);
           cardsHtml += `
@@ -668,7 +668,7 @@ async function generatePageHtml(siteId) {
             ${oldPriceHtml}
             <p class="price"><span class="price-sup">$</span>${formatPrice(fp.price)}</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Comprar ahora</button>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${escapeHtml(affLink)}'">Ver en Mercado Libre</button>
           </div>
         </div>`;
         });
@@ -931,7 +931,8 @@ app.get('/buscar/:query', async (req, res) => {
       cardsHtml = '<p style="text-align:center;padding:48px;">No encontramos productos para <strong>' + escapeHtml(query) + '</strong>. <a href="/">Volver al inicio.</a></p>';
     } else {
       products.forEach(p => {
-        const affLink = safeUrl(toNonAffiliateUrl(config.affiliateLinks[p.id] || p.permalink));
+        const searchLink = `https://listado.mercadolibre.com.ar/${encodeURIComponent(query)}`;
+        const affLink = safeUrl(searchLink);  // Redirigir a búsqueda de ML (nunca 404)
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `
@@ -947,7 +948,7 @@ app.get('/buscar/:query', async (req, res) => {
             ${oldPriceHtml}
             <p class="price"><span class="price-sup">$</span>${formatPrice(p.price)}</p>
             <p class="installments">${p.installmentsText}</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='${affLink}'">Comprar ahora</button>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='${affLink}'">Ver en Mercado Libre</button>
           </div>
         </div>`;
       });

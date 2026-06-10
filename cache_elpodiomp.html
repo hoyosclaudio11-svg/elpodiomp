@@ -60,20 +60,20 @@
 
   <style>
     :root {
-      --header-bg: #FFE600;
-      --hero-bg: linear-gradient(135deg, #FFE600 0%, #ffcc00 100%);
+      --header-bg: #75AADB;
+      --hero-bg: linear-gradient(180deg, #75AADB 0%, #FFFFFF 40%, #FFFFFF 60%, #75AADB 100%);
       --hero-text-color: #1a1a1a;
-      --hero-sub-color: #444;
-      --button-bg: #3483FA;
-      --button-hover: #2968c8;
-      --badge-bg: #FFE600;
+      --hero-sub-color: #333;
+      --button-bg: #75AADB;
+      --button-hover: #5a96c4;
+      --badge-bg: #F6B40E;
       --badge-color: #1a1a1a;
-      --accent-color: #3483FA;
-      --stars-color: #FFE600;
+      --accent-color: #75AADB;
+      --stars-color: #F6B40E;
       --food-color: #e67e22;
       --installments-color: #00a650;
-      --footer-bg: #1a1a1a;
-      --footer-text: #ccc;
+      --footer-bg: #0a1628;
+      --footer-text: #b8d4f0;
       --footer-heading: #ffffff;
     }
 
@@ -85,7 +85,16 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f5f5f5;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          rgba(117,170,219,0.12) 0px,
+          rgba(117,170,219,0.12) 8px,
+          rgba(255,255,255,0) 8px,
+          rgba(255,255,255,0) 12px
+        ),
+        #fafafa;
+      background-attachment: fixed;
       color: #1a1a1a;
       line-height: 1.5;
     }
@@ -542,9 +551,72 @@
       .footer-inner { grid-template-columns: 1fr; }
       .header-icons span:not(.cart) { display: none; }
     }
+
+    /* ── Stickers Mundialistas ── */
+    .sticker {
+      position: fixed;
+      z-index: 1000;
+      pointer-events: none;
+      animation: sticker-float 4s ease-in-out infinite;
+      font-size: 48px;
+      opacity: 0.85;
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+      user-select: none;
+    }
+    .sticker.s2 { animation-delay: -1s; font-size: 36px; }
+    .sticker.s3 { animation-delay: -2s; font-size: 56px; }
+    .sticker.s4 { animation-delay: -0.5s; font-size: 42px; }
+    .sticker.s5 { animation-delay: -1.8s; font-size: 38px; }
+    .sticker.s6 { animation-delay: -3s; font-size: 44px; }
+
+    .sticker.top-left     { top: 12px; left: 16px; }
+    .sticker.top-right    { top: 14px; right: 20px; }
+    .sticker.bottom-left  { bottom: 20px; left: 24px; }
+    .sticker.bottom-right { bottom: 16px; right: 18px; }
+    .sticker.mid-left     { top: 40%; left: 8px; }
+    .sticker.mid-right    { top: 35%; right: 10px; }
+
+    @keyframes sticker-float {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50%      { transform: translateY(-10px) rotate(3deg); }
+    }
+
+    /* Franja celeste y blanca animada en el borde superior del header */
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #75AADB, #FFFFFF, #75AADB, #FFFFFF, #75AADB);
+      background-size: 200% 100%;
+      animation: flag-wave 3s linear infinite;
+    }
+
+    @keyframes flag-wave {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 200% 0%; }
+    }
+
+    @media (max-width: 600px) {
+      .sticker { font-size: 28px !important; }
+      .sticker.s3 { font-size: 34px !important; }
+      .sticker.top-left  { top: 8px; left: 6px; }
+      .sticker.top-right { top: 8px; right: 6px; }
+      .sticker.mid-left, .sticker.mid-right { display: none; }
+    }
   </style>
 </head>
 <body>
+  <!-- 🇦🇷 Stickers Mundialistas -->
+  <div class="sticker top-left" title="Argentina 2026">⚽</div>
+  <div class="sticker top-right s2" title="Argentina 2026">🇦🇷</div>
+  <div class="sticker bottom-left s3" title="Argentina 2026">⭐</div>
+  <div class="sticker bottom-right s4" title="Argentina 2026">🏆</div>
+  <div class="sticker mid-left s5" title="Argentina 2026">⚽</div>
+  <div class="sticker mid-right s6" title="Argentina 2026">🇦🇷</div>
+
   <header class="header">
     <div class="header-inner">
       <a href="/" class="logo">Elpodiomp<span>.com.ar</span></a>

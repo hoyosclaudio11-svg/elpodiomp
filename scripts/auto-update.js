@@ -24,10 +24,10 @@ function log(msg) {
   console.log(`[${ts}] ${msg}`);
 }
 
-async function run(cmd, label) {
+async function run(cmd, label, timeoutMs = 600000) {
   log(`▶ ${label}...`);
   try {
-    execSync(cmd, { cwd: ROOT, stdio: 'inherit', timeout: 300000 });
+    execSync(cmd, { cwd: ROOT, stdio: 'inherit', maxBuffer: 10 * 1024 * 1024, timeout: timeoutMs });
     log(`✅ ${label} completado.`);
     return true;
   } catch (err) {
@@ -54,7 +54,7 @@ async function main() {
         const mlaMatch = (p.imageUrl || '').match(/MLA[_-]?(\d{7,12})/);
         if (mlaMatch) {
           const slugFn = (t) => (t || 'producto').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').substring(0, 80);
-          p.link = 'https://articulo.mercadolibre.com.ar/MLA-' + mlaMatch[1] + '-' + slugFn(p.title) + '-_JM';
+          p.link = 'https://www.mercadolibre.com.ar/MLA-' + mlaMatch[1] + '-' + slugFn(p.title) + '-_JM';
           fixed++;
         }
       });

@@ -36,7 +36,12 @@ async function scrapeCategory(browser, cat, proxyConfig) {
   console.log(`🔍 ${cat.icon} ${cat.name}...`);
 
   const page = await browser.newPage();
-  await page.setViewport({ width: 1366, height: 768 });
+  // Viewport aleatorio para evadir fingerprinting
+  const widths = [1366, 1440, 1536, 1920];
+  const heights = [768, 900, 864, 1080];
+  const w = widths[Math.floor(Math.random() * widths.length)];
+  const h = heights[Math.floor(Math.random() * heights.length)];
+  await page.setViewport({ width: w, height: h });
 
   // Autenticación de proxy si aplica
   if (proxyConfig && proxyConfig.username && proxyConfig.password) {
@@ -206,7 +211,12 @@ async function main() {
 
   for (let i = 0; i < categories.length; i++) {
     await scrapeCategory(browser, categories[i], proxyConfig);
-    if (i < categories.length - 1) await new Promise(r => setTimeout(r, 5000));
+    if (i < categories.length - 1) {
+      // Delay aleatorio entre 4 y 8 segundos para evadir detección
+      const delay = 4000 + Math.floor(Math.random() * 4000);
+      console.log(`   ⏳ Esperando ${(delay/1000).toFixed(1)}s...`);
+      await new Promise(r => setTimeout(r, delay));
+    }
   }
 
   await browser.close();

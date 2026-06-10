@@ -121,6 +121,19 @@ function safeUrl(url) {
   return '#';
 }
 
+/**
+ * Convierte links de afiliado de Mercado Libre (articulo.mercadolibre.com.ar)
+ * a links normales (www.mercadolibre.com.ar) para evitar el redirect a
+ * verificación de cuenta en dispositivos móviles.
+ * También corrige URLs con dominio sin "www".
+ */
+function toNonAffiliateUrl(url) {
+  if (!url || typeof url !== 'string') return url;
+  return url
+    .replace(/articulo\.mercadolibre\.com\.ar/g, 'www.mercadolibre.com.ar')
+    .replace(/https:\/\/mercadolibre\.com\.ar/g, 'https://www.mercadolibre.com.ar');
+}
+
 function readConfig() {
   try {
     if (fs.existsSync(CONFIG_PATH)) {
@@ -375,7 +388,7 @@ async function scrapeTopProducts(query) {
       if (!title) return;
 
       let link = $el.find('a').first().attr('href') || '';
-      if (link && link.startsWith('/')) link = 'https://mercadolibre.com.ar' + link;
+      if (link && link.startsWith('/')) link = 'https://www.mercadolibre.com.ar' + link;
 
       let img = $el.find('img').first();
       let imageUrl = img.attr('data-src') || img.attr('src') || '';
@@ -605,7 +618,7 @@ async function generatePageHtml(siteId) {
 
     if (products.length > 0) {
       products.forEach(p => {
-        const affLink = safeUrl(config.affiliateLinks[p.id] || p.permalink || catAffLink);
+        const affLink = safeUrl(toNonAffiliateUrl(config.affiliateLinks[p.id] || p.permalink || catAffLink));
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `
@@ -638,7 +651,7 @@ async function generatePageHtml(siteId) {
 
       if (fixtureProducts.length > 0) {
         fixtureProducts.forEach(fp => {
-          const affLink = safeUrl(fp.link || catAffLink);
+          const affLink = safeUrl(toNonAffiliateUrl(fp.link || catAffLink));
           const oldPriceHtml = fp.oldPrice ? `<p class="old-price">$${formatPrice(fp.oldPrice)}</p>` : '';
           const ratingInfo = getDeterministicRating(cat.id + fp.title);
           cardsHtml += `
@@ -662,7 +675,7 @@ async function generatePageHtml(siteId) {
       } else {
         // Último recurso: card genérica
         cardsHtml = `
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${escapeHtml(catAffLink)}'">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${escapeHtml(toNonAffiliateUrl(catAffLink))}'">
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">${escapeHtml(cat.icon)}</div>
             <h3 style="margin-bottom:8px;">${escapeHtml(cat.name)}</h3>
@@ -670,7 +683,7 @@ async function generatePageHtml(siteId) {
             <button class="btn">Ver productos</button>
           </div>
         </div>
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${escapeHtml(catAffLink)}'">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${escapeHtml(toNonAffiliateUrl(catAffLink))}'">
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">🏷️</div>
             <h3 style="margin-bottom:8px;">Ofertas en ${escapeHtml(cat.name)}</h3>
@@ -678,7 +691,7 @@ async function generatePageHtml(siteId) {
             <button class="btn">Ver ofertas</button>
           </div>
         </div>
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${escapeHtml(catAffLink)}'">
+        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='${escapeHtml(toNonAffiliateUrl(catAffLink))}'">
           <div style="text-align:center;padding:32px;">
             <div style="font-size:48px;margin-bottom:12px;">🚚</div>
             <h3 style="margin-bottom:8px;">Envíos en ${escapeHtml(cat.name)}</h3>
@@ -693,7 +706,7 @@ async function generatePageHtml(siteId) {
     <section class="section">
       <div class="section-header">
         <h2><span class="icon">${cat.icon}</span> ${cat.name}</h2>
-        <a href="${catAffLink}" target="_blank" class="view-all">Ver todas &rarr;</a>
+        <a href="${toNonAffiliateUrl(catAffLink)}" target="_blank" class="view-all">Ver todas &rarr;</a>
         </div>
         <div class="grid">${cardsHtml}</div>
       </section>
@@ -713,7 +726,7 @@ async function generatePageHtml(siteId) {
       }
       const oldPriceHtml = f.oldPrice ? `<p class="old-price">$${formatPrice(f.oldPrice)}</p>` : '';
       foodCardsHtml += `
-      <div class="card" onclick="window.location.href='${escapeHtml(safeUrl(f.link))}'">
+      <div class="card" onclick="window.location.href='${escapeHtml(safeUrl(toNonAffiliateUrl(f.link)))}'">
         <img class="card-image" src="${safeUrl(f.imageUrl)}" alt="${escapeHtml(f.product)}" loading="lazy">
         <div class="card-body">
           <span class="card-badge" style="background:var(--food-color);color:white;">${escapeHtml(f.restaurant)}</span>
@@ -726,7 +739,7 @@ async function generatePageHtml(siteId) {
           ${oldPriceHtml}
           <p class="price"><span class="price-sup">$</span>${formatPrice(f.price)}</p>
           <p class="installments" style="color:var(--food-color);font-weight:bold;">${escapeHtml(f.installments)}</p>
-          <button class="btn" style="background:var(--food-color);" onclick="event.stopPropagation(); window.location.href='${escapeHtml(safeUrl(f.link))}'">Pedir ahora</button>
+          <button class="btn" style="background:var(--food-color);" onclick="event.stopPropagation(); window.location.href='${escapeHtml(safeUrl(toNonAffiliateUrl(f.link)))}'">Pedir ahora</button>
         </div>
       </div>`;
     });
@@ -753,7 +766,7 @@ async function generatePageHtml(siteId) {
         ? `<img class="card-image" src="${safeUrl(o.imagen)}" alt="${escapeHtml(o.titulo)}" loading="lazy">`
         : `<div class="card-image-placeholder" style="background:var(--food-color);display:flex;align-items:center;justify-content:center;font-size:48px;">${escapeHtml(o.emoji)}</div>`;
       ofertasCardsHtml += `
-      <div class="card" ${o.link ? `onclick="window.location.href='${escapeHtml(safeUrl(o.link))}'"` : ''}>
+      <div class="card" ${o.link ? `onclick="window.location.href='${escapeHtml(safeUrl(toNonAffiliateUrl(o.link)))}'"` : ''}>
         ${imageHtml}
         <div class="card-body">
           ${descuentoBadge}
@@ -918,7 +931,7 @@ app.get('/buscar/:query', async (req, res) => {
       cardsHtml = '<p style="text-align:center;padding:48px;">No encontramos productos para <strong>' + escapeHtml(query) + '</strong>. <a href="/">Volver al inicio.</a></p>';
     } else {
       products.forEach(p => {
-        const affLink = safeUrl(config.affiliateLinks[p.id] || p.permalink);
+        const affLink = safeUrl(toNonAffiliateUrl(config.affiliateLinks[p.id] || p.permalink));
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `
@@ -1002,6 +1015,8 @@ app.get('/', async (req, res) => {
   if (fs.existsSync(cachePath)) {
     try {
       let html = fs.readFileSync(cachePath, 'utf8');
+      // Corregir links de afiliado a links normales (por cachés viejas)
+      html = html.replace(/articulo\.mercadolibre\.com\.ar/g, 'www.mercadolibre.com.ar');
       html = injectCounterCode(html);
       res.send(html);
 
@@ -1021,6 +1036,8 @@ app.get('/', async (req, res) => {
   // Si no hay archivo en disco, usar la versión en memoria
   if (cacheBySite[siteId]) {
     let html = cacheBySite[siteId];
+    // Corregir links de afiliado a links normales (por cachés viejas)
+    html = html.replace(/articulo\.mercadolibre\.com\.ar/g, 'www.mercadolibre.com.ar');
     html = injectCounterCode(html);
     res.send(html);
     return;

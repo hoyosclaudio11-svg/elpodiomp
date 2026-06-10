@@ -55,11 +55,23 @@ async function scrapeCategory(browser, cat, proxyConfig) {
     } catch {
       // Si no encuentra productos, probablemente estamos en verificación
       const bodyText = await page.evaluate(() => document.body.innerText.substring(0, 200));
-      if (bodyText.includes('verificación') || bodyText.includes('account-verification')) {
+      const bodyHtml = await page.evaluate(() => document.body.innerHTML.substring(0, 500));
+      if (bodyText.includes('verificación') || bodyText.includes('account-verification') ||
+          bodyHtml.includes('account-verification') || bodyText.includes('Valida tu identidad') ||
+          bodyText.includes('Confirma que') || bodyText.includes('robot') || bodyText.includes('humano')) {
         console.log(`   ⚠️  Mercado Libre pidió verificación (bloqueo anti-bot).`);
       } else {
         console.log(`   ⚠️  No se encontraron productos (${bodyText.substring(0, 60)}...)`);
       }
+      return;
+    }
+
+    // Verificar que no sea página de verificación (los botones también usan .andes-card)
+    const isVerification = await page.evaluate(() => {
+      return document.body.innerHTML.includes('account-verification');
+    });
+    if (isVerification) {
+      console.log(`   ⚠️  Mercado Libre pidió verificación (bloqueo anti-bot).`);
       return;
     }
 
@@ -114,7 +126,7 @@ async function scrapeCategory(browser, cat, proxyConfig) {
           const mlaMatch = el.innerHTML.match(/MLA[_-]?(\d{7,12})/);
           if (mlaMatch) {
             const s = (title || 'producto').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').substring(0, 80);
-            link = `https://articulo.mercadolibre.com.ar/MLA-${mlaMatch[1]}-${s}-_JM`;
+            link = `https://www.mercadolibre.com.ar/MLA-${mlaMatch[1]}-${s}-_JM`;
           }
         }
         // Fallback final

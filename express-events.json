@@ -1,0 +1,79 @@
+{
+  "active": "dia_del_padre_2026",
+  "events": {
+    "dia_del_padre_2026": {
+      "name": "Especial Día del Padre",
+      "icon": "👔",
+      "badge": "⏳ Ofertas por Tiempo Limitado",
+      "slogan": "¡No te quedes sin el regalo perfecto! Sorprendé a papá con lo mejor.",
+      "theme_color": "#1e40af",
+      "theme_bg": "linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)",
+      "border_color": "#3b82f6",
+      "pulse_color": "#93c5fd",
+      "start_date": "2026-06-01",
+      "end_date": "2026-06-21",
+      "sites": ["elpodiomp"],
+      "queries": [
+        "regalo dia del padre mercadolibre oferta 2026",
+        "mejores regalos para papa tecnologia herramientas",
+        "perfume hombre regalo dia del padre oferta argentina",
+        "smartwatch auriculares regalo papa mercadolibre",
+        "billetera cinturon reloj regalo hombre dia del padre",
+        "parrilla set asado herramientas regalo papa argentina"
+      ],
+      "searchTerms": [
+        "regalo dia del padre",
+        "regalo para papa original",
+        "oferta regalo hombre",
+        "tecnologia para regalar papa",
+        "herramientas set regalo"
+      ]
+    },
+    "dia_de_la_madre_2026": {
+      "name": "Especial Día de la Madre",
+      "icon": "🌸",
+      "badge": "⏳ Ofertas por Tiempo Limitado",
+      "slogan": "¡El regalo perfecto para mamá está acá! Ofertas irresistibles.",
+      "theme_color": "#db2777",
+      "theme_bg": "linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)",
+      "border_color": "#ec4899",
+      "pulse_color": "#f9a8d4",
+      "start_date": "2026-10-01",
+      "end_date": "2026-10-19",
+      "sites": ["elpodiomp"],
+      "queries": [
+        "regalo dia de la madre mercadolibre oferta",
+        "perfume mujer regalo original dia madre",
+        "cartera accesorios regalo mama argentina"
+      ],
+      "searchTerms": [
+        "regalo dia de la madre",
+        "regalo para mama original",
+        "perfume cartera regalo mujer"
+      ]
+    },
+    "navidad_2026": {
+      "name": "Especial Navidad",
+      "icon": "🎄",
+      "badge": "🎁 Ofertas Navideñas",
+      "slogan": "¡Adelantate a Navidad! Los mejores regalos con ofertas increíbles.",
+      "theme_color": "#dc2626",
+      "theme_bg": "linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%)",
+      "border_color": "#ef4444",
+      "pulse_color": "#fca5a5",
+      "start_date": "2026-12-01",
+      "end_date": "2026-12-24",
+      "sites": ["elpodiomp"],
+      "queries": [
+        "regalos navidad mercadolibre oferta 2026",
+        "mejores regalos navidad tecnologia moda",
+        "juguetes regalos navidad argentina oferta"
+      ],
+      "searchTerms": [
+        "regalos navidad",
+        "ofertas navidad argentina",
+        "regalos originales para navidad"
+      ]
+    }
+  }
+}

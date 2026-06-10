@@ -14,6 +14,8 @@ const FIXTURE_PATH = path.join(__dirname, '..', 'products-fixture.json');
 const CONFIG_PATH = path.join(__dirname, '..', 'config.json');
 const FOOD_PATH = path.join(__dirname, '..', 'food.json');
 const BAKERY_PATH = path.join(__dirname, '..', 'bakery-offers.json');
+const EXPRESS_PATH = path.join(__dirname, '..', 'express-offers.json');
+const EXPRESS_EVENTS_PATH = path.join(__dirname, '..', 'express-events.json');
 
 const DEFAULT_SITE = 'elpodiomp';
 
@@ -178,7 +180,7 @@ async function fetchFromApi(query, proxyConfig) {
 }
 
 // ── Generar HTML para un sitio ───────────────────
-function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffers, apiProducts) {
+function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffers, apiProducts, expressOffers, expressEvent) {
   const siteConfig = getSiteConfig(config, siteId);
   if (!siteConfig) {
     console.log(`⚠️  Sitio "${siteId}" no encontrado. Saltando.`);
@@ -196,7 +198,7 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
   let categoriesHtml = '';
   let totalCards = 0;
   // ============================================================
-  // SECCION EXPRESS BAKERY (al inicio, visible 16:00-19:30)
+  // SECCION EXPRESS BAKERY (al inicio, visible 16:00-18:00)
   // ============================================================
   if (siteId === 'elpodiofood' && bakeryOffers && bakeryOffers.length > 0) {
     let bakeryCards = '';
@@ -221,7 +223,7 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
     categoriesHtml = '<section id="bakery-express" class="section" style="background:linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);border:2px solid #f97316;border-radius:16px;padding:24px;margin-bottom:32px;animation:pulse-border 2s ease-in-out infinite;">' +
       '<style>@keyframes pulse-border{0%,100%{border-color:#f97316}50%{border-color:#ffb380}}#bakery-express,#cena-express{transition:opacity .5s,max-height .5s;overflow:hidden}#bakery-express.hidden,#cena-express.hidden{opacity:0;max-height:0;padding:0;margin:0;border:0}#cena-express .section-header h2{color:#fff}#cena-express .view-all{color:#e67e22}#cena-express p{color:#ccc}#cena-express .installments{color:#f97316!important}#cena-express .description{color:#aaa!important}</style>' +
       '<div class="section-header"><h2><span class="icon">&#129370;</span> Seccion Express - Para la Merienda! &#9889;</h2>' +
-      '<span style="background:#f97316;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">&#9200; Hasta las 19:30</span></div>' +
+      '<span style="background:#f97316;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">&#9200; Hasta las 18:00</span></div>' +
       '<p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">&#128204; Actualizado hoy a las 16:00 - Las 3 mejores ofertas con envio a todo CABA</p>' +
       '<div class="grid">' + bakeryCards + '</div></section>' +
       categoriesHtml;
@@ -260,7 +262,7 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
   // TIMER JS - Toggle entre bakery (dia) y cena (noche)
   // ============================================================
   if (siteId === 'elpodiofood') {
-    categoriesHtml += '<script>(function(){var b=document.getElementById("bakery-express");var c=document.getElementById("cena-express");function t(){if(!b||!c)return;var n=new Date();var h=n.getHours()+n.getTimezoneOffset()/60+3;var m=n.getMinutes();var noche=(h>19||(h===19&&m>=30));if(noche){b.classList.add("hidden");c.classList.remove("hidden")}else{b.classList.remove("hidden");c.classList.add("hidden")}}t();setInterval(t,60000)})();</script>';
+    categoriesHtml += '<script>(function(){var b=document.getElementById("bakery-express");var c=document.getElementById("cena-express");function t(){if(!b||!c)return;var n=new Date();var h=n.getUTCHours()-3;if(h<0)h+=24;var m=n.getUTCMinutes();var mostrarBakery=(h>=16&&h<18);var mostrarCena=(h>19||(h===19&&m>=30));if(mostrarCena){b.classList.add("hidden");c.classList.remove("hidden")}else if(mostrarBakery){b.classList.remove("hidden");c.classList.add("hidden")}else{b.classList.add("hidden");c.classList.add("hidden")}}t();setInterval(t,60000)})();</script>';
   }
 
 

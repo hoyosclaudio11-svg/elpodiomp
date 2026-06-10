@@ -5,8 +5,9 @@
  * Hace todo en secuencia:
  * 1. Scrapea productos reales de Mercado Libre (Puppeteer + stealth)
  * 2. Extrae MLA IDs de imágenes para categorías bloqueadas (fallback)
- * 3. Regenera cache.html con links reales
- * 4. Commitea y pushea solo si hubo cambios
+ * 3. Scrapea productos del evento express activo (Día del Padre, etc.)
+ * 4. Regenera cache.html con links reales
+ * 5. Commitea y pushea solo si hubo cambios
  */
 
 const { execSync } = require('child_process');
@@ -40,10 +41,10 @@ async function run(cmd, label) {
 async function main() {
   log('══════ PIPELINE AUTO-UPDATE INICIADO ══════');
 
-  const scrapeOk = await run('node scripts/scrape-real-products.js', '1/4 Scraping productos');
+  const scrapeOk = await run('node scripts/scrape-real-products.js', '1/5 Scraping productos');
 
   // ── Paso 2: Extraer MLA IDs de imágenes (fallback) ──────────────
-  log('2/4 Extrayendo MLA IDs de imágenes para links faltantes...');
+  log('2/5 Extrayendo MLA IDs de imágenes para links faltantes...');
   try {
     const fixture = JSON.parse(fs.readFileSync(FIXTURE_PATH, 'utf8'));
     let fixed = 0;
@@ -66,11 +67,14 @@ async function main() {
     await sendAlert('Fallo en Pipeline: Fallback de Imágenes', errorMsg);
   }
 
-  // ── Paso 3: Regenerar caché ─────────────────────────────────────
-  const cacheOk = await run('node scripts/generate-cache.js', '3/4 Regenerando cache.html');
+  // ── Paso 3: Scraping evento express (Día del Padre, Navidad, etc.) ─
+  const expressOk = await run('node scripts/scrape-express-event.js', '3/5 Scraping evento express');
 
-  // ── Paso 4: Commit y push si hay cambios ────────────────────────
-  log('4/4 Verificando cambios para commit...');
+  // ── Paso 4: Regenerar caché ─────────────────────────────────────
+  const cacheOk = await run('node scripts/generate-cache.js', '4/5 Regenerando cache.html');
+
+  // ── Paso 5: Commit y push si hay cambios ────────────────────────
+  log('5/5 Verificando cambios para commit...');
   try {
     const status = execSync('git status --porcelain', { cwd: ROOT, encoding: 'utf8' });
     if (status.trim()) {
@@ -78,7 +82,7 @@ async function main() {
       log(`   Archivos modificados: ${changedFiles.length}`);
       changedFiles.forEach(f => console.log(`     - ${f}`));
 
-      execSync('git add cache_*.html products-fixture.json contador.json', { cwd: ROOT });
+      execSync('git add cache_*.html products-fixture.json contador.json express-offers.json', { cwd: ROOT });
       const commitMsg = `auto-update: productos actualizados (${new Date().toISOString().split('T')[0]})`;
       execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT });
       log('   ✅ Commit realizado.');

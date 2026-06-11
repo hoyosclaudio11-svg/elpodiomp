@@ -7,7 +7,8 @@
  * 1.5. Valida productos premium con DeepSeek IA (anti-accesorios)
  * 2. Extrae MLA IDs de imágenes para categorías bloqueadas (fallback)
  * 3. Scrapea productos del evento express activo (Día del Padre, etc.)
- * 4. Regenera cache.html con links reales
+ * 4. Regenera cache_*.html con links reales
+ * 4.5. Construye dist/ para Cloudflare Pages
  * 5. Commitea y pushea solo si hubo cambios
  */
 
@@ -81,6 +82,13 @@ async function main() {
   // ── Paso 4: Regenerar caché ─────────────────────────────────────
   const cacheOk = await run('node scripts/generate-cache.js', '4/5 Regenerando cache.html');
 
+  // ── Paso 4.5: Construir dist/ para Cloudflare Pages ──────────────
+  if (cacheOk) {
+    await run('node scripts/build-cloudflare.js', '4.5/5 Construyendo dist/ para Cloudflare');
+  } else {
+    log('4.5/5 Omitiendo build-cloudflare (cache falló).');
+  }
+
   // ── Paso 5: Commit y push si hay cambios ────────────────────────
   log('5/5 Verificando cambios para commit...');
   try {
@@ -90,7 +98,7 @@ async function main() {
       log(`   Archivos modificados: ${changedFiles.length}`);
       changedFiles.forEach(f => console.log(`     - ${f}`));
 
-      execSync('git add cache_*.html products-fixture.json contador.json express-offers.json', { cwd: ROOT });
+      execSync('git add cache_*.html products-fixture.json contador.json express-offers.json dist/', { cwd: ROOT });
       const commitMsg = `auto-update: productos actualizados (${new Date().toISOString().split('T')[0]})`;
       execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT });
       log('   ✅ Commit realizado.');

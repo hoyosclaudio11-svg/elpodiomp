@@ -9,7 +9,8 @@
  * 3. Scrapea productos del evento express activo (Día del Padre, etc.)
  * 4. Regenera cache_*.html con links reales
  * 4.5. Construye dist/ para Cloudflare Pages
- * 5. Commitea y pushea solo si hubo cambios
+ * 5. Commitea y pushea a GitHub (respaldo)
+ * 5.5. Deploya a Cloudflare Pages con Wrangler (producción)
  */
 
 const { execSync } = require('child_process');
@@ -113,6 +114,9 @@ async function main() {
     log(`❌ Git falló: ${err.message}`);
     await sendAlert('Fallo en Pipeline: Git Push', errorMsg);
   }
+
+  // ── Paso 5.5: Deploy a Cloudflare Pages con Wrangler ──────────────
+  await run('npx wrangler pages deploy dist --project-name=elpodiomp --commit-dirty=true', '5.5/5 Deployando a Cloudflare Pages');
 
   log('══════ PIPELINE COMPLETADO ══════');
 }

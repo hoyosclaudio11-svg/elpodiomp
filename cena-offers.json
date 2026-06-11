@@ -1,0 +1,53 @@
+[
+  {
+    "id": "cena_1",
+    "restaurant": "El Club de la Milanesa",
+    "product": "Milanesa Napolitana con papas fritas",
+    "price": 7500,
+    "oldPrice": 9500,
+    "description": "Milanesa de carne cubierta con jamón, muzzarella y salsa de tomate, acompañada de papas crujientes. Hacen envíos a todo CABA.",
+    "location": "Palermo, CABA",
+    "category": "Milanesas",
+    "installments": "Envío a todo CABA",
+    "imageUrl": "https://elclubdelamilanesa.com/wp-content/uploads/2026/02/promos-web-listas-09.png",
+    "link": "https://elclubdelamilanesa.com/promociones/",
+    "badge": "Mejor Precio",
+    "precio_estimado": false,
+    "rating": 4.7,
+    "reviews": 172
+  },
+  {
+    "id": "cena_2",
+    "restaurant": "La Milaneseria",
+    "product": "Combo Milanesa de Pollo + Papas + Gaseosa",
+    "price": 8200,
+    "oldPrice": 10500,
+    "description": "Milanesa de pollo empanizada, papas fritas doradas y gaseosa. Ideal para cenar en casa con delivery a todo CABA.",
+    "location": "Belgrano, CABA",
+    "category": "Milanesas",
+    "installments": "Delivery en 45 min",
+    "imageUrl": "https://lamilaneseria.com.ar/wp-content/uploads/2025/01/cropped-cropped-0c4f421fa3046c330588d18efaf08f5f04cca7804583be7d7ce819f189e18f6e59447-removebg-preview-1.png",
+    "link": "https://lamilaneseria.com.ar/",
+    "badge": "Mejor Precio",
+    "precio_estimado": false,
+    "rating": 4.8,
+    "reviews": 384
+  },
+  {
+    "id": "cena_3",
+    "restaurant": "Milaneseria By Popular",
+    "product": "Milanesa a la Napolitana con guarnición",
+    "price": 9000,
+    "oldPrice": 11500,
+    "description": "Milanesa de carne napolitana con jamón, queso y salsa, servida con papas o ensalada. Envían a todo CABA por Rappi.",
+    "location": "Palermo, CABA",
+    "category": "Milanesas",
+    "installments": "Envío a todo CABA",
+    "imageUrl": "https://images.rappi.com.ar/restaurants_background/224699-1715385836864-1734709415166.jpg?e=webp&d=700x100&q=10",
+    "link": "https://www.rappi.com.ar/restaurantes/233294-milaneseria-by-popular",
+    "badge": "Mejor Precio",
+    "precio_estimado": false,
+    "rating": 5,
+    "reviews": 80
+  }
+]

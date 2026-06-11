@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -60,21 +60,20 @@
 
   <style>
     :root {
-      /* ── Tema MUNDIALISTA Argentina 2026 ── */
-      --header-bg: #75AADB;
-      --hero-bg: linear-gradient(135deg, #75AADB 0%, #ffffff 50%, #75AADB 100%);
+      --header-bg: #FFE600;
+      --hero-bg: linear-gradient(135deg, #FFE600 0%, #ffcc00 100%);
       --hero-text-color: #1a1a1a;
-      --hero-sub-color: #333;
-      --button-bg: #4A90D9;
-      --button-hover: #357ABD;
-      --badge-bg: #F6B40E;
+      --hero-sub-color: #444;
+      --button-bg: #3483FA;
+      --button-hover: #2968c8;
+      --badge-bg: #FFE600;
       --badge-color: #1a1a1a;
-      --accent-color: #4A90D9;
-      --stars-color: #F6B40E;
+      --accent-color: #3483FA;
+      --stars-color: #FFE600;
       --food-color: #e67e22;
       --installments-color: #00a650;
-      --footer-bg: #0a1628;
-      --footer-text: #aabbcc;
+      --footer-bg: #1a1a1a;
+      --footer-text: #ccc;
       --footer-heading: #ffffff;
     }
 
@@ -86,19 +85,12 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #f0f4f8;
-      background-image: url('/public/bg-pattern.png'), repeating-linear-gradient(
-        90deg,
-        rgba(117, 170, 219, 0.12) 0px,
-        rgba(117, 170, 219, 0.12) 30px,
-        rgba(255, 255, 255, 0.12) 30px,
-        rgba(255, 255, 255, 0.12) 60px
-      );
-      background-repeat: repeat, repeat;
-      background-size: 240px, 60px 100%;
+      background-color: #f5f5f7;
+      background-image: url('/public/bg-pattern.png');
+      background-repeat: repeat;
+      background-size: 240px;
       color: #1a1a1a;
       line-height: 1.5;
-      overflow-x: hidden;
     }
 
     .header {
@@ -108,49 +100,6 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      overflow: hidden;
-    }
-
-    .header::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #75AADB, #ffffff, #75AADB, #ffffff, #75AADB, #ffffff, #75AADB);
-      background-size: 200% 100%;
-      animation: argentina-wave 4s linear infinite;
-      z-index: 1;
-    }
-
-    @keyframes argentina-wave {
-      0% { background-position: 0% 0%; }
-      100% { background-position: 200% 0%; }
-    }
-
-    /* ── Stickers flotantes ── */
-    .sticker {
-      position: fixed;
-      font-size: 32px;
-      opacity: 0.6;
-      z-index: 50;
-      pointer-events: none;
-      animation: float-sticker 6s ease-in-out infinite;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    @keyframes float-sticker {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      25% { transform: translateY(-12px) rotate(3deg); }
-      75% { transform: translateY(-6px) rotate(-3deg); }
-    }
-
-    @media (max-width: 600px) {
-      .sticker {
-        font-size: 22px;
-        opacity: 0.4;
-      }
     }
 
     .header-inner {
@@ -166,9 +115,7 @@
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 10px;
-      min-width: 0;
-      flex-shrink: 1;
+      gap: 12px;
     }
 
     .logo {
@@ -178,8 +125,6 @@
       text-decoration: none;
       letter-spacing: -1px;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
     .logo span { color: var(--accent-color); }
@@ -188,22 +133,17 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      background: #F6B40E;
-      color: #0a1628;
+      background: #FFE600;
+      color: #1a1a1a;
       font-size: 11px;
       font-weight: 800;
       padding: 4px 10px;
       border-radius: 20px;
-      border: 1.5px solid #0a1628;
-      box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+      border: 1.5px solid #1a1a1a;
+      box-shadow: 2px 2px 0px #1a1a1a;
       letter-spacing: 0.5px;
       text-transform: uppercase;
       white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .mundialista-badge .badge-text {
-      display: inline;
     }
 
     .search-bar {
@@ -615,12 +555,10 @@
 
     @media (max-width: 900px) {
       .grid { grid-template-columns: repeat(2, 1fr); }
-      .header-inner { flex-wrap: wrap; padding: 0 12px; gap: 8px; }
+      .header-inner { flex-wrap: wrap; }
       .search-bar { order: 3; max-width: 100%; flex-basis: 100%; }
       .hero h1 { font-size: 30px; }
       .footer-inner { grid-template-columns: repeat(2, 1fr); }
-      .logo { font-size: 22px; }
-      .mundialista-badge { font-size: 10px; padding: 3px 8px; }
     }
 
     @media (max-width: 600px) {
@@ -629,37 +567,15 @@
       .card-image { height: 220px; }
       .footer-inner { grid-template-columns: 1fr; }
       .header-icons span:not(.cart) { display: none; }
-      .header-inner { padding: 0 8px; gap: 6px; }
-      .logo-container { gap: 6px; }
-      .logo { font-size: 18px; }
-      .mundialista-badge { font-size: 9px; padding: 2px 6px; gap: 2px; }
-      .hero h1 { font-size: 24px; }
-      .hero p { font-size: 15px; }
-    }
-
-    @media (max-width: 380px) {
-      .logo { font-size: 16px; }
-      .mundialista-badge { font-size: 8px; padding: 2px 5px; }
-      .mundialista-badge .badge-text { display: none; }
-      .hero h1 { font-size: 21px; }
-      .section-header h2 { font-size: 18px; }
     }
   </style>
 </head>
 <body>
-  <!-- Stickers flotantes Mundial 2026 -->
-  <span class="sticker" style="top:12%;left:4%;animation-delay:0s;">⚽</span>
-  <span class="sticker" style="top:30%;right:3%;animation-delay:1s;">🏟️</span>
-  <span class="sticker" style="top:48%;left:2%;animation-delay:2s;">⭐</span>
-  <span class="sticker" style="top:58%;right:4%;animation-delay:3s;">🏆</span>
-  <span class="sticker" style="top:72%;left:5%;animation-delay:4s;">⚽</span>
-  <span class="sticker" style="top:85%;right:2%;animation-delay:5s;">🥅</span>
-
   <header class="header">
     <div class="header-inner">
       <div class="logo-container">
         <a href="/" class="logo">Elpodiomp<span>.com.ar</span></a>
-        <span class="mundialista-badge">⚽ <span class="badge-text">MUNDIALISTA</span></span>
+        <span class="mundialista-badge">⚽ MUNDIALISTA</span>
       </div>
       <div class="search-bar" id="searchBar">
         <input type="text" id="searchInput" placeholder="Buscar productos..." autocomplete="off">
@@ -683,29 +599,13 @@
   </nav>
 
   <main class="container">
-    <section id="evento-express" class="section" style="background:linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);border:2px solid #3b82f6;border-radius:16px;padding:24px;margin-bottom:24px;animation:pulse-border-evento 2.5s ease-in-out infinite;"><style>@keyframes pulse-border-evento{0%,100%{border-color:#3b82f6}50%{border-color:#93c5fd}}#evento-express{transition:opacity .5s;overflow:hidden}</style><div class="section-header"><h2><span class="icon">👔</span> Especial Día del Padre <span style="font-size:14px;color:#1e40af;font-weight:600;">🔥</span></h2><span style="background:#1e40af;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:bold;white-space:nowrap;">⏳ Ofertas por Tiempo Limitado</span></div><p style="color:#555;font-size:14px;margin:-8px 0 4px 0;font-weight:500;">¡No te quedes sin el regalo perfecto! Sorprendé a papá con lo mejor.</p><p style="color:#1e40af;font-size:14px;margin:0 0 16px 0;font-weight:700;">⏰ Solo faltan 11 días — 21/06/2026</p><div class="grid"><div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/regalo-para-papa-herramientas'"><img class="card-image" src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=600&h=600&fit=crop" alt="Taladro Percutor Inalámbrico 20V + Batería + Cargador" loading="lazy"><div class="card-body"><span class="card-badge" style="background:#1e40af;color:#fff;">Ideal para Papá</span><h3>Taladro Percutor Inalámbrico 20V + Batería + Cargador</h3><div class="rating"><span class="stars">★★★★½</span><span class="reviews">(248)</span></div><p class="description">Perfecto para papá manitas: potencia y libertad sin cables para sus proyectos en casa. ¡El regalo que usará siempre!</p><p style="font-size:12px;color:#888;margin:4px 0;">Herramientas</p><p class="old-price">$58.999</p><p class="price"><span class="price-sup">$</span>45.999</p><p class="installments">Hasta 12 cuotas sin interés</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/regalo-para-papa-herramientas'" style="background:#1e40af;">Ver en Mercado Libre</button></div></div><div class="card" onclick="window.location.href='https://www.mercadolibre.com.ar/blog/regalos-tecnologicos-para-papa'"><img class="card-image" src="https://http2.mlstatic.com/D_NQ_NP_833089-MLA89503868134_082025-OO.webp" alt="Auriculares Inalámbricos Sony WH-1000XM5 Cancelación de Ruido" loading="lazy"><div class="card-body"><span class="card-badge" style="background:#1e40af;color:#fff;">Ideal para Papá</span><h3>Auriculares Inalámbricos Sony WH-1000XM5 Cancelación de Ruido</h3><div class="rating"><span class="stars">★★★★☆</span><span class="reviews">(180)</span></div><p class="description">Sonido premium y cancelación de ruido líder para que papá disfrute su música o podcasts sin interrupciones. Tecnología de primer nivel.</p><p style="font-size:12px;color:#888;margin:4px 0;">Tecnología</p><p class="old-price">$249.999</p><p class="price"><span class="price-sup">$</span>189.999</p><p class="installments">Hasta 12 cuotas sin interés</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.mercadolibre.com.ar/blog/regalos-tecnologicos-para-papa'" style="background:#1e40af;">Ver en Mercado Libre</button></div></div><div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/regalo-para-papa-herramientas'"><img class="card-image" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop" alt="Zapatillas Deportivas Under Armour Charged Assert 10" loading="lazy"><div class="card-body"><span class="card-badge" style="background:#1e40af;color:#fff;">Ideal para Papá</span><h3>Zapatillas Deportivas Under Armour Charged Assert 10</h3><div class="rating"><span class="stars">★★★★★</span><span class="reviews">(438)</span></div><p class="description">Comodidad y estilo para el día a día: ideales para papá activo que camina, corre o va al gimnasio. ¡Un clásico que nunca falla!</p><p style="font-size:12px;color:#888;margin:4px 0;">Indumentaria</p><p class="old-price">$89.999</p><p class="price"><span class="price-sup">$</span>69.999</p><p class="installments">Hasta 12 cuotas sin interés</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/regalo-para-papa-herramientas'" style="background:#1e40af;">Ver en Mercado Libre</button></div></div></div><p style="text-align:center;margin-top:16px;font-size:13px;color:#888;">✨ Productos seleccionados especialmente para Especial Día del Padre. Precios actualizados hoy.</p></section>
+    <section id="evento-express" class="section" style="background:linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);border:2px solid #3b82f6;border-radius:16px;padding:24px;margin-bottom:24px;animation:pulse-border-evento 2.5s ease-in-out infinite;"><style>@keyframes pulse-border-evento{0%,100%{border-color:#3b82f6}50%{border-color:#93c5fd}}#evento-express{transition:opacity .5s;overflow:hidden}</style><div class="section-header"><h2><span class="icon">👔</span> Especial Día del Padre <span style="font-size:14px;color:#1e40af;font-weight:600;">🔥</span></h2><span style="background:#1e40af;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:bold;white-space:nowrap;">⏳ Ofertas por Tiempo Limitado</span></div><p style="color:#555;font-size:14px;margin:-8px 0 4px 0;font-weight:500;">¡No te quedes sin el regalo perfecto! Sorprendé a papá con lo mejor.</p><p style="color:#1e40af;font-size:14px;margin:0 0 16px 0;font-weight:700;">⏰ Solo faltan 10 días — 21/06/2026</p><div class="grid"><div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/regalo-para-papa-herramientas'"><img class="card-image" src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=600&h=600&fit=crop" alt="Taladro Percutor Inalámbrico 20V + Batería + Cargador" loading="lazy"><div class="card-body"><span class="card-badge" style="background:#1e40af;color:#fff;">Ideal para Papá</span><h3>Taladro Percutor Inalámbrico 20V + Batería + Cargador</h3><div class="rating"><span class="stars">★★★★½</span><span class="reviews">(248)</span></div><p class="description">Perfecto para papá manitas: potencia y libertad sin cables para sus proyectos en casa. ¡El regalo que usará siempre!</p><p style="font-size:12px;color:#888;margin:4px 0;">Herramientas</p><p class="old-price">$58.999</p><p class="price"><span class="price-sup">$</span>45.999</p><p class="installments">Hasta 12 cuotas sin interés</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/regalo-para-papa-herramientas'" style="background:#1e40af;">Ver en Mercado Libre</button></div></div><div class="card" onclick="window.location.href='https://www.mercadolibre.com.ar/blog/regalos-tecnologicos-para-papa'"><img class="card-image" src="https://http2.mlstatic.com/D_NQ_NP_833089-MLA89503868134_082025-OO.webp" alt="Auriculares Inalámbricos Sony WH-1000XM5 Cancelación de Ruido" loading="lazy"><div class="card-body"><span class="card-badge" style="background:#1e40af;color:#fff;">Ideal para Papá</span><h3>Auriculares Inalámbricos Sony WH-1000XM5 Cancelación de Ruido</h3><div class="rating"><span class="stars">★★★★☆</span><span class="reviews">(180)</span></div><p class="description">Sonido premium y cancelación de ruido líder para que papá disfrute su música o podcasts sin interrupciones. Tecnología de primer nivel.</p><p style="font-size:12px;color:#888;margin:4px 0;">Tecnología</p><p class="old-price">$249.999</p><p class="price"><span class="price-sup">$</span>189.999</p><p class="installments">Hasta 12 cuotas sin interés</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.mercadolibre.com.ar/blog/regalos-tecnologicos-para-papa'" style="background:#1e40af;">Ver en Mercado Libre</button></div></div><div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/regalo-para-papa-herramientas'"><img class="card-image" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop" alt="Zapatillas Deportivas Under Armour Charged Assert 10" loading="lazy"><div class="card-body"><span class="card-badge" style="background:#1e40af;color:#fff;">Ideal para Papá</span><h3>Zapatillas Deportivas Under Armour Charged Assert 10</h3><div class="rating"><span class="stars">★★★★★</span><span class="reviews">(438)</span></div><p class="description">Comodidad y estilo para el día a día: ideales para papá activo que camina, corre o va al gimnasio. ¡Un clásico que nunca falla!</p><p style="font-size:12px;color:#888;margin:4px 0;">Indumentaria</p><p class="old-price">$89.999</p><p class="price"><span class="price-sup">$</span>69.999</p><p class="installments">Hasta 12 cuotas sin interés</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/regalo-para-papa-herramientas'" style="background:#1e40af;">Ver en Mercado Libre</button></div></div></div><p style="text-align:center;margin-top:16px;font-size:13px;color:#888;">✨ Productos seleccionados especialmente para Especial Día del Padre. Precios actualizados hoy.</p></section>
     <section class="section">
       <div class="section-header">
         <h2><span class="icon">🏃</span> Zapatillas de Running</h2>
         <a href="https://listado.mercadolibre.com.ar/zapatillas%20deportivas%20running" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20deportivas%20running'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_739306-MLA110430139886_052026-E.webp" alt="Zapatillas Puma Running Skyrocket Lite 2 Wns Mujer Ng" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Destacado</span>
-            <h3>Zapatillas Puma Running Skyrocket Lite 2 Wns Mujer Ng</h3>
-            <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(253)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>99.999</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20deportivas%20running'">Ver en Mercado Libre</button>
-          </div>
-        </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20deportivas%20running'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_629993-MLA50304445901_062022-E.webp" alt="Zapatillas Deportivas Sergio Tacchini Tenis Padel Art 0128" loading="lazy">
           <div class="card-body">
@@ -718,6 +618,22 @@
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
             <p class="price"><span class="price-sup">$</span>99.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20deportivas%20running'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20deportivas%20running'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_927630-MLA49507932060_032022-E.webp" alt="Zapatillas Deportivas Stone Tenis Paddle Running Art 0645" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Zapatillas Deportivas Stone Tenis Paddle Running Art 0645</h3>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(362)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>79.999</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20deportivas%20running'">Ver en Mercado Libre</button>
           </div>
@@ -746,49 +662,49 @@
       </div>
       <div class="grid">
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20moda'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_967610-MLA101451348099_122025-E.webp" alt="Zapatillas Puma Moda Rebound Game Low Adp 389002 Cr Bd" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_921218-MLA111948383779_052026-E.webp" alt="Zapatillas Mujer Urbanas Plataforma Livianas Moda Casuales" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Zapatillas Puma Moda Rebound Game Low Adp 389002 Cr Bd</h3>
-            <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(493)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>119.999</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20moda'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20moda'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_809964-MLA96645782845_102025-E.webp" alt="Zapatillas Urbanas Mujer Moda Plataforma Liviana Plateada" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Destacado</span>
-            <h3>Zapatillas Urbanas Mujer Moda Plataforma Liviana Plateada</h3>
-            <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(349)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>56.948</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20moda'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20moda'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_984500-MLA92237322777_092025-E.webp" alt="Zapatillas Piccadilly Mujer Moda Plataforma Liviana Voce" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Destacado</span>
-            <h3>Zapatillas Piccadilly Mujer Moda Plataforma Liviana Voce</h3>
+            <h3>Zapatillas Mujer Urbanas Plataforma Livianas Moda Casuales</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
-              <span class="reviews">(392)</span>
+              <span class="reviews">(473)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>104.262</p>
+            <p class="price"><span class="price-sup">$</span>44.576</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20moda'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20moda'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_974769-MLA112050687103_052026-E.webp" alt="Zapatillas  Mujer Urbanas Wake 493 Livianas Moda 35/40   ..." loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Zapatillas  Mujer Urbanas Wake 493 Livianas Moda 35/40   ...</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(222)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>57.200</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20moda'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20moda'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_794038-MLA108840436662_032026-E.webp" alt="2026 Zapatos Casuales Para Correr Unit Mexico 66 D508k" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>2026 Zapatos Casuales Para Correr Unit Mexico 66 D508k</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(130)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>98.910</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20moda'">Ver en Mercado Libre</button>
           </div>
@@ -833,17 +749,17 @@
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20nino%20infantiles'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_743154-MLA71524732562_092023-E.webp" alt="Zapatillas Rod Ii Kids Topper Sport 78 Tienda Oficial" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_895827-MLA83471910147_042025-E.webp" alt="Zapatillas Heelys Kolect Prints Infantil Con Ruedas" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Zapatillas Rod Ii Kids Topper Sport 78 Tienda Oficial</h3>
+            <h3>Zapatillas Heelys Kolect Prints Infantil Con Ruedas</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(374)</span>
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(180)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>38.999</p>
+            <p class="price"><span class="price-sup">$</span>119.999</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20nino%20infantiles'">Ver en Mercado Libre</button>
           </div>
@@ -856,49 +772,49 @@
       </div>
       <div class="grid">
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/botines%20futbol'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_649829-MLA88128780917_072025-E.webp" alt="Botines Topper San Ciro V Tf Hombre Negro" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_824601-MLA91907623972_092025-E.webp" alt="Botines De Fútbol Raptor 314 Fg Césped Natural" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Botines Topper San Ciro V Tf Hombre Negro</h3>
+            <h3>Botines De Fútbol Raptor 314 Fg Césped Natural</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
-              <span class="reviews">(265)</span>
+              <span class="reviews">(340)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>71.600</p>
+            <p class="price"><span class="price-sup">$</span>29.800</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/botines%20futbol'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/botines%20futbol'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_669627-MLA83151066223_032025-E.webp" alt="Botines Nike Tiempo Legend 10 Club Pasto Natural Dv4344-800" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_923755-MLA103349273953_012026-E.webp" alt="Botines De Futbol 11 Cuero Vacuno" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Botines Nike Tiempo Legend 10 Club Pasto Natural Dv4344-800</h3>
+            <h3>Botines De Futbol 11 Cuero Vacuno</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(305)</span>
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(487)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>119.999</p>
+            <p class="price"><span class="price-sup">$</span>109.990</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/botines%20futbol'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/botines%20futbol'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_710580-MLA110653415823_042026-E.webp" alt="Botines De Fútbol Argentina Cosidos Raptor Niños/adultos" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_831195-MLA109984924691_042026-E.webp" alt="Botines Futbol Guala Lumen Niños Pvc Césped Natural" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Botines De Fútbol Argentina Cosidos Raptor Niños/adultos</h3>
+            <h3>Botines Futbol Guala Lumen Niños Pvc Césped Natural</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(436)</span>
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(243)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>45.000</p>
+            <p class="price"><span class="price-sup">$</span>41.200</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/botines%20futbol'">Ver en Mercado Libre</button>
           </div>
@@ -911,49 +827,49 @@
       </div>
       <div class="grid">
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/ojotas%20sandalias'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_955746-MLA106478924994_022026-E.webp" alt="Chancla Ojota Maradona Chinela Slide Sandalia Boca" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_705061-MLA95707783951_102025-E.webp" alt="Sandalia Ojota Pj7611 Petite Jolie" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Chancla Ojota Maradona Chinela Slide Sandalia Boca</h3>
+            <h3>Sandalia Ojota Pj7611 Petite Jolie</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
-              <span class="reviews">(283)</span>
+              <span class="reviews">(461)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>62.016</p>
+            <p class="price"><span class="price-sup">$</span>52.500</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/ojotas%20sandalias'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/ojotas%20sandalias'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_957004-MLA106477411674_022026-E.webp" alt="Chancla Ojota Maradona Chinela Slide Argentina Sandalia" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_917971-MLA95368321149_102025-E.webp" alt="Sandalia / Ojota Pj7482 Petite Jolie" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Chancla Ojota Maradona Chinela Slide Argentina Sandalia</h3>
+            <h3>Sandalia / Ojota Pj7482 Petite Jolie</h3>
             <div class="rating">
               <span class="stars">★★★★★</span>
-              <span class="reviews">(413)</span>
+              <span class="reviews">(474)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>62.016</p>
+            <p class="price"><span class="price-sup">$</span>56.000</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/ojotas%20sandalias'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/ojotas%20sandalias'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_790993-MLA106475441936_022026-E.webp" alt="Chancla Ojota Maradona Chinela Slide Sandalia Homenaje Plata" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_977375-MLA103553351915_012026-E.webp" alt="Sandalias Con Plataforma Para Mujer" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Chancla Ojota Maradona Chinela Slide Sandalia Homenaje Plata</h3>
+            <h3>Sandalias Con Plataforma Para Mujer</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
-              <span class="reviews">(237)</span>
+              <span class="reviews">(152)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>62.016</p>
+            <p class="price"><span class="price-sup">$</span>34.900</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/ojotas%20sandalias'">Ver en Mercado Libre</button>
           </div>
@@ -982,33 +898,33 @@
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/mochilas%20escolares'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_985689-MLA99749548693_112025-E.webp" alt="Mochila Bluey 3d Face Personaje 30 Cm Espalda" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_975011-MLA107108511247_022026-E.webp" alt="Mochila Escolar Sweet Reforzada Ideal Colegio Nenas 26l" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Mochila Bluey 3d Face Personaje 30 Cm Espalda</h3>
+            <h3>Mochila Escolar Sweet Reforzada Ideal Colegio Nenas 26l</h3>
             <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(196)</span>
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(290)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>52.890</p>
+            <p class="price"><span class="price-sup">$</span>51.784</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/mochilas%20escolares'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/mochilas%20escolares'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_939577-MLA89223673495_082025-E.webp" alt="Mochila Escolar Quiksilver Chompine 2.0 Azul para Niños de 12 L" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_793191-MLA104336660404_012026-E.webp" alt="Mochila 212 Porta Notebook 17 Antidesgarro Escolar Grande Negro Antidesgarro" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Mochila Escolar Quiksilver Chompine 2.0 Azul para Niños de 12 L</h3>
+            <h3>Mochila 212 Porta Notebook 17 Antidesgarro Escolar Grande Negro Antidesgarro</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(156)</span>
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(242)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>59.999</p>
+            <p class="price"><span class="price-sup">$</span>39.100</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/mochilas%20escolares'">Ver en Mercado Libre</button>
           </div>
@@ -1021,49 +937,49 @@
       </div>
       <div class="grid">
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/mochila%20viaje%20carry%20on'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_830815-MLA106141872740_022026-E.webp" alt="Mochila Viral Viaje Reemplaza Carry On Impermeable" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_946376-MLA112197969453_052026-E.webp" alt="Mochila Viral De Viaje Compresion Al Vacio Carry On Notebook" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Mochila Viral Viaje Reemplaza Carry On Impermeable</h3>
+            <h3>Mochila Viral De Viaje Compresion Al Vacio Carry On Notebook</h3>
             <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(174)</span>
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(436)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>83.000</p>
+            <p class="price"><span class="price-sup">$</span>159.900</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/mochila%20viaje%20carry%20on'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/mochila%20viaje%20carry%20on'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_832045-MLA102585289163_122025-E.webp" alt="Mochila Viaje Carry On Alpina 292 Porta Notebook 40 Lts Usb" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_838291-MLA108741811804_032026-E.webp" alt="Mochila Viaje Carry On Expandible Notebook Zapatos Anti-robo" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Mochila Viaje Carry On Alpina 292 Porta Notebook 40 Lts Usb</h3>
+            <h3>Mochila Viaje Carry On Expandible Notebook Zapatos Anti-robo</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(348)</span>
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(266)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>111.374</p>
+            <p class="price"><span class="price-sup">$</span>114.500</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/mochila%20viaje%20carry%20on'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/mochila%20viaje%20carry%20on'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_956609-MLA110386054233_042026-E.webp" alt="Mochila Espalda De Viaje Carry On Colores" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_672735-MLA81720436824_012025-E.webp" alt="Mochila Viaje Carry On Viral Cabina Avion Amazon Notebook" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Mochila Espalda De Viaje Carry On Colores</h3>
+            <h3>Mochila Viaje Carry On Viral Cabina Avion Amazon Notebook</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
-              <span class="reviews">(318)</span>
+              <span class="reviews">(378)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>50.688</p>
+            <p class="price"><span class="price-sup">$</span>85.000</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/mochila%20viaje%20carry%20on'">Ver en Mercado Libre</button>
           </div>
@@ -1072,15 +988,55 @@
     <section class="section">
       <div class="section-header">
         <h2><span class="icon">📱</span> Celulares Gama Alta</h2>
-        <a href="https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s" target="_blank" class="view-all">Ver todos &rarr;</a>
+        <a href="https://listado.mercadolibre.com.ar/iphone%2016%20pro%20max%20256gb%20samsung%20galaxy%20s25%20ultra%205g%20512gb" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:pointer;" onclick="window.location.href='https://listado.mercadolibre.com.ar/iphone%20samsung%20galaxy%20s'">
-          <div style="text-align:center;padding:32px;">
-            <div style="font-size:48px;margin-bottom:12px;">📱</div>
-            <h3 style="margin-bottom:8px;">Celulares Gama Alta</h3>
-            <p style="color:#666;margin-bottom:12px;">Ver los mejores precios en El Podio MP</p>
-            <button class="btn">Ver productos</button>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/iphone%2016%20pro%20max%20256gb%20samsung%20galaxy%20s25%20ultra%205g%20512gb'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_993323-MLA102292812205_122025-E.webp" alt="Teléfonos Celulares Desbloqueados A16 Promax," loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Teléfonos Celulares Desbloqueados A16 Promax,</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(156)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>435.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/iphone%2016%20pro%20max%20256gb%20samsung%20galaxy%20s25%20ultra%205g%20512gb'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/iphone%2016%20pro%20max%20256gb%20samsung%20galaxy%20s25%20ultra%205g%20512gb'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_746677-MLA102286723369_122025-E.webp" alt="16proma X Smartphone Nueva Actualización De 16" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>16proma X Smartphone Nueva Actualización De 16</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(292)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>941.110</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/iphone%2016%20pro%20max%20256gb%20samsung%20galaxy%20s25%20ultra%205g%20512gb'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/iphone%2016%20pro%20max%20256gb%20samsung%20galaxy%20s25%20ultra%205g%20512gb'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_709227-MLA104126662482_012026-E.webp" alt="Apple iPhone 17 Pro Max (256 GB) - Color plata" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Apple iPhone 17 Pro Max (256 GB) - Color plata</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(498)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>2.850.090</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/iphone%2016%20pro%20max%20256gb%20samsung%20galaxy%20s25%20ultra%205g%20512gb'">Ver en Mercado Libre</button>
           </div>
         </div></div>
     </section>
@@ -1123,17 +1079,17 @@
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/samsung%20galaxy%20a%20motorola%20g'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_775134-MLA110461426814_052026-E.webp" alt="Cargador Adaptador 35w Usb Tipo C Carga Super Rapida Power Delivery 240v Compatible iPhone Samsung Xiaomi Motorola Galaxy Tablet iPad Switch Hogar Oficina Viaje Premium Compacto Switch Liviano" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_718562-MLA110857871579_042026-E.webp" alt="Samsung Galaxy A06 4gb Ram 64gb Motorola Apple Redmi" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Cargador Adaptador 35w Usb Tipo C Carga Super Rapida Power Delivery 240v Compatible iPhone Samsung Xiaomi Motorola Galaxy Tablet iPad Switch Hogar Oficina Viaje Premium Compacto Switch Liviano</h3>
+            <h3>Samsung Galaxy A06 4gb Ram 64gb Motorola Apple Redmi</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
-              <span class="reviews">(406)</span>
+              <span class="reviews">(332)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>6.506</p>
+            <p class="price"><span class="price-sup">$</span>229.986</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/samsung%20galaxy%20a%20motorola%20g'">Ver en Mercado Libre</button>
           </div>
@@ -1146,49 +1102,49 @@
       </div>
       <div class="grid">
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_802305-MLA95679505222_102025-E.webp" alt="Auriculares Inalámbricos Xiaomi Redmi Buds 6 Play Negro" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_828446-MLA106348652351_022026-E.webp" alt="Audífonos Soundpeats Q3 Pro Bluetooth 6.0 Anc Audio Espacial Negro" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Auriculares Inalámbricos Xiaomi Redmi Buds 6 Play Negro</h3>
+            <h3>Audífonos Soundpeats Q3 Pro Bluetooth 6.0 Anc Audio Espacial Negro</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(127)</span>
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(370)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>42.999</p>
+            <p class="price"><span class="price-sup">$</span>70.470</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_947517-MLA83135353793_032025-E.webp" alt="Auriculares Inalámbricos Anker Soundcore Space OneCancelación de Ruido over Ear, Certificación Hi-Res LDAC, 55 Horas de Calidad de Sonido sin Pérdida, Soporte de Carga Rápida, Bluetooth 5.3" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_979261-MLA101176022593_122025-E.webp" alt="Auriculares In-ear Carrello T8 Pro con Bluetooth 5.3 y Modo Juego" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Auriculares Inalámbricos Anker Soundcore Space OneCancelación de Ruido over Ear, Certificación Hi-Res LDAC, 55 Horas de Calidad de Sonido sin Pérdida, Soporte de Carga Rápida, Bluetooth 5.3</h3>
+            <h3>Auriculares In-ear Carrello T8 Pro con Bluetooth 5.3 y Modo Juego</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(466)</span>
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(129)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>395.481</p>
+            <p class="price"><span class="price-sup">$</span>53.999</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_674466-MLA100679961128_122025-E.webp" alt="Auriculares In-Ear Carrello C07 Bluetooth 5.4 de Baja Latencia, Micrófonos con Cancelación de Ruido ENC para Llamadas Claras y Resistencia al Agua IPX5" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_606819-MLA101175281411_122025-E.webp" alt="Auriculares In-Ear Gamer Bluetooth Carrello C5 Con Micrófono PNC IPX5" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Auriculares In-Ear Carrello C07 Bluetooth 5.4 de Baja Latencia, Micrófonos con Cancelación de Ruido ENC para Llamadas Claras y Resistencia al Agua IPX5</h3>
+            <h3>Auriculares In-Ear Gamer Bluetooth Carrello C5 Con Micrófono PNC IPX5</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(377)</span>
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(283)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>47.999</p>
+            <p class="price"><span class="price-sup">$</span>51.999</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/auriculares%20bluetooth'">Ver en Mercado Libre</button>
           </div>
@@ -1197,55 +1153,55 @@
     <section class="section">
       <div class="section-header">
         <h2><span class="icon">🎮</span> Notebooks Gamer</h2>
-        <a href="https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi" target="_blank" class="view-all">Ver todos &rarr;</a>
+        <a href="https://listado.mercadolibre.com.ar/notebook%20gamer" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_750788-MLA81507220976_012025-E.webp" alt="Cargador Notebook Asus Msi Gamer 19.5v 11.8a 230w Color Negro" loading="lazy">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_603337-MLA105353594781_012026-E.webp" alt="Notebook Lenovo Thinkbook 14 G8 Irl Core 7 240h 16gb 512gb Gris" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Cargador Notebook Asus Msi Gamer 19.5v 11.8a 230w Color Negro</h3>
+            <h3>Notebook Lenovo Thinkbook 14 G8 Irl Core 7 240h 16gb 512gb Gris</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(331)</span>
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(298)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>169.999</p>
+            <p class="price"><span class="price-sup">$</span>2.524.561</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">Ver en Mercado Libre</button>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_928420-CBT110281851489_042026-E.webp" alt="Base De Enfriamiento Alienware Ventilador Turbo Para M17" loading="lazy">
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_821918-MLA104994537262_012026-E.webp" alt="Hp 16 Intel Coretm Ultra 9 285h 32gb 1tb Rtx 5070 8gb 144hz Negro" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Base De Enfriamiento Alienware Ventilador Turbo Para M17</h3>
-            <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(406)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>239.703</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_614694-MLA69245236509_052023-E.webp" alt="Pantalla Notebook Compatible Lm156lf2f01 Nv156fhm-nx3 144hz" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Destacado</span>
-            <h3>Pantalla Notebook Compatible Lm156lf2f01 Nv156fhm-nx3 144hz</h3>
+            <h3>Hp 16 Intel Coretm Ultra 9 285h 32gb 1tb Rtx 5070 8gb 144hz Negro</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
-              <span class="reviews">(370)</span>
+              <span class="reviews">(213)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>150.000</p>
+            <p class="price"><span class="price-sup">$</span>5.999.999</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer%20asus%20msi'">Ver en Mercado Libre</button>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_816747-MLA111646772963_052026-E.webp" alt="Notebook Lenovo Ideapad Slim 3 Procesador Ryzen 7 170 16gb Ram 512gb Ssd Pantalla 15.5&#39;&#39; Tactil" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Notebook Lenovo Ideapad Slim 3 Procesador Ryzen 7 170 16gb Ram 512gb Ssd Pantalla 15.5&#39;&#39; Tactil</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(253)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>1.699.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20gamer'">Ver en Mercado Libre</button>
           </div>
         </div></div>
     </section>
@@ -1288,17 +1244,17 @@
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/notebook%20dell%20lenovo%20hp'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_974775-MLA94173863348_102025-E.webp" alt="Funda para Notebook CDTek de Cordura con Bolsillo para 15.6&quot; Negro" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_967809-MLA83953372302_042025-E.webp" alt="Laptop 2-en-1 Zwying Hl1068 10.95  Fhd 16gb 1tb Win 11" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Funda para Notebook CDTek de Cordura con Bolsillo para 15.6&quot; Negro</h3>
+            <h3>Laptop 2-en-1 Zwying Hl1068 10.95  Fhd 16gb 1tb Win 11</h3>
             <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(239)</span>
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(298)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>35.000</p>
+            <p class="price"><span class="price-sup">$</span>1.928.099</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/notebook%20dell%20lenovo%20hp'">Ver en Mercado Libre</button>
           </div>
@@ -1327,33 +1283,33 @@
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/termo%20mate'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_704721-MLA106130585328_022026-E.webp" alt="Termo Mate System Generico Alta Precision 1.2l + Bombilla" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_805987-MLA111022762102_052026-E.webp" alt="Termo Acero Inoxidable 1lts + Mate 200ml + Bombilla Combo" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Termo Mate System Generico Alta Precision 1.2l + Bombilla</h3>
+            <h3>Termo Acero Inoxidable 1lts + Mate 200ml + Bombilla Combo</h3>
             <div class="rating">
               <span class="stars">★★★★★</span>
-              <span class="reviews">(333)</span>
+              <span class="reviews">(172)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>48.951</p>
+            <p class="price"><span class="price-sup">$</span>32.985</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/termo%20mate'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/termo%20mate'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_808277-MLA109165081353_032026-E.webp" alt="Kit Pampa Lumilagro Termo + Mate Acero Blanco" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_657220-MLA105005865833_012026-E.webp" alt="Termo Hudson 1 litro acero inoxidable doble pared" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Kit Pampa Lumilagro Termo + Mate Acero Blanco</h3>
+            <h3>Termo Hudson 1 litro acero inoxidable doble pared</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(315)</span>
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(170)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>74.514</p>
+            <p class="price"><span class="price-sup">$</span>74.309</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/termo%20mate'">Ver en Mercado Libre</button>
           </div>
@@ -1366,49 +1322,49 @@
       </div>
       <div class="grid">
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/perfume%20hombre'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_697167-MLA93160529759_092025-E.webp" alt="Perfume One Million Para Hombre 100 Ml Rabanne Eau De A" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_907266-MLU75146789722_032024-E.webp" alt="Perfume Wanted Eau de Parfum Para Hombre 50 mL Azzaro" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Perfume One Million Para Hombre 100 Ml Rabanne Eau De A</h3>
+            <h3>Perfume Wanted Eau de Parfum Para Hombre 50 mL Azzaro</h3>
             <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(130)</span>
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(457)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>81.910</p>
+            <p class="price"><span class="price-sup">$</span>225.000</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/perfume%20hombre'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/perfume%20hombre'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_867162-MLA110946719151_042026-E.webp" alt="Kevin Dubai Edp X100ml + 150ml Pack Dia Del Padre" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_670444-MLA106645377425_022026-E.webp" alt="Perfume Hombre Tsu Cosmeticos Viggo 50ml" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Kevin Dubai Edp X100ml + 150ml Pack Dia Del Padre</h3>
+            <h3>Perfume Hombre Tsu Cosmeticos Viggo 50ml</h3>
             <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(488)</span>
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(491)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>52.900</p>
+            <p class="price"><span class="price-sup">$</span>20.200</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/perfume%20hombre'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/perfume%20hombre'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_628357-MLA97148630966_112025-E.webp" alt="Perfume Hot Water Eau de Toilette 110ml Davidoff" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_655161-MLU72749000857_112023-E.webp" alt="Perfume Diesel Only The Brave Hombre EDT 125ml Para Hombre" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Perfume Hot Water Eau de Toilette 110ml Davidoff</h3>
+            <h3>Perfume Diesel Only The Brave Hombre EDT 125ml Para Hombre</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(205)</span>
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(326)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>163.350</p>
+            <p class="price"><span class="price-sup">$</span>232.000</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/perfume%20hombre'">Ver en Mercado Libre</button>
           </div>
@@ -1421,49 +1377,49 @@
       </div>
       <div class="grid">
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/perfume%20mujer'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_925580-MLA104620107622_012026-E.webp" alt="Paloma Herrera Clasico Edp X100ml + Deo X123ml Combo" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_635400-MLA107686770042_032026-E.webp" alt="Perfume Paula Alegria Edt 100ml de Paula Cahen D&#39;anvers" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Paloma Herrera Clasico Edp X100ml + Deo X123ml Combo</h3>
+            <h3>Perfume Paula Alegria Edt 100ml de Paula Cahen D&#39;anvers</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(497)</span>
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(265)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>42.900</p>
+            <p class="price"><span class="price-sup">$</span>40.900</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/perfume%20mujer'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/perfume%20mujer'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_663805-MLA50527243446_062022-E.webp" alt="perfume XS Pure 80 ml Paco Rabanne mujer" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_902149-MLU73202362016_122023-E.webp" alt="Perfume Mujer Paloma Herrera Fantasy Edp 100ml" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>perfume XS Pure 80 ml Paco Rabanne mujer</h3>
+            <h3>Perfume Mujer Paloma Herrera Fantasy Edp 100ml</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
-              <span class="reviews">(346)</span>
+              <span class="reviews">(222)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>205.000</p>
+            <p class="price"><span class="price-sup">$</span>36.309</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/perfume%20mujer'">Ver en Mercado Libre</button>
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/perfume%20mujer'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_892202-MLA52223903116_102022-E.webp" alt="Ralph Lauren Blue Mujer EDT 125 mL" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_643121-MLU73785959804_012024-E.webp" alt="Cacharel Yes I Am Pink First Woman Edp 30ml" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Ralph Lauren Blue Mujer EDT 125 mL</h3>
+            <h3>Cacharel Yes I Am Pink First Woman Edp 30ml</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(134)</span>
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(473)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>285.000</p>
+            <p class="price"><span class="price-sup">$</span>80.000</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/perfume%20mujer'">Ver en Mercado Libre</button>
           </div>
@@ -1475,22 +1431,6 @@
         <a href="https://listado.mercadolibre.com.ar/lentes%20sol" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/lentes%20sol'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_733194-MLA108722336849_032026-E.webp" alt="Ray-ban Aviator Classic Rb3025 Piloto Cliper Unisex" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Destacado</span>
-            <h3>Ray-ban Aviator Classic Rb3025 Piloto Cliper Unisex</h3>
-            <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="reviews">(446)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>299.400</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/lentes%20sol'">Ver en Mercado Libre</button>
-          </div>
-        </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/lentes%20sol'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_695475-MLA104245574014_012026-E.webp" alt="Xl Extra Large Lentes Sol Anteojos Metal Biselados Joseph" loading="lazy">
           <div class="card-body">
@@ -1508,17 +1448,33 @@
           </div>
         </div>
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/lentes%20sol'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_909082-MLA109798847761_032026-E.webp" alt="Anteojos Inteligentes C/camara Y Microfono Ia Integrada 2k" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_979652-MLA110985572506_052026-E.webp" alt="Anteojos De Sol Adrenaline Psycho Uv400 Con Paño Y Estuche" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Anteojos Inteligentes C/camara Y Microfono Ia Integrada 2k</h3>
+            <h3>Anteojos De Sol Adrenaline Psycho Uv400 Con Paño Y Estuche</h3>
             <div class="rating">
-              <span class="stars">★★★★☆</span>
-              <span class="reviews">(418)</span>
+              <span class="stars">★★★★★</span>
+              <span class="reviews">(459)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>198.000</p>
+            <p class="price"><span class="price-sup">$</span>21.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/lentes%20sol'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/lentes%20sol'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_951968-MLA89096732372_082025-E.webp" alt="Anteojos Sol B+d Square Protección Uv 400 Gris Brillante" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Anteojos Sol B+d Square Protección Uv 400 Gris Brillante</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(182)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>122.000</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/lentes%20sol'">Ver en Mercado Libre</button>
           </div>
@@ -1531,17 +1487,33 @@
       </div>
       <div class="grid">
         <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/bicicleta%20mountain'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_998364-MLA99948840119_112025-E.webp" alt="Bicicleta Mtb Overtech Q6 R29 Aluminio, 21v Con Shimano, Freno A Disco, Con Suspensión, Color Azul/rosa/blanco, Tamaño Del Cuadro S" loading="lazy">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_943287-MLA84786146112_052025-E.webp" alt="Bicicleta Mtb Overtech Q6 R29 Aluminio 21v Freno A Disco 12x Color Negro/Rojo/Blanco Tamaño del cuadro XL" loading="lazy">
           <div class="card-body">
             <span class="card-badge">Destacado</span>
-            <h3>Bicicleta Mtb Overtech Q6 R29 Aluminio, 21v Con Shimano, Freno A Disco, Con Suspensión, Color Azul/rosa/blanco, Tamaño Del Cuadro S</h3>
+            <h3>Bicicleta Mtb Overtech Q6 R29 Aluminio 21v Freno A Disco 12x Color Negro/Rojo/Blanco Tamaño del cuadro XL</h3>
             <div class="rating">
-              <span class="stars">★★★★☆</span>
-              <span class="reviews">(226)</span>
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(154)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
             <p class="price"><span class="price-sup">$</span>599.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/bicicleta%20mountain'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/bicicleta%20mountain'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_793841-MLA85365577803_052025-E.webp" alt="Bicicleta Mtb Overtech R29 Q5 21v Freno A Disco Shimano 12x Color Negro/Rojo/Rojo Tamaño del cuadro L" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Destacado</span>
+            <h3>Bicicleta Mtb Overtech R29 Q5 21v Freno A Disco Shimano 12x Color Negro/Rojo/Rojo Tamaño del cuadro L</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(437)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>499.999</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/bicicleta%20mountain'">Ver en Mercado Libre</button>
           </div>
@@ -1554,22 +1526,6 @@
             <div class="rating">
               <span class="stars">★★★★☆</span>
               <span class="reviews">(294)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>499.999</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/bicicleta%20mountain'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/bicicleta%20mountain'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_771021-MLA83617805721_042025-E.webp" alt="Bicicleta Mtb Overtech R29 Q5 21v Freno A Disco Shimano 12x Color Rosa/Gris-claro Tamaño del cuadro M" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Destacado</span>
-            <h3>Bicicleta Mtb Overtech R29 Q5 21v Freno A Disco Shimano 12x Color Rosa/Gris-claro Tamaño del cuadro M</h3>
-            <div class="rating">
-              <span class="stars">★★★★☆</span>
-              <span class="reviews">(330)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             

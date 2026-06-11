@@ -4,6 +4,7 @@
  *
  * Hace todo en secuencia:
  * 1. Scrapea productos reales de Mercado Libre (Puppeteer + stealth)
+ * 1.5. Valida productos premium con DeepSeek IA (anti-accesorios)
  * 2. Extrae MLA IDs de imágenes para categorías bloqueadas (fallback)
  * 3. Scrapea productos del evento express activo (Día del Padre, etc.)
  * 4. Regenera cache.html con links reales
@@ -42,6 +43,13 @@ async function main() {
   log('══════ PIPELINE AUTO-UPDATE INICIADO ══════');
 
   const scrapeOk = await run('node scripts/scrape-real-products.js', '1/5 Scraping productos');
+
+  // ── Paso 1.5: Validar productos premium con DeepSeek IA ─────────
+  if (scrapeOk) {
+    await run('node scripts/rank-premium-ia.js', '1.5/5 Validando productos premium con IA');
+  } else {
+    log('1.5/5 Omitiendo validación IA (scraping falló).');
+  }
 
   // ── Paso 2: Extraer MLA IDs de imágenes (fallback) ──────────────
   log('2/5 Extrayendo MLA IDs de imágenes para links faltantes...');

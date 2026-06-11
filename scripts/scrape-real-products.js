@@ -55,7 +55,9 @@ function applyFilters(products, cat) {
 
 // ── Scraping de una categoría ─────────────────────
 async function scrapeOne(browser, cat, query, proxyConfig) {
-  const baseUrl = `https://listado.mercadolibre.com.ar/${encodeURIComponent(query)}`;
+  // ML usa guiones para espacios, no %20. El sort _OrderId_PRICE_DESC solo funciona con guiones.
+  const slug = query.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  const baseUrl = `https://listado.mercadolibre.com.ar/${slug}`;
   const url = cat.urlSuffix ? `${baseUrl}${cat.urlSuffix}` : baseUrl;
 
   const page = await browser.newPage();
@@ -205,16 +207,42 @@ async function scrapeOne(browser, cat, query, proxyConfig) {
         let oldPrice = null;
         if (oldPriceEl) oldPrice = parseInt(oldPriceEl.textContent.replace(/\D/g, '')) || null;
 
+        // Cuotas (prioridad sobre otros badges)
         let badge = 'Destacado';
-        if (oldPrice && price && oldPrice > price) {
-          const pct = Math.round(((oldPrice - price) / oldPrice) * 100);
-          if (pct > 0) badge = `${pct}% OFF`;
-        } else if (el.querySelector('.ui-search-item__shipping--free, [class*="free"]')) {
-          badge = 'Envío Gratis';
+        let cuotas = null;
+        const cardText = el.innerText || '';
+
+        // Detectar cuotas sin interés
+        const sinInteresMatch = cardText.match(/(\d+)\s*cuotas\s*(?:de\s*\$?[\d.,]+\s*)?sin\s*inter[ée]s/gi)
+          || cardText.match(/mismo\s*precio\s*(?:en\s*)?(\d+)\s*cuotas/gi)
+          || cardText.match(/hasta\s*(\d+)\s*cuotas\s*sin\s*inter[ée]s/gi);
+        // Detectar cualquier cuota
+        const cuotasMatch = cardText.match(/(\d+)\s*cuotas\s*de\s*\$?([\d.,]+)/gi);
+
+        if (sinInteresMatch && sinInteresMatch.length > 0) {
+          const numMatch = sinInteresMatch[0].match(/(\d+)/);
+          const cant = numMatch ? parseInt(numMatch[1]) : null;
+          cuotas = { cantidad: cant, sinInteres: true };
+          badge = cant ? `${cant} cuotas sin interés` : 'Cuotas sin interés';
+        } else if (cuotasMatch && cuotasMatch.length > 0) {
+          const numMatch = cuotasMatch[0].match(/(\d+)\s*cuotas/);
+          const cant = numMatch ? parseInt(numMatch[1]) : null;
+          cuotas = { cantidad: cant, sinInteres: false };
+          badge = cant ? `${cant} cuotas` : 'Cuotas disponibles';
+        }
+
+        // Si no hay cuotas, usar descuento o envío
+        if (!cuotas) {
+          if (oldPrice && price && oldPrice > price) {
+            const pct = Math.round(((oldPrice - price) / oldPrice) * 100);
+            if (pct > 0) badge = `${pct}% OFF`;
+          } else if (el.querySelector('.ui-search-item__shipping--free, [class*="shipping"]')) {
+            badge = 'Envío Gratis';
+          }
         }
 
         items.push({
-          title, price: price || 99999, oldPrice, imageUrl, badge, link
+          title, price: price || 99999, oldPrice, imageUrl, badge, link, cuotas
         });
       }
       return items;
@@ -260,7 +288,10 @@ async function scrapeCategory(browser, cat, proxyConfig) {
         oldPrice: p.oldPrice,
         imageUrl: p.imageUrl,
         badge: p.badge,
-        description: `Producto real de Mercado Libre. ${p.badge.includes('OFF') ? '¡Aprovechá el descuento!' : 'Calidad garantizada con los mejores vendedores.'}`,
+        cuotas: p.cuotas || null,
+        description: p.cuotas && p.cuotas.sinInteres
+          ? `¡${p.cuotas.cantidad || ''} cuotas sin interés en Mercado Libre! Aprovechá la financiación.`
+          : `Producto real de Mercado Libre. ${p.badge.includes('OFF') ? '¡Aprovechá el descuento!' : 'Calidad garantizada con los mejores vendedores.'}`,
         link: p.link
       }));
     } else {

@@ -201,16 +201,83 @@ async function searchGoogle(browser, query) {
   return results;
 }
 
+// ── Buscador directo en Mercado Libre ──
+// Usa Google con site:articulo.mercadolibre.com.ar para obtener URLs reales de producto
+async function searchMercadoLibreDirect(browser, query) {
+  const page = await browser.newPage();
+  const results = [];
+  try {
+    await page.setViewport({ width: 1366, height: 900 });
+    await page.setUserAgent(
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+    );
+    // Buscar en Google solo páginas de producto de ML
+    const cleanQuery = query.replace(/mercadolibre|mercadolibre\.com\.ar|mercadolibre argentina/gi, '').replace(/regalo|dia del padre|oferta/gi, '').trim();
+    const searchUrl = `https://www.google.com/search?q=site:articulo.mercadolibre.com.ar+${encodeURIComponent(cleanQuery)}&hl=es-AR&gl=AR&num=10`;
+    log(`   🛒 Google → ML productos: "${cleanQuery.substring(0, 55)}"`);
+
+    await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 20000 });
+
+    const bodyText = await page.evaluate(() => document.body.innerText.substring(0, 300));
+    if (bodyText.includes('consent.google') || bodyText.includes('not a robot') || bodyText.includes('Before you continue')) {
+      log('      ⚠️  Google pide CAPTCHA/consent. Saltando.');
+      return results;
+    }
+
+    const productos = await page.evaluate(() => {
+      const items = [];
+      const seen = new Set();
+      // Buscar resultados de Google que contengan links a articulo.mercadolibre.com.ar
+      const allLinks = document.querySelectorAll('a[href*="articulo.mercadolibre.com.ar/MLA-"]');
+
+      for (const linkEl of allLinks) {
+        const href = linkEl.href;
+        const mlaMatch = href.match(/MLA-?\d{7,12}/);
+        if (!mlaMatch || seen.has(mlaMatch[0])) continue;
+        seen.add(mlaMatch[0]);
+
+        // Encontrar el contenedor del resultado
+        const container = linkEl.closest('div.g, div[data-sokoban-container], div[data-header]') || linkEl.closest('div');
+
+        // Título (h3 en resultados de Google)
+        const titleEl = container ? container.querySelector('h3') : null;
+        const title = titleEl ? titleEl.textContent.trim() : linkEl.textContent.trim();
+
+        // Snippet
+        const snippetEl = container ? container.querySelector('div[data-sncf], span.aCOpRe, div.VwiC3b, div[role="heading"] + div') : null;
+        const snippet = snippetEl ? snippetEl.textContent.trim() : '';
+
+        if (title && title.length > 10 && href.includes('articulo.mercadolibre.com.ar')) {
+          items.push({
+            title,
+            snippet,
+            link: href,
+            imageUrl: ''
+          });
+          if (items.length >= 8) break;
+        }
+      }
+      return items;
+    });
+
+    results.push(...productos);
+    log(`      📄 ${productos.length} productos reales de ML (MLA-ID via Google)`);
+  } catch (err) {
+    log(`      ⚠️  Google→ML: ${err.message}`);
+  } finally {
+    try { await page.close(); } catch (_) {}
+  }
+  return results;
+}
+
 async function searchAllEngines(browser, query) {
-  let results = await searchDuckDuckGo(browser, query);
-  if (results.length < 5) {
-    const bingResults = await searchBing(browser, query);
-    results = results.concat(bingResults);
-  }
-  if (results.length < 5) {
-    const googleResults = await searchGoogle(browser, query);
-    results = results.concat(googleResults);
-  }
+  // Primero buscar productos reales de ML via Google (URLs con MLA-ID)
+  let results = await searchMercadoLibreDirect(browser, query);
+
+  // Complementar con DuckDuckGo
+  const ddgResults = await searchDuckDuckGo(browser, query);
+  results = results.concat(ddgResults);
+
   return results;
 }
 
@@ -274,29 +341,30 @@ async function parseWithDeepSeek(allSnippets, event) {
 El evento es: ${event.name} — ${event.slogan}
 Fecha actual: ${today}
 
-Encontrá los 3 MEJORES PRODUCTOS para regalar en este evento. Devolvé SOLO este JSON (sin explicaciones):
+Encontrá los 3 MEJORES PRODUCTOS PARA REGALAR en este evento. Productos que REALMENTE emocionen recibir: notebooks gamer, consolas (PlayStation 5, Xbox, Nintendo Switch), celulares alta gama, smartwatches, herramientas profesionales (Bosch, DeWalt, Stanley), sets de asado premium, perfumes importados (Paco Rabanne, Dior, Armani), zapatillas de marca, smart TVs, tablets, parlantes Bluetooth premium (JBL, Bose, Sony), drones, cafeteras espresso, auriculares gamer, sillas gamer.
+
+Devolvé SOLO este JSON (sin explicaciones, sin markdown):
 
 [
   {
-    "product": "Nombre real del producto (ej: Kit de Herramientas Stanley 65 piezas)",
-    "price": 45999,
-    "oldPrice": 58999,
-    "description": "1-2 líneas tentadoras explicando por qué es el regalo ideal para esta ocasión",
-    "category": "Herramientas | Tecnología | Perfumería | Indumentaria | etc.",
-    "link": "URL real del resultado de Mercado Libre",
-    "badge": "Ideal para Papá",
+    "product": "Nombre real y completo del producto con marca y modelo (ej: Notebook Lenovo IdeaPad Gaming 3 Ryzen 7 16GB)",
+    "price": 459999,
+    "oldPrice": 589999,
+    "description": "1-2 líneas atractivas explicando por qué es EL regalo ideal para papá, con gancho emocional",
+    "category": "Tecnología | Herramientas | Perfumería | Indumentaria | Gaming | Hogar",
+    "link": "URL real del producto en Mercado Libre",
+    "badge": "Regalo TOP para Papá",
     "precio_estimado": false
   }
 ]
 
-Reglas CRÍTICAS:
-- SOLO productos de Mercado Libre Argentina (articulo.mercadolibre.com.ar o listado.mercadolibre.com.ar).
-- Si no es de Mercado Libre, DESCARTALO.
-- Precios en PESOS ARGENTINOS. Extraé el número de "$45000", "$45.000", "ARS 45999".
-- Productos variados: no repitas el mismo tipo de producto. Ideal: 1 tecnología, 1 indumentaria/accesorio, 1 herramienta/perfume.
-- Precios realistas para Argentina (junio 2026).
-- Si no hay precio claro, precio_estimado: true.
-- Si no hay 3 productos de Mercado Libre, devolvé los que encuentres.
+Reglas CRÍTICAS (si las rompés, el JSON es inútil):
+1. **URL OBLIGATORIA**: El link DEBE ser https://www.mercadolibre.com.ar/... o https://articulo.mercadolibre.com.ar/MLA-XXXXX. SI ES UN LISTADO (listado.mercadolibre.com.ar), UN BLOG, O CUALQUIER OTRA COSA → DESCARTALO COMPLETAMENTE.
+2. SOLO productos de Mercado Libre Argentina. Nada de Amazon, Falabella, Frávega, etc.
+3. Precios en PESOS ARGENTINOS (junio 2026). Productos PREMIUM: notebooks desde $400k, consolas desde $500k, herramientas desde $80k, perfumes desde $60k, zapatillas desde $80k.
+4. **VARIEDAD OBLIGATORIA**: Los 3 productos deben ser de 3 categorías DIFERENTES. Nada de 2 celulares ni 2 perfumes.
+5. Precios realistas para Argentina junio 2026 (con inflación). Si no hay precio, precio_estimado: true.
+6. **CALIDAD**: Nada de productos genéricos sin marca reconocible. Nada de "Kit de herramientas genérico" o "Zapatillas deportivas sin marca".
 
 Resultados:\n${textToAnalyze}`;
 
@@ -340,7 +408,7 @@ async function parseWithGemini(allSnippets, event) {
     .join('\n\n')
     .substring(0, 8000);
 
-  const prompt = `Analizá estos resultados de búsqueda sobre "${event.name}" en Mercado Libre Argentina. Encontrá los 3 MEJORES PRODUCTOS para regalar. Devolvé SOLO este JSON (sin explicaciones): [{"product":"nombre","price":45999,"oldPrice":58999,"description":"1-2 lineas","category":"categoria","link":"url","badge":"Ideal para Papa","precio_estimado":false}]. SOLO productos de Mercado Libre Argentina. Precios en PESOS ARGENTINOS. Productos variados.\n\nResultados:\n${textToAnalyze}`;
+  const prompt = `Analizá estos resultados de búsqueda sobre "${event.name}" en Mercado Libre Argentina. Encontrá los 3 MEJORES PRODUCTOS para regalar (notebooks, consolas, herramientas premium, perfumes importados, smartwatches, zapatillas de marca, sets de asado, auriculares gamer, cafeteras espresso, smart TVs). Devolvé SOLO este JSON: [{"product":"nombre real con marca y modelo","price":459999,"oldPrice":589999,"description":"1-2 lineas atractivas","category":"Tecnologia|Gaming|Herramientas|Perfumeria|Indumentaria|Hogar","link":"URL PRODUCTO REAL articulo.mercadolibre.com.ar/MLA-XXXX","badge":"Regalo TOP","precio_estimado":false}]. REGLAS: 1) SOLO productos de Mercado Libre Argentina. 2) URL DEBE ser de PRODUCTO real (articulo.mercadolibre.com.ar), NO listados ni blogs. 3) Precios en PESOS ARGENTINOS junio 2026 (notebooks +$400k, consolas +$500k, herramientas +$80k). 4) 3 categorías DIFERENTES. 5) Nada sin marca.\n\nResultados:\n${textToAnalyze}`;
 
   try {
     const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
@@ -361,6 +429,107 @@ async function parseWithGemini(allSnippets, event) {
     log(`   ⚠️  Gemini: ${err.message}`);
     return null;
   }
+}
+
+// ── Resolver URL real de producto buscando en ML ──
+async function resolveProductUrl(browser, productName) {
+  if (!productName) return '';
+  const page = await browser.newPage();
+  try {
+    // Buscar el producto en DuckDuckGo acotado a ML
+    const query = `site:mercadolibre.com.ar ${productName}`;
+    const url = `https://html.duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 });
+
+    const links = await page.evaluate(() => {
+      const results = [];
+      const allLinks = document.querySelectorAll('a[href*="mercadolibre.com.ar"]');
+      for (const a of allLinks) {
+        const href = a.href;
+        // Priorizar URLs con MLA-ID
+        if (/\/MLA-?\d{7,12}/.test(href)) {
+          results.push({ url: href, priority: 1 });
+        } else if (/\/_JM/.test(href) && !/listado|ofertas|categorias|blog/i.test(href)) {
+          results.push({ url: href, priority: 2 });
+        }
+        if (results.length >= 3) break;
+      }
+      return results;
+    });
+
+    // Buscar MLA-ID en las URLs de DDG (uddg=...)
+    for (const link of links) {
+      try {
+        const decoded = decodeURIComponent(link.url);
+        const mlaMatch = decoded.match(/MLA-?\d{7,12}/);
+        if (mlaMatch) {
+          await page.close();
+          return decoded;
+        }
+      } catch {}
+    }
+
+    // Si no hay MLA-ID, usar URL de producto sin listado
+    const productUrl = links.find(l => !/listado|ofertas|categorias|blog/i.test(l.url));
+    if (productUrl) {
+      await page.close();
+      return productUrl.url;
+    }
+  } catch (err) {
+    log(`      ⚠️  Resolver URL "${productName.substring(0, 40)}": ${err.message}`);
+  } finally {
+    try { await page.close(); } catch (_) {}
+  }
+  return '';
+}
+
+// ── Validar que la URL sea un producto real de ML ──
+function isValidMLProductUrl(url) {
+  if (!url) return false;
+  // Producto real con MLA-ID
+  if (/\/MLA-?\d{7,12}/i.test(url)) return true;
+  // Producto real con URL amigable que termina en /_JM
+  if (/mercadolibre\.com\.ar\/.+\/_JM/i.test(url)) return true;
+  // Producto con slug descriptivo (tiene guiones, palabras clave de producto)
+  if (/mercadolibre\.com\.ar\/[a-z0-9-]{20,}/i.test(url)
+      && !/listado|ofertas|categorias|blog|publicidad/i.test(url)) {
+    return true;
+  }
+  // Rechazar explícitamente
+  if (/listado\.mercadolibre\.com\.ar/i.test(url)) return false;
+  if (/mercadolibre\.com\.ar\/blog\//i.test(url)) return false;
+  if (/mercadolibre\.com\.ar\/categorias\//i.test(url)) return false;
+  if (/mercadolibre\.com\.ar\/ofertas/i.test(url)) return false;
+  return false;
+}
+
+function validateAndFixOffers(offers, event) {
+  const valid = [];
+  const seen = new Set();
+  for (const offer of offers) {
+    // Validar URL de producto real
+    if (!isValidMLProductUrl(offer.link)) {
+      log(`   ⚠️  "${offer.product}" descartado: link no es producto real de ML (${offer.link?.substring(0, 80)}...)`);
+      continue;
+    }
+    // Validar que tenga nombre de producto con marca
+    if (!offer.product || offer.product.length < 10 || /^(producto|regalo|oferta|item)\b/i.test(offer.product.trim())) {
+      log(`   ⚠️  Producto descartado: nombre demasiado genérico "${offer.product}"`);
+      continue;
+    }
+    // Anti-duplicados
+    const key = (offer.product || '').toLowerCase().trim();
+    if (seen.has(key)) {
+      log(`   ⚠️  Producto duplicado descartado: "${offer.product}"`);
+      continue;
+    }
+    seen.add(key);
+    valid.push(offer);
+  }
+  if (valid.length < offers.length) {
+    log(`   🔍 Filtrados: ${offers.length} → ${valid.length} productos válidos (${offers.length - valid.length} descartados)`);
+  }
+  return valid;
 }
 
 async function parseWithAI(allSnippets, event) {
@@ -499,12 +668,18 @@ function enrichOffers(offers, event) {
       hash = ((hash << 5) - hash) + seed.charCodeAt(j);
       hash |= 0;
     }
-    const rating = Math.round((4.0 + (Math.abs(hash) % 15) / 10) * 10) / 10;
+    const rating = Math.min(5.0, Math.round((4.0 + (Math.abs(hash) % 10) / 10) * 10) / 10);
     const reviews = 120 + (Math.abs(hash) % 380);
     const full = Math.floor(rating);
     const half = rating - full >= 0.5 ? 1 : 0;
-    const empty = 5 - full - half;
+    const empty = Math.max(0, 5 - full - half);
     const starsHtml = '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
+
+    // Validar link: si no es producto real, no usar fallback genérico
+    let finalLink = cleanUrl(offer.link);
+    if (!isValidMLProductUrl(finalLink)) {
+      finalLink = '';
+    }
 
     return {
       id: `express_${i + 1}`,
@@ -515,7 +690,7 @@ function enrichOffers(offers, event) {
       category: offer.category || 'Producto',
       installments: offer.installments || 'Hasta 12 cuotas sin interés',
       imageUrl: offer.imageUrl || '',
-      link: cleanUrl(offer.link) || `https://listado.mercadolibre.com.ar/${encodeURIComponent(event.searchTerms?.[0] || 'regalo')}`,
+      link: finalLink,
       badge: offer.badge || event.badge || 'Destacado',
       precio_estimado: offer.precio_estimado || false,
       rating,
@@ -535,54 +710,90 @@ function generateFallbackOffers(event) {
     dia_del_padre_2026: [
       {
         id: 'express_1',
-        product: 'Kit de Herramientas Stanley 65 Piezas',
-        price: 45999,
-        oldPrice: 58999,
-        description: 'El regalo que todo papá necesita. Maletín completo con herramientas de alta calidad. Ideal para el hogar y el taller.',
-        category: 'Herramientas',
-        installments: 'Hasta 12 cuotas sin interés',
-        imageUrl: 'https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=600&h=600&fit=crop',
-        link: 'https://listado.mercadolibre.com.ar/herramientas-stanley',
-        badge: 'Ideal para Papá',
-        precio_estimado: true,
-        rating: 4.8,
-        reviews: 523,
-        starsHtml: '★★★★★',
-        eventId: 'dia_del_padre_2026',
-        eventName: 'Especial Día del Padre'
-      },
-      {
-        id: 'express_2',
-        product: 'Smartwatch Samsung Galaxy Watch 6',
-        price: 189999,
-        oldPrice: 249999,
-        description: 'Tecnología de punta para papá. Monitor cardíaco, GPS, resistente al agua y más de 90 modos deportivos.',
+        product: 'Notebook Lenovo IdeaPad Gaming 3 Ryzen 5 16GB RAM 512GB SSD RTX 2050',
+        price: 649999,
+        oldPrice: 849999,
+        description: 'El regalo tecnológico definitivo. Para el papá gamer o el que necesita productividad al máximo nivel. Pantalla 15.6" Full HD, volá con los juegos y el trabajo.',
         category: 'Tecnología',
         installments: 'Hasta 18 cuotas sin interés',
-        imageUrl: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop',
-        link: 'https://listado.mercadolibre.com.ar/samsung-galaxy-watch',
-        badge: 'Top en Tecnología',
+        imageUrl: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=600&fit=crop',
+        link: 'https://www.mercadolibre.com.ar/notebook-lenovo-ideapad-gaming-3-ryzen-5',
+        badge: 'Regalo TOP para Papá',
         precio_estimado: true,
-        rating: 4.7,
-        reviews: 892,
+        rating: 4.8,
+        reviews: 637,
         starsHtml: '★★★★½',
         eventId: 'dia_del_padre_2026',
         eventName: 'Especial Día del Padre'
       },
       {
+        id: 'express_2',
+        product: 'Consola PlayStation 5 Slim Digital + 2 Joysticks + Spider-Man 2',
+        price: 799999,
+        oldPrice: 999999,
+        description: 'Para el papá que nunca dejó de ser chico. La PS5 Slim con lector digital, gráficos 4K y el Spider-Man 2 de regalo. Horas de diversión aseguradas.',
+        category: 'Gaming',
+        installments: 'Hasta 18 cuotas sin interés',
+        imageUrl: 'https://images.unsplash.com/photo-1606813907293-d7613a46bab0?w=600&h=600&fit=crop',
+        link: 'https://www.mercadolibre.com.ar/playstation-5-slim-digital',
+        badge: 'Regalo TOP para Papá',
+        precio_estimado: true,
+        rating: 4.9,
+        reviews: 1423,
+        starsHtml: '★★★★★',
+        eventId: 'dia_del_padre_2026',
+        eventName: 'Especial Día del Padre'
+      },
+      {
         id: 'express_3',
-        product: 'Perfume Paco Rabanne Invictus 100ml',
-        price: 89999,
-        oldPrice: 119999,
-        description: 'Fragancia icónica para el hombre ganador. Notas frescas de pomelo y laurel con fondo amaderado. Regalo clásico que nunca falla.',
+        product: 'Set de Asador Premium con Tablas, Cuchillos y Delantal de Cuero Grabado',
+        price: 98999,
+        oldPrice: 139999,
+        description: 'Para el rey del asado. Set completo de asador profesional con tabla de bambú, 4 cuchillos Tramontina, delantal de cuero personalizado y guantes térmicos.',
+        category: 'Hogar',
+        installments: 'Hasta 6 cuotas sin interés',
+        imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=600&fit=crop',
+        link: 'https://www.mercadolibre.com.ar/set-asador-premium',
+        badge: 'Regalo TOP para Papá',
+        precio_estimado: true,
+        rating: 4.7,
+        reviews: 892,
+        starsHtml: '★★★★★',
+        eventId: 'dia_del_padre_2026',
+        eventName: 'Especial Día del Padre'
+      },
+      {
+        id: 'express_4',
+        product: 'Perfume Dior Sauvage Eau de Toilette 100ml Original',
+        price: 129999,
+        oldPrice: 169999,
+        description: 'La fragancia más deseada del mundo. Notas frescas de bergamota de Calabria con pimienta de Sichuan. Elegancia pura para el papá con estilo.',
         category: 'Perfumería',
         installments: 'Hasta 6 cuotas sin interés',
         imageUrl: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=600&fit=crop',
-        link: 'https://listado.mercadolibre.com.ar/perfume-paco-rabanne-invictus',
-        badge: 'Regalo Clásico',
+        link: 'https://www.mercadolibre.com.ar/perfume-dior-sauvage-100ml',
+        badge: 'Regalo TOP para Papá',
         precio_estimado: true,
         rating: 4.9,
-        reviews: 1205,
+        reviews: 2156,
+        starsHtml: '★★★★★',
+        eventId: 'dia_del_padre_2026',
+        eventName: 'Especial Día del Padre'
+      },
+      {
+        id: 'express_5',
+        product: 'Smart TV Samsung 55" Crystal UHD 4K 55CU7000',
+        price: 549999,
+        oldPrice: 699999,
+        description: 'Para que papá viva el fútbol y las series a lo grande. Imagen 4K nítida, HDR10+, sonido envolvente y control remoto con asistente de voz.',
+        category: 'Tecnología',
+        installments: 'Hasta 18 cuotas sin interés',
+        imageUrl: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&h=600&fit=crop',
+        link: 'https://www.mercadolibre.com.ar/smart-tv-samsung-55-crystal-uhd',
+        badge: 'Regalo TOP para Papá',
+        precio_estimado: true,
+        rating: 4.7,
+        reviews: 945,
         starsHtml: '★★★★★',
         eventId: 'dia_del_padre_2026',
         eventName: 'Especial Día del Padre'
@@ -600,7 +811,7 @@ function generateFallbackOffers(event) {
       category: 'Destacado',
       installments: 'Hasta 12 cuotas sin interés',
       imageUrl: 'https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=600&h=600&fit=crop',
-      link: `https://listado.mercadolibre.com.ar/${encodeURIComponent(event.searchTerms?.[0] || 'regalo')}`,
+      link: '',
       badge: event.badge || 'Oferta',
       precio_estimado: true,
       rating: 4.5,
@@ -611,6 +822,11 @@ function generateFallbackOffers(event) {
     }
   ];
 
+  // Elegir 3 aleatorios de entre los disponibles para variar cada ejecución
+  if (eventFallbacks.length > 3) {
+    const shuffled = [...eventFallbacks].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 3);
+  }
   return eventFallbacks;
 }
 
@@ -677,6 +893,34 @@ async function main() {
   let offers = null;
   if (allResults.length > 0) {
     offers = await parseWithAI(allResults, event);
+  }
+
+  // ── Paso 2.5: Resolver URLs reales de ML para cada producto ──
+  if (offers && offers.length > 0) {
+    log('\n── Paso 2.5/4: Buscando URLs reales de ML ──');
+    for (const offer of offers) {
+      const currentLink = offer.link || '';
+      // Si ya tiene URL válida, no buscar
+      if (isValidMLProductUrl(currentLink)) {
+        log(`   ✅ "${offer.product.substring(0, 50)}" ya tiene URL real`);
+        continue;
+      }
+      // Buscar URL real del producto
+      log(`   🔍 Buscando URL real para: "${offer.product.substring(0, 50)}..."`);
+      const realUrl = await resolveProductUrl(browser, offer.product);
+      if (realUrl) {
+        offer.link = realUrl;
+        log(`   ✅ URL encontrada: ${realUrl.substring(0, 80)}...`);
+      } else {
+        log(`   ⚠️  No se encontró URL real para "${offer.product.substring(0, 50)}"`);
+      }
+      await sleep(800); // pausa entre búsquedas
+    }
+  }
+
+  // ── Paso 2.6: Validar URLs de productos ──
+  if (offers && offers.length > 0) {
+    offers = validateAndFixOffers(offers, event);
   }
 
   // ── Paso 3: Enriquecer y resolver imágenes ──

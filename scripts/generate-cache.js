@@ -44,10 +44,10 @@ function getDeterministicRating(seed) {
     hash = ((hash << 5) - hash) + str.charCodeAt(i);
     hash |= 0;
   }
-  const rating = 4.0 + (Math.abs(hash) % 15) / 10;
+  const rating = Math.min(5.0, 4.0 + (Math.abs(hash) % 10) / 10);
   const full = Math.floor(rating);
   const half = rating - full >= 0.5 ? 1 : 0;
-  const empty = 5 - full - half;
+  const empty = Math.max(0, 5 - full - half);
   const starsHtml = '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
   const reviews = 120 + (Math.abs(hash) % 380);
   return { rating: Math.round(rating * 10) / 10, reviews, starsHtml };
@@ -298,7 +298,7 @@ function generateSiteCache(siteId, template, fixture, config, foods, cenaOffers,
       const listPrice = p.oldPrice && p.oldPrice > salePrice ? Math.round(p.oldPrice) : null;
       var linkUrl = p.link && p.link.startsWith('http')
         ? safeUrl(toNonAffiliateUrl(p.link))
-        : safeUrl('https://listado.mercadolibre.com.ar/' + encodeURIComponent((ev.searchTerms && ev.searchTerms[0]) || 'regalo'));
+        : '#'; // sin link válido, la card no es clickeable (mejor que un listado genérico)
       var oldPriceHtml = listPrice ? '<p class="old-price">$' + formatPrice(listPrice) + '</p>' : '';
       var estimadoHtml = p.precio_estimado ? '<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span>' : '';
       var ratingInfo = p.rating && p.starsHtml ? { starsHtml: p.starsHtml, reviews: p.reviews } : getDeterministicRating((p.product || '') + siteId);

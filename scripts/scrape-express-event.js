@@ -48,6 +48,24 @@ function cleanUrl(url) {
   return '';
 }
 
+// Corrige URLs de Mercado Libre que pueden fallar:
+// - Si es un link real de producto (articulo.mercadolibre.com.ar o tiene MLA ID), lo deja pasar
+// - Si es un listado.mercadolibre.com.ar (búsqueda SEO, puede dar "página no encontrada"),
+//   lo convierte al formato de búsqueda directa que siempre funciona
+function fixMercadoLibreLink(link, productName) {
+  if (!link) return '';
+  // Link real de producto: conservarlo tal cual
+  if (link.includes('articulo.mercadolibre.com.ar') || /MLA-?\d{7,12}/.test(link)) {
+    return link;
+  }
+  // Link de búsqueda SEO (listado.mercadolibre.com.ar): reemplazar por búsqueda directa confiable
+  if (link.includes('listado.mercadolibre.com.ar') || link.includes('mercadolibre.com.ar')) {
+    const query = productName || '';
+    return `https://www.mercadolibre.com.ar/s/search?q=${encodeURIComponent(query)}`;
+  }
+  return link;
+}
+
 // ── Cargar evento activo ──
 function getActiveEvent() {
   if (!fs.existsSync(EVENTS_PATH)) {
@@ -515,7 +533,7 @@ function enrichOffers(offers, event) {
       category: offer.category || 'Producto',
       installments: offer.installments || 'Hasta 12 cuotas sin interés',
       imageUrl: offer.imageUrl || '',
-      link: cleanUrl(offer.link) || `https://listado.mercadolibre.com.ar/${encodeURIComponent(event.searchTerms?.[0] || 'regalo')}`,
+      link: fixMercadoLibreLink(cleanUrl(offer.link), offer.product) || `https://www.mercadolibre.com.ar/s/search?q=${encodeURIComponent(offer.product || event.searchTerms?.[0] || 'regalo')}`,
       badge: offer.badge || event.badge || 'Destacado',
       precio_estimado: offer.precio_estimado || false,
       rating,
@@ -542,7 +560,7 @@ function generateFallbackOffers(event) {
         category: 'Herramientas',
         installments: 'Hasta 12 cuotas sin interés',
         imageUrl: 'https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=600&h=600&fit=crop',
-        link: 'https://listado.mercadolibre.com.ar/herramientas-stanley',
+        link: 'https://www.mercadolibre.com.ar/s/search?q=kit+herramientas+stanley+65+piezas',
         badge: 'Ideal para Papá',
         precio_estimado: true,
         rating: 4.8,
@@ -560,7 +578,7 @@ function generateFallbackOffers(event) {
         category: 'Tecnología',
         installments: 'Hasta 18 cuotas sin interés',
         imageUrl: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop',
-        link: 'https://listado.mercadolibre.com.ar/samsung-galaxy-watch',
+        link: 'https://www.mercadolibre.com.ar/s/search?q=samsung+galaxy+watch+6',
         badge: 'Top en Tecnología',
         precio_estimado: true,
         rating: 4.7,
@@ -578,7 +596,7 @@ function generateFallbackOffers(event) {
         category: 'Perfumería',
         installments: 'Hasta 6 cuotas sin interés',
         imageUrl: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=600&fit=crop',
-        link: 'https://listado.mercadolibre.com.ar/perfume-paco-rabanne-invictus',
+        link: 'https://www.mercadolibre.com.ar/s/search?q=perfume+paco+rabanne+invictus+100ml',
         badge: 'Regalo Clásico',
         precio_estimado: true,
         rating: 4.9,
@@ -600,7 +618,7 @@ function generateFallbackOffers(event) {
       category: 'Destacado',
       installments: 'Hasta 12 cuotas sin interés',
       imageUrl: 'https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=600&h=600&fit=crop',
-      link: `https://listado.mercadolibre.com.ar/${encodeURIComponent(event.searchTerms?.[0] || 'regalo')}`,
+      link: `https://www.mercadolibre.com.ar/s/search?q=${encodeURIComponent(event.searchTerms?.[0] || 'regalo')}`,
       badge: event.badge || 'Oferta',
       precio_estimado: true,
       rating: 4.5,

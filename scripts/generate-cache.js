@@ -13,6 +13,7 @@ const TEMPLATE_PATH = path.join(__dirname, '..', 'index.html');
 const FIXTURE_PATH = path.join(__dirname, '..', 'products-fixture.json');
 const CONFIG_PATH = path.join(__dirname, '..', 'config.json');
 const FOOD_PATH = path.join(__dirname, '..', 'food.json');
+const CENA_PATH = path.join(__dirname, '..', 'cena-offers.json');
 const BAKERY_PATH = path.join(__dirname, '..', 'bakery-offers.json');
 const EXPRESS_PATH = path.join(__dirname, '..', 'express-offers.json');
 const EXPRESS_EVENTS_PATH = path.join(__dirname, '..', 'express-events.json');
@@ -180,7 +181,7 @@ async function fetchFromApi(query, proxyConfig) {
 }
 
 // ── Generar HTML para un sitio ───────────────────
-function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffers, apiProducts, expressOffers, expressEvent) {
+function generateSiteCache(siteId, template, fixture, config, foods, cenaOffers, bakeryOffers, apiProducts, expressOffers, expressEvent) {
   const siteConfig = getSiteConfig(config, siteId);
   if (!siteConfig) {
     console.log(`⚠️  Sitio "${siteId}" no encontrado. Saltando.`);
@@ -231,30 +232,40 @@ function generateSiteCache(siteId, template, fixture, config, foods, bakeryOffer
 
   // ============================================================
   // SECCION EXPRESS CENA (al inicio, visible 19:30 en adelante)
+  // Fuente: cena-offers.json (actualizado automáticamente a las 19:00)
+  // Fallback: food.json (datos estáticos, obsoleto)
   // ============================================================
-  if (siteId === 'elpodiofood' && foods && foods.length > 0) {
+  const cenaData = (cenaOffers && cenaOffers.length > 0) ? cenaOffers : foods;
+  if (siteId === 'elpodiofood' && cenaData && cenaData.length > 0) {
+    const esAutomatico = cenaOffers && cenaOffers.length > 0;
     let cenaCards = '';
-    foods.forEach(f => {
+    cenaData.forEach(f => {
       var affLink = safeUrl(toNonAffiliateUrl(f.link));
       var oldPriceHtml = (f.oldPrice && f.oldPrice > f.price) ? '<p class="old-price">$' + formatPrice(f.oldPrice) + '</p>' : '';
+      var ratingInfo = getDeterministicRating((f.restaurant || f.product || '') + 'cena');
+      var estimadoHtml = f.precio_estimado ? '<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span>' : '';
       cenaCards += '<div class="card" onclick="window.location.href=\'' + escapeHtml(affLink) + '\'">' +
         '<img class="card-image" src="' + safeUrl(f.imageUrl) + '" alt="' + escapeHtml(f.product) + '" loading="lazy">' +
         '<div class="card-body">' +
         '<span class="card-badge">' + escapeHtml(f.badge || 'Recomendado') + '</span>' +
         '<h3>' + escapeHtml(f.product) + '</h3>' +
+        '<div class="rating"><span class="stars">' + ratingInfo.starsHtml + '</span><span class="reviews">(' + ratingInfo.reviews + ')</span></div>' +
         '<p class="description">' + escapeHtml(f.description || '') + '</p>' +
-        '<p style="font-size:13px;color:#666;margin:4px 0;">&#127860; ' + escapeHtml(f.restaurant || 'Delivery') + '</p>' +
+        '<p style="font-size:12px;color:#888;margin:4px 0;">&#128205; ' + escapeHtml(f.restaurant || 'Delivery') + ' - ' + escapeHtml(f.location || f.category || '') + '</p>' +
         oldPriceHtml +
-        '<p class="price"><span class="price-sup">$</span>' + formatPrice(f.price) + '</p>' +
+        '<p class="price"><span class="price-sup">$</span>' + formatPrice(f.price) + estimadoHtml + '</p>' +
         '<p class="installments">' + escapeHtml(f.installments) + '</p>' +
         '<button class="btn" onclick="event.stopPropagation(); window.location.href=\'' + escapeHtml(affLink) + '\'">Pedir ahora</button>' +
         '</div></div>';
         totalCards++;
     });
+    var cenaSubtitle = esAutomatico
+      ? '&#128204; Actualizado hoy a las 19:00 — Las 3 mejores ofertas con delivery en CABA'
+      : '&#128204; Las mejores opciones para cenar con delivery en CABA';
     categoriesHtml += '<section id="cena-express" class="section hidden" style="background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);border:2px solid #e67e22;border-radius:16px;padding:24px;margin-bottom:32px;">' +
-      '<div class="section-header"><h2><span class="icon">&#127828;</span> Cena Express - Pedia tu Cena! &#127769;</h2>' +
+      '<div class="section-header"><h2><span class="icon">&#127828;</span> Cena Express - ¡Pedí tu Cena! &#127769;</h2>' +
       '<span style="background:#e67e22;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">&#127769; Desde las 19:30</span></div>' +
-      '<p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">&#128204; Las mejores opciones para cenar con delivery en CABA</p>' +
+      '<p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">' + cenaSubtitle + '</p>' +
       '<div class="grid">' + cenaCards + '</div></section>';
   }
 
@@ -443,6 +454,11 @@ async function main() {
     fixture = readJson(FIXTURE_PATH);
     config = readJson(CONFIG_PATH);
     foods = readJson(FOOD_PATH);
+    var cenaOffers = [];
+    try { if (fs.existsSync(CENA_PATH)) cenaOffers = readJson(CENA_PATH); } catch (_) {}
+    if (cenaOffers.length > 0) {
+      console.log(`🍔 ${cenaOffers.length} ofertas de cena cargadas de cena-offers.json.`);
+    }
     var bakeryOffers = [];
     try { if (fs.existsSync(BAKERY_PATH)) bakeryOffers = readJson(BAKERY_PATH); } catch (_) {}
     var expressOffers = [];
@@ -515,7 +531,7 @@ async function main() {
   let grandTotalCats = 0, grandTotalCards = 0;
 
   for (const siteId of siteIds) {
-    const result = generateSiteCache(siteId, template, fixture, config, foods, bakeryOffers, apiProducts, expressOffers, expressEvent);
+    const result = generateSiteCache(siteId, template, fixture, config, foods, cenaOffers, bakeryOffers, apiProducts, expressOffers, expressEvent);
     if (result) { grandTotalCats += result.categories; grandTotalCards += result.products; }
   }
 

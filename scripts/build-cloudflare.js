@@ -80,6 +80,16 @@ function transformNavLinks(html) {
     .replace(/href="\/"/g, 'href="/"');
 }
 
+// ── Copiar imágenes de bakery a dist/images/bakery/ ──
+const BAKERY_IMAGES_SRC = path.join(ROOT, 'public', 'images', 'bakery');
+const BAKERY_IMAGES_DEST = path.join(DIST, 'images', 'bakery');
+if (fs.existsSync(BAKERY_IMAGES_SRC)) {
+  fs.mkdirSync(BAKERY_IMAGES_DEST, { recursive: true });
+  copyDir(BAKERY_IMAGES_SRC, BAKERY_IMAGES_DEST);
+  const count = fs.readdirSync(BAKERY_IMAGES_SRC).filter(f => f !== '.gitkeep').length;
+  console.log(`✅ ${count} imágenes de bakery → dist/images/bakery/`);
+}
+
 let totalFiles = 0;
 
 // ── Procesar cada sitio ─────────────────────────────
@@ -181,7 +191,7 @@ function createPrivacidadPage() {
   <p>En <strong>El Podio MP</strong> no recopilamos datos personales. Solo mostramos información de productos disponibles en Mercado Libre. Al hacer clic en un producto, sos redirigido a Mercado Libre, donde aplican sus propias políticas de privacidad.</p>
   <p>Utilizamos Google Analytics para medir visitas de forma anónima.</p>
   <p><strong>Cookies:</strong> No usamos cookies propias. Mercado Libre puede establecer cookies al seguir un enlace.</p>
-  <p>Consultas: <a href="mailto:info@elpodiomp.com.ar">info@elpodiomp.com.ar</a></p>
+  <p>Consultas: <a href="mailto:grupomontesdelnorte@gmail.com">grupomontesdelnorte@gmail.com</a></p>
   <p><a href="/">&larr; Volver al inicio</a></p>
 </body>
 </html>`;
@@ -206,7 +216,7 @@ function createTerminosPage() {
   <p><strong>El Podio MP</strong> es un sitio informativo que muestra productos de Mercado Libre. No vendemos productos directamente: mostramos información de productos disponibles en Mercado Libre y redirigimos a su plataforma.</p>
   <p>Todas las compras se realizan en Mercado Libre y están sujetas a sus términos y condiciones.</p>
   <p>Los precios mostrados son aproximados y pueden variar al ingresar a Mercado Libre.</p>
-  <p>Consultas: <a href="mailto:info@elpodiomp.com.ar">info@elpodiomp.com.ar</a></p>
+  <p>Consultas: <a href="mailto:grupomontesdelnorte@gmail.com">grupomontesdelnorte@gmail.com</a></p>
   <p><a href="/">&larr; Volver al inicio</a></p>
 </body>
 </html>`;

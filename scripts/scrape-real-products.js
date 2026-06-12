@@ -31,93 +31,137 @@ const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
 const categories = config.categories;
 const result = {};
 
-async function scrapeCategory(browser, cat, proxyConfig) {
-  const url = `https://listado.mercadolibre.com.ar/${encodeURIComponent(cat.query)}`;
-  console.log(`🔍 ${cat.icon} ${cat.name}...`);
+// ── Filtros de calidad ────────────────────────────
+function applyFilters(products, cat) {
+  const minPrice = cat.minPrice || 0;
+  const excludeKw = (cat.excludeKeywords || []).map(k => k.toLowerCase());
 
-  const page = await browser.newPage();
-  // Viewport aleatorio para evadir fingerprinting
-  const widths = [1366, 1440, 1536, 1920];
-  const heights = [768, 900, 864, 1080];
-  const w = widths[Math.floor(Math.random() * widths.length)];
-  const h = heights[Math.floor(Math.random() * heights.length)];
-  await page.setViewport({ width: w, height: h });
+  return products.filter(p => {
+    const t = p.title.toLowerCase();
 
-  // Autenticación de proxy si aplica
-  if (proxyConfig && proxyConfig.username && proxyConfig.password) {
-    await page.authenticate({
-      username: proxyConfig.username,
-      password: proxyConfig.password
-    });
-  }
+    // Precio mínimo
+    if (minPrice > 0 && p.price < minPrice) return false;
 
-  try {
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 25000 });
-
-    // Esperar a que carguen productos (o que falle rápido)
-    try {
-      await page.waitForSelector('.ui-search-layout__item, .poly-card, .andes-card, li.ui-search-layout__item', { timeout: 8000 });
-    } catch {
-      // Si no encuentra productos, probablemente estamos en verificación
-      const bodyText = await page.evaluate(() => document.body.innerText.substring(0, 200));
-      const bodyHtml = await page.evaluate(() => document.body.innerHTML.substring(0, 500));
-      if (bodyText.includes('verificación') || bodyText.includes('account-verification') ||
-          bodyHtml.includes('account-verification') || bodyText.includes('Valida tu identidad') ||
-          bodyText.includes('Confirma que') || bodyText.includes('robot') || bodyText.includes('humano')) {
-        console.log(`   ⚠️  Mercado Libre pidió verificación (bloqueo anti-bot).`);
-      } else {
-        console.log(`   ⚠️  No se encontraron productos (${bodyText.substring(0, 60)}...)`);
-      }
-      return;
+    // Keywords excluidas (accesorios, repuestos, fundas, etc.)
+    for (const kw of excludeKw) {
+      // Word boundary regex — evita falsos positivos como "mica" dentro de "económicas"
+      const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      if (new RegExp('(^|\\s)' + escaped + '(\\s|$)', 'i').test(t)) return false;
     }
 
-    // Verificar que no sea página de verificación (los botones también usan .andes-card)
-    const isVerification = await page.evaluate(() => {
-      return document.body.innerHTML.includes('account-verification');
+    return true;
+  });
+}
+
+// ── Scraping de una categoría ─────────────────────
+async function scrapeOne(browser, cat, query, proxyConfig) {
+  // ML usa guiones para espacios, no %20. El sort _OrderId_PRICE_DESC solo funciona con guiones.
+  const slug = query.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  const baseUrl = `https://listado.mercadolibre.com.ar/${slug}`;
+  const url = cat.urlSuffix ? `${baseUrl}${cat.urlSuffix}` : baseUrl;
+
+  const page = await browser.newPage();
+
+  // Viewport aleatorio
+  const widths = [1366, 1440, 1536, 1920];
+  const heights = [768, 900, 864, 1080];
+  await page.setViewport({
+    width: widths[Math.floor(Math.random() * widths.length)],
+    height: heights[Math.floor(Math.random() * heights.length)]
+  });
+
+  if (proxyConfig && proxyConfig.username && proxyConfig.password) {
+    await page.authenticate({ username: proxyConfig.username, password: proxyConfig.password });
+  }
+
+  let products = [];
+
+  try {
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+
+    // Scroll humano para cargar lazy images y evadir detección
+    await page.evaluate(async () => {
+      await new Promise(resolve => {
+        let total = 0;
+        const timer = setInterval(() => {
+          window.scrollBy(0, 100 + Math.floor(Math.random() * 200));
+          total += 100;
+          if (total >= 600) { clearInterval(timer); resolve(); }
+        }, 100 + Math.floor(Math.random() * 150));
+      });
     });
+
+    // Esperar cards de producto
+    try {
+      await page.waitForSelector(
+        '.ui-search-layout__item, .poly-card, .andes-card, li.ui-search-layout__item',
+        { timeout: 10000 }
+      );
+    } catch {
+      const bodyHtml = await page.evaluate(() => document.body.innerHTML.substring(0, 500));
+      const bodyText = await page.evaluate(() => document.body.innerText.substring(0, 200));
+
+      if (bodyText.includes('verificación') || bodyHtml.includes('account-verification') ||
+          bodyText.includes('Valida tu identidad') || bodyText.includes('robot') ||
+          bodyText.includes('humano') || bodyText.includes('Confirma que')) {
+        console.log(`   ⚠️  Mercado Libre pidió verificación (bloqueo anti-bot).`);
+      } else {
+        console.log(`   ⚠️  No se encontraron productos.`);
+      }
+      return products;
+    }
+
+    // Verificar página de verificación
+    const isVerification = await page.evaluate(() =>
+      document.body.innerHTML.includes('account-verification')
+    );
     if (isVerification) {
       console.log(`   ⚠️  Mercado Libre pidió verificación (bloqueo anti-bot).`);
-      return;
+      return products;
     }
 
     // Extraer productos
-    const products = await page.evaluate((categoryUrl) => {
+    products = await page.evaluate((categoryUrl) => {
       const items = [];
-      const selectors = ['.ui-search-layout__item', '.poly-card', '.andes-card', 'li.ui-search-layout__item'];
+      const selectors = [
+        '.ui-search-layout__item', '.poly-card', '.andes-card',
+        'li.ui-search-layout__item'
+      ];
       let cards = [];
       for (const sel of selectors) {
         cards = [...document.querySelectorAll(sel)];
         if (cards.length > 0) break;
       }
 
-      for (let i = 0; i < Math.min(cards.length, 3); i++) {
+      for (let i = 0; i < Math.min(cards.length, 6); i++) {
         const el = cards[i];
 
-        const titleEl = el.querySelector('h2, .ui-search-item__title, .poly-component__title, a[title]');
-        const title = titleEl ? (titleEl.textContent.trim() || titleEl.getAttribute('title') || '') : '';
+        const titleEl = el.querySelector(
+          'h2, .ui-search-item__title, .poly-component__title, a[title]'
+        );
+        const title = titleEl
+          ? (titleEl.textContent.trim() || titleEl.getAttribute('title') || '')
+          : '';
         if (!title || title.length < 5) continue;
 
-        // Buscar el link real del producto (no el de tracking genérico)
+        // Link del producto
         let link = '';
-        // Estrategia 1: link directo al artículo
-        let linkEl = el.querySelector('a[href*="articulo.mercadolibre.com.ar"]')
-          || el.querySelector('a[href*="mercadolibre.com.ar"][href*="/MLA-"]');
-        // Estrategia 2: link de tracking (contiene url= con el destino real)
+        let linkEl =
+          el.querySelector('a[href*="articulo.mercadolibre.com.ar"]') ||
+          el.querySelector('a[href*="mercadolibre.com.ar"][href*="/MLA-"]');
+
         if (!linkEl) {
           const allLinks = el.querySelectorAll('a');
           for (const a of allLinks) {
-            const h = a.href || '';
-            if (h.includes('mclics') || h.includes('click1') || h.includes('click2')) {
+            if (a.href && (a.href.includes('mclics') || a.href.includes('click1') || a.href.includes('click2'))) {
               linkEl = a; break;
             }
           }
         }
-        // Estrategia 3: el primer link disponible
         if (!linkEl) linkEl = el.querySelector('a');
 
         if (linkEl && linkEl.href) {
           let href = linkEl.href;
-          // Decodificar URL de tracking de ML
           if ((href.includes('mclics') || href.includes('click')) && href.includes('url=')) {
             try {
               const urlParam = new URL(href).searchParams.get('url');
@@ -126,72 +170,140 @@ async function scrapeCategory(browser, cat, proxyConfig) {
           }
           link = href.split('?')[0].split('#')[0];
         }
-        // Estrategia 4: reconstruir desde MLA ID en el HTML del card
+
+        // Reconstruir desde MLA ID
         if (!link || !/MLA-?\d{7,12}/.test(link)) {
           const mlaMatch = el.innerHTML.match(/MLA[_-]?(\d{7,12})/);
           if (mlaMatch) {
-            const s = (title || 'producto').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').substring(0, 80);
+            const s = (title || 'producto').toLowerCase()
+              .normalize('NFD').replace(/[̀-ͯ]/g, '')
+              .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').substring(0, 80);
             link = `https://www.mercadolibre.com.ar/MLA-${mlaMatch[1]}-${s}-_JM`;
           }
         }
-        // Fallback final
         if (!link) link = categoryUrl || '';
 
+        // Imagen
         const imgEl = el.querySelector('img');
         let imageUrl = '';
         if (imgEl) {
           imageUrl = imgEl.dataset.src || imgEl.src || '';
-          if (imageUrl && imageUrl.includes('-I.jpg')) imageUrl = imageUrl.replace('-I.jpg', '-O.jpg');
-          if (imageUrl && imageUrl.startsWith('http://')) imageUrl = imageUrl.replace('http://', 'https://');
+          if (imageUrl && imageUrl.includes('-I.jpg'))
+            imageUrl = imageUrl.replace('-I.jpg', '-O.jpg');
+          if (imageUrl && imageUrl.startsWith('http://'))
+            imageUrl = imageUrl.replace('http://', 'https://');
         }
 
-        const priceEl = el.querySelector('.price-tag-fraction, .andes-money-amount__fraction, [class*="price-tag-amount"]');
+        // Precio
+        const priceEl = el.querySelector(
+          '.price-tag-fraction, .andes-money-amount__fraction, [class*="price-tag-amount"]'
+        );
         let price = 0;
         if (priceEl) price = parseInt(priceEl.textContent.replace(/\D/g, '')) || 0;
 
-        const oldPriceEl = el.querySelector('.price-tag-line-through, s .price-tag-fraction, [class*="price__old"]');
+        const oldPriceEl = el.querySelector(
+          '.price-tag-line-through, s .price-tag-fraction, [class*="price__old"]'
+        );
         let oldPrice = null;
         if (oldPriceEl) oldPrice = parseInt(oldPriceEl.textContent.replace(/\D/g, '')) || null;
 
+        // Cuotas (prioridad sobre otros badges)
         let badge = 'Destacado';
-        if (oldPrice && price && oldPrice > price) {
-          const pct = Math.round(((oldPrice - price) / oldPrice) * 100);
-          if (pct > 0) badge = `${pct}% OFF`;
-        } else if (el.querySelector('.ui-search-item__shipping--free, [class*="free"]')) {
-          badge = 'Envío Gratis';
+        let cuotas = null;
+        const cardText = el.innerText || '';
+
+        // Detectar cuotas sin interés
+        const sinInteresMatch = cardText.match(/(\d+)\s*cuotas\s*(?:de\s*\$?[\d.,]+\s*)?sin\s*inter[ée]s/gi)
+          || cardText.match(/mismo\s*precio\s*(?:en\s*)?(\d+)\s*cuotas/gi)
+          || cardText.match(/hasta\s*(\d+)\s*cuotas\s*sin\s*inter[ée]s/gi);
+        // Detectar cualquier cuota
+        const cuotasMatch = cardText.match(/(\d+)\s*cuotas\s*de\s*\$?([\d.,]+)/gi);
+
+        if (sinInteresMatch && sinInteresMatch.length > 0) {
+          const numMatch = sinInteresMatch[0].match(/(\d+)/);
+          const cant = numMatch ? parseInt(numMatch[1]) : null;
+          cuotas = { cantidad: cant, sinInteres: true };
+          badge = cant ? `${cant} cuotas sin interés` : 'Cuotas sin interés';
+        } else if (cuotasMatch && cuotasMatch.length > 0) {
+          const numMatch = cuotasMatch[0].match(/(\d+)\s*cuotas/);
+          const cant = numMatch ? parseInt(numMatch[1]) : null;
+          cuotas = { cantidad: cant, sinInteres: false };
+          badge = cant ? `${cant} cuotas` : 'Cuotas disponibles';
         }
 
-        items.push({ title, price: price || 99999, oldPrice, imageUrl, badge, link });
-        if (items.length >= 20) break;
+        // Si no hay cuotas, usar descuento o envío
+        if (!cuotas) {
+          if (oldPrice && price && oldPrice > price) {
+            const pct = Math.round(((oldPrice - price) / oldPrice) * 100);
+            if (pct > 0) badge = `${pct}% OFF`;
+          } else if (el.querySelector('.ui-search-item__shipping--free, [class*="shipping"]')) {
+            badge = 'Envío Gratis';
+          }
+        }
+
+        items.push({
+          title, price: price || 99999, oldPrice, imageUrl, badge, link, cuotas
+        });
       }
       return items;
     }, url);
 
-    if (products.length > 0) {
-      console.log(`   ✅ ${products.length} productos`);
-      result[cat.id] = products.map(p => ({
-        title: p.title,
-        price: p.price,
-        oldPrice: p.oldPrice,
-        imageUrl: p.imageUrl,
-        badge: p.badge,
-        description: `Producto real de Mercado Libre. ${p.badge.includes('OFF') ? '¡Aprovechá el descuento!' : 'Calidad garantizada con los mejores vendedores.'}`,
-        link: p.link
-      }));
-    } else {
-      console.log(`   ⚠️  Sin productos extraíbles.`);
-    }
   } catch (err) {
     console.log(`   ❌ ${err.message}`);
   } finally {
     await page.close();
   }
+
+  return products;
 }
 
+// ── Scraping con fallback ─────────────────────────
+async function scrapeCategory(browser, cat, proxyConfig) {
+  console.log(`🔍 ${cat.icon} ${cat.name}...`);
+
+  // Intento 1: query principal
+  let products = await scrapeOne(browser, cat, cat.query, proxyConfig);
+
+  // Intento 2: fallback (si existe y no se obtuvo nada)
+  if (products.length === 0 && cat.fallbackQuery) {
+    console.log(`   🔄 Query principal sin resultados. Probando fallback: "${cat.fallbackQuery}"...`);
+    // Delay extra para no parecer bot
+    await new Promise(r => setTimeout(r, 2000 + Math.floor(Math.random() * 3000)));
+    products = await scrapeOne(browser, cat, cat.fallbackQuery, proxyConfig);
+  }
+
+  // Aplicar filtros de calidad
+  if (products.length > 0) {
+    const filtered = applyFilters(products, cat);
+    const descartados = products.length - filtered.length;
+
+    if (filtered.length > 0) {
+      const extra = descartados > 0
+        ? ` (${descartados} accesorios/repuestos descartados)`
+        : '';
+      console.log(`   ✅ ${filtered.length} productos${extra}`);
+      result[cat.id] = filtered.map(p => ({
+        title: p.title,
+        price: p.price,
+        oldPrice: p.oldPrice,
+        imageUrl: p.imageUrl,
+        badge: p.badge,
+        cuotas: p.cuotas || null,
+        description: p.cuotas && p.cuotas.sinInteres
+          ? `¡${p.cuotas.cantidad || ''} cuotas sin interés en Mercado Libre! Aprovechá la financiación.`
+          : `Producto real de Mercado Libre. ${p.badge.includes('OFF') ? '¡Aprovechá el descuento!' : 'Calidad garantizada con los mejores vendedores.'}`,
+        link: p.link
+      }));
+    } else {
+      console.log(`   ⚠️  ${products.length} scrapeados pero ninguno pasó los filtros (minPrice: $${cat.minPrice || 0}, excluir: ${(cat.excludeKeywords || []).length} keywords).`);
+    }
+  }
+}
+
+// ── Main ──────────────────────────────────────────
 async function main() {
   console.log('🛒 Extrayendo productos reales de Mercado Libre...\n');
 
-  // ── Configurar proxy desde .env ──
   const proxyConfig = parseProxyUrl(process.env.PROXY_URL);
   const launchArgs = [
     '--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage',
@@ -212,16 +324,15 @@ async function main() {
   for (let i = 0; i < categories.length; i++) {
     await scrapeCategory(browser, categories[i], proxyConfig);
     if (i < categories.length - 1) {
-      // Delay aleatorio entre 4 y 8 segundos para evadir detección
-      const delay = 4000 + Math.floor(Math.random() * 4000);
-      console.log(`   ⏳ Esperando ${(delay/1000).toFixed(1)}s...`);
+      const delay = 4000 + Math.floor(Math.random() * 5000);
+      console.log(`   ⏳ Esperando ${(delay / 1000).toFixed(1)}s...`);
       await new Promise(r => setTimeout(r, delay));
     }
   }
 
   await browser.close();
 
-  // Mantener fixture anterior para categorías sin resultado
+  // Mantener fixture anterior para categorías sin resultado nuevo
   let oldFixture = {};
   if (fs.existsSync(FIXTURE_PATH)) {
     try { oldFixture = JSON.parse(fs.readFileSync(FIXTURE_PATH, 'utf8')); } catch (_) {}
@@ -230,10 +341,9 @@ async function main() {
     if (!result[cat.id] && oldFixture[cat.id]) result[cat.id] = oldFixture[cat.id];
   });
 
-  const updated = Object.keys(result).filter(k => {
-    // Contar cuántas categorías tienen datos reales (con link a Meli)
-    return result[k].some(p => p.link && p.link.includes('mercadolibre'));
-  }).length;
+  const updated = Object.keys(result).filter(k =>
+    result[k].some(p => p.link && p.link.includes('mercadolibre'))
+  ).length;
 
   fs.writeFileSync(FIXTURE_PATH, JSON.stringify(result, null, 2), 'utf8');
   console.log(`\n💾 ${Object.keys(result).length} categorías guardadas (${updated} con productos reales de Meli).`);

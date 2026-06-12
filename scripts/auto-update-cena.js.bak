@@ -1,13 +1,13 @@
 /**
- * Pipeline automático de Ofertas de Panadería
- * Ejecutar: node scripts/auto-update-bakery.js
+ * Pipeline automático de Ofertas de Cena
+ * Ejecutar: node scripts/auto-update-cena.js
  *
  * Hace todo en secuencia:
- * 1. Scrapea ofertas de medialunas/facturas (Puppeteer + Gemini)
- * 2. Regenera todos los cache_*.html (incluye la sección de panadería)
+ * 1. Scrapea ofertas de cena con delivery en CABA (Puppeteer + DeepSeek/Gemini)
+ * 2. Regenera todos los cache_*.html (incluye la sección de cena)
  * 3. Commitea y pushea solo si hubo cambios
  *
- * Diseñado para ejecutarse a las 16:00 ART (antes de la merienda)
+ * Diseñado para ejecutarse a las 19:00 ART (antes de la cena)
  */
 
 const { execSync } = require('child_process');
@@ -32,40 +32,29 @@ async function run(cmd, label) {
     const errorMsg = `El comando falló:\n${cmd}\n\nError: ${err.message}`;
     log(`❌ ${label} falló: ${err.message}`);
     try {
-      await sendAlert(`Fallo en Pipeline Panadería: ${label}`, errorMsg);
+      await sendAlert(`Fallo en Pipeline Cena: ${label}`, errorMsg);
     } catch (_) {}
     return false;
   }
 }
 
 async function main() {
-  log('🥐 ══════ PIPELINE PANADERÍA INICIADO ══════');
+  log('🍔 ══════ PIPELINE CENA EXPRESS INICIADO ══════');
 
-  // Paso 1: Scraping de ofertas de panadería
+  // Paso 1: Scraping de ofertas de cena
   const scrapeOk = await run(
-    'node scripts/scrape-bakery-offers.js',
-    '1/4 Scraping ofertas de medialunas/facturas'
+    'node scripts/scrape-cena-offers.js',
+    '1/3 Scraping ofertas de cena delivery CABA'
   );
 
   if (!scrapeOk) {
     log('⚠️  El scraping falló, pero continuamos con los datos existentes.');
   }
 
-  // Paso 1.5: Generar imágenes IA para las ofertas
-  const imagesOk = await run(
-    'node scripts/generate-bakery-images.js',
-    '2/4 Generando imágenes IA de panadería',
-    300000
-  );
-
-  if (!imagesOk) {
-    log('⚠️  La generación de imágenes falló. Se usarán las existentes.');
-  }
-
   // Paso 2: Regenerar cachés
   const cacheOk = await run(
     'node scripts/generate-cache.js',
-    '3/4 Regenerando cache_*.html'
+    '2/3 Regenerando cache_*.html'
   );
 
   if (!cacheOk) {
@@ -74,7 +63,7 @@ async function main() {
   }
 
   // Paso 3: Commit y push si hay cambios
-  log('4/4 Verificando cambios para commit...');
+  log('3/3 Verificando cambios para commit...');
   try {
     const status = execSync('git status --porcelain', { cwd: ROOT, encoding: 'utf8' });
     if (status.trim()) {
@@ -82,9 +71,9 @@ async function main() {
       log(`   Archivos modificados: ${changedFiles.length}`);
       changedFiles.forEach(f => console.log(`     - ${f}`));
 
-      execSync('git add cache_*.html bakery-offers.json bakery-image-cache.json bakery-history.json contador.json public/images/bakery/ express-offers.json', { cwd: ROOT });
+      execSync('git add cache_*.html cena-offers.json cena-history.json contador.json', { cwd: ROOT });
       const today = new Date().toLocaleDateString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' });
-      const commitMsg = `auto-update: ofertas de panadería e imagenes IA actualizadas (${today})`;
+      const commitMsg = `auto-update: ofertas de cena actualizadas (${today})`;
       execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT });
       log('   ✅ Commit realizado.');
 
@@ -98,17 +87,17 @@ async function main() {
     const errorMsg = `Fallo al empujar cambios a GitHub:\n${err.message}`;
     log(`❌ Git falló: ${err.message}`);
     try {
-      await sendAlert(`Fallo en Pipeline Panadería: Git Push`, errorMsg);
+      await sendAlert(`Fallo en Pipeline Cena: Git Push`, errorMsg);
     } catch (_) {}
   }
 
-  log('🥐 ══════ PIPELINE PANADERÍA COMPLETADO ══════');
+  log('🍔 ══════ PIPELINE CENA EXPRESS COMPLETADO ══════');
 }
 
 main().catch(async (err) => {
   log(`❌ Error crítico inesperado: ${err.message}`);
   try {
-    await sendAlert('Fallo Crítico en Pipeline Panadería', `Ocurrió un error inesperado:\n${err.message}`);
+    await sendAlert('Fallo Crítico en Pipeline Cena', `Ocurrió un error inesperado:\n${err.message}`);
   } catch (_) {}
   process.exit(1);
 });

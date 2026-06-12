@@ -1,17 +1,18 @@
 /**
- * BUSCADOR DE OFERTAS DE PANADERÍA — "Medialunas & Facturas"
+ * BUSCADOR DE OFERTAS DE CENA — "Cena Express"
  *
- * Busca las 3 mejores ofertas de medialunas o facturas de panaderías
- * y restaurantes en Argentina. Extrae precio, origen y foto.
+ * Busca las 3 mejores ofertas de cena con delivery en CABA:
+ * hamburguesas, pizza, empanadas, lomitos, sushi, tacos, milanesas y más.
+ * Extrae precio, origen y foto.
  *
  * Estrategia:
  *   1. Puppeteer → busca en Google Argentina con múltiples queries
  *   2. Extrae snippets, títulos y URLs de los resultados
  *   3. DeepSeek/Gemini AI → parsea el texto no estructurado a JSON (nombre, precio, ubicación)
- *   4. Imagen → intenta extraer del sitio de la panadería, fallback a Unsplash
- *   5. Guarda las 3 mejores ofertas en bakery-offers.json
+ *   4. Imagen → intenta extraer del sitio del restaurante, fallback a Unsplash
+ *   5. Guarda las 3 mejores ofertas en cena-offers.json
  *
- * Ejecutar: node scripts/scrape-bakery-offers.js
+ * Ejecutar: node scripts/scrape-cena-offers.js
  */
 
 const puppeteer = require('puppeteer-extra');
@@ -23,8 +24,8 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 puppeteer.use(StealthPlugin());
 require('dotenv').config({ override: true });
 
-const OUTPUT_PATH = path.join(__dirname, '..', 'bakery-offers.json');
-const HISTORY_PATH = path.join(__dirname, '..', 'bakery-history.json');
+const OUTPUT_PATH = path.join(__dirname, '..', 'cena-offers.json');
+const HISTORY_PATH = path.join(__dirname, '..', 'cena-history.json');
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 // ── Historial de ofertas recientes (anti-repetición) ──
@@ -44,7 +45,6 @@ function saveHistory(history) {
 }
 
 function cleanOldHistory(history) {
-  // Las entradas tienen formato "bakery|product|fecha"
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - (history.maxAge || 7));
   const cutoffStr = cutoff.toISOString().split('T')[0];
@@ -56,13 +56,11 @@ function cleanOldHistory(history) {
   return history;
 }
 
-function addToHistory(history, bakery, product) {
+function addToHistory(history, restaurant, product) {
   const today = new Date().toISOString().split('T')[0];
-  const entry = `${bakery}|${product}|${today}`;
-  // Evitar duplicados
-  history.recent = history.recent.filter(e => !e.startsWith(`${bakery}|${product}|`));
+  const entry = `${restaurant}|${product}|${today}`;
+  history.recent = history.recent.filter(e => !e.startsWith(`${restaurant}|${product}|`));
   history.recent.push(entry);
-  // Mantener solo los últimos 30
   if (history.recent.length > 30) {
     history.recent = history.recent.slice(-30);
   }
@@ -76,37 +74,40 @@ function getRecentAvoidList(history) {
   });
 }
 
-// ── Pool de queries para buscar ofertas de panadería en CABA ──
+// ── Pool de queries para buscar ofertas de cena en CABA ──
 // Se seleccionan 6 queries por día usando el día del mes como seed
 const QUERY_POOL = [
-  // Medialunas y facturas (clásicas)
-  'docena de medialunas delivery CABA oferta',
-  'facturas medialunas envio Capital Federal panaderia',
-  'promo medialunas docena delivery zona norte sur CABA',
-  'panaderia delivery CABA medialunas facturas precio',
-  'docena facturas envio gratis Capital Federal',
-  'medialunas manteca delivery capital federal oferta',
-  // Churros y pastelería
-  'churros rellenos docena delivery CABA',
-  'torta casera envio capital federal panaderia',
-  'sandwiches miga docena delivery CABA oferta',
-  'chipa caliente docena delivery capital',
-  'pasteleria artesanal envio CABA oferta',
-  // Variantes de medialunas
-  'medialunas grasa jamon queso delivery CABA',
-  'promo merienda delivery capital federal panaderia',
-  'tortas individuales porcion delivery CABA',
-  'combo desayuno merienda delivery capital federal',
-  'medialunas saladas jyq docena envio CABA',
-  'budin pan dulce artesanal delivery capital',
-  'alfajores artesanales docena delivery CABA',
+  // Hamburguesas
+  'hamburguesa combo delivery CABA oferta',
+  'burger doble carne delivery capital federal promo',
+  'combo hamburguesa papas delivery zona norte CABA',
+  // Pizzas
+  'pizza grande muzza delivery CABA oferta',
+  'pizza promo delivery capital federal argentina',
+  'pizza napolitana fugazzeta delivery zona sur CABA',
+  // Empanadas
+  'empanadas docena delivery CABA oferta promo',
+  'empanadas carne pollo jyq delivery capital federal',
+  // Lomitos y sandwiches
+  'lomito completo delivery CABA oferta',
+  'sandwich bondiola lomito delivery capital federal',
+  // Sushi
+  'sushi rolls combo delivery CABA oferta promo',
+  'sushi promo pareja delivery capital federal',
+  // Milanesas
+  'milanesa napolitana papas delivery CABA',
+  'milanesa sandwich delivery oferta capital federal',
+  // Tacos y mexicanos
+  'tacos mexicanos burritos delivery CABA oferta',
+  'comida mexicana combo delivery capital federal',
+  // Parrilla y asado
+  'parrillada delivery CABA oferta promo',
+  'asado sandwich vacio delivery capital federal',
 ];
 
 function getDailyQueries() {
-  // Usar el día del mes como seed para seleccionar 6 queries cada día
   const dayOfMonth = new Date().getDate();
   const shuffled = [...QUERY_POOL];
-  // Fisher-Yates shuffle con seed determinístico
   let seed = dayOfMonth;
   for (let i = shuffled.length - 1; i > 0; i--) {
     seed = (seed * 16807 + 0) % 2147483647;
@@ -114,7 +115,7 @@ function getDailyQueries() {
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
   const selected = shuffled.slice(0, 6);
-  log(`   📋 Queries del día (seed=${dayOfMonth}): ${selected.map(q => q.substring(0, 30) + '...').join(', ')}`);
+  log(`   📋 Queries del día (seed=${dayOfMonth}): ${selected.map(q => q.substring(0, 35) + '...').join(', ')}`);
   return selected;
 }
 
@@ -204,7 +205,6 @@ async function searchBing(browser, query) {
 }
 
 async function searchGoogle(browser, query) {
-  // Google solo como fallback — tiene anti-bot agresivo
   const page = await browser.newPage();
   const results = [];
   try {
@@ -216,7 +216,6 @@ async function searchGoogle(browser, query) {
     log(`   🔍 Google: "${query}"`);
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 });
 
-    // Ver si nos bloquearon
     const bodyText = await page.evaluate(() => document.body.innerText.substring(0, 300));
     if (bodyText.includes('consent.google') || bodyText.includes('Before you continue') || bodyText.includes('not a robot')) {
       log('      ⚠️  Google pide CAPTCHA/consent. Saltando.');
@@ -251,9 +250,7 @@ async function searchGoogle(browser, query) {
   return results;
 }
 
-// ── Buscar en todos los motores ──
 async function searchAllEngines(browser, query) {
-  // Prioridad: DuckDuckGo → Bing → Google (menos a más agresivo anti-bot)
   let results = await searchDuckDuckGo(browser, query);
   if (results.length < 5) {
     const bingResults = await searchBing(browser, query);
@@ -266,7 +263,7 @@ async function searchAllEngines(browser, query) {
   return results;
 }
 
-// ── Extraer imagen de la página de la panadería ──
+// ── Extraer imagen de la página del restaurante ──
 async function extractImageFromPage(browser, url) {
   if (!url || !url.startsWith('http')) return null;
 
@@ -275,13 +272,20 @@ async function extractImageFromPage(browser, url) {
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 12000 });
 
     const imageUrl = await page.evaluate(() => {
-      // Buscar imágenes relevantes (producto, hero, galería)
       const ogImage = document.querySelector('meta[property="og:image"]');
-      if (ogImage && ogImage.content) return ogImage.content;
+      if (ogImage && ogImage.content) {
+        const og = ogImage.content;
+        if (!/logo|icon|avatar|favicon/i.test(og)) return og;
+      }
 
-      // Buscar imágenes grandes (posiblemente de producto)
       const imgs = [...document.querySelectorAll('img')]
-        .filter(img => img.naturalWidth > 300 || img.width > 300)
+        .filter(img => {
+          const src = (img.src || img.dataset?.src || '');
+          if (/logo|icon|avatar|favicon|pixel|tracking|1x1|blank|placeholder/i.test(src)) return false;
+          const w = img.naturalWidth || img.width || 0;
+          const h = img.naturalHeight || img.height || 0;
+          return w > 300 && h > 300;
+        })
         .sort((a, b) => {
           const aSize = (a.naturalWidth || a.width || 0) * (a.naturalHeight || a.height || 0);
           const bSize = (b.naturalWidth || b.width || 0) * (b.naturalHeight || b.height || 0);
@@ -310,24 +314,25 @@ async function parseWithDeepSeek(allSnippets, avoidList) {
   const textToAnalyze = allSnippets
     .map((s, i) => `[${i + 1}] ${s.title}\n${s.snippet}\nLink: ${s.link}`)
     .join('\n\n')
-    .substring(0, 8000); // No exceder contexto
+    .substring(0, 8000);
 
   const avoidText = avoidList && avoidList.length > 0
-    ? `\n\n🚫 PANADERÍAS/PRODUCTOS A EVITAR (ya fueron mostrados en días recientes):\n${avoidList.map(a => `  - ${a}`).join('\n')}\nBuscá alternativas DIFERENTES a estas. Priorizá panaderías NUEVAS y de barrios DISTINTOS.`
+    ? `\n\n🚫 RESTAURANTES/PRODUCTOS A EVITAR (ya fueron mostrados en días recientes):\n${avoidList.map(a => `  - ${a}`).join('\n')}\nBuscá alternativas DIFERENTES a estas. Priorizá restaurantes NUEVOS y de barrios DISTINTOS.`
     : '';
 
-  const prompt = `Analizá estos resultados de búsqueda sobre ofertas de PANADERÍA y PASTELERÍA con DELIVERY en CABA (Capital Federal), Argentina.
+  const prompt = `Analizá estos resultados de búsqueda sobre OFERTAS DE CENA con DELIVERY en CABA (Capital Federal), Argentina.
 
 Encontrá las 3 MEJORES OFERTAS que tengan ENVÍO A TODO CABA y devolvé SOLO este JSON (sin explicaciones):
 
 [
   {
-    "bakery": "Nombre real de la panadería",
-    "product": "Ej: Docena de Medialunas de Manteca",
-    "price": 4500,
-    "oldPrice": 5800,
-    "description": "1-2 líneas tentadoras, mencioná que hacen envíos a todo CABA",
-    "location": "Barrio, CABA (ej: Palermo, Belgrano, Caballito)",
+    "restaurant": "Nombre real del restaurante (ej: Big Pons, Pizza Cero, La Farola)",
+    "product": "Ej: Combo Doble Bacon + Papas + Gaseosa",
+    "price": 8500,
+    "oldPrice": 11000,
+    "description": "1-2 líneas tentadoras describiendo el plato, mencioná que hacen envíos a todo CABA",
+    "location": "Barrio, CABA (ej: Palermo, Belgrano, Caballito, Villa Crespo)",
+    "category": "Hamburguesería | Pizzería | Empanadas | Lomitería | Sushi | Mexicana | Milanesas | Parrilla",
     "installments": "Envío a todo CABA | Delivery en 45 min",
     "link": "URL real del resultado",
     "badge": "Mejor Precio",
@@ -336,12 +341,13 @@ Encontrá las 3 MEJORES OFERTAS que tengan ENVÍO A TODO CABA y devolvé SOLO es
 ]
 
 Reglas CRÍTICAS:
-- SOLO panaderías/confiterías que hagan DELIVERY/ENVÍO a todo CABA o Capital Federal.
-- Si la panadería no hace envíos, DESCARTALA.
-- Precios en PESOS ARGENTINOS. Extraé el número de "$4500", "$4.500", "ARS 4500".
-- Productos de panadería/pastelería: medialunas (docena), facturas (kg/docena), churros, tortas, sandwiches de miga, chipá, budines, alfajores artesanales.
-- Las 3 ofertas DEBEN ser de al menos 2 panaderías DIFERENTES (idealmente 3).
-- Diversificá los BARRIOS: no todas en el mismo barrio de CABA.
+- SOLO restaurantes/casas de comida que hagan DELIVERY/ENVÍO a todo CABA o Capital Federal.
+- Si el restaurante no hace envíos, DESCARTALO.
+- Precios en PESOS ARGENTINOS. Extraé el número de "$8500", "$8.500", "ARS 8500".
+- Tipos de comida para la cena: hamburguesas con papas, pizzas grandes, docena de empanadas, lomitos completos, rolls de sushi, tacos/burritos, milanesa napolitana, parrillada para 2.
+- Las 3 ofertas DEBEN ser de al menos 2 restaurantes DIFERENTES (idealmente 3).
+- Diversificá los TIPOS DE COMIDA: **OBLIGATORIO 3 CATEGORÍAS DIFERENTES**. Si una es empanadas, las otras dos DEBEN ser de tipos distintos (hamburguesa, pizza, lomito, sushi, etc.). NUNCA pongas 2 o 3 ofertas de la misma categoría. Si los resultados no tienen variedad, al menos 2 categorías distintas.
+- Diversificá los BARRIOS: cada oferta debe ser de un barrio DIFERENTE de CABA (ej: Palermo, Belgrano, Caballito, Villa Crespo, Almagro, Recoleta, San Telmo, Colegiales). No pongas "CABA" genérico, poné el barrio real.
 - Si no hay info de delivery, precio_estimado: true.
 - Si no hay 3 ofertas con delivery, devolvé las que tengan.${avoidText}
 
@@ -363,12 +369,11 @@ Resultados:\n${textToAnalyze}`;
     });
 
     const text = res.data.choices[0].message.content.trim();
-    // Extraer JSON del response (puede tener markdown)
     const jsonMatch = text.match(/\[[\s\S]*\]/);
     if (jsonMatch) {
       const parsed = JSON.parse(jsonMatch[0]);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        log(`   🤖 DeepSeek extrajo ${parsed.length} ofertas.`);
+        log(`   🤖 DeepSeek extrajo ${parsed.length} ofertas de cena.`);
         return parsed.slice(0, 3);
       }
     }
@@ -391,10 +396,10 @@ async function parseWithGemini(allSnippets, avoidList) {
     .substring(0, 8000);
 
   const avoidText = avoidList && avoidList.length > 0
-    ? `EVITÁ estas panaderías/productos ya mostrados: ${avoidList.join('; ')}. `
+    ? `EVITÁ estos restaurantes/productos ya mostrados: ${avoidList.join('; ')}. `
     : '';
 
-  const prompt = `Analizá estos resultados de búsqueda sobre ofertas de PANADERÍA Y PASTELERÍA con DELIVERY EN CABA. ${avoidText}Encontrá las 3 MEJORES OFERTAS que hagan envíos a Capital Federal. Devolvé SOLO este JSON (sin explicaciones): [{"bakery":"nombre","product":"desc","price":4500,"oldPrice":5800,"description":"1-2 lineas","location":"Barrio, CABA","installments":"Envío a todo CABA","link":"url","badge":"Destacado","precio_estimado":false}]. Productos: medialunas, facturas, churros, tortas, sandwiches de miga, chipá, budines, alfajores. SOLO panaderías con delivery a CABA. Las 3 ofertas de al menos 2 panaderías DIFERENTES. Diversificá barrios. Precios en PESOS ARGENTINOS.\n\nResultados:\n${textToAnalyze}`;
+  const prompt = `Analizá estos resultados de búsqueda sobre OFERTAS DE CENA con DELIVERY EN CABA. ${avoidText}Encontrá las 3 MEJORES OFERTAS que hagan envíos a Capital Federal. Devolvé SOLO este JSON (sin explicaciones): [{"restaurant":"nombre","product":"desc","price":8500,"oldPrice":11000,"description":"1-2 lineas","location":"Barrio, CABA","category":"Hamburguesería","installments":"Envío a todo CABA","link":"url","badge":"Destacado","precio_estimado":false}]. Tipos: hamburguesas, pizzas, empanadas, lomitos, sushi, tacos, milanesas, parrilla. SOLO con delivery a CABA. Las 3 ofertas de al menos 2 restaurantes DIFERENTES. Diversificá tipo de comida y barrios. Precios en PESOS ARGENTINOS.\n\nResultados:\n${textToAnalyze}`;
 
   try {
     const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
@@ -407,7 +412,7 @@ async function parseWithGemini(allSnippets, avoidList) {
     const parsed = JSON.parse(responseText);
 
     if (Array.isArray(parsed) && parsed.length > 0) {
-      log(`   🤖 Gemini extrajo ${parsed.length} ofertas.`);
+      log(`   🤖 Gemini extrajo ${parsed.length} ofertas de cena.`);
       return parsed.slice(0, 3);
     }
     return null;
@@ -419,118 +424,106 @@ async function parseWithGemini(allSnippets, avoidList) {
 
 // ── Parser combinado: DeepSeek → Gemini → fallback ──
 async function parseWithAI(allSnippets, avoidList) {
-  // 1. Intentar DeepSeek (más barato, sin quota issues)
   const deepseekResult = await parseWithDeepSeek(allSnippets, avoidList);
   if (deepseekResult) return deepseekResult;
 
-  // 2. Intentar Gemini
   const geminiResult = await parseWithGemini(allSnippets, avoidList);
   if (geminiResult) return geminiResult;
 
-  // 3. Fallback: no se pudo parsear con ninguna IA
   return null;
 }
 
 // ── Imagen fallback de Unsplash ──
-function getUnsplashFallback(productType) {
-  // Imágenes de medialunas y facturas argentinas en Unsplash
+function getUnsplashFallback(product, category) {
+  const prod = (product || '').toLowerCase();
+  const cat = (category || '').toLowerCase();
+
   const fallbacks = {
-    medialunas: [
-      'https://images.unsplash.com/photo-1555507036-ab1f4038024a?w=600&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=600&h=600&fit=crop',
+    hamburguesa: [
+      'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1586816001966-79b736744398?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&h=600&fit=crop',
     ],
-    facturas: [
-      'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1608198093002-ad4eef4f05e6?w=600&h=600&fit=crop',
+    pizza: [
+      'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600&h=600&fit=crop',
+    ],
+    empanadas: [
+      'https://images.unsplash.com/photo-1604467707321-70d5ec45c25a?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1621955964441-c173e01c135b?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?w=600&h=600&fit=crop',
+    ],
+    lomito: [
+      'https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&h=600&fit=crop',
+    ],
+    sushi: [
+      'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1553621042-f6e147245754?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1540648639573-8c848de23f0a?w=600&h=600&fit=crop',
+    ],
+    mexicana: [
+      'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1650727759967-fb23139b07ed?w=600&h=600&fit=crop',
+    ],
+    milanesa: [
+      'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=600&h=600&fit=crop',
+    ],
+    parrilla: [
+      'https://images.unsplash.com/photo-1558030006-450675393462?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=600&fit=crop',
     ],
     generica: [
-      'https://images.unsplash.com/photo-1517244683847-7456f63b1c0a?w=600&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1605478371310-a9f58e20f8ef?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=600&fit=crop',
     ]
   };
 
-  const key = productType.includes('medialuna') ? 'medialunas'
-    : productType.includes('factura') ? 'facturas'
-    : 'generica';
+  // Detectar tipo por nombre del producto
+  if (prod.includes('hamburguesa') || prod.includes('burger') || prod.includes('bacon') || prod.includes('cheddar')) return pickRandom(fallbacks.hamburguesa);
+  if (prod.includes('pizza') || prod.includes('muzza') || prod.includes('napolitana') || prod.includes('fugazzeta')) return pickRandom(fallbacks.pizza);
+  if (prod.includes('empanada')) return pickRandom(fallbacks.empanadas);
+  if (prod.includes('lomito') || prod.includes('bondiola') || prod.includes('sandwich')) return pickRandom(fallbacks.lomito);
+  if (prod.includes('sushi') || prod.includes('roll') || prod.includes('nigiri')) return pickRandom(fallbacks.sushi);
+  if (prod.includes('taco') || prod.includes('burrito') || prod.includes('mexicano') || prod.includes('nachos')) return pickRandom(fallbacks.mexicana);
+  if (prod.includes('milanesa') || prod.includes('napolitana')) return pickRandom(fallbacks.milanesa);
+  if (prod.includes('parrilla') || prod.includes('asado') || prod.includes('vacio') || prod.includes('choripan')) return pickRandom(fallbacks.parrilla);
 
-  const pool = fallbacks[key];
-  return pool[Math.floor(Math.random() * pool.length)];
+  // Fallback por categoría
+  if (cat.includes('hamburguesa')) return pickRandom(fallbacks.hamburguesa);
+  if (cat.includes('pizza')) return pickRandom(fallbacks.pizza);
+  if (cat.includes('empanada')) return pickRandom(fallbacks.empanadas);
+  if (cat.includes('lomito') || cat.includes('sandwich')) return pickRandom(fallbacks.lomito);
+  if (cat.includes('sushi')) return pickRandom(fallbacks.sushi);
+  if (cat.includes('mexican')) return pickRandom(fallbacks.mexicana);
+  if (cat.includes('milanesa')) return pickRandom(fallbacks.milanesa);
+  if (cat.includes('parrilla')) return pickRandom(fallbacks.parrilla);
+
+  return pickRandom(fallbacks.generica);
 }
 
-// ── Pipeline de imagen: caché IA → scrapeada → Unsplash ──
-async function resolveImages(browser, offers) {
-  // Intentar cargar el generador de imágenes IA
-  let generateBakeryImage = null;
-  let getCachedImage = null;
-  try {
-    const imgGen = require('./generate-bakery-images');
-    generateBakeryImage = imgGen.generateBakeryImage;
-    getCachedImage = imgGen.getCachedImage;
-    log('   🎨 Módulo de imágenes IA cargado.');
-  } catch (err) {
-    log(`   ⚠️  Módulo de imágenes IA no disponible: ${err.message}`);
-  }
-
-  for (const offer of offers) {
-    const bakeryKey = `${offer.bakery}|${offer.product}`;
-
-    // 1. Intentar caché de imagen IA (si el módulo está disponible)
-    if (getCachedImage) {
-      const cachedUrl = getCachedImage(offer.bakery, offer.product);
-      if (cachedUrl) {
-        offer.imageUrl = cachedUrl;
-        log(`   💾 ${offer.bakery}: usando imagen cacheada`);
-        continue;
-      }
-    }
-
-    // 2. Intentar extraer imagen real de la web de la panadería
-    if (offer.link && offer.link.startsWith('http')) {
-      log(`   🔍 Buscando imagen en ${offer.bakery}...`);
-      const extracted = await extractImageFromPage(browser, offer.link);
-      if (extracted) {
-        // Validar que la imagen no sea un logo miniatura
-        if (extracted.includes('?d=10x10') || extracted.includes('&d=10x10') ||
-            extracted.includes('?e=webp&d=10') || extracted.includes('logo') && extracted.includes('10x10')) {
-          log(`   ⚠️  ${offer.bakery}: imagen parece logo miniatura, descartando.`);
-        } else {
-          offer.imageUrl = extracted;
-          log(`   ✅ Imagen real encontrada para ${offer.bakery}`);
-          continue;
-        }
-      }
-    }
-
-    // 3. Generar con IA
-    if (generateBakeryImage) {
-      log(`   🎨 Generando imagen IA para ${offer.bakery}...`);
-      const generatedUrl = await generateBakeryImage(offer.bakery, offer.product);
-      if (generatedUrl) {
-        offer.imageUrl = generatedUrl;
-        log(`   ✅ Imagen IA generada para ${offer.bakery}`);
-        continue;
-      }
-    }
-
-    // 4. Fallback a Unsplash
-    const fallback = getUnsplashFallback(offer.product || '');
-    offer.imageUrl = fallback;
-    log(`   📸 Imagen Unsplash asignada a ${offer.bakery}`);
-  }
-  return offers;
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 // ── Limpiar URLs de DuckDuckGo (extraer URL real del redirect) ──
 function cleanUrl(url) {
   if (!url) return 'https://pedidosya.com.ar';
-  // DuckDuckGo redirect: extraer uddg param
   const ddgMatch = url.match(/uddg=([^&]+)/);
   if (ddgMatch) {
     try { return decodeURIComponent(ddgMatch[1]); } catch { return url; }
   }
-  // Si ya es URL directa, devolverla
   if (url.startsWith('http')) return url;
   return 'https://pedidosya.com.ar';
 }
@@ -538,97 +531,136 @@ function cleanUrl(url) {
 // ── Validar y enriquecer ofertas ──
 function enrichOffers(offers) {
   return offers.map((offer, i) => {
-    // Generar rating determinístico basado en el nombre
-    const seed = offer.bakery + offer.product;
+    const seed = offer.restaurant + offer.product;
     let hash = 0;
     for (let j = 0; j < seed.length; j++) {
       hash = ((hash << 5) - hash) + seed.charCodeAt(j);
       hash |= 0;
     }
+    // Rating determinístico entre 4.0 y 5.0
     const rating = Math.round((4.0 + (Math.abs(hash) % 11) / 10) * 10) / 10;
     const reviews = 80 + (Math.abs(hash) % 420);
 
     return {
-      id: `bakery_${i + 1}`,
-      bakery: offer.bakery || 'Panadería Artesanal',
-      product: offer.product || 'Docena de Medialunas',
-      price: offer.price || 4500,
+      id: `cena_${i + 1}`,
+      restaurant: offer.restaurant || 'Restaurante Delivery',
+      product: offer.product || 'Combo Cena Especial',
+      price: offer.price || 8500,
       oldPrice: offer.oldPrice || null,
-      description: offer.description || 'Elaboradas con ingredientes de primera calidad. Crujientes por fuera, esponjosas por dentro.',
+      description: offer.description || 'Elaborado con ingredientes frescos. Delivery a todo CABA en minutos.',
       location: offer.location || 'Capital Federal',
+      category: offer.category || 'Cena Delivery',
       installments: offer.installments || 'Envío a todo CABA',
       imageUrl: offer.imageUrl || '',
       link: cleanUrl(offer.link),
       badge: offer.badge || 'Destacado',
       precio_estimado: offer.precio_estimado || false,
       rating,
-      reviews,
-      sites: ['elpodiofood']
+      reviews
     };
   });
 }
 
+// ── Pipeline de imagen: scrapeada → Unsplash ──
+async function resolveImages(browser, offers) {
+  for (const offer of offers) {
+    // Verificar si ya tiene una imagen válida (no logo miniatura)
+    if (offer.imageUrl && offer.imageUrl.startsWith('http')
+        && !/logo|icon|avatar|favicon|homes-palpatine|frontend-assets/i.test(offer.imageUrl)) {
+      log(`   🖼️  ${offer.restaurant}: ya tiene imagen válida.`);
+      continue;
+    }
+
+    if (offer.imageUrl && /logo|icon|homes-palpatine|frontend-assets/i.test(offer.imageUrl)) {
+      log(`   ⚠️  ${offer.restaurant}: tenía logo, buscando imagen real...`);
+    }
+
+    // Intentar extraer imagen real de la web del restaurante
+    if (offer.link && offer.link.startsWith('http')) {
+      log(`   🔍 Buscando imagen para "${offer.product}"...`);
+      const extracted = await extractImageFromPage(browser, offer.link);
+      if (extracted) {
+        // Validar que la imagen no sea un logo miniatura
+        if (extracted.includes('?d=10x10') || extracted.includes('&d=10x10') ||
+            extracted.includes('?e=webp&d=10') || (extracted.includes('logo') && extracted.includes('10x10'))) {
+          log(`   ⚠️  ${offer.restaurant}: imagen parece logo miniatura, descartando.`);
+        } else {
+          offer.imageUrl = extracted;
+          log(`   ✅ Imagen real encontrada.`);
+          continue;
+        }
+      }
+    }
+
+    // Fallback a Unsplash
+    const fallback = getUnsplashFallback(offer.product || '', offer.category || '');
+    offer.imageUrl = fallback;
+    log(`   📸 Imagen Unsplash asignada a "${offer.restaurant}".`);
+  }
+  return offers;
+}
+
 // ── Generar datos de ejemplo (último recurso si todo falla) ──
 function generateFallbackOffers() {
-  log('⚠️  Generando ofertas de ejemplo (fallback). Los precios son estimados.');
+  log('⚠️  Generando ofertas de cena de ejemplo (fallback). Los precios son estimados.');
   return [
     {
-      id: 'bakery_1',
-      bakery: 'Panadería La Argentina',
-      product: 'Docena de Medialunas de Grasa',
-      price: 4200,
-      oldPrice: 5500,
-      description: 'Medialunas doradas y crocantes, recién horneadas cada mañana. Con el sabor inconfundible de la panadería argentina tradicional.',
-      location: 'Caballito, CABA',
-      installments: 'Envío a todo CABA sin cargo',
-      imageUrl: 'https://images.unsplash.com/photo-1555507036-ab1f4038024a?w=600&h=600&fit=crop',
+      id: 'cena_1',
+      restaurant: 'Big Pons',
+      product: 'Combo Doble Bacon + Papas + Gaseosa',
+      price: 8500,
+      oldPrice: 11000,
+      description: 'Doble medallón de carne vacuna, queso cheddar fundido, panceta crocante y salsa Big Pons. Incluye papas fritas grandes y gaseosa.',
+      location: 'Palermo, CABA',
+      category: 'Hamburguesería',
+      installments: 'Envío a todo CABA | Delivery en 45 min',
+      imageUrl: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop',
       link: 'https://pedidosya.com.ar',
       badge: 'Mejor Precio',
       precio_estimado: true,
       rating: 4.7,
-      reviews: 340,
-      sites: ['elpodiofood']
+      reviews: 340
     },
     {
-      id: 'bakery_2',
-      bakery: 'Confitería Del Molino',
-      product: '½ Kg de Facturas Surtidas',
-      price: 3800,
-      oldPrice: 4800,
-      description: 'Facturas recién horneadas con membrillo, crema pastelera y dulce de leche. Envíos a toda Capital Federal.',
-      location: 'San Telmo, CABA',
+      id: 'cena_2',
+      restaurant: 'Pizza Cero',
+      product: 'Pizza Grande de Muzzarella + 2 Empanadas',
+      price: 6500,
+      oldPrice: 8500,
+      description: 'Pizza casera a la piedra con abundante muzzarella, aceitunas y orégano. Incluye 2 empanadas de carne a elección.',
+      location: 'Caballito, CABA',
+      category: 'Pizzería',
       installments: 'Envío a todo CABA en 45 min',
-      imageUrl: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&h=600&fit=crop',
+      imageUrl: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=600&fit=crop',
       link: 'https://pedidosya.com.ar',
       badge: 'Más Vendido',
       precio_estimado: true,
       rating: 4.5,
-      reviews: 215,
-      sites: ['elpodiofood']
+      reviews: 215
     },
     {
-      id: 'bakery_3',
-      bakery: 'Panadería El Buen Gusto',
-      product: 'Combo Medialunas + Facturas (Docena Mixta)',
+      id: 'cena_3',
+      restaurant: 'La Farola Empanadas',
+      product: 'Docena de Empanadas Mixtas + Salsa',
       price: 5500,
       oldPrice: 7200,
-      description: '6 medialunas de manteca + 6 facturas a elección. Delivery a todo CABA sin cargo.',
-      location: 'Palermo, CABA',
+      description: '6 empanadas de carne suave + 6 de jamón y queso. Masa criolla casera, relleno abundante y salsas caseras incluidas.',
+      location: 'Villa Crespo, CABA',
+      category: 'Empanadas',
       installments: 'Envío a todo CABA en 30 min',
-      imageUrl: 'https://images.unsplash.com/photo-1517244683847-7456f63b1c0a?w=600&h=600&fit=crop',
+      imageUrl: 'https://images.unsplash.com/photo-1604467707321-70d5ec45c25a?w=600&h=600&fit=crop',
       link: 'https://pedidosya.com.ar',
       badge: 'Delivery Gratis',
       precio_estimado: true,
       rating: 4.8,
-      reviews: 520,
-      sites: ['elpodiofood']
+      reviews: 520
     }
   ];
 }
 
 // ── MAIN ──
 async function main() {
-  log('🥐 INICIANDO BÚSQUEDA DE OFERTAS DE PANADERÍA...\n');
+  log('🍔 INICIANDO BÚSQUEDA DE OFERTAS DE CENA...\n');
 
   // Verificar API keys
   if (!GEMINI_API_KEY && !process.env.DEEPSEEK_API_KEY) {
@@ -659,17 +691,16 @@ async function main() {
     ]
   });
 
-  // Usar queries diarias rotativas
   const dailyQueries = getDailyQueries();
 
   let allResults = [];
   for (const query of dailyQueries) {
     const results = await searchAllEngines(browser, query);
     allResults.push(...results);
-    await sleep(1500); // Delay entre búsquedas
+    await sleep(1500);
   }
 
-  // Dedeuplicar por link
+  // Deduplicar por link
   const seen = new Set();
   allResults = allResults.filter(r => {
     if (!r.link || seen.has(r.link)) return false;
@@ -687,12 +718,12 @@ async function main() {
   }
 
   // ── Paso 3: Enriquecer y resolver imágenes ──
-  log('\n── Paso 3/4: Resolviendo imágenes ──');
+  log('\n── Paso 3/4: Enriqueciendo datos y resolviendo imágenes ──');
   if (offers && offers.length > 0) {
     offers = enrichOffers(offers);
     // Guardar en historial las nuevas ofertas encontradas
     for (const offer of offers) {
-      history = addToHistory(history, offer.bakery, offer.product);
+      history = addToHistory(history, offer.restaurant, offer.product);
     }
     saveHistory(history);
     log(`   📝 ${offers.length} ofertas agregadas al historial.`);
@@ -705,14 +736,14 @@ async function main() {
   await browser.close();
 
   // ── Paso 4: Guardar ──
-  log('\n── Paso 4/4: Guardando bakery-offers.json ──');
+  log('\n── Paso 4/4: Guardando cena-offers.json ──');
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(offers, null, 2), 'utf8');
 
   log('\n═══════════════════════════════════════');
-  log('✅ Ofertas de panadería actualizadas:');
+  log('🍔 Ofertas de cena actualizadas:');
   offers.forEach((o, i) => {
     const estimado = o.precio_estimado ? ' ⚠️(precio estimado)' : '';
-    log(`   ${i + 1}. ${o.bakery} — ${o.product}`);
+    log(`   ${i + 1}. ${o.restaurant} — ${o.product} (${o.category})`);
     log(`      💵 $${o.price}${o.oldPrice ? ` (antes $${o.oldPrice})` : ''} | 📍 ${o.location}${estimado}`);
     log(`      🖼️  ${o.imageUrl ? 'Imagen OK' : 'Sin imagen'}`);
   });

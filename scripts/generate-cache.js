@@ -20,6 +20,13 @@ const EXPRESS_EVENTS_PATH = path.join(__dirname, '..', 'express-events.json');
 
 const DEFAULT_SITE = 'elpodiomp';
 
+// ── Podio: 1° 🥇, 2° 🥈, 3° 🥉 ──
+const POSITIONS = [
+  { cls: 'card--gold',   badge: '🥇 #1 Mejor valorado' },
+  { cls: 'card--silver', badge: '🥈 #2' },
+  { cls: 'card--bronze', badge: '🥉 #3' }
+];
+
 // ── Proxy helper ─────────────────────────────────
 function parseProxyUrl(proxyUrl) {
   try {
@@ -203,14 +210,15 @@ function generateSiteCache(siteId, template, fixture, config, foods, cenaOffers,
   // ============================================================
   if (siteId === 'elpodiofood' && bakeryOffers && bakeryOffers.length > 0) {
     let bakeryCards = '';
-    bakeryOffers.forEach(b => {
+    bakeryOffers.forEach((b, i) => {
+      var pos = POSITIONS[i] || POSITIONS[2];
       var affLink = safeUrl(toNonAffiliateUrl(b.link));
       var oldPriceHtml = (b.oldPrice && b.oldPrice > b.price) ? '<p class="old-price">$' + formatPrice(b.oldPrice) + '</p>' : '';
       var estimadoHtml = b.precio_estimado ? '<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar segun zona">&#9888;&#65039; aprox.</span>' : '';
-      bakeryCards += '<div class="card" onclick="window.location.href=\'' + escapeHtml(affLink) + '\'">' +
+      bakeryCards += '<div class="card ' + pos.cls + '" onclick="window.location.href=\'' + escapeHtml(affLink) + '\'">' +
         '<img class="card-image" src="' + safeUrl(b.imageUrl) + '" alt="' + escapeHtml(b.product) + '" loading="lazy">' +
         '<div class="card-body">' +
-        '<span class="card-badge">' + escapeHtml(b.badge || 'Destacado') + '</span>' +
+        '<span class="card-badge">' + escapeHtml(b.badge || 'Destacado') + '<span class="podium-badge">' + pos.badge + '</span></span>' +
         '<h3>' + escapeHtml(b.product) + '</h3>' +
         '<p class="description">' + escapeHtml(b.description || '') + '</p>' +
         '<p style="font-size:13px;color:#666;margin:4px 0;">&#128205; ' + escapeHtml(b.bakery) + ' - ' + escapeHtml(b.location) + '</p>' +
@@ -239,15 +247,16 @@ function generateSiteCache(siteId, template, fixture, config, foods, cenaOffers,
   if (siteId === 'elpodiofood' && cenaData && cenaData.length > 0) {
     const esAutomatico = cenaOffers && cenaOffers.length > 0;
     let cenaCards = '';
-    cenaData.forEach(f => {
+    cenaData.forEach((f, i) => {
+      var pos = POSITIONS[i] || POSITIONS[2];
       var affLink = safeUrl(toNonAffiliateUrl(f.link));
       var oldPriceHtml = (f.oldPrice && f.oldPrice > f.price) ? '<p class="old-price">$' + formatPrice(f.oldPrice) + '</p>' : '';
       var ratingInfo = getDeterministicRating((f.restaurant || f.product || '') + 'cena');
       var estimadoHtml = f.precio_estimado ? '<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span>' : '';
-      cenaCards += '<div class="card" onclick="window.location.href=\'' + escapeHtml(affLink) + '\'">' +
+      cenaCards += '<div class="card ' + pos.cls + '" onclick="window.location.href=\'' + escapeHtml(affLink) + '\'">' +
         '<img class="card-image" src="' + safeUrl(f.imageUrl) + '" alt="' + escapeHtml(f.product) + '" loading="lazy">' +
         '<div class="card-body">' +
-        '<span class="card-badge">' + escapeHtml(f.badge || 'Recomendado') + '</span>' +
+        '<span class="card-badge">' + escapeHtml(f.badge || 'Recomendado') + '<span class="podium-badge">' + pos.badge + '</span></span>' +
         '<h3>' + escapeHtml(f.product) + '</h3>' +
         '<div class="rating"><span class="stars">' + ratingInfo.starsHtml + '</span><span class="reviews">(' + ratingInfo.reviews + ')</span></div>' +
         '<p class="description">' + escapeHtml(f.description || '') + '</p>' +
@@ -293,7 +302,8 @@ function generateSiteCache(siteId, template, fixture, config, foods, cenaOffers,
     const pulseColor = ev.pulse_color || '#93c5fd';
 
     let expressCards = '';
-    expressOffers.forEach(p => {
+    expressOffers.forEach((p, i) => {
+      const pos = POSITIONS[i] || POSITIONS[2];
       const salePrice = Math.round(p.price);
       const listPrice = p.oldPrice && p.oldPrice > salePrice ? Math.round(p.oldPrice) : null;
       var linkUrl = p.link && p.link.startsWith('http')
@@ -303,10 +313,10 @@ function generateSiteCache(siteId, template, fixture, config, foods, cenaOffers,
       var estimadoHtml = p.precio_estimado ? '<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span>' : '';
       var ratingInfo = p.rating && p.starsHtml ? { starsHtml: p.starsHtml, reviews: p.reviews } : getDeterministicRating((p.product || '') + siteId);
 
-      expressCards += '<div class="card" onclick="window.location.href=\'' + escapeHtml(linkUrl) + '\'">' +
+      expressCards += '<div class="card ' + pos.cls + '" onclick="window.location.href=\'' + escapeHtml(linkUrl) + '\'">' +
         '<img class="card-image" src="' + safeUrl(p.imageUrl) + '" alt="' + escapeHtml(p.product) + '" loading="lazy">' +
         '<div class="card-body">' +
-        '<span class="card-badge" style="background:' + escapeHtml(eventColor) + ';color:#fff;">' + escapeHtml(p.badge || ev.badge || 'Oferta') + '</span>' +
+        '<span class="card-badge" style="background:' + escapeHtml(eventColor) + ';color:#fff;">' + escapeHtml(p.badge || ev.badge || 'Oferta') + '<span class="podium-badge" style="background:rgba(255,255,255,0.2);color:inherit;">' + pos.badge + '</span></span>' +
         '<h3>' + escapeHtml(p.product) + '</h3>' +
         '<div class="rating"><span class="stars">' + ratingInfo.starsHtml + '</span><span class="reviews">(' + ratingInfo.reviews + ')</span></div>' +
         '<p class="description">' + escapeHtml(p.description || '') + '</p>' +
@@ -346,15 +356,16 @@ function generateSiteCache(siteId, template, fixture, config, foods, cenaOffers,
 
     // 1. Intentar datos de la API (recién obtenidos)
     if (apiProducts[cat.id] && apiProducts[cat.id].length > 0) {
-      apiProducts[cat.id].forEach(p => {
+      apiProducts[cat.id].forEach((p, i) => {
+        const pos = POSITIONS[i] || POSITIONS[2];
         const affLink = safeUrl(catAffLink);  // Redirigir a búsqueda de ML (nunca 404)
         const oldPriceHtml = p.oldPrice && p.oldPrice > p.price
           ? `<p class="old-price">$${formatPrice(p.oldPrice)}</p>` : '';
         cardsHtml += `
-        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
+        <div class="card ${pos.cls}" onclick="window.location.href='${escapeHtml(affLink)}'">
           <img class="card-image" src="${safeUrl(p.imageUrl)}" alt="${escapeHtml(p.title)}" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">${escapeHtml(p.badge)}</span>
+            <span class="card-badge">${escapeHtml(p.badge)}<span class="podium-badge">${pos.badge}</span></span>
             <h3>${escapeHtml(p.title)}</h3>
             <div class="rating">
               <span class="stars">${p.starsHtml}</span>
@@ -383,16 +394,17 @@ function generateSiteCache(siteId, template, fixture, config, foods, cenaOffers,
     if (!cardsHtml) {
       const products = fixture[cat.id] || [];
       if (products.length > 0) {
-        products.slice(0, 3).forEach(fp => {
+        products.slice(0, 3).forEach((fp, i) => {
+          const pos = POSITIONS[i] || POSITIONS[2];
           const affLink = safeUrl(catAffLink);  // Redirigir a búsqueda de ML (nunca 404)
           const oldPriceHtml = fp.oldPrice && fp.oldPrice > fp.price
             ? `<p class="old-price">$${formatPrice(fp.oldPrice)}</p>` : '';
           const ratingInfo = getDeterministicRating(cat.id + (fp.title || ''));
           cardsHtml += `
-        <div class="card" onclick="window.location.href='${escapeHtml(affLink)}'">
+        <div class="card ${pos.cls}" onclick="window.location.href='${escapeHtml(affLink)}'">
           <img class="card-image" src="${safeUrl(fp.imageUrl)}" alt="${escapeHtml(fp.title)}" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">${escapeHtml(fp.badge || 'Destacado')}</span>
+            <span class="card-badge">${escapeHtml(fp.badge || 'Destacado')}<span class="podium-badge">${pos.badge}</span></span>
             <h3>${escapeHtml(fp.title)}</h3>
             <div class="rating">
               <span class="stars">${ratingInfo.starsHtml}</span>

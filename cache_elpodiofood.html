@@ -378,6 +378,29 @@
       margin-bottom: 8px;
     }
 
+    /* ── Podio: 1° 🥇, 2° 🥈, 3° 🥉 ── */
+    .card--gold   { border-top: 3px solid #FFD700; }
+    .card--silver { border-top: 3px solid #C0C0C0; }
+    .card--bronze { border-top: 3px solid #CD7F32; }
+
+    .podium-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: 8px;
+      background: #f5f5f5;
+      color: #555;
+      white-space: nowrap;
+    }
+
+    .card--gold .podium-badge   { background: #FFFDE7; color: #B8860B; }
+    .card--silver .podium-badge { background: #F5F5F5; color: #707070; }
+    .card--bronze .podium-badge { background: #FFF3E0; color: #8B5E3C; }
+
     .card h3 {
       font-size: 18px;
       font-weight: 700;
@@ -599,17 +622,17 @@
   </nav>
 
   <main class="container">
-    <section id="bakery-express" class="section" style="background:linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);border:2px solid #f97316;border-radius:16px;padding:24px;margin-bottom:32px;animation:pulse-border 2s ease-in-out infinite;"><style>@keyframes pulse-border{0%,100%{border-color:#f97316}50%{border-color:#ffb380}}#bakery-express,#cena-express{transition:opacity .5s,max-height .5s;overflow:hidden}#bakery-express.hidden,#cena-express.hidden{opacity:0;max-height:0;padding:0;margin:0;border:0}#cena-express .section-header h2{color:#fff}#cena-express .view-all{color:#e67e22}#cena-express p{color:#ccc}#cena-express .installments{color:#f97316!important}#cena-express .description{color:#aaa!important}</style><div class="section-header"><h2><span class="icon">&#129370;</span> Seccion Express - Para la Merienda! &#9889;</h2><span style="background:#f97316;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">&#9200; Hasta las 18:00</span></div><p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">&#128204; Actualizado hoy a las 16:00 - Las 3 mejores ofertas con envio a todo CABA</p><div class="grid"><div class="card" onclick="window.location.href='https://www.roxpasteleriabakery.com/'"><img class="card-image" src="https://lirp.cdn-website.com/6f5ea406/dms3rep/multi/opt/1761739641-Photoroom+%281%29-1920w.png" alt="Docena de Croissants Artesanales" loading="lazy"><div class="card-body"><span class="card-badge">Mejor Precio</span><h3>Docena de Croissants Artesanales</h3><p class="description">Croissants artesanales horneados diariamente, con envío a todo CABA en 45 minutos.</p><p style="font-size:13px;color:#666;margin:4px 0;">&#128205; Rox Pastelería Bakery - Palermo, CABA</p><p class="old-price">$5.800</p><p class="price"><span class="price-sup">$</span>4.500</p><p class="installments">Envío a todo CABA | Delivery en 45 min</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.roxpasteleriabakery.com/'">Ver oferta</button></div></div><div class="card" onclick="window.location.href='https://www.donvitoalfajores.com.ar/tiendaonline'"><img class="card-image" src="https://static.wixstatic.com/media/f0affa_da4777d339764ff5b895c877f4dfbe53~mv2.png/v1/fill/w_428,h_428,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/f0affa_da4777d339764ff5b895c877f4dfbe53~mv2.png" alt="Docena de Alfajores Artesanales" loading="lazy"><div class="card-body"><span class="card-badge">Mejor Precio</span><h3>Docena de Alfajores Artesanales</h3><p class="description">Alfajores artesanales de dulce de leche y chocolate, con envío a todo CABA sin cargo.</p><p style="font-size:13px;color:#666;margin:4px 0;">&#128205; Don Vito Alfajores - Belgrano, CABA</p><p class="old-price">$38.000</p><p class="price"><span class="price-sup">$</span>33.000</p><p class="installments">Envío a todo CABA | Delivery en 24 hs</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.donvitoalfajores.com.ar/tiendaonline'">Ver oferta</button></div></div><div class="card" onclick="window.location.href='https://rusticochocolate.com.ar/alfajores/'"><img class="card-image" src="http://acdn-us.mitiendanube.com/stores/137/307/themes/common/logo-764088711-1596807627-fede3a746e1cb1f3c124d382234f81d61596807628.png?0" alt="Docena de Alfajores Bañados en Chocolate" loading="lazy"><div class="card-body"><span class="card-badge">Mejor Precio</span><h3>Docena de Alfajores Bañados en Chocolate</h3><p class="description">Alfajores artesanales bañados en chocolate negro con dulce de leche, envío a todo CABA.</p><p style="font-size:13px;color:#666;margin:4px 0;">&#128205; Rústico Chocolate - Caballito, CABA</p><p class="old-price">$4.000</p><p class="price"><span class="price-sup">$</span>3.000</p><p class="installments">Envío a todo CABA | Delivery en 48 hs</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://rusticochocolate.com.ar/alfajores/'">Ver oferta</button></div></div></div></section><section id="cena-express" class="section hidden" style="background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);border:2px solid #e67e22;border-radius:16px;padding:24px;margin-bottom:32px;"><div class="section-header"><h2><span class="icon">&#127828;</span> Cena Express - ¡Pedí tu Cena! &#127769;</h2><span style="background:#e67e22;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">&#127769; Desde las 19:30</span></div><p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">&#128204; Actualizado hoy a las 19:00 — Las 3 mejores ofertas con delivery en CABA</p><div class="grid"><div class="card" onclick="window.location.href='https://pedidosya.com.ar'"><img class="card-image" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop" alt="Combo Doble Bacon + Papas + Gaseosa" loading="lazy"><div class="card-body"><span class="card-badge">Mejor Precio</span><h3>Combo Doble Bacon + Papas + Gaseosa</h3><div class="rating"><span class="stars">★★★★½</span><span class="reviews">(185)</span></div><p class="description">Doble medallón de carne vacuna, queso cheddar fundido, panceta crocante y salsa Big Pons. Incluye papas fritas grandes y gaseosa.</p><p style="font-size:12px;color:#888;margin:4px 0;">&#128205; Big Pons - Palermo, CABA</p><p class="old-price">$11.000</p><p class="price"><span class="price-sup">$</span>8.500<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span></p><p class="installments">Envío a todo CABA | Delivery en 45 min</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button></div></div><div class="card" onclick="window.location.href='https://pedidosya.com.ar'"><img class="card-image" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=600&fit=crop" alt="Pizza Grande de Muzzarella + 2 Empanadas" loading="lazy"><div class="card-body"><span class="card-badge">Más Vendido</span><h3>Pizza Grande de Muzzarella + 2 Empanadas</h3><div class="rating"><span class="stars">★★★★☆</span><span class="reviews">(380)</span></div><p class="description">Pizza casera a la piedra con abundante muzzarella, aceitunas y orégano. Incluye 2 empanadas de carne a elección.</p><p style="font-size:12px;color:#888;margin:4px 0;">&#128205; Pizza Cero - Caballito, CABA</p><p class="old-price">$8.500</p><p class="price"><span class="price-sup">$</span>6.500<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span></p><p class="installments">Envío a todo CABA en 45 min</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button></div></div><div class="card" onclick="window.location.href='https://pedidosya.com.ar'"><img class="card-image" src="https://images.unsplash.com/photo-1604467707321-70d5ec45c25a?w=600&h=600&fit=crop" alt="Docena de Empanadas Mixtas + Salsa" loading="lazy"><div class="card-body"><span class="card-badge">Delivery Gratis</span><h3>Docena de Empanadas Mixtas + Salsa</h3><div class="rating"><span class="stars">★★★★½</span><span class="reviews">(499)</span></div><p class="description">6 empanadas de carne suave + 6 de jamón y queso. Masa criolla casera, relleno abundante y salsas caseras incluidas.</p><p style="font-size:12px;color:#888;margin:4px 0;">&#128205; La Farola Empanadas - Villa Crespo, CABA</p><p class="old-price">$7.200</p><p class="price"><span class="price-sup">$</span>5.500<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span></p><p class="installments">Envío a todo CABA en 30 min</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button></div></div></div></section><script>(function(){var b=document.getElementById("bakery-express");var c=document.getElementById("cena-express");function t(){if(!b||!c)return;var n=new Date();var h=n.getUTCHours()-3;if(h<0)h+=24;var m=n.getUTCMinutes();var mostrarBakery=(h>=16&&h<18);var mostrarCena=(h>19||(h===19&&m>=30));if(mostrarCena){b.classList.add("hidden");c.classList.remove("hidden")}else if(mostrarBakery){b.classList.remove("hidden");c.classList.add("hidden")}else{b.classList.add("hidden");c.classList.add("hidden")}}t();setInterval(t,60000)})();</script>
+    <section id="bakery-express" class="section" style="background:linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);border:2px solid #f97316;border-radius:16px;padding:24px;margin-bottom:32px;animation:pulse-border 2s ease-in-out infinite;"><style>@keyframes pulse-border{0%,100%{border-color:#f97316}50%{border-color:#ffb380}}#bakery-express,#cena-express{transition:opacity .5s,max-height .5s;overflow:hidden}#bakery-express.hidden,#cena-express.hidden{opacity:0;max-height:0;padding:0;margin:0;border:0}#cena-express .section-header h2{color:#fff}#cena-express .view-all{color:#e67e22}#cena-express p{color:#ccc}#cena-express .installments{color:#f97316!important}#cena-express .description{color:#aaa!important}</style><div class="section-header"><h2><span class="icon">&#129370;</span> Seccion Express - Para la Merienda! &#9889;</h2><span style="background:#f97316;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">&#9200; Hasta las 18:00</span></div><p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">&#128204; Actualizado hoy a las 16:00 - Las 3 mejores ofertas con envio a todo CABA</p><div class="grid"><div class="card card--gold" onclick="window.location.href='https://www.roxpasteleriabakery.com/'"><img class="card-image" src="https://lirp.cdn-website.com/6f5ea406/dms3rep/multi/opt/1761739641-Photoroom+%281%29-1920w.png" alt="Docena de Croissants Artesanales" loading="lazy"><div class="card-body"><span class="card-badge">Mejor Precio<span class="podium-badge">🥇 #1 Mejor valorado</span></span><h3>Docena de Croissants Artesanales</h3><p class="description">Croissants artesanales horneados diariamente, con envío a todo CABA en 45 minutos.</p><p style="font-size:13px;color:#666;margin:4px 0;">&#128205; Rox Pastelería Bakery - Palermo, CABA</p><p class="old-price">$5.800</p><p class="price"><span class="price-sup">$</span>4.500</p><p class="installments">Envío a todo CABA | Delivery en 45 min</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.roxpasteleriabakery.com/'">Ver oferta</button></div></div><div class="card card--silver" onclick="window.location.href='https://www.donvitoalfajores.com.ar/tiendaonline'"><img class="card-image" src="https://static.wixstatic.com/media/f0affa_da4777d339764ff5b895c877f4dfbe53~mv2.png/v1/fill/w_428,h_428,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/f0affa_da4777d339764ff5b895c877f4dfbe53~mv2.png" alt="Docena de Alfajores Artesanales" loading="lazy"><div class="card-body"><span class="card-badge">Mejor Precio<span class="podium-badge">🥈 #2</span></span><h3>Docena de Alfajores Artesanales</h3><p class="description">Alfajores artesanales de dulce de leche y chocolate, con envío a todo CABA sin cargo.</p><p style="font-size:13px;color:#666;margin:4px 0;">&#128205; Don Vito Alfajores - Belgrano, CABA</p><p class="old-price">$38.000</p><p class="price"><span class="price-sup">$</span>33.000</p><p class="installments">Envío a todo CABA | Delivery en 24 hs</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://www.donvitoalfajores.com.ar/tiendaonline'">Ver oferta</button></div></div><div class="card card--bronze" onclick="window.location.href='https://rusticochocolate.com.ar/alfajores/'"><img class="card-image" src="http://acdn-us.mitiendanube.com/stores/137/307/themes/common/logo-764088711-1596807627-fede3a746e1cb1f3c124d382234f81d61596807628.png?0" alt="Docena de Alfajores Bañados en Chocolate" loading="lazy"><div class="card-body"><span class="card-badge">Mejor Precio<span class="podium-badge">🥉 #3</span></span><h3>Docena de Alfajores Bañados en Chocolate</h3><p class="description">Alfajores artesanales bañados en chocolate negro con dulce de leche, envío a todo CABA.</p><p style="font-size:13px;color:#666;margin:4px 0;">&#128205; Rústico Chocolate - Caballito, CABA</p><p class="old-price">$4.000</p><p class="price"><span class="price-sup">$</span>3.000</p><p class="installments">Envío a todo CABA | Delivery en 48 hs</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://rusticochocolate.com.ar/alfajores/'">Ver oferta</button></div></div></div></section><section id="cena-express" class="section hidden" style="background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);border:2px solid #e67e22;border-radius:16px;padding:24px;margin-bottom:32px;"><div class="section-header"><h2><span class="icon">&#127828;</span> Cena Express - ¡Pedí tu Cena! &#127769;</h2><span style="background:#e67e22;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:bold;">&#127769; Desde las 19:30</span></div><p style="color:#888;font-size:14px;margin:-8px 0 16px 0;">&#128204; Actualizado hoy a las 19:00 — Las 3 mejores ofertas con delivery en CABA</p><div class="grid"><div class="card card--gold" onclick="window.location.href='https://pedidosya.com.ar'"><img class="card-image" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop" alt="Combo Doble Bacon + Papas + Gaseosa" loading="lazy"><div class="card-body"><span class="card-badge">Mejor Precio<span class="podium-badge">🥇 #1 Mejor valorado</span></span><h3>Combo Doble Bacon + Papas + Gaseosa</h3><div class="rating"><span class="stars">★★★★½</span><span class="reviews">(185)</span></div><p class="description">Doble medallón de carne vacuna, queso cheddar fundido, panceta crocante y salsa Big Pons. Incluye papas fritas grandes y gaseosa.</p><p style="font-size:12px;color:#888;margin:4px 0;">&#128205; Big Pons - Palermo, CABA</p><p class="old-price">$11.000</p><p class="price"><span class="price-sup">$</span>8.500<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span></p><p class="installments">Envío a todo CABA | Delivery en 45 min</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button></div></div><div class="card card--silver" onclick="window.location.href='https://pedidosya.com.ar'"><img class="card-image" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=600&fit=crop" alt="Pizza Grande de Muzzarella + 2 Empanadas" loading="lazy"><div class="card-body"><span class="card-badge">Más Vendido<span class="podium-badge">🥈 #2</span></span><h3>Pizza Grande de Muzzarella + 2 Empanadas</h3><div class="rating"><span class="stars">★★★★☆</span><span class="reviews">(380)</span></div><p class="description">Pizza casera a la piedra con abundante muzzarella, aceitunas y orégano. Incluye 2 empanadas de carne a elección.</p><p style="font-size:12px;color:#888;margin:4px 0;">&#128205; Pizza Cero - Caballito, CABA</p><p class="old-price">$8.500</p><p class="price"><span class="price-sup">$</span>6.500<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span></p><p class="installments">Envío a todo CABA en 45 min</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button></div></div><div class="card card--bronze" onclick="window.location.href='https://pedidosya.com.ar'"><img class="card-image" src="https://images.unsplash.com/photo-1604467707321-70d5ec45c25a?w=600&h=600&fit=crop" alt="Docena de Empanadas Mixtas + Salsa" loading="lazy"><div class="card-body"><span class="card-badge">Delivery Gratis<span class="podium-badge">🥉 #3</span></span><h3>Docena de Empanadas Mixtas + Salsa</h3><div class="rating"><span class="stars">★★★★½</span><span class="reviews">(499)</span></div><p class="description">6 empanadas de carne suave + 6 de jamón y queso. Masa criolla casera, relleno abundante y salsas caseras incluidas.</p><p style="font-size:12px;color:#888;margin:4px 0;">&#128205; La Farola Empanadas - Villa Crespo, CABA</p><p class="old-price">$7.200</p><p class="price"><span class="price-sup">$</span>5.500<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span></p><p class="installments">Envío a todo CABA en 30 min</p><button class="btn" onclick="event.stopPropagation(); window.location.href='https://pedidosya.com.ar'">Pedir ahora</button></div></div></div></section><script>(function(){var b=document.getElementById("bakery-express");var c=document.getElementById("cena-express");function t(){if(!b||!c)return;var n=new Date();var h=n.getUTCHours()-3;if(h<0)h+=24;var m=n.getUTCMinutes();var mostrarBakery=(h>=16&&h<18);var mostrarCena=(h>19||(h===19&&m>=30));if(mostrarCena){b.classList.add("hidden");c.classList.remove("hidden")}else if(mostrarBakery){b.classList.remove("hidden");c.classList.add("hidden")}else{b.classList.add("hidden");c.classList.add("hidden")}}t();setInterval(t,60000)})();</script>
     <section class="section">
       <div class="section-header">
         <h2><span class="icon">☕</span> Cafeteras Expresso</h2>
         <a href="https://listado.mercadolibre.com.ar/cafetera%20expresso" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20expresso'">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20expresso'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_875997-MLA111832258952_062026-E.webp" alt="Cafetera Expresso Automatica Philips Phep554150 Serie 5500 Negro" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
             <h3>Cafetera Expresso Automatica Philips Phep554150 Serie 5500 Negro</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -622,10 +645,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/cafetera%20expresso'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20expresso'">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20expresso'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_812490-MLA99897542583_112025-E.webp" alt="Cafetera Nespresso Inissia Negra Negro" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">12 cuotas sin interés</span>
+            <span class="card-badge">12 cuotas sin interés<span class="podium-badge">🥈 #2</span></span>
             <h3>Cafetera Nespresso Inissia Negra Negro</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -638,10 +661,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/cafetera%20expresso'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20expresso'">
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20expresso'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_842519-MLA99969939471_112025-E.webp" alt="Cafetera Espresso Suono 20 Bar 1.5l Vaporizador 1350w SNPE-2006 negro" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥉 #3</span></span>
             <h3>Cafetera Espresso Suono 20 Bar 1.5l Vaporizador 1350w SNPE-2006 negro</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
@@ -661,10 +684,10 @@
         <a href="https://listado.mercadolibre.com.ar/cafetera%20capsulas%20dolce%20gusto" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20capsulas%20dolce%20gusto'">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20capsulas%20dolce%20gusto'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_994334-MLA100010184303_122025-E.webp" alt="Cafetera Moulinex Dolce Gusto Piccolo Xs Pv1a0558" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">12 cuotas sin interés</span>
+            <span class="card-badge">12 cuotas sin interés<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
             <h3>Cafetera Moulinex Dolce Gusto Piccolo Xs Pv1a0558</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -677,10 +700,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/cafetera%20capsulas%20dolce%20gusto'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20capsulas%20dolce%20gusto'">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20capsulas%20dolce%20gusto'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_668155-MLA99529750280_122025-E.webp" alt="Cafetera Multicápsula Ditron 4 En 1 Acero 20 Bar 700ml Compatible Nespresso Dolce Gusto" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
             <h3>Cafetera Multicápsula Ditron 4 En 1 Acero 20 Bar 700ml Compatible Nespresso Dolce Gusto</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -693,10 +716,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/cafetera%20capsulas%20dolce%20gusto'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20capsulas%20dolce%20gusto'">
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/cafetera%20capsulas%20dolce%20gusto'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_650328-MLA112942637539_062026-E.webp" alt="Cafetera Espresso Novohome Automatica 3 en 1 Display Digital Tactil Multicapsula Y Cafe Molido 20bar Autolimpieza Regulador De Temperatura Color Negro" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥉 #3</span></span>
             <h3>Cafetera Espresso Novohome Automatica 3 en 1 Display Digital Tactil Multicapsula Y Cafe Molido 20bar Autolimpieza Regulador De Temperatura Color Negro</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
@@ -716,10 +739,10 @@
         <a href="https://listado.mercadolibre.com.ar/licuadora" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/licuadora'">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/licuadora'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_885454-MLA100016698107_122025-E.webp" alt="Licuadora Moulinex Powermix Negra 8 Velocidades 2 Litros Negro" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">6 cuotas sin interés</span>
+            <span class="card-badge">6 cuotas sin interés<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
             <h3>Licuadora Moulinex Powermix Negra 8 Velocidades 2 Litros Negro</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
@@ -732,10 +755,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/licuadora'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/licuadora'">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/licuadora'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_901961-MLA99954043375_112025-E.webp" alt="Licuadora Kanji Jarra De Vidrio 2 En 1 Picadora 1.5lts 600w Color Blanco" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
             <h3>Licuadora Kanji Jarra De Vidrio 2 En 1 Picadora 1.5lts 600w Color Blanco</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -748,10 +771,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/licuadora'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/licuadora'">
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/licuadora'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_950750-MLA99531114442_122025-E.webp" alt="Licuadora Moulinex 1000w 700l Blend Up Azul Oscuro" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">6 cuotas sin interés</span>
+            <span class="card-badge">6 cuotas sin interés<span class="podium-badge">🥉 #3</span></span>
             <h3>Licuadora Moulinex 1000w 700l Blend Up Azul Oscuro</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -771,10 +794,10 @@
         <a href="https://listado.mercadolibre.com.ar/batidora%20mano" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/batidora%20mano'">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/batidora%20mano'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_601223-MLA99502471012_112025-E.webp" alt="Batidora De Mano Eiffel 500w 5 Velocidades Turbo Amasador Color Plateado" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
             <h3>Batidora De Mano Eiffel 500w 5 Velocidades Turbo Amasador Color Plateado</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
@@ -787,10 +810,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/batidora%20mano'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/batidora%20mano'">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/batidora%20mano'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_983341-MLA99918800583_112025-E.webp" alt="Batidora De Mano Daewoo Dhm208 Blanca 250w 5 Velocidades Color Blanco" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">6 cuotas sin interés</span>
+            <span class="card-badge">6 cuotas sin interés<span class="podium-badge">🥈 #2</span></span>
             <h3>Batidora De Mano Daewoo Dhm208 Blanca 250w 5 Velocidades Color Blanco</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
@@ -803,10 +826,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/batidora%20mano'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/batidora%20mano'">
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/batidora%20mano'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_697399-MLA104814523706_012026-E.webp" alt="Batidora De Mano Eléctrica Y Balanza Digital Combo Cocina" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">9 cuotas sin interés</span>
+            <span class="card-badge">9 cuotas sin interés<span class="podium-badge">🥉 #3</span></span>
             <h3>Batidora De Mano Eléctrica Y Balanza Digital Combo Cocina</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
@@ -826,10 +849,10 @@
         <a href="https://listado.mercadolibre.com.ar/tostadora%20sandwichera" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/tostadora%20sandwichera'">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/tostadora%20sandwichera'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_976788-MLA112021275410_062026-E.webp" alt="Sandwichera Eléctrica Novohome Tostadora Grill Acero Inoxidable Facil Limpieza" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
             <h3>Sandwichera Eléctrica Novohome Tostadora Grill Acero Inoxidable Facil Limpieza</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
@@ -842,10 +865,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/tostadora%20sandwichera'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/tostadora%20sandwichera'">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/tostadora%20sandwichera'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_978273-MLA102190797507_122025-E.webp" alt="Sandwichera Baza 3 en 1, con Placas Removibles y Antiadherentes, para 2 Sándwiches" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
             <h3>Sandwichera Baza 3 en 1, con Placas Removibles y Antiadherentes, para 2 Sándwiches</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -858,10 +881,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/tostadora%20sandwichera'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/tostadora%20sandwichera'">
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/tostadora%20sandwichera'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_745620-MLA99869247515_112025-E.webp" alt="Sandwichera Tostadora Electrica Daewoo Antiadherente Color Negro" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥉 #3</span></span>
             <h3>Sandwichera Tostadora Electrica Daewoo Antiadherente Color Negro</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>

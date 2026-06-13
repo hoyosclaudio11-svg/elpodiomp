@@ -378,6 +378,29 @@
       margin-bottom: 8px;
     }
 
+    /* ── Podio: 1° 🥇, 2° 🥈, 3° 🥉 ── */
+    .card--gold   { border-top: 3px solid #FFD700; }
+    .card--silver { border-top: 3px solid #C0C0C0; }
+    .card--bronze { border-top: 3px solid #CD7F32; }
+
+    .podium-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: 8px;
+      background: #f5f5f5;
+      color: #555;
+      white-space: nowrap;
+    }
+
+    .card--gold .podium-badge   { background: #FFFDE7; color: #B8860B; }
+    .card--silver .podium-badge { background: #F5F5F5; color: #707070; }
+    .card--bronze .podium-badge { background: #FFF3E0; color: #8B5E3C; }
+
     .card h3 {
       font-size: 18px;
       font-weight: 700;

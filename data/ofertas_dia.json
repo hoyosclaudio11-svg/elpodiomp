@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-06-11",
-  "hora_publicacion": "19:31 ART",
-  "dia_semana": "Jueves",
+  "fecha": "2026-06-12",
+  "hora_publicacion": "21:32 ART",
+  "dia_semana": "Viernes",
   "total_ofertas": 3,
   "categorias": [
     "Hamburguesas"
@@ -10,14 +10,14 @@
     {
       "categoria": "Hamburguesas",
       "emoji": "🍔",
-      "titulo": "Combo Veggie Green",
-      "precio": 7200,
-      "precio_formateado": "$7.200",
-      "precio_original": 8000,
-      "descuento": 9,
+      "titulo": "Combo Chicken Crispy",
+      "precio": 7800,
+      "precio_formateado": "$7.800",
+      "precio_original": 9000,
+      "descuento": 13,
       "fuente": "Dean & Dennys",
       "envio": "Delivery disponible",
-      "razon": "Mejor precio con descuento real, opción veggie única y calidad premium de Dean & Dennys.",
+      "razon": "Mejor descuento real de la lista (-13%) en un combo completo de pollo crujiente de calidad.",
       "link": "https://deananddennys.com/",
       "imagen": "",
       "puntaje": 9
@@ -32,7 +32,7 @@
       "descuento": 10,
       "fuente": "Mostaza",
       "envio": "Delivery disponible",
-      "razon": "Descuento del 10% sobre precio anterior, combo clásico de Mostaza con nuggets, papas y gaseosa.",
+      "razon": "Descuento del 10% en un clásico de Mostaza con nuggets, papas y gaseosa, buena relación precio-valor.",
       "link": "https://www.pedidosya.com.ar/restaurantes/mostaza",
       "imagen": "",
       "puntaje": 8
@@ -47,7 +47,7 @@
       "descuento": null,
       "fuente": "Burger King",
       "envio": "Delivery disponible",
-      "razon": "Whopper icónico de Burger King a precio competitivo sin subir a $9,000, buena relación calidad-cantidad.",
+      "razon": "Precio competitivo sin descuento pero con la icónica Whopper de Burger King, equilibrado y atractivo.",
       "link": "https://www.burgerking.com.ar/",
       "imagen": "",
       "puntaje": 7

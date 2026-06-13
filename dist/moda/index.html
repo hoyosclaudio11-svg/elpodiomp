@@ -378,6 +378,29 @@
       margin-bottom: 8px;
     }
 
+    /* ── Podio: 1° 🥇, 2° 🥈, 3° 🥉 ── */
+    .card--gold   { border-top: 3px solid #FFD700; }
+    .card--silver { border-top: 3px solid #C0C0C0; }
+    .card--bronze { border-top: 3px solid #CD7F32; }
+
+    .podium-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: 8px;
+      background: #f5f5f5;
+      color: #555;
+      white-space: nowrap;
+    }
+
+    .card--gold .podium-badge   { background: #FFFDE7; color: #B8860B; }
+    .card--silver .podium-badge { background: #F5F5F5; color: #707070; }
+    .card--bronze .podium-badge { background: #FFF3E0; color: #8B5E3C; }
+
     .card h3 {
       font-size: 18px;
       font-weight: 700;
@@ -606,46 +629,46 @@
         <a href="https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_684513-MLA112986998367_062026-E.webp" alt="Zapatos Vizzano Stilletos Mujer Confort Taco Fino 1184" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Zapatos Vizzano Stilletos Mujer Confort Taco Fino 1184</h3>
-            <div class="rating">
-              <span class="stars">★★★★☆</span>
-              <span class="reviews">(433)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>63.990</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_796835-MLA91975560862_092025-E.webp" alt="Sandalias Zapato Pulsera Moda Fiesta Taco Aguja  Plataforma" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Sandalias Zapato Pulsera Moda Fiesta Taco Aguja  Plataforma</h3>
-            <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(388)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>80.999</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias'">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_995108-MLA92034498484_092025-E.webp" alt="Sandalias Zapato Pulsera Moda Fiesta  Plataforma Taco Aguja" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
             <h3>Sandalias Zapato Pulsera Moda Fiesta  Plataforma Taco Aguja</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
               <span class="reviews">(146)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>83.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_898606-CBT111328483889_052026-E.webp" alt="Mujer Zapatos Mules Dorados Punta Cristal Tacón Transparente" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
+            <h3>Mujer Zapatos Mules Dorados Punta Cristal Tacón Transparente</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(267)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>72.877</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatos%20mujer%20tacos%20sandalias'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_725038-MLA94134079875_102025-E.webp" alt="Sandalias Pulsera Zapato Moda Fiesta Taco Plataforma Brillo" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥉 #3</span></span>
+            <h3>Sandalias Pulsera Zapato Moda Fiesta Taco Plataforma Brillo</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(306)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
@@ -661,42 +684,10 @@
         <a href="https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_765178-MLA77602568545_072024-E.webp" alt="Zapatillas Mujer Hombre Unisex Livianas Na-din Becca Shoes" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Zapatillas Mujer Hombre Unisex Livianas Na-din Becca Shoes</h3>
-            <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(326)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>89.999</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_957482-MLA74604612566_022024-E.webp" alt="Zapatillas Busted De Hombre Mujer Entrega Inmediata" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Zapatillas Busted De Hombre Mujer Entrega Inmediata</h3>
-            <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(478)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>99.999</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer'">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_944435-MLA93315946018_092025-E.webp" alt="Zapatillas Moda Mujer Urbana Plataforma" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
             <h3>Zapatillas Moda Mujer Urbana Plataforma</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -708,6 +699,38 @@
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer'">Ver en Mercado Libre</button>
           </div>
+        </div>
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_987727-MLA76389086093_052024-E.webp" alt="Zapatillas Mujer Comodas Con Plataforma Acordonadas Acrux" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
+            <h3>Zapatillas Mujer Comodas Con Plataforma Acordonadas Acrux</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(470)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>79.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_666981-MLA76388580991_052024-E.webp" alt="Zapatillas Mujer Con Plataforma Comodas Livianas Acrux" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥉 #3</span></span>
+            <h3>Zapatillas Mujer Con Plataforma Comodas Livianas Acrux</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(434)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>99.999</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/zapatillas%20urbanas%20mujer'">Ver en Mercado Libre</button>
+          </div>
         </div></div>
     </section>
     <section class="section">
@@ -716,26 +739,10 @@
         <a href="https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_771215-MLA111703482373_052026-E.webp" alt="Jean Super Wide Leg Mujer Moda Tendencia Reina Mia" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Jean Super Wide Leg Mujer Moda Tendencia Reina Mia</h3>
-            <div class="rating">
-              <span class="stars">★★★★☆</span>
-              <span class="reviews">(230)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>33.000</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones'">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_809072-MLA112498559731_052026-E.webp" alt="Jean Mom Rígido Pkrk Tokio" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">6 cuotas sin interés</span>
+            <span class="card-badge">6 cuotas sin interés<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
             <h3>Jean Mom Rígido Pkrk Tokio</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
@@ -748,18 +755,34 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_898856-MLA112011953551_052026-E.webp" alt="Pantalones Bambi Wide Leg Mujer" loading="lazy">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_781031-MLA111283985917_052026-E.webp" alt="Pantalón Wide Leg Jean Celeste Mujer Pkrk Denim" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">9 cuotas sin interés</span>
-            <h3>Pantalones Bambi Wide Leg Mujer</h3>
+            <span class="card-badge">6 cuotas sin interés<span class="podium-badge">🥈 #2</span></span>
+            <h3>Pantalón Wide Leg Jean Celeste Mujer Pkrk Denim</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
-              <span class="reviews">(483)</span>
+              <span class="reviews">(154)</span>
             </div>
-            <p class="description">¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.</p>
+            <p class="description">¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.</p>
             
-            <p class="price"><span class="price-sup">$</span>80.000</p>
+            <p class="price"><span class="price-sup">$</span>69.818</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_907832-MLA106801357112_022026-E.webp" alt="Wide Leg Jean Nahana Chocolate Rigido" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥉 #3</span></span>
+            <h3>Wide Leg Jean Nahana Chocolate Rigido</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(337)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>62.000</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/jeans%20mujer%20pantalones'">Ver en Mercado Libre</button>
           </div>
@@ -771,26 +794,10 @@
         <a href="https://listado.mercadolibre.com.ar/remeras%20tops%20mujer%20moda" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/remeras%20tops%20mujer%20moda'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_853868-MLA111348363057_052026-E.webp" alt="Remera Top De Tul Bordada - Talles Grandes ( L A 4xl )" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Remera Top De Tul Bordada - Talles Grandes ( L A 4xl )</h3>
-            <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(159)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>25.000</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/remeras%20tops%20mujer%20moda'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/remeras%20tops%20mujer%20moda'">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/remeras%20tops%20mujer%20moda'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_773311-MLA109642780134_042026-E.webp" alt="Top Strapless Mujer Tul Asimétrico Importado Moda" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
             <h3>Top Strapless Mujer Tul Asimétrico Importado Moda</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -803,10 +810,26 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/remeras%20tops%20mujer%20moda'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/remeras%20tops%20mujer%20moda'">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/remeras%20tops%20mujer%20moda'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_601928-MLA97731620276_112025-E.webp" alt="Remera Top Mujer Musculosa Básica Importada Premium Moda" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
+            <h3>Remera Top Mujer Musculosa Básica Importada Premium Moda</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(225)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>29.990</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/remeras%20tops%20mujer%20moda'">Ver en Mercado Libre</button>
+          </div>
+        </div>
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/remeras%20tops%20mujer%20moda'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_984865-CBT89617661844_082025-E.webp" alt="Top De Mujer Con Cierre, Moda, Color Sólido, Acanalado" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Destacado</span>
+            <span class="card-badge">Destacado<span class="podium-badge">🥉 #3</span></span>
             <h3>Top De Mujer Con Cierre, Moda, Color Sólido, Acanalado</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -826,42 +849,26 @@
         <a href="https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_765835-MLA108966099887_032026-E.webp" alt="Vestido Corto Acampanado Fiorella K&amp;o Mujer Manga Abombada" loading="lazy">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_900721-MLA108102833698_032026-E.webp" alt="Vestido Corto K&amp;o Mujer Manga Abombada Bote Sexy Strapless" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Vestido Corto Acampanado Fiorella K&amp;o Mujer Manga Abombada</h3>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
+            <h3>Vestido Corto K&amp;o Mujer Manga Abombada Bote Sexy Strapless</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(237)</span>
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(184)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>33.550</p>
+            <p class="price"><span class="price-sup">$</span>29.710</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_754598-MLA110129001988_042026-E.webp" alt="Vestido Fiesta Teen Adolescente Mujer Mini Negro Microfibra" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">3 cuotas sin interés</span>
-            <h3>Vestido Fiesta Teen Adolescente Mujer Mini Negro Microfibra</h3>
-            <div class="rating">
-              <span class="stars">★★★★☆</span>
-              <span class="reviews">(261)</span>
-            </div>
-            <p class="description">¡3 cuotas sin interés en Mercado Libre! Aprovechá la financiación.</p>
-            
-            <p class="price"><span class="price-sup">$</span>28.491</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual'">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_962720-MLA110131692566_042026-E.webp" alt="Vestido Largo K&amp;o Mujer Gema Cuello Alto Sexy" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
             <h3>Vestido Largo K&amp;o Mujer Gema Cuello Alto Sexy</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
@@ -873,6 +880,22 @@
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual'">Ver en Mercado Libre</button>
           </div>
+        </div>
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_765835-MLA108966099887_032026-E.webp" alt="Vestido Corto Acampanado Fiorella K&amp;o Mujer Manga Abombada" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥉 #3</span></span>
+            <h3>Vestido Corto Acampanado Fiorella K&amp;o Mujer Manga Abombada</h3>
+            <div class="rating">
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(237)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>33.550</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/vestidos%20mujer%20fiesta%20casual'">Ver en Mercado Libre</button>
+          </div>
         </div></div>
     </section>
     <section class="section">
@@ -881,26 +904,26 @@
         <a href="https://listado.mercadolibre.com.ar/camperas%20abrigos%20mujer" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/camperas%20abrigos%20mujer'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_791347-MLA107002624791_022026-E.webp" alt="Campera Inflada Mujer Capucha Desmontable Oldtown Polo" loading="lazy">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/camperas%20abrigos%20mujer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_772085-MLA109638451401_032026-E.webp" alt="Campera Impermeable Térmica Invierno Capucha Mujer Premium" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Campera Inflada Mujer Capucha Desmontable Oldtown Polo</h3>
+            <span class="card-badge">6 cuotas sin interés<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
+            <h3>Campera Impermeable Térmica Invierno Capucha Mujer Premium</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
-              <span class="reviews">(491)</span>
+              <span class="reviews">(384)</span>
             </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            <p class="description">¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.</p>
             
-            <p class="price"><span class="price-sup">$</span>54.346</p>
+            <p class="price"><span class="price-sup">$</span>149.900</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/camperas%20abrigos%20mujer'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/camperas%20abrigos%20mujer'">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/camperas%20abrigos%20mujer'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_663620-MLA106751579488_022026-E.webp" alt="Campera Parka Ember Puffer Mujer Otoño/invierno" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
             <h3>Campera Parka Ember Puffer Mujer Otoño/invierno</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -913,18 +936,18 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/camperas%20abrigos%20mujer'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/camperas%20abrigos%20mujer'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_658361-MLA108440041415_032026-E.webp" alt="Campera Puffer Brillosa Con Capucha Para Mujer Art. 725" loading="lazy">
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/camperas%20abrigos%20mujer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_603327-MLA110044346250_042026-E.webp" alt="Campera Parka Moss Mujer Gamuza Otoño/invierno Black" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Campera Puffer Brillosa Con Capucha Para Mujer Art. 725</h3>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥉 #3</span></span>
+            <h3>Campera Parka Moss Mujer Gamuza Otoño/invierno Black</h3>
             <div class="rating">
-              <span class="stars">★★★★☆</span>
-              <span class="reviews">(490)</span>
+              <span class="stars">★★★★½</span>
+              <span class="reviews">(358)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>49.000</p>
+            <p class="price"><span class="price-sup">$</span>285.990</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/camperas%20abrigos%20mujer'">Ver en Mercado Libre</button>
           </div>
@@ -936,42 +959,26 @@
         <a href="https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_973903-MLA109950252454_042026-E.webp" alt="Cartera Mujer Bandolera Porta Celular Mini Bag Antirrobo Negro Lisa Cruzada Morral Carteras Riñonera Bolso Impermeable Cuero Sintetico Moda Speed Off Resistente Reforzado Regalo Para Mujer Versatil" loading="lazy">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_648942-MLA105097069561_012026-E.webp" alt="Cartera Bolso Mano Tejida Rafia Con Aro Forrado Moda Natural" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Cartera Mujer Bandolera Porta Celular Mini Bag Antirrobo Negro Lisa Cruzada Morral Carteras Riñonera Bolso Impermeable Cuero Sintetico Moda Speed Off Resistente Reforzado Regalo Para Mujer Versatil</h3>
+            <span class="card-badge">3 cuotas sin interés<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
+            <h3>Cartera Bolso Mano Tejida Rafia Con Aro Forrado Moda Natural</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
-              <span class="reviews">(194)</span>
+              <span class="reviews">(130)</span>
             </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            <p class="description">¡3 cuotas sin interés en Mercado Libre! Aprovechá la financiación.</p>
             
-            <p class="price"><span class="price-sup">$</span>23.990</p>
+            <p class="price"><span class="price-sup">$</span>134.460</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_938362-MLA110852799409_042026-E.webp" alt="Cartera Grande Mujer De Cuero Eco Bolso Universitario Para Mujer Carteras De Mujer Amplia Negra Bandolera Tote Versatil Moda Speed Off Morral Para Mujer Resistente Facultad Trabajo Regalo Dama Comoda" loading="lazy">
-          <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Cartera Grande Mujer De Cuero Eco Bolso Universitario Para Mujer Carteras De Mujer Amplia Negra Bandolera Tote Versatil Moda Speed Off Morral Para Mujer Resistente Facultad Trabajo Regalo Dama Comoda</h3>
-            <div class="rating">
-              <span class="stars">★★★★☆</span>
-              <span class="reviews">(443)</span>
-            </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
-            
-            <p class="price"><span class="price-sup">$</span>43.990</p>
-            <p class="installments">Hasta 12 cuotas sin interés</p>
-            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda'">Ver en Mercado Libre</button>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda'">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_851073-MLA102890520397_122025-E.webp" alt="Cartera Mujer Grande Puffer Carteras De Mujer Bolso Universitario Para Mujer Bandolera Morral Negro Negra Bolsos Impermeable De Marca Speed Off Moda Amplia Tote Resistente Reforzada Regalo Para Mujer" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
             <h3>Cartera Mujer Grande Puffer Carteras De Mujer Bolso Universitario Para Mujer Bandolera Morral Negro Negra Bolsos Impermeable De Marca Speed Off Moda Amplia Tote Resistente Reforzada Regalo Para Mujer</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -983,6 +990,22 @@
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda'">Ver en Mercado Libre</button>
           </div>
+        </div>
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_938362-MLA110852799409_042026-E.webp" alt="Cartera Grande Mujer De Cuero Eco Bolso Universitario Para Mujer Carteras De Mujer Amplia Negra Bandolera Tote Versatil Moda Speed Off Morral Para Mujer Resistente Facultad Trabajo Regalo Dama Comoda" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥉 #3</span></span>
+            <h3>Cartera Grande Mujer De Cuero Eco Bolso Universitario Para Mujer Carteras De Mujer Amplia Negra Bandolera Tote Versatil Moda Speed Off Morral Para Mujer Resistente Facultad Trabajo Regalo Dama Comoda</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(443)</span>
+            </div>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            
+            <p class="price"><span class="price-sup">$</span>43.990</p>
+            <p class="installments">Hasta 12 cuotas sin interés</p>
+            <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/carteras%20bolsos%20mujer%20moda'">Ver en Mercado Libre</button>
+          </div>
         </div></div>
     </section>
     <section class="section">
@@ -991,10 +1014,10 @@
         <a href="https://listado.mercadolibre.com.ar/lenceria%20conjuntos%20mujer" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/lenceria%20conjuntos%20mujer'">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/lenceria%20conjuntos%20mujer'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_799612-MLA85187632486_052025-E.webp" alt="Conjunto Camisolín Hilo Arnés Con Ligas Lencería Art 2200" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
             <h3>Conjunto Camisolín Hilo Arnés Con Ligas Lencería Art 2200</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
@@ -1007,10 +1030,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/lenceria%20conjuntos%20mujer'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/lenceria%20conjuntos%20mujer'">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/lenceria%20conjuntos%20mujer'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_864793-MLA82712584993_022025-E.webp" alt="Conjunto Sigry 1287 De Puntilla Y Tul Con Colaless" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
             <h3>Conjunto Sigry 1287 De Puntilla Y Tul Con Colaless</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -1023,18 +1046,18 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/lenceria%20conjuntos%20mujer'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/lenceria%20conjuntos%20mujer'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_605875-MLA99376872538_112025-E.webp" alt="12 Conjuntos Lencería Morley Mujer-lencería X Mayor Revender" loading="lazy">
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/lenceria%20conjuntos%20mujer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_828465-MLA73130359526_122023-E.webp" alt="Conjunto Lenceria Mujer Pack X6 Taza Soft Algodon Colaless" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>12 Conjuntos Lencería Morley Mujer-lencería X Mayor Revender</h3>
+            <span class="card-badge">6 cuotas sin interés<span class="podium-badge">🥉 #3</span></span>
+            <h3>Conjunto Lenceria Mujer Pack X6 Taza Soft Algodon Colaless</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
-              <span class="reviews">(184)</span>
+              <span class="reviews">(400)</span>
             </div>
-            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
+            <p class="description">¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.</p>
             
-            <p class="price"><span class="price-sup">$</span>69.999</p>
+            <p class="price"><span class="price-sup">$</span>59.161</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/lenceria%20conjuntos%20mujer'">Ver en Mercado Libre</button>
           </div>
@@ -1046,50 +1069,50 @@
         <a href="https://listado.mercadolibre.com.ar/conjunto%20deportivo%20mujer" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/conjunto%20deportivo%20mujer'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_798795-MLA109901542144_042026-E.webp" alt="Conjunto Jogging Deportivo Buzo Y Pantalón De Mujer G6" loading="lazy">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/conjunto%20deportivo%20mujer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_959907-MLA107460123407_022026-E.webp" alt="Conjunto Deportivo Palazzo Y Campera Jean Puntilla" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
-            <h3>Conjunto Jogging Deportivo Buzo Y Pantalón De Mujer G6</h3>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
+            <h3>Conjunto Deportivo Palazzo Y Campera Jean Puntilla</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
-              <span class="reviews">(263)</span>
+              <span class="reviews">(441)</span>
             </div>
             <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>59.999</p>
+            <p class="price"><span class="price-sup">$</span>60.000</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/conjunto%20deportivo%20mujer'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/conjunto%20deportivo%20mujer'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_644794-MLA111347246420_052026-E.webp" alt="Conjunto De Frisa Mujer Buzo Con Capucha Y Pantalón Wide Leg" loading="lazy">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/conjunto%20deportivo%20mujer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_624753-MLA101164176774_122025-E.webp" alt="Conjunto I-run Importado Microfibra" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">6 cuotas sin interés</span>
-            <h3>Conjunto De Frisa Mujer Buzo Con Capucha Y Pantalón Wide Leg</h3>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
+            <h3>Conjunto I-run Importado Microfibra</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
-              <span class="reviews">(336)</span>
+              <span class="reviews">(287)</span>
             </div>
-            <p class="description">¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.</p>
+            <p class="description">Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.</p>
             
-            <p class="price"><span class="price-sup">$</span>75.000</p>
+            <p class="price"><span class="price-sup">$</span>88.900</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/conjunto%20deportivo%20mujer'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/conjunto%20deportivo%20mujer'">
-          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_646363-MLA109165027164_042026-E.webp" alt="Conjunto De Plush Elastizado Mujer Jogging Jogger" loading="lazy">
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/conjunto%20deportivo%20mujer'">
+          <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_999415-MLA111458404960_052026-E.webp" alt="Conjunto Deportivo Mujer Top + Calza Push Up Importado Moda" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">6 cuotas sin interés</span>
-            <h3>Conjunto De Plush Elastizado Mujer Jogging Jogger</h3>
+            <span class="card-badge">6 cuotas sin interés<span class="podium-badge">🥉 #3</span></span>
+            <h3>Conjunto Deportivo Mujer Top + Calza Push Up Importado Moda</h3>
             <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="reviews">(498)</span>
+              <span class="stars">★★★★☆</span>
+              <span class="reviews">(200)</span>
             </div>
             <p class="description">¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.</p>
             
-            <p class="price"><span class="price-sup">$</span>79.990</p>
+            <p class="price"><span class="price-sup">$</span>89.990</p>
             <p class="installments">Hasta 12 cuotas sin interés</p>
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/conjunto%20deportivo%20mujer'">Ver en Mercado Libre</button>
           </div>
@@ -1101,10 +1124,10 @@
         <a href="https://listado.mercadolibre.com.ar/accesorios%20bijouterie%20mujer" target="_blank" class="view-all">Ver todos &rarr;</a>
       </div>
       <div class="grid">
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/accesorios%20bijouterie%20mujer'">
+        <div class="card card--gold" onclick="window.location.href='https://listado.mercadolibre.com.ar/accesorios%20bijouterie%20mujer'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_813303-MLA103463254862_012026-E.webp" alt="Pulsera Vip Cuero Nudo Love You Forever Estuche Deluxe" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥇 #1 Mejor valorado</span></span>
             <h3>Pulsera Vip Cuero Nudo Love You Forever Estuche Deluxe</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>
@@ -1117,10 +1140,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/accesorios%20bijouterie%20mujer'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/accesorios%20bijouterie%20mujer'">
+        <div class="card card--silver" onclick="window.location.href='https://listado.mercadolibre.com.ar/accesorios%20bijouterie%20mujer'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_730633-MLA111593042681_052026-E.webp" alt="Pulsera Mujer Protectora Nudo De Bruja Obsidiana Negra" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥈 #2</span></span>
             <h3>Pulsera Mujer Protectora Nudo De Bruja Obsidiana Negra</h3>
             <div class="rating">
               <span class="stars">★★★★½</span>
@@ -1133,10 +1156,10 @@
             <button class="btn" onclick="event.stopPropagation(); window.location.href='https://listado.mercadolibre.com.ar/accesorios%20bijouterie%20mujer'">Ver en Mercado Libre</button>
           </div>
         </div>
-        <div class="card" onclick="window.location.href='https://listado.mercadolibre.com.ar/accesorios%20bijouterie%20mujer'">
+        <div class="card card--bronze" onclick="window.location.href='https://listado.mercadolibre.com.ar/accesorios%20bijouterie%20mujer'">
           <img class="card-image" src="https://http2.mlstatic.com/D_Q_NP_2X_687647-MLA96404943651_102025-E.webp" alt="Collar Mujer Mano Hamsa Amuleto Protección Fátima" loading="lazy">
           <div class="card-body">
-            <span class="card-badge">Envío Gratis</span>
+            <span class="card-badge">Envío Gratis<span class="podium-badge">🥉 #3</span></span>
             <h3>Collar Mujer Mano Hamsa Amuleto Protección Fátima</h3>
             <div class="rating">
               <span class="stars">★★★★☆</span>

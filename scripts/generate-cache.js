@@ -117,6 +117,22 @@ function toNonAffiliateUrl(url) {
     .replace(/https:\/\/mercadolibre\.com\.ar/g, 'https://www.mercadolibre.com.ar');
 }
 
+// Safety net: convierte cualquier link inválido de ML en URL de búsqueda que nunca da 404
+function ensureValidMLUrl(link, productName) {
+  if (!link || typeof link !== 'string') {
+    const q = encodeURIComponent((productName || 'regalo').toLowerCase().replace(/[^a-z0-9áéíóúñü\s-]/gi, '').trim().substring(0, 80));
+    return q ? `https://listado.mercadolibre.com.ar/${q}` : 'https://listado.mercadolibre.com.ar/regalo-dia-del-padre';
+  }
+  if (/\/MLA-?\d{7,12}/i.test(link)) return link;
+  if (/listado\.mercadolibre\.com\.ar/i.test(link)) return link;
+  if (/mercadolibre\.com\.ar\/s\/search\?/i.test(link)) return link;
+  if (/mercadolibre\.com\.ar/i.test(link)) {
+    const q = encodeURIComponent((productName || 'regalo').toLowerCase().replace(/[^a-z0-9áéíóúñü\s-]/gi, '').trim().substring(0, 80));
+    return q ? `https://listado.mercadolibre.com.ar/${q}` : 'https://listado.mercadolibre.com.ar/regalo-dia-del-padre';
+  }
+  return link;
+}
+
 // ── API de Mercado Libre ─────────────────────────
 async function fetchFromApi(query, proxyConfig) {
   const token = process.env.MELI_ACCESS_TOKEN;
@@ -306,9 +322,8 @@ function generateSiteCache(siteId, template, fixture, config, foods, cenaOffers,
       const pos = POSITIONS[i] || POSITIONS[2];
       const salePrice = Math.round(p.price);
       const listPrice = p.oldPrice && p.oldPrice > salePrice ? Math.round(p.oldPrice) : null;
-      var linkUrl = p.link && p.link.startsWith('http')
-        ? safeUrl(toNonAffiliateUrl(p.link))
-        : '#'; // sin link válido, la card no es clickeable (mejor que un listado genérico)
+      // Safety net: generar URL de búsqueda si el link no es válido
+      var linkUrl = safeUrl(ensureValidMLUrl(p.link, p.product));
       var oldPriceHtml = listPrice ? '<p class="old-price">$' + formatPrice(listPrice) + '</p>' : '';
       var estimadoHtml = p.precio_estimado ? '<span style="font-size:11px;color:#f97316;margin-left:6px;" title="Precio estimado - puede variar">&#9888;&#65039; aprox.</span>' : '';
       var ratingInfo = p.rating && p.starsHtml ? { starsHtml: p.starsHtml, reviews: p.reviews } : getDeterministicRating((p.product || '') + siteId);

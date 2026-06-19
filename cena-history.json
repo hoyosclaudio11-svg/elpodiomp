@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Club del Progreso Restaurante|3 docenas de empanadas clásicas|2026-06-11",
-    "Tercera Docena Empanadas|Docena de empanadas al horno premium|2026-06-11",
-    "Brozziano Empanadas|Docena de empanadas gigantes|2026-06-11",
     "Unaghi Sushibar|Combo Sushi 24 piezas (Geishas, Nigiri, Philadelphia, Langost.roll)|2026-06-13",
     "Meat Asados a domicilio|Parrillada para 2 (chorizo, morcilla, vacío, bondiola, pollo)|2026-06-13",
     "Adorian Sushi|Surtido clásico 22 piezas (Geishas, Nigiri, Philadelphia, Langost.roll, Almendrado)|2026-06-13",
@@ -20,8 +17,11 @@
     "Piccadely|Picada Extra Grande (Longaniza, Salamín, Quesos, Muzzarelitas)|2026-06-17",
     "Sushi Pop|Combo Verano 24 piezas (Rolls, Nigiris, Sashimis)|2026-06-18",
     "Fabric Sushi|Combo Especial 30 piezas (Rolls, Uramakis, Geishas)|2026-06-18",
-    "Sushi Dag|Combo Dag 20 piezas (Rolls, Nigiri, Sashimi)|2026-06-18"
+    "Sushi Dag|Combo Dag 20 piezas (Rolls, Nigiri, Sashimi)|2026-06-18",
+    "Sensei Sushi|Tabla de Sushi 30 piezas (Rolls, Nigiri, Geishas)|2026-06-19",
+    "Che Sushi|Combo Roll Delirio + Roll Lujuria + 2 Gaseosas|2026-06-19",
+    "Sushimanía|Combo Classic Roll 12 piezas + 2 Empanadas Chinas|2026-06-19"
   ],
-  "updated": "2026-06-18",
+  "updated": "2026-06-19",
   "maxAge": 7
 }

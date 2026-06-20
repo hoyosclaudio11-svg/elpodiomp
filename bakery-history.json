@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Rox Pastelería Bakery|Docena de Croissants Artesanales|2026-06-12",
-    "Don Vito Alfajores|Docena de Alfajores Artesanales|2026-06-12",
-    "Rústico Chocolate|Docena de Alfajores Bañados en Chocolate|2026-06-12",
     "Sandwichería Avenida|Mini Medialunas (x12) Rellenas de Jamón y Queso|2026-06-13",
     "Pie Galerie|Medialunas J y Q - 24 unidades|2026-06-13",
     "Pauline Boulangerie|Medialunas Rellenas x 6|2026-06-13",
@@ -23,8 +20,11 @@
     "Medialunas Caseras|20 Medialunas Rellenas de Jamón y Queso - Catering|2026-06-18",
     "Panadería Medialunas y Facturas|Medialunas Manteca Rellenas de JyQ (2 Docenas)|2026-06-19",
     "Chipa Sin Tacc Por Docena|Docena de Chipá Sin TACC|2026-06-19",
-    "Medialunas Rellenas JyQ|Docena de Medialunas Rellenas de Jamón y Queso|2026-06-19"
+    "Medialunas Rellenas JyQ|Docena de Medialunas Rellenas de Jamón y Queso|2026-06-19",
+    "Churros XXL Crocantes|Docena de Churros Rellenos de Dulce de Leche|2026-06-20",
+    "Churros Rellenos Super Crocantes|Docena de Churros Rellenos|2026-06-20",
+    "Churros Caseros Delivery|Docena de Churros Caseros|2026-06-20"
   ],
-  "updated": "2026-06-19",
+  "updated": "2026-06-20",
   "maxAge": 7
 }

@@ -1,27 +1,12 @@
 {
-  "fecha": "2026-06-18",
-  "hora_publicacion": "19:31 ART",
-  "dia_semana": "Jueves",
+  "fecha": "2026-06-19",
+  "hora_publicacion": "21:31 ART",
+  "dia_semana": "Viernes",
   "total_ofertas": 3,
   "categorias": [
     "Hamburguesas"
   ],
   "ofertas": [
-    {
-      "categoria": "Hamburguesas",
-      "emoji": "🍔",
-      "titulo": "Combo Veggie Green",
-      "precio": 7200,
-      "precio_formateado": "$7.200",
-      "precio_original": null,
-      "descuento": null,
-      "fuente": "Dean & Dennys",
-      "envio": "Delivery disponible",
-      "razon": "Mejor precio de la lista con una hamburguesa vegana de calidad, ideal para variar y ahorrar.",
-      "link": "https://deananddennys.com/",
-      "imagen": "",
-      "puntaje": 9
-    },
     {
       "categoria": "Hamburguesas",
       "emoji": "🍔",
@@ -32,23 +17,38 @@
       "descuento": 13,
       "fuente": "Dean & Dennys",
       "envio": "Delivery disponible",
-      "razon": "Único descuento real del catálogo (-13%) en un combo completo de Dean & Dennys.",
+      "razon": "Mejor descuento real (-13%) en un combo de pollo premium con buena calidad y precio competitivo.",
       "link": "https://deananddennys.com/",
+      "imagen": "",
+      "puntaje": 9
+    },
+    {
+      "categoria": "Hamburguesas",
+      "emoji": "🍔",
+      "titulo": "Combo Nuggets 10 + Papas + Gaseosa",
+      "precio": 8500,
+      "precio_formateado": "$8.500",
+      "precio_original": 9500,
+      "descuento": 10,
+      "fuente": "Mostaza",
+      "envio": "Delivery disponible",
+      "razon": "Descuento del 10% sobre precio anterior, combo clásico y completo de Mostaza con buena relación precio/valor.",
+      "link": "https://www.pedidosya.com.ar/restaurantes/mostaza",
       "imagen": "",
       "puntaje": 8
     },
     {
       "categoria": "Hamburguesas",
       "emoji": "🍔",
-      "titulo": "Combo King de Pollo",
-      "precio": 8000,
-      "precio_formateado": "$8.000",
+      "titulo": "Combo Veggie Green",
+      "precio": 7200,
+      "precio_formateado": "$7.200",
       "precio_original": null,
       "descuento": null,
-      "fuente": "Burger King",
+      "fuente": "Dean & Dennys",
       "envio": "Delivery disponible",
-      "razon": "Combo de pollo a buen precio en Burger King, opción diferente y económica frente a las de carne.",
-      "link": "https://www.burgerking.com.ar/",
+      "razon": "Opción veggie más económica de la lista, ideal para variedad y buen precio absoluto sin descuento.",
+      "link": "https://deananddennys.com/",
       "imagen": "",
       "puntaje": 7
     }

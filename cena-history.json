@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Unaghi Sushibar|Combo Sushi 24 piezas (Geishas, Nigiri, Philadelphia, Langost.roll)|2026-06-13",
-    "Meat Asados a domicilio|Parrillada para 2 (chorizo, morcilla, vacío, bondiola, pollo)|2026-06-13",
-    "Adorian Sushi|Surtido clásico 22 piezas (Geishas, Nigiri, Philadelphia, Langost.roll, Almendrado)|2026-06-13",
     "El Noble|Docena de Empanadas al Horno (sabores variados: carne, jamón y queso, pollo, etc.)|2026-06-14",
     "Empanadas de 10|Pizza de Muzzarella Grande + Docena de Empanadas (combo promocional)|2026-06-14",
     "Solo Empanadas|Docena de Empanadas de Carne Cortada a Cuchillo + Gaseosa|2026-06-14",
@@ -23,8 +20,11 @@
     "Sushimanía|Combo Classic Roll 12 piezas + 2 Empanadas Chinas|2026-06-19",
     "Mole Tacos|Menú Guadalupeña para 2 (2 Tacos + 2 Burritos + Botana + Totopos)|2026-06-20",
     "Taco Box|Combo Tacos + Burrito + Bebida|2026-06-20",
-    "BigPons|Combo Doble Bacon + Papas + Gaseosa|2026-06-20"
+    "BigPons|Combo Doble Bacon + Papas + Gaseosa|2026-06-20",
+    "Rincón Norteño|Docena de Empanadas Tucumanas (carne, pollo, jamón y queso)|2026-06-21",
+    "Aires Criollos|Parrillada para 2 (Asado, Chorizo, Morcilla, Vacío)|2026-06-21",
+    "Don Antonio|Pizza Gigante de Muzzarella + 4 Fainá|2026-06-21"
   ],
-  "updated": "2026-06-20",
+  "updated": "2026-06-21",
   "maxAge": 7
 }

@@ -1,8 +1,5 @@
 {
   "recent": [
-    "La Argentina|Facturas surtidas x 6 unidades|2026-06-14",
-    "Atención 24hs|Docena de Facturas Surtidas|2026-06-14",
-    "PANI|Desayuno Sorpresa en Casa al PANI Style|2026-06-14",
     "Sweet Melody|Desayuno Campestre Artesanal|2026-06-15",
     "Desayunos Premium CABA|Desayuno Premium con Mini Torta Marquise|2026-06-15",
     "Andrea's Delicatessen|Torta Casera (Cheesecake, Brownie, Lemon Pie, Chocotorta)|2026-06-16",
@@ -22,8 +19,11 @@
     "Churros Caseros Delivery|Docena de Churros Caseros|2026-06-20",
     "Panadería Artesanal ML|Docena de Medialunas de Manteca|2026-06-21",
     "Sandwich Miga Premium|Docena de Sándwiches de Miga Simples|2026-06-21",
-    "Medialunas Caseras Delivery|Docena de Medialunas Cocinadas|2026-06-21"
+    "Medialunas Caseras Delivery|Docena de Medialunas Cocinadas|2026-06-21",
+    "Estación Porteña, Fábrica de Medialunas|Medialunas de Manteca Congeladas x 24 Docenas|2026-06-22",
+    "Pedi Tu Desayuno|Desayuno Premium Sorpresa|2026-06-22",
+    "Desayunos Premium CABA|Desayuno & Merienda Premium|2026-06-22"
   ],
-  "updated": "2026-06-21",
+  "updated": "2026-06-22",
   "maxAge": 7
 }

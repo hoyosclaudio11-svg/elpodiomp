@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Burger Couple|Combo Doble Hamburguesa con Cheddar + Papas Fritas + Bebida|2026-06-15",
-    "Pizza Zen|Pizza Especial Muzzarella + Jamón Crudo y Rúcula (Grande)|2026-06-15",
-    "What The Burger|Cheese Burger Smash Doble + Papas con Cheddar y Bacon|2026-06-15",
     "Grande Muzza|Pizza Gigante de Muzzarella + 4 Fainá|2026-06-16",
     "La Farola Express|Milanesa Napolitana con Papas Fritas|2026-06-16",
     "Pizzas Gigantes|1 Gigante de Muzzarella + 1 Gigante de Jamón o Fugazzeta + 4 Fainá|2026-06-16",
@@ -23,8 +20,11 @@
     "Don Antonio|Pizza Gigante de Muzzarella + 4 Fainá|2026-06-21",
     "Mariani Delivery Market|Combo Mex para 4 personas (tacos, burritos, nachos, guacamole)|2026-06-22",
     "Pizza Now|Pizza Gigante de Muzzarella + 4 Empanadas|2026-06-22",
-    "TacoRico|Menú Mexicano para 4/5 personas (tacos, burritos, guacamole)|2026-06-22"
+    "TacoRico|Menú Mexicano para 4/5 personas (tacos, burritos, guacamole)|2026-06-22",
+    "Big Pizza|Pizza Gigante de Muzzarella + 4 Fainá|2026-06-23",
+    "El Club de la Milanesa|Milanesa Napolitana con Papas Fritas|2026-06-23",
+    "La Milaneseria|Milanesa a la Fugazzeta con Papas|2026-06-23"
   ],
-  "updated": "2026-06-22",
+  "updated": "2026-06-23",
   "maxAge": 7
 }

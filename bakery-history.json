@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Andrea's Delicatessen|Torta Casera (Cheesecake, Brownie, Lemon Pie, Chocotorta)|2026-06-16",
-    "Andrea's Delicatessen|Torta + 12 Cupcakes Decorados|2026-06-16",
-    "Torta Medovik Rusa|Torta Medovik Rusa Casera 1kg|2026-06-16",
     "Panadería Medialunas y Facturas|Docena de Medialunas de Manteca|2026-06-17",
     "Panadería Despacho de Pan y Facturas|Docena de Facturas Surtidas de Manteca|2026-06-17",
     "Medialunas Artesanales Congeladas|Docena de Medialunas Artesanales Congeladas|2026-06-17",
@@ -15,7 +12,6 @@
     "Churros XXL Crocantes|Docena de Churros Rellenos de Dulce de Leche|2026-06-20",
     "Churros Rellenos Super Crocantes|Docena de Churros Rellenos|2026-06-20",
     "Churros Caseros Delivery|Docena de Churros Caseros|2026-06-20",
-    "Panadería Artesanal ML|Docena de Medialunas de Manteca|2026-06-21",
     "Sandwich Miga Premium|Docena de Sándwiches de Miga Simples|2026-06-21",
     "Medialunas Caseras Delivery|Docena de Medialunas Cocinadas|2026-06-21",
     "Estación Porteña, Fábrica de Medialunas|Medialunas de Manteca Congeladas x 24 Docenas|2026-06-22",
@@ -23,8 +19,11 @@
     "Desayunos Premium CABA|Desayuno & Merienda Premium|2026-06-22",
     "Sweet Melody|Desayuno Campestre Artesanal|2026-06-23",
     "Desayunos Domicilio Premium|Desayuno Premium Promo|2026-06-23",
-    "Alfajores Artesanales|Docena de Alfajores Artesanales|2026-06-23"
+    "Alfajores Artesanales|Docena de Alfajores Artesanales|2026-06-23",
+    "Panadería Artesanal ML|Docena de Medialunas de Manteca|2026-06-24",
+    "Panadería Artesanal ML|Docena de Facturas Surtidas de Manteca|2026-06-24",
+    "Alfajores Artesanales Catering|Docena de Alfajores Artesanales (110g c/u)|2026-06-24"
   ],
-  "updated": "2026-06-23",
+  "updated": "2026-06-24",
   "maxAge": 7
 }

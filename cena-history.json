@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Grande Muzza|Pizza Gigante de Muzzarella + 4 Fainá|2026-06-16",
-    "La Farola Express|Milanesa Napolitana con Papas Fritas|2026-06-16",
-    "Pizzas Gigantes|1 Gigante de Muzzarella + 1 Gigante de Jamón o Fugazzeta + 4 Fainá|2026-06-16",
     "Hamburguesas Extremas|Combo Hamburguesa Cuarto de Libra con Queso + Papas Fritas + Gaseosa|2026-06-17",
     "Siga la Vaca|Parrillada para 2 (Asado, Chorizo, Morcilla, Vacío)|2026-06-17",
     "Piccadely|Picada Extra Grande (Longaniza, Salamín, Quesos, Muzzarelitas)|2026-06-17",
@@ -23,8 +20,11 @@
     "TacoRico|Menú Mexicano para 4/5 personas (tacos, burritos, guacamole)|2026-06-22",
     "Big Pizza|Pizza Gigante de Muzzarella + 4 Fainá|2026-06-23",
     "El Club de la Milanesa|Milanesa Napolitana con Papas Fritas|2026-06-23",
-    "La Milaneseria|Milanesa a la Fugazzeta con Papas|2026-06-23"
+    "La Milaneseria|Milanesa a la Fugazzeta con Papas|2026-06-23",
+    "Lomitos Sabor Urbano|Lomito Completo con Papas|2026-06-24",
+    "La Parraca|Sanguche de Lomito completo|2026-06-24",
+    "Pizzería Los Cocos|Sandwich de Lomito Completo|2026-06-24"
   ],
-  "updated": "2026-06-23",
+  "updated": "2026-06-24",
   "maxAge": 7
 }

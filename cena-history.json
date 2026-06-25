@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Hamburguesas Extremas|Combo Hamburguesa Cuarto de Libra con Queso + Papas Fritas + Gaseosa|2026-06-17",
-    "Siga la Vaca|Parrillada para 2 (Asado, Chorizo, Morcilla, Vacío)|2026-06-17",
-    "Piccadely|Picada Extra Grande (Longaniza, Salamín, Quesos, Muzzarelitas)|2026-06-17",
     "Sushi Pop|Combo Verano 24 piezas (Rolls, Nigiris, Sashimis)|2026-06-18",
     "Fabric Sushi|Combo Especial 30 piezas (Rolls, Uramakis, Geishas)|2026-06-18",
     "Sushi Dag|Combo Dag 20 piezas (Rolls, Nigiri, Sashimi)|2026-06-18",
@@ -23,8 +20,11 @@
     "La Milaneseria|Milanesa a la Fugazzeta con Papas|2026-06-23",
     "Lomitos Sabor Urbano|Lomito Completo con Papas|2026-06-24",
     "La Parraca|Sanguche de Lomito completo|2026-06-24",
-    "Pizzería Los Cocos|Sandwich de Lomito Completo|2026-06-24"
+    "Pizzería Los Cocos|Sandwich de Lomito Completo|2026-06-24",
+    "Tercera Docena|Docena de Empanadas Variadas (Carne Cortada a Cuchillo, Jamón y Queso, Roquefort)|2026-06-25",
+    "Santillo|Combo Hamburguesa Clásica con Papas Fritas y Gaseosa|2026-06-25",
+    "Del Fino Dulce|Pizza Gigante de Muzzarella con 4 Empanadas|2026-06-25"
   ],
-  "updated": "2026-06-24",
+  "updated": "2026-06-25",
   "maxAge": 7
 }

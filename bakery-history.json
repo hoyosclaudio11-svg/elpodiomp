@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Panadería Medialunas y Facturas|Docena de Medialunas de Manteca|2026-06-17",
-    "Panadería Despacho de Pan y Facturas|Docena de Facturas Surtidas de Manteca|2026-06-17",
-    "Medialunas Artesanales Congeladas|Docena de Medialunas Artesanales Congeladas|2026-06-17",
     "Sweetchef|Promoción 24 Medialunas Rellenas de Jamón y Queso|2026-06-18",
     "Catering Lunch|30 Medialunas con Jamón y Queso - Delivery|2026-06-18",
     "Medialunas Caseras|20 Medialunas Rellenas de Jamón y Queso - Catering|2026-06-18",
@@ -22,8 +19,11 @@
     "Alfajores Artesanales|Docena de Alfajores Artesanales|2026-06-23",
     "Panadería Artesanal ML|Docena de Medialunas de Manteca|2026-06-24",
     "Panadería Artesanal ML|Docena de Facturas Surtidas de Manteca|2026-06-24",
-    "Alfajores Artesanales Catering|Docena de Alfajores Artesanales (110g c/u)|2026-06-24"
+    "Alfajores Artesanales Catering|Docena de Alfajores Artesanales (110g c/u)|2026-06-24",
+    "Panadería La Buena Migas|Docena de Medialunas de Manteca|2026-06-25",
+    "Confitería El Trigal|Docena de Facturas Surtidas de Manteca|2026-06-25",
+    "Panadería San Nicolás|Docena de Chipá Artesanal|2026-06-25"
   ],
-  "updated": "2026-06-24",
+  "updated": "2026-06-25",
   "maxAge": 7
 }

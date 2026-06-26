@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Sushi Pop|Combo Verano 24 piezas (Rolls, Nigiris, Sashimis)|2026-06-18",
-    "Fabric Sushi|Combo Especial 30 piezas (Rolls, Uramakis, Geishas)|2026-06-18",
-    "Sushi Dag|Combo Dag 20 piezas (Rolls, Nigiri, Sashimi)|2026-06-18",
     "Sensei Sushi|Tabla de Sushi 30 piezas (Rolls, Nigiri, Geishas)|2026-06-19",
     "Che Sushi|Combo Roll Delirio + Roll Lujuria + 2 Gaseosas|2026-06-19",
     "Sushimanía|Combo Classic Roll 12 piezas + 2 Empanadas Chinas|2026-06-19",
@@ -23,8 +20,11 @@
     "Pizzería Los Cocos|Sandwich de Lomito Completo|2026-06-24",
     "Tercera Docena|Docena de Empanadas Variadas (Carne Cortada a Cuchillo, Jamón y Queso, Roquefort)|2026-06-25",
     "Santillo|Combo Hamburguesa Clásica con Papas Fritas y Gaseosa|2026-06-25",
-    "Del Fino Dulce|Pizza Gigante de Muzzarella con 4 Empanadas|2026-06-25"
+    "Del Fino Dulce|Pizza Gigante de Muzzarella con 4 Empanadas|2026-06-25",
+    "Sushi Pop|Combo Especial 30 piezas (Rolls, Nigiri, Geishas)|2026-06-26",
+    "Dean & Dennys|Combo Dean Burger + Papas Fritas + Gaseosa|2026-06-26",
+    "Fabric Sushi|Combo Fabric Roll 12 piezas + 2 Empanadas Chinas|2026-06-26"
   ],
-  "updated": "2026-06-25",
+  "updated": "2026-06-26",
   "maxAge": 7
 }

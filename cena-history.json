@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Sensei Sushi|Tabla de Sushi 30 piezas (Rolls, Nigiri, Geishas)|2026-06-19",
-    "Che Sushi|Combo Roll Delirio + Roll Lujuria + 2 Gaseosas|2026-06-19",
-    "Sushimanía|Combo Classic Roll 12 piezas + 2 Empanadas Chinas|2026-06-19",
     "Mole Tacos|Menú Guadalupeña para 2 (2 Tacos + 2 Burritos + Botana + Totopos)|2026-06-20",
     "Taco Box|Combo Tacos + Burrito + Bebida|2026-06-20",
     "BigPons|Combo Doble Bacon + Papas + Gaseosa|2026-06-20",
@@ -23,8 +20,11 @@
     "Del Fino Dulce|Pizza Gigante de Muzzarella con 4 Empanadas|2026-06-25",
     "Sushi Pop|Combo Especial 30 piezas (Rolls, Nigiri, Geishas)|2026-06-26",
     "Dean & Dennys|Combo Dean Burger + Papas Fritas + Gaseosa|2026-06-26",
-    "Fabric Sushi|Combo Fabric Roll 12 piezas + 2 Empanadas Chinas|2026-06-26"
+    "Fabric Sushi|Combo Fabric Roll 12 piezas + 2 Empanadas Chinas|2026-06-26",
+    "Pizza R|Pizza Gigante de Muzzarella + 4 Empanadas|2026-06-27",
+    "Almacén de Pizzas|Pizza de Cheddar y Panceta + Papas Fritas|2026-06-27",
+    "Betos|Lomito Completo con Papas Fritas|2026-06-27"
   ],
-  "updated": "2026-06-26",
+  "updated": "2026-06-27",
   "maxAge": 7
 }

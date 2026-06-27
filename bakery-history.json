@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Panadería Medialunas y Facturas|Medialunas Manteca Rellenas de JyQ (2 Docenas)|2026-06-19",
-    "Chipa Sin Tacc Por Docena|Docena de Chipá Sin TACC|2026-06-19",
-    "Medialunas Rellenas JyQ|Docena de Medialunas Rellenas de Jamón y Queso|2026-06-19",
     "Churros XXL Crocantes|Docena de Churros Rellenos de Dulce de Leche|2026-06-20",
     "Churros Rellenos Super Crocantes|Docena de Churros Rellenos|2026-06-20",
     "Churros Caseros Delivery|Docena de Churros Caseros|2026-06-20",
@@ -19,8 +16,11 @@
     "Panadería La Buena Migas|Docena de Medialunas de Manteca|2026-06-25",
     "Panadería Artesanal ML|Docena de Facturas Surtidas de Manteca|2026-06-26",
     "Confitería El Trigal|Docena de Facturas Surtidas de Manteca|2026-06-26",
-    "Panadería San Nicolás|Docena de Chipá Artesanal|2026-06-26"
+    "Panadería San Nicolás|Docena de Chipá Artesanal|2026-06-26",
+    "Panadería Artesanal CABA|Docena de Medialunas de Manteca|2026-06-27",
+    "Panadería La Tradicional|Docena de Facturas Surtidas de Manteca|2026-06-27",
+    "Panadería El Buen Pan|Docena de Medialunas de Manteca y Grasa|2026-06-27"
   ],
-  "updated": "2026-06-26",
+  "updated": "2026-06-27",
   "maxAge": 7
 }

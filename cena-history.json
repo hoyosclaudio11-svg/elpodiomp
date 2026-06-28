@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Mole Tacos|Menú Guadalupeña para 2 (2 Tacos + 2 Burritos + Botana + Totopos)|2026-06-20",
-    "Taco Box|Combo Tacos + Burrito + Bebida|2026-06-20",
-    "BigPons|Combo Doble Bacon + Papas + Gaseosa|2026-06-20",
     "Rincón Norteño|Docena de Empanadas Tucumanas (carne, pollo, jamón y queso)|2026-06-21",
     "Aires Criollos|Parrillada para 2 (Asado, Chorizo, Morcilla, Vacío)|2026-06-21",
     "Don Antonio|Pizza Gigante de Muzzarella + 4 Fainá|2026-06-21",
@@ -23,8 +20,11 @@
     "Fabric Sushi|Combo Fabric Roll 12 piezas + 2 Empanadas Chinas|2026-06-26",
     "Pizza R|Pizza Gigante de Muzzarella + 4 Empanadas|2026-06-27",
     "Almacén de Pizzas|Pizza de Cheddar y Panceta + Papas Fritas|2026-06-27",
-    "Betos|Lomito Completo con Papas Fritas|2026-06-27"
+    "Betos|Lomito Completo con Papas Fritas|2026-06-27",
+    "Che Sushi|Combinado de Sushi 30 piezas (Rolls, Nigiris, Geishas)|2026-06-28",
+    "El Noble|Docena de Empanadas Variadas (carne, pollo, jamón y queso, humita)|2026-06-28",
+    "Morita|Docena de Empanadas de Carne Cortada a Cuchillo + 2 Empanadas de Jamón y Queso|2026-06-28"
   ],
-  "updated": "2026-06-27",
+  "updated": "2026-06-28",
   "maxAge": 7
 }

@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Rincón Norteño|Docena de Empanadas Tucumanas (carne, pollo, jamón y queso)|2026-06-21",
-    "Aires Criollos|Parrillada para 2 (Asado, Chorizo, Morcilla, Vacío)|2026-06-21",
-    "Don Antonio|Pizza Gigante de Muzzarella + 4 Fainá|2026-06-21",
     "Mariani Delivery Market|Combo Mex para 4 personas (tacos, burritos, nachos, guacamole)|2026-06-22",
     "Pizza Now|Pizza Gigante de Muzzarella + 4 Empanadas|2026-06-22",
     "TacoRico|Menú Mexicano para 4/5 personas (tacos, burritos, guacamole)|2026-06-22",
@@ -23,8 +20,11 @@
     "Betos|Lomito Completo con Papas Fritas|2026-06-27",
     "Che Sushi|Combinado de Sushi 30 piezas (Rolls, Nigiris, Geishas)|2026-06-28",
     "El Noble|Docena de Empanadas Variadas (carne, pollo, jamón y queso, humita)|2026-06-28",
-    "Morita|Docena de Empanadas de Carne Cortada a Cuchillo + 2 Empanadas de Jamón y Queso|2026-06-28"
+    "Morita|Docena de Empanadas de Carne Cortada a Cuchillo + 2 Empanadas de Jamón y Queso|2026-06-28",
+    "Mole Tacos|Menú Guadalupeña para 2 (2 Tacos, 2 Burritos, 1/2 Botana, Pico de Gallo, Salsa, Totopos)|2026-06-29",
+    "Taco N Todo Mexican Fast Food|Combo de Tacos y Burritos para 2 personas|2026-06-29",
+    "Lomitos 348|Lomito Completo con Papas Fritas|2026-06-29"
   ],
-  "updated": "2026-06-28",
+  "updated": "2026-06-29",
   "maxAge": 7
 }

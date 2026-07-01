@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Sweet Melody|Desayuno Campestre Artesanal|2026-06-23",
-    "Desayunos Domicilio Premium|Desayuno Premium Promo|2026-06-23",
-    "Alfajores Artesanales|Docena de Alfajores Artesanales|2026-06-23",
     "Panadería Artesanal ML|Docena de Medialunas de Manteca|2026-06-24",
     "Alfajores Artesanales Catering|Docena de Alfajores Artesanales (110g c/u)|2026-06-24",
     "Panadería La Buena Migas|Docena de Medialunas de Manteca|2026-06-25",
@@ -20,8 +17,11 @@
     "Dina Medialunas|Docena de Medialunas de Manteca|2026-06-29",
     "Armando Medialunas|Docena de Medialunas de Manteca|2026-06-30",
     "Medialunas Calentitas|Docena de Medialunas de Manteca|2026-06-30",
-    "Parador Atalaya|Docena de Facturas Surtidas|2026-06-30"
+    "Parador Atalaya|Docena de Facturas Surtidas|2026-06-30",
+    "Churros XXL Crocantes|Docena de Churros Rellenos de Dulce de Leche|2026-07-01",
+    "Facturas Delivery Regalos|Docena de Facturas Surtidas|2026-07-01",
+    "Churros Congelados Artesanales|Docena de Churros Congelados para Freír|2026-07-01"
   ],
-  "updated": "2026-06-30",
+  "updated": "2026-07-01",
   "maxAge": 7
 }

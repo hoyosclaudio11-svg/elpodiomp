@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Lomitos Sabor Urbano|Lomito Completo con Papas|2026-06-24",
-    "La Parraca|Sanguche de Lomito completo|2026-06-24",
-    "Pizzería Los Cocos|Sandwich de Lomito Completo|2026-06-24",
     "Tercera Docena|Docena de Empanadas Variadas (Carne Cortada a Cuchillo, Jamón y Queso, Roquefort)|2026-06-25",
     "Santillo|Combo Hamburguesa Clásica con Papas Fritas y Gaseosa|2026-06-25",
     "Del Fino Dulce|Pizza Gigante de Muzzarella con 4 Empanadas|2026-06-25",
@@ -23,8 +20,11 @@
     "What The Burger|Spicy Burger con Papas Fritas|2026-06-30",
     "TacoRico|Combo Taquería para 2 (Tacos, Burritos, Quesadillas)|2026-07-01",
     "Combo Fiesta|Combo Hamburguesa Clásica con Papas Fritas y Gaseosa|2026-07-01",
-    "Taco Express|Combo de Tacos y Burritos para 2 personas|2026-07-01"
+    "Taco Express|Combo de Tacos y Burritos para 2 personas|2026-07-01",
+    "Sushi Garden|Promo para 4: 28 sushi rolls clásicos + 12 hot rolls + salsas, wasabi y palitos|2026-07-02",
+    "Pizza Zen|Pizza Gigante de Muzzarella + 4 Empanadas|2026-07-02",
+    "Tomasso|Combo Doble Hamburguesa con Papas Fritas y Gaseosa|2026-07-02"
   ],
-  "updated": "2026-07-01",
+  "updated": "2026-07-02",
   "maxAge": 7
 }

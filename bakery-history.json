@@ -1,13 +1,10 @@
 {
   "recent": [
-    "Panadería Artesanal ML|Docena de Medialunas de Manteca|2026-06-24",
-    "Alfajores Artesanales Catering|Docena de Alfajores Artesanales (110g c/u)|2026-06-24",
     "Panadería La Buena Migas|Docena de Medialunas de Manteca|2026-06-25",
     "Panadería Artesanal ML|Docena de Facturas Surtidas de Manteca|2026-06-26",
     "Confitería El Trigal|Docena de Facturas Surtidas de Manteca|2026-06-26",
     "Panadería San Nicolás|Docena de Chipá Artesanal|2026-06-26",
     "Panadería Artesanal CABA|Docena de Medialunas de Manteca|2026-06-27",
-    "Panadería La Tradicional|Docena de Facturas Surtidas de Manteca|2026-06-27",
     "Panadería El Buen Pan|Docena de Medialunas de Manteca y Grasa|2026-06-27",
     "Medialunas De Manteca De Hojaldre|Docena de Medialunas de Manteca|2026-06-28",
     "Medialunas X24 De Manteca Artesanales Dulces Panadería|Pack de 24 Medialunas de Manteca Artesanales|2026-06-28",
@@ -20,8 +17,11 @@
     "Parador Atalaya|Docena de Facturas Surtidas|2026-06-30",
     "Churros XXL Crocantes|Docena de Churros Rellenos de Dulce de Leche|2026-07-01",
     "Facturas Delivery Regalos|Docena de Facturas Surtidas|2026-07-01",
-    "Churros Congelados Artesanales|Docena de Churros Congelados para Freír|2026-07-01"
+    "Churros Congelados Artesanales|Docena de Churros Congelados para Freír|2026-07-01",
+    "Sweet Melody|Desayuno Campestre Artesanal|2026-07-02",
+    "Panadería Artesanal CABA|Docena de Medialunas Artesanales Congeladas|2026-07-02",
+    "Panadería La Tradicional|Docena de Facturas Surtidas de Manteca|2026-07-02"
   ],
-  "updated": "2026-07-01",
+  "updated": "2026-07-02",
   "maxAge": 7
 }

@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Tercera Docena|Docena de Empanadas Variadas (Carne Cortada a Cuchillo, Jamón y Queso, Roquefort)|2026-06-25",
-    "Santillo|Combo Hamburguesa Clásica con Papas Fritas y Gaseosa|2026-06-25",
-    "Del Fino Dulce|Pizza Gigante de Muzzarella con 4 Empanadas|2026-06-25",
     "Sushi Pop|Combo Especial 30 piezas (Rolls, Nigiri, Geishas)|2026-06-26",
     "Dean & Dennys|Combo Dean Burger + Papas Fritas + Gaseosa|2026-06-26",
     "Fabric Sushi|Combo Fabric Roll 12 piezas + 2 Empanadas Chinas|2026-06-26",
@@ -23,8 +20,11 @@
     "Taco Express|Combo de Tacos y Burritos para 2 personas|2026-07-01",
     "Sushi Garden|Promo para 4: 28 sushi rolls clásicos + 12 hot rolls + salsas, wasabi y palitos|2026-07-02",
     "Pizza Zen|Pizza Gigante de Muzzarella + 4 Empanadas|2026-07-02",
-    "Tomasso|Combo Doble Hamburguesa con Papas Fritas y Gaseosa|2026-07-02"
+    "Tomasso|Combo Doble Hamburguesa con Papas Fritas y Gaseosa|2026-07-02",
+    "Ayguacamole! Tacos Mexicanos Para Armar|Combo Tacos Mexicanos para Armar (8 tacos + guacamole + salsas)|2026-07-03",
+    "Pizza Now|Pizza Gigante de Muzzarella + 4 Empanadas|2026-07-03",
+    "Ron Damón|Combo Lomito Completo + Papas Fritas + Gaseosa|2026-07-03"
   ],
-  "updated": "2026-07-02",
+  "updated": "2026-07-03",
   "maxAge": 7
 }

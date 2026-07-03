@@ -1,7 +1,5 @@
 {
   "recent": [
-    "Panadería La Buena Migas|Docena de Medialunas de Manteca|2026-06-25",
-    "Panadería Artesanal ML|Docena de Facturas Surtidas de Manteca|2026-06-26",
     "Confitería El Trigal|Docena de Facturas Surtidas de Manteca|2026-06-26",
     "Panadería San Nicolás|Docena de Chipá Artesanal|2026-06-26",
     "Panadería Artesanal CABA|Docena de Medialunas de Manteca|2026-06-27",
@@ -20,8 +18,11 @@
     "Churros Congelados Artesanales|Docena de Churros Congelados para Freír|2026-07-01",
     "Sweet Melody|Desayuno Campestre Artesanal|2026-07-02",
     "Panadería Artesanal CABA|Docena de Medialunas Artesanales Congeladas|2026-07-02",
-    "Panadería La Tradicional|Docena de Facturas Surtidas de Manteca|2026-07-02"
+    "Panadería La Tradicional|Docena de Facturas Surtidas de Manteca|2026-07-02",
+    "Panadería Artesanal ML|Docena de Medialunas de Manteca|2026-07-03",
+    "Panadería Artesanal ML|Docena de Facturas Surtidas de Manteca|2026-07-03",
+    "Panadería Artesanal ML|Pan Fonda (1 kg)|2026-07-03"
   ],
-  "updated": "2026-07-02",
+  "updated": "2026-07-03",
   "maxAge": 7
 }

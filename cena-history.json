@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Sushi Pop|Combo Especial 30 piezas (Rolls, Nigiri, Geishas)|2026-06-26",
-    "Dean & Dennys|Combo Dean Burger + Papas Fritas + Gaseosa|2026-06-26",
-    "Fabric Sushi|Combo Fabric Roll 12 piezas + 2 Empanadas Chinas|2026-06-26",
     "Pizza R|Pizza Gigante de Muzzarella + 4 Empanadas|2026-06-27",
     "Almacén de Pizzas|Pizza de Cheddar y Panceta + Papas Fritas|2026-06-27",
     "Betos|Lomito Completo con Papas Fritas|2026-06-27",
@@ -23,8 +20,11 @@
     "Tomasso|Combo Doble Hamburguesa con Papas Fritas y Gaseosa|2026-07-02",
     "Ayguacamole! Tacos Mexicanos Para Armar|Combo Tacos Mexicanos para Armar (8 tacos + guacamole + salsas)|2026-07-03",
     "Pizza Now|Pizza Gigante de Muzzarella + 4 Empanadas|2026-07-03",
-    "Ron Damón|Combo Lomito Completo + Papas Fritas + Gaseosa|2026-07-03"
+    "Ron Damón|Combo Lomito Completo + Papas Fritas + Gaseosa|2026-07-03",
+    "El Club de la Milanesa|Milanesa Napolitana con Papas Fritas|2026-07-04",
+    "Rincón Norteño|Docena de Empanadas Tucumanas (carne, pollo, jamón y queso)|2026-07-04",
+    "La Milanga Sureña|Combo Milanesa Premium (Milanesa de Lomo + Papas Fritas + Gaseosa)|2026-07-04"
   ],
-  "updated": "2026-07-03",
+  "updated": "2026-07-04",
   "maxAge": 7
 }

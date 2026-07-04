@@ -1,57 +1,19 @@
 [
   {
     "id": "bakery_1",
-    "bakery": "Panadería Artesanal ML",
-    "product": "Docena de Medialunas de Manteca",
-    "price": 3500,
-    "oldPrice": 4500,
-    "description": "Medialunas artesanales horneadas diariamente, con envío a todo CABA. ¡Frescas y deliciosas!",
-    "location": "CABA",
-    "installments": "Envío a todo CABA | Delivery en 45 min",
-    "imageUrl": "https://http2.mlstatic.com/frontend-assets/homes-palpatine/logo_homecom_v2.png",
-    "link": "https://www.mercadolibre.com.ar/docena-de-facturas-medialunas-reparto-caba/up/MLAU217657589",
+    "bakery": "Andrea's Delicatessen",
+    "product": "Torta + 12 Cupcakes Decorados",
+    "price": 4500,
+    "oldPrice": null,
+    "description": "Torta artesanal personalizada más 12 cupcakes decorados, ideal para eventos. Envíos a Capital Federal y Zona Norte con costo accesible.",
+    "location": "Capital Federal, CABA",
+    "installments": "Envío a todo CABA | Pedido con 72 hs de anticipación",
+    "imageUrl": "https://http2.mlstatic.com/D_859915-MLA25349440698_022017-O.jpg",
+    "link": "https://articulo.mercadolibre.com.ar/MLA-653454443-torta-12-cupcakes-decorados-capital-federal-zona-norte-_JM",
     "badge": "Mejor Precio",
-    "precio_estimado": false,
-    "rating": 4.6,
-    "reviews": 399,
-    "sites": [
-      "elpodiofood"
-    ]
-  },
-  {
-    "id": "bakery_2",
-    "bakery": "Panadería Artesanal ML",
-    "product": "Docena de Facturas Surtidas de Manteca",
-    "price": 3500,
-    "oldPrice": 4500,
-    "description": "Facturas surtidas artesanales de manteca, ideales para el desayuno o merienda. Envío a toda CABA.",
-    "location": "CABA",
-    "installments": "Envío a todo CABA | Delivery en 45 min",
-    "imageUrl": "https://http2.mlstatic.com/D_NQ_871042-MLA96631608403_102025-OO.webp",
-    "link": "https://www.mercadolibre.com.ar/docena-de-facturas-medialunas-reparto-caba/up/MLAU217657589",
-    "badge": "Mejor Precio",
-    "precio_estimado": false,
-    "rating": 4.5,
-    "reviews": 460,
-    "sites": [
-      "elpodiofood"
-    ]
-  },
-  {
-    "id": "bakery_3",
-    "bakery": "Panadería Artesanal ML",
-    "product": "Pan Fonda (1 kg)",
-    "price": 1800,
-    "oldPrice": 2200,
-    "description": "Pan fonda ideal para sándwiches, elaborado artesanalmente. Envío a todo CABA.",
-    "location": "CABA",
-    "installments": "Envío a todo CABA | Delivery en 45 min",
-    "imageUrl": "https://http2.mlstatic.com/D_NQ_871042-MLA96631608403_102025-OO.webp",
-    "link": "https://www.mercadolibre.com.ar/docena-de-facturas-medialunas-reparto-caba/up/MLAU217657589",
-    "badge": "Mejor Precio",
-    "precio_estimado": false,
-    "rating": 5,
-    "reviews": 372,
+    "precio_estimado": true,
+    "rating": 4,
+    "reviews": 424,
     "sites": [
       "elpodiofood"
     ]

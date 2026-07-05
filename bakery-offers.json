@@ -1,19 +1,57 @@
 [
   {
     "id": "bakery_1",
-    "bakery": "Andrea's Delicatessen",
-    "product": "Torta + 12 Cupcakes Decorados",
+    "bakery": "Congelados Ártico",
+    "product": "Chipa 1 kg",
     "price": 4500,
-    "oldPrice": null,
-    "description": "Torta artesanal personalizada más 12 cupcakes decorados, ideal para eventos. Envíos a Capital Federal y Zona Norte con costo accesible.",
-    "location": "Capital Federal, CABA",
-    "installments": "Envío a todo CABA | Pedido con 72 hs de anticipación",
-    "imageUrl": "https://http2.mlstatic.com/D_859915-MLA25349440698_022017-O.jpg",
-    "link": "https://articulo.mercadolibre.com.ar/MLA-653454443-torta-12-cupcakes-decorados-capital-federal-zona-norte-_JM",
+    "oldPrice": 5500,
+    "description": "Chipa tradicional con mucho queso parmesano, ideal para hornear en minutos. Envíos a todo CABA.",
+    "location": "Flores, CABA",
+    "installments": "Envío a todo CABA | Delivery en 24 hs",
+    "imageUrl": "https://http2.mlstatic.com/frontend-assets/homes-palpatine/logo_homecom_v2.png",
+    "link": "https://www.mercadolibre.com.ar/chipa-1kg--congelados-artico/up/MLAU3241167273",
     "badge": "Mejor Precio",
-    "precio_estimado": true,
-    "rating": 4,
-    "reviews": 424,
+    "precio_estimado": false,
+    "rating": 4.1,
+    "reviews": 289,
+    "sites": [
+      "elpodiofood"
+    ]
+  },
+  {
+    "id": "bakery_2",
+    "bakery": "Facturas Delivery Regalos",
+    "product": "Caja Docena Facturas Take Away (10 unidades)",
+    "price": 3300,
+    "oldPrice": 4200,
+    "description": "Facturas surtidas de manteca, perfectas para compartir. Envío rápido a todo CABA.",
+    "location": "Belgrano, CABA",
+    "installments": "Envío a todo CABA | Delivery en el día",
+    "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_721769-MLA53527015244_012023-O.webp",
+    "link": "https://www.mercadolibre.com.ar/caja-docena-facturas-delivery-regalos-take-away-x-10-uni/up/MLAU229583395",
+    "badge": "Oferta Destacada",
+    "precio_estimado": false,
+    "rating": 4.1,
+    "reviews": 86,
+    "sites": [
+      "elpodiofood"
+    ]
+  },
+  {
+    "id": "bakery_3",
+    "bakery": "Chipa Congelado",
+    "product": "Docena de Chipá Congelado",
+    "price": 2800,
+    "oldPrice": 3500,
+    "description": "12 bollitos de chipá con queso real, precocidos y listos en 5 min. Envíos a toda CABA.",
+    "location": "Caballito, CABA",
+    "installments": "Envío a todo CABA | Delivery en 24 hs",
+    "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_614785-MLA88649243366_072025-O.webp",
+    "link": "https://www.mercadolibre.com.ar/chipa-congelado-x-docena/up/MLAU2594064471",
+    "badge": "Mejor Precio",
+    "precio_estimado": false,
+    "rating": 5,
+    "reviews": 253,
     "sites": [
       "elpodiofood"
     ]

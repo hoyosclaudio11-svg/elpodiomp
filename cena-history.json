@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Pizza R|Pizza Gigante de Muzzarella + 4 Empanadas|2026-06-27",
-    "Almacén de Pizzas|Pizza de Cheddar y Panceta + Papas Fritas|2026-06-27",
-    "Betos|Lomito Completo con Papas Fritas|2026-06-27",
     "Che Sushi|Combinado de Sushi 30 piezas (Rolls, Nigiris, Geishas)|2026-06-28",
     "El Noble|Docena de Empanadas Variadas (carne, pollo, jamón y queso, humita)|2026-06-28",
     "Morita|Docena de Empanadas de Carne Cortada a Cuchillo + 2 Empanadas de Jamón y Queso|2026-06-28",
@@ -23,8 +20,11 @@
     "Ron Damón|Combo Lomito Completo + Papas Fritas + Gaseosa|2026-07-03",
     "El Club de la Milanesa|Milanesa Napolitana con Papas Fritas|2026-07-04",
     "Rincón Norteño|Docena de Empanadas Tucumanas (carne, pollo, jamón y queso)|2026-07-04",
-    "La Milanga Sureña|Combo Milanesa Premium (Milanesa de Lomo + Papas Fritas + Gaseosa)|2026-07-04"
+    "La Milanga Sureña|Combo Milanesa Premium (Milanesa de Lomo + Papas Fritas + Gaseosa)|2026-07-04",
+    "Avellino Pizzeria|Pizza Napolitana Clásica|2026-07-05",
+    "Mi Gusto|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-05",
+    "La Milaneseria|Milanesa Napolitana con Papas Fritas|2026-07-05"
   ],
-  "updated": "2026-07-04",
+  "updated": "2026-07-05",
   "maxAge": 7
 }

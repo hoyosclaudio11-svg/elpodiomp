@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Che Sushi|Combinado de Sushi 30 piezas (Rolls, Nigiris, Geishas)|2026-06-28",
-    "El Noble|Docena de Empanadas Variadas (carne, pollo, jamón y queso, humita)|2026-06-28",
-    "Morita|Docena de Empanadas de Carne Cortada a Cuchillo + 2 Empanadas de Jamón y Queso|2026-06-28",
     "Mole Tacos|Menú Guadalupeña para 2 (2 Tacos, 2 Burritos, 1/2 Botana, Pico de Gallo, Salsa, Totopos)|2026-06-29",
     "Taco N Todo Mexican Fast Food|Combo de Tacos y Burritos para 2 personas|2026-06-29",
     "Lomitos 348|Lomito Completo con Papas Fritas|2026-06-29",
@@ -23,8 +20,11 @@
     "La Milanga Sureña|Combo Milanesa Premium (Milanesa de Lomo + Papas Fritas + Gaseosa)|2026-07-04",
     "Avellino Pizzeria|Pizza Napolitana Clásica|2026-07-05",
     "Mi Gusto|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-05",
-    "La Milaneseria|Milanesa Napolitana con Papas Fritas|2026-07-05"
+    "La Milaneseria|Milanesa Napolitana con Papas Fritas|2026-07-05",
+    "La Empanadería|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso, Verdura)|2026-07-06",
+    "Hamburguesas Extremas|Combo Hamburguesa Cuarto con Queso + Papas Fritas + Gaseosa|2026-07-06",
+    "Tremendas|Docena de Empanadas de Vacío al Malbec|2026-07-06"
   ],
-  "updated": "2026-07-05",
+  "updated": "2026-07-06",
   "maxAge": 7
 }

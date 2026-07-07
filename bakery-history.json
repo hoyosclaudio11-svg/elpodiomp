@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Las Medialunas del Abuelo|Docena de Medialunas de Manteca|2026-06-29",
-    "Los Reyes de la Medialuna|Docena de Medialunas de Manteca|2026-06-29",
-    "Dina Medialunas|Docena de Medialunas de Manteca|2026-06-29",
     "Armando Medialunas|Docena de Medialunas de Manteca|2026-06-30",
     "Medialunas Calentitas|Docena de Medialunas de Manteca|2026-06-30",
     "Parador Atalaya|Docena de Facturas Surtidas|2026-06-30",
@@ -10,8 +7,6 @@
     "Facturas Delivery Regalos|Docena de Facturas Surtidas|2026-07-01",
     "Churros Congelados Artesanales|Docena de Churros Congelados para Freír|2026-07-01",
     "Sweet Melody|Desayuno Campestre Artesanal|2026-07-02",
-    "Panadería Artesanal CABA|Docena de Medialunas Artesanales Congeladas|2026-07-02",
-    "Panadería La Tradicional|Docena de Facturas Surtidas de Manteca|2026-07-02",
     "Panadería Artesanal ML|Docena de Medialunas de Manteca|2026-07-03",
     "Panadería Artesanal ML|Docena de Facturas Surtidas de Manteca|2026-07-03",
     "Panadería Artesanal ML|Pan Fonda (1 kg)|2026-07-03",
@@ -21,8 +16,11 @@
     "Chipa Congelado|Docena de Chipá Congelado|2026-07-05",
     "Panadería Argentina|Cremona y Medialunas de Grasa y Manteca|2026-07-06",
     "Andrea's Delicatessen|Torta Casera Cheesecake o Brownie (1 kg)|2026-07-06",
-    "Torta Medovik Rusa|Torta Medovik Rusa Casera 1kg|2026-07-06"
+    "Torta Medovik Rusa|Torta Medovik Rusa Casera 1kg|2026-07-06",
+    "Primo Lunch|24 Medialunas Rellenas de Jamón y Queso|2026-07-07",
+    "Panadería La Tradicional|Docena de Facturas Surtidas de Manteca|2026-07-07",
+    "Panadería Artesanal CABA|Docena de Medialunas Artesanales Congeladas|2026-07-07"
   ],
-  "updated": "2026-07-06",
+  "updated": "2026-07-07",
   "maxAge": 7
 }

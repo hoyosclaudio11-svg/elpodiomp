@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Burger Couple|Combo Doble Hamburguesa con Papas Fritas y Gaseosa|2026-06-30",
-    "La Farola Express|Milanesa Napolitana con Papas Fritas|2026-06-30",
-    "What The Burger|Spicy Burger con Papas Fritas|2026-06-30",
     "TacoRico|Combo Taquería para 2 (Tacos, Burritos, Quesadillas)|2026-07-01",
     "Combo Fiesta|Combo Hamburguesa Clásica con Papas Fritas y Gaseosa|2026-07-01",
     "Taco Express|Combo de Tacos y Burritos para 2 personas|2026-07-01",
@@ -23,8 +20,11 @@
     "Tremendas|Docena de Empanadas de Vacío al Malbec|2026-07-06",
     "Mariachi|Combo Burrito + Tacos + Nachos con Queso + Gaseosa|2026-07-07",
     "La Fábrica del Taco|Combo 6 Tacos + Guacamole + Papas Fritas|2026-07-07",
-    "Chiwas Mexican Food|Combo Quesadillas + Fajitas + Gaseosa|2026-07-07"
+    "Chiwas Mexican Food|Combo Quesadillas + Fajitas + Gaseosa|2026-07-07",
+    "Aires Criollos|Sándwich de Bondiola Asada con Lechuga, Tomate y Guarnición|2026-07-08",
+    "Pizzas Gigantes|Pizza Gigante de Muzzarella + 4 Empanadas|2026-07-08",
+    "Billy Lomito|Lomito Completo con Papas Fritas y Gaseosa|2026-07-08"
   ],
-  "updated": "2026-07-07",
+  "updated": "2026-07-08",
   "maxAge": 7
 }

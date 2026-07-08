@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Armando Medialunas|Docena de Medialunas de Manteca|2026-06-30",
-    "Medialunas Calentitas|Docena de Medialunas de Manteca|2026-06-30",
-    "Parador Atalaya|Docena de Facturas Surtidas|2026-06-30",
     "Churros XXL Crocantes|Docena de Churros Rellenos de Dulce de Leche|2026-07-01",
     "Facturas Delivery Regalos|Docena de Facturas Surtidas|2026-07-01",
     "Churros Congelados Artesanales|Docena de Churros Congelados para Freír|2026-07-01",
@@ -19,8 +16,11 @@
     "Torta Medovik Rusa|Torta Medovik Rusa Casera 1kg|2026-07-06",
     "Primo Lunch|24 Medialunas Rellenas de Jamón y Queso|2026-07-07",
     "Panadería La Tradicional|Docena de Facturas Surtidas de Manteca|2026-07-07",
-    "Panadería Artesanal CABA|Docena de Medialunas Artesanales Congeladas|2026-07-07"
+    "Panadería Artesanal CABA|Docena de Medialunas Artesanales Congeladas|2026-07-07",
+    "Churros Caseros Delivery|Docena de Churros Caseros|2026-07-08",
+    "Panadería La Moderna|Docena de Medialunas de Manteca|2026-07-08",
+    "Confitería El Progreso|Docena de Facturas Surtidas|2026-07-08"
   ],
-  "updated": "2026-07-07",
+  "updated": "2026-07-08",
   "maxAge": 7
 }

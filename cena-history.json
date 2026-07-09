@@ -1,8 +1,5 @@
 {
   "recent": [
-    "TacoRico|Combo Taquería para 2 (Tacos, Burritos, Quesadillas)|2026-07-01",
-    "Combo Fiesta|Combo Hamburguesa Clásica con Papas Fritas y Gaseosa|2026-07-01",
-    "Taco Express|Combo de Tacos y Burritos para 2 personas|2026-07-01",
     "Sushi Garden|Promo para 4: 28 sushi rolls clásicos + 12 hot rolls + salsas, wasabi y palitos|2026-07-02",
     "Pizza Zen|Pizza Gigante de Muzzarella + 4 Empanadas|2026-07-02",
     "Tomasso|Combo Doble Hamburguesa con Papas Fritas y Gaseosa|2026-07-02",
@@ -14,7 +11,6 @@
     "La Milanga Sureña|Combo Milanesa Premium (Milanesa de Lomo + Papas Fritas + Gaseosa)|2026-07-04",
     "Avellino Pizzeria|Pizza Napolitana Clásica|2026-07-05",
     "Mi Gusto|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-05",
-    "La Milaneseria|Milanesa Napolitana con Papas Fritas|2026-07-05",
     "La Empanadería|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso, Verdura)|2026-07-06",
     "Hamburguesas Extremas|Combo Hamburguesa Cuarto con Queso + Papas Fritas + Gaseosa|2026-07-06",
     "Tremendas|Docena de Empanadas de Vacío al Malbec|2026-07-06",
@@ -23,8 +19,11 @@
     "Chiwas Mexican Food|Combo Quesadillas + Fajitas + Gaseosa|2026-07-07",
     "Aires Criollos|Sándwich de Bondiola Asada con Lechuga, Tomate y Guarnición|2026-07-08",
     "Pizzas Gigantes|Pizza Gigante de Muzzarella + 4 Empanadas|2026-07-08",
-    "Billy Lomito|Lomito Completo con Papas Fritas y Gaseosa|2026-07-08"
+    "Billy Lomito|Lomito Completo con Papas Fritas y Gaseosa|2026-07-08",
+    "Pizzería Güerrin|Pizza Fugazzeta Rellena (8 porciones)|2026-07-09",
+    "La Milaneseria|Milanesa Napolitana con Papas Fritas|2026-07-09",
+    "Pizzerías Kentucky|Pizza de Muzzarella Gigante (8 porciones)|2026-07-09"
   ],
-  "updated": "2026-07-08",
+  "updated": "2026-07-09",
   "maxAge": 7
 }

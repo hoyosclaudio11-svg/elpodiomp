@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Sushi Garden|Promo para 4: 28 sushi rolls clásicos + 12 hot rolls + salsas, wasabi y palitos|2026-07-02",
-    "Pizza Zen|Pizza Gigante de Muzzarella + 4 Empanadas|2026-07-02",
-    "Tomasso|Combo Doble Hamburguesa con Papas Fritas y Gaseosa|2026-07-02",
     "Ayguacamole! Tacos Mexicanos Para Armar|Combo Tacos Mexicanos para Armar (8 tacos + guacamole + salsas)|2026-07-03",
     "Pizza Now|Pizza Gigante de Muzzarella + 4 Empanadas|2026-07-03",
     "Ron Damón|Combo Lomito Completo + Papas Fritas + Gaseosa|2026-07-03",
@@ -22,8 +19,11 @@
     "Billy Lomito|Lomito Completo con Papas Fritas y Gaseosa|2026-07-08",
     "Pizzería Güerrin|Pizza Fugazzeta Rellena (8 porciones)|2026-07-09",
     "La Milaneseria|Milanesa Napolitana con Papas Fritas|2026-07-09",
-    "Pizzerías Kentucky|Pizza de Muzzarella Gigante (8 porciones)|2026-07-09"
+    "Pizzerías Kentucky|Pizza de Muzzarella Gigante (8 porciones)|2026-07-09",
+    "Mole Tacos|Menú Guadalupeña para 2 (2 Tacos + 2 Burritos + Guacamole + Totopos)|2026-07-10",
+    "Lomitos 2x1|Lomito Completo con Papas Fritas y Gaseosa|2026-07-10",
+    "La Farola|Pizza de Muzzarella Gigante + 4 Empanadas|2026-07-10"
   ],
-  "updated": "2026-07-09",
+  "updated": "2026-07-10",
   "maxAge": 7
 }

@@ -1,9 +1,5 @@
 {
   "recent": [
-    "Panadería Artesanal ML|Docena de Medialunas de Manteca|2026-07-03",
-    "Panadería Artesanal ML|Docena de Facturas Surtidas de Manteca|2026-07-03",
-    "Panadería Artesanal ML|Pan Fonda (1 kg)|2026-07-03",
-    "Andrea's Delicatessen|Torta + 12 Cupcakes Decorados|2026-07-04",
     "Congelados Ártico|Chipa 1 kg|2026-07-05",
     "Facturas Delivery Regalos|Caja Docena Facturas Take Away (10 unidades)|2026-07-05",
     "Chipa Congelado|Docena de Chipá Congelado|2026-07-05",
@@ -20,8 +16,11 @@
     "Tortas Artesanales Decoradas|Torta Artesanal Decorada (1 kg)|2026-07-09",
     "Panadería Artesanal CABA|Docena de Medialunas de Manteca|2026-07-10",
     "Confitería El Progreso|Docena de Facturas Surtidas|2026-07-10",
-    "Panadería La Tradicional|Pan Fonda (1 kg)|2026-07-10"
+    "Panadería La Tradicional|Pan Fonda (1 kg)|2026-07-10",
+    "Churros Caseros Don Pedro|Docena de Churros Rellenos (Dulce de Leche o Crema Pastelera)|2026-07-12",
+    "Medialunas de la Abuela|Docena de Medialunas de Manteca|2026-07-12",
+    "Tortas de la Nonna|Torta Artesanal de Chocolate (1 kg)|2026-07-12"
   ],
-  "updated": "2026-07-10",
+  "updated": "2026-07-12",
   "maxAge": 7
 }

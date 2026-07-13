@@ -1,7 +1,5 @@
 {
   "recent": [
-    "Avellino Pizzeria|Pizza Napolitana Clásica|2026-07-05",
-    "Mi Gusto|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-05",
     "La Empanadería|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso, Verdura)|2026-07-06",
     "Hamburguesas Extremas|Combo Hamburguesa Cuarto con Queso + Papas Fritas + Gaseosa|2026-07-06",
     "Tremendas|Docena de Empanadas de Vacío al Malbec|2026-07-06",
@@ -22,8 +20,11 @@
     "Pizzas Gigantes|Combo Pizza Gigante + 4 Empanadas|2026-07-11",
     "Unaghi Sushibar|Combo Sushi para 2 (30 piezas variadas)|2026-07-12",
     "Tercera Docena|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-12",
-    "La Leñita|Parrillada para 2 (Lomo al verdeo, milanesas, bifes de chorizo)|2026-07-12"
+    "La Leñita|Parrillada para 2 (Lomo al verdeo, milanesas, bifes de chorizo)|2026-07-12",
+    "Sushi Pop|Combo Sushi para 2 (30 piezas variadas)|2026-07-13",
+    "Lo de Marta|Sándwich de Bondiola Completo + Papas Fritas|2026-07-13",
+    "Fabric Sushi|Combo Roll Grill x3 + Niguiris x3 + Sashimis x2|2026-07-13"
   ],
-  "updated": "2026-07-12",
+  "updated": "2026-07-13",
   "maxAge": 7
 }

@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Panadería Argentina|Cremona y Medialunas de Grasa y Manteca|2026-07-06",
-    "Andrea's Delicatessen|Torta Casera Cheesecake o Brownie (1 kg)|2026-07-06",
-    "Torta Medovik Rusa|Torta Medovik Rusa Casera 1kg|2026-07-06",
     "Primo Lunch|24 Medialunas Rellenas de Jamón y Queso|2026-07-07",
     "Panadería La Tradicional|Docena de Facturas Surtidas de Manteca|2026-07-07",
     "Panadería Artesanal CABA|Docena de Medialunas Artesanales Congeladas|2026-07-07",
@@ -19,8 +16,11 @@
     "Tortas de la Nonna|Torta Artesanal de Chocolate (1 kg)|2026-07-12",
     "Medialunas Manteca Rellenas De JyQ|2 Docenas de Medialunas de Manteca Rellenas de Jamón y Queso|2026-07-13",
     "Sandwich De Miga Simples|Docena de Sandwiches de Miga Simples|2026-07-13",
-    "Medialunas Rellenas JyQ|Docena de Medialunas Rellenas de Jamón y Queso|2026-07-13"
+    "Medialunas Rellenas JyQ|Docena de Medialunas Rellenas de Jamón y Queso|2026-07-13",
+    "Daniel Bakery|Docena de Medialunas de Manteca|2026-07-14",
+    "Panaderia Boutique|Docena de Facturas Surtidas de Manteca|2026-07-14",
+    "La Fábrica Panadería|Docena de Chipá Artesanal|2026-07-14"
   ],
-  "updated": "2026-07-13",
+  "updated": "2026-07-14",
   "maxAge": 7
 }

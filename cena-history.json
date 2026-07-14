@@ -1,8 +1,5 @@
 {
   "recent": [
-    "La Empanadería|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso, Verdura)|2026-07-06",
-    "Hamburguesas Extremas|Combo Hamburguesa Cuarto con Queso + Papas Fritas + Gaseosa|2026-07-06",
-    "Tremendas|Docena de Empanadas de Vacío al Malbec|2026-07-06",
     "Mariachi|Combo Burrito + Tacos + Nachos con Queso + Gaseosa|2026-07-07",
     "La Fábrica del Taco|Combo 6 Tacos + Guacamole + Papas Fritas|2026-07-07",
     "Chiwas Mexican Food|Combo Quesadillas + Fajitas + Gaseosa|2026-07-07",
@@ -23,8 +20,11 @@
     "La Leñita|Parrillada para 2 (Lomo al verdeo, milanesas, bifes de chorizo)|2026-07-12",
     "Sushi Pop|Combo Sushi para 2 (30 piezas variadas)|2026-07-13",
     "Lo de Marta|Sándwich de Bondiola Completo + Papas Fritas|2026-07-13",
-    "Fabric Sushi|Combo Roll Grill x3 + Niguiris x3 + Sashimis x2|2026-07-13"
+    "Fabric Sushi|Combo Roll Grill x3 + Niguiris x3 + Sashimis x2|2026-07-13",
+    "El Noble|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-14",
+    "Rincón Norteño|Docena de Empanadas Tucumanas + Humita|2026-07-14",
+    "Olivia Empanadas & Pizzas|Pizza de Muzzarella Gigante + 4 Empanadas|2026-07-14"
   ],
-  "updated": "2026-07-13",
+  "updated": "2026-07-14",
   "maxAge": 7
 }

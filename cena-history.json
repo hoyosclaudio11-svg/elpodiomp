@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Mariachi|Combo Burrito + Tacos + Nachos con Queso + Gaseosa|2026-07-07",
-    "La Fábrica del Taco|Combo 6 Tacos + Guacamole + Papas Fritas|2026-07-07",
-    "Chiwas Mexican Food|Combo Quesadillas + Fajitas + Gaseosa|2026-07-07",
     "Aires Criollos|Sándwich de Bondiola Asada con Lechuga, Tomate y Guarnición|2026-07-08",
     "Pizzas Gigantes|Pizza Gigante de Muzzarella + 4 Empanadas|2026-07-08",
     "Billy Lomito|Lomito Completo con Papas Fritas y Gaseosa|2026-07-08",
@@ -23,8 +20,11 @@
     "Fabric Sushi|Combo Roll Grill x3 + Niguiris x3 + Sashimis x2|2026-07-13",
     "El Noble|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-14",
     "Rincón Norteño|Docena de Empanadas Tucumanas + Humita|2026-07-14",
-    "Olivia Empanadas & Pizzas|Pizza de Muzzarella Gigante + 4 Empanadas|2026-07-14"
+    "Olivia Empanadas & Pizzas|Pizza de Muzzarella Gigante + 4 Empanadas|2026-07-14",
+    "Chebu|2 Burger Dobles Completas + Papas Fritas|2026-07-15",
+    "Pizza Zen|Pizza Artesanal de Muzzarella (8 porciones)|2026-07-15",
+    "Romario Pizza|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-15"
   ],
-  "updated": "2026-07-14",
+  "updated": "2026-07-15",
   "maxAge": 7
 }

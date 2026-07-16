@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Aires Criollos|Sándwich de Bondiola Asada con Lechuga, Tomate y Guarnición|2026-07-08",
-    "Pizzas Gigantes|Pizza Gigante de Muzzarella + 4 Empanadas|2026-07-08",
-    "Billy Lomito|Lomito Completo con Papas Fritas y Gaseosa|2026-07-08",
     "Pizzería Güerrin|Pizza Fugazzeta Rellena (8 porciones)|2026-07-09",
     "La Milaneseria|Milanesa Napolitana con Papas Fritas|2026-07-09",
     "Pizzerías Kentucky|Pizza de Muzzarella Gigante (8 porciones)|2026-07-09",
@@ -23,8 +20,11 @@
     "Olivia Empanadas & Pizzas|Pizza de Muzzarella Gigante + 4 Empanadas|2026-07-14",
     "Chebu|2 Burger Dobles Completas + Papas Fritas|2026-07-15",
     "Pizza Zen|Pizza Artesanal de Muzzarella (8 porciones)|2026-07-15",
-    "Romario Pizza|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-15"
+    "Romario Pizza|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-15",
+    "Casa de la Milanesa|Milanesa Napolitana con Papas Fritas|2026-07-16",
+    "Pizzas Gigantes|Pizza Gigante de Muzzarella (8 porciones) + 4 Empanadas|2026-07-16",
+    "Big Pizza|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-16"
   ],
-  "updated": "2026-07-15",
+  "updated": "2026-07-16",
   "maxAge": 7
 }

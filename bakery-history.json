@@ -1,7 +1,5 @@
 {
   "recent": [
-    "Churros Caseros Delivery|Docena de Churros Caseros|2026-07-08",
-    "Panadería La Moderna|Docena de Medialunas de Manteca|2026-07-08",
     "Amazing Pastry|Desayuno Sorpresa Artesanal Personalizado|2026-07-09",
     "Pastelería Artesanal Por Encargo|Budín Artesanal de Vainilla o Chocolate (1 kg)|2026-07-09",
     "Tortas Artesanales Decoradas|Torta Artesanal Decorada (1 kg)|2026-07-09",
@@ -17,8 +15,11 @@
     "La Fábrica Panadería|Docena de Chipá Artesanal|2026-07-14",
     "Panadería Artesanal CABA|Docena de Medialunas de Manteca|2026-07-15",
     "Confitería El Progreso|Docena de Facturas Surtidas de Manteca|2026-07-15",
-    "Panadería La Tradicional|Pan Fonda (1 kg)|2026-07-15"
+    "Panadería La Tradicional|Pan Fonda (1 kg)|2026-07-15",
+    "Tortas A Domicilio|Torta Artesanal Decorada (1 kg)|2026-07-16",
+    "Tortas Caseras|Torta Casera de Chocolate (1 kg)|2026-07-16",
+    "Torta De Cumpleaños En Capital Federal|Torta de Cumpleaños Personalizada (1 kg)|2026-07-16"
   ],
-  "updated": "2026-07-15",
+  "updated": "2026-07-16",
   "maxAge": 7
 }

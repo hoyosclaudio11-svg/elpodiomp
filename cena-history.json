@@ -1,8 +1,5 @@
 {
   "recent": [
-    "Pizzería Güerrin|Pizza Fugazzeta Rellena (8 porciones)|2026-07-09",
-    "La Milaneseria|Milanesa Napolitana con Papas Fritas|2026-07-09",
-    "Pizzerías Kentucky|Pizza de Muzzarella Gigante (8 porciones)|2026-07-09",
     "Mole Tacos|Menú Guadalupeña para 2 (2 Tacos + 2 Burritos + Guacamole + Totopos)|2026-07-10",
     "Lomitos 2x1|Lomito Completo con Papas Fritas y Gaseosa|2026-07-10",
     "La Farola|Pizza de Muzzarella Gigante + 4 Empanadas|2026-07-10",
@@ -23,8 +20,11 @@
     "Romario Pizza|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-15",
     "Casa de la Milanesa|Milanesa Napolitana con Papas Fritas|2026-07-16",
     "Pizzas Gigantes|Pizza Gigante de Muzzarella (8 porciones) + 4 Empanadas|2026-07-16",
-    "Big Pizza|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-16"
+    "Big Pizza|Docena de Empanadas Variadas (Carne, Pollo, Jamón y Queso)|2026-07-16",
+    "Siga la Vaca|Parrillada para 2 (Asado, Bife de Chorizo, Chorizo, Morcilla, Provoleta)|2026-07-17",
+    "Yto Sushi|Combo Special Salmón (Rolls, Uramakis, Nigiris variados)|2026-07-17",
+    "A Raja Cincha|Parrillada Completa (Chorizo, Morcilla, Entraña, Bife de Chorizo, Provoleta)|2026-07-17"
   ],
-  "updated": "2026-07-16",
+  "updated": "2026-07-17",
   "maxAge": 7
 }

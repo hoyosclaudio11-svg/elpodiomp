@@ -1,6 +1,5 @@
 {
   "recent": [
-    "Confitería El Progreso|Docena de Facturas Surtidas|2026-07-10",
     "Churros Caseros Don Pedro|Docena de Churros Rellenos (Dulce de Leche o Crema Pastelera)|2026-07-12",
     "Medialunas de la Abuela|Docena de Medialunas de Manteca|2026-07-12",
     "Tortas de la Nonna|Torta Artesanal de Chocolate (1 kg)|2026-07-12",
@@ -18,8 +17,11 @@
     "Torta De Cumpleaños En Capital Federal|Torta de Cumpleaños Personalizada (1 kg)|2026-07-16",
     "Panadería Medialunas y Facturas|Docena de Medialunas de Manteca|2026-07-17",
     "Panadería Artesanal CABA|Docena de Facturas Surtidas de Manteca|2026-07-17",
-    "Panadería La Tradicional|Docena de Medialunas de Grasa|2026-07-17"
+    "Panadería La Tradicional|Docena de Medialunas de Grasa|2026-07-17",
+    "Panadería Constitución|30 Medialunas con Jamón y Queso|2026-07-18",
+    "Panadería Villa Devoto|Promoción 24 Medialunas Rellenas de Jamón y Queso|2026-07-18",
+    "Panadería Liniers|12 Medialunas de Jamón y Queso|2026-07-18"
   ],
-  "updated": "2026-07-17",
+  "updated": "2026-07-18",
   "maxAge": 7
 }

@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-06-21",
-  "hora_publicacion": "19:33 ART",
-  "dia_semana": "Domingo",
+  "fecha": "2026-07-30",
+  "hora_publicacion": "19:34 ART",
+  "dia_semana": "Jueves",
   "total_ofertas": 3,
   "categorias": [
     "Hamburguesas"
@@ -10,47 +10,47 @@
     {
       "categoria": "Hamburguesas",
       "emoji": "🍔",
-      "titulo": "Combo Veggie Green",
-      "precio": 7500,
-      "precio_formateado": "$7.500",
-      "precio_original": null,
-      "descuento": null,
-      "fuente": "Dean & Dennys",
-      "envio": "Delivery disponible",
-      "razon": "Precio imbatible para una hamburguesa veggie de calidad con delivery incluido.",
-      "link": "https://deananddennys.com/",
-      "imagen": "",
-      "puntaje": 9
-    },
-    {
-      "categoria": "Hamburguesas",
-      "emoji": "🍔",
-      "titulo": "Combo Chicken Crispy",
-      "precio": 8900,
-      "precio_formateado": "$8.900",
-      "precio_original": 9900,
-      "descuento": 10,
-      "fuente": "Dean & Dennys",
-      "envio": "Delivery disponible",
-      "razon": "Único descuento real de la lista (-10%) en un combo completo de Dean & Dennys.",
-      "link": "https://deananddennys.com/",
-      "imagen": "",
-      "puntaje": 8
-    },
-    {
-      "categoria": "Hamburguesas",
-      "emoji": "🍔",
-      "titulo": "Combo Whopper",
-      "precio": 8500,
-      "precio_formateado": "$8.500",
+      "titulo": "Combo Whopper — Burger King",
+      "precio": 9000,
+      "precio_formateado": "$9.000",
       "precio_original": null,
       "descuento": null,
       "fuente": "Burger King",
       "envio": "Delivery disponible",
-      "razon": "Whopper clásico a buen precio y con delivery, mejor relación calidad-precio que otros combos similares.",
+      "razon": "Hamburguesa clasica a la parrilla + papas + gaseosa",
       "link": "https://www.burgerking.com.ar/",
       "imagen": "",
-      "puntaje": 7
+      "puntaje": null
+    },
+    {
+      "categoria": "Hamburguesas",
+      "emoji": "🍔",
+      "titulo": "Combo Whopper Doble — Burger King",
+      "precio": 9000,
+      "precio_formateado": "$9.000",
+      "precio_original": null,
+      "descuento": null,
+      "fuente": "Burger King",
+      "envio": "Delivery disponible",
+      "razon": "Dos medallones a la parrilla + papas + gaseosa",
+      "link": "https://www.burgerking.com.ar/",
+      "imagen": "",
+      "puntaje": null
+    },
+    {
+      "categoria": "Hamburguesas",
+      "emoji": "🍔",
+      "titulo": "Combo Whopper Triple — Burger King",
+      "precio": 9000,
+      "precio_formateado": "$9.000",
+      "precio_original": null,
+      "descuento": null,
+      "fuente": "Burger King",
+      "envio": "Delivery disponible",
+      "razon": "Tres medallones de carne + papas + gaseosa",
+      "link": "https://www.burgerking.com.ar/",
+      "imagen": "",
+      "puntaje": null
     }
   ]
 }

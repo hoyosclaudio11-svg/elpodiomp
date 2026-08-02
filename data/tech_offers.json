@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-02T20:30:00-03:00",
+  "updated_at": "2026-08-02T21:30:00-03:00",
   "network": "admitad",
   "vertical": "tech",
   "categories": [
@@ -22,10 +22,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005012752593279.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005012752593279.html",
           "sku": "AE1005012752593279",
-          "active": true
+          "active": false
         },
         {
           "rank": 2,
@@ -40,10 +40,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005008782972395.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005008782972395.html",
           "sku": "AE1005008782972395",
-          "active": true
+          "active": false
         },
         {
           "rank": 3,
@@ -83,10 +83,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005008263375863.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005008263375863.html",
           "sku": "AE1005008263375863",
-          "active": true
+          "active": false
         },
         {
           "rank": 2,
@@ -101,10 +101,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005010247296484.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005010247296484.html",
           "sku": "AE1005010247296484",
-          "active": true
+          "active": false
         },
         {
           "rank": 3,
@@ -119,10 +119,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005012101819200.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005012101819200.html",
           "sku": "AE1005012101819200",
-          "active": true
+          "active": false
         }
       ]
     },
@@ -180,10 +180,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005008524813010.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005008524813010.html",
           "sku": "AE1005008524813010",
-          "active": true
+          "active": false
         }
       ]
     },
@@ -205,10 +205,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005009724581892.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005009724581892.html",
           "sku": "AE1005009724581892",
-          "active": true
+          "active": false
         },
         {
           "rank": 2,
@@ -223,10 +223,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005010170517576.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005010170517576.html",
           "sku": "AE1005010170517576",
-          "active": true
+          "active": false
         },
         {
           "rank": 3,
@@ -241,10 +241,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005003680955124.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005003680955124.html",
           "sku": "AE1005003680955124",
-          "active": true
+          "active": false
         }
       ]
     },
@@ -266,10 +266,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005012787204837.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005012787204837.html",
           "sku": "AE1005012787204837",
-          "active": true
+          "active": false
         },
         {
           "rank": 2,
@@ -284,10 +284,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005012585877999.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005012585877999.html",
           "sku": "AE1005012585877999",
-          "active": true
+          "active": false
         },
         {
           "rank": 3,
@@ -302,10 +302,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005011986338783.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005011986338783.html",
           "sku": "AE1005011986338783",
-          "active": true
+          "active": false
         }
       ]
     },
@@ -327,10 +327,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005009746794667.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005009746794667.html",
           "sku": "AE1005009746794667",
-          "active": true
+          "active": false
         },
         {
           "rank": 2,
@@ -363,10 +363,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005010579419941.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005010579419941.html",
           "sku": "AE1005010579419941",
-          "active": true
+          "active": false
         }
       ]
     },
@@ -388,10 +388,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005008719890359.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005008719890359.html",
           "sku": "AE1005008719890359",
-          "active": true
+          "active": false
         },
         {
           "rank": 2,
@@ -406,10 +406,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005007919601507.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005007919601507.html",
           "sku": "AE1005007919601507",
-          "active": true
+          "active": false
         },
         {
           "rank": 3,
@@ -424,10 +424,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005008439857273.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005008439857273.html",
           "sku": "AE1005008439857273",
-          "active": true
+          "active": false
         }
       ]
     },
@@ -449,10 +449,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005010225251536.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005010225251536.html",
           "sku": "AE1005010225251536",
-          "active": true
+          "active": false
         },
         {
           "rank": 2,
@@ -467,10 +467,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005010320535073.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005010320535073.html",
           "sku": "AE1005010320535073",
-          "active": true
+          "active": false
         },
         {
           "rank": 3,
@@ -485,10 +485,10 @@
           "badge": "Envío internacional",
           "merchant": "AliExpress",
           "merchant_program_id": "aliexpress_ww",
-          "affiliate_url": "https://rzekl.com/g/1e8d114494fc4cdbc4c816525dc3e8/?ulp=https%3A%2F%2Fes.aliexpress.com%2Fitem%2F1005004178107752.html",
+          "affiliate_url": "https://example.com/ADMITAD_TODO",
           "landing_url_raw": "https://es.aliexpress.com/item/1005004178107752.html",
           "sku": "AE1005004178107752",
-          "active": true
+          "active": false
         }
       ]
     }

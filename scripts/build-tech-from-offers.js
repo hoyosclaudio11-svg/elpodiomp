@@ -117,6 +117,12 @@ function renderCard(product, category, siteName) {
     oldPriceHtml = `<p class="old-price">$ ${formatARS(product.old_price)}</p>`;
   }
 
+  // Precio solo si está verificado (null = se ve el precio en la tienda destino)
+  let priceHtml = '';
+  if (product.price) {
+    priceHtml = `<p class="price"><span class="price-sup">$</span>${formatARS(product.price)}</p>`;
+  }
+
   let installmentsHtml = '';
   if (product.cuotas) {
     installmentsHtml = `<p class="installments">Hasta ${product.cuotas} cuotas sin interés</p>`;
@@ -130,7 +136,7 @@ function renderCard(product, category, siteName) {
             ${ratingHtml}
             <p class="description">${escapeHtml(product.description)}</p>
             ${oldPriceHtml}
-            <p class="price"><span class="price-sup">$</span>${formatARS(product.price)}</p>
+            ${priceHtml}
             ${installmentsHtml}
             <button class="btn" ${btnClick}>${btnLabel}</button>
           </div>
@@ -234,6 +240,14 @@ function renderExtraScripts(ga4Id, draftMode) {
       showToast('Disponible muy pronto ⏳');
       return;
     }
+    // Atribución por canal (plan sección 7.2): si el visitante llegó con
+    // utm_source (river, facebook, etc.), pasarlo como subid de Admitad.
+    try {
+      var src = new URLSearchParams(window.location.search).get('utm_source');
+      if (src) {
+        url = url.split('#')[0] + (url.indexOf('?') !== -1 ? '&' : '?') + 'subid=' + encodeURIComponent(src);
+      }
+    } catch (_) {}
     if (typeof gtag === 'function') {
       gtag('event', 'outbound_affiliate_click', {
         network: el.getAttribute('data-network') || 'admitad',

@@ -3,8 +3,8 @@
   "monetization": {
     "primary_network": "admitad",
     "admitad": {
-      "publisher_id": "",
-      "website_id": "",
+      "publisher_id": "2562030",
+      "website_id": "47843",
       "enabled": true
     },
     "meli_affiliate_enabled": false

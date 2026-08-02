@@ -539,7 +539,10 @@ async function main() {
 
   // ── Generar cachés por sitio ──
   console.log('\n📦 Generando cachés...');
-  const siteIds = config.sites ? Object.keys(config.sites) : [DEFAULT_SITE];
+  // El Podio Tech NO se regenera desde el scrape de Mercado Libre:
+  // se genera desde data/tech_offers.json vía scripts/build-tech-from-offers.js
+  // (ver PLAN_ELPODIO_ADMITAD_TECH — no mezclar scrape ML en el path Tech).
+  const siteIds = config.sites ? Object.keys(config.sites).filter(s => s !== 'elpodiotech') : [DEFAULT_SITE];
   let grandTotalCats = 0, grandTotalCards = 0;
 
   for (const siteId of siteIds) {

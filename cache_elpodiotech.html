@@ -592,6 +592,8 @@
       .header-icons span:not(.cart) { display: none; }
     }
   </style>
+  <!-- Verificación de propiedad Admitad (red de afiliados) -->
+  <meta name="verify-admitad" content="fc4cdbc4c8" />
 </head>
 <body>
   <header class="header">
@@ -1053,6 +1055,7 @@
   </footer>
 
 
+
   <div class="toast" id="toast"></div>
 
   <script>
@@ -1181,6 +1184,47 @@
       registrarVisita();
     })();
   </script>
+<script>
+  // ── Búsqueda: navega entre categorías de esta página (sin ML) ──
+  (function() {
+    var input = document.getElementById('searchInput');
+    var btn = document.getElementById('searchBtn');
+    if (!input || !btn) return;
+    function buscar() {
+      var q = input.value.trim().toLowerCase();
+      if (!q) return;
+      var found = null;
+      var sections = document.querySelectorAll('main .section');
+      sections.forEach(function(s) {
+        var h2 = s.querySelector('h2');
+        if (!found && h2 && h2.textContent.toLowerCase().indexOf(q) !== -1) found = s;
+      });
+      if (found) { found.scrollIntoView({ behavior: 'smooth' }); }
+      else { showToast('No se encontró esa categoría'); }
+    }
+    btn.addEventListener('click', buscar);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') buscar(); });
+  })();
+
+  // ── Clic de afiliado (outbound_affiliate_click en GA4) ──
+  function goAffiliate(el) {
+    var url = el.getAttribute('data-url');
+    if (!url || url.indexOf('ADMITAD_TODO') !== -1) {
+      showToast('Disponible muy pronto ⏳');
+      return;
+    }
+    if (typeof gtag === 'function') {
+      gtag('event', 'outbound_affiliate_click', {
+        network: el.getAttribute('data-network') || 'admitad',
+        merchant: el.getAttribute('data-merchant') || '',
+        item_id: el.getAttribute('data-sku') || '',
+        item_name: el.getAttribute('data-name') || '',
+        item_category: el.getAttribute('data-cat') || ''
+      });
+    }
+    setTimeout(function () { window.location.href = url; }, 150);
+  }
+</script>
 <script>
   // ── Búsqueda: navega entre categorías de esta página (sin ML) ──
   (function() {

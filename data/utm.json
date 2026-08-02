@@ -1,0 +1,18 @@
+{
+  "default_campaign": "elpodio_tech_v1",
+  "mediums": {
+    "content": "content",
+    "social": "social",
+    "publi": "publi",
+    "cross": "cross_post"
+  },
+  "sources": {
+    "river": "river",
+    "diario-albiceleste": "albiceleste",
+    "revista-espectaculo": "espectaculo",
+    "fb": "facebook",
+    "ig": "instagram",
+    "direct": "direct",
+    "elpodiomp_home": "elpodiomp_home"
+  }
+}

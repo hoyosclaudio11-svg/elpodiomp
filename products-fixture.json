@@ -1,4 +1,914 @@
 {
+  "zapatillas_urbano": [
+    {
+      "title": "Zapatillas Addnice Skate Cricket Niño Niña Moda Urbana",
+      "price": 69899,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_817719-MLA114852093997_072026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-114852093997-zapatillas-addnice-skate-cricket-nino-nina-moda-urbana-_JM"
+    },
+    {
+      "title": "Zapatillas Prowess Niños Urbanas Moda 6050 - 27 Al 34",
+      "price": 27750,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_760186-MLA97847871477_112025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-97847871477-zapatillas-prowess-ninos-urbanas-moda-6050-27-al-34-_JM"
+    },
+    {
+      "title": "Zapatillas Mommy Urbanas Chunky Mujer Air Sneakers Moda",
+      "price": 78000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_957709-MLA111952645305_052026-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-111952645305-zapatillas-mommy-urbanas-chunky-mujer-air-sneakers-moda-_JM"
+    },
+    {
+      "title": "Zapatillas Mujer Urbanas Livianas Moda Casuales 36 Al 41 C",
+      "price": 62221,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_779034-MLA113729421854_072026-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-113729421854-zapatillas-mujer-urbanas-livianas-moda-casuales-36-al-41-c-_JM"
+    },
+    {
+      "title": "Zapatillas Urbanas Prowess Moda Art. 5050-35 Al 44",
+      "price": 31500,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_939540-MLA96400846262_102025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-96400846262-zapatillas-urbanas-prowess-moda-art-5050-35-al-44-_JM"
+    },
+    {
+      "title": "Zapatillas Mujer Urbana Moda Plataforma Livianas",
+      "price": 69665,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_895997-MLA115575833849_082026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-115575833849-zapatillas-mujer-urbana-moda-plataforma-livianas-_JM"
+    }
+  ],
+  "smartwatches": [
+    {
+      "title": "Smartwatch Noak Bloom 1 Niños Con Juegos 1.83  Tft-lcd Ip68",
+      "price": 79999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_707251-MLA113891884336_072026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-113891884336-smartwatch-noak-bloom-1-ninos-con-juegos-1-83-tft-lcd-ip68-_JM"
+    },
+    {
+      "title": "Reloj Inteligente Militar Sumergible Con Gps Hombre G3 Negro Elegante Resistente Negro Metálico",
+      "price": 274875,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_810285-MLA108924156290_032026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-108924156290-reloj-inteligente-militar-sumergible-con-gps-hombre-g3-negro-elegante-resistente-_JM"
+    },
+    {
+      "title": "Reloj deportivo Garmin Vívoactive6 blanco con corazón y monitor de pulsera GPS",
+      "price": 727999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_895694-MLA110342974359_042026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-110342974359-reloj-deportivo-garmin-vivoactive6-blanco-con-corazon-y-monitor-de-pulsera-gps-_JM"
+    },
+    {
+      "title": "Reloj Xiaomi Redmi Watch 6 Negro Negro",
+      "price": 299999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_985987-MLA110566609097_042026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-110566609097-reloj-xiaomi-redmi-watch-6-negro-negro-_JM"
+    },
+    {
+      "title": "Xiaomi Smart Band 9 Active color negro",
+      "price": 49999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_751752-MLA99414345096_112025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/xiaomi-smart-band-9-active-color-negro/p/MLA43438189"
+    },
+    {
+      "title": "Smartwatch Nictom Deportivo, Pantalla Táctil 1.28\", Rosa, Bluetooth, Resistente al Agua IP68, Compatible iOS-Android",
+      "price": 99999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_751013-MLA99483182470_112025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/smartwatch-nictom-deportivo-pantalla-tactil-128-rosa-bluetooth-resistente-al-agua-ip68-compatible-ios-android/p/MLA19388361"
+    }
+  ],
+  "auriculares_in": [
+    {
+      "title": "Auriculares Inalámbricos Bluetooth Batería De Larga Duración",
+      "price": 69900,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_886018-MLA109428191759_032026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-109428191759-auriculares-inalambricos-bluetooth-bateria-de-larga-duracion-_JM"
+    },
+    {
+      "title": "Auricular Inalambrico Bluetooth Headphone Awei At7 600mah hasta 70 horas de reproducción- Negro",
+      "price": 54472,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_619416-MLA96901660348_112025-E.webp",
+      "badge": "9 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 9,
+        "sinInteres": true
+      },
+      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-96901660348-auricular-inalambrico-bluetooth-headphone-awei-at7-600mah-hasta-70-horas-de-repr-_JM"
+    },
+    {
+      "title": "Auriculares Inalámbricos Lenovo Livepod Lp75 Bluetooth Negro",
+      "price": 44990,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_765001-MLA99968188569_112025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-99968188569-auriculares-inalambricos-lenovo-livepod-lp75-bluetooth-negro-_JM"
+    },
+    {
+      "title": "Auriculares Bluetooth Lenovo Xt80 Sports Running Deportes",
+      "price": 125999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_783808-MLA91520258467_092025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-91520258467-auriculares-bluetooth-lenovo-xt80-sports-running-deportes-_JM"
+    },
+    {
+      "title": "Auriculares Inalámbricos para Xiaomi Redmi Buds 6 Play Negro",
+      "price": 28999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_802305-MLA95679505222_102025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/auriculares-inalambricos-para-xiaomi-redmi-buds-6-play-negro/p/MLA39962085"
+    },
+    {
+      "title": "Xiaomi Redmi Buds 6 Play Rosa",
+      "price": 27999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_714087-MLA96151231035_102025-E.webp",
+      "badge": "3 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 3,
+        "sinInteres": true
+      },
+      "description": "¡3 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/xiaomi-redmi-buds-6-play-rosa/p/MLA47259580"
+    }
+  ],
+  "notebooks_office": [
+    {
+      "title": "Notebook Hp Elitebook Apu A10 8gb Ssd 128gb Económicas (Reacondicionado)",
+      "price": 420000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_784142-MLA97246507989_112025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-97246507989-notebook-hp-elitebook-apu-a10-8gb-ssd-128gb-economicas-reacondicionado-_JM"
+    },
+    {
+      "title": "Notebook Intel Core I3 6006u 8gb Ram 256gb W11 + Fullhd Wifi",
+      "price": 1404000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_827836-MLA115663043641_082026-E.webp",
+      "badge": "18 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 18,
+        "sinInteres": true
+      },
+      "description": "¡18 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-115663043641-notebook-intel-core-i3-6006u-8gb-ram-256gb-w11-fullhd-wifi-_JM"
+    },
+    {
+      "title": "Notebook Hp I5 6ta Gen 8gb Ram 128gb Ssd Full Hd Windows 10 (Reacondicionado)",
+      "price": 500000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_975304-MLA82144751264_022025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-82144751264-notebook-hp-i5-6ta-gen-8gb-ram-128gb-ssd-full-hd-windows-10-reacondicionado-_JM"
+    }
+  ],
+  "consolas_nin": [
+    {
+      "title": "Nintendo Switch OLED + Super Mario Bros. Wonder",
+      "price": 999999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_656472-MLA98119452619_112025-E.webp",
+      "badge": "12 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 12,
+        "sinInteres": true
+      },
+      "description": "¡12 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/nintendo-switch-oled-super-mario-bros-wonder/p/MLA31000132"
+    },
+    {
+      "title": "Consola Nintendo Switch Oled Modelo Splatoon 3 Color Amarillo",
+      "price": 1199999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_824926-MLA99492776220_112025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/consola-nintendo-switch-oled-modelo-splatoon-3-color-amarillo/p/MLA37437193"
+    },
+    {
+      "title": "Nintendo Switch OLED Blanco/Negro 64 GB 2022",
+      "price": 1189900,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_696883-MLA99496619454_112025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/nintendo-switch-oled-blanconegro-64-gb-2022/p/MLA20545792"
+    },
+    {
+      "title": "Consola Nintendo Switch OLED Splatoon 3 de 64 GB",
+      "price": 999000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_877254-MLA99926991867_112025-E.webp",
+      "badge": "3 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 3,
+        "sinInteres": true
+      },
+      "description": "¡3 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/consola-nintendo-switch-oled-splatoon-3-de-64-gb/p/MLA19610178"
+    },
+    {
+      "title": "Nintendo Switch Oled Japonés Zelda Tears Of The Kingdom 64GB",
+      "price": 985000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_755430-MLA99519646378_112025-E.webp",
+      "badge": "12 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 12,
+        "sinInteres": true
+      },
+      "description": "¡12 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/nintendo-switch-oled-japones-zelda-tears-of-the-kingdom-64gb/p/MLA23090860"
+    },
+    {
+      "title": "Consola Híbrida Nintendo Switch OLED Splatoon 3 Edition de 64GB",
+      "price": 1199000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_829910-MLA99424087604_112025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/consola-hibrida-nintendo-switch-oled-splatoon-3-edition-de-64gb/p/MLA37361629"
+    }
+  ],
+  "smart_tv_chica": [
+    {
+      "title": "Soporte Tv Led Smart Brazo Articulado Movil 60 55 50 43 32 Color Negro",
+      "price": 58950,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_868834-MLA111536520425_052026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-111536520425-soporte-tv-led-smart-brazo-articulado-movil-60-55-50-43-32-color-negro-_JM"
+    },
+    {
+      "title": "Soporte Tele 32 43 50 55 Extensor Reforzado Doble Brazo 30kg Color Negro",
+      "price": 14679,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_617158-MLA95349555277_102025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-95349555277-soporte-tele-32-43-50-55-extensor-reforzado-doble-brazo-30kg-color-negro-_JM"
+    },
+    {
+      "title": "Soporte TV Tele Articulado Pared Nictom 20 A 65 Pulgadas Reforzado Doble Brazo - Apto Samsung LG Noblex 32 43 50 55",
+      "price": 99999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_975939-MLA96120837653_102025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-96120837653-soporte-tv-tele-articulado-pared-nictom-20-a-65-pulgadas-reforzado-doble-brazo-a-_JM"
+    },
+    {
+      "title": "Soporte Tv Led Lcd Smart 65 60 55 50 43 42 40 32 Pulgadas Color Negro",
+      "price": 45996,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_918872-MLA110696415976_052026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-110696415976-soporte-tv-led-lcd-smart-65-60-55-50-43-42-40-32-pulgadas-color-negro-_JM"
+    },
+    {
+      "title": "Televisor Samsung Smart Tv Negro T4300 - Pantalla 32'' Hd",
+      "price": 459366,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_748400-MLA99504368610_112025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/televisor-samsung-smart-tv-negro-t4300-pantalla-32-hd/p/MLA17511464"
+    },
+    {
+      "title": "Soporte Led Tv Lcd Smart Tech MF700DL Articulado Doble Brazo Reforzado 32 40 42 43 46 47 49 50 52 55 60 65 75 Pulgadas Color Negro",
+      "price": 79999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_875617-MLA108920902900_032026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/soporte-led-tv-lcd-smart-tech-mf700dl-articulado-doble-brazo-reforzado-32-40-42-43-46-47-49-50-52-55-60-65-75-pulgadas-color-negro/p/MLA18464160"
+    }
+  ],
+  "teclados_office": [
+    {
+      "title": "Teclado Y Mouse Logitech Mx Keys + Mx Master 3s Grafito Teclado Negro",
+      "price": 329999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_710920-MLA82496103429_022025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-82496103429-teclado-y-mouse-logitech-mx-keys-mx-master-3s-grafito-teclado-negro-_JM"
+    },
+    {
+      "title": "Teclado Logitech Inalámbrico K250 Blanco",
+      "price": 36929,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_919461-MLA99897162469_112025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-99897162469-teclado-logitech-inalambrico-k250-blanco-_JM"
+    },
+    {
+      "title": "Teclado Mecánico Gamer Inalámbrico Aula F2088 Air Rgb Rainbow Switch Red Con Rueda Color Negro",
+      "price": 61499,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_916220-MLA112912332658_072026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-112912332658-teclado-mecanico-gamer-inalambrico-aula-f2088-air-rgb-rainbow-switch-red-con-rue-_JM"
+    },
+    {
+      "title": "Kit Teclado Y Mouse Bluetooth Inalámbrico Para Oficina Pc",
+      "price": 26999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_836467-MLA113066080682_072026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-113066080682-kit-teclado-y-mouse-bluetooth-inalambrico-para-oficina-pc-_JM"
+    },
+    {
+      "title": "Teclado Mecánico Inalámbrico Aula F75 Pro RGB Impresión Lateral Inglés US (75%) Color Gris",
+      "price": 110979,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_646241-MLA82105229115_012025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/teclado-mecanico-inalambrico-aula-f75-pro-rgb-impresion-lateral-ingles-us-75-color-gris/p/MLA45693600"
+    },
+    {
+      "title": "Teclado + Mouse Inalambricos Ergonómicos Pkey Mouse Negro Teclado Negro",
+      "price": 27999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_695990-MLA99887310035_112025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/teclado-mouse-inalambricos-ergonomicos-pkey-mouse-negro-teclado-negro/p/MLA54275001"
+    }
+  ],
+  "parlantes_bt": [
+    {
+      "title": "Parlante Mini Potente Lidimi 10w Luz Led Bluetooth Bass Variado",
+      "price": 57500,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_636296-MLA112136937411_052026-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-112136937411-parlante-mini-potente-lidimi-10w-luz-led-bluetooth-bass-variado-_JM"
+    },
+    {
+      "title": "Parlante Portátil Soundcore Select 3 con Bluetooth, 16W, BassUp y 20h de Batería",
+      "price": 155990,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_790884-MLA111406179517_052026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-111406179517-parlante-portatil-soundcore-select-3-con-bluetooth-16w-bassup-y-20h-de-bateria-_JM"
+    },
+    {
+      "title": "Parlantes Portátil Jbl Go 4 Speaker Color Azul Jblgo4bluam",
+      "price": 94999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_996065-MLA99998166311_112025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-99998166311-parlantes-portatil-jbl-go-4-speaker-color-azul-jblgo4bluam-_JM"
+    },
+    {
+      "title": "Maquina Karaoke Redondo Portátil 2 Microfonos Parlante Rgb Celeste Veoquiero",
+      "price": 29999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_620008-MLA105585126806_012026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-105585126806-maquina-karaoke-redondo-portatil-2-microfonos-parlante-rgb-celeste-veoquiero-_JM"
+    },
+    {
+      "title": "Parlante Bluetooth Inalambrico SPICA SP-4408 Luz Rgb Portatil Karaoke Radio Color Negro",
+      "price": 137499,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_834550-MLA109643198574_042026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/parlante-bluetooth-inalambrico-spica-sp-4408-luz-rgb-portatil-karaoke-radio-color-negro/p/MLA18950637"
+    },
+    {
+      "title": "Parlante Torre Suono 2 Woofers 6.5'' Portátil Led Tws Rgb Bt Negro",
+      "price": 206999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_874553-MLA100060321449_122025-E.webp",
+      "badge": "9 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 9,
+        "sinInteres": true
+      },
+      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/parlante-torre-suono-2-woofers-65-portatil-led-tws-rgb-bt-negro/p/MLA54113673"
+    }
+  ],
+  "sillas_gamer": [
+    {
+      "title": "Silla Gamer Gc-030 Cuero Ecol Patagonia Home Calidad Premium Color Negro-blanco",
+      "price": 299999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_769086-MLA104615200646_012026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-104615200646-silla-gamer-gc-030-cuero-ecol-patagonia-home-calidad-premium-color-negro-blanco-_JM"
+    },
+    {
+      "title": "Silla Gamer Ergonómica The Game House Reclinable de Cuero Sintético Negro",
+      "price": 303478,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_877230-MLA111876349708_062026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-111876349708-silla-gamer-ergonomica-the-game-house-reclinable-de-cuero-sintetico-negro-_JM"
+    },
+    {
+      "title": "Silla Gamer Alpina Ergonómica Giratoria Reclinable ft-088 Color Negro/Blanco Material del tapizado Cuero sintético",
+      "price": 250000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_860216-MLA99903594075_112025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-99903594075-silla-gamer-alpina-ergonomica-giratoria-reclinable-ft-088-color-negro-blanco-mat-_JM"
+    },
+    {
+      "title": "Repuesto Pistón Neumático Para Silla De Oficina O Gamer",
+      "price": 34000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_724879-MLA112756105341_062026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-112756105341-repuesto-piston-neumatico-para-silla-de-oficina-o-gamer-_JM"
+    },
+    {
+      "title": "Silla Oficina Gamer Giratoria Ergonomica Reclinable Cougar Speeder One Negra",
+      "price": 479999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_910227-MLA95936539459_102025-E.webp",
+      "badge": "9 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 9,
+        "sinInteres": true
+      },
+      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/silla-oficina-gamer-giratoria-ergonomica-reclinable-cougar-speeder-one-negra/p/MLA46035327"
+    },
+    {
+      "title": "Silla Gamer Alpina Ergonómica Giratoria Reclinable ft-088 Color Negro/Blanco Material del tapizado Cuero sintético",
+      "price": 250000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_860216-MLA99903594075_112025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/silla-gamer-alpina-ergonomica-giratoria-reclinableft-088-color-negroblanco-material-del-tapizado-cuero-sintetico/p/MLA47080512"
+    }
+  ],
+  "mouse_gamer": [
+    {
+      "title": "Ratón Inalámbrico Redragon King Pro Negro M916-pro 1K",
+      "price": 77999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_650659-MLA99983693429_112025-E.webp",
+      "badge": "9 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 9,
+        "sinInteres": true
+      },
+      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-99983693429-raton-inalambrico-redragon-king-pro-negro-m916-pro-1k-_JM"
+    },
+    {
+      "title": "Ratón Razer Essential DeathAdder Negro",
+      "price": 40281,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_818480-MLA95658875558_102025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-95658875558-raton-razer-essential-deathadder-negro-_JM"
+    },
+    {
+      "title": "Mouse Gamer G6 Con 7 Botones 3600 Dpi Usb Negro",
+      "price": 32999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_716257-MLA90064692504_082025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-90064692504-mouse-gamer-g6-con-7-botones-3600-dpi-usb-negro-_JM"
+    },
+    {
+      "title": "Mouse Gamer Inalámbrico Logitech Lightspeed G305 Color Blanco",
+      "price": 60989,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_732776-MLA99558362230_122025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-99558362230-mouse-gamer-inalambrico-logitech-lightspeed-g305-color-blanco-_JM"
+    },
+    {
+      "title": "Mouse Gamer X11 Attack Shark Tri Mode 22000 dpi Paw3311 Dock Color Negro",
+      "price": 49999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_741651-MLA99565565224_122025-E.webp",
+      "badge": "9 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 9,
+        "sinInteres": true
+      },
+      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/mouse-gamer-x11-attack-shark-tri-mode-22000-dpi-paw3311-dock-color-negro/p/MLA39936557"
+    },
+    {
+      "title": "Mouse Inalámbrico GotWire RGB Bluetooth, USB Recargable, Negro, Silencioso",
+      "price": 7899,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_707184-MLA83254382104_042025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/mouse-inalambrico-gotwire-rgb-bluetooth-usb-recargable-negro-silencioso/p/MLA28639405"
+    }
+  ],
+  "batidoras": [
+    {
+      "title": "Batidora Eléctrica de Mano Inalámbrica USB Blanco 3 Velocidades Montoya",
+      "price": 11999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_629354-MLA100124378023_122025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-100124378023-batidora-electrica-de-mano-inalambrica-usb-blanco-3-velocidades-montoya-_JM"
+    },
+    {
+      "title": "Batidora De Mano 7 Velocidades 260w Reposteria Amasador Blanco 50hz 60hz",
+      "price": 29900,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_834920-MLA112539792886_062026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-112539792886-batidora-de-mano-7-velocidades-260w-reposteria-amasador-blanco-50hz-60hz-_JM"
+    },
+    {
+      "title": "Batidora De Mano Daewoo Dhm208 Blanca 250w 5 Velocidades Color Blanco",
+      "price": 69950,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_983341-MLA99918800583_112025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-99918800583-batidora-de-mano-daewoo-dhm208-blanca-250w-5-velocidades-color-blanco-_JM"
+    },
+    {
+      "title": "Batidora Mano Intercambiable Amasa Mezcla Bate 180w 7 Veloci",
+      "price": 37798,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_651746-MLA90659707356_082025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-90659707356-batidora-mano-intercambiable-amasa-mezcla-bate-180w-7-veloci-_JM"
+    },
+    {
+      "title": "Batidora De Mano Liliana Rapimix Ab103 Blanca 50 Hz/60 Hz Blanco 50 Hz/60 Hz",
+      "price": 64099,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_956376-MLA84539008682_052025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/batidora-de-mano-liliana-rapimix-ab103-blanca-50-hz60-hz-blanco-50-hz60-hz/p/MLA15382611"
+    },
+    {
+      "title": "Batidora Liliana Vuelty Ab101",
+      "price": 74999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_959256-MLA100028527247_122025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/batidora-liliana-vuelty-ab101/p/MLA13795674"
+    }
+  ],
+  "bicicletas_urbana": [
+    {
+      "title": "Bicicleta Playera Rodado 29 Bassano",
+      "price": 480000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_795750-MLA112750753569_062026-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-112750753569-bicicleta-playera-rodado-29-bassano-_JM"
+    },
+    {
+      "title": "Bicicleta Playera Rodado 26 Ram",
+      "price": 275000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_926297-MLA71702719823_092023-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-71702719823-bicicleta-playera-rodado-26-ram-_JM"
+    },
+    {
+      "title": "Bicicleta Playera Rodado 29 Bassano Con Frenos V-brake",
+      "price": 420000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_632888-MLA110413950466_052026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-110413950466-bicicleta-playera-rodado-29-bassano-con-frenos-v-brake-_JM"
+    },
+    {
+      "title": "Bicicleta Playera Rodado 29",
+      "price": 390000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_968336-MLA53314914189_012023-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-53314914189-bicicleta-playera-rodado-29-_JM"
+    },
+    {
+      "title": "Bicicleta Playera Kelinbike V26PDF Rodado 26 Mujer Fucsia Hierro",
+      "price": 260022,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_775650-MLA112591865482_062026-E.webp",
+      "badge": "9 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 9,
+        "sinInteres": true
+      },
+      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/bicicleta-playera-kelinbike-v26pdf-rodado-26-mujer-fucsia-hierro/p/MLA26928305"
+    },
+    {
+      "title": "Bicicleta Playera Ziambikes R29 Negro Llantas Doble Pared Acero",
+      "price": 314990,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_793362-MLA99988019445_112025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/bicicleta-playera-ziambikes-r29-negro-llantas-doble-pared-acero/p/MLA26682449"
+    }
+  ],
+  "remeras_mujer": [
+    {
+      "title": "Remera Top De Tul Bordada - Talles Grandes ( L A 4xl )",
+      "price": 25000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_814548-MLA110411449546_052026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-110411449546-remera-top-de-tul-bordada-talles-grandes-l-a-4xl-_JM"
+    },
+    {
+      "title": "Top De Tul Acebrado Elastizado - Talles Grandes ( L A 4xl )",
+      "price": 19000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_936554-MLA110295199884_052026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-110295199884-top-de-tul-acebrado-elastizado-talles-grandes-l-a-4xl-_JM"
+    },
+    {
+      "title": "Remera Oversize Crop Top Pupera 100% Algodón Premium",
+      "price": 9800,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_931359-MLA111614575846_062026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-111614575846-remera-oversize-crop-top-pupera-100-algodon-premium-_JM"
+    },
+    {
+      "title": "Crop Top Manguitas Mujer Manga Larga Red Transparencia Trend",
+      "price": 29990,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_773075-MLA99411072895_112025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-99411072895-crop-top-manguitas-mujer-manga-larga-red-transparencia-trend-_JM"
+    },
+    {
+      "title": "Remera Oversize Crop Top Pupera 100% Algodón Premium",
+      "price": 9800,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_931359-MLA111614575846_062026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-111614575846-remera-oversize-crop-top-pupera-100-algodon-premium-_JM"
+    },
+    {
+      "title": "Baby Tee Crop Top Brasil Verano Mujer Moda Tendencia",
+      "price": 29990,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_659322-MLA98980490289_112025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-1938509580-baby-tee-crop-top-brasil-verano-mujer-moda-tendencia-_JM"
+    }
+  ],
+  "accesorios_mujer": [
+    {
+      "title": "Cadena Con Inicial De Acero Quirúrgico",
+      "price": 6000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_861872-MLA109173436355_032026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-109173436355-cadena-con-inicial-de-acero-quirurgico-_JM"
+    },
+    {
+      "title": "Pulsera Roja O Negra, Unisex, Macramé En Hilo De Seda",
+      "price": 6600,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_708964-MLA93301680625_092025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://articulo.mercadolibre.com.ar/MLA-1672904634-pulsera-roja-o-negra-unisex-macrame-en-hilo-de-seda-_JM"
+    },
+    {
+      "title": "Juego De 5 Pulseras Rígidas Mujer",
+      "price": 11229,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_935874-CBT114945279913_072026-E.webp",
+      "badge": "Destacado",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/set-pulseras-rigidas-x5-mujer/p/MLA2053208511"
+    },
+    {
+      "title": "Collar Sanación De Turmalina",
+      "price": 24499,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_983828-MLA76384159430_052024-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-76384159430-collar-sanacion-de-turmalina-_JM"
+    },
+    {
+      "title": "Par Vip De Aros Abridores Hombre Mujer Acero Urbano Negro Presentación Cajita 3mm",
+      "price": 11990,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_779895-MLA110706699421_042026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/par-vip-de-aros-abridores-hombre-mujer-acero-urbano-negro-presentacion-cajita-3mm/p/MLA68377929"
+    },
+    {
+      "title": "Anillo Ajustable Búho Krokus en Aleación Plateada con Ojos Azules",
+      "price": 9999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_747220-MLA96639166017_102025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/anillo-ajustable-buho-krokus-en-aleacion-plateada-con-ojos-azules/p/MLA56346129"
+    }
+  ],
   "zapatillas_running": [
     {
       "title": "Zapatillas Hombre Running Deportiva Flexibles Basto 22",
@@ -65,68 +975,6 @@
       },
       "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
       "link": "https://articulo.mercadolibre.com.ar/MLA-1747916472-zapatillas-hombre-nike-flex-experience-running-12-dv0740-004-_JM"
-    }
-  ],
-  "zapatillas_urbano": [
-    {
-      "title": "Zapatillas Prowess Niños Urbanas Moda 6050 - 27 Al 34",
-      "price": 27750,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_760186-MLA97847871477_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-97847871477-zapatillas-prowess-ninos-urbanas-moda-6050-27-al-34-_JM"
-    },
-    {
-      "title": "Zapatillas Piccadilly Confort Mujer Moda Urbana Voce",
-      "price": 147367,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_742607-MLA109609772201_032026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-109609772201-zapatillas-piccadilly-confort-mujer-moda-urbana-voce-_JM"
-    },
-    {
-      "title": "Zapatillas Mujer Moda Plataforma Tela Liviana Beca",
-      "price": 71332,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_994607-MLA114242113732_082026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-114242113732-zapatillas-mujer-moda-plataforma-tela-liviana-beca-_JM"
-    },
-    {
-      "title": "Zapatillas De Moda Urbanas Mujer, Hombre Unisex Busted",
-      "price": 99999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_685918-MLA81492421665_122024-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-81492421665-zapatillas-de-moda-urbanas-mujer-hombre-unisex-busted-_JM"
-    },
-    {
-      "title": "Zapatillas Urbanas Prowess Moda Art. 5050-35 Al 44",
-      "price": 31500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_939540-MLA96400846262_102025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-96400846262-zapatillas-urbanas-prowess-moda-art-5050-35-al-44-_JM"
-    },
-    {
-      "title": "Zapatillas Mujer Urbana Moda Plataforma Livianas",
-      "price": 69665,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_895997-MLA115575833849_082026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-115575833849-zapatillas-mujer-urbana-moda-plataforma-livianas-_JM"
     }
   ],
   "zapatillas_nino": [
@@ -625,142 +1473,6 @@
       "link": "https://www.mercadolibre.com.ar/MLA-112323576314-samsung-s24-fe-256gb-reacondicionado-_JM"
     }
   ],
-  "smartwatches": [
-    {
-      "title": "Reloj Inteligente Smartwatch Scykei Civis Neo Fhd Amoled",
-      "price": 239511,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_898006-MLA93878919936_102025-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/MLA-93878919936-reloj-inteligente-smartwatch-scykei-civis-neo-fhd-amoled-_JM"
-    },
-    {
-      "title": "Smartwatch JD Cairo con Llamadas Bluetooth y Pantalla de 1.83\" en Color Beige",
-      "price": 44999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_830156-MLA109896776282_042026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-109896776282-smartwatch-jd-cairo-con-llamadas-bluetooth-y-pantalla-de-1-83-en-color-beige-_JM"
-    },
-    {
-      "title": "Reloj Inteligente Mujer Sumergible Smartbit Swim Rosa Smartwatch Sumergible 50 metros Natacion Brazadas Distancia Bateria 10 Dias Larga Duracion Deportivo Llamadas Mensajes Cuadrado Malla Extra",
-      "price": 99990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_604814-MLA99453489046_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-99453489046-reloj-inteligente-mujer-sumergible-smartbit-swim-rosa-smartwatch-sumergible-50-m-_JM"
-    },
-    {
-      "title": "Reloj Inteligente Militar Sumergible Con Gps Hombre G3 Negro Elegante Resistente Negro Metálico",
-      "price": 274875,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_810285-MLA108924156290_032026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-108924156290-reloj-inteligente-militar-sumergible-con-gps-hombre-g3-negro-elegante-resistente-_JM"
-    },
-    {
-      "title": "Xiaomi Smart Band 9 Active color negro",
-      "price": 49999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_751752-MLA99414345096_112025-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/xiaomi-smart-band-9-active-color-negro/p/MLA43438189"
-    },
-    {
-      "title": "Smartwatch Nictom Deportivo, Pantalla Táctil 1.28\", Rosa, Bluetooth, Resistente al Agua IP68, Compatible iOS-Android",
-      "price": 99999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_751013-MLA99483182470_112025-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/smartwatch-nictom-deportivo-pantalla-tactil-128-rosa-bluetooth-resistente-al-agua-ip68-compatible-ios-android/p/MLA19388361"
-    }
-  ],
-  "auriculares_in": [
-    {
-      "title": "Auriculares Inalámbricos Bluetooth Anker Soundcore A25i hasta 28H Reproducción, Carga Rápida, Llamadas nítidas con AI, Sonido Personalizado en la App, Diseño portátil, Bluetooth 5.3, Regalos para mamá",
-      "price": 74990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_978804-MLA107594881523_022026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-107594881523-auriculares-inalambricos-bluetooth-anker-soundcore-a25i-hasta-28h-reproduccion-c-_JM"
-    },
-    {
-      "title": "Auriculares Ligero Auris Bluetooth 5.4 Anc Enc 4 Mic Negro",
-      "price": 60590,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_814376-MLA111230617613_052026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-111230617613-auriculares-ligero-auris-bluetooth-5-4-anc-enc-4-mic-negro-_JM"
-    },
-    {
-      "title": "Auriculares Inalámbricos Anker Soundcore P25i Bluetooth Gamer, Resistente Al Agua Ipx5, Certificación Hi-res Ldac, 30 Horas De Calidad De Sonido Sin Pérdida, Soporte De Carga Rápida, Bluetooth 5.3",
-      "price": 73990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_675500-MLA110464564924_052026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-110464564924-auriculares-inalambricos-anker-soundcore-p25i-bluetooth-gamer-resistente-al-agua-_JM"
-    },
-    {
-      "title": "Anker Soundcore Sport X20 Wireless Headphones with 11mm Drivers, BassUp, 43dB ANC, Hi-Res, Bluetooth 5.3, 48H Battery Life with Charging Case and Sports Resistance, IP68, Verde",
-      "price": 299990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_880844-MLA82866250957_032025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-82866250957-anker-soundcore-sport-x20-wireless-headphones-with-11mm-drivers-bassup-43db-anc--_JM"
-    },
-    {
-      "title": "Auriculares Jbl Wave Beam 2 Tws In-ear Negro",
-      "price": 97999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_826282-MLA99972049705_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/auriculares-jbl-wave-beam-2-tws-in-ear-negro/p/MLA53657592"
-    },
-    {
-      "title": "Xiaomi Redmi Buds 6 Play Rosa",
-      "price": 27999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_714087-MLA96151231035_102025-E.webp",
-      "badge": "3 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 3,
-        "sinInteres": true
-      },
-      "description": "¡3 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/xiaomi-redmi-buds-6-play-rosa/p/MLA47259580"
-    }
-  ],
   "auriculares_over": [
     {
       "title": "Auriculares Vincha Soundcore by Anker Q30 Bluetooth Inalámbricos, 80 hs sin CAR, Sonido Hi-Res, Modos de Cancelación de Ruido, Almohadillas Suaves, Carga Rápida, Negro",
@@ -892,28 +1604,6 @@
       "cuotas": null,
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
       "link": "https://www.mercadolibre.com.ar/hp-pavilion-intel-core-i5-120u-16gb-ram-1tb-ssd-pantalla-173-hd-1600-px-x-900-px-intel-arc-graphics-incluye-windows-11-instalado-laptop-gamer-17-cn4153-con-regalo/p/MLA56952040"
-    }
-  ],
-  "notebooks_office": [
-    {
-      "title": "Notebook Hp Elitebook Apu A10 8gb Ssd 128gb Económicas (Reacondicionado)",
-      "price": 420000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_784142-MLA97246507989_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-97246507989-notebook-hp-elitebook-apu-a10-8gb-ssd-128gb-economicas-reacondicionado-_JM"
-    },
-    {
-      "title": "Notebook Hp I5 6ta Gen 8gb Ram 128gb Ssd Full Hd Windows 10 (Reacondicionado)",
-      "price": 500000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_975304-MLA82144751264_022025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-82144751264-notebook-hp-i5-6ta-gen-8gb-ram-128gb-ssd-full-hd-windows-10-reacondicionado-_JM"
     }
   ],
   "notebooks_ultra": [
@@ -1134,83 +1824,6 @@
       "link": "https://www.mercadolibre.com.ar/consola-xbox-series-x-1tb-ssd-4k-120-fps-uhd-internacional/p/MLA29577429"
     }
   ],
-  "consolas_nin": [
-    {
-      "title": "Nintendo Switch OLED + Super Mario Bros. Wonder",
-      "price": 999999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_656472-MLA98119452619_112025-E.webp",
-      "badge": "12 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 12,
-        "sinInteres": true
-      },
-      "description": "¡12 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/nintendo-switch-oled-super-mario-bros-wonder/p/MLA31000132"
-    },
-    {
-      "title": "Nintendo Switch OLED Blanco/Negro 64 GB 2022",
-      "price": 1189900,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_696883-MLA99496619454_112025-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/nintendo-switch-oled-blanconegro-64-gb-2022/p/MLA20545792"
-    },
-    {
-      "title": "Consola Híbrida Nintendo Switch OLED Splatoon 3 Edition de 64GB",
-      "price": 1199000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_829910-MLA99424087604_112025-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/consola-hibrida-nintendo-switch-oled-splatoon-3-edition-de-64gb/p/MLA37361629"
-    },
-    {
-      "title": "Consola Nintendo Switch Oled Modelo Splatoon 3 Color Amarillo",
-      "price": 1199999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_824926-MLA99492776220_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/consola-nintendo-switch-oled-modelo-splatoon-3-color-amarillo/p/MLA37437193"
-    },
-    {
-      "title": "Nintendo Switch Oled Japonés Zelda Tears Of The Kingdom 64GB",
-      "price": 985000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_755430-MLA99519646378_112025-E.webp",
-      "badge": "12 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 12,
-        "sinInteres": true
-      },
-      "description": "¡12 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/nintendo-switch-oled-japones-zelda-tears-of-the-kingdom-64gb/p/MLA23090860"
-    },
-    {
-      "title": "Consola Nintendo Switch Oled The Legend Of Zelda: Totk (Tears of the Kingdom Edition)",
-      "price": 999999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_697966-MLA99917049443_112025-E.webp",
-      "badge": "3 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 3,
-        "sinInteres": true
-      },
-      "description": "¡3 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/consola-nintendo-switch-oled-the-legend-of-zelda-totk-tears-of-the-kingdom-edition/p/MLA22800663"
-    }
-  ],
   "tablets": [
     {
       "title": "Tablet Samsung Galaxy Tab A11 64gb 4gb 8.7'' + Gris Oscuro",
@@ -1280,71 +1893,6 @@
       },
       "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
       "link": "https://www.mercadolibre.com.ar/samsung-galaxy-tab-a11-color-gris-capacidad-64-gb-ram-4gb/p/MLA62627337"
-    }
-  ],
-  "smart_tv_chica": [
-    {
-      "title": "Soporte Tele 32 43 50 55 Extensor Reforzado Doble Brazo 30kg Color Negro",
-      "price": 14679,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_617158-MLA95349555277_102025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-95349555277-soporte-tele-32-43-50-55-extensor-reforzado-doble-brazo-30kg-color-negro-_JM"
-    },
-    {
-      "title": "Soporte TV Tele Articulado Pared Nictom 20 A 65 Pulgadas Reforzado Doble Brazo - Apto Samsung LG Noblex 32 43 50 55",
-      "price": 99999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_975939-MLA96120837653_102025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-96120837653-soporte-tv-tele-articulado-pared-nictom-20-a-65-pulgadas-reforzado-doble-brazo-a-_JM"
-    },
-    {
-      "title": "Soporte Tv Led Smart Brazo Articulado Movil 60 55 50 43 32 Color Negro",
-      "price": 58950,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_868834-MLA111536520425_052026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-111536520425-soporte-tv-led-smart-brazo-articulado-movil-60-55-50-43-32-color-negro-_JM"
-    },
-    {
-      "title": "Soporte Tv Led Lcd Smart 65 60 55 50 43 42 40 32 Pulgadas Color Negro",
-      "price": 45996,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_918872-MLA110696415976_052026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-110696415976-soporte-tv-led-lcd-smart-65-60-55-50-43-42-40-32-pulgadas-color-negro-_JM"
-    },
-    {
-      "title": "Televisor Samsung Smart Tv Negro T4300 - Pantalla 32'' Hd",
-      "price": 459366,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_748400-MLA99504368610_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/televisor-samsung-smart-tv-negro-t4300-pantalla-32-hd/p/MLA17511464"
-    },
-    {
-      "title": "Soporte Tele 32 43 50 55 Extensor Reforzado Doble Brazo 30kg Color Negro",
-      "price": 14679,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_617158-MLA95349555277_102025-E.webp",
-      "badge": "3 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 3,
-        "sinInteres": true
-      },
-      "description": "¡3 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/soporte-tele-32-43-50-55-extensor-reforzado-doble-brazo-30kg-color-negro/p/MLA23212054"
     }
   ],
   "smart_tv_grande": [
@@ -1486,136 +2034,6 @@
       "link": "https://www.mercadolibre.com.ar/teclado-mecanico-aula-win60he-60-magnetico-rgb-en-ingles-us/p/MLA54249267"
     }
   ],
-  "teclados_office": [
-    {
-      "title": "Kit Teclado Y Mouse Bluetooth Inalámbrico Para Oficina Pc",
-      "price": 26999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_836467-MLA113066080682_072026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-113066080682-kit-teclado-y-mouse-bluetooth-inalambrico-para-oficina-pc-_JM"
-    },
-    {
-      "title": "Teclado Plegable Bluetooth Recargable Touchpad Dexior DZ1 Ultra Slim",
-      "price": 52999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_931867-MLA99389911432_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-99389911432-teclado-plegable-bluetooth-recargable-touchpad-dexior-dz1-ultra-slim-_JM"
-    },
-    {
-      "title": "Teclado Hp Inalambrico Para Dispositivos Múltiples 350 Color Del Teclado Blanco Idioma Español Latinoamérica",
-      "price": 89999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_776286-MLU74063115337_012024-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-1778950195-teclado-hp-inalambrico-para-dispositivos-multiples-350-color-del-teclado-blanco--_JM"
-    },
-    {
-      "title": "Teclado Bluetooth Multi-dispositivo Genius Slimstar Ai",
-      "price": 43500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_867915-MLA111398858958_052026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-111398858958-teclado-bluetooth-multi-dispositivo-genius-slimstar-ai-_JM"
-    },
-    {
-      "title": "Teclado Mecánico Inalámbrico Aula F75 Pro RGB Impresión Lateral Inglés US (75%) Color Gris",
-      "price": 110979,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_646241-MLA82105229115_012025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/teclado-mecanico-inalambrico-aula-f75-pro-rgb-impresion-lateral-ingles-us-75-color-gris/p/MLA45693600"
-    },
-    {
-      "title": "Teclado + Mouse Inalambricos Ergonómicos Pkey Mouse Negro Teclado Negro",
-      "price": 27999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_695990-MLA99887310035_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/teclado-mouse-inalambricos-ergonomicos-pkey-mouse-negro-teclado-negro/p/MLA54275001"
-    }
-  ],
-  "parlantes_bt": [
-    {
-      "title": "Parlante Mini Potente Lidimi 10w Luz Led Bluetooth Bass Variado",
-      "price": 57500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_636296-MLA112136937411_052026-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/MLA-112136937411-parlante-mini-potente-lidimi-10w-luz-led-bluetooth-bass-variado-_JM"
-    },
-    {
-      "title": "Parlante Portátil Soundcore Select 3 con Bluetooth, 16W, BassUp y 20h de Batería",
-      "price": 155990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_790884-MLA111406179517_052026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-111406179517-parlante-portatil-soundcore-select-3-con-bluetooth-16w-bassup-y-20h-de-bateria-_JM"
-    },
-    {
-      "title": "Altavoz Bluetooth Portátil Tg117 (negro) Impermeable Por R. Color Negro",
-      "price": 40000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_929930-MLA99501191582_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-99501191582-altavoz-bluetooth-portatil-tg117-negro-impermeable-por-r-color-negro-_JM"
-    },
-    {
-      "title": "Maquina Karaoke Redondo Portátil 2 Microfonos Parlante Rgb Celeste Veoquiero",
-      "price": 29999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_620008-MLA105585126806_012026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-105585126806-maquina-karaoke-redondo-portatil-2-microfonos-parlante-rgb-celeste-veoquiero-_JM"
-    },
-    {
-      "title": "Parlante Bluetooth Inalambrico SPICA SP-4408 Luz Rgb Portatil Karaoke Radio Color Negro",
-      "price": 137499,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_834550-MLA109643198574_042026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/parlante-bluetooth-inalambrico-spica-sp-4408-luz-rgb-portatil-karaoke-radio-color-negro/p/MLA18950637"
-    },
-    {
-      "title": "Parlante Xiaomi Sound Outdoor S29d 30w (black)",
-      "price": 92665,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_717668-MLA99550750268_122025-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/parlante-xiaomi-sound-outdoor-s29d-30w-black/p/MLA44710559"
-    }
-  ],
   "parlantes_home": [
     {
       "title": "Parlante Home Theater Noga S2176 50w Negro",
@@ -1679,77 +2097,6 @@
       "cuotas": null,
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
       "link": "https://www.mercadolibre.com.ar/MLA-112355594130-parlante-ts-m11-bluetooth-portatil-tsaradia-home-theater-_JM"
-    }
-  ],
-  "sillas_gamer": [
-    {
-      "title": "Silla Gamer Gc-030 Cuero Ecol Patagonia Home Calidad Premium Color Negro-blanco",
-      "price": 299999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_769086-MLA104615200646_012026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-104615200646-silla-gamer-gc-030-cuero-ecol-patagonia-home-calidad-premium-color-negro-blanco-_JM"
-    },
-    {
-      "title": "Sillon Silla Gamer Ergonomica Seleccion Afa Oficial Negro DeSillas",
-      "price": 399999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_979514-MLA110299956560_052026-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/MLA-110299956560-sillon-silla-gamer-ergonomica-seleccion-afa-oficial-negro-desillas-_JM"
-    },
-    {
-      "title": "Sillon Gamer Aeroconfort Oficina Ejecutivo Ergonomico Color Azul Acero",
-      "price": 347500,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_870280-MLA96422560733_102025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-96422560733-sillon-gamer-aeroconfort-oficina-ejecutivo-ergonomico-color-azul-acero-_JM"
-    },
-    {
-      "title": "Set 5 Ruedas Para Silla Gamer Oficina Anti Rayones - Negro",
-      "price": 24999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_706113-MLA79703324989_102024-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-79703324989-set-5-ruedas-para-silla-gamer-oficina-anti-rayones-negro-_JM"
-    },
-    {
-      "title": "Silla Oficina Gamer Giratoria Ergonomica Reclinable Cougar Speeder One Negra",
-      "price": 479999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_910227-MLA95936539459_102025-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/silla-oficina-gamer-giratoria-ergonomica-reclinable-cougar-speeder-one-negra/p/MLA46035327"
-    },
-    {
-      "title": "Silla Gamer Alpina Ergonómica Giratoria Reclinable ft-088 Color Negro/Blanco Material del tapizado Cuero sintético",
-      "price": 250000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_860216-MLA99903594075_112025-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/silla-gamer-alpina-ergonomica-giratoria-reclinableft-088-color-negroblanco-material-del-tapizado-cuero-sintetico/p/MLA47080512"
     }
   ],
   "monitores": [
@@ -1818,74 +2165,6 @@
       },
       "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
       "link": "https://www.mercadolibre.com.ar/monitor-gamer-lg-ultragear-24gs60f-b-con-pantalla-de-24-180hz-y-resolucion-full-hd/p/MLA43957281"
-    }
-  ],
-  "mouse_gamer": [
-    {
-      "title": "Ratón Inalámbrico Redragon King Pro Negro M916-pro 1K",
-      "price": 77999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_650659-MLA99983693429_112025-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/MLA-99983693429-raton-inalambrico-redragon-king-pro-negro-m916-pro-1k-_JM"
-    },
-    {
-      "title": "Logitech G Series G502 Hero Negro",
-      "price": 86410,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_890521-MLA99472610766_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-99472610766-logitech-g-series-g502-hero-negro-_JM"
-    },
-    {
-      "title": "Mouse Gamer Hyperx Pulsefire Haste 2 Core Inalambrico Black Color Negro",
-      "price": 65232,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_758134-MLA99934497627_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-99934497627-mouse-gamer-hyperx-pulsefire-haste-2-core-inalambrico-black-color-negro-_JM"
-    },
-    {
-      "title": "Mouse Gamer USB Havit Ms1038 Rgb 8000 Dpi 6 Niveles Ergonómico Ligero 7 Botones Negro",
-      "price": 24999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_697593-MLA114199215868_082026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-114199215868-mouse-gamer-usb-havit-ms1038-rgb-8000-dpi-6-niveles-ergonomico-ligero-7-botones--_JM"
-    },
-    {
-      "title": "Mouse Inalámbrico GotWire RGB Bluetooth, USB Recargable, Negro, Silencioso",
-      "price": 7899,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_707184-MLA83254382104_042025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/mouse-inalambrico-gotwire-rgb-bluetooth-usb-recargable-negro-silencioso/p/MLA28639405"
-    },
-    {
-      "title": "Mouse Gamer X11 Attack Shark Tri Mode 22000 dpi Paw3311 Dock Color Negro",
-      "price": 64000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_741651-MLA99565565224_122025-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/mouse-gamer-x11-attack-shark-tri-mode-22000-dpi-paw3311-dock-color-negro/p/MLA39936557"
     }
   ],
   "cafeteras_expreso": [
@@ -2099,74 +2378,6 @@
       "cuotas": null,
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
       "link": "https://www.mercadolibre.com.ar/licuadora-profesional-novohome-2-litros-pica-hielo-10-velocidades-1500w-motor-potente-y-resistente/p/MLA48946518"
-    }
-  ],
-  "batidoras": [
-    {
-      "title": "Batidora De Mano Daewoo Dhm208 Blanca 250w 5 Velocidades Color Blanco",
-      "price": 69950,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_983341-MLA99918800583_112025-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/MLA-99918800583-batidora-de-mano-daewoo-dhm208-blanca-250w-5-velocidades-color-blanco-_JM"
-    },
-    {
-      "title": "Batidora Eléctrica de Mano Inalámbrica USB Blanco 3 Velocidades Montoya",
-      "price": 11999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_629354-MLA100124378023_122025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-100124378023-batidora-electrica-de-mano-inalambrica-usb-blanco-3-velocidades-montoya-_JM"
-    },
-    {
-      "title": "Batidora De Mano Sokany Sk-02017 3 En 1 | 800w | 5 Velocidad Gris 50/60hz",
-      "price": 48999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_966535-MLA109851196674_042026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-109851196674-batidora-de-mano-sokany-sk-02017-3-en-1-800w-5-velocidad-gris-50-60hz-_JM"
-    },
-    {
-      "title": "Batidora Eléctrica Portátil  7 Velocidades Mezclador Cocina",
-      "price": 33000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_774093-MLA91816994805_092025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-91816994805-batidora-electrica-portatil-7-velocidades-mezclador-cocina-_JM"
-    },
-    {
-      "title": "Batidora De Mano Liliana Rapimix Ab103 Blanca 50 Hz/60 Hz Blanco 50 Hz/60 Hz",
-      "price": 64099,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_956376-MLA84539008682_052025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/batidora-de-mano-liliana-rapimix-ab103-blanca-50-hz60-hz-blanco-50-hz60-hz/p/MLA15382611"
-    },
-    {
-      "title": "Batidora Liliana Vuelty Ab101",
-      "price": 74999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_959256-MLA100028527247_122025-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/batidora-liliana-vuelty-ab101/p/MLA13795674"
     }
   ],
   "tostadoras": [
@@ -2932,77 +3143,6 @@
       "link": "https://www.mercadolibre.com.ar/bicicleta-alpina-mtb-mountain-bike-10-rodado-29-21-velocidades-acero-freno-disco-suspension-delantera-negro-rosa-lady-talle-m/p/MLA61732394"
     }
   ],
-  "bicicletas_urbana": [
-    {
-      "title": "Bicicleta Urbana Rodado 26 Topmega Rambler Acero Blanca",
-      "price": 489999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_978929-MLA99933677861_112025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-99933677861-bicicleta-urbana-rodado-26-topmega-rambler-acero-blanca-_JM"
-    },
-    {
-      "title": "Bicicleta Playera Kelinbike V26PDF Rodado 26 Mujer Fucsia Hierro",
-      "price": 260022,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_775650-MLA112591865482_062026-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-playera-kelinbike-v26pdf-rodado-26-mujer-fucsia-hierro/p/MLA26928305"
-    },
-    {
-      "title": "Bicicleta Playera Kelinbike Rodado 26 Rosa Manubrio Cruiser Hierro Frenos V-brakes",
-      "price": 260022,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_882232-MLA111344948082_052026-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-playera-kelinbike-rodado-26-rosa-manubrio-cruiser-hierro-frenos-v-brakes/p/MLA26928302"
-    },
-    {
-      "title": "Bicicleta Playera Ziambikes R29 Negro Llantas Doble Pared Acero",
-      "price": 314990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_793362-MLA99988019445_112025-E.webp",
-      "badge": "Destacado",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-playera-ziambikes-r29-negro-llantas-doble-pared-acero/p/MLA26682449"
-    },
-    {
-      "title": "Bicicleta Fire Bird Playera Rodado 26 Gris 26",
-      "price": 285000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_614105-MLA110010251822_042026-E.webp",
-      "badge": "Destacado",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-fire-bird-playera-rodado-26-gris-26/p/MLA68651665"
-    },
-    {
-      "title": "Bicicleta Urbana Rodado 26 Topmega Rambler Acero Blanca",
-      "price": 489999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_978929-MLA99933677861_112025-E.webp",
-      "badge": "12 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 12,
-        "sinInteres": true
-      },
-      "description": "¡12 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/bicicleta-urbana-rodado-26-topmega-rambler-acero-blanca/p/MLA46852023"
-    }
-  ],
   "zapatos_mujer": [
     {
       "title": "Sandalias Con Taco De Mujer Alta Brillo Fiesta Talle 41 A 43",
@@ -3193,71 +3333,6 @@
       "cuotas": null,
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
       "link": "https://articulo.mercadolibre.com.ar/MLA-1590836129-jean-baggy-rigido-de-mujer-ajustable-moda-casual-_JM"
-    }
-  ],
-  "remeras_mujer": [
-    {
-      "title": "Remera,top Musculosa Escote Halter Atada Al Cuello Mujer",
-      "price": 19990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_761081-MLA105470905199_012026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-105470905199-remera-top-musculosa-escote-halter-atada-al-cuello-mujer-_JM"
-    },
-    {
-      "title": "Crop Top Manguitas Mujer Manga Larga Red Transparencia Trend",
-      "price": 29990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_773075-MLA99411072895_112025-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/MLA-99411072895-crop-top-manguitas-mujer-manga-larga-red-transparencia-trend-_JM"
-    },
-    {
-      "title": "Remera Topper Mujer Estampada - Loose - Brand Tee Negro",
-      "price": 29999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_944082-MLA109629553545_032026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-109629553545-remera-topper-mujer-estampada-loose-brand-tee-negro-_JM"
-    },
-    {
-      "title": "Crop Top Mujer Remera Modal Soft Manga Corta Elastizada",
-      "price": 12000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_971985-MLA111288891587_052026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-111288891587-crop-top-mujer-remera-modal-soft-manga-corta-elastizada-_JM"
-    },
-    {
-      "title": "Remera Oversize Crop Top Pupera 100% Algodón Premium",
-      "price": 9800,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_931359-MLA111614575846_062026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-111614575846-remera-oversize-crop-top-pupera-100-algodon-premium-_JM"
-    },
-    {
-      "title": "Camiseta Casual De Moda Con Estampado De Gatos En 3d.",
-      "price": 19583,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_641054-CBT110215207877_042026-E.webp",
-      "badge": "Destacado",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-1891319351-camiseta-casual-de-moda-con-estampado-de-gatos-en-3d-_JM"
     }
   ],
   "vestidos": [
@@ -3592,68 +3667,6 @@
       "cuotas": null,
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
       "link": "https://www.mercadolibre.com.ar/MLA-111545294451-conjunto-pantalon-palazzo-y-buzo-frisado-jogging-de-mujer-_JM"
-    }
-  ],
-  "accesorios_mujer": [
-    {
-      "title": "Pulsera Mujer Nudo De Brujas Amuleto Protección Con Variante",
-      "price": 24675,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_611954-MLA113631026289_062026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-113631026289-pulsera-mujer-nudo-de-brujas-amuleto-proteccion-con-variante-_JM"
-    },
-    {
-      "title": "Pulsera Mujer Protectora Nudo De Bruja Obsidiana Negra",
-      "price": 16600,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_730633-MLA111593042681_052026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-111593042681-pulsera-mujer-protectora-nudo-de-bruja-obsidiana-negra-_JM"
-    },
-    {
-      "title": "Collar Ambar Cognac Adulto 45 Cm",
-      "price": 76450,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_867519-MLA54831018557_042023-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-54831018557-collar-ambar-cognac-adulto-45-cm-_JM"
-    },
-    {
-      "title": "Pulsera Poder Obsidiana Negra Protección Con Cuarzo Verde",
-      "price": 21175,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_675429-MLA94296291491_102025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-94296291491-pulsera-poder-obsidiana-negra-proteccion-con-cuarzo-verde-_JM"
-    },
-    {
-      "title": "Set Cadenas Por Mayor Pack De 10 - 45/50cm Acero Quirurgico",
-      "price": 12998,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_934527-MLA75411548455_032024-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-1679607812-set-cadenas-por-mayor-pack-de-10-4550cm-acero-quirurgico-_JM"
-    },
-    {
-      "title": "Pulsera Roja O Negra, Unisex, Macramé En Hilo De Seda",
-      "price": 6600,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_708964-MLA93301680625_092025-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-1672904634-pulsera-roja-o-negra-unisex-macrame-en-hilo-de-seda-_JM"
     }
   ]
 }

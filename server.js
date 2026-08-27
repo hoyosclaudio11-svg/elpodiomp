@@ -864,6 +864,8 @@ app.get('/privacidad', (req, res) => {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Verificación de propiedad del sitio (Impact) -->
+  <meta name='impact-site-verification' value='6a94980b-72ec-4ae7-bfc9-cd77253b5c8f' />
   <title>Política de Privacidad — ${siteConfig.domain}</title>
   <style>
     body { font-family: 'Inter', sans-serif; max-width: 800px; margin: 48px auto; padding: 0 24px; color: #333; line-height: 1.7; }
@@ -892,6 +894,8 @@ app.get('/terminos', (req, res) => {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Verificación de propiedad del sitio (Impact) -->
+  <meta name='impact-site-verification' value='6a94980b-72ec-4ae7-bfc9-cd77253b5c8f' />
   <title>Términos y Condiciones — ${siteConfig.domain}</title>
   <style>
     body { font-family: 'Inter', sans-serif; max-width: 800px; margin: 48px auto; padding: 0 24px; color: #333; line-height: 1.7; }

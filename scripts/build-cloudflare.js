@@ -35,6 +35,7 @@ const SITE_MAP = {
   'elpodiofood': { dir: 'food', name: 'El Podio Food' },
   'elpodiohogar': { dir: 'hogar', name: 'El Podio Hogar' },
   'elpodiomoda': { dir: 'moda', name: 'El Podio Moda' },
+  'elpodioaliexpress': { dir: 'aliexpress', name: 'El Podio AliExpress' },
 };
 
 // Limpiar dist
@@ -63,6 +64,15 @@ function copyDir(src, dest) {
   }
 }
 
+// ── Verificación de propiedad Impact (red de afiliados) ──
+const IMPACT_VERIFICATION_META =
+  "<meta name='impact-site-verification' value='6a94980b-72ec-4ae7-bfc9-cd77253b5c8f'>";
+
+function injectImpactVerification(html) {
+  if (!html || html.indexOf('impact-site-verification') !== -1) return html;
+  return html.replace('<head>', '<head>\n  ' + IMPACT_VERIFICATION_META);
+}
+
 // ── Transformar links de navegación ──────────────────
 function transformNavLinks(html) {
   return html
@@ -71,11 +81,13 @@ function transformNavLinks(html) {
     .replace(/href="\/\?site=elpodiofood"/g, 'href="/food/"')
     .replace(/href="\/\?site=elpodiohogar"/g, 'href="/hogar/"')
     .replace(/href="\/\?site=elpodiomoda"/g, 'href="/moda/"')
+    .replace(/href="\/\?site=elpodioaliexpress"/g, 'href="/aliexpress/"')
     // Links de footer también
     .replace(/\/\?site=elpodiotech/g, '/tech/')
     .replace(/\/\?site=elpodiofood/g, '/food/')
     .replace(/\/\?site=elpodiohogar/g, '/hogar/')
     .replace(/\/\?site=elpodiomoda/g, '/moda/')
+    .replace(/\/\?site=elpodioaliexpress/g, '/aliexpress/')
     // El logo también apunta a /
     .replace(/href="\/"/g, 'href="/"');
 }
@@ -118,6 +130,11 @@ for (const [siteId, info] of Object.entries(SITE_MAP)) {
 
   // Aplicar transformaciones
   html = transformNavLinks(html);
+
+  // Home (El Podio MP): inyectar "Artículo de hoy" al tope del contenido
+  if (siteId === 'elpodiomp' && !info.dir) {
+    html = inyectarArticuloDestacado(html);
+  }
 
   // Quitar el script de búsqueda AJAX (requiere server)
   // Tech usa fallback neutral (sin Mercado Libre); el resto redirige a ML como antes.
@@ -174,6 +191,9 @@ for (const [siteId, info] of Object.entries(SITE_MAP)) {
   const destDir = info.dir ? path.join(DIST, info.dir) : DIST;
   if (info.dir) fs.mkdirSync(destDir, { recursive: true });
 
+  // Inyectar verificación de Impact
+  html = injectImpactVerification(html);
+
   // Escribir index.html
   fs.writeFileSync(path.join(destDir, 'index.html'), html, 'utf8');
   console.log(`✅ ${info.name} → ${info.dir || '.'}/index.html (${Buffer.byteLength(html, 'utf8')} bytes)`);
@@ -206,10 +226,22 @@ const staticPages = {
   'sitemap.xml': createSitemap(),
 };
 Object.entries(staticPages).forEach(([file, content]) => {
+  if (file.endsWith('.html')) content = injectImpactVerification(content);
   fs.writeFileSync(path.join(DIST, file), content, 'utf8');
   console.log(`✅ ${file}`);
   totalFiles++;
 });
+
+// ── Artículo destacado: página estática /<slug>/ ────
+const articulo = leerArticuloDestacado();
+if (articulo && articulo.slug) {
+  const articuloDir = path.join(DIST, articulo.slug);
+  fs.mkdirSync(articuloDir, { recursive: true });
+  const articuloHtml = injectImpactVerification(createArticuloPage(articulo));
+  fs.writeFileSync(path.join(articuloDir, 'index.html'), articuloHtml, 'utf8');
+  console.log(`✅ Artículo estático → /${articulo.slug}/ (${articulo.titulo})`);
+  totalFiles++;
+}
 
 // ── Redirects para Cloudflare Pages (_redirects) ─────
 // Soporte legacy: ?site=xxx → /xxx/
@@ -312,12 +344,111 @@ function createSitemap() {
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-  const paths = ['', '/tech/', '/food/', '/hogar/', '/moda/'];
+  const paths = ['', '/tech/', '/food/', '/hogar/', '/moda/', '/aliexpress/'];
   paths.forEach(p => {
     xml += `  <url><loc>https://elpodiomp.com.ar${p}</loc><changefreq>daily</changefreq><priority>${p === '' ? '1.0' : '0.8'}</priority></url>\n`;
   });
+
+  // Artículo destacado (último post publicado)
+  const articulo = leerArticuloDestacado();
+  if (articulo && articulo.slug) {
+    xml += `  <url><loc>https://elpodiomp.com.ar/${articulo.slug}/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>\n`;
+  }
+
   xml += '  <url><loc>https://elpodiomp.com.ar/privacidad</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>\n';
   xml += '  <url><loc>https://elpodiomp.com.ar/terminos</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>\n';
   xml += '</urlset>';
   return xml;
+}
+
+// ── Artículo destacado (data/articulo_destacado.json) ──
+function leerArticuloDestacado() {
+  const jsonPath = path.join(ROOT, 'data', 'articulo_destacado.json');
+  if (!fs.existsSync(jsonPath)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+  } catch (e) {
+    console.log(`⚠️ articulo_destacado.json ilegible: ${e.message}`);
+    return null;
+  }
+}
+
+// Inyecta "Artículo de hoy" al tope del <main> de la home
+function inyectarArticuloDestacado(html) {
+  const a = leerArticuloDestacado();
+  if (!a || !a.titulo) return html;
+
+  const imagen = a.imagen
+    ? `<img src="${a.imagen}" alt="${a.titulo.replace(/"/g, '&quot;')}" style="width:220px;max-width:40%;border-radius:12px;object-fit:cover;" loading="lazy">`
+    : '';
+
+  const botones = (a.links_productos || [])
+    .map((url, i) => `<a class="btn" href="${url}" target="_blank" rel="noopener" style="text-decoration:none;">Ver oferta #${i + 1} &rarr;</a>`)
+    .join(' ');
+
+  const bloque = `
+    <section class="section">
+      <div class="section-header">
+        <h2><span class="icon">📰</span> Artículo de hoy</h2>
+        <a href="/${a.slug}/" class="view-all">Leer artículo completo &rarr;</a>
+      </div>
+      <div class="articulo-destacado" style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;background:#fff;border:2px solid #FFE600;border-radius:16px;padding:16px;box-shadow:0 4px 12px rgba(0,0,0,.08);">
+        ${imagen}
+        <div style="flex:1;min-width:220px;">
+          <h3 style="margin:0 0 8px;color:#1a1a1a;font-size:1.15rem;">${a.titulo}</h3>
+          <p style="margin:0 0 12px;color:#555;">${a.excerpt || ''}</p>
+          ${botones}
+          <a href="/${a.slug}/" style="display:inline-block;margin-top:8px;color:#3483FA;text-decoration:none;font-weight:600;">Leer artículo completo &rarr;</a>
+        </div>
+      </div>
+    </section>`;
+
+  return html.replace('<main class="container">', '<main class="container">' + bloque);
+}
+
+// Página estática del artículo (dist/<slug>/index.html)
+function createArticuloPage(a) {
+  const imagen = a.imagen
+    ? `<img src="${a.imagen}" alt="${a.titulo.replace(/"/g, '&quot;')}" style="max-width:100%;border-radius:12px;margin:16px 0;">`
+    : '';
+
+  const botones = (a.links_productos || [])
+    .map((url, i) => `<a class="btn" href="${url}" target="_blank" rel="noopener">Ver oferta #${i + 1} &rarr;</a>`)
+    .join(' ');
+
+  return `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${a.titulo} — El Podio MP</title>
+  <meta name="description" content="${(a.excerpt || '').replace(/"/g, '&quot;').slice(0, 155)}">
+  <link rel="canonical" href="https://elpodiomp.com.ar/${a.slug}/">
+  <style>
+    body { font-family: 'Inter', sans-serif; max-width: 780px; margin: 0 auto; padding: 24px; color: #1a1a1a; line-height: 1.7; background: #f5f5f5; }
+    .logo a { color: #1a1a1a; text-decoration: none; font-weight: 800; }
+    .logo span { color: #3483FA; }
+    h1 { font-size: 1.6rem; line-height: 1.3; margin: 16px 0 4px; }
+    .fecha { color: #777; font-size: .85rem; margin-bottom: 16px; }
+    a { color: #3483FA; }
+    .articulo-contenido { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .articulo-contenido p { margin: 12px 0; }
+    .articulo-contenido strong { color: #1a1a1a; }
+    .btn { display: inline-block; background: #3483FA; color: #fff; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 700; margin: 4px 8px 4px 0; }
+    .volver { display: block; margin-top: 24px; text-align: center; color: #3483FA; text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="logo"><a href="/">Elpodiomp<span>.com.ar</span></a></div>
+  <h1>${a.titulo}</h1>
+  <div class="fecha">${a.fecha ? new Date(a.fecha).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}</div>
+  <div class="articulo-contenido">
+    ${imagen}
+    ${a.contenido_html || ''}
+    <p style="margin-top:20px;">${botones}</p>
+    <p style="margin-top:16px;"><a href="/" style="font-weight:700;">&larr; Volver a El Podio MP</a></p>
+  </div>
+  <a class="volver" href="/">⬅ Volver a la home de El Podio</a>
+</body>
+</html>`;
 }

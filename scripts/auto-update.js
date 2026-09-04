@@ -83,6 +83,9 @@ async function main() {
   // ── Paso 4: Regenerar caché ─────────────────────────────────────
   const cacheOk = await run('node scripts/generate-cache.js', '4/5 Regenerando cache.html');
 
+  // ── Paso 4.4: Artículo destacado (último post del puente) ────────
+  await run('node scripts/articulo-destacado.js', '4.4/5 Bajando artículo destacado');
+
   // ── Paso 4.5: Construir dist/ para Cloudflare Pages ──────────────
   if (cacheOk) {
     await run('node scripts/build-cloudflare.js', '4.5/5 Construyendo dist/ para Cloudflare');
@@ -99,7 +102,7 @@ async function main() {
       log(`   Archivos modificados: ${changedFiles.length}`);
       changedFiles.forEach(f => console.log(`     - ${f}`));
 
-      execSync('git add cache_*.html products-fixture.json contador.json express-offers.json dist/', { cwd: ROOT });
+      execSync('git add cache_*.html products-fixture.json contador.json express-offers.json dist/ data/articulo_destacado.json public/articulos/', { cwd: ROOT });
       const commitMsg = `auto-update: productos actualizados (${new Date().toISOString().split('T')[0]})`;
       execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT });
       log('   ✅ Commit realizado.');
@@ -116,7 +119,7 @@ async function main() {
   }
 
   // ── Paso 5.5: Deploy a Cloudflare Pages con Wrangler ──────────────
-  await run('npx wrangler pages deploy dist --project-name=elpodiomp --commit-dirty=true', '5.5/5 Deployando a Cloudflare Pages');
+  await run('npx --no-install wrangler pages deploy dist --project-name=elpodiomp --commit-dirty=true', '5.5/5 Deployando a Cloudflare Pages');
 
   log('══════ PIPELINE COMPLETADO ══════');
 }

@@ -62,6 +62,16 @@ async function main() {
     process.exit(1);
   }
 
+  const buildOk = await run(
+    'node scripts/build-cloudflare.js',
+    '2.5/3 Reconstruyendo Cloudflare Pages'
+  );
+
+  if (!buildOk) {
+    log('❌ Falló el build de Cloudflare. Abortando antes de publicar.');
+    process.exit(1);
+  }
+
   // Paso 3: Commit y push si hay cambios
   log('3/3 Verificando cambios para commit...');
   try {
@@ -71,15 +81,19 @@ async function main() {
       log(`   Archivos modificados: ${changedFiles.length}`);
       changedFiles.forEach(f => console.log(`     - ${f}`));
 
-      execSync('git add cache_*.html cena-offers.json cena-history.json contador.json', { cwd: ROOT });
-      const today = new Date().toLocaleDateString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' });
-      const commitMsg = `auto-update: ofertas de cena actualizadas (${today})`;
-      execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT });
-      log('   ✅ Commit realizado.');
-
-      execSync('git push', { cwd: ROOT });
-      log('   ✅ Push a origin/master completado.');
-      log('   🚀 Render desplegará automáticamente en ~1 minuto.');
+      execSync('git add cache_*.html cena-offers.json cena-history.json contador.json dist/ public/redesign/ scripts/build-cloudflare.js scripts/build-redesigned-home.js', { cwd: ROOT });
+      const staged = execSync('git diff --cached --name-only', { cwd: ROOT, encoding: 'utf8' }).trim();
+      if (staged) {
+        const today = new Date().toLocaleDateString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' });
+        const commitMsg = `auto-update: ofertas de cena actualizadas (${today})`;
+        execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT });
+        log('   ✅ Commit realizado.');
+        execSync('git push', { cwd: ROOT });
+        log('   ✅ Push a origin/master completado.');
+      } else {
+        log('   Sin cambios del pipeline para confirmar.');
+      }
+      log('   🚀 Publicando en Cloudflare Pages...');
     } else {
       log('   Sin cambios. Nada para committear.');
     }
@@ -90,6 +104,8 @@ async function main() {
       await sendAlert(`Fallo en Pipeline Cena: Git Push`, errorMsg);
     } catch (_) {}
   }
+
+  await run('npx --no-install wrangler pages deploy dist --project-name=elpodiomp --commit-dirty=true', 'Publicando en Cloudflare Pages');
 
   log('🍔 ══════ PIPELINE CENA EXPRESS COMPLETADO ══════');
 }

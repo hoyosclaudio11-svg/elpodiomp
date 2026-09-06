@@ -102,13 +102,17 @@ async function main() {
       log(`   Archivos modificados: ${changedFiles.length}`);
       changedFiles.forEach(f => console.log(`     - ${f}`));
 
-      execSync('git add cache_*.html products-fixture.json contador.json express-offers.json dist/ data/articulo_destacado.json public/articulos/', { cwd: ROOT });
-      const commitMsg = `auto-update: productos actualizados (${new Date().toISOString().split('T')[0]})`;
-      execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT });
-      log('   ✅ Commit realizado.');
-
-      execSync('git push', { cwd: ROOT });
-      log('   ✅ Push a origin/master completado.');
+      execSync('git add cache_*.html products-fixture.json contador.json express-offers.json dist/ data/articulo_destacado.json public/articulos/ public/redesign/ scripts/build-cloudflare.js scripts/build-redesigned-home.js', { cwd: ROOT });
+      const staged = execSync('git diff --cached --name-only', { cwd: ROOT, encoding: 'utf8' }).trim();
+      if (staged) {
+        const commitMsg = `auto-update: productos actualizados (${new Date().toISOString().split('T')[0]})`;
+        execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT });
+        log('   ✅ Commit realizado.');
+        execSync('git push', { cwd: ROOT });
+        log('   ✅ Push a origin/master completado.');
+      } else {
+        log('   Sin cambios del pipeline para confirmar.');
+      }
     } else {
       log('   Sin cambios. Nada para committear.');
     }

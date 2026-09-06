@@ -27,6 +27,7 @@ const PUBLIC = path.join(ROOT, 'public');
 const CONFIG_PATH = path.join(ROOT, 'config.json');
 
 const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
+const { buildRedesignedHome } = require('./build-redesigned-home');
 
 // Mapeo de siteId → carpeta
 const SITE_MAP = {
@@ -53,6 +54,9 @@ if (fs.existsSync(PUBLIC)) {
 
 function copyDir(src, dest) {
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    // El rediseño se publica como assets/ y site.js en la raíz de dist/.
+    // No exponer su fuente de generación debajo de /public/redesign/.
+    if (src === PUBLIC && entry.name === 'redesign') continue;
     const s = path.join(src, entry.name);
     const d = path.join(dest, entry.name);
     if (entry.isDirectory()) {
@@ -199,6 +203,11 @@ for (const [siteId, info] of Object.entries(SITE_MAP)) {
   console.log(`✅ ${info.name} → ${info.dir || '.'}/index.html (${Buffer.byteLength(html, 'utf8')} bytes)`);
   totalFiles++;
 }
+
+// La home principal usa la nueva maqueta, alimentada directamente por
+// products-fixture.json. Se ejecuta después del bucle para reemplazar
+// solamente dist/index.html sin afectar los sub-sitios existentes.
+buildRedesignedHome();
 
 // ── Verificación: sin placeholders {{...}} en salida ──
 let placeholderCount = 0;

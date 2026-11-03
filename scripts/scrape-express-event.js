@@ -15,6 +15,7 @@
 
 const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+const { findBrowser } = require('./browser');
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
@@ -664,6 +665,7 @@ async function main() {
   // ── Paso 1: Scraping con Puppeteer ──
   log(`── Paso 1/4: Buscando "${event.name}" en buscadores ──`);
   const browser = await puppeteer.launch({
+    executablePath: findBrowser(),
     headless: 'new',
     args: [
       '--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage',

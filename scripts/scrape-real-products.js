@@ -6,6 +6,7 @@
  */
 const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+const { findBrowser } = require('./browser');
 const fs = require('fs');
 const path = require('path');
 
@@ -257,24 +258,47 @@ async function scrapeOne(browser, cat, query, proxyConfig) {
   return products;
 }
 
+// ── Variantes de búsqueda (rotan para no mostrar siempre lo mismo) ──
+const VARIANTS_PATH = path.join(__dirname, 'query-variants.json');
+let queryVariants = {};
+try { queryVariants = JSON.parse(fs.readFileSync(VARIANTS_PATH, 'utf8')); } catch (_) {}
+
+function variantFor(cat) {
+  const entry = queryVariants[cat.id];
+  if (!entry) return { query: cat.query, urlSuffix: cat.urlSuffix };
+  if (Array.isArray(entry)) return { query: entry[Math.floor(Math.random() * entry.length)], urlSuffix: cat.urlSuffix };
+  const list = Array.isArray(entry.queries) && entry.queries.length ? entry.queries : [cat.query];
+  return {
+    query: list[Math.floor(Math.random() * list.length)],
+    urlSuffix: Object.prototype.hasOwnProperty.call(entry, 'urlSuffix') ? entry.urlSuffix : cat.urlSuffix
+  };
+}
+
 // ── Scraping con fallback ─────────────────────────
 async function scrapeCategory(browser, cat, proxyConfig) {
-  console.log(`🔍 ${cat.icon} ${cat.name}...`);
+  const variant = variantFor(cat);
+  console.log(`🔍 ${cat.icon} ${cat.name}...${variant.query !== cat.query ? ` (query: "${variant.query}")` : ''}`);
+  const catForScrape = { ...cat, urlSuffix: variant.urlSuffix };
 
-  // Intento 1: query principal
-  let products = await scrapeOne(browser, cat, cat.query, proxyConfig);
+  // Intento 1: query principal (o variante rotativa)
+  let products = await scrapeOne(browser, catForScrape, variant.query, proxyConfig);
 
   // Intento 2: fallback (si existe y no se obtuvo nada)
   if (products.length === 0 && cat.fallbackQuery) {
     console.log(`   🔄 Query principal sin resultados. Probando fallback: "${cat.fallbackQuery}"...`);
     // Delay extra para no parecer bot
     await new Promise(r => setTimeout(r, 2000 + Math.floor(Math.random() * 3000)));
-    products = await scrapeOne(browser, cat, cat.fallbackQuery, proxyConfig);
+    products = await scrapeOne(browser, catForScrape, cat.fallbackQuery, proxyConfig);
   }
 
   // Aplicar filtros de calidad
   if (products.length > 0) {
     const filtered = applyFilters(products, cat);
+    // Mezclar para que el orden (y los 3 que se muestran) rote entre corridas
+    for (let i = filtered.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
+    }
     const descartados = products.length - filtered.length;
 
     if (filtered.length > 0) {
@@ -317,13 +341,19 @@ async function main() {
   }
 
   const browser = await puppeteer.launch({
+    executablePath: findBrowser(),
     headless: 'new',
     args: launchArgs
   });
 
-  for (let i = 0; i < categories.length; i++) {
-    await scrapeCategory(browser, categories[i], proxyConfig);
-    if (i < categories.length - 1) {
+  // SCRAPE_ONLY=celulares_alta,celulares_media permite refrescar solo esas categorías
+  const only = String(process.env.SCRAPE_ONLY || '').split(',').map(s => s.trim()).filter(Boolean);
+  const selected = only.length ? categories.filter(cat => only.includes(cat.id)) : categories;
+  if (!selected.length) throw new Error(`SCRAPE_ONLY no coincide con ninguna categoría: ${process.env.SCRAPE_ONLY}`);
+
+  for (let i = 0; i < selected.length; i++) {
+    await scrapeCategory(browser, selected[i], proxyConfig);
+    if (i < selected.length - 1) {
       const delay = 4000 + Math.floor(Math.random() * 5000);
       console.log(`   ⏳ Esperando ${(delay / 1000).toFixed(1)}s...`);
       await new Promise(r => setTimeout(r, delay));

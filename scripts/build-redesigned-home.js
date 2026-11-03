@@ -67,6 +67,9 @@ function buildCatalog(fixture, config) {
         rank: index + 1,
         name: String(item.title || item.product || category.name),
         price: Number(item.price) || 0,
+        oldPrice: Number(item.oldPrice) || null,
+        badge: String(item.badge || ''),
+        cuotas: item.cuotas || null,
         image: String(item.imageUrl || ''),
         url,
         destination: url === fallback ? 'category' : 'product'
@@ -100,11 +103,15 @@ function cardHTML(product, catalog) {
   const group = GROUPS[product.group]?.name || 'Productos';
   const destination = product.destination === 'category' ? 'Explorar esta categoría en Mercado Libre' : 'Ver este producto en Mercado Libre';
   const hint = product.destination === 'category' ? 'Explorá opciones en Mercado Libre' : 'Consultá la publicación en Mercado Libre';
-  return `<article class="pcard group flex flex-col" data-product="${escapeHTML(product.id)}"><div class="relative"><div class="product-photo relative overflow-hidden aspect-square"><img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.name)}" loading="lazy" class="pimg w-full h-full" referrerpolicy="no-referrer"></div><div class="absolute top-3.5 left-3.5"><span class="medal medal-${product.rank} w-9 h-9 text-[15px] shrink-0" title="Posición en nuestra selección">${product.rank}</span></div><span class="glass-chip px-3 py-1.5 text-[10px] font-disp font-semibold tracking-widest text-white/90 !bg-[#15151f]/85 absolute top-3.5 right-3.5 uppercase">${escapeHTML(group)}</span></div><div class="p-5 flex flex-col gap-2.5 flex-1"><div class="text-[10px] font-disp font-semibold tracking-[.12em] text-white/45 uppercase">${escapeHTML(category)}</div><h3 class="product-title font-disp font-bold text-[16px] leading-snug">${escapeHTML(product.name)}</h3><div class="mt-auto pt-2"><span class="block text-[10px] text-white/45">Precio de referencia</span><span class="font-disp font-bold text-[21px] text-[#c8ff3e] tracking-tight">${money(product.price)}</span></div><a href="${escapeHTML(product.url)}" target="_blank" rel="sponsored noopener noreferrer" class="btn-lime w-full py-3 text-[12px] mt-2" aria-label="${escapeHTML(destination + ': ' + product.name + ' (abre en otra pestaña)')}" title="${escapeHTML(destination)}">Ver en Mercado Libre <i data-lucide="arrow-up-right" class="w-4 h-4" aria-hidden="true"></i></a><p class="text-[10px] text-white/45 text-center">${hint}</p></div></article>`;
+  const badge = String(product.badge || '').trim();
+  const offer = badge && !/^destacado$/i.test(badge)
+    ? `<div class="text-[11.5px] font-disp font-semibold text-[#00d084]">${escapeHTML(badge)}</div>`
+    : '';
+  return `<article class="pcard group flex flex-col" data-product="${escapeHTML(product.id)}"><div class="relative"><div class="product-photo relative overflow-hidden aspect-square"><img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.name)}" loading="lazy" class="pimg w-full h-full" referrerpolicy="no-referrer"></div><div class="absolute top-3.5 left-3.5"><span class="medal medal-${product.rank} w-9 h-9 text-[15px] shrink-0" title="Posición en nuestra selección">${product.rank}</span></div><span class="glass-chip px-3 py-1.5 text-[10px] font-disp font-semibold tracking-widest text-white/90 !bg-[#15151f]/85 absolute top-3.5 right-3.5 uppercase">${escapeHTML(group)}</span></div><div class="p-5 flex flex-col gap-2.5 flex-1"><div class="text-[10px] font-disp font-semibold tracking-[.12em] text-white/45 uppercase">${escapeHTML(category)}</div><h3 class="product-title font-disp font-bold text-[16px] leading-snug">${escapeHTML(product.name)}</h3>${offer}<div class="mt-auto pt-2"><span class="block text-[10px] text-white/45">Precio de referencia</span><span class="font-disp font-bold text-[21px] text-[#c8ff3e] tracking-tight">${money(product.price)}</span></div><a href="${escapeHTML(product.url)}" target="_blank" rel="sponsored noopener noreferrer" class="btn-lime w-full py-3 text-[12px] mt-2" aria-label="${escapeHTML(destination + ': ' + product.name + ' (abre en otra pestaña)')}" title="${escapeHTML(destination)}">Ver en Mercado Libre <i data-lucide="arrow-up-right" class="w-4 h-4" aria-hidden="true"></i></a><p class="text-[10px] text-white/45 text-center">${hint}</p></div></article>`;
 }
 
 function renderGrid(catalog) {
-  return `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">${initialProducts(catalog).map(product => cardHTML(product, catalog)).join('')}</div>`;
+  return `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">${catalog.products.slice(0, 12).map(product => cardHTML(product, catalog)).join('')}</div>`;
 }
 
 function renderSubcategoryOptions(catalog) {

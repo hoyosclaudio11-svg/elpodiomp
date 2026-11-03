@@ -1,0 +1,24 @@
+{
+  "celulares_alta": {
+    "queries": [
+      "samsung galaxy s25 ultra",
+      "iphone 17 pro max",
+      "xiaomi 15 ultra",
+      "google pixel 10 pro",
+      "motorola razr 60 ultra",
+      "honor magic 7 pro",
+      "celular gama alta"
+    ]
+  },
+  "celulares_media": {
+    "queries": [
+      "samsung galaxy a56",
+      "motorola edge 60",
+      "xiaomi redmi note 14 pro",
+      "samsung galaxy a36",
+      "honor x9c",
+      "celular gama media"
+    ],
+    "urlSuffix": ""
+  }
+}

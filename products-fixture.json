@@ -1,4 +1,81 @@
 {
+  "celulares_media": [
+    {
+      "title": "Samsung A36 - 256 Gb Violeta ( Nuevos De Lote En Caja )",
+      "price": 728086,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_738100-MLA116581835645_082026-E.webp",
+      "badge": "9 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 9,
+        "sinInteres": true
+      },
+      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-116581835645-samsung-a36-256-gb-violeta-nuevos-de-lote-en-caja-_JM"
+    },
+    {
+      "title": "Samsung Galaxy A37 5g 8gb Ram 256 Gb Lavanda",
+      "price": 1299999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_983278-MLA112058272045_052026-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/samsung-galaxy-a37-5g-8gb-ram-256-gb-lavanda/p/MLA70108915"
+    },
+    {
+      "title": "Celular Samsung Galaxy S25 Fe Navy 256gb Sm-s731bdbmltp",
+      "price": 1310000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_879164-MLA116950124732_092026-E.webp",
+      "badge": "9 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 9,
+        "sinInteres": true
+      },
+      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/celular-samsung-galaxy-s25-fe-navy-256gb-sm-s731bdbmltp/p/MLA66267122"
+    },
+    {
+      "title": "Samsung Galaxy A36 5g 256gb 8gb Awesome White",
+      "price": 795000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_700588-MLA100237594041_122025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/samsung-galaxy-a36-5g-256gb-8gb-awesome-white/p/MLA47407364"
+    },
+    {
+      "title": "Smartphone Samsung Galaxy A36 5G de 256 GB, 8 GB de RAM",
+      "price": 807223,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_733661-MLA110431862157_042026-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/smartphone-samsung-galaxy-a36-5g-de-256-gb-8-gb-de-ram/p/MLA67990872"
+    },
+    {
+      "title": "Samsung A36 5g 6 + 128gb Verde - Verde Lima",
+      "price": 729000,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_963731-MLA94076995987_102025-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/samsung-a36-5g-6-128gb-verde-verde-lima/p/MLA58914884"
+    }
+  ],
   "zapatillas_running": [
     {
       "title": "Zapatillas Wind 5 Unisex Deportivo Topper",
@@ -474,140 +551,57 @@
   ],
   "celulares_alta": [
     {
-      "title": "Apple iPhone 17 Pro Max (256 GB) - Color plata",
-      "price": 2989000,
+      "title": "Google Pixel 10 Pro Xl 16 Gb De Ram 256 Gb Con Doble Sim Moonstone",
+      "price": 4772671,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_709227-MLA104126662482_012026-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/apple-iphone-17-pro-max-256-gb-color-plata/p/MLA55308605"
-    },
-    {
-      "title": "Apple iPhone 17 Pro Max Dual Sim 256 Gb 12 Gb Ram",
-      "price": 3452650,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_690277-MLA118020823259_092026-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://articulo.mercadolibre.com.ar/MLA-2113294117-apple-iphone-17-pro-max-dual-sim-256-gb-12-gb-ram-_JM"
-    },
-    {
-      "title": "Apple 18 Promax 256 Gb 12 Gb Ram",
-      "price": 4170999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_830618-MLA118803467604_102026-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/MLA-118803467604-apple-18-promax-256-gb-12-gb-ram-_JM"
-    },
-    {
-      "title": "Apple iPhone 17 Pro Max (1 Tb) Y Samsung S26 Ultra 512 Gb",
-      "price": 5014580,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_899274-MLA118993327576_112026-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_705420-MLA95599031360_102025-E.webp",
       "badge": "Envío Gratis",
       "cuotas": null,
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-118993327576-apple-iphone-17-pro-max-1-tb-y-samsung-s26-ultra-512-gb-_JM"
+      "link": "https://www.mercadolibre.com.ar/google-pixel-10-pro-xl-16-gb-de-ram-256-gb-con-doble-sim-moonstone/p/MLA60929611"
     },
     {
-      "title": "Teléfono celular Samsung Galaxy S25 Ultra 5G, 1 TB, 12 GB de RAM, cámara cuádruple 200+50+10+50, pantalla grande de titanio negro azabache de 6.9 pulgadas",
-      "price": 2299000,
+      "title": "Smartphone Google Pixel 16gb 512gb Oled 6.8 Moon Stone",
+      "price": 2157629,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_698558-MLA99859278491_112025-E.webp",
-      "badge": "12 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 12,
-        "sinInteres": true
-      },
-      "description": "¡12 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/telefono-celular-samsung-galaxy-s25-ultra-5g-1-tb-12-gb-de-ram-camara-cuadruple-200501050-pantalla-grande-de-titanio-negro-azabache-de-69-pulgadas/p/MLA49997173"
-    }
-  ],
-  "celulares_media": [
-    {
-      "title": "Samsung Galaxy S24 FE 8GB RAM 256GB - Excelente (Reacondicionado)",
-      "price": 1099000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_917288-MLA99453165302_112025-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/samsung-galaxy-s24-fe-8gb-ram-256gb-excelente-reacondicionado/p/MLA2000024021"
-    },
-    {
-      "title": "Samsung Galaxy S24 Fe 256gb 8gb 5g Grey",
-      "price": 1999999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_732787-MLA99424528828_112025-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_891837-CBT119595571427_102026-E.webp",
       "badge": "Envío Gratis",
       "cuotas": null,
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/samsung-galaxy-s24-fe-256gb-8gb-5g-grey/p/MLA41987247"
+      "link": "https://www.mercadolibre.com.ar/google-pixel-10-pro-512gb-triple-camara-ia-smart-2025/p/MLA2050173988"
     },
     {
-      "title": "Samsung S24 Fe - 256 Gb ( Caja Abierta ) - Grado A",
-      "price": 1348437,
+      "title": "Google Pixel 10  (256gb) Sellado De Fabrica Liberado",
+      "price": 1833300,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_820715-MLA117508606474_102026-E.webp",
-      "badge": "9 cuotas sin interés",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_796267-MLA113826934347_062026-E.webp",
+      "badge": "6 cuotas sin interés",
       "cuotas": {
-        "cantidad": 9,
+        "cantidad": 6,
         "sinInteres": true
       },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/MLA-117508606474-samsung-s24-fe-256-gb-caja-abierta-grado-a-_JM"
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-113826934347-google-pixel-10-256gb-sellado-de-fabrica-liberado-_JM"
     },
     {
-      "title": "Samsung Galaxy S24 Fe 256gb (Reacondicionado)",
-      "price": 772500,
+      "title": "Google Pixel 10 Pro Xl 256 Gb Porcelana 6.8 Con Gemini",
+      "price": 4772671,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_843965-MLA120243991119_102026-E.webp",
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_664283-MLA112010610281_052026-E.webp",
       "badge": "Envío Gratis",
       "cuotas": null,
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-120243991119-samsung-galaxy-s24-fe-256gb-reacondicionado-_JM"
+      "link": "https://www.mercadolibre.com.ar/google-pixel-10-pro-xl-256-gb-porcelana-68-con-gemini/p/MLA70094014"
     },
     {
-      "title": "Samsung S24 Fe - 128 Gb Negro ( Nuevos De Lote En Caja )",
-      "price": 1207000,
+      "title": "Google Pixel 10 Pro 128 Gb Obsidiana 6.3 Con Gemini",
+      "price": 3815162,
       "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_689153-MLA110361984942_052026-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/MLA-110361984942-samsung-s24-fe-128-gb-negro-nuevos-de-lote-en-caja-_JM"
-    },
-    {
-      "title": "Samsung S24 Fe - 256 Gb Negro ( Caja Abierta ) - Grado A",
-      "price": 1348000,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_689153-MLA110361984942_052026-E.webp",
-      "badge": "9 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 9,
-        "sinInteres": true
-      },
-      "description": "¡9 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/MLA-110361984942-samsung-s24-fe-256-gb-negro-caja-abierta-grado-a-_JM"
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_719286-MLA111953041485_052026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/google-pixel-10-pro-128-gb-obsidiana-63-con-gemini/p/MLA70047190"
     }
   ],
   "smartwatches": [

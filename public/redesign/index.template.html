@@ -117,12 +117,11 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;overfl
 
 <header id="nav" class="fixed top-0 inset-x-0 z-[70] transition-colors duration-300">
   <nav class="max-w-7xl mx-auto px-5 md:px-8 h-[74px] flex items-center justify-between gap-4">
-    <a href="#hero" class="flex items-center gap-2.5 group">
+    <a href="#catalogo" class="flex items-center gap-2.5 group">
       <span class="icon-tile !w-10 !h-10 !rounded-xl text-[#c8ff3e] group-hover:rotate-6 transition-transform duration-500"><i data-lucide="trophy" class="w-5 h-5"></i></span>
       <span class="font-mega font-bold text-[17px] leading-none tracking-tight">EL PODIO<br><span class="text-[#c8ff3e] text-[13px] tracking-[.35em]">MP</span></span>
     </a>
     <ul class="hidden lg:flex items-center gap-1 font-disp text-[14px] font-medium text-white/70">
-      <li><a href="#hero" class="px-4 py-2 rounded-full hover:text-white hover:bg-white/5 transition-colors">Inicio</a></li>
       <li><a href="#catalogo" class="px-4 py-2 rounded-full hover:text-white hover:bg-white/5 transition-colors">Catálogo</a></li>
       <li><a href="#como-funciona" class="px-4 py-2 rounded-full hover:text-white hover:bg-white/5 transition-colors">Cómo funciona</a></li>
       <li><a href="#afiliados" class="px-4 py-2 rounded-full hover:text-white hover:bg-white/5 transition-colors">Sobre los enlaces</a></li>
@@ -137,7 +136,6 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;overfl
 
 <div id="mobile-menu" class="fixed inset-0 z-[85] bg-[#07070c]/95 backdrop-blur-2xl flex-col items-center justify-center gap-2 hidden" role="dialog" aria-modal="true" aria-label="Navegación">
   <button id="menu-close" class="absolute top-6 right-6 btn-ghost !px-3 !py-2.5" aria-label="Cerrar menú"><i data-lucide="x" class="w-5 h-5"></i></button>
-  <a href="#hero" class="mm-link font-mega text-3xl font-bold py-3 hover:text-[#c8ff3e] transition-colors">Inicio</a>
   <a href="#catalogo" class="mm-link font-mega text-3xl font-bold py-3 hover:text-[#c8ff3e] transition-colors">Catálogo</a>
   <a href="#como-funciona" class="mm-link font-mega text-3xl font-bold py-3 hover:text-[#c8ff3e] transition-colors">Cómo funciona</a>
   <a href="#afiliados" class="mm-link font-mega text-3xl font-bold py-3 hover:text-[#c8ff3e] transition-colors">Sobre los enlaces</a>
@@ -147,76 +145,12 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;overfl
 
 <main>
 
-<section id="hero" class="relative min-h-screen flex items-center pt-28 pb-16 scroll-mt-24 overflow-hidden">
-  <div class="absolute inset-0 bg-grid"></div>
-  <div class="orb w-[520px] h-[520px] bg-[#c8ff3e]/14 -top-40 -left-40" data-orb=""></div>
-  <div class="orb w-[620px] h-[620px] bg-[#8b5cf6]/16 top-1/3 -right-52" data-orb=""></div>
-  <div class="orb w-[300px] h-[300px] bg-[#5eead4]/10 bottom-0 left-1/3" data-orb=""></div>
-  <div class="absolute bottom-[-3vw] left-[-2vw] font-mega font-800 font-extrabold text-[19vw] leading-none outline-text opacity-[.16] select-none pointer-events-none">PODIO</div>
-
-  <div class="relative max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-[1.05fr_.95fr] gap-14 lg:gap-10 items-center w-full">
-    <div>
-      <div class="h-fade glass-chip px-4 py-2 text-[12.5px] font-disp font-medium text-white/80 w-fit mb-7"><i data-lucide="trophy" class="w-4 h-4 text-[#c8ff3e]" aria-hidden="true"></i> SELECCIÓN DE PRODUCTOS · MERCADO LIBRE</div>
-      <h1 class="font-mega font-extrabold leading-[1.02] tracking-tight text-[clamp(2.6rem,7vw,5.2rem)]">
-        <span class="h-line"><span class="h-line-in">TODO LO MEJOR,</span></span>
-        <span class="h-line"><span class="h-line-in grad-text">EN UN SOLO LUGAR:</span></span>
-        <span class="h-line"><span class="h-line-in outline-text">EL PODIO.</span></span>
-      </h1>
-      <p class="h-fade mt-7 max-w-md text-white/60 text-[15.5px] leading-relaxed">En <strong class="text-white/90 font-semibold">El Podio MP</strong> reunimos productos de Mercado Libre para que descubras tu próximo favorito. Elegí el que te interesa y seguí el enlace para verlo en Mercado Libre.</p>
-      <div class="h-fade mt-9 flex flex-wrap items-center gap-3.5">
-        <a href="#catalogo" class="btn-lime px-7 py-3.5 text-[15px]">
-          <i data-lucide="zap" class="w-[18px] h-[18px]"></i>
-          Ver el podio
-        </a>
-        <a href="#como-funciona" class="btn-ghost px-7 py-3.5 text-[15px]">Cómo funciona <i data-lucide="arrow-up-right" class="w-[18px] h-[18px]" aria-hidden="true"></i></a>
-      </div>
-      <div class="h-fade mt-12 flex flex-wrap gap-x-10 gap-y-6"><div><div class="font-disp font-bold text-[26px] tracking-tight leading-none">54</div><div class="text-[11px] text-white/45 mt-1.5 uppercase tracking-[.12em] font-medium">Productos para explorar</div></div><div><div class="font-disp font-bold text-[26px] tracking-tight leading-none">18</div><div class="text-[11px] text-white/45 mt-1.5 uppercase tracking-[.12em] font-medium">Categorías</div></div><div><div class="font-disp font-bold text-[26px] tracking-tight leading-none">ML ↗</div><div class="text-[11px] text-white/45 mt-1.5 uppercase tracking-[.12em] font-medium">Compra en Mercado Libre</div></div></div>
-    </div>
-
-    <div class="relative h-img-wrap">
-      <div class="grad-border">
-        <div class="p-3">
-          <div class="relative rounded-[20px] overflow-hidden aspect-[4/4.4] sm:aspect-[4/3.6] lg:aspect-[4/4.2]">
-            <img src="https://images.pexels.com/photos/27988923/pexels-photo-27988923.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Fotografía editorial de zapatillas. Imagen ilustrativa de la selección." class="w-full h-full object-cover" fetchpriority="high">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#07070c]/70 via-transparent to-transparent"></div>
-            <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 hero-photo-caption">
-              <div>
-                <div class="glass-chip px-3 py-1.5 text-[11px] font-disp font-semibold text-white/85 mb-2"><span class="w-2 h-2 rounded-full bg-[#c8ff3e]"></span> SELECCIÓN · ZAPATILLAS</div>
-                <div class="font-disp font-bold text-lg leading-tight">Tu próximo par, en el podio</div>
-                <div class="font-disp text-[#c8ff3e] font-bold text-[21px] mt-0.5">Explorá la selección ↗</div>
-              </div>
-              <a href="#catalogo" class="btn-lime !p-3 shrink-0" aria-label="Explorar zapatillas" data-explore="zapatillas"><i data-lucide="arrow-up-right" class="w-5 h-5" aria-hidden="true"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="h-chip absolute -top-5 -left-3 sm:-left-7 glass-chip px-4 py-2.5 text-[13px] font-disp font-semibold shadow-2xl"><span class="medal medal-1 w-7 h-7 text-[13px]">1</span> Descubrí tu próximo favorito</div>
-      <div class="h-chip absolute -bottom-5 right-2 sm:-right-5 glass-chip px-4 py-2.5 text-[13px] font-disp font-semibold shadow-2xl"><i data-lucide="external-link" class="w-4 h-4 text-[#c8ff3e]" aria-hidden="true"></i> Lo ves en Mercado Libre</div>
-      <div class="h-chip absolute top-1/2 -right-3 sm:-right-9 glass-chip px-4 py-2.5 text-[13px] font-disp font-semibold shadow-2xl"><i data-lucide="mouse-pointer-2" class="w-4 h-4 text-[#c8ff3e]" aria-hidden="true"></i> Elegí. Explorá. Descubrí.</div>
-    </div>
-  </div>
-</section>
-
-<section class="relative border-y border-white/8 py-5 overflow-hidden marquee-mask bg-white/[.02]">
-  <div class="marquee-track font-disp font-semibold text-[13.5px] tracking-[.22em] text-white/55 uppercase">
-    <div class="flex items-center gap-10 pr-10 shrink-0"><span>Productos seleccionados</span><i data-lucide="sparkles" class="w-4 h-4 shrink-0 text-[#c8ff3e]" aria-hidden="true"></i><span>Enlaces a Mercado Libre</span><i data-lucide="sparkles" class="w-4 h-4 shrink-0 text-[#8b5cf6]" aria-hidden="true"></i><span>Zapatillas · tecnología · audio</span><i data-lucide="sparkles" class="w-4 h-4 shrink-0 text-[#c8ff3e]" aria-hidden="true"></i><span>Encontrá tu próximo favorito</span><i data-lucide="sparkles" class="w-4 h-4 shrink-0 text-[#8b5cf6]" aria-hidden="true"></i><span>Explorá por categoría</span><i data-lucide="sparkles" class="w-4 h-4 shrink-0 text-[#c8ff3e]" aria-hidden="true"></i></div>
-    <div class="flex items-center gap-10 pr-10 shrink-0" aria-hidden="true"><span>Productos seleccionados</span><i data-lucide="sparkles" class="w-4 h-4 shrink-0 text-[#c8ff3e]" aria-hidden="true"></i><span>Enlaces a Mercado Libre</span><i data-lucide="sparkles" class="w-4 h-4 shrink-0 text-[#8b5cf6]" aria-hidden="true"></i><span>Zapatillas · tecnología · audio</span><i data-lucide="sparkles" class="w-4 h-4 shrink-0 text-[#c8ff3e]" aria-hidden="true"></i><span>Encontrá tu próximo favorito</span><i data-lucide="sparkles" class="w-4 h-4 shrink-0 text-[#8b5cf6]" aria-hidden="true"></i><span>Explorá por categoría</span><i data-lucide="sparkles" class="w-4 h-4 shrink-0 text-[#c8ff3e]" aria-hidden="true"></i></div>
-  </div>
-</section>
-
-<section id="catalogo" class="relative py-24 md:py-32 scroll-mt-20">
+<section id="catalogo" class="relative pt-28 md:pt-32 pb-20 md:pb-24 scroll-mt-20">
   <div class="orb w-[440px] h-[440px] bg-[#8b5cf6]/12 top-24 -left-56" data-orb=""></div>
   <div class="max-w-7xl mx-auto px-5 md:px-8">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-7 mb-10" data-reveal="">
-      <div class="max-w-xl">
-        <div class="glass-chip px-4 py-2 text-[12px] font-disp font-semibold text-white/75 w-fit mb-5"><i data-lucide="layout-grid" class="w-4 h-4 text-[#c8ff3e]"></i> CATÁLOGO CURADO</div>
-        <h2 class="font-mega font-extrabold text-[clamp(1.9rem,4.6vw,3.2rem)] leading-[1.05] tracking-tight">El podio por <span class="grad-text">categoría</span></h2>
-        <p class="mt-4 text-white/55 text-[15px] leading-relaxed">Explorá nuestra selección por categoría. Los números del podio ordenan los productos; no representan un ranking de ventas de Mercado Libre.</p>
-      </div>
-      <div class="relative w-full md:w-[320px] shrink-0">
-        <i data-lucide="search" class="w-[18px] h-[18px] absolute top-1/2 -translate-y-1/2 text-white/40" style="left:16px;pointer-events:none"></i>
-        <input id="search" type="search" placeholder="Buscar producto o marca…" class="w-full glass-chip !rounded-full pl-11 pr-4 py-3.5 text-[14px] text-white placeholder-white/35 outline-none focus:border-[#c8ff3e]/60 focus:bg-white/[.07] transition-all" aria-label="Buscar producto o marca" autocomplete="off">
-      </div>
+    <div class="relative w-full md:w-[360px] mb-5" data-reveal="">
+      <i data-lucide="search" class="w-[18px] h-[18px] absolute top-1/2 -translate-y-1/2 text-white/40" style="left:16px;pointer-events:none"></i>
+      <input id="search" type="search" placeholder="Buscar producto o marca…" class="w-full glass-chip !rounded-full pl-11 pr-4 py-3.5 text-[14px] text-white placeholder-white/35 outline-none focus:border-[#c8ff3e]/60 focus:bg-white/[.07] transition-all" aria-label="Buscar producto o marca" autocomplete="off">
     </div>
 
     <div class="flex gap-2.5 overflow-x-auto pb-3 mb-9 [-ms-overflow-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden" id="tabs" data-reveal="" aria-label="Filtrar por categoría"><button class="tab-pill active" data-cat="todos" aria-pressed="true"><i data-lucide="layout-grid" class="w-4 h-4" aria-hidden="true"></i> Todo</button><button class="tab-pill" data-cat="zapatillas" aria-pressed="false"><i data-lucide="footprints" class="w-4 h-4" aria-hidden="true"></i> Zapatillas</button><button class="tab-pill" data-cat="tecnologia" aria-pressed="false"><i data-lucide="smartphone" class="w-4 h-4" aria-hidden="true"></i> Tecnología</button><button class="tab-pill" data-cat="audio" aria-pressed="false"><i data-lucide="headphones" class="w-4 h-4" aria-hidden="true"></i> Audio</button><button class="tab-pill" data-cat="gaming" aria-pressed="false"><i data-lucide="gamepad-2" class="w-4 h-4" aria-hidden="true"></i> Gaming</button><button class="tab-pill" data-cat="hogar" aria-pressed="false"><i data-lucide="house" class="w-4 h-4" aria-hidden="true"></i> Hogar</button><button class="tab-pill" data-cat="accesorios" aria-pressed="false"><i data-lucide="backpack" class="w-4 h-4" aria-hidden="true"></i> Accesorios</button><button class="tab-pill" data-cat="deportes" aria-pressed="false"><i data-lucide="bike" class="w-4 h-4" aria-hidden="true"></i> Deportes</button></div><div class="flex flex-wrap items-center justify-between gap-3 mb-7"><p id="catalog-status" role="status" aria-live="polite" class="text-[12px] text-white/50">54 productos · 18 categorías</p><label class="flex flex-wrap items-center gap-3 text-[12px] text-white/50">Categoría específica<select id="subcategory" class="catalog-select"><option value="todos">Todas las categorías</option><option value="categoria-1">Zapatillas de Running</option><option value="categoria-2">Zapatillas Urbanas</option><option value="categoria-3">Zapatillas para Niños</option><option value="categoria-4">Botines de Fútbol</option><option value="categoria-5">Ojotas y Sandalias</option><option value="categoria-6">Mochilas Escolares</option><option value="categoria-7">Mochilas de Viaje</option><option value="categoria-8">Celulares Gama Alta</option><option value="categoria-9">Celulares Gama Media</option><option value="categoria-10">Auriculares In-Ear</option><option value="categoria-11">Notebooks Gamer</option><option value="categoria-12">Notebooks Oficina</option><option value="categoria-13">Termos y Mates</option><option value="categoria-14">Perfumes para Hombre</option><option value="categoria-15">Perfumes para Mujer</option><option value="categoria-16">Lentes de Sol</option><option value="categoria-17">Bicicletas Mountain Bike</option><option value="categoria-18">Bicicletas Urbanas</option></select></label></div>
@@ -284,7 +218,7 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;overfl
   <div class="max-w-7xl mx-auto px-5 md:px-8">
     <div class="grid md:grid-cols-[1.3fr_.7fr_.7fr_1fr] gap-12 md:gap-8 pb-14">
       <div>
-        <a href="#hero" class="flex items-center gap-2.5 mb-5">
+        <a href="#catalogo" class="flex items-center gap-2.5 mb-5">
           <span class="icon-tile !w-10 !h-10 !rounded-xl text-[#c8ff3e]"><i data-lucide="trophy" class="w-5 h-5"></i></span>
           <span class="font-mega font-bold text-[17px] leading-none">EL PODIO<br><span class="text-[#c8ff3e] text-[13px] tracking-[.35em]">MP</span></span>
         </a>
@@ -292,7 +226,7 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;overfl
 
       </div>
       <div><h3 class="font-disp font-bold text-[13px] uppercase tracking-[.18em] text-white/85 mb-5">Explorá</h3><ul class="space-y-3 text-[13.5px]"><li><a href="#catalogo" data-explore="zapatillas" class="footer-link">Zapatillas</a></li><li><a href="#catalogo" data-explore="tecnologia" class="footer-link">Tecnología</a></li><li><a href="#catalogo" data-explore="audio" class="footer-link">Audio</a></li><li><a href="#catalogo" data-explore="gaming" class="footer-link">Gaming</a></li></ul></div>
-      <div><h3 class="font-disp font-bold text-[13px] uppercase tracking-[.18em] text-white/85 mb-5">El Podio MP</h3><ul class="space-y-3 text-[13.5px]"><li><a href="#como-funciona" class="footer-link">Cómo funciona</a></li><li><a href="#afiliados" class="footer-link">Sobre los enlaces</a></li><li><a href="#preguntas" class="footer-link">Preguntas frecuentes</a></li><li><a href="#hero" class="footer-link">Volver al inicio</a></li></ul></div>
+      <div><h3 class="font-disp font-bold text-[13px] uppercase tracking-[.18em] text-white/85 mb-5">El Podio MP</h3><ul class="space-y-3 text-[13.5px]"><li><a href="#como-funciona" class="footer-link">Cómo funciona</a></li><li><a href="#afiliados" class="footer-link">Sobre los enlaces</a></li><li><a href="#preguntas" class="footer-link">Preguntas frecuentes</a></li><li><a href="#catalogo" class="footer-link">Volver al catálogo</a></li></ul></div>
       <div><h3 class="font-disp font-bold text-[13px] uppercase tracking-[.18em] text-white/85 mb-5">Tu compra, en Mercado Libre</h3><p class="text-[13.5px] text-white/50 leading-relaxed">Elegí desde acá y consultá todos los detalles en Mercado Libre antes de comprar.</p><a href="#catalogo" class="btn-ghost px-5 py-3 text-[13px] mt-5">Volver al catálogo <i data-lucide="arrow-up-right" class="w-4 h-4" aria-hidden="true"></i></a></div>
     </div>
     <div class="pt-7 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12.5px] text-white/40">

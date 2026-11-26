@@ -525,6 +525,80 @@
       "link": "https://www.mercadolibre.com.ar/honor-200-pro-5g-dual-sim-512gb-12gb-ram-blanco-dorado-200mp-snapdragon-8-elite-64-ah-80w-657-120hz-android-16-ip69k-nfc/p/MLA69983014"
     }
   ],
+  "celulares_media": [
+    {
+      "title": "Xiaomi Redmi Note 15 Pro 5g 512gb 8gb Ram Dual Sim Lila",
+      "price": 833596,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_673830-MLA107191465925_022026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-107191465925-xiaomi-redmi-note-15-pro-5g-512gb-8gb-ram-dual-sim-lila-_JM"
+    },
+    {
+      "title": "Xiaomi Redmi Note 15 Pro 256gb 16gb Ram Dual Sim Nfc Titanio",
+      "price": 1357990,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_663947-MLA116427296998_092026-E.webp",
+      "badge": "12 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 12,
+        "sinInteres": true
+      },
+      "description": "¡12 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/MLA-116427296998-xiaomi-redmi-note-15-pro-256gb-16gb-ram-dual-sim-nfc-titanio-_JM"
+    },
+    {
+      "title": "Xiaomi Redmi Note 14 Pro Plus 5g blue",
+      "price": 816441,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_799275-MLA99446907046_112025-E.webp",
+      "badge": "12 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 12,
+        "sinInteres": true
+      },
+      "description": "¡12 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/xiaomi-redmi-note-14-pro-plus-5g-blue/p/MLA45744358"
+    },
+    {
+      "title": "Xiaomi Redmi Note 14 Pro+ 5g Dual Sim 256gb/8 Gb Ram Color Turquesa",
+      "price": 746014,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_773940-MLA101153869945_122025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/xiaomi-redmi-note-14-pro-5g-dual-sim-256gb8-gb-ram-color-turquesa/p/MLA63092558"
+    },
+    {
+      "title": "Xiaomi Redmi Note 15 Pro 5g 256 8 Gb Ram Dual Sim Nfc 200mpx Gris",
+      "price": 699580,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_644621-MLA115753472102_092026-E.webp",
+      "badge": "Envío Gratis",
+      "cuotas": null,
+      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
+      "link": "https://www.mercadolibre.com.ar/MLA-115753472102-xiaomi-redmi-note-15-pro-5g-256-8-gb-ram-dual-sim-nfc-200mpx-gris-_JM"
+    },
+    {
+      "title": "Smartphone Xiaomi Redmi Note 14 Pro 5g 12gb + 512gb, verde",
+      "price": 989999,
+      "oldPrice": null,
+      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_917346-MLA100002936041_112025-E.webp",
+      "badge": "6 cuotas sin interés",
+      "cuotas": {
+        "cantidad": 6,
+        "sinInteres": true
+      },
+      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
+      "link": "https://www.mercadolibre.com.ar/smartphone-xiaomi-redmi-note-14-pro-5g-12gb-512gb-verde/p/MLA47251046"
+    }
+  ],
   "smartwatches": [
     {
       "title": "Smartwatch Amazfit Bip Max Amoled Negro",
@@ -3579,80 +3653,6 @@
       "cuotas": null,
       "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
       "link": "https://www.mercadolibre.com.ar/MLA-117032188587-pulsera-mujer-protectora-nudo-de-bruja-obsidiana-negra-_JM"
-    }
-  ],
-  "celulares_media": [
-    {
-      "title": "Xiaomi Redmi Note 15 Pro 5g 512gb 8gb Ram Dual Sim Lila",
-      "price": 833596,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_673830-MLA107191465925_022026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-107191465925-xiaomi-redmi-note-15-pro-5g-512gb-8gb-ram-dual-sim-lila-_JM"
-    },
-    {
-      "title": "Xiaomi Redmi Note 15 Pro 256gb 16gb Ram Dual Sim Nfc Titanio",
-      "price": 1357990,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_663947-MLA116427296998_092026-E.webp",
-      "badge": "12 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 12,
-        "sinInteres": true
-      },
-      "description": "¡12 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/MLA-116427296998-xiaomi-redmi-note-15-pro-256gb-16gb-ram-dual-sim-nfc-titanio-_JM"
-    },
-    {
-      "title": "Xiaomi Redmi Note 14 Pro Plus 5g blue",
-      "price": 816441,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_799275-MLA99446907046_112025-E.webp",
-      "badge": "12 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 12,
-        "sinInteres": true
-      },
-      "description": "¡12 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/xiaomi-redmi-note-14-pro-plus-5g-blue/p/MLA45744358"
-    },
-    {
-      "title": "Xiaomi Redmi Note 14 Pro+ 5g Dual Sim 256gb/8 Gb Ram Color Turquesa",
-      "price": 746014,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_773940-MLA101153869945_122025-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/xiaomi-redmi-note-14-pro-5g-dual-sim-256gb8-gb-ram-color-turquesa/p/MLA63092558"
-    },
-    {
-      "title": "Xiaomi Redmi Note 15 Pro 5g 256 8 Gb Ram Dual Sim Nfc 200mpx Gris",
-      "price": 699580,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_644621-MLA115753472102_092026-E.webp",
-      "badge": "Envío Gratis",
-      "cuotas": null,
-      "description": "Producto real de Mercado Libre. Calidad garantizada con los mejores vendedores.",
-      "link": "https://www.mercadolibre.com.ar/MLA-115753472102-xiaomi-redmi-note-15-pro-5g-256-8-gb-ram-dual-sim-nfc-200mpx-gris-_JM"
-    },
-    {
-      "title": "Smartphone Xiaomi Redmi Note 14 Pro 5g 12gb + 512gb, verde",
-      "price": 989999,
-      "oldPrice": null,
-      "imageUrl": "https://http2.mlstatic.com/D_Q_NP_2X_917346-MLA100002936041_112025-E.webp",
-      "badge": "6 cuotas sin interés",
-      "cuotas": {
-        "cantidad": 6,
-        "sinInteres": true
-      },
-      "description": "¡6 cuotas sin interés en Mercado Libre! Aprovechá la financiación.",
-      "link": "https://www.mercadolibre.com.ar/smartphone-xiaomi-redmi-note-14-pro-5g-12gb-512gb-verde/p/MLA47251046"
     }
   ]
 }
